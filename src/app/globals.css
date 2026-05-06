@@ -7,9 +7,30 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+
+  /* RoobertPRO font */
+  --font-roobert: var(--font-roobert);
+  --font-sans: var(--font-roobert);
+  --font-mono: var(--font-roobert);
+  --font-heading: var(--font-roobert);
+
+  /* Boldteq Brand Colors */
+  --color-brand-navy: #092245;
+  --color-brand-navy-deep: #082753;
+  --color-brand-cyan: #21cfff;
+  --color-brand-blue: #019ae6;
+  --color-brand-yellow: #FFEB85;
+  --color-brand-dark: #111827;
+  --color-brand-dark-alt: #1a1925;
+  --color-brand-green: #3c7c43;
+  --color-brand-green-badge: #18c958;
+  --color-brand-light-blue: #ecf7fd;
+  --color-brand-light-bg: #f5f7fa;
+  --color-brand-gray-bg: #f7f7f8;
+  --color-brand-card-hover: #cdebfa;
+  --color-brand-card-border: #009ce0;
+
+  /* shadcn semantic tokens */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,83 +69,421 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ─── Z-index design tokens ─────────────────────────────────────────────────── */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --z-toast: 10000;
+  --z-modal: 9999999;
+  --z-nav: 999999;
+  --z-overlay: 50;
+  --z-sticky: 30;
+  --z-base: 1;
+}
+
+/* ─── Spacing scale (4px base) ──────────────────────────────────────────────── */
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
+  --space-32: 128px;
+}
+
+/* ─── Typography scale (Webflow-derived) ────────────────────────────────────── */
+:root {
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-md: 18px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 50px;
+
+  --leading-tight: 1.2;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+}
+
+/* ─── Shadow scale ──────────────────────────────────────────────────────────── */
+:root {
+  --shadow-card: 0 0 5px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 4px 16px -4px rgba(0, 0, 0, 0.1);
+  --shadow-card-soft: 0 0 80px rgba(175, 175, 175, 0.1);
+  --shadow-card-cyan: 0 4px 20px rgba(1, 154, 230, 0.1);
+  --shadow-popover:
+    0 109.603px 30.372px rgba(0, 0, 0, 0),
+    0 69.987px 27.731px rgba(0, 0, 0, 0.012),
+    0 39.615px 23.769px rgba(0, 0, 0, 0.04),
+    0 17.167px 17.167px rgba(0, 0, 0, 0.071),
+    0 3.962px 9.244px rgba(0, 0, 0, 0.082);
+  --shadow-glow: 0 0 50px rgba(0, 0, 0, 0.2);
+  --shadow-pricing: 0 0 80px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0 0 5px rgba(0, 0, 0, 0.1);
+  --shadow-focus-ring: 0 0 0 3px rgba(33, 207, 255, 0.15);
+  --shadow-pop-deep: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* ─── Border radius scale ───────────────────────────────────────────────────── */
+:root {
+  --radius-xs: 4px;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 15px;
+  --radius-3xl: 20px;
+  --radius-pill: 999px;
+}
+
+/* ─── Motion tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── Semantic color aliases (used by primitives) ───────────────────────────── */
+:root {
+  --color-text-primary: #082753;
+  --color-text-secondary: #2b2b2b;
+  --color-text-muted: #5b616e;
+  --color-text-subtle: #6b7280;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.8);
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f7fa;
+  --color-surface-muted: #f7f7f8;
+  --color-surface-dark: #082753;
+  --color-surface-dark-alt: #092245;
+
+  --color-border-subtle: #edeff3;
+  --color-border-default: #e5e7eb;
+  --color-border-strong: #dde3e8;
+  --color-border-cyan: rgba(33, 207, 255, 0.23);
+
+  --color-accent-bg: rgba(33, 207, 255, 0.07);
+  --color-accent-bg-hover: rgba(33, 207, 255, 0.12);
+  --color-cyan-tint: #effafe;
+
+  --color-success-bg: #def4ff;
+  --color-success-fg: #082753;
+  --color-info-bg: #e6f7ff;
+  --color-info-fg: #0050b3;
+  --color-info-border: #91d5ff;
+  --color-danger: #ef4444;
+  --color-danger-bg: #fff2eb;
+  --color-danger-fg: #460906;
+  --color-warning-bg: #fff8e1;
+  --color-warning-fg: #93370d;
+
+  --gradient-brand: linear-gradient(90deg, #21cfff, #019ae6);
+  --gradient-brand-soft: linear-gradient(90deg, #21cfff14, #019ae600);
+  --gradient-brand-vertical: linear-gradient(180deg, #21cfff, #019ae6);
+}
+
+/* ─── Breakpoints (documentation only — used in @media manually) ────────────── */
+/*
+  --bp-sm: 479px   (max-width — small mobile)
+  --bp-md: 767px   (max-width — mobile)
+  --bp-lg: 991px   (max-width — tablet)
+  --bp-xl: 1280px  (min-width — desktop)
+  --bp-2xl: 1440px (min-width — large desktop)
+*/
+
+/* ─── Webflow CSS design tokens ────────────────────────────────────────────── */
+:root {
+  --blue: #082753;
+  --white: white;
+  --black: black;
+  --para-small: 16px;
+  --h2: 40px;
+  --h1: 3.125rem;
+  --para: 1.125rem;
+  --h3: 1.53rem;
+  --button-text: 1rem;
+
+  /* shadcn semantic colors mapped to Boldteq */
+  --background: #fff;
+  --foreground: #111827;
+  --card: #fff;
+  --card-foreground: #111827;
+  --popover: #fff;
+  --popover-foreground: #111827;
+  --primary: #082753;
+  --primary-foreground: #fff;
+  --secondary: #f5f7fa;
+  --secondary-foreground: #111827;
+  --muted: #f7f7f8;
+  --muted-foreground: #6b7280;
+  --accent: #21cfff;
+  --accent-foreground: #082753;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #21cfff;
+  --chart-1: #21cfff;
+  --chart-2: #019ae6;
+  --chart-3: #FFEB85;
+  --chart-4: #082753;
+  --chart-5: #6b7280;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #fafafa;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #082753;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #f5f7fa;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #21cfff;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
+/* ─── Base layer ────────────────────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
-    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background;
+    font-family: var(--font-roobert), Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333;
+    margin: 0;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  /* Global focus-visible ring — WCAG 2.1 AA compliant */
+  :focus-visible {
+    outline: 2px solid #21cfff;
+    outline-offset: 3px;
+  }
+
+  /* Remove outline for mouse users, keep for keyboard */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* ─── Reduced motion ────────────────────────────────────────────────────────── */
+/*
+  !important is required here to override third-party inline styles (Framer Motion,
+  Embla Carousel) that set animation/transition values as inline style attributes.
+  This is the WCAG 2.1 SC 2.3.3 recommended implementation pattern.
+  Do not remove !important — removing it would break accessibility for vestibular disorders.
+*/
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Webflow global custom styles (from Webflow custom code section) ──────── */
+
+/* Tooltip system */
+.tooltip {
+  display: inline-block;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #082753;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 9999;
+  width: 200px;
+  text-align: center;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  bottom: 90%;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 71%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #082753;
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+@media screen and (max-width: 480px) {
+  .tooltip::after {
+    left: 100%;
+  }
+}
+
+/* ─── Utilities ─────────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Webflow .paragraph / .paragraph-regular */
+  .paragraph {
+    font-size: 16px;
+    line-height: 28px;
+    color: #2b2b2b;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  /* Gradient utility matching Webflow */
+  .gradient-cyan {
+    background: linear-gradient(90deg, #21cfff, #019ae6);
+  }
+
+  .gradient-cyan-text {
+    background: linear-gradient(90deg, #21cfff, #019ae6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-navy {
+    background-color: #092245;
+  }
+
+  .bg-navy-deep {
+    background-color: #082753;
+  }
+
+  /* Section spacing from Webflow */
+  .section-large {
+    padding: 128px 5%;
+  }
+
+  .section-regular {
+    padding: 64px 5%;
+  }
+
+  /* Card hover from Webflow */
+  .card-hover {
+    transition: background-color 0.3s, border-color 0.4s, box-shadow 0.3s;
+  }
+
+  .card-hover:hover {
+    background-color: #cdebfa;
+    border-color: #009ce0;
+  }
+
+  /* Shimmer animation */
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* Webflow .header-comingsoon-badge — global fallback (CSS Modules version in navbar.module.css wins)
+     WCAG AA fix: #1890ff on #e6f7ff = ratio 2.95 (fail). Updated to #0050b3 (ratio ≥ 4.5:1).
+     Font bumped from 9px to 12px to meet WCAG text-size minimum. */
+  .header-comingsoon-badge {
+    color: #0050b3;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 4px;
+    align-items: center;
+    padding: 3px 6px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1em;
+    display: inline-flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 }

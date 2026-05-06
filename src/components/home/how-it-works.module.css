@@ -1,0 +1,322 @@
+/* Badge pill text */
+.badgePillText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 32px;
+}
+
+/* ==========================================================
+   Section  (Webflow: .section-regular-3.blue-sec.makeit-sec)
+   Base .section-regular-3: padding: 0 5% 80px
+   .blue-sec modifier:     background: var(--color-text-primary); margin-bottom: 0; padding-top: 70px; padding-bottom: 70px
+   .makeit-sec override:   padding-bottom: 80px
+   Combined result:        padding: 70px 5% 80px; background: #082753
+   ========================================================== */
+.sectionRegular3BlueSec {
+  -webkit-text-fill-color: inherit;
+  background-color: var(--color-text-primary);
+  background-clip: border-box;
+  margin-bottom: 0;
+  padding: 70px 5% 80px;
+  position: relative;
+}
+
+/* ==========================================================
+   Container  (Webflow: .container-large-3)
+   ========================================================== */
+.containerLarge3 {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================
+   Badge row  (Webflow: .how-work-tag-badge / .how-work-badge)
+   ========================================================== */
+.howWorkTagBadge {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.howWorkBadge {
+  background-color: var(--color-accent-bg);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  margin-bottom: 0;
+  padding: 0 13px;
+  line-height: 14px;
+}
+
+/* ==========================================================
+   Gradient text  (Webflow: .faq-sky-text)
+   ========================================================== */
+.faqSkyText {
+  color: var(--color-brand-cyan);
+  text-transform: capitalize;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   Heading  (Webflow: .heading-2.margin-bottom-24px.white-heading)
+   Base .heading-2: color #082753, 40px/45px, text-align center, mb 20px
+   .white-heading: color #fff
+   Combined:
+   ========================================================== */
+.heading2WhiteHeading {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  line-height: 45px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   Subtitle  (Webflow: .paragraph.white.opacity)
+   ========================================================== */
+.paragraphWhiteOpacity {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   Grid  (Webflow: .feature-grid.margin-top-40px)
+   ========================================================== */
+.featureGrid {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 40px;
+}
+
+/* ==========================================================
+   Card  (Webflow: .feature-card.space-between.blue)
+   Base .feature-card:               padding 25px 17px 17px; border-radius 20px; display flex; flex-flow column
+   .space-between modifier:          justify-content: space-between; background #def4ff (overridden by .blue)
+   .blue modifier:                   background #1c3861; border #ffffff1c
+   ========================================================== */
+.featureCardBlue {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align: center;
+  mix-blend-mode: normal;
+  background-color: var(--color-text-primary);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 20px;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 17px 17px;
+  text-decoration: none;
+  display: flex;
+  /* WCAG fix: browser default #333 on #1c3861 = ratio 1.08 (fail).
+     Force white so all child anchors/text are readable. */
+  color: #fff;
+}
+
+/* ==========================================================
+   Text wrapper  (Webflow: .text-wrapper)
+   No margin-bottom in Webflow base — space-between handles separation
+   ========================================================== */
+.textWrapper {
+}
+
+/* ==========================================================
+   Card title  (Webflow: .subheading-large.white)
+   ========================================================== */
+.subheadingLargeWhite {
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+/* ==========================================================
+   Card body  (Webflow: .paragraph-small-2.margin-bottom-20px.white.opacity)
+   ========================================================== */
+.paragraphSmall2WhiteOpacity {
+  color: #fff;
+  opacity: 0.8;
+  min-height: auto;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+  line-height: 28px;
+}
+
+/* ==========================================================
+   Card image  (Webflow: .full-width-image — plain, NO drop-shadow)
+   Webflow line 13651: width: 100%; max-width: 3768px; display: block
+   No height attribute on <img> in Webflow HTML → renders at natural ratio.
+   ========================================================== */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1492 / 1724;
+}
+
+.fullWidthImage {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ==========================================================
+   @media (min-width: 1280px)
+   Webflow line 21927: .feature-card.space-between → pl/pr 20px
+   Webflow line 21944: .subheading-large → 25px/32px
+   Webflow line 21932: .container-large-3 → max-width 1280px
+   ========================================================== */
+@media screen and (min-width: 1280px) {
+  .featureCardBlue {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .containerLarge3 {
+    max-width: 1280px;
+  }
+
+  .subheadingLargeWhite {
+    font-size: 25px;
+    line-height: 32px;
+  }
+}
+
+/* ==========================================================
+   @media (min-width: 1440px)
+   Webflow line 23367: .feature-card.space-between → pl/pr 25px
+   Webflow line 23376: .container-large-3 → max-width 1320px
+   ========================================================== */
+@media screen and (min-width: 1440px) {
+  .featureCardBlue {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .containerLarge3 {
+    max-width: 1320px;
+  }
+}
+
+/* ==========================================================
+   @media (max-width: 991px)
+   Webflow line 24574: .section-regular-3.blue-sec.makeit-sec → margin-top: 0
+   Webflow line 24662: .blue-sec → padding-left: 2%; padding-right: 2%
+     (the .blue-sec rule at 991px applies because the section element
+      also has the .blue-sec class — Webflow cascades these separately)
+   Webflow line 24562: .feature-grid.margin-top-40px → 3-col stays
+   ========================================================== */
+@media screen and (max-width: 991px) {
+  .sectionRegular3BlueSec {
+    margin-top: 0;
+    /* .blue-sec rule at 991px: padding-left/right override to 2% */
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .heading2WhiteHeading {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  .featureGrid {
+    /* stays 3-col per Webflow line 24562 for margin-top-40px variant */
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* ==========================================================
+   @media (max-width: 767px)
+   Webflow line 27060: .section-regular-3 → padding-top: 0; padding-bottom: 0
+   (overrides the base padding at mobile — the 479px rule restores for makeit-sec)
+   feature-grid → 1 col
+   ========================================================== */
+@media screen and (max-width: 767px) {
+  .sectionRegular3BlueSec {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 0;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .featureCardBlue {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .subheadingLargeWhite {
+    text-align: center;
+  }
+
+  .paragraphSmall2WhiteOpacity {
+    text-align: center;
+  }
+
+  .heading2WhiteHeading {
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .paragraphWhiteOpacity {
+    text-align: center;
+  }
+
+}
+
+/* ==========================================================
+   @media (max-width: 479px)
+   Webflow line 29623: .section-regular-3.blue-sec.makeit-sec →
+     margin-top: 0; padding: 50px 5% 60px
+   (restores padding that was zeroed at 767px for .section-regular-3 base)
+   ========================================================== */
+@media screen and (max-width: 479px) {
+  .heading2WhiteHeading {
+    font-size: 21px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .sectionRegular3BlueSec {
+    margin-top: 0;
+    padding: 50px 5% 60px;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  /* Fix #20: featureCardBlue padding at 479px → 24px 18px */
+  .featureCardBlue {
+    padding: 24px 18px;
+  }
+}

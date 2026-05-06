@@ -1,0 +1,146 @@
+/* ============================================================
+   CONTACT INFO CARDS — contact-info-cards.module.css
+   Matches: .cont-small-container.margin-top + .cont-bx-grid + .row-small.white-cont-bx
+   Source CSS: 18415 (.cont-bx-grid), 18439 (.cont-small-container),
+               18448 (.cont-small-container.margin-top), 5192 (.row-small.white-cont-bx),
+               18426 (.cont-icon-primary)
+   ============================================================ */
+
+/* Wrapper section — same #effafe bg, no extra padding (merges with hero bottom) */
+.section {
+  background-color: var(--color-cyan-tint);
+  padding: 0;
+}
+
+/* Container — matches .cont-small-container.margin-top (max-width: 800px, margin-top: 60px) */
+.container {
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+/* Grid — matches .cont-bx-grid: 3 columns, gap 16px, margin-top 10px, margin-bottom 20px */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Card — matches .row-small.white-cont-bx */
+.card {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  border: 1px transparent;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+}
+
+/* Icon circle — matches .cont-icon-primary */
+.iconWrap {
+  color: #454545;
+  background-color: rgba(1, 154, 230, 0.04);
+  border: 1px #c1e6f9;
+  border-radius: 32px;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Card text body */
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Dept name — matches .subheading-small-5 (bold, navy) */
+.cardDept {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Email — matches .paragraph-x-small-11.text-color-tertiary */
+.cardEmail {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Arrow link — right-aligned gradient arrow */
+.arrowLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+/* ============================================================
+   max-width: 991px
+   Source: line 26585 (.cont-bx-grid at 991px — inherits)
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   Source: line 26585 (.cont-bx-grid at 767px — 1 column)
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   Source: line 28879 (.cont-bx-grid at 479px)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

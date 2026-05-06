@@ -1,0 +1,224 @@
+/* ============================================================
+   BETA WHO IT'S FOR — beta-who-its-for.module.css
+   Matches Webflow .how-work-sec2.overflow-hidden.beta-built-sec
+   ============================================================ */
+
+.section {
+  padding: 70px 5%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* demo-sec2-outer */
+.outer {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+/* demo-cont-center */
+.center {
+  grid-column-gap: 56px;
+  grid-row-gap: 56px;
+  flex-flow: column;
+  align-items: center;
+  display: flex;
+}
+
+/* column-regular column-left web-max */
+.headerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* how-work-tag-badge */
+.tagBadgeWrap {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+/* how-work-badge */
+.tagBadge {
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  padding: 0 13px;
+  line-height: 32px;
+}
+
+.badgeInner {
+  margin: 0;
+  font-size: 12px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  line-height: 32px;
+}
+
+/* faq-sky-text */
+.badgeText {
+  color: var(--color-brand-cyan);
+  text-transform: capitalize;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+}
+
+/* heading-2 demo-sec-heading margin-top */
+.heading {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* max-width-small-3 center-text */
+.subtitleWrap {
+  text-align: center;
+  max-width: 500px;
+}
+
+/* paragraph text-center */
+.subtitle {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 28px;
+  text-align: center;
+  margin: 0;
+}
+
+/* how-works-gridboxes */
+.gridboxes {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  width: 100%;
+  display: grid;
+}
+
+/* demodev-sec2-grid-inner */
+.card {
+  background-color: var(--color-success-bg);
+  border: 1px solid #009ce0;
+  border-radius: 20px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 22px;
+  display: flex;
+  position: relative;
+}
+
+/* sky-digit margin-bottom */
+.skyDigit {
+  z-index: 3;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  background-color: #fff;
+  background-image: linear-gradient(#21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border: 1px dashed var(--color-text-primary);
+  border-radius: var(--radius-pill);
+  flex: 0 auto;
+  justify-content: center;
+  align-self: auto;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding: 5px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.53rem;
+  font-weight: 700;
+  display: flex;
+  position: static;
+}
+
+/* heading-3-blue */
+.cardTitle {
+  color: var(--color-text-primary);
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 7px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+/* paragraph text-left */
+.cardText {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .heading {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding-bottom: 60px;
+  }
+
+  .gridboxes {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}

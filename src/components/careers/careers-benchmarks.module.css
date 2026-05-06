@@ -1,0 +1,238 @@
+/* ============================================================
+   CAREERS BENCHMARKS — careers-benchmarks.module.css
+   Matches: .benchmark-sec.overflow-hidden on careers.html
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  padding: 0 5%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* benchmark-outer */
+.benchOuter {
+  background-color: var(--color-cyan-tint);
+  border-radius: 15px;
+  padding: 60px 16px 16px;
+}
+
+/* career-cont-center */
+.contCenter {
+  grid-column-gap: 56px;
+  grid-row-gap: 56px;
+  flex-flow: column;
+  align-items: center;
+  display: flex;
+}
+
+/* Header — column-regular column-left web-max */
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subtitleWrap {
+  max-width: 500px;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 28px;
+  text-align: center;
+  margin: 0;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-radius: 10px;
+  padding: 10px 24px;
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+/* benchmark-grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-self: stretch;
+}
+
+/* bench-grid-out */
+.benchCard {
+  background-color: #fff;
+  border-radius: 15px;
+  flex-flow: column;
+  justify-content: space-between;
+  min-height: auto;
+  padding: 20px 13px 10px;
+  display: flex;
+  box-shadow: var(--shadow-card);
+}
+
+/* bench-grid-heading */
+.benchLabel {
+  color: var(--color-text-primary);
+  text-align: center;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0;
+}
+
+/* bench-gradient-out */
+.benchBar {
+  background-image: linear-gradient(#21cfff, #019ae6);
+  border-radius: 10px;
+  flex: 0 auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 126px;
+  padding: 10px;
+  display: flex;
+}
+
+.card2 { min-height: 104px; }
+.card3 { min-height: 87px; }
+.card4 { min-height: 74px; }
+.card5 { min-height: 62px; padding-top: 5px; padding-bottom: 5px; }
+.card6 { min-height: 47px; padding-top: 5px; padding-bottom: 5px; }
+
+/* bench-percentage */
+.benchPercentage {
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .benchCard {
+    min-height: 350px;
+  }
+
+  .benchLabel {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .benchBar {
+    min-height: 156px;
+  }
+
+  .card2 { min-height: 124px; }
+  .card3 { min-height: 87px; }
+  .card4 { min-height: 74px; }
+  .card5 { min-height: 62px; }
+  .card6 { min-height: 47px; }
+
+  .benchPercentage {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-bottom: 60px;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding-bottom: 0;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding: 0 5%;
+  }
+
+  .benchOuter {
+    padding-top: 40px;
+  }
+
+  .grid {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .benchCard {
+    min-height: 240px;
+  }
+
+  .benchLabel {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .benchBar {
+    min-height: 76px;
+    margin-bottom: 10px;
+  }
+
+  .card2, .card3, .card4, .card5, .card6 {
+    min-height: 76px;
+    margin-bottom: 10px;
+  }
+
+  .benchPercentage {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}

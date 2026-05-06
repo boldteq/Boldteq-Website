@@ -1,0 +1,134 @@
+/* ============================================================
+   FEATURED LOGOS — featured-logos.module.css
+   Extracted verbatim from boldteq-v1-0.webflow.css
+   ============================================================ */
+
+.section-regular {
+  background-color: #fff;
+  padding: 0 5%;
+  position: relative;
+  overflow: visible;
+}
+
+.no-padding-mob {
+  /* base — see mobile media query for override */
+}
+
+.logo-mob {
+  /* base — see mobile media query for override */
+}
+
+.logo-3-title {
+  text-align: center;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 628px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.paragraph-x-large {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.text-color-secondary {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+}
+
+.logo-3-carousel {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, #0000 0%, #000 10% 90%, #0000 100%);
+  mask-image: linear-gradient(to right, #0000 0%, #000 10% 90%, #0000 100%);
+}
+
+.logo-3-content {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  opacity: 1;
+  flex-flow: row;
+  display: flex;
+}
+
+.logo-3-block {
+  opacity: 0.4;
+  justify-content: center;
+  align-items: center;
+  min-width: auto;
+  padding: 0;
+  display: flex;
+}
+
+.logo-3-block:hover {
+  opacity: 1;
+}
+
+.logo-3-icon {
+  /* dimension set per image */
+  object-fit: contain;
+}
+
+/* Scroll track — max-content width for seamless animation */
+.logo-3-scroll-content {
+  width: max-content;
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .logo-3-block {
+    min-width: 150px;
+  }
+
+  .logo-3-content {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+  }
+
+  .paragraph-x-large {
+    font-size: 18px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section-regular.no-padding-mob {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .section-regular.no-padding-mob.logo-mob {
+    padding-top: 40px;
+  }
+
+  .logo-3-block {
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    min-width: auto;
+  }
+
+  .logo-3-title {
+    margin-bottom: 10px;
+  }
+
+  .logo-3-content {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    flex-flow: row;
+    display: flex;
+  }
+}

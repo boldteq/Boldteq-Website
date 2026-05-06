@@ -1,0 +1,404 @@
+{
+  "totals": {
+    "count": 59,
+    "bySeverity": {
+      "minor": 48,
+      "major": 11
+    },
+    "byCategory": {
+      "console-warn": 27,
+      "a11y/button-no-type": 14,
+      "visual/text-clipped": 7,
+      "visual/low-contrast": 7,
+      "visual/tap-target-tiny": 3,
+      "failed-request": 1
+    }
+  },
+  "bugs": [
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1920",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-46895.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1920",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1920",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1920",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1920",
+      "selector": "button:nth-of-type(25)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1920",
+      "selector": "button:nth-of-type(26)",
+      "message": ""
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "1920",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "1920",
+      "selector": "p:nth-of-type(79)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1440",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-46895.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1440",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1440",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1440",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1440",
+      "selector": "button:nth-of-type(25)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1440",
+      "selector": "button:nth-of-type(26)",
+      "message": ""
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "1440",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "1440",
+      "selector": "p:nth-of-type(79)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1280",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-46895.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1280",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1280",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1280",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1280",
+      "selector": "button:nth-of-type(25)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1280",
+      "selector": "button:nth-of-type(26)",
+      "message": ""
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "1280",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "1280",
+      "selector": "p:nth-of-type(79)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1024",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-46895.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1024",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1024",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "1024",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1024",
+      "selector": "button:nth-of-type(25)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "1024",
+      "selector": "button:nth-of-type(26)",
+      "message": ""
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "1024",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "1024",
+      "selector": "p:nth-of-type(79)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "768",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-46895.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "768",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "768",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "768",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "768",
+      "selector": "button:nth-of-type(26)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "768",
+      "selector": "button:nth-of-type(27)",
+      "message": ""
+    },
+    {
+      "category": "visual/tap-target-tiny",
+      "severity": "major",
+      "viewport": "768",
+      "selector": "a:nth-of-type(43)",
+      "message": "155×20"
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "768",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "768",
+      "selector": "p:nth-of-type(81)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "480",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-46895.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "480",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "480",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "480",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "480",
+      "selector": "button:nth-of-type(26)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "480",
+      "selector": "button:nth-of-type(27)",
+      "message": ""
+    },
+    {
+      "category": "visual/tap-target-tiny",
+      "severity": "major",
+      "viewport": "480",
+      "selector": "a:nth-of-type(43)",
+      "message": "155×20"
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "480",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "480",
+      "selector": "p:nth-of-type(81)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "375",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-45.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the "
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "375",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Layer_1-2.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the a"
+    },
+    {
+      "category": "console-warn",
+      "severity": "minor",
+      "viewport": "375",
+      "message": "Image with src \"http://localhost:3000/images/webflow/Group-47019-1.png\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain t"
+    },
+    {
+      "category": "failed-request",
+      "severity": "major",
+      "viewport": "375",
+      "message": "net::ERR_ABORTED https://js.stripe.com/v3"
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "375",
+      "selector": "button:nth-of-type(29)",
+      "message": ""
+    },
+    {
+      "category": "a11y/button-no-type",
+      "severity": "minor",
+      "viewport": "375",
+      "selector": "button:nth-of-type(30)",
+      "message": ""
+    },
+    {
+      "category": "visual/tap-target-tiny",
+      "severity": "major",
+      "viewport": "375",
+      "selector": "a:nth-of-type(46)",
+      "message": "155×20"
+    },
+    {
+      "category": "visual/text-clipped",
+      "severity": "minor",
+      "viewport": "375",
+      "selector": "a:nth-of-type(1)",
+      "message": "scroll=133 client=1"
+    },
+    {
+      "category": "visual/low-contrast",
+      "severity": "major",
+      "viewport": "375",
+      "selector": "p:nth-of-type(87)",
+      "message": "ratio=1.00 fg=rgb(255, 255, 255) bg=rgb(255, 255, 255) fs=16px"
+    }
+  ]
+}

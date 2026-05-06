@@ -1,0 +1,252 @@
+/* ============================================================
+   BUILT FOR — built-for.module.css
+   Extracted verbatim from boldteq-v1-0.webflow.css
+   ============================================================ */
+
+/* Base: 60px top, 0 bottom (Webflow line 17211). */
+.built-seccc {
+  -webkit-text-fill-color: inherit;
+  background-color: #0000;
+  background-clip: border-box;
+  padding: 60px 5% 0;
+  position: relative;
+}
+
+.container-large-3 {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading-2 {
+  color: var(--blue, #082753);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--h2, 40px);
+  text-align: center;
+  line-height: 40px;
+}
+
+.margin-bottom-24px {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 45px;
+}
+
+.paragraph {
+  color: #000;
+  text-align: center;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* 4-col grid with 40px top+bottom padding (Webflow line 18944) */
+.built-3-grid-new {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  background-image: none;
+  background-repeat: repeat;
+  background-size: auto;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: grid;
+}
+
+/* Card outer (Webflow line 18957) — no border, just bg image */
+.built-grid-outer-new {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background-color: #0000;
+  background-image: url('/images/webflow/Rectangle-30822.png');
+  background-position: 50%;
+  background-size: cover;
+  border: 0;
+  border-radius: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 12px 20px 10px;
+  display: flex;
+}
+
+.build-grid-inndiv {
+  flex-flow: column;
+  flex: 1;
+  display: flex;
+}
+
+/* Base font-size: 18px (Webflow line 17302) */
+.built-subheading {
+  color: var(--color-text-primary);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.color-mix-bold {
+  /* Changed from #05bafe (ratio 2.22 on white) to #019ae6 (ratio 4.5+ on white) */
+  color: var(--color-brand-blue);
+}
+
+.paragraph-text-left {
+  color: var(--color-text-secondary);
+  text-align: left;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* line-height-smaller matches .paragraph.text-left.line-height-smaller (Webflow line 970) */
+.line-height-smaller {
+  line-height: 22px;
+}
+
+.left-mob {
+  /* base — text-align preserved from paragraph-text-left */
+}
+
+/* ============================================================
+   min-width: 1280px
+   (Webflow lines 22795, 22986)
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .built-subheading {
+    font-size: 20px;
+  }
+
+  .built-grid-outer-new {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   (Webflow lines 24138, 24146, 24338)
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .built-seccc {
+    padding: 60px 5% 0;
+  }
+
+  .built-seccc.center-sec {
+    text-align: center;
+  }
+
+  .built-subheading {
+    font-size: 20px;
+  }
+
+  .built-grid-outer-new {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   (Webflow lines 22782, 22795)
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .built-seccc {
+    padding: 60px 5% 0;
+  }
+
+  .built-subheading {
+    font-size: 20px;
+  }
+
+  /* Fix #7: 2-column grid at 991px (tablet) to match live */
+  .built-3-grid-new {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   (Webflow lines 26374, 26636)
+   built-3-grid-new → 2-col at tablet
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .built-seccc {
+    padding: 60px 5% 0;
+  }
+
+  .built-subheading {
+    font-size: 20px;
+  }
+
+  .heading-2.margin-bottom-24px {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  .built-3-grid-new {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    background-image: none;
+    background-repeat: repeat;
+    background-size: auto;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   (Webflow lines 31613, 28934, 32005)
+   479px: built-seccc padding-top:0 / padding-bottom:60px
+   built-3-grid-new → 1-col at 479px (Webflow line 28934)
+   BUT at 479px, Webflow line 32005 overrides padding-top/bottom of grid
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .built-seccc {
+    padding: 0 5% 60px;
+  }
+
+  .built-seccc.center-sec {
+    text-align: center;
+  }
+
+  .built-subheading {
+    font-size: 20px;
+  }
+
+  .heading-2.margin-bottom-24px {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .paragraph.center {
+    text-align: center;
+  }
+
+  /* 479px: 1-col (Webflow line 28934), grid padding adjusted (line 32005) */
+  .built-3-grid-new {
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  /* left-mob: text stays left on mobile (Webflow line 29398) */
+  .paragraph-text-left.line-height-smaller.left-mob {
+    text-align: left;
+  }
+}

@@ -1,0 +1,231 @@
+/* ============================================================
+   MOBILE NAV — mobile-nav.module.css
+   Full-screen overlay matching Webflow .nav-23-menu at max-width 767px
+   ============================================================ */
+
+/* Overlay: fixed full-screen navy panel */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background-color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* ─── Header row (logo + close button) ────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoImage {
+  filter: brightness(0) invert(1);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* ─── Scrollable nav list area ─────────────────────────────────────────────── */
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 10px 4%;
+  flex: 1;
+}
+
+/* ─── Nav row (wraps link or dropdown toggle) ─────────────────────────────── */
+
+.navRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Top-level nav link ───────────────────────────────────────────────────── */
+
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Dropdown toggle button ───────────────────────────────────────────────── */
+
+.dropdownToggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* ─── Chevron icon inside toggle ────────────────────────────────────────────── */
+
+.chevron {
+  color: var(--color-brand-cyan);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+}
+
+/* ─── Submenu container ─────────────────────────────────────────────────────── */
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
+
+/* ─── Submenu item row (shared base) ────────────────────────────────────────── */
+
+.submenuItem {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+/* Disabled (coming-soon) variant */
+.submenuItemDisabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ─── Submenu item inner content ─────────────────────────────────────────────── */
+
+.submenuInner {
+  display: flex;
+  align-items: center;
+}
+
+.submenuLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* ─── Coming Soon badge ──────────────────────────────────────────────────────── */
+
+.comingSoonBadge {
+  /* #1890ff on #e6f7ff at 9px fails WCAG AA. Darkened to #0050b3, bumped to 12px. */
+  color: var(--color-info-fg);
+  background-color: var(--color-info-bg);
+  border: 1px solid #91d5ff;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1em;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* ─── CTA footer area ────────────────────────────────────────────────────────── */
+
+.ctaFooter {
+  margin-top: auto;
+  padding: 16px 4%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Login button — ghost style */
+.ctaLogin {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* Schedule Demo button — gradient */
+.ctaDemo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93% center, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+}
+
+/* ─── Responsive: tighter spacing on small mobile ───────────────────────── */
+
+@media (max-width: 479px) {
+  .header {
+    padding: 10px 4%;
+  }
+  .navList {
+    padding: 8px 4%;
+  }
+  .navLink,
+  .dropdownToggle {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  .submenuLabel {
+    font-size: 13px;
+  }
+  .ctaFooter {
+    padding: 12px 4%;
+    gap: 10px;
+  }
+}

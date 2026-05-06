@@ -12,6 +12,17 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Read-only Webflow reference export (NOT app source):
+    "boldteq-v1-0.webflow/**",
+    // Audit/diff scripts in tests/ are utility scripts, not production source:
+    "tests/**",
+    "test-results/**",
+    // Codemod/migration scripts — not production source:
+    "scripts/**",
+    // Component pattern snapshots — generated reference files:
+    "src/components/patterns/**",
+    // Audit scripts and output — not production source:
+    "audit/**",
   ]),
 ]);
 

@@ -1,0 +1,113 @@
+/* Card primitive — token-driven surface */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-2xl);
+  border: 1px solid transparent;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  transition: box-shadow var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard);
+}
+
+/* ─── Padding scale ─────────────────────────────────────────────────────────── */
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: var(--space-4);
+}
+
+.padding-md {
+  padding: var(--space-6);
+}
+
+.padding-lg {
+  padding: var(--space-8);
+}
+
+/* ─── Variants ──────────────────────────────────────────────────────────────── */
+.elevated {
+  box-shadow: var(--shadow-card);
+}
+
+.flat {
+  box-shadow: none;
+}
+
+.outlined {
+  border-color: var(--color-border-default);
+  box-shadow: none;
+}
+
+.gradient-bg {
+  background-image: var(--gradient-brand);
+  color: var(--color-text-on-dark);
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+}
+
+.navy-translucent {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(5, 186, 254, 0.38);
+  box-shadow: var(--shadow-glow);
+  color: var(--color-text-on-dark);
+}
+
+/* ─── Interactive ───────────────────────────────────────────────────────────── */
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.interactive.outlined:hover {
+  border-color: var(--color-brand-card-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive:hover {
+    transform: none;
+  }
+}
+
+/* ─── Slots ─────────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.media {
+  margin: calc(var(--space-6) * -1);
+  margin-bottom: var(--space-4);
+  overflow: hidden;
+}
+
+.media :global(img),
+.media :global(video) {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}

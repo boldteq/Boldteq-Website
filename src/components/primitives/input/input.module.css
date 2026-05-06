@@ -1,0 +1,74 @@
+/* Input primitive */
+
+.input {
+  display: block;
+  width: 100%;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-m);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+  margin: 0;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus-visible {
+  border-color: var(--color-brand-cyan);
+  outline: 2px solid rgba(33, 207, 255, 0.3);
+  outline-offset: 0;
+}
+
+.input:disabled {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+.size-sm {
+  font-size: var(--text-sm);
+  line-height: 20px;
+  min-height: 40px;
+  padding: 8px 12px;
+}
+
+.size-md {
+  font-size: var(--text-sm);
+  line-height: 20px;
+  min-height: 55px;
+  padding: 8px 12px;
+}
+
+.size-lg {
+  font-size: var(--text-base);
+  line-height: 24px;
+  min-height: 64px;
+  padding: 12px 16px;
+}
+
+/* ─── Tone ──────────────────────────────────────────────────────────────────── */
+.tone-on-dark {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.tone-default {
+  background-color: var(--color-surface);
+}
+
+/* ─── Invalid ───────────────────────────────────────────────────────────────── */
+.invalid {
+  border-color: #ef4444;
+}
+
+.invalid:focus-visible {
+  border-color: #ef4444;
+  outline-color: rgba(239, 68, 68, 0.3);
+}

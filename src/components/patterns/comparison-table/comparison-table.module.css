@@ -1,0 +1,113 @@
+/* ComparisonTable pattern */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  width: 100%;
+  align-items: start;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Column ────────────────────────────────────────────────────────────────── */
+.col {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.col-left {
+  background-color: var(--color-surface-alt);
+}
+
+.col-right {
+  background-color: var(--color-text-primary);
+}
+
+/* ─── Heading bar ───────────────────────────────────────────────────────────── */
+.colHead {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.col-right .colHead {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.colHeading {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  margin: 0;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.col-right .colHeading {
+  color: var(--color-text-on-dark);
+}
+
+.colSubtext {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: var(--space-2) 0 0;
+}
+
+.col-right .colSubtext {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ─── Items list ────────────────────────────────────────────────────────────── */
+.items {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) 0;
+}
+
+.item {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.col-right .item {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.itemLabel {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.col-right .itemLabel {
+  color: var(--color-text-on-dark);
+}
+
+.itemDetail {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.col-right .itemDetail {
+  color: rgba(255, 255, 255, 0.65);
+}

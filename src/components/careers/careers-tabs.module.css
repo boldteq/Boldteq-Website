@@ -1,0 +1,611 @@
+/* ============================================================
+   CAREERS TABS — careers-tabs.module.css
+   Source: .career-tabs-sec, .career-tabs-menu, .career-tab-item
+   ============================================================ */
+
+/* career-tabs-sec.overflow-hidden */
+.section {
+  background-color: transparent;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* career-sec2-outer */
+.sectionOuter {
+  display: flex;
+  flex-flow: column;
+  gap: 40px;
+  align-items: center;
+}
+
+/* career-cont-center */
+.contCenter {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 720px;
+}
+
+.heading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  margin: 0;
+}
+
+/* career-tabs-menu (.career-tabs-sc sticky) — grid 4 columns */
+.tabNav {
+  display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  align-self: stretch;
+  background-color: var(--color-success-bg);
+  border-radius: 15px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+/* career-tab-item */
+.tabButton {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 15px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+/* career-tab-item.w--current */
+.tabButtonActive {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+/* career-tab-name */
+.tabButtonText {
+  color: var(--color-text-primary);
+  text-align: center;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}
+
+/* Tab content wrapper */
+.tabContent {
+  width: 100%;
+}
+
+.tabPane {
+  animation: fadeTabIn 0.22s ease-out;
+}
+
+@keyframes fadeTabIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── About & Culture sections ──
+   career-tabs-about-sec.overflow-hidden / career-tabs-culture-sec.overflow-hidden */
+.aboutSection {
+  padding-top: 90px;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+.cultureSection {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+/* career-about-tabc — 2-col grid */
+.aboutGrid {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+/* career-culture-tabc */
+.cultureGrid {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* career-about-images */
+.imagesFlex {
+  display: flex;
+  flex-flow: row;
+  gap: 16px;
+  overflow: hidden;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* cabout-img */
+.aboutImg {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 20px;
+  width: 48%;
+  height: auto;
+}
+
+/* cabout-img.second-ig */
+.aboutImgSecond {
+  margin-top: 40px;
+}
+
+/* cculture-img */
+.cultureImg {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 20px;
+  width: 48%;
+  height: auto;
+}
+
+/* cculture-img.first-ig */
+.cultureImgFirst {
+  margin-top: 40px;
+}
+
+/* cabout-text */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tabHeading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* max-width-small-3 */
+.textInner {
+  max-width: 500px;
+}
+
+.tabParagraph {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+/* a-gulf-book.white-on-hover.padding-right-more */
+.tabCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.5rem;
+  line-height: 1.75rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+  margin-top: 16px;
+  transition: opacity 0.2s;
+}
+
+.tabCta:hover {
+  opacity: 0.9;
+}
+
+/* ── Benefits section ──
+   career-tabs-benefits-sec.overflow-hidden */
+.benefitsSection {
+  background-image: url('/images/webflow/Rectangle-377.png');
+  background-position: 50% 0;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+/* cbenefit-outer */
+.benefitsOuter {
+  display: flex;
+  flex-flow: column;
+  gap: 40px;
+  align-items: center;
+}
+
+/* career-cont-center */
+.benefitsCenter {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0;
+}
+
+.benefitsHeader {
+  text-align: center;
+}
+
+/* career-dev-sec2-grid  → 4 cols */
+.benefitsGrid {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* career-benefit-grid */
+.benefitCard {
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 22px;
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+.benefitIcon {
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* heading-3-blue */
+.benefitTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.53rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.benefitText {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+}
+
+/* ── Opportunities section ──
+   career-tabs-opportunities-sec.overflow-hidden */
+.opportunitiesSection {
+  padding-top: 0;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+/* coppor-outer */
+.opportunitiesOuter {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.opportunitiesCenter {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.opportunitiesHeader {
+  text-align: center;
+}
+
+/* opportunities-wrapper-large */
+.jobWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 850px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* faq-item (.faq-item as job accordion) */
+.jobItem {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* faq-toggle */
+.jobToggle {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* faq-title-wrapper */
+.jobTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+/* coppo-faq */
+.jobMeta {
+  width: 90%;
+}
+
+/* h6-heading-3 */
+.jobTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+/* job-position */
+.jobType {
+  color: var(--color-brand-cyan);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+
+.jobArrow {
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.jobArrowOpen {
+  transform: rotate(180deg);
+}
+
+/* faq-content */
+.jobContent {
+  padding: 0 24px 24px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* paragraph-regular-5 / w-richtext */
+.jobDescription {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 20px 0 16px;
+}
+
+.jobSectionLabel {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+.jobList {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jobListItem {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.fallbackNote {
+  text-align: center;
+  color: var(--color-text-subtle);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 24px;
+}
+
+.fallbackLink {
+  color: var(--color-brand-blue);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.fallbackLink:hover {
+  color: var(--color-brand-cyan);
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .tabButtonText {
+    font-size: 18px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  /* career-tabs-sc.overflow-hidden hidden on mobile */
+  .tabNavWrapper {
+    display: none;
+  }
+
+  .aboutGrid,
+  .cultureGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* For culture: images go below text — reorder */
+  .cultureImagesOrder {
+    order: 1;
+  }
+
+  .tabHeading {
+    font-size: 34px;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .tabNav {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .tabHeading {
+    font-size: 28px;
+  }
+
+  .imagesFlex {
+    flex-wrap: wrap;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .jobTitleRow {
+    padding: 16px 20px;
+  }
+
+  .jobContent {
+    padding: 0 20px 20px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding: 20px 0 40px;
+  }
+
+  .tabNav {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .tabButtonText {
+    font-size: 14px;
+  }
+
+  .tabHeading {
+    font-size: 1.5rem;
+  }
+
+  .aboutImg,
+  .cultureImg {
+    width: 47%;
+  }
+
+  .tabCta {
+    width: 100%;
+    justify-content: center;
+  }
+}

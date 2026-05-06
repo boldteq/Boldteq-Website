@@ -1,0 +1,174 @@
+/* ============================================================
+   CAREERS SELECTION — careers-selection.module.css
+   Source: .career-sec2.overflow-hidden, .demodev-sec2-grid-inner
+   ============================================================ */
+
+/* career-sec2.overflow-hidden */
+.section {
+  background-color: transparent;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* career-sec2-outer */
+.outer {
+  display: flex;
+  flex-flow: column;
+  gap: 40px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* career-cont-center */
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+.heading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* max-width-small-3.center-text */
+.subtitleWrap {
+  max-width: 500px;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  margin: 0;
+}
+
+/* career-dev-sec2-grid — 4 columns */
+.grid {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+}
+
+/* demodev-sec2-grid-inner */
+.card {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(33, 207, 255, 0.3);
+  border-right: 1px solid rgba(33, 207, 255, 0.3);
+  border-radius: 0;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.cardIcon {
+  display: block;
+  margin-bottom: 20px;
+  width: 48px;
+  height: 48px;
+}
+
+/* heading-3-blue */
+.cardTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.53rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.cardText {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding-top: 16px;
+    padding-bottom: 50px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+}

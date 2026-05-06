@@ -1,0 +1,2 @@
+src/app/our-works/[slug]/case-study-layout.module.css
+src/components/our-works-detail/case-study-gallery.module.css

@@ -1,0 +1,751 @@
+/* Badge pill text */
+.badgePillText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 32px;
+}
+
+.newPriceSec {
+  background-color: #fff;
+  margin-bottom: 0;
+  padding: 80px 5% 20px;
+  display: block;
+  position: relative;
+}
+
+/* Pricing page variant: transparent bg + 4rem top padding */
+.newPriceSecPage {
+  background-color: transparent;
+  padding-top: 4rem;
+}
+
+.containerLarge3 {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.priceTitleGrid {
+  display: grid;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.maxWidthSmall4 {
+  width: 100%;
+  max-width: 550px;
+}
+
+.priceSubheadOut {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.pricesubott {
+  background-color: var(--color-cyan-tint);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  margin-bottom: 17px;
+  padding: 0 13px;
+  line-height: 14px;
+}
+
+.faqSkyText {
+  color: var(--color-brand-cyan);
+  text-transform: capitalize;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+}
+
+.heading2 {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  line-height: 45px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Pricing-page hero: larger h1 (Webflow .heading-2.pricing-ban-title) */
+.newPriceSecPage .heading2 {
+  font-size: 50px;
+  line-height: 1.05;
+}
+
+/* Hero h1 line-break: visible on desktop, hidden on mobile so sentences wrap naturally */
+.brDesktopOnly {
+  display: inline;
+}
+
+@media screen and (max-width: 767px) {
+  .brDesktopOnly {
+    display: none;
+  }
+}
+
+.paragraph {
+  color: #000;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Tabs menu */
+.pricingTabsMenuLarge {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  background-color: var(--color-brand-light-bg);
+  border-style: none;
+  border-color: var(--color-brand-card-hover);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  padding: 5px 7px;
+  display: inline-flex;
+  width: fit-content;
+}
+
+/* Wrapper to center the inline-flex tabs container */
+.pricingTabsMenuWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.pricingTabLink {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  color: #5b616e;
+  background-color: transparent;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 170px;
+  height: 45px;
+  padding: 8px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.pricingTabLink:hover {
+  color: #030711;
+  background-color: transparent;
+}
+
+.pricingTabLinkActive {
+  color: #082753;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 10px;
+  min-width: 170px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+}
+
+.priceTabText {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: 500;
+}
+
+.pricingBadge {
+  color: #18c958;
+  text-align: center;
+  background-color: rgba(39, 211, 102, 0.1);
+  background-image: none;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  display: block;
+}
+
+/* Pricing grid */
+.pricingGrid {
+  display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Cards */
+.pricingCard2 {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  background-color: var(--color-cyan-tint);
+  border: 1px solid rgba(33, 207, 255, 0.21);
+  border-radius: 8px;
+  flex-flow: column;
+  margin-top: 40px;
+  padding: 10px 10px 15px;
+  display: flex;
+}
+
+.pricingCard2WhiteCard {
+  background-color: #fff;
+  border-style: none;
+  border-radius: 15px;
+  margin-top: 42px;
+  box-shadow: var(--shadow-card);
+}
+
+.pricingCard2CenterPcard {
+  box-shadow: none;
+  background-color: #fff;
+  border-width: 3px;
+  border-color: var(--color-brand-cyan);
+  border-top-style: none;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-radius: 20px;
+  margin-top: 0;
+  padding-top: 50px;
+  position: relative;
+}
+
+/* Most popular banner */
+.pTopDv {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 43px;
+  padding: 10px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.mostPopular {
+  color: #fff;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Column inside card */
+.columnXSmall10 {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  display: flex;
+}
+
+.columnXSmall10CenterCol {
+  background-color: var(--color-cyan-tint);
+}
+
+.priceSubOtt {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.h6Heading5PlanName {
+  color: transparent;
+  letter-spacing: -0.02em;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 0;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.priceBadgeOut {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: center;
+  display: flex;
+}
+
+.h3Heading3 {
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.comparePrice {
+  color: rgba(8, 39, 83, 0.4);
+  align-self: center;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 17px;
+  line-height: 22px;
+  text-decoration: line-through;
+}
+
+.paragraphSmall27TextColorTertiary {
+  color: var(--color-text-primary);
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+.columnSmall5 {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.paragraphXSmall13TextColorTertiary {
+  color: var(--color-text-primary);
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pricingFeature {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.icon {
+  color: var(--color-brand-blue);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  display: flex;
+}
+
+.captionSmall2 {
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.buttonPricing {
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--color-text-primary);
+  border: 1px solid var(--color-text-primary);
+  border-radius: 10px;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  width: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 24px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.buttonPricing:hover,
+.buttonPricingSky {
+  color: #fff;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-color: var(--color-brand-cyan);
+}
+
+.buttonPricingSky:hover {
+  background-color: var(--color-text-primary);
+  background-image: none;
+  border-color: var(--color-text-primary);
+}
+
+/* Pricing table */
+.pricingTableWrapper {
+  margin-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Clip outer container so it doesn't bleed viewport — fixes horizontal-overflow audit */
+  max-width: 100%;
+}
+
+.pricingTable {
+  background-color: #f6fcfe;
+  border: 1px solid rgba(33, 207, 255, 0.21);
+  border-radius: 15px;
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: auto;
+  padding: 0 24px;
+}
+
+.pricingTableHeader {
+  color: var(--color-text-muted);
+  text-align: center;
+  border-bottom: 1px solid rgba(33, 207, 255, 0.21);
+  padding: 24px 12px;
+}
+
+.pricingTableHeaderLeft {
+  color: #ff4b0e;
+  text-align: left;
+  padding-top: 24px;
+  padding-left: 0;
+}
+
+.subheadingLarge7 {
+  color: var(--color-text-primary);
+  letter-spacing: 0;
+  -webkit-text-fill-color: inherit;
+  background-image: none;
+  background-clip: border-box;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.subheadingLarge7TextColorBrandOrange {
+  color: var(--color-brand-blue);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: 700;
+}
+
+.pricingHeaderLast {
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+
+.pricingTableCell {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: var(--color-text-muted);
+  text-align: center;
+  white-space: nowrap;
+  word-break: keep-all;
+  border-bottom: 1px solid rgba(33, 207, 255, 0.21);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 12px;
+  display: flex;
+}
+
+.pricingTableCellLeft {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  color: #000;
+  text-align: left;
+  border-bottom-color: rgba(33, 207, 255, 0.21);
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0;
+  position: relative;
+}
+
+.pricingTableCellNoBorder {
+  border-bottom-style: none;
+}
+
+.paragraphRegular14 {
+  color: var(--color-text-secondary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* Tooltip — rendered as <button> so :focus-visible reveals popover for keyboard users */
+.tooltip {
+  display: inline-block;
+  position: relative;
+  cursor: help;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-text-primary);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, bottom 0.25s ease;
+  z-index: 9999;
+  width: 200px;
+  text-align: center;
+}
+
+.tooltip:hover::after,
+.tooltip:focus-visible::after {
+  opacity: 1;
+  bottom: 90%;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 71%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-text-primary);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.tooltip:hover::before,
+.tooltip:focus-visible::before {
+  opacity: 1;
+}
+
+.tooltipIco {
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+}
+
+/* Fix #22: containerLarge3 max-width 1320px at 1440px (matches live) */
+@media screen and (min-width: 1440px) {
+  .containerLarge3 {
+    max-width: 1320px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* pricing-grid (1 class) → 1fr 1fr, but pricing-grid.new (2 classes) keeps 1fr 1fr 1fr via specificity */
+  /* Do NOT change pricingGrid columns here — the .new variant overrides anyway at desktop widths */
+  .pricingTable {
+    width: 1200px;
+  }
+
+  .paragraphRegular14 {
+    flex: 0 auto;
+    width: 100%;
+    display: block;
+  }
+
+  .pricingTableCell {
+    min-width: auto;
+  }
+
+  .pricingTableCellLeft {
+    width: auto;
+    min-width: auto;
+    max-width: none;
+    overflow: visible;
+  }
+
+  .h3Heading3 {
+    font-size: 23px;
+  }
+
+  .newPriceSec {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .newPriceSec {
+    margin-bottom: 0;
+    padding-top: 72px;
+    padding-bottom: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  /* Webflow line 27073: heading-2 at 767px → 34px */
+  .heading2 {
+    font-size: 34px;
+  }
+
+  /* pricing-grid.new explicitly sets 1fr at <=767px */
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .pricingCard2,
+  .pricingCard2WhiteCard {
+    margin-top: 0;
+  }
+
+  .paragraphRegular14 {
+    white-space: normal;
+  }
+
+  .pricingTable {
+    width: 690px;
+  }
+
+  .pricingTabLink {
+    min-width: 170px;
+  }
+
+  .h3Heading3 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .newPriceSec {
+    padding: 60px 3% 20px;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard2,
+  .pricingCard2WhiteCard {
+    margin-top: 0;
+  }
+
+  .paragraphRegular14 {
+    width: 100%;
+  }
+
+  .pricingTableCell {
+    min-width: auto;
+  }
+
+  /* Webflow line 30482: pricing-tabs-menu-large.center at 479px */
+  .pricingTabsMenuLarge {
+    align-self: auto;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Webflow line 30543: pricing-table.new at 479px */
+  .pricingTable {
+    width: 850px;
+  }
+
+  /* Webflow line 30547: pricing-tab-link-large at 479px */
+  .pricingTabLink,
+  .pricingTabLinkActive,
+  .pricingTabLinkMonthly {
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+    flex-flow: column;
+    min-width: auto;
+    padding: 4px 16px;
+  }
+
+  /* Webflow line 30555: pricing-tab-link-large.w--current at 479px */
+  .pricingTabLinkActive {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    min-width: auto;
+    height: auto;
+    padding-top: 2px;
+    padding-bottom: 6px;
+  }
+
+  /* Webflow line 30564: pricing-tab-link-large.montthly at 479px */
+  .pricingTabLinkMonthly {
+    min-width: auto;
+  }
+
+  /* Webflow line 31922: price-tab-text at 479px → font-size: 14px */
+  .priceTabText {
+    font-size: 14px;
+  }
+
+  /* Webflow line 29707: heading-2.margin-top-0 at 479px → 23px/30px */
+  .heading2 {
+    font-size: 23px;
+    line-height: 30px;
+  }
+
+  /* Fix #17: pricingBadge smaller horizontal padding at mobile */
+  .pricingBadge {
+    padding: 2px 4px;
+  }
+}

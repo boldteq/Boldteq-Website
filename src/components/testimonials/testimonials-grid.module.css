@@ -1,0 +1,103 @@
+/* ============================================================
+   TestimonialsGrid — testimonials-grid.module.css
+   Matches: .work-sec2 on testimonials.html
+   ============================================================ */
+
+.section {
+  background-color: #fff;
+  padding: 220px 5% 64px;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section heading */
+.titleWrap {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  text-align: center;
+  flex-flow: column;
+  margin-bottom: 60px;
+  display: flex;
+}
+
+.heading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* 3-column grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .section {
+    padding-top: 180px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-top: 180px;
+  }
+
+  .grid {
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .titleWrap {
+    margin-bottom: 60px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding-top: 40px;
+  }
+
+  .titleWrap {
+    margin-bottom: 40px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+}

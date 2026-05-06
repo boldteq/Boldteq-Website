@@ -1,0 +1,176 @@
+/* ============================================================
+   Button primitive — token-driven, replaces 5 hand-rolled variants
+   ============================================================ */
+
+.button {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-xl);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard),
+    background-image var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    opacity var(--duration-base) var(--ease-standard);
+  box-shadow: var(--shadow-button);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+.size-sm {
+  padding: 8px 16px;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  gap: var(--space-2);
+}
+
+.size-md {
+  padding: 12px 20px;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  gap: var(--space-2);
+}
+
+.size-lg {
+  padding: 16px 32px;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  gap: var(--space-3);
+}
+
+/* ─── Variant: primary (gradient + arrow icon — replaces .btn-primary / .a-gulf-book) */
+.primary {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-brand-dark);
+  background-image: var(--gradient-brand);
+}
+
+.primary:hover {
+  opacity: 0.88;
+}
+
+/* ─── Variant: secondary (outlined navy — replaces .button-secondary-large) */
+.secondary {
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border-color: var(--color-text-primary);
+}
+
+.secondary:hover {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-text-primary);
+}
+
+/* ─── Variant: outline (cyan tinted bg + gray border — replaces .a-except-get) */
+.outline {
+  color: var(--color-brand-dark);
+  background-color: rgba(33, 207, 255, 0.13);
+  border-color: #9ca3af;
+}
+
+.outline:hover {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-brand-navy);
+  border-color: var(--color-brand-dark);
+}
+
+/* ─── Variant: sky (gradient pill — replaces .sky-button) */
+.sky {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-text-primary);
+  background-image: var(--gradient-brand);
+}
+
+.sky:hover {
+  background-image: none;
+  background-color: var(--color-brand-blue);
+}
+
+/* ─── Variant: navy (solid navy — replaces .navy-button) */
+.navy {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-text-primary);
+}
+
+.navy:hover {
+  background-color: var(--color-brand-navy);
+}
+
+/* ─── Variant: white (white bg + brand-blue text + arrow — for dark section CTAs) */
+.white {
+  color: var(--color-brand-blue);
+  background-color: #fff;
+  border-color: transparent;
+}
+
+.white:hover {
+  opacity: 0.92;
+}
+
+/* ─── Variant: ghost (text-only — used for nav links) */
+.ghost {
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.ghost:hover {
+  background-color: var(--color-accent-bg);
+}
+
+/* ─── Modifiers ─────────────────────────────────────────────────────────────── */
+.full-width {
+  width: 100%;
+}
+
+.icon-left,
+.icon-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Built-in arrow on primary/outline variants */
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.button:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* Loading spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-pill);
+  animation: button-spin 0.6s linear infinite;
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

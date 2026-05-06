@@ -1,0 +1,762 @@
+/* ─── Section wrapper ─────────────────────────────────────────────────────── */
+
+.section {
+  background-color: var(--color-brand-light-bg);
+  padding: 80px 5%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.eyebrowBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  background-color: rgba(33, 207, 255, 0.08);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-brand-card-border);
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+}
+
+.title {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 580px;
+}
+
+.subtitle {
+  color: rgba(8, 39, 83, 0.55);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* ─── Preset buttons ─────────────────────────────────────────────────────── */
+
+.presets {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.presetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.presetBtn:hover {
+  border-color: var(--color-brand-card-border);
+  color: var(--color-brand-card-border);
+}
+
+.presetBtnActive {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-color: transparent;
+  color: #fff;
+}
+
+.presetBtnActive:hover {
+  color: #fff;
+  filter: brightness(1.06);
+}
+
+/* ─── Two-column layout ──────────────────────────────────────────────────── */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ─── Left panel ─────────────────────────────────────────────────────────── */
+
+.leftPanel {
+  background-color: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 24px rgba(8, 39, 83, 0.06);
+}
+
+.panelTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ─── Plan selection block ───────────────────────────────────────────────── */
+
+.planBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Billing toggle */
+.billingToggle {
+  display: flex;
+  background-color: var(--color-brand-light-bg);
+  border-radius: 10px;
+  padding: 5px 6px;
+  gap: 4px;
+}
+
+.billingBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 8px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.billingBtnActive {
+  background-color: #fff;
+  color: var(--color-text-primary);
+  box-shadow: 0 0 0 1px rgba(8, 39, 83, 0.08), 0 2px 8px rgba(8, 39, 83, 0.08);
+}
+
+.billingBadge {
+  background-color: rgba(24, 201, 88, 0.1);
+  border-radius: 5px;
+  color: #18c958;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  line-height: 18px;
+}
+
+/* Plan buttons */
+.planButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.planBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background-color: var(--color-brand-light-bg);
+  border: 1px solid #e8eaed;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  min-width: 0;
+}
+
+.planBtn:hover {
+  border-color: var(--color-brand-card-border);
+}
+
+.planBtnActive {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+}
+
+.planBtnActive:hover {
+  filter: brightness(1.1);
+}
+
+.planBtnName {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  transition: color 0.15s ease;
+}
+
+.planBtnActive .planBtnName {
+  color: #fff;
+}
+
+.planBtnPrice {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 11px;
+  color: rgba(8, 39, 83, 0.5);
+  transition: color 0.15s ease;
+}
+
+.planBtnActive .planBtnPrice {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Form fields ────────────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.fieldLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.badge {
+  background-color: var(--color-text-primary);
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-radius: 6px;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Range slider ───────────────────────────────────────────────────────── */
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  /* background is controlled via JS ref */
+  background: linear-gradient(to right, #019ae6 0%, #019ae6 50%, #e2e8f0 50%, #e2e8f0 100%);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-brand-blue);
+  box-shadow: 0 1px 4px rgba(1, 154, 230, 0.3);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border-color: var(--color-brand-cyan);
+  box-shadow: 0 0 0 4px rgba(33, 207, 255, 0.15);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-brand-blue);
+  box-shadow: 0 1px 4px rgba(1, 154, 230, 0.3);
+  cursor: pointer;
+}
+
+.sliderRange {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 11px;
+  color: rgba(8, 39, 83, 0.4);
+  margin-top: -4px;
+}
+
+/* ─── Dollar input ───────────────────────────────────────────────────────── */
+
+.dollarWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dollarSign {
+  position: absolute;
+  left: 12px;
+  color: rgba(8, 39, 83, 0.45);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  pointer-events: none;
+  user-select: none;
+}
+
+.dollarInput {
+  width: 100%;
+  padding: 10px 14px 10px 26px;
+  background-color: var(--color-brand-light-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  /* hide number spinner */
+  -moz-appearance: textfield;
+}
+
+.dollarInput::-webkit-outer-spin-button,
+.dollarInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dollarInput:focus {
+  border-color: var(--color-brand-blue);
+  box-shadow: 0 0 0 3px rgba(1, 154, 230, 0.12);
+  background-color: #fff;
+}
+
+/* ─── Tooltip ────────────────────────────────────────────────────────────── */
+
+.tooltipWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltipBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(8, 39, 83, 0.12);
+  border: none;
+  color: rgba(8, 39, 83, 0.5);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: help;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.tooltipBtn:hover {
+  background-color: rgba(1, 154, 230, 0.2);
+  color: var(--color-brand-blue);
+}
+
+.tooltipBubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-text-primary);
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 220px;
+  z-index: 20;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(8, 39, 83, 0.2);
+}
+
+.tooltipBubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-text-primary);
+}
+
+/* ─── Right panel ────────────────────────────────────────────────────────── */
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Hero savings card ──────────────────────────────────────────────────── */
+
+.heroCard {
+  background-image: linear-gradient(135deg, #019ae6, #082753);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.heroLabel {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.heroAmount {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.heroAmountPositive {
+  color: #fff;
+}
+
+.heroAmountNegative {
+  color: #fca5a5;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.roiPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.roiPillPositive {
+  background-color: rgba(24, 201, 88, 0.2);
+  color: #6ee7a0;
+}
+
+.roiPillNegative {
+  background-color: rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
+}
+
+.heroSubLabel {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* ─── Metrics grid ───────────────────────────────────────────────────────── */
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.metricCard {
+  background-color: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(8, 39, 83, 0.04);
+}
+
+.metricLabel {
+  color: rgba(8, 39, 83, 0.5);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metricValue {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.metricSub {
+  color: rgba(8, 39, 83, 0.4);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+/* ─── Plan summary ───────────────────────────────────────────────────────── */
+
+.planSummary {
+  background-color: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(8, 39, 83, 0.04);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.summaryLabel {
+  color: rgba(8, 39, 83, 0.65);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.summaryValue {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.summaryPositive {
+  color: #059669;
+}
+
+.summaryNegative {
+  color: #dc2626;
+}
+
+.summaryDivider {
+  border: none;
+  border-top: 1px solid #f0f2f5;
+}
+
+/* ─── CTA card ───────────────────────────────────────────────────────────── */
+
+.ctaCard {
+  background-color: var(--color-text-primary);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.ctaHeadline {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ctaHighlight {
+  color: var(--color-brand-cyan);
+}
+
+.ctaSubtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  width: 100%;
+  transition: filter 0.15s ease;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  filter: brightness(1.08);
+}
+
+.trustBadges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trustBadge {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+}
+
+.trustBadgeDot {
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rightPanel {
+    /* show results below inputs on narrow screens */
+    order: -1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 64px 5%;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .leftPanel {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+
+  .billingBtn {
+    font-size: 12px;
+    padding: 6px 6px;
+    gap: 4px;
+  }
+
+  .billingBadge {
+    font-size: 10px;
+  }
+
+  .planButtons {
+    flex-direction: column;
+  }
+
+  .planBtn {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heroCard {
+    padding: 24px 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .presets {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .presetBtn {
+    justify-content: center;
+  }
+
+  .billingToggle {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,192 @@
+/* ============================================================
+   CustomPlanCta — custom-plan-cta.module.css
+   Matches Webflow .blue-sec.pricing-blue-sec.margin-btm-0
+   + .book-section.remove-pattern + .heading-grid-small.margin-bottom-0
+   ============================================================ */
+
+/* blue-sec pricing-blue-sec margin-btm-0 */
+.section {
+  background-color: transparent;
+  margin-bottom: 0;
+  padding: 0 5%;
+  position: relative;
+}
+
+/* container-large-3 */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* book-section remove-pattern */
+.card {
+  background-color: var(--color-text-primary);
+  background-image: url('/images/webflow/Mask-group-1.png');
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-text-fill-color: inherit;
+  background-clip: border-box;
+  border-radius: 20px;
+  padding: 40px 20px 50px;
+}
+
+/* heading-grid-small margin-bottom-0 */
+.inner {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 1.25fr 0.25fr;
+  place-items: center stretch;
+  margin-bottom: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+}
+
+/* column-regular column-left */
+.content {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+/* heading-2 white margin-top-0 hd-s left-mob */
+.heading {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 52px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* paragraph white text-left */
+.subtitle {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* custom-plan-dlexdiv */
+.benefitsRow {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  flex-flow: wrap;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* white-li-icon */
+.benefitItem {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  color: #fff;
+  align-items: center;
+  margin-bottom: 2px;
+  display: flex;
+}
+
+/* li-check-sky */
+.checkWrap {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.checkIcon {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+/* paragraph-small white */
+.benefitText {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* sky-button */
+.ctaButton {
+  color: #fff;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .inner {
+    grid-template-columns: 1.25fr 0.4fr;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heading {
+    margin-top: 0;
+    font-size: 40px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .inner {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    flex-flow: column;
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .heading {
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .inner {
+    flex-flow: column;
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .heading {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+}

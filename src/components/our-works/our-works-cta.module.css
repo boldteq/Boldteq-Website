@@ -1,0 +1,201 @@
+/* ============================================================
+   OurWorksCta — matches Webflow .blue-sec + .book-section.remove-pattern
+   + .heading-grid-small.margin-bottom-0
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  margin-bottom: 70px;
+  padding: 0 5%;
+  position: relative;
+}
+
+.card {
+  background-color: var(--color-text-primary);
+  background-image: url('/images/webflow/Union.svg');
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-radius: 20px;
+  padding: 40px 20px 50px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* heading-grid-small.margin-bottom-0: 1.25fr .25fr, padding 0 30px */
+.inner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.25fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  place-items: center stretch;
+  margin-bottom: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+  margin: 0;
+  text-align: left;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+}
+
+/* Checkmark bullets (.custom-plan-dlexdiv flex-wrap) */
+.bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 15px;
+}
+
+.bullet {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bulletIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.bulletText {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* CTA buttons (._2-btns-grid) */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+/* Primary: .a-gulf-book.full-width (gradient with arrow) */
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-brand-navy);
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* Secondary: .white-btn (white bg with arrow) */
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-blue);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  background-color: #fff;
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-brand-blue);
+  color: #fff;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .heading {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .bullets {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .inner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

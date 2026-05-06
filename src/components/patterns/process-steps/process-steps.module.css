@@ -1,0 +1,100 @@
+/* ProcessSteps pattern */
+
+/* ─── numbered layout: vertical list with step numbers ─────────────────────── */
+
+.numbered {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.step-numbered {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+.numberBadge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  background-image: var(--gradient-brand);
+  color: var(--color-text-on-dark);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── screenshot layout: icon row + text + image below ──────────────────────── */
+
+.screenshot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.step-screenshot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.stepImage {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.stepImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Shared text ───────────────────────────────────────────────────────────── */
+
+.stepTitle {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+.stepDesc {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-base);
+  line-height: 28px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .step-numbered {
+    grid-template-columns: 40px 1fr;
+    gap: var(--space-3);
+  }
+
+  .numberBadge {
+    width: 40px;
+    height: 40px;
+    font-size: var(--text-base);
+  }
+
+  .stepTitle {
+    font-size: var(--text-md);
+  }
+}

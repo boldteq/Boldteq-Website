@@ -1,0 +1,357 @@
+/* ============================================================
+   BetaPricing — beta-pricing.module.css
+   Matches Webflow beta.html pricing section
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  padding: 0 5% 4rem;
+  display: block;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.titleGrid {
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.maxWidth {
+  width: 100%;
+  max-width: 550px;
+}
+
+.badgeRow {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.badge {
+  background-color: var(--color-accent-bg);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  margin-bottom: 17px;
+  padding: 0 13px;
+  line-height: 14px;
+}
+
+.badgeText {
+  color: var(--color-brand-cyan);
+  text-transform: capitalize;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.heading {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  line-height: 45px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  color: #000;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* Cards grid — 2 plan cards + 2 info cards */
+.grid {
+  display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 5px;
+}
+
+/* Plan card (shared) */
+.card {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  flex-flow: column;
+  margin-top: 42px;
+  padding: 10px 10px 15px;
+  display: flex;
+  box-shadow: var(--shadow-card);
+}
+
+.cardPopular {
+  background-color: #fff;
+  border: 3px solid var(--color-brand-cyan);
+  border-top: none;
+  border-radius: 20px;
+  margin-top: 0;
+  padding-top: 50px;
+  position: relative;
+  box-shadow: none;
+}
+
+/* Most popular banner */
+.popularBanner {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 43px;
+  padding: 10px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.popularText {
+  color: #fff;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Card inner */
+.cardInner {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  background-color: var(--color-cyan-tint);
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  display: flex;
+}
+
+.planName {
+  color: transparent;
+  letter-spacing: -0.02em;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.priceRow {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: center;
+  display: flex;
+}
+
+.price {
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tagline {
+  color: var(--color-text-primary);
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* Features list */
+.featuresWrapper {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.featuresLabel {
+  color: var(--color-text-primary);
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.feature {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.checkIcon {
+  color: var(--color-brand-blue);
+  flex: none;
+  padding-top: 5px;
+}
+
+.featureText {
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* CTA button */
+.cta {
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--color-text-primary);
+  border: 1px solid var(--color-text-primary);
+  border-radius: 10px;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 24px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-color: var(--color-brand-cyan);
+}
+
+.ctaSky {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-color: var(--color-brand-cyan);
+}
+
+.ctaSky:hover {
+  background-color: var(--color-text-primary);
+  background-image: none;
+  border-color: var(--color-text-primary);
+}
+
+.caption {
+  color: var(--color-text-secondary);
+  text-align: center;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+/* Info cards (bug report, add-on hours) */
+.infoCard {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  flex-flow: column;
+  margin-top: 16px;
+  padding: 10px 10px 15px;
+  display: flex;
+  box-shadow: var(--shadow-card);
+}
+
+.infoCardInner {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  display: flex;
+}
+
+.infoIcon {
+  color: transparent;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.infoTitle {
+  color: var(--color-text-primary);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.infoText {
+  color: var(--color-text-primary);
+  text-align: left;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .price {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    margin-top: 0;
+  }
+
+  .price {
+    font-size: 30px;
+  }
+}

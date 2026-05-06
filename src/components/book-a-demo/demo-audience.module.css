@@ -1,0 +1,137 @@
+/* ============================================================
+   DEMO AUDIENCE — demo-audience.module.css
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  padding: 0 5%;
+  position: relative;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  background-color: var(--color-text-primary);
+  border-radius: 20px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  place-items: start stretch;
+}
+
+/* Left column */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* Right column */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightLabel {
+  color: var(--color-brand-cyan);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.tickWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefitText {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .content {
+    padding: 36px 24px;
+    grid-column-gap: 28px;
+    grid-row-gap: 28px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .content {
+    padding: 28px 20px;
+  }
+
+  .heading {
+    font-size: 1.375rem;
+  }
+}

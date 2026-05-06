@@ -1,0 +1,232 @@
+/* ============================================================
+   BlogCard — blog-card.module.css
+   Webflow structure: .content_card-blog (image-only card, 240px)
+   + sibling .content_card-block-blog (text body)
+   See boldteq-v1-0.webflow/blog.html L495-L509 +
+   webflow.css L17957-L17990
+   ============================================================ */
+
+/* Wrapper article — flex column, no border (matches .w-dyn-item) */
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* content_card-blog — image card */
+.imageCard {
+  background-color: transparent;
+  border: 1px solid rgba(33, 207, 255, 0.23);
+  border-radius: 20px;
+  width: 100%;
+  height: 240px;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+.imageCard:hover {
+  box-shadow: 0 4px 20px rgba(9, 34, 69, 0.12);
+}
+
+/* cms-link.blog-link → image link area (fills imageCard interior) */
+.imageLink {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* content_card-image-blog */
+.image {
+  object-fit: cover;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.imageCard:hover .image {
+  transform: scale(1.03);
+}
+
+/* content_card-block-blog — sibling body */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 10px;
+  padding: 0.5rem 0 0;
+}
+
+/* content_card-header — flex row: title left, cat right */
+.header {
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.titleLink:hover .title {
+  color: var(--color-brand-blue);
+}
+
+/* content_card-title.blog-post-title */
+.title {
+  color: var(--color-text-primary);
+  text-align: left;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 35px;
+  margin: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* blog-cat-name (gradient, right-aligned in header row) */
+.category {
+  color: transparent;
+  background-image: linear-gradient(#21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: right;
+  margin: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* paragraph.text-left.blog-desc */
+.description {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 28px;
+  text-align: left;
+  margin: 4px 0 0;
+}
+
+/* a-gulf-book.blog-read-btn */
+.readBtn {
+  color: #fff;
+  width: auto;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  background-color: var(--color-brand-dark);
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease;
+}
+
+.readBtn:hover {
+  background-color: var(--color-brand-navy);
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .imageCard {
+    height: 270px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .imageCard {
+    height: 270px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px  (tablet)
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .imageCard {
+    height: 220px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px  (mobile portrait)
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .imageCard {
+    height: 240px;
+  }
+
+  .body {
+    padding-bottom: 0;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (small mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .imageCard {
+    height: 200px;
+  }
+
+  .body {
+    padding: 10px 0 0;
+  }
+
+  .header {
+    /* Title stacks above category on tiny screens */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .category {
+    text-align: left;
+  }
+}

@@ -1,0 +1,78 @@
+/* Stat — icon + label (+ optional value) */
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  color: var(--color-text-primary);
+}
+
+/* ─── Variants ──────────────────────────────────────────────────────────────── */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-l);
+  padding: 13px 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.inline {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.gradient {
+  background-image: var(--gradient-brand);
+  color: var(--color-text-on-dark);
+  border-radius: var(--radius-l);
+  padding: 13px 20px;
+  box-shadow: var(--shadow-card-cyan);
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+.size-sm {
+  font-size: var(--text-sm);
+  gap: var(--space-2);
+}
+
+.size-md {
+  font-size: var(--text-base);
+  gap: var(--space-3);
+}
+
+.size-lg {
+  font-size: var(--text-md);
+  gap: var(--space-4);
+}
+
+/* ─── Sub-elements ──────────────────────────────────────────────────────────── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.value {
+  font-weight: var(--weight-bold);
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+.label {
+  font-weight: var(--weight-medium);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.gradient .label,
+.gradient .value {
+  color: var(--color-text-on-dark);
+}

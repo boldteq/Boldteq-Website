@@ -1,0 +1,121 @@
+/* ============================================================
+   PortfolioCard — matches Webflow .content_card exactly
+   Live cards: 480x470 at 1440px, image 460x450
+   ============================================================ */
+
+.card {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid rgba(33, 207, 255, 0.23);
+  border-radius: 20px;
+  width: 100%;
+  min-height: 310px;
+  padding: 10px;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  align-items: start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(9, 34, 69, 0.14);
+}
+
+/* Image wrapper — uses position relative for next/image fill */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.image {
+  object-fit: cover;
+  object-position: 50% 0%;
+  border-radius: 15px;
+}
+
+/* Category badge — top left */
+.categoryBadge {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  z-index: 2;
+  color: var(--color-text-primary);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* Eye icon — bottom right */
+.eyeIcon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  background-color: rgba(8, 39, 83, 0.26);
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+/* ============================================================
+   Responsive — matching Webflow breakpoints exactly
+   ============================================================ */
+
+/* >= 1280px: image 400px */
+@media screen and (min-width: 1280px) {
+  .imageWrapper {
+    height: 400px;
+  }
+
+  .card {
+    align-items: start;
+    min-height: auto;
+  }
+}
+
+/* >= 1440px: image 450px */
+@media screen and (min-width: 1440px) {
+  .imageWrapper {
+    height: 450px;
+  }
+
+  .card {
+    align-items: start;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+}
+
+/* <= 991px */
+@media screen and (max-width: 991px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* <= 479px */
+@media screen and (max-width: 479px) {
+  .imageWrapper {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}

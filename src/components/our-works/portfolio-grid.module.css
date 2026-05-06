@@ -1,0 +1,404 @@
+/* ============================================================
+   PortfolioGrid — matches Webflow our-works.html exactly
+   Live site: container 1300px, grid 305px+975px, cards 480x470
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  padding: 0 3% 60px;
+  display: block;
+  position: relative;
+}
+
+.container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Filter header bar (search + tags) ---------- */
+/* Webflow .filter_header: grid-template-columns: minmax(260px,260px) 1fr auto, padding .5rem 0 2rem */
+.filterHeader {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: minmax(260px, 260px) 1fr auto;
+  align-items: center;
+  min-height: 4.5rem;
+  padding: 0.5rem 0 2rem;
+}
+
+/* Live: font-size 1rem, padding 1rem 1.5rem 1rem 1rem */
+.searchField {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  width: 100%;
+  min-height: 45px;
+  padding: 1rem 1.5rem 1rem 1rem;
+  border: 1px solid rgba(33, 207, 255, 0.23);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%236b7280' stroke-width='2'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65' stroke='%236b7280' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 94% center;
+  background-size: 1.5rem;
+  transition: border-color 0.15s ease;
+}
+
+.searchField::placeholder { color: #9ca3af; }
+.searchField:focus { border-color: var(--color-brand-cyan); }
+.searchField::-webkit-search-cancel-button { display: none; }
+
+/* Filter tags area */
+.tagsArea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tagsLabel {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.activeTag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-text-primary);
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border-radius: 10px;
+  position: relative;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.activeTagClose {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.activeTagClose:hover { opacity: 1; }
+
+/* ---------- Sidebar + Cards grid ---------- */
+/* Webflow .filter_grid: .4fr 1fr at base, minmax(305px,305px) 1fr at >=1280px */
+.filterGrid {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-items: start;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 100px;
+}
+
+/* Webflow .filter_block-header.margin-top-0: padding .5rem .8rem .5rem .8rem */
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.8rem;
+  flex-direction: row;
+  position: relative;
+  z-index: 10;
+}
+
+/* Webflow .filter-bar-title: font-size 18px, color #092245 */
+.categoryTitle {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  margin: 0;
+  text-align: left;
+  margin-top: 0;
+}
+
+.clearBtn {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Checkbox row — Live: .checkbox_label font-size 14px */
+.checkboxLabel {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.checkboxInput {
+  color: #dadada;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 0.75rem 0 0;
+  appearance: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: background-color 0.12s, border-color 0.12s;
+}
+
+.checkboxInput:checked {
+  background-color: var(--color-brand-blue);
+  border-color: var(--color-brand-cyan);
+}
+
+.checkboxInput:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Coming Soon — Live: .checkbox_label.cmg-soon opacity 0.5, .checkbox_input.cg-soon opacity 0.8 */
+.comingSoonLabel {
+  composes: checkboxLabel;
+}
+
+.comingSoonText {
+  opacity: 0.5;
+  margin-right: 0.5rem;
+}
+
+.comingSoonCheckbox {
+  composes: checkboxInput;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.comingSoonBadge {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-brand-blue);
+  background-color: rgba(1, 154, 230, 0.1);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ---------- Card grid (2 columns) ---------- */
+.cardGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 24px;
+}
+
+/* ---------- Empty state ---------- */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background-color: #ecf7fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-blue);
+  margin-bottom: 20px;
+}
+
+.emptyTitle {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  margin: 0 0 8px;
+}
+
+.emptyDesc {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  color: var(--color-text-subtle);
+  margin: 0 0 24px;
+  max-width: 320px;
+}
+
+.emptyBtn {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #21cfff, #019ae6);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 10px 24px;
+  cursor: pointer;
+}
+
+.emptyBtn:hover { filter: brightness(1.08); }
+
+/* ---------- Pagination ---------- */
+/* Live: 44px buttons, #1a3a6e active, white+shadow inactive */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.pageBtn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
+  border: 1px solid rgba(33, 207, 255, 0.23);
+  cursor: pointer;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  background: #fff;
+  color: #2b2b2b;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pageBtn:hover:not(.pageBtnActive):not(:disabled) {
+  background-color: #f0f7ff;
+}
+
+.pageBtnActive {
+  background: #3c7c43;
+  border-color: #3c7c43;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Responsive — exact Webflow breakpoints
+   ============================================================ */
+
+/* min-width 1280px */
+@media screen and (min-width: 1280px) {
+  .filterHeader {
+    grid-template-columns: minmax(305px, 305px) 1fr auto;
+  }
+
+  .filterGrid {
+    grid-template-columns: minmax(305px, 305px) 1fr;
+  }
+}
+
+/* max-width 991px */
+@media screen and (max-width: 991px) {
+  .filterHeader {
+    grid-template-columns: 0.5fr 1fr auto;
+  }
+
+  .filterGrid {
+    grid-column-gap: 1rem;
+    grid-template-columns: 0.35fr 1fr;
+  }
+}
+
+/* max-width 767px */
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 20px 5% 60px;
+  }
+
+  .filterHeader {
+    flex-flow: row;
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 16px;
+  }
+}
+
+/* max-width 479px */
+@media screen and (max-width: 479px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,287 @@
+/* ============================================================
+   PortfolioFilter — Sidebar (matches Webflow .filter_column)
+   ============================================================ */
+
+.sidebar {
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 100px;
+}
+
+/* ---------- Search ---------- */
+.searchBlock {
+  margin-bottom: 12px;
+}
+
+.searchField {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-brand-navy);
+  width: 100%;
+  min-height: 45px;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid rgba(33, 207, 255, 0.23);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%236b7280' stroke-width='2'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65' stroke='%236b7280' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 94% center;
+  transition: border-color 0.15s ease;
+}
+
+.searchField::placeholder {
+  color: #9ca3af;
+}
+
+.searchField:focus {
+  border-color: var(--color-brand-cyan);
+}
+
+.searchField::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* ---------- Active filter tags ---------- */
+.tagsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tagsLabel {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.activeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-text-primary);
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border-radius: 10px;
+  position: relative;
+  cursor: default;
+}
+
+.activeTagRemove {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.activeTagRemove:hover {
+  opacity: 1;
+}
+
+/* ---------- Sort dropdown ---------- */
+.sortBlock {
+  margin-bottom: 12px;
+}
+
+.sortSelect {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid rgba(33, 207, 255, 0.29);
+  border-radius: 10px;
+  min-width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 1.2rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.sortSelect:focus {
+  border-color: var(--color-brand-cyan);
+}
+
+/* ---------- Results count ---------- */
+.resultsBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px;
+  margin-bottom: 8px;
+}
+
+.resultsText {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.resultsCount {
+  color: #18c958;
+  font-weight: 600;
+}
+
+.itemsCount {
+  font-weight: 600;
+}
+
+.resetAll {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-brand-blue);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.resetAll:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Category header ---------- */
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px 4px;
+  margin-bottom: 4px;
+}
+
+.categoryTitle {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.clearBtn {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-brand-blue);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.clearBtn:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Checkbox categories ---------- */
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: background-color 0.12s ease;
+  user-select: none;
+}
+
+.checkboxLabel:hover {
+  background-color: var(--color-brand-light-bg);
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid #d1d5db;
+  appearance: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.checkboxInput:checked {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+}
+
+.checkboxInput:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxCount {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-left: auto;
+}
+
+/* ---------- Coming Soon items ---------- */
+.comingSoonLabel {
+  composes: checkboxLabel;
+  opacity: 0.5;
+  cursor: default;
+}
+
+.comingSoonLabel:hover {
+  background-color: transparent;
+}
+
+.comingSoonBadge {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-brand-blue);
+  background-color: rgba(1, 154, 230, 0.1);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .sidebar {
+    position: static;
+  }
+}

@@ -1,0 +1,808 @@
+[
+  {
+    "viewport": "1440",
+    "sections": [
+      {
+        "id": "hero",
+        "label": "Hero",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 6,
+          "dw": 0,
+          "dh": 33.7
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1099px",
+            "local": "1132.7px"
+          }
+        }
+      },
+      {
+        "id": "carousel",
+        "label": "Portfolio Carousel",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 39.7,
+          "dw": 0,
+          "dh": 112.9
+        },
+        "computedDiff": {
+          "height": {
+            "live": "492.953px",
+            "local": "605.891px"
+          }
+        }
+      },
+      {
+        "id": "pain",
+        "label": "Pain Points",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 132.6,
+          "dw": 0,
+          "dh": 22.1
+        },
+        "computedDiff": {
+          "height": {
+            "live": "804.75px",
+            "local": "826.812px"
+          }
+        }
+      },
+      {
+        "id": "resolution",
+        "label": "Resolution Banner",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 154.7,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {
+          "padding": {
+            "live": "0px 72px",
+            "local": "26px 72px 0px"
+          }
+        }
+      },
+      {
+        "id": "built-for",
+        "label": "Built For",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 154.7,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {
+          "padding": {
+            "live": "60px 72px 0px",
+            "local": "60px 72px 38px"
+          }
+        }
+      },
+      {
+        "id": "benefits",
+        "label": "Benefits Grid",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 154.7,
+          "dw": 0,
+          "dh": -19.2
+        },
+        "computedDiff": {
+          "height": {
+            "live": "936.266px",
+            "local": "917.094px"
+          }
+        }
+      },
+      {
+        "id": "how-it-works",
+        "label": "How It Works",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 135.5,
+          "dw": 0,
+          "dh": 191.4
+        },
+        "computedDiff": {
+          "height": {
+            "live": "522px",
+            "local": "713.422px"
+          }
+        }
+      },
+      {
+        "id": "pricing",
+        "label": "Pricing",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 327,
+          "dw": 0,
+          "dh": 41
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1578.8px",
+            "local": "1619.8px"
+          }
+        }
+      },
+      {
+        "id": "comparison",
+        "label": "Comparison",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 317,
+          "dw": 0,
+          "dh": -36
+        },
+        "computedDiff": {
+          "height": {
+            "live": "695px",
+            "local": "659px"
+          }
+        }
+      },
+      {
+        "id": "faq",
+        "label": "FAQ",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 281,
+          "dw": 0,
+          "dh": 1.2
+        },
+        "computedDiff": {
+          "height": {
+            "live": "749.5px",
+            "local": "750.688px"
+          }
+        }
+      },
+      {
+        "id": "footer",
+        "label": "Footer",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 282.1,
+          "dw": 0,
+          "dh": -4
+        },
+        "computedDiff": {
+          "height": {
+            "live": "539px",
+            "local": "535px"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "viewport": "1280",
+    "sections": [
+      {
+        "id": "hero",
+        "label": "Hero",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 6,
+          "dw": 0,
+          "dh": 33.7
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1099px",
+            "local": "1132.7px"
+          }
+        }
+      },
+      {
+        "id": "carousel",
+        "label": "Portfolio Carousel",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 39.7,
+          "dw": 0,
+          "dh": 124
+        },
+        "computedDiff": {
+          "height": {
+            "live": "476px",
+            "local": "600px"
+          }
+        }
+      },
+      {
+        "id": "pain",
+        "label": "Pain Points",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 143.7,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {}
+      },
+      {
+        "id": "resolution",
+        "label": "Resolution Banner",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 143.7,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {
+          "padding": {
+            "live": "0px 64px",
+            "local": "26px 64px 0px"
+          }
+        }
+      },
+      {
+        "id": "built-for",
+        "label": "Built For",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 143.7,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {
+          "padding": {
+            "live": "60px 64px 0px",
+            "local": "60px 64px 38px"
+          }
+        }
+      },
+      {
+        "id": "benefits",
+        "label": "Benefits Grid",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 143.7,
+          "dw": 0,
+          "dh": -19.2
+        },
+        "computedDiff": {
+          "height": {
+            "live": "905.766px",
+            "local": "886.609px"
+          }
+        }
+      },
+      {
+        "id": "how-it-works",
+        "label": "How It Works",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 124.5,
+          "dw": 0,
+          "dh": 170
+        },
+        "computedDiff": {
+          "height": {
+            "live": "522px",
+            "local": "692.031px"
+          }
+        }
+      },
+      {
+        "id": "pricing",
+        "label": "Pricing",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 294.6,
+          "dw": 0,
+          "dh": 41
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1578.8px",
+            "local": "1619.8px"
+          }
+        }
+      },
+      {
+        "id": "comparison",
+        "label": "Comparison",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 284.6,
+          "dw": 0,
+          "dh": -36
+        },
+        "computedDiff": {
+          "height": {
+            "live": "707px",
+            "local": "671px"
+          }
+        }
+      },
+      {
+        "id": "faq",
+        "label": "FAQ",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 248.6,
+          "dw": 0,
+          "dh": -24
+        },
+        "computedDiff": {
+          "height": {
+            "live": "774.688px",
+            "local": "750.688px"
+          }
+        }
+      },
+      {
+        "id": "footer",
+        "label": "Footer",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 224.6,
+          "dw": 0,
+          "dh": -4
+        },
+        "computedDiff": {
+          "height": {
+            "live": "563px",
+            "local": "559px"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "viewport": "768",
+    "sections": [
+      {
+        "id": "hero",
+        "label": "Hero",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 6,
+          "dw": 0,
+          "dh": 40.2
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1017px",
+            "local": "1057.2px"
+          }
+        }
+      },
+      {
+        "id": "carousel",
+        "label": "Portfolio Carousel",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 46.2,
+          "dw": 0,
+          "dh": 98
+        },
+        "computedDiff": {
+          "height": {
+            "live": "509.828px",
+            "local": "607.828px"
+          }
+        }
+      },
+      {
+        "id": "pain",
+        "label": "Pain Points",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 144.2,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {}
+      },
+      {
+        "id": "resolution",
+        "label": "Resolution Banner",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 144.2,
+          "dw": 0,
+          "dh": 14
+        },
+        "computedDiff": {
+          "height": {
+            "live": "397px",
+            "local": "411px"
+          }
+        }
+      },
+      {
+        "id": "built-for",
+        "label": "Built For",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 158.2,
+          "dw": 0,
+          "dh": -3
+        },
+        "computedDiff": {
+          "padding": {
+            "live": "60px 38.3906px 0px",
+            "local": "60px 38.3906px 38px"
+          },
+          "height": {
+            "live": "535px",
+            "local": "532px"
+          }
+        }
+      },
+      {
+        "id": "benefits",
+        "label": "Benefits Grid",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 155.2,
+          "dw": 0,
+          "dh": 4.3
+        },
+        "computedDiff": {
+          "height": {
+            "live": "843.953px",
+            "local": "848.234px"
+          }
+        }
+      },
+      {
+        "id": "how-it-works",
+        "label": "How It Works",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 159.5,
+          "dw": 0,
+          "dh": 95.6
+        },
+        "computedDiff": {
+          "height": {
+            "live": "568px",
+            "local": "663.578px"
+          }
+        }
+      },
+      {
+        "id": "pricing",
+        "label": "Pricing",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 255.1,
+          "dw": 0,
+          "dh": 45
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1589.39px",
+            "local": "1634.39px"
+          }
+        }
+      },
+      {
+        "id": "comparison",
+        "label": "Comparison",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 217.1,
+          "dw": 0,
+          "dh": 9
+        },
+        "computedDiff": {
+          "height": {
+            "live": "913px",
+            "local": "922px"
+          }
+        }
+      },
+      {
+        "id": "faq",
+        "label": "FAQ",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 226.1,
+          "dw": 0,
+          "dh": -75.5
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1002.5px",
+            "local": "927px"
+          }
+        }
+      },
+      {
+        "id": "footer",
+        "label": "Footer",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 150.6,
+          "dw": 0,
+          "dh": 10.8
+        },
+        "computedDiff": {
+          "height": {
+            "live": "854px",
+            "local": "864.797px"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "viewport": "375",
+    "sections": [
+      {
+        "id": "hero",
+        "label": "Hero",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 3,
+          "dw": 0,
+          "dh": 87.4
+        },
+        "computedDiff": {
+          "height": {
+            "live": "868.531px",
+            "local": "955.906px"
+          }
+        }
+      },
+      {
+        "id": "carousel",
+        "label": "Portfolio Carousel",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 90.4,
+          "dw": 0,
+          "dh": 74
+        },
+        "computedDiff": {
+          "height": {
+            "live": "503.562px",
+            "local": "577.562px"
+          }
+        }
+      },
+      {
+        "id": "pain",
+        "label": "Pain Points",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 164.4,
+          "dw": 0,
+          "dh": 28
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1941.58px",
+            "local": "1969.58px"
+          }
+        }
+      },
+      {
+        "id": "resolution",
+        "label": "Resolution Banner",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 192.4,
+          "dw": 0,
+          "dh": 15.2
+        },
+        "computedDiff": {
+          "height": {
+            "live": "497.469px",
+            "local": "512.641px"
+          }
+        }
+      },
+      {
+        "id": "built-for",
+        "label": "Built For",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 207.5,
+          "dw": 0,
+          "dh": 0
+        },
+        "computedDiff": {
+          "padding": {
+            "live": "0px 18.75px 60px",
+            "local": "0px 18.75px 80px"
+          }
+        }
+      },
+      {
+        "id": "benefits",
+        "label": "Benefits Grid",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 207.5,
+          "dw": 0,
+          "dh": 41.5
+        },
+        "computedDiff": {
+          "height": {
+            "live": "759.594px",
+            "local": "801.125px"
+          }
+        }
+      },
+      {
+        "id": "how-it-works",
+        "label": "How It Works",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 249.1,
+          "dw": 0,
+          "dh": 488.8
+        },
+        "computedDiff": {
+          "height": {
+            "live": "840px",
+            "local": "1328.83px"
+          }
+        }
+      },
+      {
+        "id": "pricing",
+        "label": "Pricing",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 737.9,
+          "dw": 0,
+          "dh": 198.2
+        },
+        "computedDiff": {
+          "height": {
+            "live": "2245.17px",
+            "local": "2443.39px"
+          }
+        }
+      },
+      {
+        "id": "comparison",
+        "label": "Comparison",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 935.1,
+          "dw": 0,
+          "dh": 20
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1568px",
+            "local": "1588px"
+          }
+        }
+      },
+      {
+        "id": "faq",
+        "label": "FAQ",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 955.1,
+          "dw": 0,
+          "dh": 3
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1159.81px",
+            "local": "1162.81px"
+          }
+        }
+      },
+      {
+        "id": "footer",
+        "label": "Footer",
+        "liveFound": true,
+        "localFound": true,
+        "bboxDelta": {
+          "dx": 0,
+          "dy": 958.1,
+          "dw": 0,
+          "dh": 10.8
+        },
+        "computedDiff": {
+          "height": {
+            "live": "1128px",
+            "local": "1138.8px"
+          }
+        }
+      }
+    ]
+  }
+]

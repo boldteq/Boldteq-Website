@@ -1,0 +1,100 @@
+/* ============================================================
+   CaseStudyGallery — matches Webflow work-page-right + work-gallery-wrapper
+   ============================================================ */
+
+/* work-page-right */
+.gallery {
+  background-color: var(--color-brand-light-bg);
+  width: 100%;
+  padding: 40px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* work-gallery-wrapper */
+.galleryWrapper {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  flex-flow: column;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+}
+
+/* work-slide (main — flex: 1) */
+.mainSlide {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* work-slide-image (main) */
+.mainImg {
+  object-fit: cover;
+  object-position: 50% 0%;
+  border-radius: 20px;
+  filter: drop-shadow(0 0px 3px rgba(0, 0, 0, 0.2));
+}
+
+/* work-gallery-thumbs */
+.thumbnails {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* work-slide.thumb-slidee */
+.thumb {
+  flex: 1;
+  max-width: 33.33%;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s ease;
+}
+
+.thumbActive {
+  border-color: var(--color-brand-cyan);
+}
+
+/* work-slide-image.thumb */
+.thumbImg {
+  object-fit: cover;
+  object-position: 50% 0%;
+  border-radius: 15px;
+  filter: drop-shadow(0 0px 3px rgba(0, 0, 0, 0.2));
+}
+
+/* ============================================================
+   max-width: 991px — right panel becomes static, height: 50vh
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .gallery {
+    height: 50vh;
+    position: static;
+    top: auto;
+    overflow: auto;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .gallery {
+    padding: 30px;
+  }
+
+  .thumb {
+    height: 70px;
+  }
+}

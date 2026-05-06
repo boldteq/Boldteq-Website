@@ -1,0 +1,222 @@
+/* ============================================================
+   BETA HOW IT WORKS — beta-how-it-works.module.css
+   Matches Webflow .section-regular-3.blue-sec.makeit-sec (beta)
+   ============================================================ */
+
+.section {
+  background-color: var(--color-text-primary);
+  padding: 70px 5% 80px;
+  position: relative;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* how-work-tag-badge */
+.tagBadgeWrap {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* how-work-badge */
+.tagBadge {
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  padding: 0 13px;
+  line-height: 32px;
+}
+
+.badgeInner {
+  margin: 0;
+  font-size: 12px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  line-height: 32px;
+}
+
+/* faq-sky-text gradient */
+.badgeText {
+  color: var(--color-brand-cyan);
+  text-transform: capitalize;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+}
+
+/* heading-2 margin-bottom-24px white-heading */
+.heading {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* paragraph white opacity */
+.subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* feature-grid margin-top-40px */
+.featureGrid {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  margin-top: 40px;
+  display: grid;
+}
+
+/* feature-card space-between blue padding-btm */
+.featureCard {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align: center;
+  background-color: var(--color-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 20px;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 17px 25px;
+  text-decoration: none;
+  display: flex;
+}
+
+/* text-wrapper */
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* subheading-large white */
+.cardTitle {
+  color: #fff;
+  letter-spacing: -0.02em;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+
+/* paragraph-small-2 margin-bottom-20px white opacity */
+.cardText {
+  color: #fff;
+  opacity: 0.8;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+/* inner-badge */
+.innerBadge {
+  background-color: var(--color-accent-bg);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  margin-bottom: 0;
+  padding: 0 13px;
+  line-height: 14px;
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.innerBadgeInner {
+  margin: 0;
+  font-size: 12px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  line-height: 14px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* inn-badge-text — color not gradient per Webflow .inn-badge-text */
+.innBadgeText {
+  color: var(--color-brand-cyan);
+  font-weight: 500;
+  -webkit-text-fill-color: inherit;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .featureGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .featureCard {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .featureCard {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    margin-top: 0;
+    padding: 50px 5% 60px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+}

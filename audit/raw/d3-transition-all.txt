@@ -1,0 +1,8 @@
+src/components/beta/beta-hero.module.css
+src/components/home/hero.module.css
+src/components/scope/scope-hero.module.css
+src/components/our-works/portfolio-grid.module.css
+src/components/how-it-works/how-works-hero.module.css
+src/components/our-works/our-works-hero.module.css
+src/components/blog/blog-hero.module.css
+src/components/our-mission/mission-hero.module.css

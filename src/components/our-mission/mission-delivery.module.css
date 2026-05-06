@@ -1,0 +1,174 @@
+/* ============================================================
+   MISSION DELIVERY — mission-delivery.module.css
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  padding: 0 5% 80px;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── 2-column grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ── Left: text ── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* ── Bullet list ── */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.bullet {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #21cfff, #019ae6);
+  margin-top: 8px;
+}
+
+.listText {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+}
+
+.listIntro {
+  color: var(--color-brand-navy);
+  font-weight: 700;
+}
+
+/* ── CTA button ── */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-card);
+  transition: filter 0.15s ease;
+}
+
+.ctaButton:hover {
+  filter: brightness(1.08);
+}
+
+/* ── Right: image ── */
+.imageCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imageCol {
+    order: -1;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 60px 5%;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding: 48px 1rem;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .listText {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding-right: 1.25rem;
+    background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  }
+
+  .image {
+    border-radius: 12px;
+  }
+}

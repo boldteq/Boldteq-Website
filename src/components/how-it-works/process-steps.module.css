@@ -1,0 +1,307 @@
+/* ============================================================
+   PROCESS STEPS — process-steps.module.css
+   Matches Webflow .how-work-sec3.overflow-hidden on how-it-works.html
+   ============================================================ */
+
+/* .how-work-sec3.overflow-hidden */
+.section {
+  background-color: transparent;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* .container-large-2 */
+.container {
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/* .how-work-sec3-outer */
+.outer {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  flex-flow: column;
+  justify-content: flex-start;
+  place-items: center stretch;
+  display: flex;
+}
+
+/* .column-regular.column-left.work-sec3-title
+   — 2-column grid: heading (left) | text+CTA (right)
+   gap: 50px, margin-bottom: 20px */
+.headerGrid {
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-rows: auto;
+  grid-template-columns: 0.85fr 1.15fr;
+  grid-auto-columns: 1fr;
+  justify-content: flex-start;
+  place-items: start stretch;
+  max-width: none;
+  width: 100%;
+  margin-bottom: 20px;
+  display: grid;
+}
+
+/* .heading-2.how-work-sec3-heading */
+.heading {
+  color: var(--color-brand-navy);
+  text-align: left;
+  max-width: 450px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+/* Right column: .max-width-small-3.how-work-sec3-maxwidth */
+.headerRight {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Subtitle paragraph */
+.subtitle {
+  color: var(--color-text-secondary);
+  text-align: left;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* .a-gulf-book  */
+.demoLink {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s;
+}
+
+.demoLink:hover {
+  background-color: var(--color-brand-navy);
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* Steps grid (.webdev-sec5-grid) — 4 columns */
+.stepsGrid {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-self: stretch;
+  width: 100%;
+}
+
+.step {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 40px 0 0;
+  display: flex;
+  position: relative;
+}
+
+/* Dashed connector line (.dashed-divider) */
+.dashedDivider {
+  z-index: 1;
+  border-top: 1px dashed var(--color-text-primary);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  inset: 33px auto auto 0%;
+}
+
+/* Number circle (.white-round + .sky-digit) */
+.numberCircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  border-radius: var(--radius-pill);
+  border: 1px dashed var(--color-text-primary);
+  background-color: #fff;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 3;
+}
+
+.number {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  background-image: linear-gradient(180deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.stepTitle {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.stepText {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .heading {
+    margin-bottom: 0;
+  }
+
+  .headerRight {
+    max-width: 540px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .headerRight {
+    max-width: 540px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px (tablet)
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .outer {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    flex-flow: column;
+  }
+
+  .headerGrid {
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 34px;
+    max-width: none;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
+
+  .dashedDivider {
+    display: none;
+  }
+
+  .step {
+    padding-right: 0;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .headerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding: 50px 1.25rem 60px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .demoLink {
+    width: 100%;
+    justify-content: center;
+  }
+}

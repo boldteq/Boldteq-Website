@@ -1,0 +1,120 @@
+/* Badge primitive — token-driven pill */
+
+.badge {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: var(--radius-xs);
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+.size-xs {
+  padding: 3px 6px;
+  font-size: 9px;
+}
+
+.size-sm {
+  padding: 4px 8px;
+  font-size: var(--text-xs);
+}
+
+.size-md {
+  padding: 6px 12px;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Variants ──────────────────────────────────────────────────────────────── */
+.default {
+  color: #0050b3;
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.success {
+  color: #0d6e00;
+  background-color: #ecfdf3;
+  border-color: #a6f4c5;
+}
+
+.warning {
+  color: #93370d;
+  background-color: #fff8e1;
+  border-color: #f0c674;
+}
+
+.sky-gradient {
+  color: var(--color-text-on-dark);
+  background-image: var(--gradient-brand);
+  border-color: transparent;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+
+.sky-outline {
+  color: var(--color-brand-cyan);
+  background-color: var(--color-accent-bg);
+  border: 1.5px solid var(--color-brand-cyan);
+  border-radius: var(--radius-pill);
+  padding: 4px 13px;
+}
+
+.navy-outline {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border-color: var(--color-border-default);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+}
+
+.dot-red {
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+}
+
+/* ─── Modifiers ─────────────────────────────────────────────────────────────── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background-color: #ef4444;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background-color: #ef4444;
+  opacity: 0.4;
+  animation: badge-pulse 1.6s var(--ease-standard) infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot::after {
+    animation: none;
+  }
+}

@@ -1,0 +1,42 @@
+/* Container — max-width wrapper */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padded {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 991px) {
+  .padded {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .padded {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.size-narrow {
+  max-width: 800px;
+}
+
+.size-default {
+  max-width: 1280px;
+}
+
+.size-wide {
+  max-width: 1320px;
+}
+
+.size-fluid {
+  max-width: none;
+}

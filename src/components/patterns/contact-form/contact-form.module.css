@@ -1,0 +1,80 @@
+/* ContactForm pattern */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.span-2 {
+  grid-column: 1 / -1;
+}
+
+.success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-fg);
+  border-radius: var(--radius-l);
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-align: center;
+}
+
+.error {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger-fg);
+  border-radius: var(--radius-l);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-sm);
+}
+
+.submitRow {
+  display: flex;
+  gap: var(--space-4);
+}
+
+/* Select styling — matches Input primitive surface */
+.select {
+  display: block;
+  width: 100%;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-m);
+  min-height: 55px;
+  padding: 8px 12px;
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z' fill='%23082753'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.select:focus-visible {
+  border-color: var(--color-brand-cyan);
+  outline: 2px solid rgba(33, 207, 255, 0.3);
+}
+
+.select.invalid {
+  border-color: var(--color-danger);
+}

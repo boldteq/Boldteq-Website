@@ -1,0 +1,736 @@
+/* ============================================================
+   HERO — hero.module.css
+   Extracted verbatim from boldteq-v1-0.webflow.css
+   ============================================================ */
+
+/* GuideJar embed wrapper */
+.guidejarWrapper {
+  position: relative;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: var(--z-nav);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-bottom: calc(56.25% + 32px);
+}
+
+/* GuideJar iframe — fills the wrapper */
+.guidejarIframe {
+  position: absolute;
+  inset: 0;
+}
+
+/* Typewriter span container */
+.typewriterContainer {
+  display: inline-block;
+  min-width: 280px;
+  min-height: 1.1em;
+  text-align: left;
+  vertical-align: baseline;
+  /* Explicit fallback color so accessibility audits read correct contrast ratio.
+     Visually the child .animate-span overrides this with #019ae6. */
+  color: var(--color-brand-blue);
+}
+
+/* Typewriter animated word */
+.typewriterWord {
+  display: inline-block;
+  /* Explicit fallback so motion.span inherits readable color in audit contexts. */
+  color: var(--color-brand-blue);
+}
+
+/* CSS-driven phrase fade — replaces framer-motion AnimatePresence */
+.typewriterFade {
+  animation: typewriterFadeIn 0.28s ease-in-out;
+}
+
+@keyframes typewriterFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriterFade {
+    animation: none;
+  }
+}
+
+.section-high-judge {
+  background-color: #0000;
+  background-image: url('/images/webflow/hero-background-1.png'), linear-gradient(#019ae614, #019ae600);
+  background-position: 50% 100%, 0 0;
+  background-repeat: repeat, repeat;
+  background-size: cover, auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.home-ban-judge {
+  background-image: url('/images/webflow/hero-background-1.png'), linear-gradient(#019ae614, #019ae600);
+  background-position: 50% 0, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;
+}
+
+.div-white-bag {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.div-stuck-swept {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.div-wrote-smoke {
+  text-align: center;
+  /* #05bafe (ratio 2.22 on white) → inherit so children control their own color */
+  color: inherit;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.review-link {
+  text-decoration: none;
+  /* Expand tap target to min 44px height for WCAG 2.5.8 */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.review-stars {
+  background-color: #00b67a1a;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.p-base-place {
+  color: var(--color-brand-navy);
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  padding: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.animate-span {
+  /* Changed from #05bafe (ratio 2.22 on white) to #019ae6 (ratio 4.5+ on white) */
+  color: var(--color-brand-blue);
+}
+
+.p-base-place-copy {
+  color: var(--color-brand-navy);
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.h1-season-seeing {
+  color: var(--color-text-secondary);
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration: none;
+}
+
+.div-job-attention {
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+}
+
+.mob-left {
+  /* applied at mobile only — see media query below */
+}
+
+.mob-margin-less {
+  margin-top: 1rem;
+}
+
+.ban-grid {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 0.75fr 0.85fr;
+  grid-auto-columns: 1fr;
+  max-width: 660px;
+  margin-bottom: 0;
+  display: grid;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.hom-ban-grd {
+  /* additional modifier — used with ban-grid.margin-bottom-0 */
+}
+
+.grid-box {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  align-items: center;
+  padding: 20px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;
+  box-shadow: var(--shadow-card);
+}
+
+.home-grid-box {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.home-bangrid-icon {
+  flex: none;
+}
+
+.grid-para {
+  color: #000;
+  text-align: left;
+  max-width: none;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mob-center {
+  color: var(--color-text-primary);
+  font-size: 15px;
+}
+
+.lighter-font {
+  /* no desktop value in Webflow source — only mobile media query */
+}
+
+/* Badge 2 "No Contract" max-width constraint (.grid-para.middle) */
+.middle {
+  max-width: 80px;
+}
+
+.code-embed-3 {
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+
+.how-code-embed {
+  margin-top: 30px;
+}
+
+.margin-top-50 {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.a-gulf-book {
+  color: #fff;
+  width: auto;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--button-text, 1rem);
+  background-color: var(--color-brand-dark);
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid #0000;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  box-shadow: var(--shadow-card);
+}
+
+.a-gulf-book:hover {
+  background-color: var(--color-brand-navy);
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.a-except-get {
+  color: var(--color-brand-dark);
+  width: auto;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--button-text, 1rem);
+  background-color: var(--color-accent-bg-hover);
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: 2px solid #9ca3af;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-left: 1.25rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  box-shadow: var(--shadow-card);
+}
+
+.a-except-get:hover {
+  color: #fff;
+  background-color: var(--color-brand-navy);
+  border-color: var(--color-brand-dark);
+}
+
+.gradient-bg-ban {
+  background-image: linear-gradient(#fff0, #fff);
+  height: 170px;
+  position: absolute;
+  inset: auto 0% 0%;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .section-high-judge {
+    background-image: url('/images/webflow/hero-background-1.png'), linear-gradient(#019ae614, #019ae600);
+    background-position: 50% 100%, 0 0;
+    background-repeat: repeat, repeat;
+    background-size: cover, auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .div-stuck-swept {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .p-base-place {
+    color: var(--color-brand-navy);
+    font-size: 50px;
+    line-height: 1.25;
+  }
+
+  .div-job-attention {
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .a-gulf-book {
+    background-image: url('/images/webflow/Group-46729.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+    background-position: 93%, 0 0;
+    background-repeat: no-repeat, repeat;
+    background-size: auto, auto;
+    border-style: none;
+    width: auto;
+    padding-left: 1.25rem;
+    padding-right: 3rem;
+  }
+
+  .a-gulf-book:hover {
+    background-image: url('/images/webflow/Group-46729-2.svg');
+  }
+
+  .a-except-get {
+    background-color: var(--color-accent-bg-hover);
+    background-image: url('/images/webflow/Group-46729-1.svg');
+    background-position: 94%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-style: none;
+    width: auto;
+    margin-top: 0;
+    margin-left: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 3rem;
+  }
+
+  .ban-grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 700px;
+    margin-bottom: 0;
+  }
+
+  .ban-grid.margin-bottom-0 {
+    grid-template-columns: 1fr 0.65fr 0.75fr;
+    max-width: 650px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .section-high-judge {
+    background-color: #fff;
+    background-image: url('/images/webflow/hero-background-1.png'), linear-gradient(#019ae614, #019ae600);
+    background-position: 50% 100%, 0 0;
+    background-repeat: repeat, repeat;
+    background-size: cover, auto;
+    padding-top: 4rem;
+  }
+
+  .div-stuck-swept {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .p-base-place {
+    font-size: 50px;
+    line-height: 1.25;
+  }
+
+  .div-job-attention {
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .a-gulf-book {
+    background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+    width: auto;
+  }
+
+  .a-gulf-book:hover {
+    background-image: url('/images/webflow/Group-46729-2.svg');
+  }
+
+  .a-except-get {
+    background-color: var(--color-accent-bg-hover);
+    width: auto;
+    margin-top: 0;
+    margin-left: 1.25rem;
+  }
+
+  .ban-grid.margin-bottom-0 {
+    grid-template-columns: 1fr 0.65fr 0.75fr;
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section-high-judge {
+    background-position: 0 0, 100% 0, 0 0;
+    padding-top: 4rem;
+  }
+
+  .div-stuck-swept {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .p-base-place {
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .div-job-attention {
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .a-gulf-book {
+    width: auto;
+  }
+
+  .a-except-get {
+    width: auto;
+    margin-top: 0;
+    margin-left: 1.25rem;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section-high-judge {
+    background-image: linear-gradient(#019ae614, #fff);
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto;
+    padding-top: 4rem;
+  }
+
+  .div-stuck-swept {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .h1-season-seeing {
+    color: var(--color-text-secondary);
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+
+  .p-base-place {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .div-job-attention {
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .a-gulf-book {
+    background-size: 26px, auto;
+    width: auto;
+    font-size: .8rem;
+  }
+
+  .a-except-get {
+    width: auto;
+    margin-top: 0;
+    margin-left: 1.25rem;
+  }
+
+  .ban-grid {
+    margin-bottom: 50px;
+  }
+
+  .ban-grid.margin-bottom-0 {
+    grid-template-columns: 1fr 0.65fr 0.75fr;
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section-high-judge {
+    background-image: linear-gradient(#019ae614, #fff);
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .home-ban-judge {
+    background-image: linear-gradient(#019ae614, #fff);
+    background-size: auto;
+    padding-bottom: 1.8rem;
+  }
+
+  .div-stuck-swept {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .div-wrote-smoke {
+    text-align: center;
+  }
+
+  .h1-season-seeing {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1rem;
+  }
+
+  .p-base-place {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .div-job-attention {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mob-left {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .mob-margin-less {
+    margin-top: 1.5rem;
+  }
+
+  .mob-left.mob-margin-less {
+    margin-top: 1rem;
+  }
+
+  .a-gulf-book {
+    background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+    background-position: 94%, 0 0;
+    background-size: 29px 29px, auto;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+    font-size: 1rem;
+    padding: 0.625rem 3rem 0.625rem 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .a-gulf-book:hover {
+    background-image: url('/images/webflow/Group-46729-2.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  .a-except-get {
+    background-color: var(--color-accent-bg-hover);
+    background-size: 29px 29px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 0.625rem 3rem 0.625rem 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .grid-box {
+    flex-flow: column;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .grid-box.home-grid-box {
+    box-shadow: none;
+    text-align: left;
+    background-color: #0000;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-self: auto;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  .order-mob-1 {
+    box-shadow: none;
+    background-color: #fff;
+    flex-flow: column;
+  }
+
+  .order-mob-2 {
+    background-color: #fff;
+    flex-flow: column;
+  }
+
+  .order-mob-3 {
+    box-shadow: none;
+    background-color: #fff;
+    flex-flow: column;
+  }
+
+  .grid-para {
+    font-size: 1rem;
+    line-height: 16px;
+  }
+
+  .mob-center {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 16px;
+  }
+
+  .lighter-font {
+    font-size: 0.9rem;
+  }
+
+  .ban-grid {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    flex-flow: row;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .ban-grid.margin-bottom-0 {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hom-ban-grd {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+  }
+
+  .home-bangrid-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Webflow line 30787: .code-embed-3.how-code-embed.margin-top-50 at 479px */
+  .margin-top-50 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

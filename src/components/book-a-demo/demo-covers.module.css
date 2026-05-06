@@ -1,0 +1,147 @@
+/* ============================================================
+   DEMO COVERS — demo-covers.module.css
+   ============================================================ */
+
+.section {
+  background-color: transparent;
+  padding: 20px 5% 70px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+
+.heading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* Cards grid */
+.grid {
+  display: grid;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  background-color: var(--color-brand-light-bg);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 32px 24px;
+  transition: background-color 0.3s, border-color 0.4s, box-shadow 0.3s;
+}
+
+.card:hover {
+  background-color: var(--color-brand-card-hover);
+  border-color: var(--color-brand-card-border);
+  box-shadow: var(--shadow-card-cyan);
+}
+
+.cardIcon {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.cardText {
+  color: var(--color-text-subtle);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+}
+
+/* ============================================================
+   max-width: 1199px
+   ============================================================ */
+@media screen and (max-width: 1199px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding: 50px 5% 60px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding: 48px 1.25rem 56px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+}

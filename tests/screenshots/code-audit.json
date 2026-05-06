@@ -1,0 +1,113 @@
+{
+  "totals": {
+    "count": 14,
+    "byCategory": {
+      "css-important": 6,
+      "inline-style": 5,
+      "hardcoded-color-in-tsx": 3
+    },
+    "bySeverity": {
+      "minor": 14
+    }
+  },
+  "bugs": [
+    {
+      "category": "css-important",
+      "severity": "minor",
+      "file": "src/app/globals.css",
+      "line": 198,
+      "message": "!important is required here to override third-party inline styles (Framer Motion,"
+    },
+    {
+      "category": "css-important",
+      "severity": "minor",
+      "file": "src/app/globals.css",
+      "line": 201,
+      "message": "Do not remove !important — removing it would break accessibility for vestibular disorders."
+    },
+    {
+      "category": "css-important",
+      "severity": "minor",
+      "file": "src/app/globals.css",
+      "line": 211,
+      "message": "animation-duration: 0.01ms !important;"
+    },
+    {
+      "category": "css-important",
+      "severity": "minor",
+      "file": "src/app/globals.css",
+      "line": 212,
+      "message": "animation-iteration-count: 1 !important;"
+    },
+    {
+      "category": "css-important",
+      "severity": "minor",
+      "file": "src/app/globals.css",
+      "line": 213,
+      "message": "transition-duration: 0.01ms !important;"
+    },
+    {
+      "category": "css-important",
+      "severity": "minor",
+      "file": "src/app/globals.css",
+      "line": 214,
+      "message": "scroll-behavior: auto !important;"
+    },
+    {
+      "category": "inline-style",
+      "severity": "minor",
+      "file": "src/components/home/hero.tsx",
+      "line": 79,
+      "message": "style={{ width: 'auto', height: 'auto' }}"
+    },
+    {
+      "category": "inline-style",
+      "severity": "minor",
+      "file": "src/components/home/hero.tsx",
+      "line": 95,
+      "message": "style={{ width: 'auto', height: 'auto' }}"
+    },
+    {
+      "category": "inline-style",
+      "severity": "minor",
+      "file": "src/components/home/resolution-banner.tsx",
+      "line": 18,
+      "message": "style={{ width: '93px', height: 'auto' }}"
+    },
+    {
+      "category": "hardcoded-color-in-tsx",
+      "severity": "minor",
+      "file": "src/components/layout/mobile-nav.tsx",
+      "line": 12,
+      "message": "#082753: Background: #082753, flex column, padding 10px 4%, z-index via --z-modal token."
+    },
+    {
+      "category": "hardcoded-color-in-tsx",
+      "severity": "minor",
+      "file": "src/components/layout/mobile-nav.tsx",
+      "line": 13,
+      "message": "#fff: Nav links: color #fff, border-bottom 1px solid rgba(255,255,255,0.04), padding 12px 0."
+    },
+    {
+      "category": "hardcoded-color-in-tsx",
+      "severity": "minor",
+      "file": "src/components/layout/mobile-nav.tsx",
+      "line": 14,
+      "message": "#21cfff: Dropdown chevron: color #21cfff."
+    },
+    {
+      "category": "inline-style",
+      "severity": "minor",
+      "file": "src/components/layout/mobile-nav.tsx",
+      "line": 176,
+      "message": "style={{ width: 'auto', height: 'auto' }}"
+    },
+    {
+      "category": "inline-style",
+      "severity": "minor",
+      "file": "src/components/layout/navbar.tsx",
+      "line": 556,
+      "message": "style={{ width: 'auto', height: 'auto' }}"
+    }
+  ]
+}

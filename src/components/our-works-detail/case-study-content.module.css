@@ -1,0 +1,456 @@
+/* ============================================================
+   CaseStudyContent — matches Webflow work-page-left exactly
+   ============================================================ */
+
+/* work-page-left */
+.content {
+  height: 100vh;
+  padding: 40px;
+  position: static;
+  top: 0;
+  overflow: auto;
+}
+
+/* ── Hero section (workp-subott + workp-title + work-small-tags) ── */
+
+/* workp-subott */
+.heroSubott {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+/* workpsubott-txt */
+.badge {
+  background-color: var(--color-accent-bg);
+  border: 1.5px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  margin-bottom: 0;
+  padding: 0 13px;
+  line-height: 14px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  display: inline-block;
+}
+
+/* workp-title */
+.title {
+  color: var(--color-text-primary);
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+/* work-small-tags */
+.metaRow {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* workp-meta */
+.metaItem {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.metaIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* workp-meta-text */
+.metaText {
+  color: #0827539e;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ── Content sections (workp-content) ── */
+
+/* workp-content */
+.sections {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  flex-flow: column;
+  display: flex;
+  margin-top: 30px;
+}
+
+/* workp-cont-inn */
+.section {
+  grid-column-gap: 14px;
+  grid-row-gap: 14px;
+  width: 100%;
+  display: flex;
+}
+
+/* cont1-icon base */
+.iconCol {
+  background-color: var(--color-brand-cyan);
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  margin-top: 4px;
+  padding: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* cont1-icon.div-twelve-red */
+.iconColRed {
+  background-color: #f5214e2e;
+  background-image: none;
+  border: 1px solid #f5214e99;
+}
+
+/* cont1-icon.blue */
+.iconColBlue {
+  background-color: #3d6aff26;
+  background-image: none;
+  border: 1px solid #3d6aff99;
+}
+
+/* cont1-icon.purple */
+.iconColPurple {
+  background-color: #9c3dff26;
+  background-image: none;
+  border: 1px solid #8b30ff99;
+}
+
+/* cont1-icon.green */
+.iconColGreen {
+  background-color: #00a36226;
+  background-image: none;
+  border: 1px solid #00a362;
+}
+
+/* cont1-icon.orange */
+.iconColOrange {
+  background-color: #f85b0026;
+  background-image: none;
+  border: 1px solid #f85b00;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* work-pop-contout */
+.sectionBody {
+  flex: 0 auto;
+  width: 100%;
+}
+
+/* workp-cont-heading */
+.sectionHeading {
+  color: var(--color-text-primary);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* workp-meta-text (used as subtitle label) */
+.sectionSubtitle {
+  color: #0827539e;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+/* paragraph text-left small-lh */
+.paragraph {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 28px;
+  margin: 0;
+}
+
+/* ── Implementation list ── */
+
+/* implement-list */
+.implementList {
+  margin-top: 10px;
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* list-item-w */
+.implementItem {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-bottom: 7px;
+  display: flex;
+}
+
+/* list-number */
+.listNumber {
+  color: #993bff;
+  background-color: #efe9ff;
+  border-radius: var(--radius-pill);
+  flex: none;
+  justify-content: center;
+  align-self: auto;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  margin-top: 5px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+}
+
+.listText {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Impact grid ── */
+
+/* impact-grid */
+.impactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* imp-div */
+.impactCard {
+  background-color: #00b35c26;
+  border: 1px solid #00b35c4d;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* imp-numb */
+.impactValue {
+  color: #008236;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* imp-title */
+.impactLabel {
+  color: #111828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* imp-txt */
+.impactDescription {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── Key features list ── */
+
+/* key-feat-list */
+.featuresList {
+  grid-column-gap: 15px;
+  grid-row-gap: 5px;
+  flex-flow: column;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0;
+}
+
+/* list-item-w */
+.featureItem {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 0;
+}
+
+.featureText {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Tech stack ── */
+
+.techSection {
+  padding-left: 0;
+}
+
+/* work-gray-title */
+.techHeading {
+  color: #0827539e;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* tech-stack-outer */
+.techRow {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* tech-name */
+.techPill {
+  color: #444;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── CTA buttons (div-job-attention.left-pos) ── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* a-gulf-book */
+.ctaGradient {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  background-color: var(--color-brand-dark);
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  text-decoration: none;
+  display: inline-flex;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease;
+}
+
+.ctaGradient:hover {
+  background-color: var(--color-brand-navy);
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* navy-arrow-btn */
+.ctaNavy {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  background-color: var(--color-text-primary);
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  text-decoration: none;
+  display: inline-flex;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ctaNavy:hover {
+  color: var(--color-brand-cyan);
+  background-color: rgba(33, 207, 255, 0.13);
+  border-color: var(--color-brand-dark);
+}
+
+/* ============================================================
+   max-width: 991px — work-page-left height: 50vh
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .content {
+    height: 50vh;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .content {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .impactGrid {
+    grid-template-columns: 1fr;
+  }
+}

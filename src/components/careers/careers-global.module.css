@@ -1,0 +1,184 @@
+/* ============================================================
+   CAREERS GLOBAL — careers-global.module.css
+   Matches .career-btm-sec / .career-btm-out in Webflow CSS
+   ============================================================ */
+
+.section {
+  background-image: url('/images/webflow/Rectangle-30849.png');
+  background-position: 50% 0;
+  background-size: cover;
+  padding: 80px 5%;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.outer {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.heading {
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+  max-width: 640px;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  margin: 0 auto 24px;
+  max-width: 480px;
+}
+
+/* navy-butn style */
+.ctaButton {
+  color: #fff;
+  width: auto;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  background-color: var(--color-text-primary);
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.ctaButton:hover {
+  color: var(--color-brand-blue);
+  background-color: #fff;
+  border-color: var(--color-brand-dark);
+}
+
+/* Decorative absolutely-positioned images */
+.cimg1 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+
+.cimg1b {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: calc(20% + 60px);
+}
+
+.cimg2 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+}
+
+.cimg3 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+}
+
+.cimg4 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 20%;
+}
+
+.cimg5 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 45%;
+  right: 10%;
+}
+
+.cimg6 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: rotate(-5deg);
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 40px;
+  }
+
+  .outer {
+    margin-bottom: 10px;
+  }
+
+  .cimg1,
+  .cimg1b,
+  .cimg2,
+  .cimg3,
+  .cimg4,
+  .cimg5,
+  .cimg6 {
+    display: none;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .cimg1,
+  .cimg1b,
+  .cimg2,
+  .cimg3,
+  .cimg4,
+  .cimg5,
+  .cimg6 {
+    display: none;
+  }
+
+  .heading {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

@@ -1,0 +1,207 @@
+/* ============================================================
+   RESOLUTION BANNER — resolution-banner.module.css
+   Extracted verbatim from boldteq-v1-0.webflow.css
+   ============================================================ */
+
+.blue-card-sec {
+  -webkit-text-fill-color: inherit;
+  background-color: #0000;
+  background-clip: border-box;
+  padding: 0 5%;
+  position: relative;
+}
+
+.container-large-3 {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* blue-card: .w-layout-hflex gives flex-direction:row / display:flex;
+   Webflow .blue-card adds column layout on top via flex-flow:column */
+.blue-card {
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  background-color: var(--color-text-primary);
+  background-image: url('/images/webflow/Mask-group-3.png'), url('/images/webflow/Mask-group-2.png'), url('/images/webflow/Rectangle-254.png');
+  background-position: 100% 100%, 0 0, 50%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto, auto, cover;
+  border-radius: 20px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px 40px;
+  display: flex;
+}
+
+/* Inline team image inside heading text */
+.inlineTeamImage {
+  display: inline;
+  vertical-align: middle;
+}
+
+/* image-in-text inline style (the <h3> with an image inside)
+   Values from index.html <style> block — 35px/45px desktop */
+.image-in-text {
+  font-size: 35px;
+  color: #fff;
+  line-height: 45px;
+  max-width: 842px;
+  text-align: center;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* .image-in-text img sizing is controlled by the Image component's inline style prop
+   (width: 93px; height: auto) to avoid CSS/Next.js dimension conflicts. */
+
+/* CTA button — dark-bg variant */
+.a-gulf-book {
+  color: #fff;
+  width: auto;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: var(--button-text, 1rem);
+  background-color: var(--color-brand-dark);
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid #0000;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  box-shadow: var(--shadow-card);
+}
+
+.dark-bg {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.a-gulf-book:hover {
+  background-color: var(--color-brand-navy);
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.dark-bg:hover {
+  color: var(--color-brand-navy);
+  background-color: #fff;
+  background-image: none;
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .blue-card-sec {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .blue-card {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .blue-card-sec {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .blue-card-sec.center-sec {
+    text-align: center;
+  }
+
+  .blue-card {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .blue-card-sec {
+    padding-bottom: 0;
+  }
+
+  .blue-card {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .blue-card-sec {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .blue-card {
+    flex-flow: column;
+  }
+
+  /* Reduce h3 at tablet to prevent extra line wrap that adds ~14px */
+  .image-in-text {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+/* ============================================================
+   max-width: 568px — image-in-text mobile from Webflow inline style
+   ============================================================ */
+@media screen and (max-width: 568px) {
+  .image-in-text {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+/* ============================================================
+   max-width: 479px  (mobile)
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .blue-card-sec {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+
+  .blue-card {
+    background-image: url('/images/webflow/Rectangle-254.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

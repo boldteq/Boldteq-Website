@@ -1,0 +1,295 @@
+/* ============================================================
+   NEWSLETTER HERO — newsletter-hero.module.css
+   Matches: .section-regular-17 style adapted to Boldteq brand
+   Source CSS: line 13145 (.section-regular-17), 13082 (.column-2x-large-2)
+   Newsletter page uses the same footer newsletter card design, enlarged
+   ============================================================ */
+
+/* Section wrapper */
+.section {
+  background-color: #fff;
+  padding: 64px 5%;
+  position: relative;
+}
+
+/* Inner layout — matches .column-2x-large-2 + .column-center */
+.inner {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  flex-flow: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Badge row */
+.badgeRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: 20px;
+  padding: 0 13px;
+  line-height: 32px;
+}
+
+.badgeText {
+  margin: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Heading — h1, large, navy */
+.heading {
+  color: var(--color-brand-navy);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.gradientSpan {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Description paragraph */
+.description {
+  color: var(--color-text-subtle);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Form block — matches .max-width-medium (424px) */
+.formBlock {
+  width: 100%;
+  max-width: 424px;
+  margin: 0 auto;
+}
+
+/* Form row — matches .newsletter-form (flex row, gap 8px) */
+.form {
+  display: flex;
+  flex-flow: row;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Email input — matches .form-input-large */
+.emailInput {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #c9d2d9;
+  border-radius: 10px;
+  min-height: 48px;
+  margin-bottom: 0;
+  padding: 12px 16px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  flex: 1;
+  min-width: 0;
+  transition: border-color 0.3s;
+}
+
+.emailInput:focus {
+  border-color: var(--color-brand-cyan);
+}
+
+.emailInput::placeholder {
+  color: #50555f;
+}
+
+/* Submit button — gradient style matching Boldteq CTAs */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--color-brand-navy);
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  border-radius: 10px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.submitBtn:hover:not(:disabled)::before {
+  opacity: 0;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Privacy guarantee line — matches .newsletter-btm-line */
+.btmLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btmPara {
+  color: var(--color-text-subtle);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Status messages */
+.successMsg {
+  background-color: #d6ffe6;
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: #166534;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.errorMsg {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #991b1b;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* Field-level error */
+.fieldError {
+  color: var(--color-danger);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 4px 0 0;
+  text-align: left;
+}
+
+/* sr-only for aria-live */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .section {
+    padding: 80px 5%;
+  }
+
+  .heading {
+    font-size: 48px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding: 56px 5%;
+  }
+}
+
+/* ============================================================
+   max-width: 767px
+   Source: line 25734 (.h3-heading-5 at 767px), line 25738 (.newsletter-form-block)
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 48px 1.5rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .section {
+    padding: 40px 1rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+}

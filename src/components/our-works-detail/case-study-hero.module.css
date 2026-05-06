@@ -1,0 +1,86 @@
+/* Matches Webflow work-page-out: border-radius 20px */
+.hero {
+  padding: 80px 5% 0;
+  background: #fff;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* workpsubott-txt: gradient border badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 13px;
+  border-radius: 20px;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1.5px solid var(--color-brand-cyan);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+
+/* workp-title: #082753, 35px, line-height 40px */
+.title {
+  color: var(--color-text-primary);
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+/* work-small-tags: flex row, gap */
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metaIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* workp-meta-text */
+.metaText {
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 60px 5% 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 5% 0;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .metaRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

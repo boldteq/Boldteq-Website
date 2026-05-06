@@ -1,0 +1,67 @@
+/* IconBox — square or circle wrapper for SVG icons */
+
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+.size-sm {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-s);
+}
+
+.size-md {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-l);
+}
+
+.size-lg {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+}
+
+/* ─── Variants ──────────────────────────────────────────────────────────────── */
+.square-gradient {
+  background-image: var(--gradient-brand);
+  color: var(--color-text-on-dark);
+}
+
+.square-tint {
+  background-color: var(--color-accent-bg);
+  color: var(--color-brand-blue);
+  border: 1px solid var(--color-border-cyan);
+}
+
+.circle-gradient {
+  background-image: var(--gradient-brand);
+  color: var(--color-text-on-dark);
+  border-radius: var(--radius-pill);
+}
+
+.circle-tint {
+  background-color: var(--color-accent-bg);
+  color: var(--color-brand-blue);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-cyan);
+}
+
+.circle-white {
+  background-color: var(--color-surface);
+  color: var(--color-brand-blue);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
+}
+
+.pill-cyan {
+  background-color: rgba(33, 207, 255, 0.13);
+  color: var(--color-brand-blue);
+  border: 1px solid var(--color-brand-cyan);
+  border-radius: var(--radius-pill);
+}

@@ -1,0 +1,26 @@
+/* StatRow — trust-badge row used on hero sections */
+
+.row {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, auto);
+  width: fit-content;
+  max-width: 660px;
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+}
