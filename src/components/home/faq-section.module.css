@@ -40,6 +40,9 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
+  .faq-title-wrapper {
+    padding-right: 0;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -108,7 +111,7 @@
 }
 
 .paragraph {
-  color: #000;
+  color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -215,7 +218,7 @@
 
 .faqItem {
   /* Changed from #05bafe (ratio 2.22 on white) to navy for WCAG AA compliance */
-  color: var(--color-text-primary);
+  color: #05bafe;
   background-color: #fff;
   border: 1px #c1e6f9;
   border-radius: 10px;
@@ -330,7 +333,9 @@
 
   .faqGrid {
     order: 9999;
-  }
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+}
 
   .faqWrapperLarge {
     max-width: none;
@@ -345,8 +350,8 @@
 
   .fqOuterGrid {
     grid-template-columns: 1fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
   }
 
   .faqBtmCenter {
@@ -362,6 +367,10 @@
     line-height: 32px;
     margin-bottom: 10px;
   }
+  .faq-grid {
+    padding-right: 10px;
+    padding-left: 10px;
+}
 }
 
 @media screen and (max-width: 479px) {

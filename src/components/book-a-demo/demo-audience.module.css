@@ -6,6 +6,10 @@
   background-color: transparent;
   padding: 0 5%;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .inner {
@@ -106,6 +110,10 @@
   .heading {
     font-size: 30px;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 }
 
 /* ============================================================

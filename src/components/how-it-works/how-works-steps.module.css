@@ -10,13 +10,18 @@
   margin-bottom: 0;
   padding: 70px 5% 80px;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* Badge */
@@ -28,14 +33,17 @@
 }
 
 .badge {
-  background-color: var(--color-accent-bg);
+  background-color: #fafafa;
   border: 1px solid var(--color-brand-cyan);
-  border-radius: 20px;
+  border-radius: 999px;
   margin-bottom: 0;
-  padding: 0 13px;
+  padding: 4px 12px;
   line-height: 14px;
   display: inline-flex;
   align-items: center;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 .badgeText {
@@ -90,7 +98,7 @@
   grid-column-gap: 0;
   grid-row-gap: 0;
   text-align: center;
-  background-color: #1c3861;
+  background-color: #def4ff;
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 20px;
   flex-flow: column;
@@ -131,6 +139,9 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
+  max-width: 3768px;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
 }
 
 /* ============================================================
@@ -140,6 +151,11 @@
   .featureCard {
     padding-left: 20px;
     padding-right: 20px;
+    border-color: #009ce0;
+    background-color: #def4ff;
+}
+  .full-width-image {
+    max-width: 100%;
   }
 }
 
@@ -148,8 +164,13 @@
    ============================================================ */
 @media screen and (min-width: 1440px) {
   .featureCard {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-color: #009ce0;
+    background-color: #def4ff;
+}
+  .full-width-image {
+    max-width: 100%;
   }
 }
 
@@ -160,6 +181,13 @@
   .heading {
     font-size: 35px;
     line-height: 45px;
+  }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -200,6 +228,9 @@
   .subtitle {
     text-align: center;
   }
+  .container {
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
@@ -213,5 +244,12 @@
 
   .featureGrid {
     grid-template-columns: 1fr;
+  }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
+  .feature-card {
+    padding: 24px;
   }
 }

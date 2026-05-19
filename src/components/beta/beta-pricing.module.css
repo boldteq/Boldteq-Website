@@ -8,20 +8,27 @@
   padding: 0 5% 4rem;
   display: block;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* Header */
 .titleGrid {
   display: grid;
   place-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 64px;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
 }
 
 .maxWidth {
@@ -38,12 +45,15 @@
 }
 
 .badge {
-  background-color: var(--color-accent-bg);
+  background-color: #fafafa;
   border: 1px solid var(--color-brand-cyan);
-  border-radius: 20px;
+  border-radius: 999px;
   margin-bottom: 17px;
-  padding: 0 13px;
+  padding: 4px 12px;
   line-height: 14px;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 .badgeText {
@@ -71,7 +81,7 @@
 }
 
 .paragraph {
-  color: #000;
+  color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: center;
@@ -278,9 +288,11 @@
   color: var(--color-text-secondary);
   text-align: center;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 24px;
   margin-top: 4px;
+  font-weight: 500;
+  letter-spacing: -.01em;
 }
 
 /* Info cards (bug report, add-on hours) */
@@ -340,6 +352,13 @@
   .price {
     font-size: 23px;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -354,4 +373,13 @@
   .price {
     font-size: 30px;
   }
+  .container {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 479px) {
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

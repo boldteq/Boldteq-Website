@@ -4,18 +4,21 @@
 
 .section {
   background-color: #0000;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
   font-weight: 400;
   text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
-  max-width: 80rem;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin: 15px auto 80px;
 }
 
 .inner {
@@ -34,13 +37,16 @@
 }
 
 .badge {
-  background-color: var(--color-accent-bg);
+  background-color: #fafafa;
   border: 1px solid var(--color-brand-cyan);
-  border-radius: 20px;
-  padding: 0 13px;
+  border-radius: 999px;
+  padding: 4px 12px;
   line-height: 32px;
   display: inline-flex;
   align-items: center;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 .badgeText {
@@ -178,12 +184,16 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-top: 3rem;
-  }
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
   .heading {
     font-size: 2.5rem;
     line-height: 1.25;
+  }
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -208,6 +218,9 @@
     grid-template-columns: 1fr 1fr;
     max-width: 100%;
   }
+  .container {
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
@@ -222,7 +235,9 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+    margin-bottom: 0;
+    max-width: none;
+}
 
   .heading {
     text-align: center;

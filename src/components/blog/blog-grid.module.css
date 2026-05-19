@@ -12,11 +12,18 @@
   padding: 0 3% 80px;
   display: block;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* tabs-container → padding-vertical.padding-xlarge inner */
 .tabsContainer {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
 }
 
 /* filt-out */
@@ -214,10 +221,12 @@
   text-align: left;
   margin: 0 0 5px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
   text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .topPostTitle:hover {
@@ -322,6 +331,10 @@
     grid-row-gap: 16px;
     grid-template-columns: 1fr 1fr;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 }
 
 /* ============================================================
@@ -358,5 +371,10 @@
   .section {
     padding-top: 20px;
     padding-bottom: 60px;
+  }
+}
+@media (min-width: 1440px) {
+  .tabs-container {
+    max-width: 1200px;
   }
 }

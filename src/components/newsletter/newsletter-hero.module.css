@@ -10,6 +10,10 @@
   background-color: #fff;
   padding: 64px 5%;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Inner layout — matches .column-2x-large-2 + .column-center */
@@ -37,11 +41,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: rgba(33, 207, 255, 0.07);
+  background-color: #fafafa;
   border: 1px solid var(--color-brand-cyan);
-  border-radius: 20px;
-  padding: 0 13px;
+  border-radius: 999px;
+  padding: 4px 12px;
   line-height: 32px;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 .badgeText {
@@ -72,7 +79,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
+  color: #05bafe;
 }
 
 /* Description paragraph */
@@ -91,6 +98,7 @@
   width: 100%;
   max-width: 424px;
   margin: 0 auto;
+  margin-bottom: 0;
 }
 
 /* Form row — matches .newsletter-form (flex row, gap 8px) */
@@ -256,7 +264,9 @@
 @media screen and (max-width: 991px) {
   .section {
     padding: 56px 5%;
-  }
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 }
 
 /* ============================================================

@@ -8,12 +8,17 @@
   padding: 0 3% 60px;
   display: block;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* ---------- Filter header bar (search + tags) ---------- */
@@ -165,9 +170,10 @@
   align-items: center;
   padding: 0.3rem 0.8rem;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--color-text-secondary);
+  color: #6d6d6d;
+  line-height: 1.5;
 }
 
 .checkboxInput {
@@ -221,12 +227,14 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 10px;
   font-weight: 500;
-  color: var(--color-brand-blue);
-  background-color: rgba(1, 154, 230, 0.1);
+  color: #1890ff;
+  background-color: #e6f7ff;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 2px 4px;
   margin-left: auto;
   white-space: nowrap;
+  margin-bottom: 0;
+  line-height: 12px;
 }
 
 /* ---------- Card grid (2 columns) ---------- */
@@ -351,6 +359,9 @@
   .filterGrid {
     grid-template-columns: minmax(305px, 305px) 1fr;
   }
+  .coming-soon-badge {
+    line-height: 12px;
+  }
 }
 
 /* max-width 991px */
@@ -362,6 +373,13 @@
   .filterGrid {
     grid-column-gap: 1rem;
     grid-template-columns: 0.35fr 1fr;
+  }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -393,6 +411,9 @@
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 16px;
   }
+  .container {
+    margin-bottom: 0;
+  }
 }
 
 /* max-width 479px */
@@ -400,5 +421,18 @@
   .cardGrid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
+  .coming-soon-badge {
+    font-size: 7px;
+    line-height: 8px;
+}
+}
+@media (min-width: 1440px) {
+  .coming-soon-badge {
+    line-height: 14px;
   }
 }

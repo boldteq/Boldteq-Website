@@ -6,23 +6,26 @@
 /* .how-work-sec3.overflow-hidden */
 .section {
   background-color: transparent;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   padding-left: 5%;
   padding-right: 5%;
   position: relative;
   overflow: hidden;
   display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* .container-large-2 */
 .container {
   z-index: 1;
   width: 100%;
-  max-width: 1280px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  margin: 15px auto 80px;
 }
 
 /* .how-work-sec3-outer */
@@ -218,8 +221,8 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .outer {
@@ -253,6 +256,9 @@
   .step {
     padding-right: 0;
   }
+  .container {
+    max-width: 728px;
+  }
 }
 
 /* ============================================================
@@ -277,6 +283,9 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+  }
+  .container {
+    margin-bottom: 0;
   }
 }
 
@@ -304,4 +313,8 @@
     width: 100%;
     justify-content: center;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

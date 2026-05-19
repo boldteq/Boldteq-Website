@@ -7,13 +7,18 @@
   background-color: #fff;
   padding: 220px 5% 64px;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* Section heading */
@@ -77,6 +82,13 @@
   .grid {
     grid-template-columns: 1fr;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
+  }
 }
 
 /* ============================================================
@@ -90,6 +102,9 @@
   .titleWrap {
     margin-bottom: 40px;
   }
+  .container {
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
@@ -100,4 +115,8 @@
     padding-top: 40px;
     padding-bottom: 48px;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

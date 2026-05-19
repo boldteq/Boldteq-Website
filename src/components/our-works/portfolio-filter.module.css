@@ -209,11 +209,12 @@
   border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-size: 12px;
+  font-weight: 400;
+  color: #6d6d6d;
   transition: background-color 0.12s ease;
   user-select: none;
+  line-height: 1.5;
 }
 
 .checkboxLabel:hover {
@@ -269,12 +270,14 @@
 .comingSoonBadge {
   font-size: 10px;
   font-weight: 500;
-  color: var(--color-brand-blue);
-  background-color: rgba(1, 154, 230, 0.1);
+  color: #1890ff;
+  background-color: #e6f7ff;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 2px 4px;
   margin-left: auto;
   white-space: nowrap;
+  margin-bottom: 0;
+  line-height: 12px;
 }
 
 /* ============================================================
@@ -284,4 +287,20 @@
   .sidebar {
     position: static;
   }
+}
+@media (min-width: 1280px) {
+  .coming-soon-badge {
+    line-height: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  .coming-soon-badge {
+    line-height: 14px;
+  }
+}
+@media (max-width: 479px) {
+  .coming-soon-badge {
+    font-size: 7px;
+    line-height: 8px;
+}
 }

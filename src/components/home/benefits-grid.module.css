@@ -96,6 +96,8 @@
   gap: 20px;
   margin-top: 40px;
   scrollbar-width: none;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .featureGrid::-webkit-scrollbar {
@@ -145,7 +147,7 @@
    ========================================================== */
 .subheadingLarge {
   color: var(--color-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -.02em;
   margin-bottom: 10px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 20px;
@@ -175,6 +177,9 @@
   width: 100%;
   height: auto;
   filter: drop-shadow(0px 0px 30px rgba(0, 126, 188, 0.1));
+  max-width: 3768px;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
 }
 
 /* ==========================================================
@@ -239,6 +244,12 @@
     font-size: 25px;
     line-height: 32px;
   }
+  .paragraph {
+    color: #000;
+  }
+  .full-width-image {
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================
@@ -253,8 +264,8 @@
     border-color: var(--color-brand-card-border);
     justify-content: space-between;
     align-items: center;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
   }
 
   .containerLarge3 {
@@ -265,6 +276,12 @@
     max-width: 308px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .subheading-large {
+    line-height: 32px;
+  }
+  .full-width-image {
+    max-width: 100%;
   }
 }
 
@@ -364,7 +381,7 @@
   .featureCard {
     flex: 0 0 100%;
     min-width: 100%;
-    padding: 24px 18px;
+    padding: 24px;
   }
 
   .paragraphSmall2 {
@@ -374,5 +391,8 @@
 
   .subheadingLarge {
     text-align: center;
+  }
+  .benefitsubott {
+    margin-bottom: 10px;
   }
 }

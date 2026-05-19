@@ -9,13 +9,18 @@
   display: block;
   overflow: hidden;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* benchmark-outer */
@@ -175,13 +180,17 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     padding-left: 2%;
     padding-right: 2%;
-  }
+    padding-top: 50px;
+}
 
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -191,6 +200,9 @@
 @media screen and (max-width: 767px) {
   .section {
     padding-bottom: 0;
+  }
+  .container {
+    margin-bottom: 0;
   }
 }
 
@@ -235,4 +247,8 @@
     font-size: 20px;
     line-height: 20px;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

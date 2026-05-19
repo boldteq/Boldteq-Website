@@ -31,13 +31,13 @@
 }
 
 .margin-bottom-24px {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-size: 40px;
   line-height: 45px;
 }
 
 .paragraph {
-  color: #000;
+  color: #2b2b2b;
   text-align: center;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
@@ -95,7 +95,7 @@
 
 .subheading-large {
   color: var(--color-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -.02em;
   margin-bottom: 10px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 20px;
@@ -115,7 +115,7 @@
   min-height: auto;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: var(--para-small, 16px);
-  letter-spacing: -0.08px;
+  letter-spacing: -.08px;
   margin-bottom: 0;
   line-height: 24px;
 }
@@ -130,6 +130,8 @@
 .full-width-image {
   width: 100%;
   max-width: 3768px;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
 }
 
 .drop-shadow {
@@ -154,6 +156,20 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .subheading-large {
+    font-size: 25px;
+    line-height: 32px;
+}
+  .full-width-image {
+    max-width: 100%;
+  }
+  .paragraph-small-2.margin-bottom-20px {
+    color: #2b2b2b;
+  }
+  .subheading-large.margin-bottom-5 {
+    font-size: 25px;
+    color: #082753;
+}
 }
 
 /* ============================================================
@@ -168,6 +184,28 @@
   .container-large-3 {
     max-width: 1320px;
   }
+  .feature-card {
+    padding-right: 17px;
+    padding-left: 17px;
+    border-color: #009ce0;
+}
+  .subheading-large {
+    line-height: 32px;
+  }
+  .full-width-image {
+    max-width: 100%;
+  }
+  .feature-card.space-between {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+  .paragraph-small-2.margin-bottom-20px {
+    color: #2b2b2b;
+  }
+  .subheading-large.margin-bottom-5 {
+    font-size: 25px;
+    color: #082753;
+}
 }
 
 /* ============================================================
@@ -200,6 +238,12 @@
   .heading-2.margin-bottom-24px {
     margin-top: 0;
   }
+  .section-regular-3.center-sec {
+    padding-bottom: 0%;
+  }
+  .paragraph-small-2.margin-bottom-20px {
+    font-size: 16px;
+  }
 }
 
 /* ============================================================
@@ -229,6 +273,9 @@
   .feature-grid.margin-top-40px {
     grid-template-columns: 1fr;
   }
+  .section-regular-3.center-sec {
+    padding-bottom: 0%;
+  }
 }
 
 /* ============================================================
@@ -248,7 +295,7 @@
   .heading-2.margin-bottom-24px {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 23px;
+    font-size: 21px;
     line-height: 28px;
   }
 
@@ -264,5 +311,14 @@
 
   .feature-card {
     padding: 24px;
+  }
+  .feature-card.space-between {
+    padding-right: 18px;
+    padding-left: 18px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+  .section-regular-3.center-sec {
+    padding-bottom: 0%;
   }
 }

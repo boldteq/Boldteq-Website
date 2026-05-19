@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-05-19T17:50:10.899Z",
+  "total_bugs": 1698,
+  "auto_fixable": 645,
+  "manual_review": 1053,
+  "by_sprint": {
+    "1": 313,
+    "2": 162,
+    "3": 84,
+    "4": 206,
+    "5": 240,
+    "6": 178,
+    "7": 82,
+    "8": 41,
+    "9": 135,
+    "10": 6,
+    "11": 251
+  },
+  "by_severity": {
+    "P0": 0,
+    "P1": 270,
+    "P2": 1428,
+    "P3": 0
+  },
+  "by_category": {
+    "css": 1698
+  },
+  "top_properties": [
+    [
+      "max-width",
+      142
+    ],
+    [
+      "margin-bottom",
+      117
+    ],
+    [
+      "padding-bottom",
+      113
+    ],
+    [
+      "padding-top",
+      106
+    ],
+    [
+      "justify-content",
+      88
+    ],
+    [
+      "color",
+      79
+    ],
+    [
+      "display",
+      77
+    ],
+    [
+      "background-color",
+      71
+    ],
+    [
+      "font-size",
+      69
+    ],
+    [
+      "padding",
+      59
+    ],
+    [
+      "border",
+      54
+    ],
+    [
+      "grid-column-gap",
+      54
+    ],
+    [
+      "grid-row-gap",
+      54
+    ],
+    [
+      "margin-left",
+      53
+    ],
+    [
+      "grid-template-columns",
+      50
+    ],
+    [
+      "width",
+      50
+    ],
+    [
+      "margin-right",
+      47
+    ],
+    [
+      "margin",
+      42
+    ],
+    [
+      "line-height",
+      36
+    ],
+    [
+      "padding-right",
+      33
+    ]
+  ],
+  "counters": {
+    "mismatch": 669,
+    "missing": 1029,
+    "alias": 168,
+    "responsive_module": 0
+  },
+  "token_map_size": 192
+}

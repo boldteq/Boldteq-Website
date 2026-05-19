@@ -373,7 +373,8 @@
   .gallery-13-card.light-purple,
   .gallery-13-card.light-orange {
     aspect-ratio: auto;
-  }
+    min-height: 340px;
+}
 
   /* Webflow has no max-height on .gallery-image-outer at 1440px */
 }

@@ -78,6 +78,9 @@
 .div-white-bag {
   position: relative;
   overflow-x: hidden;
+  padding: 0;
+  font-weight: 400;
+  background-color: #0000;
 }
 
 .div-stuck-swept {
@@ -93,7 +96,7 @@
 .div-wrote-smoke {
   text-align: center;
   /* #05bafe (ratio 2.22 on white) → inherit so children control their own color */
-  color: inherit;
+  color: #05bafe;
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
@@ -132,7 +135,7 @@
 
 .animate-span {
   /* Changed from #05bafe (ratio 2.22 on white) to #019ae6 (ratio 4.5+ on white) */
-  color: var(--color-brand-blue);
+  color: #05bafe;
 }
 
 .p-base-place-copy {
@@ -189,7 +192,7 @@
   grid-template-columns: 1fr 0.75fr 0.85fr;
   grid-auto-columns: 1fr;
   max-width: 660px;
-  margin-bottom: 0;
+  margin-bottom: 50px;
   display: grid;
 }
 
@@ -297,7 +300,7 @@
   width: auto;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: var(--button-text, 1rem);
-  background-color: var(--color-accent-bg-hover);
+  background-color: #21cfff21;
   background-image: url('/images/webflow/Group-46729-1.svg');
   background-position: 94%;
   background-repeat: no-repeat;
@@ -378,7 +381,7 @@
   }
 
   .a-except-get {
-    background-color: var(--color-accent-bg-hover);
+    background-color: #21cfff21;
     background-image: url('/images/webflow/Group-46729-1.svg');
     background-position: 94%;
     background-repeat: no-repeat;
@@ -395,12 +398,21 @@
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 700px;
-    margin-bottom: 0;
+    margin-bottom: 50px;
   }
 
   .ban-grid.margin-bottom-0 {
     grid-template-columns: 1fr 0.65fr 0.75fr;
     max-width: 650px;
+  }
+  .p-base-place-copy {
+    font-size: 50px;
+  }
+  .h1-season-seeing {
+    margin-top: 10px;
+  }
+  .grid-para {
+    font-size: 16px;
   }
 }
 
@@ -446,7 +458,7 @@
   }
 
   .a-except-get {
-    background-color: var(--color-accent-bg-hover);
+    background-color: #21cfff21;
     width: auto;
     margin-top: 0;
     margin-left: 1.25rem;
@@ -454,7 +466,17 @@
 
   .ban-grid.margin-bottom-0 {
     grid-template-columns: 1fr 0.65fr 0.75fr;
-    max-width: 100%;
+    max-width: 640px;
+    margin-bottom: 50px;
+}
+  .div-white-bag {
+    background-color: #0000;
+  }
+  .p-base-place-copy {
+    font-size: 50px;
+  }
+  .h1-season-seeing {
+    margin-top: 10px;
   }
 }
 
@@ -493,6 +515,9 @@
     width: auto;
     margin-top: 0;
     margin-left: 1.25rem;
+  }
+  .p-base-place-copy {
+    font-size: 2.2rem;
   }
 }
 
@@ -546,12 +571,21 @@
 
   .ban-grid {
     margin-bottom: 50px;
-  }
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
 
   .ban-grid.margin-bottom-0 {
     grid-template-columns: 1fr 0.65fr 0.75fr;
     max-width: 100%;
   }
+  .p-base-place-copy {
+    font-size: 1.6rem;
+  }
+  .grid-box {
+    padding-right: 20px;
+    padding-left: 20px;
+}
 }
 
 /* ============================================================
@@ -623,7 +657,7 @@
     flex-direction: column;
     width: 100%;
     margin-top: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 0.625rem 3rem 0.625rem 1.25rem;
     line-height: 1.5rem;
   }
@@ -635,13 +669,13 @@
   }
 
   .a-except-get {
-    background-color: var(--color-accent-bg-hover);
+    background-color: #21cfff21;
     background-size: 29px 29px;
     flex-direction: column;
     width: 100%;
     margin-top: 0;
     margin-left: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 0.625rem 3rem 0.625rem 1.25rem;
     line-height: 1.5rem;
   }
@@ -660,8 +694,8 @@
     justify-content: flex-start;
     align-self: auto;
     align-items: center;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .order-mob-1 {
@@ -701,12 +735,12 @@
     grid-row-gap: 10px;
     flex-flow: row;
     max-width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 40px;
   }
 
   .ban-grid.margin-bottom-0 {
-    grid-column-gap: 12px;
-    grid-row-gap: 12px;
+    grid-column-gap: 17px;
+    grid-row-gap: 17px;
     flex-flow: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -732,5 +766,8 @@
   .margin-top-50 {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .p-base-place-copy {
+    font-size: 1.6rem;
   }
 }

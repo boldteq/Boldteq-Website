@@ -6,12 +6,16 @@
 .section {
   padding: 80px 5%;
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 940px;
+  margin: 15px auto 80px;
 }
 
 .header {
@@ -176,6 +180,13 @@
   .grid {
     grid-template-columns: 1fr;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -191,4 +202,13 @@
   .sideCardImage {
     aspect-ratio: 16 / 9;
   }
+  .container {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 479px) {
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

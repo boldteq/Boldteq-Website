@@ -5,18 +5,21 @@
 
 .section {
   background-color: transparent;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
   font-weight: 400;
   text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
-  max-width: 80rem;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin: 15px auto 80px;
 }
 
 /* Inner centering wrapper (.div-wrote-smoke.blogb-smoke) */
@@ -80,16 +83,17 @@
 
 /* Individual badge box (.blog-ban-gridbox) */
 .badge {
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  background-color: #fff;
-  border-radius: 10px;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  background-color: #fafafa;
+  border-radius: 999px;
   align-items: center;
   width: auto;
-  padding: 15px;
+  padding: 4px 12px;
   transition: opacity 0.5s ease, transform 0.5s ease;
   display: flex;
   box-shadow: var(--shadow-card);
+  color: #18181b;
 }
 
 .badgeIcon {
@@ -159,6 +163,13 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
+  }
 }
 
 /* ============================================================
@@ -180,6 +191,9 @@
   .badge {
     width: 100%;
   }
+  .container {
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
@@ -194,7 +208,9 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+    margin-bottom: 0;
+    max-width: none;
+}
 
   .heading {
     font-size: 1.6rem;

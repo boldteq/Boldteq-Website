@@ -73,7 +73,7 @@
 }
 
 .gradientSpan {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
 }
 
 /* paragraph-small-4 text-color-gray-600 */
@@ -118,7 +118,7 @@
 }
 
 .textFieldSmall {
-  color: var(--color-brand-dark);
+  color: #23272f;
   border: 1px solid #edeff3;
   border-radius: 8px;
   min-height: 55px;
@@ -141,7 +141,7 @@
 
 .buttonSecondarySmall {
   color: #fff;
-  background-color: var(--color-brand-dark);
+  background-color: #23272f;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border: 2px solid #23272f;
   border-radius: 10px;
@@ -209,4 +209,24 @@
   .shieldIcon {
     margin-top: 2px;
   }
+  .footer-newsletter-card {
+    padding: 20px 16px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+  .footer-newsletter-title {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+  .footer-newsletter-form-block {
+    padding: 20px 0 10px;
+    margin-top: 0;
+}
+  .button-secondary-small {
+    margin-top: 10px;
+  }
+  .newsletter-btm-line {
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+}
 }

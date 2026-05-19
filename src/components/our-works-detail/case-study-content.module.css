@@ -25,15 +25,18 @@
 
 /* workpsubott-txt */
 .badge {
-  background-color: var(--color-accent-bg);
+  background-color: #fafafa;
   border: 1.5px solid var(--color-brand-cyan);
-  border-radius: 20px;
+  border-radius: 999px;
   margin-bottom: 0;
-  padding: 0 13px;
+  padding: 4px 12px;
   line-height: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
   display: inline-block;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 /* workp-title */
@@ -99,6 +102,10 @@
   grid-row-gap: 14px;
   width: 100%;
   display: flex;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* cont1-icon base */
@@ -154,6 +161,8 @@
 .icon {
   width: 20px;
   height: 20px;
+  padding-top: 5px;
+  color: #019ae6;
 }
 
 /* work-pop-contout */
@@ -186,7 +195,7 @@
 /* paragraph text-left small-lh */
 .paragraph {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 28px;
   margin: 0;
@@ -216,7 +225,7 @@
 .listNumber {
   color: #993bff;
   background-color: #efe9ff;
-  border-radius: var(--radius-pill);
+  border-radius: 100px;
   flex: none;
   justify-content: center;
   align-self: auto;
@@ -435,6 +444,10 @@
   .content {
     height: 50vh;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 }
 
 /* ============================================================
@@ -453,4 +466,10 @@
   .impactGrid {
     grid-template-columns: 1fr;
   }
+}
+@media (min-width: 1280px) {
+  .paragraph {
+    font-size: 16px;
+    color: #000;
+}
 }

@@ -3,7 +3,7 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #0000008c;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -46,7 +46,7 @@
 .popupBadge {
   background-color: #ffffff2e;
   border: 1px solid #ffffff4d;
-  border-radius: var(--radius-pill);
+  border-radius: 100px;
   justify-content: center;
   align-items: center;
   padding: 5px 13px;
@@ -151,7 +151,7 @@
 }
 
 .paragraph {
-  color: #000;
+  color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -211,24 +211,25 @@
 }
 
 .skyButton {
-  color: #fff;
+  color: #082753;
   width: 100%;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   text-align: center;
-  background-color: var(--color-text-primary);
+  background-color: #fff;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border: 2px solid #0000;
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
-  margin-top: 0;
+  margin-top: 20px;
   padding: .75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
   cursor: pointer;
+  padding-right: 1.25rem;
 }
 
 .skyButton:hover {
@@ -325,6 +326,20 @@
   .betaBenefitsRow {
     grid-template-columns: 1fr;
   }
+  .beta-popup-overlay {
+    margin-top: 0;
+  }
+  .beta-popup-modal {
+    margin-top: 10px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+  .popup-left-panel {
+    min-height: 48%;
+  }
+  .sky-button {
+    font-size: .8rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -341,5 +356,56 @@
 
   .popupRightPanel {
     padding: 32px 24px;
+  }
+}
+@media (max-width: 479px) {
+  .beta-popup-modal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  .popup-left-panel {
+    padding: 30px 20px 25px;
+    min-height: 48%;
+}
+  .white-heading {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    line-height: 30px;
+}
+  .white-li-icon {
+    margin-bottom: 0;
+  }
+  .li-check-sky {
+    margin-top: 0;
+  }
+  .circle-tick {
+    margin-top: 0;
+  }
+  .popup-right-panel {
+    padding: 30px 20px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+  .pop-main-hd {
+    font-size: 20px;
+    line-height: 26px;
+}
+  .popup-urgency-card {
+    padding: 10px;
+  }
+  .sky-button {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .sky-button {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+}
+@media (min-width: 1440px) {
+  .sky-button {
+    padding-right: 1.25rem;
   }
 }

@@ -5,18 +5,21 @@
 
 .section {
   background-color: #0000;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
   font-weight: 400;
   text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
-  max-width: 80rem;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin: 15px auto 80px;
 }
 
 .inner {
@@ -28,14 +31,17 @@
 
 /* ── Badge (.missionsubott) ── */
 .badge {
-  background-color: var(--color-accent-bg);
+  background-color: #fafafa;
   border: 1px solid var(--color-brand-cyan);
-  border-radius: 20px;
+  border-radius: 999px;
   margin-bottom: 17px;
-  padding: 0 13px;
+  padding: 4px 12px;
   line-height: 14px;
   display: inline-flex;
   align-items: center;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 .badgeText {
@@ -201,6 +207,13 @@
   .contentGrid {
     grid-template-columns: 1fr;
   }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
+  }
 }
 
 /* ============================================================
@@ -214,6 +227,9 @@
 
   .contentCol {
     padding: 30px;
+  }
+  .container {
+    margin-bottom: 0;
   }
 }
 
@@ -229,7 +245,9 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+    margin-bottom: 0;
+    max-width: none;
+}
 
   .heading {
     font-size: 1.9rem;

@@ -436,7 +436,7 @@
 .boldteq-bold {
   /* WCAG AA fix: #21cfff on rgba(33,207,255,0.07) over white = ratio ~1.6 (fail at 12px).
      Changed to #0069b5 which gives ratio ≥ 4.5:1 on near-white. */
-  color: #0069b5;
+  color: #21cfff;
 }
 
 /* ─── "Coming Soon" badge inside nav dropdown links ──────────────────────────── */
@@ -444,7 +444,7 @@
 .header-comingsoon-badge {
   /* #1890ff on #e6f7ff at 9px = ratio 2.95 (fail). Darkened to #0050b3
      (ratio 4.5+ on #e6f7ff), bumped to 12px for WCAG AA compliance. */
-  color: var(--color-info-fg);
+  color: #1890ff;
   letter-spacing: 0;
   text-transform: capitalize;
   background-color: var(--color-info-bg);
@@ -452,7 +452,7 @@
   border-radius: 4px;
   align-items: center;
   padding: 3px 6px;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 700;
   line-height: 1em;
   display: inline-flex;
@@ -631,24 +631,25 @@
 }
 
 .sky-button {
-  color: #fff;
+  color: #082753;
   width: auto;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   text-align: center;
-  background-color: var(--color-text-primary);
+  background-color: #fff;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border: 2px solid transparent;
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
-  margin-top: 7px;
-  padding: 0.6rem 1.25rem;
+  margin-top: 20px;
+  padding: .75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
   transition: background-color 0.2s, color 0.2s, background-image 0.2s;
+  padding-right: 1.25rem;
 }
 
 .sky-button:hover {
@@ -716,6 +717,9 @@
   .header-sec {
     position: static;
   }
+  .sky-button {
+    padding-right: 1.25rem;
+  }
 }
 
 /* ─── Responsive: min-width 1280px ──────────────────────────────────────────── */
@@ -741,11 +745,33 @@
   .btn-primary {
     background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
     width: auto;
-  }
+    padding: 10px 3rem 10px 1.25rem;
+    font-size: 16px;
+}
 
   .btn-primary:hover {
     background-image: url('/images/webflow/Group-46729-2.svg');
   }
+  .nav-23-link {
+    padding: 8px;
+  }
+  .nav-23-dropdown-toggle {
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+  .nav-23-dropdown-toggle.w--open {
+    background-color: #0000;
+  }
+  .button-secondary-large {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+  .sky-button {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
 }
 
 /* ─── Responsive: max-width 991px ───────────────────────────────────────────── */
@@ -828,6 +854,13 @@
   .hide-mobile {
     display: none;
   }
+  .nav-dropdown-slot {
+    padding-top: 0;
+  }
+  .nav-dropdown-card-3 {
+    background-color: #0000;
+    box-shadow: none;
+}
 }
 
 /* ─── Responsive: max-width 767px ───────────────────────────────────────────── */
@@ -839,7 +872,8 @@
     background-image: linear-gradient(#21cfff, #019ae6);
     -webkit-background-clip: text;
     background-clip: text;
-  }
+    background-color: #019ae6;
+}
 
   .banner-content {
     flex-direction: column;
@@ -940,6 +974,23 @@
   .menu-text {
     color: #fff;
   }
+  .nav-dropdown-card-3 {
+    padding: 0;
+  }
+  .nav-dropdown-link-2 {
+    padding-right: 0;
+    padding-left: 0;
+    background-color: #0000;
+}
+  .nav-dropdown-link-2.border-btm {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    background-color: #0000;
+}
+  .sky-button {
+    font-size: .8rem;
+  }
 }
 
 /* ─── Responsive: max-width 479px ───────────────────────────────────────────── */
@@ -948,12 +999,15 @@
   .btn-primary {
     padding: 8px 3rem 8px 1rem;
     font-size: 0.9rem;
-  }
+    padding-left: .5rem;
+}
 
   .button-secondary-large {
     padding: 10px 20px;
     font-size: 14px;
-  }
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
   .nav-23-logo {
     align-self: auto;
@@ -993,8 +1047,47 @@
   .navbar.sticky {
     top: 0;
     border-radius: 0;
-    padding: 6px 3.5%;
+    padding: 10px 5%;
     width: 100%;
     transform: translateY(0);
+  }
+  .banner-content {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+  .nav-23-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+  .menu-text {
+    font-size: 18px;
+  }
+  .nav-23-dropdown-toggle {
+    padding-right: 0;
+  }
+  .nav-23-dropdown-card {
+    background-color: #0000;
+  }
+  .nav-dropdown-slot {
+    min-width: 100%;
+  }
+  .nav-dropdown-card-3 {
+    padding-right: 0;
+    padding-left: 0;
+}
+  .nav-dropdown-link-2.border-btm {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    background-color: #0000;
+}
+  .nav-23-menu-button {
+    background-color: #21cfff1f;
+  }
+  .nav-23-menu-button.w--open {
+    border-color: #21cfff;
+    background-color: #21cfff1f;
+}
+  .sky-button {
+    font-size: 1.1rem;
   }
 }

@@ -95,7 +95,7 @@
   flex-flow: column;
   padding: 30px;
   display: flex;
-  box-shadow: 0 0 50px #0003;
+  box-shadow: 0 0 50px #0003, inset 0 0 100px #092955;
   width: 100%;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .gradient-span {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
@@ -199,7 +199,7 @@
 /* ─── Email input ────────────────────────────────────────────────────────────── */
 
 .text-field-small {
-  color: var(--color-brand-dark);
+  color: #23272f;
   background-color: #ffffff;
   border: 1px solid #edeff3;
   border-radius: 8px;
@@ -227,7 +227,7 @@
 
 .button-secondary-small {
   color: #fff;
-  background-color: var(--color-brand-dark);
+  background-color: #23272f;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border: 2px #23272f;
   border-radius: 10px;
@@ -293,7 +293,7 @@
 
 .newsBtmPara,
 .news-btm-para {
-  color: #b5d3f5;
+  color: #b5d3f582;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 400;
@@ -430,7 +430,7 @@
 .coming-soon-badge {
   /* #1890ff on #e6f7ff at 10px = ratio 2.95 (fail). Darkened to #0050b3
      (ratio 4.5+ on #e6f7ff) and bumped to 12px minimum for WCAG AA. */
-  color: var(--color-info-fg);
+  color: #1890ff;
   text-align: center;
   background-color: var(--color-info-bg);
   border-radius: 4px;
@@ -438,9 +438,9 @@
   margin-bottom: 0;
   padding: 2px 4px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 12px;
   white-space: nowrap;
 }
 
@@ -511,6 +511,10 @@
   .footer {
     padding-bottom: 16px;
   }
+  .copyright-outer {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 }
 
 /* ─── Responsive: min-width 1280px ──────────────────────────────────────────── */
@@ -526,6 +530,9 @@
 
   .footer {
     padding-bottom: 16px;
+  }
+  .coming-soon-badge {
+    line-height: 12px;
   }
 }
 
@@ -558,6 +565,13 @@
 
   .footer {
     padding-bottom: 16px;
+  }
+  .footer-right {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+  .copyright-outer {
+    padding: 3px 10px;
   }
 }
 
@@ -653,4 +667,19 @@
     justify-content: center;
     align-items: flex-start;
   }
+  .shield-icon {
+    margin-top: 2px;
+  }
+  .footer-right {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+  .coming-soon-out {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+  .coming-soon-badge {
+    font-size: 7px;
+    line-height: 8px;
+}
 }

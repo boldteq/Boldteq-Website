@@ -4,6 +4,10 @@
   padding: 0 5% 80px;
   position: relative;
   background-color: transparent;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .inner {
@@ -54,7 +58,7 @@
 .btnPrimary {
   color: var(--color-surface);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.75rem;
   background-image: url('/images/webflow/Group-46729-2.svg'), var(--gradient-brand);
@@ -62,12 +66,13 @@
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
   border-radius: 0.75rem;
-  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  padding: 8px 3rem 8px 1rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-card);
+  background-color: #111827;
 }
 
 .btnNavy {
@@ -102,6 +107,9 @@
 
   .heading {
     font-size: 2rem;
+  }
+  .btn-primary {
+    font-size: .8rem;
   }
 }
 
@@ -150,4 +158,21 @@
 
 .cardBtn:hover {
   background-color: var(--color-brand-navy);
+}
+@media (max-width: 991px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+}
+@media (min-width: 1280px) {
+  .btn-primary {
+    padding: 10px 3rem 10px 1.25rem;
+  }
+}
+@media (max-width: 479px) {
+  .btn-primary {
+    padding-left: .5rem;
+    font-size: .9rem;
+}
 }

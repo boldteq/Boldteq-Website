@@ -9,9 +9,10 @@
 
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* h1 — .policy-heading */
@@ -126,6 +127,9 @@
   .ul {
     padding-left: 20px;
   }
+  .container {
+    max-width: 728px;
+  }
 }
 
 /* ============================================================
@@ -141,6 +145,9 @@
     font-size: 1rem;
     line-height: 1.7;
   }
+  .container {
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
@@ -155,4 +162,8 @@
     font-size: 26px;
     line-height: 34px;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

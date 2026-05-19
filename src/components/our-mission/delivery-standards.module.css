@@ -5,12 +5,17 @@
 .section {
   background-color: transparent;
   padding: 0 5% 64px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin: 15px auto 80px;
 }
 
 /* ── Header ── */
@@ -26,11 +31,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(33, 207, 255, 0.1);
+  background-color: #fafafa;
   border: 1px solid rgba(33, 207, 255, 0.3);
   border-radius: var(--radius-pill);
-  padding: 6px 18px;
+  padding: 4px 12px;
   margin-bottom: 1.25rem;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  color: #18181b;
 }
 
 .badgeText {
@@ -91,6 +99,8 @@
   width: 40px;
   height: 40px;
   display: block;
+  padding-top: 5px;
+  color: #019ae6;
 }
 
 .cardTitle {
@@ -116,8 +126,8 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-top: 0;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .header {
@@ -126,6 +136,9 @@
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -144,6 +157,9 @@
 
   .header {
     margin-bottom: 40px;
+  }
+  .container {
+    margin-bottom: 0;
   }
 }
 
@@ -175,4 +191,8 @@
   .subtitle {
     font-size: 15px;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

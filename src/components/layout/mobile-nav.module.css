@@ -65,13 +65,17 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 12px 0;
-  font-size: 15px;
+  padding: 4px 12px;
+  font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #1a1925;
   text-decoration: none;
   font-family: var(--font-roobert), Arial, sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  line-height: 20px;
+  letter-spacing: -.006em;
+  border-radius: 99px;
+  background-color: #0000;
 }
 
 /* ─── Dropdown toggle button ───────────────────────────────────────────────── */
@@ -147,18 +151,19 @@
 
 .comingSoonBadge {
   /* #1890ff on #e6f7ff at 9px fails WCAG AA. Darkened to #0050b3, bumped to 12px. */
-  color: var(--color-info-fg);
+  color: #1890ff;
   background-color: var(--color-info-bg);
   border: 1px solid #91d5ff;
   border-radius: 4px;
-  padding: 3px 6px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1em;
+  padding: 2px 4px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
   display: inline-flex;
   align-items: center;
   margin-left: 6px;
   white-space: nowrap;
+  margin-bottom: 0;
 }
 
 /* ─── CTA footer area ────────────────────────────────────────────────────────── */
@@ -227,5 +232,25 @@
   .ctaFooter {
     padding: 12px 4%;
     gap: 10px;
+  }
+  .coming-soon-badge {
+    font-size: 7px;
+    line-height: 8px;
+}
+}
+@media (max-width: 991px) {
+  .nav-link {
+    padding: 8px 16px;
+    margin-bottom: 4px;
+}
+}
+@media (min-width: 1280px) {
+  .coming-soon-badge {
+    line-height: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  .coming-soon-badge {
+    line-height: 14px;
   }
 }

@@ -8,6 +8,10 @@
 .section {
   background-color: var(--color-cyan-tint);
   padding: 0 2rem 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* White card wrapping the form — matches .contact-form-large */
@@ -18,12 +22,13 @@
   border-radius: 16px;
   flex-flow: column;
   width: 100%;
-  max-width: 800px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   padding: 24px;
   display: flex;
   box-shadow: var(--shadow-card);
+  margin: 15px auto 80px;
 }
 
 /* h3 inside the form — matches .cont-h3 */
@@ -69,10 +74,13 @@
 .label {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
   margin: 0;
+  padding: 10px 22px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
 .required {
@@ -258,6 +266,11 @@
 @media screen and (max-width: 991px) {
   .section {
     padding: 0 4% 70px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -271,6 +284,9 @@
 
   .rowTwo {
     grid-template-columns: 1fr;
+  }
+  .container {
+    margin-bottom: 0;
   }
 }
 
@@ -286,4 +302,8 @@
     width: 100%;
     justify-content: center;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

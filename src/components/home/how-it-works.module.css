@@ -177,6 +177,9 @@
 .fullWidthImage {
   object-fit: cover;
   object-position: top;
+  max-width: 3768px;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
 }
 
 /* ==========================================================
@@ -199,6 +202,9 @@
     font-size: 25px;
     line-height: 32px;
   }
+  .full-width-image {
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================
@@ -214,6 +220,9 @@
 
   .containerLarge3 {
     max-width: 1320px;
+  }
+  .full-width-image {
+    max-width: 100%;
   }
 }
 
@@ -241,6 +250,9 @@
   .featureGrid {
     /* stays 3-col per Webflow line 24562 for margin-top-40px variant */
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .how-work-badge {
+    margin-bottom: 20px;
   }
 }
 
@@ -318,5 +330,8 @@
   /* Fix #20: featureCardBlue padding at 479px → 24px 18px */
   .featureCardBlue {
     padding: 24px 18px;
+  }
+  .how-work-badge {
+    margin-bottom: 15px;
   }
 }

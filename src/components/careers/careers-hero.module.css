@@ -7,22 +7,25 @@
 /* career-page-banner */
 .section {
   background-color: transparent;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
   font-weight: 400;
   text-decoration: none;
   overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* div-stuck-swept (max-width 80rem container) */
 .container {
-  max-width: 80rem;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
   font-weight: 400;
   text-decoration: none;
+  margin: 15px auto 80px;
 }
 
 /* div-wrote-smoke.careerb-smoke */
@@ -42,15 +45,17 @@
 
 /* careersubott */
 .badge {
-  color: var(--color-brand-cyan);
-  background-color: rgba(33, 207, 255, 0.07);
+  color: #18181b;
+  background-color: #fafafa;
   border: 1px solid var(--color-brand-cyan);
-  border-radius: 20px;
+  border-radius: 999px;
   margin-bottom: 17px;
-  padding: 0 13px;
+  padding: 4px 12px;
   line-height: 14px;
   display: inline-flex;
   align-items: center;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
 }
 
 .badgeText {
@@ -219,8 +224,8 @@
   }
 
   .section {
-    padding-top: 3rem;
-    padding-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .galleryImage {
@@ -230,6 +235,9 @@
 
   .galleryCard2 {
     margin-top: 50px;
+  }
+  .container {
+    max-width: 728px;
   }
 }
 
@@ -251,7 +259,8 @@
   .container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
+    margin-bottom: 0;
+}
 
   .subtitle {
     padding-left: 0;
@@ -307,4 +316,8 @@
     min-height: 140px;
     border-radius: 12px;
   }
+  .container {
+    margin-bottom: 0;
+    max-width: none;
+}
 }

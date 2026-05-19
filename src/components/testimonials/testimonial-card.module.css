@@ -49,7 +49,7 @@
 /* Avatar placeholder */
 .avatar {
   background-color: #f5f7f8;
-  border-radius: var(--radius-pill);
+  border-radius: 100%;
   flex: none;
   width: 48px;
   height: 48px;
