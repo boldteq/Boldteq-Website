@@ -42,7 +42,7 @@ export function ScopeHero() {
                 <div key={stat.text} className={styles.badgeBox}>
                   <Image
                     src={stat.icon}
-                    alt=""
+                    alt="" aria-hidden="true"
                     width={24}
                     height={24}
                     className={styles.badgeIcon}

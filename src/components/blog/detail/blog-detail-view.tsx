@@ -94,7 +94,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
               <div className={styles.authorRow}>
                 <Image
                   src="/images/webflow/53ca939ea8306f9306c2a81fd38c72ba62512c86.png"
-                  alt=""
+                  alt="" aria-hidden="true"
                   width={49}
                   height={49}
                   className={styles.authorImage}

@@ -71,6 +71,7 @@ export function HowWorksHero() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="How Boldteq white-label delivery works"
+                loading="lazy"
               />
             </div>
           </div>

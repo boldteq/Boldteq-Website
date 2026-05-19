@@ -27,7 +27,7 @@ export function BlogCard({ post }: BlogCardProps) {
         <Link href={href} className={styles.imageLink} aria-label={post.title}>
           <Image
             src={post.image}
-            alt=""
+            alt="" aria-hidden="true"
             fill
             sizes="(max-width: 767px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className={styles.image}

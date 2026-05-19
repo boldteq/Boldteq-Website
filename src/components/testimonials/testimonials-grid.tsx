@@ -7,11 +7,11 @@ export function TestimonialsGrid() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleWrap}>
-          <h1 className={styles.heading}>
+          <h2 className={styles.heading}>
             See what the biggest
             <br />
             SaaS brands say.
-          </h1>
+          </h2>
         </div>
         <div className={styles.grid}>
           {TESTIMONIALS.map((testimonial) => (

@@ -11,7 +11,7 @@
  *   node scripts/visual-diff.mjs --all
  */
 
-import { chromium } from 'playwright';
+import { chromium } from '@playwright/test';
 import { PNG } from 'pngjs';
 import pixelmatch from 'pixelmatch';
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'fs';
@@ -47,6 +47,9 @@ const PAGES = all ? ALL_PAGES : (pagesArg ? pagesArg.split('=')[1].split(',') : 
 const VIEWPORTS = viewportsArg
   ? viewportsArg.split('=')[1].split(',').map(w => ALL_VIEWPORTS.find(v => v.name === w)).filter(Boolean)
   : ALL_VIEWPORTS;
+const portArg = args.find(a => a.startsWith('--port='));
+const LOCAL_PORT = portArg ? portArg.split('=')[1] : '3000';
+const LOCAL_BASE = `http://localhost:${LOCAL_PORT}`;
 
 mkdirSync(OUT_DIR, { recursive: true });
 
@@ -62,8 +65,8 @@ async function captureScreenshots(baseUrl, pages, viewports, kind) {
       const p = await ctx.newPage();
       const url = `${baseUrl}${page}`;
       try {
-        await p.goto(url, { waitUntil: 'networkidle', timeout: 60_000 });
-        await p.waitForTimeout(800);
+        await p.goto(url, { waitUntil: 'load', timeout: 45_000 });
+        await p.waitForTimeout(1500);
         const outFile = join(OUT_DIR, safePath(page), `${vp.name}-${kind}.png`);
         mkdirSync(dirname(outFile), { recursive: true });
         await p.screenshot({ path: outFile, fullPage });
@@ -115,8 +118,8 @@ function cropPng(src, w, h) {
 
   let local = null, live = null;
   if (!liveOnly) {
-    console.log('Capturing local (http://localhost:3000)...');
-    local = await captureScreenshots('http://localhost:3000', PAGES, VIEWPORTS, 'local');
+    console.log(`Capturing local (${LOCAL_BASE})...`);
+    local = await captureScreenshots(LOCAL_BASE, PAGES, VIEWPORTS, 'local');
   }
   if (!localOnly) {
     console.log('Capturing live (https://boldteq.com)...');

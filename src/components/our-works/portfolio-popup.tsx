@@ -110,6 +110,7 @@ export function PortfolioPopup({ item, onClose }: PortfolioPopupProps) {
               className={styles.iframe}
               title={`${item.name} project details`}
               allowFullScreen
+              loading="lazy"
             />
           </>
         ) : (
