@@ -94,7 +94,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  transition: all 0.5s;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .statIcon {

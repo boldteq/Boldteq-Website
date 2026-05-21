@@ -21,7 +21,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-agencies-use-white-label-teams-in-practice-6",
     category: "web-development",
     image:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/695f69fd56c2e44fd26ba42e_1f99741be431e7b9a1b8d7e4ab585ef77077f493.png",
+      "/images/webflow/cdn/695f69fd56c2e44fd26ba42e_1f99741be431e7b9a1b8d7e4ab585ef77077f493.png",
     shortDescription:
       "Practical perspectives on agency growth, white-label delivery, and execution systems — written for teams scaling client work.",
     publishedAt: "2026-04-08T12:54:29Z",
@@ -33,7 +33,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-white-label-cro-services-help-agencies-convert",
     category: "shopify",
     image:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/695f6916940a141c62ff83c9_f4f2ffedfaa99fee8f19eb210348959198b2a72a.png",
+      "/images/webflow/cdn/695f6916940a141c62ff83c9_f4f2ffedfaa99fee8f19eb210348959198b2a72a.png",
     shortDescription:
       "Practical perspectives on agency growth, white-label delivery, and execution systems — written for teams scaling client work.",
     publishedAt: "2026-04-08T12:54:29Z",
@@ -45,7 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-to-scale-agency-web-dev-without-hiring",
     category: "web-development",
     image:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/695f68bdd2ba095a11c95203_c32a98f52cfeeb06e3c9c1ceb0d2ba9ae6c3d1b7.png",
+      "/images/webflow/cdn/695f68bdd2ba095a11c95203_c32a98f52cfeeb06e3c9c1ceb0d2ba9ae6c3d1b7.png",
     shortDescription:
       "Practical perspectives on agency growth, white-label delivery, and execution systems — written for teams scaling client work.",
     publishedAt: "2026-04-08T12:54:29Z",
@@ -57,7 +57,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "white-label-vs-outsourcing-whats-the-real-difference",
     category: "ui-ux-design",
     image:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/695f68d5bc5b1d2faf7c3494_cdcd25abc4147c93ede9d5c0bf1e81ed8f5070ba.png",
+      "/images/webflow/cdn/695f68d5bc5b1d2faf7c3494_cdcd25abc4147c93ede9d5c0bf1e81ed8f5070ba.png",
     shortDescription:
       "Practical perspectives on agency growth, white-label delivery, and execution systems — written for teams scaling client work.",
     publishedAt: "2026-04-08T12:54:29Z",
@@ -69,7 +69,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "white-label-shopify-development-why-agencies-outsource",
     category: "cro",
     image:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/695f695d822e4b695fec83f2_62826d4606184c7a100f33f714c28948f53e25f6.png",
+      "/images/webflow/cdn/695f695d822e4b695fec83f2_62826d4606184c7a100f33f714c28948f53e25f6.png",
     shortDescription:
       "Practical perspectives on agency growth, white-label delivery, and execution systems — written for teams scaling client work.",
     publishedAt: "2026-04-08T12:54:29Z",
@@ -81,7 +81,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "white-label-ui-ux-design-a-complete-guide-for-agencies",
     category: "white-label-outsourcing",
     image:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/695f69dddaee4341ede966d5_a994d403aef97ae290a90af19570268925b45785.png",
+      "/images/webflow/cdn/695f69dddaee4341ede966d5_a994d403aef97ae290a90af19570268925b45785.png",
     shortDescription:
       "Practical perspectives on agency growth, white-label delivery, and execution systems — written for teams scaling client work.",
     publishedAt: "2026-04-08T12:54:29Z",

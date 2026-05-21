@@ -17,7 +17,7 @@ const RAW_ITEMS: Array<{
     slug: "dabble",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e90f3f234b8ab10cb61d1_Group%201261153274%20(1).png",
+      "/images/webflow/cdn/699e90f3f234b8ab10cb61d1_Group_1261153274__1).png",
     detailPath: "/our-works-pages/dabble",
     order: 1,
   },
@@ -26,7 +26,7 @@ const RAW_ITEMS: Array<{
     slug: "cinea",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e933dcf605ccf4b38fa30_Group%201261153273.png",
+      "/images/webflow/cdn/699e933dcf605ccf4b38fa30_Group_1261153273.png",
     detailPath: "",
     order: 2,
   },
@@ -35,7 +35,7 @@ const RAW_ITEMS: Array<{
     slug: "dog-crate",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e93b7d948db527ee77578_Group%201261153276.png",
+      "/images/webflow/cdn/699e93b7d948db527ee77578_Group_1261153276.png",
     detailPath: "/our-works-pages/dog-crate",
     order: 3,
   },
@@ -44,7 +44,7 @@ const RAW_ITEMS: Array<{
     slug: "aura",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e946107e81ee60d7d4f41_Group%201261153277.png",
+      "/images/webflow/cdn/699e946107e81ee60d7d4f41_Group_1261153277.png",
     detailPath: "",
     order: 4,
   },
@@ -53,7 +53,7 @@ const RAW_ITEMS: Array<{
     slug: "junoone",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a677cb48fc3300a1d634c9_Mask%20group%20(1).png",
+      "/images/webflow/cdn/69a677cb48fc3300a1d634c9_Mask_group__1).png",
     detailPath: "/our-works-pages/junoone",
     order: 5,
   },
@@ -62,7 +62,7 @@ const RAW_ITEMS: Array<{
     slug: "thrive-tea",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6ca85e49ea863d50bcd8c_Homepage%20V2%20(2).png",
+      "/images/webflow/cdn/69a6ca85e49ea863d50bcd8c_Homepage_V2__2).png",
     detailPath: "",
     order: 6,
   },
@@ -71,7 +71,7 @@ const RAW_ITEMS: Array<{
     slug: "superlash",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6cc98c468ef0813c60789_Home.png",
+      "/images/webflow/cdn/69a6cc98c468ef0813c60789_Home.png",
     detailPath: "",
     order: 7,
   },
@@ -80,7 +80,7 @@ const RAW_ITEMS: Array<{
     slug: "better-days",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6db42f4e03ca908276246_Home%20(1).png",
+      "/images/webflow/cdn/69a6db42f4e03ca908276246_Home__1).png",
     detailPath: "/our-works-pages/better-days",
     order: 8,
   },
@@ -89,7 +89,7 @@ const RAW_ITEMS: Array<{
     slug: "cheesecakes-by-sam",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6dcb97821f82c3a596b30_Feedback.png",
+      "/images/webflow/cdn/69a6dcb97821f82c3a596b30_Feedback.png",
     detailPath: "",
     order: 9,
   },
@@ -98,7 +98,7 @@ const RAW_ITEMS: Array<{
     slug: "poppincob",
     category: "shopify",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5728212278b5d89c939f_Feedback%202.png",
+      "/images/webflow/cdn/69aa5728212278b5d89c939f_Feedback_2.png",
     detailPath: "",
     order: 10,
   },
@@ -107,7 +107,7 @@ const RAW_ITEMS: Array<{
     slug: "lippy-oil",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa58e264d14d4a4f8aaa65_Home%20(Client).png",
+      "/images/webflow/cdn/69aa58e264d14d4a4f8aaa65_Home__Client).png",
     detailPath: "/our-works-pages/lippy-oil",
     order: 11,
   },
@@ -116,7 +116,7 @@ const RAW_ITEMS: Array<{
     slug: "pet-factor",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e938de25837ecbec91457_Group%201261153275.png",
+      "/images/webflow/cdn/699e938de25837ecbec91457_Group_1261153275.png",
     detailPath: "",
     order: 12,
   },
@@ -125,7 +125,7 @@ const RAW_ITEMS: Array<{
     slug: "renterr",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa597212ae731147edfe75_Home%20(2).png",
+      "/images/webflow/cdn/69aa597212ae731147edfe75_Home__2).png",
     detailPath: "",
     order: 13,
   },
@@ -134,7 +134,7 @@ const RAW_ITEMS: Array<{
     slug: "frames-for-prints",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa59c5f5b790f3e020c16b_Feedback%202%20(1).png",
+      "/images/webflow/cdn/69aa59c5f5b790f3e020c16b_Feedback_2__1).png",
     detailPath: "/our-works-pages/frames-for-prints",
     order: 14,
   },
@@ -143,7 +143,7 @@ const RAW_ITEMS: Array<{
     slug: "patatoche",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5a2c9b837923eed38971_Home%20(3).png",
+      "/images/webflow/cdn/69aa5a2c9b837923eed38971_Home__3).png",
     detailPath: "",
     order: 15,
   },
@@ -152,7 +152,7 @@ const RAW_ITEMS: Array<{
     slug: "sandscents",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5abaec3a7df94a39f9d3_Home%20(4).png",
+      "/images/webflow/cdn/69aa5abaec3a7df94a39f9d3_Home__4).png",
     detailPath: "/our-works-pages/sandscents",
     order: 16,
   },
@@ -161,7 +161,7 @@ const RAW_ITEMS: Array<{
     slug: "repower-electric-supply",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5b3cfef2d1593c33491e_Home%20(5).png",
+      "/images/webflow/cdn/69aa5b3cfef2d1593c33491e_Home__5).png",
     detailPath: "/our-works-pages/repower-electric-supply",
     order: 17,
   },
@@ -170,7 +170,7 @@ const RAW_ITEMS: Array<{
     slug: "livdynamic",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5c201277cb68bf69abaa_Home%20(6).png",
+      "/images/webflow/cdn/69aa5c201277cb68bf69abaa_Home__6).png",
     detailPath: "",
     order: 18,
   },
@@ -179,7 +179,7 @@ const RAW_ITEMS: Array<{
     slug: "verzendetiket",
     category: "wordpress",
     featuredImage:
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5c8f8225ec55e94a86eb_Home%20(7).png",
+      "/images/webflow/cdn/69aa5c8f8225ec55e94a86eb_Home__7).png",
     detailPath: "",
     order: 19,
   },

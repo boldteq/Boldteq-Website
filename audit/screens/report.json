@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-05-21T04:49:32.324Z",
+  "generated_at": "2026-05-21T05:03:33.092Z",
   "full_page": true,
   "pages": {
     "/": {
       "479": {
-        "pct": 29.84,
-        "mismatched": 1827273,
+        "pct": 32.42,
+        "mismatched": 1985090,
         "width": 479,
         "height": 12783,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/_root/479-diff.png"
       },
       "767": {
-        "pct": 32.09,
-        "mismatched": 3397855,
+        "pct": 32.96,
+        "mismatched": 3489964,
         "width": 767,
         "height": 13805,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/_root/767-diff.png"
       },
       "991": {
-        "pct": 25.35,
-        "mismatched": 2397314,
+        "pct": 28.16,
+        "mismatched": 2663130,
         "width": 991,
         "height": 9542,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/_root/991-diff.png"
       },
       "1440": {
-        "pct": 26.37,
-        "mismatched": 3308784,
+        "pct": 29.32,
+        "mismatched": 3677893,
         "width": 1440,
         "height": 8712,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/_root/1440-diff.png"
@@ -34,29 +34,29 @@
     },
     "/pricing": {
       "479": {
-        "pct": 30.31,
-        "mismatched": 937931,
+        "pct": 33.61,
+        "mismatched": 1040135,
         "width": 479,
         "height": 6460,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/pricing/479-diff.png"
       },
       "767": {
-        "pct": 26.2,
-        "mismatched": 1277203,
+        "pct": 27.92,
+        "mismatched": 1369520,
         "width": 767,
-        "height": 6355,
+        "height": 6395,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/pricing/767-diff.png"
       },
       "991": {
-        "pct": 32.28,
-        "mismatched": 1378217,
+        "pct": 36.36,
+        "mismatched": 1552489,
         "width": 991,
         "height": 4309,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/pricing/991-diff.png"
       },
       "1440": {
-        "pct": 29.19,
-        "mismatched": 1642354,
+        "pct": 31.99,
+        "mismatched": 1799542,
         "width": 1440,
         "height": 3907,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/pricing/1440-diff.png"
@@ -64,29 +64,29 @@
     },
     "/our-works": {
       "479": {
-        "pct": 43.37,
-        "mismatched": 1038812,
+        "pct": 41.62,
+        "mismatched": 1013512,
         "width": 479,
-        "height": 5000,
+        "height": 5084,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/our-works/479-diff.png"
       },
       "767": {
-        "pct": 43.77,
-        "mismatched": 1460837,
+        "pct": 43.83,
+        "mismatched": 1476217,
         "width": 767,
-        "height": 4351,
+        "height": 4391,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/our-works/767-diff.png"
       },
       "991": {
-        "pct": 40.18,
-        "mismatched": 1339142,
+        "pct": 39.74,
+        "mismatched": 1324350,
         "width": 991,
         "height": 3363,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/our-works/991-diff.png"
       },
       "1440": {
-        "pct": 37.54,
-        "mismatched": 1971765,
+        "pct": 36.88,
+        "mismatched": 1937536,
         "width": 1440,
         "height": 3648,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/our-works/1440-diff.png"
@@ -94,29 +94,29 @@
     },
     "/how-it-works": {
       "479": {
-        "pct": 32,
-        "mismatched": 1000033,
+        "pct": 34.44,
+        "mismatched": 1076296,
         "width": 479,
         "height": 6524,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/how-it-works/479-diff.png"
       },
       "767": {
-        "pct": 26.76,
-        "mismatched": 1475012,
+        "pct": 25.93,
+        "mismatched": 1429028,
         "width": 767,
         "height": 7186,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/how-it-works/767-diff.png"
       },
       "991": {
-        "pct": 33.85,
-        "mismatched": 1347165,
+        "pct": 37.36,
+        "mismatched": 1486786,
         "width": 991,
         "height": 4016,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/how-it-works/991-diff.png"
       },
       "1440": {
-        "pct": 39.61,
-        "mismatched": 2119652,
+        "pct": 42.96,
+        "mismatched": 2298693,
         "width": 1440,
         "height": 3716,
         "diffFile": "/Users/yashbaldha/Desktop/Boldteq App/Marketing Site/Boldteq - Website/audit/screens/how-it-works/1440-diff.png"

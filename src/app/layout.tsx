@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import { TopBanner } from "@/components/layout/top-banner";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PostHogProvider } from "@/lib/analytics/posthog-provider";
@@ -85,6 +86,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@boldteq",
+    creator: "@boldteq",
     images: ["/images/webflow/Group-47047.png"],
   },
 };
@@ -190,6 +193,7 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-full flex-col font-roobert">
         <PostHogProvider>
+          <TopBanner />
           <Navbar />
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />

@@ -50,9 +50,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["Shopify", "Liquid", "JavaScript", "CSS", "Figma"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aaae99f3e11e64fe731430_Home%20Client.png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aab08fe64fc4b6ce7d0851_21.png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aab00138b4184464328e7b_33.png",
+      "/images/webflow/cdn/69aaae99f3e11e64fe731430_Home_Client.png",
+      "/images/webflow/cdn/69aab08fe64fc4b6ce7d0851_21.png",
+      "/images/webflow/cdn/69aab00138b4184464328e7b_33.png",
     ],
   },
   {
@@ -104,9 +104,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["Shopify", "Liquid", "JavaScript", "Klaviyo", "Figma"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6db42f4e03ca908276246_Home%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6db42f4e03ca908276246_Home%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a6db42f4e03ca908276246_Home%20(1).png",
+      "/images/webflow/cdn/69a6db42f4e03ca908276246_Home__1).png",
+      "/images/webflow/cdn/69a6db42f4e03ca908276246_Home__1).png",
+      "/images/webflow/cdn/69a6db42f4e03ca908276246_Home__1).png",
     ],
   },
   {
@@ -158,9 +158,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["Shopify", "Liquid", "JavaScript", "CSS", "Klaviyo"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e90f3f234b8ab10cb61d1_Group%201261153274%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e90f3f234b8ab10cb61d1_Group%201261153274%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e90f3f234b8ab10cb61d1_Group%201261153274%20(1).png",
+      "/images/webflow/cdn/699e90f3f234b8ab10cb61d1_Group_1261153274__1).png",
+      "/images/webflow/cdn/699e90f3f234b8ab10cb61d1_Group_1261153274__1).png",
+      "/images/webflow/cdn/699e90f3f234b8ab10cb61d1_Group_1261153274__1).png",
     ],
   },
   {
@@ -212,9 +212,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["Shopify", "Liquid", "JavaScript", "Recharge", "Klaviyo"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e93b7d948db527ee77578_Group%201261153276.png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e938de25837ecbec91457_Group%201261153275.png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/699e938de25837ecbec91457_Group%201261153275.png",
+      "/images/webflow/cdn/699e93b7d948db527ee77578_Group_1261153276.png",
+      "/images/webflow/cdn/699e938de25837ecbec91457_Group_1261153275.png",
+      "/images/webflow/cdn/699e938de25837ecbec91457_Group_1261153275.png",
     ],
   },
   {
@@ -267,9 +267,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["WordPress", "WooCommerce", "PHP", "JavaScript", "ACF"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa59c5f5b790f3e020c16b_Feedback%202%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa59c5f5b790f3e020c16b_Feedback%202%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa59c5f5b790f3e020c16b_Feedback%202%20(1).png",
+      "/images/webflow/cdn/69aa59c5f5b790f3e020c16b_Feedback_2__1).png",
+      "/images/webflow/cdn/69aa59c5f5b790f3e020c16b_Feedback_2__1).png",
+      "/images/webflow/cdn/69aa59c5f5b790f3e020c16b_Feedback_2__1).png",
     ],
   },
   {
@@ -327,9 +327,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
       "Subscription App",
     ],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a677cb48fc3300a1d634c9_Mask%20group%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a677cb48fc3300a1d634c9_Mask%20group%20(1).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69a677cb48fc3300a1d634c9_Mask%20group%20(1).png",
+      "/images/webflow/cdn/69a677cb48fc3300a1d634c9_Mask_group__1).png",
+      "/images/webflow/cdn/69a677cb48fc3300a1d634c9_Mask_group__1).png",
+      "/images/webflow/cdn/69a677cb48fc3300a1d634c9_Mask_group__1).png",
     ],
   },
   {
@@ -381,9 +381,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["WordPress", "WooCommerce", "PHP", "Rank Math", "Figma"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa58e264d14d4a4f8aaa65_Home%20(Client).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa58e264d14d4a4f8aaa65_Home%20(Client).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa58e264d14d4a4f8aaa65_Home%20(Client).png",
+      "/images/webflow/cdn/69aa58e264d14d4a4f8aaa65_Home__Client).png",
+      "/images/webflow/cdn/69aa58e264d14d4a4f8aaa65_Home__Client).png",
+      "/images/webflow/cdn/69aa58e264d14d4a4f8aaa65_Home__Client).png",
     ],
   },
   {
@@ -435,9 +435,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["WordPress", "Gravity Forms", "PHP", "ACF Pro", "Figma"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5b3cfef2d1593c33491e_Home%20(5).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5b3cfef2d1593c33491e_Home%20(5).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5b3cfef2d1593c33491e_Home%20(5).png",
+      "/images/webflow/cdn/69aa5b3cfef2d1593c33491e_Home__5).png",
+      "/images/webflow/cdn/69aa5b3cfef2d1593c33491e_Home__5).png",
+      "/images/webflow/cdn/69aa5b3cfef2d1593c33491e_Home__5).png",
     ],
   },
   {
@@ -489,9 +489,9 @@ export const PORTFOLIO_DETAILS: PortfolioDetail[] = [
     ],
     techStack: ["WordPress", "WooCommerce", "PHP", "JavaScript", "Figma"],
     gallery: [
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5abaec3a7df94a39f9d3_Home%20(4).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5abaec3a7df94a39f9d3_Home%20(4).png",
-      "https://cdn.prod.website-files.com/6936b27cc4d64679a58e166d/69aa5abaec3a7df94a39f9d3_Home%20(4).png",
+      "/images/webflow/cdn/69aa5abaec3a7df94a39f9d3_Home__4).png",
+      "/images/webflow/cdn/69aa5abaec3a7df94a39f9d3_Home__4).png",
+      "/images/webflow/cdn/69aa5abaec3a7df94a39f9d3_Home__4).png",
     ],
   },
 ];

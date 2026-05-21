@@ -71,6 +71,8 @@ export function createMetadata({
     },
     twitter: {
       card: "summary_large_image",
+      site: "@boldteq",
+      creator: "@boldteq",
       title,
       description,
       images: [ogImageUrl],
