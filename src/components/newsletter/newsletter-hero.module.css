@@ -5,15 +5,14 @@
    Newsletter page uses the same footer newsletter card design, enlarged
    ============================================================ */
 
-/* Section wrapper */
+/* Section wrapper — matches Webflow .section-regular-17 (bg #fff, padding 64px 5%) */
 .section {
   background-color: #fff;
-  padding: 64px 5%;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 5%;
+  padding-right: 5%;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 /* Inner layout — matches .column-2x-large-2 + .column-center */
@@ -37,17 +36,18 @@
   gap: 8px;
 }
 
+/* Badge — matches Webflow .newsubott (bg #21cfff12, 1.5px border #05bafe, radius 20px, padding 0 13px, line-height 14px, gap 5px) */
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
-  border-radius: 999px;
-  padding: 4px 12px;
-  line-height: 32px;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
+  gap: 5px;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1.5px solid #05bafe;
+  border-radius: 20px;
+  padding: 0 13px;
+  line-height: 14px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
   color: #18181b;
 }
 
@@ -87,7 +87,7 @@
   color: var(--color-text-subtle);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.6;
   margin: 0;
   max-width: 480px;
@@ -101,12 +101,13 @@
   margin-bottom: 0;
 }
 
-/* Form row — matches .newsletter-form (flex row, gap 8px) */
+/* Form row — matches .newsletter-form (flex row, gap 8px, margin-bottom 0) */
 .form {
   display: flex;
   flex-flow: row;
   gap: 8px;
   width: 100%;
+  margin-bottom: 0;
 }
 
 /* Email input — matches .form-input-large */
@@ -120,7 +121,7 @@
   padding: 12px 16px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   flex: 1;
   min-width: 0;
@@ -192,7 +193,7 @@
   color: var(--color-text-subtle);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   margin: 0;
 }
@@ -250,7 +251,10 @@
    ============================================================ */
 @media screen and (min-width: 1280px) {
   .section {
-    padding: 80px 5%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .heading {
@@ -263,10 +267,14 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding: 56px 5%;
     padding-top: 50px;
     padding-bottom: 50px;
-}
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .form {
+    align-items: center;
+  }
 }
 
 /* ============================================================
@@ -275,7 +283,10 @@
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
-    padding: 48px 1.5rem;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .heading {
@@ -296,7 +307,10 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 40px 1rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .heading {

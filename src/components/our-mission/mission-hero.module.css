@@ -7,13 +7,17 @@
   background-color: #0000;
   padding-top: 80px;
   padding-bottom: 80px;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   margin-right: auto;
   margin-left: auto;
+  display: block;
+  justify-content: center;
+  position: relative;
 }
 
 .container {
+  width: 100%;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
@@ -32,16 +36,21 @@
 /* ── Badge (.missionsubott) ── */
 .badge {
   background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #fff;
   border-radius: 999px;
   margin-bottom: 17px;
   padding: 4px 12px;
   line-height: 14px;
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
   align-items: center;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
+  text-decoration: none;
 }
 
 .badgeText {
@@ -81,7 +90,7 @@
   padding-right: 1.5rem;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   margin-bottom: 0;
 }
@@ -93,7 +102,7 @@
   margin-top: 2rem;
   padding-left: 0;
   padding-right: 0;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   display: flex;
 }
@@ -183,7 +192,7 @@
   text-align: left;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   margin: 0;
 }

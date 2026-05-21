@@ -1,37 +1,43 @@
 /* ============================================================
-   BETA WHO IT'S FOR — beta-who-its-for.module.css
-   Matches Webflow .how-work-sec2.overflow-hidden.beta-built-sec
+   BetaWhoItsFor — beta-who-its-for.module.css
+   Section: .how-work-sec2.overflow-hidden.beta-built-sec
+   Container: .container-large-3
    ============================================================ */
 
+/* .how-work-sec2.overflow-hidden.beta-built-sec */
 .section {
   padding: 70px 5%;
+  padding-top: 70px;
+  padding-bottom: 70px;
   position: relative;
   overflow: hidden;
   display: block;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
 }
 
+/* .container-large-3 */
 .container {
-  max-width: 940px;
+  width: 100%;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  margin: 15px auto 80px;
 }
 
-/* demo-sec2-outer */
+/* .demo-sec2-outer */
 .outer {
   grid-column-gap: 40px;
   grid-row-gap: 40px;
   flex-flow: column;
+  grid-template-rows: auto;
+  grid-template-columns: 0.85fr 1.15fr;
+  grid-auto-columns: 1fr;
   justify-content: flex-start;
-  align-items: center;
+  place-items: center stretch;
   display: flex;
 }
 
-/* demo-cont-center */
+/* .demo-cont-center */
 .center {
   grid-column-gap: 56px;
   grid-row-gap: 56px;
@@ -40,28 +46,31 @@
   display: flex;
 }
 
-/* column-regular column-left web-max */
+/* .column-regular.column-left.web-max */
 .headerCol {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* how-work-tag-badge */
+/* .how-work-tag-badge */
 .tagBadgeWrap {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
-/* how-work-badge */
+/* .how-work-badge */
 .tagBadge {
-  background-color: rgba(33, 207, 255, 0.07);
-  border: 1px solid var(--color-brand-cyan);
+  background-color: #21cfff12;
+  border: 1px solid #05bafe;
   border-radius: 20px;
+  margin-bottom: 0;
   padding: 0 13px;
-  line-height: 32px;
+  line-height: 14px;
 }
 
 .badgeInner {
@@ -71,9 +80,9 @@
   line-height: 32px;
 }
 
-/* faq-sky-text */
+/* .faq-sky-text */
 .badgeText {
-  color: var(--color-brand-cyan);
+  color: #21cfff;
   text-transform: capitalize;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -82,35 +91,36 @@
   font-weight: 500;
 }
 
-/* heading-2 demo-sec-heading margin-top */
+/* .heading-2.demo-sec-heading.margin-top */
 .heading {
-  color: var(--color-text-primary);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 40px;
   margin-top: 12px;
   margin-bottom: 0;
   text-align: center;
 }
 
-/* max-width-small-3 center-text */
+/* .max-width-small-3.center-text */
 .subtitleWrap {
   text-align: center;
   max-width: 500px;
 }
 
-/* paragraph text-center */
+/* .paragraph.text-center */
 .subtitle {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 28px;
   text-align: center;
   margin: 0;
+  font-weight: 400;
 }
 
-/* how-works-gridboxes */
+/* .how-works-gridboxes */
 .gridboxes {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
@@ -121,9 +131,9 @@
   display: grid;
 }
 
-/* demodev-sec2-grid-inner */
+/* .demodev-sec2-grid-inner */
 .card {
-  background-color: var(--color-success-bg);
+  background-color: #def4ff;
   border: 1px solid #009ce0;
   border-radius: 20px;
   flex-flow: column;
@@ -134,7 +144,7 @@
   position: relative;
 }
 
-/* sky-digit margin-bottom */
+/* .sky-digit.margin-bottom */
 .skyDigit {
   z-index: 3;
   text-align: center;
@@ -143,7 +153,7 @@
   background-image: linear-gradient(#21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
-  border: 1px dashed var(--color-text-primary);
+  border: 1px dashed #082753;
   border-radius: 50px;
   flex: 0 auto;
   justify-content: center;
@@ -152,7 +162,7 @@
   width: 65px;
   height: 65px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 15px;
   padding: 5px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1.53rem;
@@ -161,9 +171,9 @@
   position: static;
 }
 
-/* heading-3-blue */
+/* .heading-3-blue */
 .cardTitle {
-  color: var(--color-text-primary);
+  color: #082753;
   text-align: left;
   margin-top: 0;
   margin-bottom: 7px;
@@ -173,51 +183,74 @@
   line-height: 25px;
 }
 
-/* paragraph text-left */
+/* .paragraph.text-left */
 .cardText {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
+  font-weight: 400;
   line-height: 28px;
   text-align: left;
   margin: 0;
 }
 
 /* ============================================================
-   max-width: 991px
+   min-width: 1280px — .sky-digit width 67/67
    ============================================================ */
-@media screen and (max-width: 991px) {
-  .heading {
-    font-size: 34px;
-    line-height: 40px;
-  }
+@media screen and (min-width: 1280px) {
   .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-  .container {
-    max-width: 728px;
+    padding-bottom: 70px;
+  }
+  .skyDigit {
+    width: 67px;
+    height: 67px;
   }
 }
 
 /* ============================================================
-   max-width: 767px
+   min-width: 1440px — .sky-digit width 69/69
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+  .skyDigit {
+    width: 69px;
+    height: 69px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .heading {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px — gridboxes 1fr, section padding-bottom 60px
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
     padding-bottom: 60px;
   }
-
   .gridboxes {
     grid-template-columns: 1fr;
   }
-
   .heading {
     font-size: 28px;
     line-height: 36px;
   }
-  .container {
-    margin-bottom: 0;
+  .card {
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 
@@ -231,13 +264,11 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
-
   .heading {
     font-size: 1.5rem;
     line-height: 1.3;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
+  .gridboxes {
+    grid-template-columns: 1fr;
+  }
 }

@@ -9,6 +9,7 @@
   padding-top: 80px;
   padding-bottom: 80px;
   display: block;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   margin-right: auto;
@@ -63,14 +64,14 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   text-align: center;
   margin: 0;
 }
 
 /* career-dev-sec2-grid — 4 columns */
-.grid {
+.selectionGrid {
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
@@ -113,7 +114,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   text-align: left;
   margin: 0;
@@ -128,7 +129,7 @@
     padding-bottom: 50px;
   }
 
-  .grid {
+  .selectionGrid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -149,7 +150,7 @@
     line-height: 1.25;
   }
 
-  .grid {
+  .selectionGrid {
     grid-template-columns: 1fr;
     max-width: 520px;
     margin-left: auto;

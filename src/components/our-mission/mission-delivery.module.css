@@ -10,9 +10,13 @@
   padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
+  display: block;
+  justify-content: center;
+  position: relative;
 }
 
 .container {
+  width: 100%;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
@@ -20,7 +24,7 @@
 }
 
 /* ── 2-column grid ── */
-.grid {
+.deliveryGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -76,7 +80,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 26px;
   margin: 0;
 }
@@ -131,7 +135,7 @@
    max-width: 991px
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .grid {
+  .deliveryGrid {
     grid-template-columns: 1fr;
     gap: 40px;
   }

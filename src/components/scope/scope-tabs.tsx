@@ -138,9 +138,6 @@ export function ScopeTabs() {
   const platform =
     SCOPE_PLATFORMS.find((p) => p.key === activePlatform) ?? SCOPE_PLATFORMS[0];
 
-  const isShopifyVariant = (iconVariant: Platform["iconVariant"]) =>
-    iconVariant === "shopify" || iconVariant === "shopify-apps";
-
   return (
     <div id="scope-sec" className={styles.section}>
       <div className={styles.container}>
@@ -170,15 +167,7 @@ export function ScopeTabs() {
                   onClick={() => setActivePlatform(p.key)}
                 >
                   {/* sp-icon */}
-                  <span
-                    className={
-                      isShopifyVariant(p.iconVariant)
-                        ? styles.platformIcon
-                        : `${styles.platformIcon} ${styles.platformIconWp}`
-                    }
-                  >
-                    {p.icon}
-                  </span>
+                  <span className={styles.platformIcon}>{p.icon}</span>
                   {/* stab */}
                   <span className={styles.platformLabel}>{p.label}</span>
                 </button>

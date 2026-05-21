@@ -2,21 +2,22 @@
    DEMO WHY BOLDTEQ — demo-why-boldteq.module.css
    ============================================================ */
 
+/* Section — matches Webflow .demo-sec5.overflow-hidden (padding-top 60px, padding-bottom 60px, padding-left/right 5%) + gradient */
 .section {
   background-image: linear-gradient(#019ae61a, #019ae600);
-  padding: 60px 5% 0;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-right: auto;
-  margin-left: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  margin: 15px auto 80px;
 }
 
 .header {
@@ -35,12 +36,14 @@
   margin-bottom: 1rem;
 }
 
+/* Badge — matches Webflow .whyboldteqsubott (bg #21cfff12, 1px border, radius 20px, padding 0 13px, line-height 14px, margin-bottom 15px) */
 .badge {
-  background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
-  border-radius: 999px;
-  padding: 4px 12px;
-  line-height: 32px;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid #05bafe;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  padding: 0 13px;
+  line-height: 14px;
   display: inline-flex;
   align-items: center;
   grid-column-gap: 4px;
@@ -72,7 +75,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   margin: 0;
 }
@@ -118,7 +121,7 @@
   color: var(--color-text-subtle);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 26px;
   margin: 0;
 }
@@ -137,16 +140,12 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding: 50px 5% 60px;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 50px;
-}
+  }
 
   .heading {
     font-size: 34px;
-  }
-  .container {
-    max-width: 728px;
   }
 }
 
@@ -162,9 +161,6 @@
   .header {
     margin-bottom: 32px;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
@@ -172,7 +168,10 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 48px 1.25rem 56px;
+    padding-top: 16px;
+    padding-bottom: 56px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .heading {
@@ -186,8 +185,4 @@
   .card {
     padding: 24px 20px;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
 }

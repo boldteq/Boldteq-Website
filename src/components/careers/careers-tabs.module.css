@@ -9,6 +9,7 @@
   padding-top: 80px;
   padding-bottom: 80px;
   display: block;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   margin-right: auto;
@@ -61,7 +62,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   text-align: center;
   margin: 0;
@@ -230,7 +231,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   text-align: left;
   margin-bottom: 16px;
@@ -335,7 +336,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   text-align: left;
   margin: 0;
@@ -381,6 +382,7 @@
 /* faq-item (.faq-item as job accordion) */
 .jobItem {
   background-color: #fff;
+  border: 1px #c1e6f9;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -431,7 +433,7 @@
   color: var(--color-brand-cyan);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 10px 0 0;
 }
 
@@ -455,7 +457,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 26px;
   margin: 20px 0 16px;
 }
@@ -484,7 +486,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -493,7 +495,7 @@
   color: var(--color-text-subtle);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 24px;
 }
 

@@ -10,6 +10,8 @@
   padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
+  display: block;
+  justify-content: center;
 }
 
 .container {
@@ -44,7 +46,7 @@
 }
 
 /* career-team-grid — 2 column grid */
-.grid {
+.testimonialsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 24px;
@@ -177,7 +179,7 @@
 /* ─── Responsive ───────────────────────────────────────────── */
 
 @media screen and (max-width: 991px) {
-  .grid {
+  .testimonialsGrid {
     grid-template-columns: 1fr;
   }
   .section {
@@ -206,7 +208,7 @@
     margin-bottom: 0;
   }
 }
-@media (max-width: 479px) {
+@media screen and (max-width: 479px) {
   .container {
     margin-bottom: 0;
     max-width: none;

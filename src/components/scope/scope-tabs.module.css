@@ -1,33 +1,31 @@
 /* ============================================================
-   SCOPE TABS — scope-tabs.module.css
-   Source: .scope-tab-sec.new, .scope-tabs, .scope-tabs-menu
+   ScopeTabs — scope-tabs.module.css
+   Source: .scope-tab-sec.new + .container-large-3 + .scope-tabs + .scope-tabs-menu
    ============================================================ */
 
-/* scope-tab-sec.new */
+/* .scope-tab-sec.new */
 .section {
   background-color: transparent;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  padding: 0 3% 60px;
   padding-top: 5rem;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   display: block;
   position: relative;
   margin-right: auto;
   margin-left: auto;
 }
 
-/* container-large-3 */
+/* .container-large-3 */
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 3%;
-  padding-right: 3%;
-  margin: 15px auto 80px;
 }
 
-/* scope-outer */
+/* .scope-outer */
 .scopeOuter {
   justify-content: flex-start;
   align-items: flex-start;
@@ -35,23 +33,25 @@
   position: relative;
 }
 
-/* scope-tabs — flex row: sidebar left, content right */
+/* .scope-tabs — flex row, 30px gap */
 .scopeTabs {
   display: flex;
   flex-flow: row;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   gap: 30px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
-  align-items: flex-start;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  place-items: start;
 }
 
-/* scope-tabs-menu — vertical sidebar */
+/* .scope-tabs-menu — vertical sidebar */
 .platformMenu {
   display: flex;
   flex-flow: column;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   gap: 10px;
   background-color: #fff;
   border-radius: 15px;
@@ -61,20 +61,22 @@
   min-width: 200px;
   height: auto;
   padding: 10px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
-/* scope-tabs-content */
+/* .scope-tabs-content */
 .scopeContent {
   flex: 1;
   min-width: 0;
 }
 
-/* stab-name */
+/* .stab-name */
 .platformBtn {
   display: flex;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   gap: 10px;
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   background-color: transparent;
   border: none;
   border-radius: 9px;
@@ -89,19 +91,19 @@
   transition: background-color 0.2s;
 }
 
-/* stab-name.w--current (gradient active) */
+/* .stab-name.w--current */
 .platformBtnActive {
-  background-color: var(--color-brand-cyan);
+  background-color: #0ab4e8;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-radius: 9px;
   font-weight: 700;
-  color: #fff;
+  color: #2b2b2b;
 }
 
-/* sp-icon (S/W/F letter icon) */
+/* .sp-icon (S/W/F letter icon) */
 .platformIcon {
-  color: var(--color-brand-cyan);
-  background-color: var(--color-success-bg);
+  color: #05bafe;
+  background-color: #def4ff;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -113,38 +115,33 @@
   flex-shrink: 0;
 }
 
-.platformIconWp {
-  color: var(--color-brand-cyan);
-  background-color: var(--color-success-bg);
-  font-size: 12px;
-  font-weight: 700;
-}
-
 /* When active, icon bg becomes white */
 .platformBtnActive .platformIcon {
   background-color: rgba(255, 255, 255, 0.25);
   color: #fff;
 }
 
-/* stab */
+/* .stab */
 .platformLabel {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
 }
 
-/* stab-cont */
+/* .stab-cont */
 .platformContent {
   padding-top: 0;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* platform-header.shopify / .wordpress */
+/* .platform-header.shopify / .wordpress */
 .platformHeader {
   display: flex;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   gap: 16px;
-  background-color: var(--color-success-bg);
+  background-color: #def4ff;
   border: 1.5px solid #009ce0;
   border-radius: 14px;
   justify-content: flex-start;
@@ -155,9 +152,9 @@
   padding: 20px 24px;
 }
 
-/* ph-icon.shopify / .wp */
+/* .ph-icon.shopify / .wp */
 .phIcon {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   background-color: #fff;
   border-radius: 14px;
   justify-content: center;
@@ -171,17 +168,17 @@
   line-height: 24px;
   display: flex;
   flex-shrink: 0;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
-/* ph-body */
+/* .ph-body */
 .phBody {
   flex: 1;
 }
 
-/* ph-name */
+/* .ph-name.shopify / .wp */
 .phName {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   margin-top: 0;
   margin-bottom: 3px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -189,23 +186,23 @@
   font-weight: 700;
 }
 
-/* ph-desc */
+/* .ph-desc */
 .phDesc {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   text-align: left;
   margin: 0;
 }
 
-/* ph-badge — hidden by default in Webflow */
+/* .ph-badge — hidden in Webflow */
 .phBadge {
   display: none;
 }
 
-/* tier-tabs — horizontal grid 4 cols */
+/* .tier-tabs — horizontal grid 4 cols */
 .tierTabs {
   display: grid;
   grid-column-gap: 4px;
@@ -221,103 +218,107 @@
   margin-left: 5px;
   margin-right: 5px;
   padding: 6px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
-/* ttab base */
+/* .ttab base */
 .tierTab {
   background-color: transparent;
   border: none;
   border-radius: 7px;
-  padding: 8px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   cursor: pointer;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
   white-space: nowrap;
 }
 
-/* ttab.small.w--current */
+/* .ttab.small.w--current */
 .tierTabSmallActive {
   color: #fff;
-  background-color: var(--color-brand-card-border);
+  background-color: #009ce0;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-radius: 7px;
 }
 
-/* ttab.medium.w--current */
+/* .ttab.medium.w--current */
 .tierTabMediumActive {
-  background-color: var(--color-brand-cyan);
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   color: #fff;
+  background-color: #0ab4e8;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-radius: 7px;
 }
 
-/* ttab.large.w--current */
+/* .ttab.large.w--current */
 .tierTabLargeActive {
-  background-color: var(--color-brand-cyan);
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   color: #fff;
+  background-color: #0ab4e8;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-radius: 7px;
 }
 
-/* ttab.ongoing.w--current */
+/* .ttab.ongoing.w--current */
 .tierTabSupportActive {
-  background-color: var(--color-brand-cyan);
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   color: #fff;
+  background-color: #0ab4e8;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-radius: 7px;
 }
 
-/* tier-intro */
+/* .tier-intro */
 .tierIntro {
   display: flex;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   gap: 16px;
+  background-color: #ecfdf5;
+  border: 1px solid #6ee7b7;
   border-radius: 14px;
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 20px;
   padding: 18px 22px;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  background-color: #ecfdf5;
 }
 
-/* tier-intro.small */
+/* .tier-intro.small */
 .tierIntroSmall {
-  background-color: var(--color-success-bg);
-  border: 1px solid #009ce0;
+  background-color: #def4ff;
+  border-color: #009ce0;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-/* tier-intro.medium */
+/* .tier-intro.medium */
 .tierIntroMedium {
   background-color: #e0f5fd;
-  border: 1px solid #7dd3f0;
+  border-color: #7dd3f0;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-/* tier-intro.large */
+/* .tier-intro.large */
 .tierIntroLarge {
-  background-color: var(--color-success-bg);
-  border: 1px solid #009ce0;
+  background-color: #def4ff;
+  border-color: #009ce0;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-/* tier-intro.support */
+/* .tier-intro.support */
 .tierIntroSupport {
-  background-color: var(--color-success-bg);
-  border: 1px solid #009ce0;
+  background-color: #def4ff;
+  border-color: #009ce0;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-/* tier-intro-icon */
+/* .tier-intro-icon */
 .tierIntroIcon {
   background-color: #fff;
   border-radius: 10px;
@@ -328,17 +329,17 @@
   font-size: 20px;
   display: flex;
   flex-shrink: 0;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
-/* tier-intro-body */
+/* .tier-intro-body */
 .tierIntroBody {
   flex: 1;
 }
 
-/* tier-intro-name */
+/* .tier-intro-name.small / .medium */
 .tierIntroName {
-  color: var(--color-text-primary);
+  color: #082753;
   margin-top: 0;
   margin-bottom: 5px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -348,18 +349,18 @@
 }
 
 .tierIntroDesc {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   text-align: left;
   margin: 0;
 }
 
-/* tier-intro-tag */
+/* .tier-intro-tag — pill */
 .tierIntroTag {
-  border-radius: var(--radius-pill);
+  border-radius: 100px;
   flex: 0 auto;
   justify-content: center;
   align-items: center;
@@ -373,56 +374,62 @@
   white-space: nowrap;
 }
 
+/* .tier-intro-tag.small */
 .tierIntroTagSmall {
   color: #fff;
-  background-color: var(--color-brand-cyan);
-  border: 1px solid var(--color-brand-cyan);
+  background-color: #05bafe;
+  border: 1px solid #05bafe;
 }
 
+/* .tier-intro-tag.medium */
 .tierIntroTagMedium {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   background-color: #fff;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #05bafe;
 }
 
+/* .tier-intro-tag.large */
 .tierIntroTagLarge {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   background-color: #fff;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #05bafe;
 }
 
+/* .tier-intro-tag.support */
 .tierIntroTagSupport {
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   background-color: #fff;
   border: 1px solid #009ce0;
 }
 
-/* cards-grid */
+/* .cards-grid — 4 col grid */
 .cardsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   gap: 16px;
   padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* cards-grid.support */
+/* .cards-grid.support — 2 col */
 .cardsGridSupport {
   grid-template-columns: 1fr 1fr;
 }
 
-/* card */
+/* .card.small/medium/large/support */
 .card {
   background-color: #fff;
   border-radius: 15px;
   padding: 22px;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
-/* card-label */
+/* .card-label.small/medium/large/support */
 .cardLabel {
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -438,28 +445,28 @@
 }
 
 .cardLabelSmall {
-  color: var(--color-brand-cyan);
-  background-color: var(--color-success-bg);
+  color: #05bafe;
+  background-color: #def4ff;
 }
 
 .cardLabelMedium {
-  color: var(--color-brand-cyan);
+  color: #0ab4e8;
   background-color: #e0f5fd;
 }
 
 .cardLabelLarge {
-  color: var(--color-brand-cyan);
-  background-color: var(--color-success-bg);
+  color: #0ab4e8;
+  background-color: #def4ff;
 }
 
 .cardLabelSupport {
-  color: var(--color-brand-cyan);
-  background-color: var(--color-success-bg);
+  color: #05bafe;
+  background-color: #def4ff;
 }
 
-/* card-h */
+/* .card-h */
 .cardHeading {
-  color: var(--color-text-primary);
+  color: #082753;
   text-align: left;
   margin-top: 0;
   margin-bottom: 5px;
@@ -469,31 +476,31 @@
   line-height: 25px;
 }
 
-/* service-list */
+/* .service-list */
 .serviceList {
   list-style: disc;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
+  grid-column-gap: 7px;
+  grid-row-gap: 7px;
   gap: 7px;
   padding-left: 18px;
   margin: 0;
-  grid-column-gap: 7px;
-  grid-row-gap: 7px;
 }
 
-/* slist-name */
+/* .slist-name */
 .serviceItem {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
 }
 
 /* ============================================================
-   min-width: 1280px
+   min-width: 1280px — scope-tabs-menu wider; container-large-3 same 1280
    ============================================================ */
 @media screen and (min-width: 1280px) {
   .platformMenu {
@@ -502,72 +509,54 @@
 }
 
 /* ============================================================
-   max-width: 991px — scope-tabs becomes column
+   min-width: 1440px — container-large-3 grows to 1320px
    ============================================================ */
-@media screen and (max-width: 991px) {
-  .scopeTabs {
-    flex-flow: column;
-  }
-
-  .platformMenu {
-    width: 100%;
-    flex-flow: row;
-    flex-wrap: wrap;
-    min-width: auto;
-  }
-
-  .platformBtn {
-    width: auto;
-    flex: 1;
-    justify-content: center;
-  }
-
-  .tierIntro {
-    flex-flow: column;
-  }
-
-  .platformHeader {
-    flex-flow: column;
-  }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
+@media screen and (min-width: 1440px) {
   .container {
-    max-width: 728px;
+    max-width: 1320px;
   }
 }
 
 /* ============================================================
-   max-width: 767px
+   max-width: 991px — no special scope-tabs change at 991px in Webflow
+   (column flip happens at 767)
+   ============================================================ */
+
+/* ============================================================
+   max-width: 767px — scope-tabs becomes column; tier-tabs 1fr 1fr; cards 1fr
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
     padding-top: 2rem;
     padding-bottom: 60px;
   }
-
+  .scopeTabs {
+    flex-flow: column;
+  }
+  .platformMenu {
+    width: 100%;
+    flex-flow: row;
+    flex-wrap: wrap;
+    min-width: auto;
+  }
+  .platformBtn {
+    width: auto;
+    flex: 1;
+    justify-content: center;
+  }
+  .platformHeader {
+    flex-flow: column;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .tierTabs {
     grid-template-columns: 1fr 1fr;
     margin-left: 0;
     margin-right: 0;
   }
-
-  .cardsGrid {
-    grid-template-columns: 1fr 1fr;
-    padding-left: 0;
-    padding-right: 0;
+  .tierIntro {
+    flex-flow: column;
   }
-
-  .cardsGridSupport {
-    grid-template-columns: 1fr;
-  }
-
-  .platformHeader {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .tierIntroSmall,
   .tierIntroMedium,
   .tierIntroLarge,
@@ -575,34 +564,36 @@
     margin-left: 0;
     margin-right: 0;
   }
-  .container {
-    margin-bottom: 0;
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cardsGridSupport {
+    grid-template-columns: 1fr;
   }
 }
 
 /* ============================================================
-   max-width: 479px
+   max-width: 479px — tier-tabs 1fr 1fr, cards-grid 1fr
+   (matches Webflow @media max-width:479)
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
     padding-top: 1rem;
     padding-bottom: 60px;
   }
-
+  .tierTabs {
+    grid-template-columns: 1fr 1fr;
+  }
   .cardsGrid {
     grid-template-columns: 1fr;
   }
-
   .cardsGridSupport {
     grid-template-columns: 1fr;
   }
-
-  .stab-cont {
+  .platformContent {
     padding-left: 0;
     padding-right: 0;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
 }

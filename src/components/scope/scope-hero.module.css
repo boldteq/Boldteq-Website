@@ -1,34 +1,40 @@
 /* ============================================================
-   SCOPE HERO — scope-hero.module.css
-   Matches: .work-banner.transparent-bg.scope-ban
+   ScopeHero — scope-hero.module.css
+   Section:   .work-banner.transparent-bg.scope-ban
+   Container: .div-stuck-swept (max-width 80rem, padding 0 2rem)
+   Inner:     .div-wrote-smoke (text-align center, max-width 70rem)
    ============================================================ */
 
+/* .work-banner.transparent-bg.scope-ban */
 .section {
   background-color: transparent;
   background-image: none;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 4rem;
+  padding-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
   font-weight: 400;
   text-decoration: none;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  position: relative;
 }
 
+/* .div-stuck-swept */
 .container {
-  max-width: 940px;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  width: 100%;
   font-weight: 400;
   text-decoration: none;
-  margin: 15px auto 80px;
 }
 
+/* .div-wrote-smoke */
 .inner {
   text-align: center;
-  color: var(--color-brand-cyan);
+  color: #05bafe;
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
@@ -37,7 +43,7 @@
   text-decoration: none;
 }
 
-/* ── Badge ── */
+/* ── Badge wrapper (.career-subhead-out.work-badge → flex centered) ── */
 .badgeRow {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -47,36 +53,37 @@
   margin-bottom: 0;
 }
 
+/* ── Badge (.careersubott → soft pill) ── */
 .badge {
-  color: #18181b;
-  background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
-  border-radius: 999px;
+  color: #05bafe;
+  background-color: #21cfff12;
+  border: 1px solid #05bafe;
+  border-radius: 20px;
   margin-bottom: 17px;
-  padding: 4px 12px;
+  padding: 0 13px;
   line-height: 14px;
-  display: inline-flex;
-  align-items: center;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
 }
 
+/* .faq-sky-text gradient */
 .badgeText {
-  font-size: 12px;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 700;
+  color: #21cfff;
+  text-transform: capitalize;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-size: 12px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-weight: 500;
+  margin: 0;
   padding-top: 6px;
   padding-bottom: 6px;
-  margin: 0;
+  line-height: 14px;
 }
 
-/* ── H1 ── */
+/* ── H1 (.our-works-ban-title) ── */
 .heading {
-  color: var(--color-brand-navy);
+  color: #092245;
   margin-top: 0;
   padding: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -86,9 +93,9 @@
   text-decoration: none;
 }
 
-/* ── Subtitle ── */
+/* ── Subtitle (.h1-season-seeing.our-work-banpara) ── */
 .subtitle {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   max-width: 536px;
   margin-left: auto;
   margin-right: auto;
@@ -102,7 +109,7 @@
   text-decoration: none;
 }
 
-/* ── Badge grid wrapper ── */
+/* ── Badge grid wrapper (.web-job-attention) ── */
 .badgeGridWrap {
   justify-content: center;
   align-items: center;
@@ -114,16 +121,19 @@
   display: flex;
 }
 
-/* ── Badge grid ── */
+/* ── Badge grid (.web-ban-grid.mob-2grid) ── */
 .badgeGrid {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   flex: 0 auto;
   width: auto;
   display: flex;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
 }
 
-/* ── Individual badge box ── */
+/* ── Individual badge box (.web-grid-box) ── */
 .badgeBox {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -132,9 +142,9 @@
   align-items: center;
   width: auto;
   padding: 20px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: all 0.5s;
   display: flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
 .badgeIcon {
@@ -143,8 +153,9 @@
   flex-shrink: 0;
 }
 
+/* .grid-para */
 .badgeText2 {
-  color: var(--color-text-primary);
+  color: #082753;
   text-align: left;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -157,14 +168,17 @@
    min-width: 1280px
    ============================================================ */
 @media screen and (min-width: 1280px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .heading {
-    color: var(--color-brand-navy);
+    color: #092245;
     font-size: 40px;
     line-height: 1.25;
   }
-
   .subtitle {
-    color: var(--color-text-secondary);
+    color: #2b2b2b;
     margin-top: 10px;
   }
 }
@@ -182,47 +196,43 @@
    max-width: 991px
    ============================================================ */
 @media screen and (max-width: 991px) {
+  .section {
+    padding-top: 3rem;
+  }
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .heading {
-    color: var(--color-brand-navy);
+    color: #092245;
     font-size: 40px;
     line-height: 1.25;
   }
-
   .subtitle {
     margin-top: 10px;
   }
-
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    max-width: 728px;
-}
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 }
 
 /* ============================================================
    max-width: 767px
    ============================================================ */
 @media screen and (max-width: 767px) {
+  .section {
+    padding-top: 3rem;
+  }
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 0;
+  }
   .heading {
     font-size: 2.5rem;
     line-height: 1.25;
     margin-bottom: 10px;
   }
-
   .subtitle {
     font-size: 1.1rem;
   }
-
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin-bottom: 0;
-}
-
   .badgeGrid {
     grid-column-gap: 15px;
     grid-row-gap: 15px;
@@ -230,7 +240,6 @@
     display: grid;
     width: 100%;
   }
-
   .badgeBox {
     padding-left: 20px;
     padding-right: 20px;
@@ -239,45 +248,38 @@
 }
 
 /* ============================================================
-   max-width: 479px  (mobile)
+   max-width: 479px
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
     padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
-
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 0;
-    max-width: none;
-}
-
+  }
   .heading {
     font-size: 1.9rem;
     line-height: 1.25;
   }
-
   .subtitle {
     text-align: center;
     padding-left: 0;
     padding-right: 0;
     font-size: 1rem;
   }
-
   .badgeGrid {
     grid-template-columns: 1fr 1fr;
     display: grid;
     width: 100%;
   }
-
   .badgeBox {
     flex-flow: column;
     width: 100%;
     align-items: center;
   }
-
   .badgeText2 {
     text-align: center;
     font-size: 1rem;

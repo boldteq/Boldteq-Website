@@ -4,11 +4,11 @@
    Source CSS: line 18319 (.contact-banner), 478 (.div-stuck-swept), 492 (.div-wrote-smoke)
    ============================================================ */
 
-/* Outer section — matches .contact-banner (upper hero portion only) */
+/* Outer section — matches .contact-banner (bg #effafe, padding-top 4rem, padding-bottom 6rem) */
 .section {
   background-color: var(--color-cyan-tint);
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
   font-weight: 400;
   text-decoration: none;
   margin-right: auto;
@@ -17,12 +17,11 @@
 
 /* Max-width container — matches .div-stuck-swept (max-width: 80rem, auto margins, px: 2rem) */
 .container {
-  max-width: 940px;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
-  margin: 15px auto 80px;
 }
 
 /* Center-text wrapper — matches .div-wrote-smoke.demo-stoke (text-align: center, max-width: 90rem) */
@@ -42,14 +41,16 @@
   margin-bottom: 0.5rem;
 }
 
+/* Badge — matches Webflow .contactsubott (bg #21cfff12, 1.5px border, radius 20px, padding 0 13px, line-height 14px, margin-bottom 17px) */
 .badge {
   display: inline-flex;
   align-items: center;
-  background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
-  border-radius: 999px;
-  padding: 4px 12px;
-  line-height: 32px;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1.5px solid #05bafe;
+  border-radius: 20px;
+  margin-bottom: 17px;
+  padding: 0 13px;
+  line-height: 14px;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
@@ -81,20 +82,20 @@
   text-decoration: none;
 }
 
-/* Subtitle paragraph — matches .h1-season-seeing.demo-h1 (max-width: 42rem, font-size: 16px) */
+/* Subtitle paragraph — matches .h1-season-seeing.demo-h1 (color #2b2b2b, max-width 42rem, font-size 16px, font-weight 400, line-height 28px, margin-top 0) */
 .subtitle {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 0;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.75rem;
+  line-height: 28px;
   text-decoration: none;
 }
 
@@ -133,8 +134,7 @@
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    max-width: 728px;
-}
+  }
 }
 
 /* ============================================================
@@ -149,9 +149,6 @@
 
   .heading {
     font-size: 2rem;
-  }
-  .container {
-    margin-bottom: 0;
   }
 }
 
@@ -168,9 +165,7 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
-    margin-bottom: 0;
-    max-width: none;
-}
+  }
 
   .heading {
     font-size: 1.75rem;

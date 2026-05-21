@@ -29,7 +29,7 @@ export function CareersBenchmarks() {
               </Button>
             </div>
 
-            <div className={styles["grid"]}>
+            <div className={styles["benchGrid"]}>
               {BENCHMARKS.map((item) => (
                 <div key={item.label} className={styles["benchCard"]}>
                   <p className={styles["benchLabel"]}>{item.label}</p>

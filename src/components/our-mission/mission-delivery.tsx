@@ -34,7 +34,7 @@ export function MissionDelivery() {
   return (
     <section className={styles['section']}>
       <div className={styles['container']}>
-        <div className={styles['grid']}>
+        <div className={styles['deliveryGrid']}>
           {/* Left: text */}
           <div className={styles['textCol']}>
             <h2 className={styles['heading']}>

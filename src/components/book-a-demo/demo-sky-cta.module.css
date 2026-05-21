@@ -3,6 +3,7 @@
    Matches Webflow .demo-sky-sec-btm (gradient cyan→blue CTA)
    ============================================================ */
 
+/* Section — matches Webflow .demo-sky-sec-btm (gradient cyan→blue, no padding on the section itself; padding comes from .demosky-grid-btm) */
 .section {
   -webkit-text-fill-color: inherit;
   background-color: var(--color-brand-cyan);
@@ -10,18 +11,14 @@
   padding: 0;
   display: block;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .container {
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 5%;
-  margin: 15px auto 80px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* demosky-grid-btm */
@@ -73,7 +70,7 @@
   margin-top: 1rem;
 }
 
-/* white-btn */
+/* white-btn — matches Webflow .white-btn (bg #fff, color var(--blue), border 2px #9ca3af → transparent, padding .75rem 3rem .75rem 1.25rem) */
 .whiteBtn {
   width: auto;
   color: var(--color-brand-blue);
@@ -89,27 +86,28 @@
   justify-content: center;
   align-items: center;
   margin-top: 0;
+  margin-left: 0;
   padding: 0.75rem 3rem 0.75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  margin-left: 0;
-  border-color: #111827;
 }
 
 .whiteBtn:hover {
   background-color: var(--color-brand-blue);
   color: #fff;
+  border-color: #111827;
 }
 
-/* navy-butn */
+/* navy-btn — matches Webflow .navy-btn (bg #082753, color #fff, min-width 190px, padding .75rem 3rem .75rem 1.25rem) */
 .navyBtn {
-  color: #082753;
+  color: #fff;
   width: auto;
+  min-width: 190px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   background-image: url('/images/webflow/Group-46729-1.svg');
   background-position: 94%;
   background-repeat: no-repeat;
@@ -119,16 +117,16 @@
   justify-content: center;
   align-items: center;
   margin-top: 0;
+  margin-left: 0;
   padding: 0.75rem 3rem 0.75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  min-width: 190px;
 }
 
 .navyBtn:hover {
-  color: var(--color-brand-blue);
+  color: #082753;
   background-color: #fff;
 }
 
@@ -141,14 +139,7 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-  .container {
-    max-width: 728px;
-  }
-  .white-btn {
+  .whiteBtn {
     margin-left: 0;
   }
 }
@@ -170,13 +161,10 @@
   .rightCol {
     max-width: none;
   }
-  .container {
-    margin-bottom: 0;
-  }
-  .white-btn {
+  .whiteBtn {
     margin-left: 0;
   }
-  .navy-btn {
+  .navyBtn {
     font-size: .8rem;
   }
 }
@@ -192,36 +180,35 @@
   .heading {
     font-size: 1.5rem;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
-  .white-btn {
+  .whiteBtn {
     margin-left: 0;
     font-size: 1.1rem;
-}
-  .navy-btn {
+    width: 100%;
+  }
+  .navyBtn {
     font-size: 1.1rem;
   }
 }
 @media (min-width: 1280px) {
-  .white-btn {
+  .whiteBtn {
     padding-right: 3rem;
     padding-left: 1.25rem;
     margin-left: 0;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-}
-  .navy-btn {
+    border-style: none;
+  }
+  .navyBtn {
     padding-right: 3rem;
     padding-left: 1.25rem;
-}
+    border-style: none;
+  }
 }
 @media (min-width: 1440px) {
-  .white-btn {
+  .whiteBtn {
     margin-left: 0;
   }
-  .navy-btn {
+  .navyBtn {
     min-width: 190px;
   }
 }

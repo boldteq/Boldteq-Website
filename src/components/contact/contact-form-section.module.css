@@ -7,14 +7,15 @@
 /* Outer wrapper: same #effafe bg as hero, padding below only */
 .section {
   background-color: var(--color-cyan-tint);
-  padding: 0 2rem 80px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 0;
+  padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin-right: auto;
   margin-left: auto;
 }
 
-/* White card wrapping the form — matches .contact-form-large */
+/* White card wrapping the form — matches .contact-form-large (bg #fff, radius 16px, gap 24px, padding 24px, shadow 0 0 7px #0000001a) */
 .container {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
@@ -22,13 +23,12 @@
   border-radius: 16px;
   flex-flow: column;
   width: 100%;
-  max-width: 940px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 24px;
   display: flex;
-  box-shadow: var(--shadow-card);
-  margin: 15px auto 80px;
+  box-shadow: 0 0 7px #0000001a;
 }
 
 /* h3 inside the form — matches .cont-h3 */
@@ -49,9 +49,10 @@
   gap: 10px;
 }
 
-/* Two-column grid — matches .form-grid (col-gap: 24px, row-gap: 24px, 1fr 1fr) */
+/* Two-column grid — matches Webflow .form-grid (col-gap 24px, row-gap 24px, 1fr 1fr, grid-template-rows auto) */
 .rowTwo {
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 24px;
   grid-row-gap: 24px;
@@ -71,23 +72,22 @@
   align-items: baseline;
 }
 
+/* Label — matches Webflow .form-label (color #2b2b2b, font-size 16px, font-weight 400, line-height 26px) */
 .label {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
   margin: 0;
-  padding: 10px 22px;
-  margin-bottom: 10px;
-  background-color: #fff;
 }
 
+/* Required asterisk — matches Webflow .field-label-3.text-color-red (color #f42a2a, font-size 14px, font-weight 400, line-height 1.5) */
 .required {
-  color: var(--color-danger);
+  color: #f42a2a;
   font-size: 14px;
-  font-weight: 500;
-  line-height: 26px;
+  font-weight: 400;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -96,7 +96,7 @@
   min-height: 45px;
   box-shadow: none;
   background-color: var(--color-cyan-tint);
-  border: 1px solid #c9d2d9;
+  border: 1px solid transparent;
   border-radius: 7px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
@@ -117,7 +117,7 @@
   width: 100%;
   box-shadow: none;
   background-color: var(--color-cyan-tint);
-  border: 1px solid #c9d2d9;
+  border: 1px solid transparent;
   border-radius: 7px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
@@ -136,12 +136,12 @@
   box-shadow: var(--shadow-focus-ring);
 }
 
-/* Textarea — matches .cform-field.cform-textarea: height 131px */
+/* Textarea — matches .cform-field.cform-textarea: height 131px, no border */
 .textarea {
   height: 131px;
   box-shadow: none;
   background-color: var(--color-cyan-tint);
-  border: 1px solid #c9d2d9;
+  border: 1px solid transparent;
   border-radius: 7px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
@@ -265,12 +265,12 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding: 0 4% 70px;
-    padding-top: 50px;
     padding-bottom: 50px;
-}
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .container {
-    max-width: 728px;
+    max-width: 100%;
   }
 }
 
@@ -279,14 +279,13 @@
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
-    padding: 0 1.5rem 60px;
+    padding-bottom: 60px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .rowTwo {
     grid-template-columns: 1fr;
-  }
-  .container {
-    margin-bottom: 0;
   }
 }
 
@@ -295,15 +294,13 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 0 1rem 48px;
+    padding-bottom: 48px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .submitBtn {
     width: 100%;
     justify-content: center;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
 }

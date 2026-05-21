@@ -6,12 +6,11 @@
                18426 (.cont-icon-primary)
    ============================================================ */
 
-/* Wrapper section — same #effafe bg, no extra padding (merges with hero bottom) */
+/* Wrapper section — same #effafe bg as hero; merges with hero bottom (no own padding) */
 .section {
   background-color: var(--color-cyan-tint);
-  padding: 0;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 0;
+  padding-bottom: 6rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -20,14 +19,13 @@
 .container {
   z-index: 2;
   width: 100%;
-  max-width: 940px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
   padding-left: 2rem;
   padding-right: 2rem;
   position: relative;
-  margin: 15px auto 80px;
 }
 
 /* Grid — matches .cont-bx-grid: 3 columns, gap 16px, margin-top 10px, margin-bottom 20px */
@@ -42,7 +40,7 @@
   padding-right: 0;
 }
 
-/* Card — matches .row-small.white-cont-bx */
+/* Card — matches .row-small.white-cont-bx (bg #fff, border 1px transparent, radius 10px, padding 12px 20px, shadow 0 0 7px #0000001a, gap 12px, row flex) */
 .card {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
@@ -54,7 +52,7 @@
   border-radius: 10px;
   padding: 12px 20px;
   display: flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 7px #0000001a;
   text-decoration: none;
 }
 
@@ -95,7 +93,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
@@ -120,12 +118,10 @@
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    max-width: 728px;
-}
+  }
   .section {
-    padding-top: 50px;
     padding-bottom: 50px;
-}
+  }
 }
 
 /* ============================================================
@@ -141,8 +137,7 @@
     max-width: 100%;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    margin-bottom: 0;
-}
+  }
 }
 
 /* ============================================================
@@ -153,7 +148,5 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
-    margin-bottom: 0;
-    max-width: none;
-}
+  }
 }

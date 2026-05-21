@@ -1,26 +1,29 @@
 /* ============================================================
-   BETA HOW IT WORKS — beta-how-it-works.module.css
-   Matches Webflow .section-regular-3.blue-sec.makeit-sec (beta)
+   BetaHowItWorks — beta-how-it-works.module.css
+   Section: .section-regular-3.blue-sec.makeit-sec (beta.html)
+   Container: .container-large-3
    ============================================================ */
 
+/* .section-regular-3.blue-sec.makeit-sec */
 .section {
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   padding: 70px 5% 80px;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 0;
+  display: block;
 }
 
+/* .container-large-3 */
 .container {
-  max-width: 940px;
+  width: 100%;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  margin: 15px auto 80px;
 }
 
-/* how-work-tag-badge */
+/* .how-work-tag-badge */
 .tagBadgeWrap {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -30,13 +33,14 @@
   margin-bottom: 20px;
 }
 
-/* how-work-badge */
+/* .how-work-badge — pill */
 .tagBadge {
-  background-color: rgba(33, 207, 255, 0.07);
-  border: 1px solid var(--color-brand-cyan);
+  background-color: #21cfff12;
+  border: 1px solid #05bafe;
   border-radius: 20px;
+  margin-bottom: 0;
   padding: 0 13px;
-  line-height: 32px;
+  line-height: 14px;
 }
 
 .badgeInner {
@@ -46,9 +50,9 @@
   line-height: 32px;
 }
 
-/* faq-sky-text gradient */
+/* .faq-sky-text */
 .badgeText {
-  color: var(--color-brand-cyan);
+  color: #21cfff;
   text-transform: capitalize;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -57,7 +61,7 @@
   font-weight: 500;
 }
 
-/* heading-2 margin-bottom-24px white-heading */
+/* .heading-2.margin-bottom-24px.white-heading */
 .heading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -65,15 +69,16 @@
   font-weight: 700;
   line-height: 48px;
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-/* paragraph white opacity */
+/* .paragraph.white.opacity */
 .subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
+  opacity: 0.8;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 28px;
   text-align: center;
   margin-top: 0;
@@ -82,7 +87,7 @@
   margin-right: auto;
 }
 
-/* feature-grid margin-top-40px */
+/* .feature-grid.margin-top-40px */
 .featureGrid {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
@@ -93,30 +98,31 @@
   display: grid;
 }
 
-/* feature-card space-between blue padding-btm */
+/* .feature-card.space-between.blue.padding-btm */
 .featureCard {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   text-align: center;
-  background-color: #def4ff;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  mix-blend-mode: normal;
+  background-color: #1c3861;
+  background-image: none;
+  border: 1px solid #ffffff1c;
   border-radius: 20px;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 17px 17px;
+  padding: 25px 17px 25px;
   text-decoration: none;
   display: flex;
 }
 
-/* text-wrapper */
 .textWrapper {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* subheading-large white */
+/* .subheading-large.white */
 .cardTitle {
   color: #fff;
   letter-spacing: -0.02em;
@@ -127,7 +133,7 @@
   margin-bottom: 10px;
 }
 
-/* paragraph-small-2 margin-bottom-20px white opacity */
+/* .paragraph-small-2.margin-bottom-20px.white.opacity */
 .cardText {
   color: #fff;
   opacity: 0.8;
@@ -137,10 +143,10 @@
   margin-bottom: 20px;
 }
 
-/* inner-badge */
+/* .inner-badge */
 .innerBadge {
-  background-color: var(--color-accent-bg);
-  border: 1px solid var(--color-brand-cyan);
+  background-color: #21cfff12;
+  border: 1px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 0;
   padding: 0 13px;
@@ -158,97 +164,76 @@
   padding-bottom: 6px;
 }
 
-/* inn-badge-text — color not gradient per Webflow .inn-badge-text */
+/* .inn-badge-text */
 .innBadgeText {
-  color: var(--color-brand-cyan);
-  font-weight: 500;
+  color: #21cfff;
+  text-transform: capitalize;
   -webkit-text-fill-color: inherit;
+  background-clip: border-box;
+  font-weight: 500;
 }
 
 /* ============================================================
-   min-width: 1280px
+   min-width: 1280px — .feature-card.space-between gets +padding-left/right 20
    ============================================================ */
 @media screen and (min-width: 1280px) {
-  .featureGrid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   .featureCard {
     padding-left: 20px;
     padding-right: 20px;
-    border-color: #009ce0;
-    background-color: #def4ff;
-}
+  }
 }
 
 /* ============================================================
-   min-width: 1440px
+   min-width: 1440px — .feature-card.space-between padding-left/right 25
    ============================================================ */
 @media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
   .featureCard {
-    padding-left: 17px;
-    padding-right: 17px;
-    border-color: #009ce0;
-    background-color: #def4ff;
-}
+    padding-left: 25px;
+    padding-right: 25px;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 /* ============================================================
-   max-width: 991px
+   max-width: 991px — feature-grid.margin-top-40px stays 1fr 1fr 1fr
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .featureGrid {
-    grid-template-columns: 1fr;
-  }
-
   .heading {
     font-size: 34px;
   }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-  .container {
-    max-width: 728px;
-  }
-  .inner-badge {
-    margin-bottom: 20px;
-  }
 }
 
 /* ============================================================
-   max-width: 767px
+   max-width: 767px — feature-grid → 1fr base, feature-grid.margin-top-40px → 1fr
    ============================================================ */
 @media screen and (max-width: 767px) {
   .heading {
     font-size: 28px;
     line-height: 36px;
   }
-  .container {
-    margin-bottom: 0;
+  .featureGrid {
+    grid-template-columns: 1fr;
   }
 }
 
 /* ============================================================
-   max-width: 479px
+   max-width: 479px — section padding 50px 5% 60px, feature-card padding 24px
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
     margin-top: 0;
     padding: 50px 5% 60px;
   }
-
   .heading {
     font-size: 1.5rem;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
-  .feature-card {
-    padding: 24px;
-  }
-  .inner-badge {
-    margin-bottom: 15px;
+  .featureCard {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 24px 18px 24px;
   }
 }

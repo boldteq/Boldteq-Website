@@ -38,7 +38,7 @@ export function CareersSelection() {
             </div>
           </div>
 
-          <div className={styles.grid}>
+          <div className={styles.selectionGrid}>
             {CARDS.map((card) => (
               <div key={card.title} className={styles.card}>
                 <Image

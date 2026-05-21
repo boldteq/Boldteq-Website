@@ -47,7 +47,7 @@ export function DeliveryStandards() {
         </div>
 
         {/* Cards grid */}
-        <div className={styles['grid']}>
+        <div className={styles['standardsGrid']}>
           {CARDS.map((card) => (
             <div key={card.title} className={styles['card']}>
               <div className={styles['iconWrap']}>
@@ -56,7 +56,7 @@ export function DeliveryStandards() {
                   alt={card.title}
                   width={40}
                   height={40}
-                  className={styles['icon']}
+                  className={styles['cardIcon']}
                   loading="lazy"
                 />
               </div>

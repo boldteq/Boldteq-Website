@@ -7,6 +7,7 @@
   background-color: transparent;
   padding: 0 5%;
   display: block;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   padding-top: 80px;
@@ -88,7 +89,7 @@
 }
 
 /* benchmark-grid */
-.grid {
+.benchGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-self: stretch;
@@ -186,7 +187,7 @@
     padding-top: 50px;
 }
 
-  .grid {
+  .benchGrid {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .container {
@@ -218,7 +219,7 @@
     padding-top: 40px;
   }
 
-  .grid {
+  .benchGrid {
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     grid-template-columns: 1fr 1fr 1fr;

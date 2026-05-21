@@ -40,7 +40,7 @@ export function CareersTestimonials() {
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.testimonialsGrid}>
           {/* Large card — Arjun Mehta */}
           <div className={styles.mainCard}>
             <div className={styles.mainCardImage}>

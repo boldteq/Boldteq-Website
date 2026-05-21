@@ -9,9 +9,13 @@
   padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
+  display: block;
+  justify-content: center;
+  position: relative;
 }
 
 .container {
+  width: 100%;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
@@ -28,17 +32,21 @@
 }
 
 .badge {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   background-color: #fafafa;
-  border: 1px solid rgba(33, 207, 255, 0.3);
+  border: 1px solid #fff;
   border-radius: var(--radius-pill);
   padding: 4px 12px;
   margin-bottom: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
+  text-decoration: none;
 }
 
 .badgeText {
@@ -66,13 +74,13 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   margin: 0;
 }
 
 /* ── Cards grid ── */
-.grid {
+.standardsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
@@ -89,13 +97,13 @@
   position: relative;
 }
 
-.iconWrap {
+.cardIconWrap {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.icon {
+.cardIcon {
   width: 40px;
   height: 40px;
   display: block;
@@ -116,7 +124,7 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   margin: 0;
 }
@@ -134,7 +142,7 @@
     margin-bottom: 40px;
   }
 
-  .grid {
+  .standardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   .container {
@@ -175,7 +183,7 @@
     margin-bottom: 20px;
   }
 
-  .grid {
+  .standardsGrid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
