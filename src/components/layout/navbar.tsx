@@ -560,7 +560,7 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* .nav-23-menu — desktop nav (hidden at ≤767px via CSS) */}
+          {/* .nav-23-menu — desktop nav (hidden at ≤991px via CSS; MobileNav overlay handles mobile) */}
           <nav aria-label="Main navigation" className={styles["nav-23-menu"]}>
             {/* .nav-23-links */}
             <div className={styles["nav-23-links"]}>

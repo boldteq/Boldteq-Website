@@ -819,15 +819,9 @@
     padding: 0;
   }
 
+  /* Hide desktop horizontal nav at ≤991px — MobileNav React component handles overlay */
   .nav-23-menu {
-    background-color: #fff;
-    border-bottom: 1px solid #c9d2d9;
-    flex: 0 auto;
-    padding-bottom: 8px;
-    padding-left: 2%;
-    padding-right: 2%;
-    display: flex;
-    position: absolute;
+    display: none;
   }
 
   .nav-23-dropdown-list.w--open {
