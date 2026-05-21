@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 /**
- * visual-diff.mjs
+ * visual-diff.mjs v2 — stabilized harness
  *
  * Captures Playwright screenshots of local Next.js + live https://boldteq.com,
- * computes pixel-by-pixel delta, writes per-page per-viewport JSON results.
+ * disables animations + masks chat/iframe widgets + locks carousel state,
+ * computes pixel-by-pixel delta.
  *
  * Usage:
- *   pnpm dev &                                                     # start dev server first
- *   node scripts/visual-diff.mjs --pages=/,/pricing --viewports=1440,991,767,479
+ *   pnpm dev &
+ *   node scripts/visual-diff.mjs --port=3001 --pages=/ --viewports=1440
  *   node scripts/visual-diff.mjs --all
+ *   node scripts/visual-diff.mjs --above-fold     # opt-in to old 900px-clip mode
  */
 
 import { chromium } from '@playwright/test';
@@ -55,24 +57,70 @@ mkdirSync(OUT_DIR, { recursive: true });
 
 function safePath(p) { return p === '/' ? '_root' : p.replace(/^\//, '').replace(/\//g, '_'); }
 
+// Stabilization stylesheet: disables every animation + hides dynamic widgets
+const STABILIZE_CSS = `
+*, *::before, *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  scroll-behavior: auto !important;
+}
+.woot-widget-bubble,
+.woot-widget-banner,
+.woot-widget-holder,
+#woot-widget-holder,
+iframe[src*="guidejar"],
+iframe[src*="chatwoot"],
+iframe[src*="hotjar"],
+iframe[id*="hubspot"] {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+`;
+
+async function stabilizePage(p) {
+  // Inject animation-pause + widget-hide stylesheet
+  await p.addStyleTag({ content: STABILIZE_CSS }).catch(() => {});
+  // Lock Embla carousels to first slide (best-effort)
+  await p.evaluate(() => {
+    document.querySelectorAll('[data-embla-carousel], .embla').forEach((el) => {
+      const inst = el.__embla__ || el.embla;
+      if (inst && typeof inst.scrollTo === 'function') inst.scrollTo(0, true);
+    });
+  }).catch(() => {});
+  // Brief settle (no networkidle — dev HMR + analytics keep socket open forever)
+  await p.waitForTimeout(1000);
+}
+
 async function captureScreenshots(baseUrl, pages, viewports, kind) {
   const browser = await chromium.launch();
   const results = {};
   for (const page of pages) {
     results[page] = {};
     for (const vp of viewports) {
-      const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+      const t0 = Date.now();
+      console.log(`  [${kind}] ${page} @ ${vp.name} ...`);
+      const ctx = await browser.newContext({
+        viewport: { width: vp.width, height: vp.height },
+        reducedMotion: 'reduce',
+        deviceScaleFactor: 1,
+      });
       const p = await ctx.newPage();
       const url = `${baseUrl}${page}`;
       try {
-        await p.goto(url, { waitUntil: 'load', timeout: 45_000 });
-        await p.waitForTimeout(1500);
+        await p.goto(url, { waitUntil: 'load', timeout: 60_000 });
+        await stabilizePage(p);
         const outFile = join(OUT_DIR, safePath(page), `${vp.name}-${kind}.png`);
         mkdirSync(dirname(outFile), { recursive: true });
-        await p.screenshot({ path: outFile, fullPage });
+        await p.screenshot({ path: outFile, fullPage, timeout: 90_000 });
         results[page][vp.name] = { ok: true, file: outFile };
+        console.log(`    ok in ${Date.now() - t0}ms`);
       } catch (err) {
         results[page][vp.name] = { ok: false, error: String(err.message || err) };
+        console.log(`    FAIL in ${Date.now() - t0}ms: ${String(err.message || err).slice(0, 200)}`);
       }
       await ctx.close();
     }
@@ -85,7 +133,6 @@ function diffPng(aPath, bPath, outPath) {
   if (!existsSync(aPath) || !existsSync(bPath)) return null;
   const a = PNG.sync.read(readFileSync(aPath));
   const b = PNG.sync.read(readFileSync(bPath));
-  // Normalize to the smaller dimensions so pixelmatch can compare
   const width = Math.min(a.width, b.width);
   const height = Math.min(a.height, b.height);
   const cropA = cropPng(a, width, height);
@@ -114,7 +161,7 @@ function cropPng(src, w, h) {
 }
 
 (async () => {
-  console.log(`Pages: ${PAGES.length} | Viewports: ${VIEWPORTS.map(v => v.name).join(',')}`);
+  console.log(`Pages: ${PAGES.length} | Viewports: ${VIEWPORTS.map(v => v.name).join(',')} | fullPage=${fullPage}`);
 
   let local = null, live = null;
   if (!liveOnly) {
@@ -127,7 +174,7 @@ function cropPng(src, w, h) {
   }
 
   if (local && live) {
-    const report = { generated_at: new Date().toISOString(), pages: {} };
+    const report = { generated_at: new Date().toISOString(), full_page: fullPage, pages: {} };
     for (const page of PAGES) {
       report.pages[page] = {};
       for (const vp of VIEWPORTS) {
@@ -144,7 +191,7 @@ function cropPng(src, w, h) {
     console.log('\n=== VISUAL DIFF REPORT ===');
     for (const [page, vps] of Object.entries(report.pages)) {
       for (const [v, r] of Object.entries(vps)) {
-        if (r.pct !== undefined) console.log(`  ${page} @ ${v}: ${r.pct}% delta`);
+        if (r.pct !== undefined) console.log(`  ${page} @ ${v}: ${r.pct}% delta (${r.width}x${r.height})`);
         else console.log(`  ${page} @ ${v}: ${r.error}`);
       }
     }
