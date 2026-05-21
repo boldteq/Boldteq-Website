@@ -2,17 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { NAV_ITEMS, CTA_NAV } from "@/lib/constants/navigation";
 import type { NavItem } from "@/types/navigation";
 import styles from "./mobile-nav.module.css";
 
 /*
-  Webflow mobile nav: full-screen overlay matching .nav-23-menu at max-width 767px.
-  Background: #082753, flex column, padding 10px 4%, z-index via --z-modal token.
-  Nav links: color #fff, border-bottom 1px solid rgba(255,255,255,0.04), padding 12px 0.
-  Dropdown chevron: color #21cfff.
+  Webflow mobile nav (≤991px): slide-out drawer pattern from .nav-23-menu.
+  Drawer: 300px wide, navy bg (#082753), padding 10px 4%, z-index var(--z-modal).
+  .navLink base values mirror Webflow .nav-link (audit sprint 11 parity).
+  .comingSoonBadge mirrors Webflow .coming-soon-badge (audit sprint 11 parity).
+  Behavior: close on ✕, Escape, backdrop click. Focus trap. Body scroll locked.
 */
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function ChevronDownIcon({ rotated }: { rotated: boolean }) {
   return (
@@ -88,6 +92,7 @@ function MobileNavGroup({
                 <div
                   key={child.label}
                   className={`${styles.submenuItem} ${styles.submenuItemDisabled}`}
+                  aria-disabled="true"
                 >
                   {innerContent}
                 </div>
@@ -133,91 +138,149 @@ export function MobileNav({
   open: boolean;
   onClose: () => void;
 }) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
+
   // Lock body scroll when open
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = prevOverflow;
     };
   }, [open]);
 
-  // Escape key closes the menu
+  // Move initial focus into the drawer & restore on close
+  useEffect(() => {
+    if (!open) return;
+    previouslyFocusedRef.current =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+
+    const dialog = dialogRef.current;
+    if (dialog) {
+      const firstFocusable = dialog.querySelector<HTMLElement>(FOCUSABLE_SELECTOR);
+      firstFocusable?.focus();
+    }
+
+    return () => {
+      previouslyFocusedRef.current?.focus();
+    };
+  }, [open]);
+
+  // Escape closes; Tab is trapped inside the dialog
   useEffect(() => {
     if (!open) return;
     function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const focusables = Array.from(
+        dialog.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+      ).filter((el) => !el.hasAttribute("disabled"));
+      if (focusables.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
   }, [open, onClose]);
 
+  const handleBackdropClick = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
   if (!open) return null;
 
   return (
-    <div
-      id="mobile-nav"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Navigation menu"
-      className={styles.overlay}
-    >
-      {/* Header — logo + close button */}
-      <div className={styles.header}>
-        <Link href="/" onClick={onClose} aria-label="Boldteq Home">
-          <Image
-            src="/images/webflow/Group-46895.svg"
-            alt="Boldteq logo"
-            width={130}
-            height={40}
-            style={{ width: 'auto', height: 'auto' }}
-            className={styles.logoImage}
-          />
-        </Link>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close navigation menu"
-          className={styles.closeButton}
-        >
-          &#x2715;
-        </button>
-      </div>
+    <>
+      <div
+        className={styles.backdrop}
+        onClick={handleBackdropClick}
+        aria-hidden="true"
+      />
+      <div
+        ref={dialogRef}
+        id="mobile-nav"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+        className={styles.overlay}
+      >
+        {/* Header — logo + close button */}
+        <div className={styles.header}>
+          <Link href="/" onClick={onClose} aria-label="Boldteq Home">
+            <Image
+              src="/images/webflow/Group-46895.svg"
+              alt="Boldteq logo"
+              width={130}
+              height={40}
+              style={{ width: 'auto', height: 'auto' }}
+              className={styles.logoImage}
+            />
+          </Link>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close navigation menu"
+            className={styles.closeButton}
+          >
+            &#x2715;
+          </button>
+        </div>
 
-      {/* Nav links */}
-      <div className={styles.navList}>
-        {NAV_ITEMS.map((item) => (
-          <MobileNavGroup
-            key={item.label}
-            item={item}
-            onNavigate={onClose}
-          />
-        ))}
-      </div>
+        {/* Nav links */}
+        <div className={styles.navList}>
+          {NAV_ITEMS.map((item) => (
+            <MobileNavGroup
+              key={item.label}
+              item={item}
+              onNavigate={onClose}
+            />
+          ))}
+        </div>
 
-      {/* CTA buttons at bottom */}
-      <div className={styles.ctaFooter}>
-        <a
-          href={CTA_NAV[0].href}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={onClose}
-          className={styles.ctaLogin}
-        >
-          {CTA_NAV[0].label}
-        </a>
+        {/* CTA buttons at bottom */}
+        <div className={styles.ctaFooter}>
+          <a
+            href={CTA_NAV[0].href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className={styles.ctaLogin}
+          >
+            {CTA_NAV[0].label}
+          </a>
 
-        <Link
-          href={CTA_NAV[1].href}
-          onClick={onClose}
-          className={styles.ctaDemo}
-        >
-          {CTA_NAV[1].label}
-        </Link>
+          <Link
+            href={CTA_NAV[1].href}
+            onClick={onClose}
+            className={styles.ctaDemo}
+          >
+            {CTA_NAV[1].label}
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

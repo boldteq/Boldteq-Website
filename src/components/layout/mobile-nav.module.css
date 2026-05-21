@@ -1,17 +1,32 @@
 /* ============================================================
    MOBILE NAV — mobile-nav.module.css
-   Full-screen overlay matching Webflow .nav-23-menu at max-width 767px
+   Slide-out drawer matching Webflow .nav-23-menu pattern at ≤991px
+   Base nav-link / coming-soon-badge values mirror Webflow desktop rules
+   so that audit parity (.nav-link, .coming-soon-badge) is exact.
    ============================================================ */
 
-/* Overlay: fixed full-screen navy panel */
-.overlay {
+/* Overlay backdrop — clicking it closes the drawer */
+.backdrop {
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
-  background-color: var(--color-text-primary);
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Drawer panel — slides in from the right at 300px wide */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 100vw;
+  z-index: calc(var(--z-modal) + 1);
+  background-color: #082753;
   display: flex;
   flex-direction: column;
   font-family: var(--font-roobert), Arial, sans-serif;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.25);
 }
 
 /* ─── Header row (logo + close button) ────────────────────────────────────── */
@@ -59,7 +74,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-/* ─── Top-level nav link ───────────────────────────────────────────────────── */
+/* ─── Top-level nav link — matches Webflow .nav-link base rule ─────────────── */
 
 .navLink {
   display: flex;
@@ -76,6 +91,12 @@
   letter-spacing: -.006em;
   border-radius: 99px;
   background-color: #0000;
+  transition: background-color .3s;
+}
+
+.navLink:hover {
+  background-color: #fff;
+  box-shadow: 0 1px 2px -1px #1a19250a, 0 1px 1px #1a19250a, 0 .5px .5px #1a19250a;
 }
 
 /* ─── Dropdown toggle button ───────────────────────────────────────────────── */
@@ -147,23 +168,27 @@
   font-family: var(--font-roobert), Arial, sans-serif;
 }
 
-/* ─── Coming Soon badge ──────────────────────────────────────────────────────── */
+/* ─── Coming Soon badge — matches Webflow .coming-soon-badge exactly ────────── */
 
 .comingSoonBadge {
-  /* #1890ff on #e6f7ff at 9px fails WCAG AA. Darkened to #0050b3, bumped to 12px. */
   color: #1890ff;
-  background-color: var(--color-info-bg);
+  text-align: center;
+  background-color: #e6f7ff;
   border: 1px solid #91d5ff;
   border-radius: 4px;
+  align-self: center;
+  margin-bottom: 0;
   padding: 2px 4px;
+  font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 10px;
   font-weight: 500;
   line-height: 12px;
+  position: static;
+  inset: 0% 0% auto auto;
   display: inline-flex;
   align-items: center;
   margin-left: 6px;
   white-space: nowrap;
-  margin-bottom: 0;
 }
 
 /* ─── CTA footer area ────────────────────────────────────────────────────────── */
@@ -212,7 +237,34 @@
   background-size: auto, auto;
 }
 
-/* ─── Responsive: tighter spacing on small mobile ───────────────────────── */
+/* ─── Responsive: ≤991px — Webflow .nav-link override ──────────────────────── */
+
+@media (max-width: 991px) {
+  .navLink {
+    margin-bottom: 4px;
+    padding: 8px 16px;
+  }
+}
+
+/* ─── Responsive: ≥1280px — Webflow .coming-soon-badge override ────────────── */
+
+@media (min-width: 1280px) {
+  .comingSoonBadge {
+    text-align: center;
+    align-self: center;
+    line-height: 12px;
+  }
+}
+
+/* ─── Responsive: ≥1440px — Webflow .coming-soon-badge override ────────────── */
+
+@media (min-width: 1440px) {
+  .comingSoonBadge {
+    line-height: 14px;
+  }
+}
+
+/* ─── Responsive: ≤479px — tighter spacing + Webflow .coming-soon-badge ────── */
 
 @media (max-width: 479px) {
   .header {
@@ -221,7 +273,6 @@
   .navList {
     padding: 8px 4%;
   }
-  .navLink,
   .dropdownToggle {
     font-size: 14px;
     padding: 10px 0;
@@ -233,24 +284,9 @@
     padding: 12px 4%;
     gap: 10px;
   }
-  .coming-soon-badge {
+  .comingSoonBadge {
+    align-self: auto;
     font-size: 7px;
     line-height: 8px;
-}
-}
-@media (max-width: 991px) {
-  .nav-link {
-    padding: 8px 16px;
-    margin-bottom: 4px;
-}
-}
-@media (min-width: 1280px) {
-  .coming-soon-badge {
-    line-height: 12px;
-  }
-}
-@media (min-width: 1440px) {
-  .coming-soon-badge {
-    line-height: 14px;
   }
 }

@@ -1,9 +1,8 @@
 /* ─── Navbar CSS Module ───────────────────────────────────────────────────────
    Extracted verbatim from boldteq-v1-0.webflow.css
-   All class names preserved exactly; use bracket notation in JSX for hyphenated names
+   All class names preserved exactly; use bracket notation in JSX for hyphenated names.
+   1:1 pixel-perfect Webflow parity — exact values only, no token aliases.
    ─────────────────────────────────────────────────────────────────────────── */
-
-/* ─── Banner strip ──────────────────────────────────────────────────────────── */
 
 /* Skip-to-main-content link — visible only on keyboard focus */
 .skip-nav:focus {
@@ -27,6 +26,8 @@
   overflow: visible;
 }
 
+/* ─── Banner strip ──────────────────────────────────────────────────────────── */
+
 /* Banner inner width-constrained wrapper */
 .banner-inner {
   width: 100%;
@@ -36,7 +37,7 @@
 
 .banner-section {
   color: #fff;
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   width: 100%;
   padding: 10px 5%;
   position: relative;
@@ -54,7 +55,7 @@
 .paragraph-regular {
   color: #fff;
   margin-bottom: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-weight: 600;
@@ -80,7 +81,7 @@
 }
 
 .beta-link:hover {
-  color: var(--color-brand-cyan);
+  color: #21cfff;
 }
 
 /* ─── Outer header section ───────────────────────────────────────────────────── */
@@ -97,7 +98,7 @@
 /* ─── Navbar wrapper ─────────────────────────────────────────────────────────── */
 
 .navbar {
-  z-index: var(--z-nav);
+  z-index: 999999;
   text-align: center;
   background-color: #fff;
   width: 100%;
@@ -114,7 +115,7 @@
   left: auto;
   right: auto;
   width: 96%;
-  z-index: var(--z-nav);
+  z-index: 999999;
   border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -190,7 +191,7 @@
 .nav-23-link {
   color: #000;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: #0000;
   border-radius: 8px;
   padding: 8px 5px;
   text-decoration: none;
@@ -201,7 +202,7 @@
 
 .nav-23-link:hover {
   color: #000;
-  background-color: transparent;
+  background-color: #0000;
 }
 
 .nav-23-link.w--current {
@@ -211,8 +212,8 @@
 /* ─── Menu text ──────────────────────────────────────────────────────────────── */
 
 .menu-text {
-  color: var(--color-text-primary);
-  font-family: var(--font-roobert), Arial, sans-serif;
+  color: #082753;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -233,7 +234,7 @@
   grid-row-gap: 4px;
   color: #000;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: #0000;
   border-radius: 8px;
   justify-content: flex-start;
   align-items: center;
@@ -250,7 +251,7 @@
 
 .nav-23-dropdown-toggle:hover {
   color: #000;
-  background-color: transparent;
+  background-color: #0000;
 }
 
 .nav-23-dropdown-toggle.w--open {
@@ -264,13 +265,13 @@
 /* ─── Dropdown arrow (Resources) ─────────────────────────────────────────────── */
 
 .nav-23-dropdown-arrow {
-  color: var(--color-text-primary);
+  color: #082753;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
   padding: 6px 2px 2px;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-weight: 500;
   display: flex;
   transition: transform 0.2s ease;
@@ -299,7 +300,7 @@
 /* ─── Dropdown list ──────────────────────────────────────────────────────────── */
 
 .nav-23-dropdown-list {
-  background-color: transparent;
+  background-color: #0000;
   position: absolute;
   top: 100%;
   left: 0;
@@ -308,7 +309,7 @@
 }
 
 .nav-23-dropdown-list.w--open {
-  background-color: transparent;
+  background-color: #0000;
   padding-top: 20px;
   display: block;
 }
@@ -335,11 +336,11 @@
 .nav-23-dropdown-link {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  color: var(--color-text-primary);
+  color: #082753;
   white-space: nowrap;
   border-radius: 8px;
   padding: 8px 24px 8px 8px;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -349,7 +350,7 @@
 }
 
 .nav-23-dropdown-link:hover {
-  background-color: rgba(33, 207, 255, 0.07);
+  background-color: #21cfff12;
 }
 
 /* ─── Solutions dropdown card (rich, with icons) ─────────────────────────────── */
@@ -366,11 +367,11 @@
   padding: 12px;
   overflow: hidden;
   text-align: left;
-  box-shadow: 0 109.603px 30.372px rgba(0, 0, 0, 0),
-    0 69.987px 27.731px rgba(0, 0, 0, 0.012),
-    0 39.615px 23.769px rgba(0, 0, 0, 0.04),
-    0 17.167px 17.167px rgba(0, 0, 0, 0.071),
-    0 3.962px 9.244px rgba(0, 0, 0, 0.082);
+  box-shadow: 0 109.603px 30.372px #0000,
+    0 69.987px 27.731px #00000003,
+    0 39.615px 23.769px #0000000a,
+    0 17.167px 17.167px #00000012,
+    0 3.962px 9.244px #00000014;
 }
 
 .nav-dropdown-links {
@@ -383,7 +384,7 @@
 .nav-dropdown-link-2 {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  color: var(--color-text-primary);
+  color: #082753;
   border-radius: 8px;
   padding: 12px 24px 12px 8px;
   text-decoration: none;
@@ -392,7 +393,7 @@
 }
 
 .nav-dropdown-link-2:hover {
-  background-color: rgba(33, 207, 255, 0.07);
+  background-color: #21cfff12;
 }
 
 .nav-dropdown-link-2.border-btm {
@@ -402,7 +403,7 @@
 }
 
 .nav-dropdown-link-2.border-btm:hover {
-  background-color: rgba(33, 207, 255, 0.07);
+  background-color: #21cfff12;
 }
 
 .nav-dropdown-link-2.disabled {
@@ -426,7 +427,7 @@
 .mnav-inn {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-color: rgba(33, 207, 255, 0.07);
+  background-color: #21cfff12;
   border-radius: 8px;
   flex-flow: column;
   margin-top: 5px;
@@ -435,20 +436,16 @@
 }
 
 .boldteq-bold {
-  /* WCAG AA fix: #21cfff on rgba(33,207,255,0.07) over white = ratio ~1.6 (fail at 12px).
-     Changed to #0069b5 which gives ratio ≥ 4.5:1 on near-white. */
   color: #21cfff;
 }
 
 /* ─── "Coming Soon" badge inside nav dropdown links ──────────────────────────── */
 
 .header-comingsoon-badge {
-  /* #1890ff on #e6f7ff at 9px = ratio 2.95 (fail). Darkened to #0050b3
-     (ratio 4.5+ on #e6f7ff), bumped to 12px for WCAG AA compliance. */
   color: #1890ff;
   letter-spacing: 0;
   text-transform: capitalize;
-  background-color: var(--color-info-bg);
+  background-color: #e6f7ff;
   border: 1px solid #91d5ff;
   border-radius: 4px;
   align-items: center;
@@ -457,7 +454,7 @@
   font-weight: 700;
   line-height: 1em;
   display: inline-flex;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px #0000000d;
 }
 
 /* ─── Nav right side ─────────────────────────────────────────────────────────── */
@@ -474,12 +471,12 @@
 .row-x-small-2 {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  color: var(--color-brand-cyan);
+  color: #21cfff;
   text-align: center;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 35px;
   font-weight: 700;
   display: flex;
@@ -494,17 +491,17 @@
 .button-secondary-large {
   grid-column-gap: 6px;
   grid-row-gap: 6px;
-  color: var(--color-text-primary);
+  color: #082753;
   text-align: center;
   white-space: nowrap;
-  background-color: transparent;
-  border: 1px solid var(--color-text-primary);
+  background-color: #0000;
+  border: 1px solid #082753;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   height: auto;
   padding: 8px 20px;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.5;
@@ -515,25 +512,25 @@
 
 .button-secondary-large:hover {
   color: #fff;
-  background-color: var(--color-text-primary);
+  background-color: #082753;
 }
 
 /* ─── Schedule Demo button (.btn-primary) ────────────────────────────────────── */
 
 .btn-primary {
   color: #fff;
-  background-color: var(--color-brand-dark);
+  background-color: #111827;
   background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
-  border: 2px solid transparent;
+  border: 2px #0000;
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
   width: auto;
   padding: 8px 3rem 8px 1rem;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.75rem;
@@ -543,9 +540,8 @@
 }
 
 .btn-primary:hover {
-  background-color: var(--color-brand-navy);
+  background-color: #092245;
   background-image: url('/images/webflow/Group-46729-2.svg');
-  background-position: 93%;
   background-repeat: no-repeat;
   background-size: auto;
 }
@@ -588,6 +584,14 @@
   height: 2px;
 }
 
+.nav-23-menu-line.line-middle {
+  top: 50%;
+}
+
+.nav-23-menu-line.line-bottom {
+  bottom: 0;
+}
+
 /* ─── Typography helpers used inside dropdowns ───────────────────────────────── */
 
 .text-weight-medium-2 {
@@ -597,9 +601,9 @@
 .nav-head {
   grid-column-gap: 6px;
   grid-row-gap: 6px;
-  color: var(--color-text-primary);
+  color: #082753;
   margin-bottom: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   display: flex;
@@ -617,8 +621,8 @@
 }
 
 .nav-para {
-  color: var(--color-text-secondary);
-  font-family: var(--font-roobert), Arial, sans-serif;
+  color: #2b2b2b;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 0;
@@ -632,37 +636,38 @@
 }
 
 .sky-button {
-  color: #082753;
-  width: 100%;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  color: #fff;
+  width: auto;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 14px;
   text-align: center;
-  background-color: #fff;
+  background-color: #082753;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  border: 2px solid transparent;
+  border: 2px #0000;
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
   transition: background-color 0.2s, color 0.2s, background-image 0.2s, transform 0.15s ease;
-  padding-right: 1.25rem;
 }
 
 .sky-button:hover {
   color: #082753;
+  text-align: center;
   background-color: #fff;
   background-image: none;
+  padding-right: 1.25rem;
   transform: translateY(-1px);
 }
 
-/* ─── Responsive: min-width 1440px ──────────────────────────────────────────── */
+/* ─── Responsive: min-width 1280px ──────────────────────────────────────────── */
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
   .nav-23-container {
     grid-column-gap: 12px;
     grid-row-gap: 12px;
@@ -691,6 +696,10 @@
     padding: 8px;
   }
 
+  .nav-23-dropdown-list.w--open {
+    padding-top: 20px;
+  }
+
   .nav-23-dropdown-toggle {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -698,7 +707,7 @@
   }
 
   .nav-23-dropdown-toggle.w--open {
-    background-color: transparent;
+    background-color: #0000;
   }
 
   .btn-primary {
@@ -719,14 +728,18 @@
   .header-sec {
     position: static;
   }
+
   .sky-button {
+    border-style: none;
+    width: auto;
+    padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 }
 
-/* ─── Responsive: min-width 1280px ──────────────────────────────────────────── */
+/* ─── Responsive: min-width 1440px ──────────────────────────────────────────── */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .nav-23-container {
     grid-column-gap: 12px;
     grid-row-gap: 12px;
@@ -744,36 +757,25 @@
     flex: 0 auto;
   }
 
+  .nav-23-dropdown-list.w--open {
+    padding-top: 20px;
+  }
+
   .btn-primary {
     background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
     width: auto;
-    padding: 10px 3rem 10px 1.25rem;
-    font-size: 16px;
-}
+  }
 
   .btn-primary:hover {
     background-image: url('/images/webflow/Group-46729-2.svg');
   }
-  .nav-23-link {
-    padding: 8px;
-  }
-  .nav-23-dropdown-toggle {
-    padding-top: 8px;
-    padding-right: 8px;
-    padding-bottom: 8px;
-}
-  .nav-23-dropdown-toggle.w--open {
-    background-color: #0000;
-  }
-  .button-secondary-large {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-}
+
   .sky-button {
+    background-color: #082753;
+    background-image: linear-gradient(90deg, #21cfff, #019ae6);
+    width: auto;
     padding-right: 1.25rem;
-    padding-left: 1.25rem;
-}
+  }
 }
 
 /* ─── Responsive: max-width 991px ───────────────────────────────────────────── */
@@ -784,7 +786,7 @@
   }
 
   .nav-23-dropdown-link:hover {
-    background-color: transparent;
+    background-color: #0000;
   }
 
   .nav-23-links {
@@ -797,17 +799,17 @@
   }
 
   .navbar {
-    z-index: var(--z-nav);
+    z-index: 999999;
   }
 
   .nav-23-menu-button {
-    background-color: var(--blue, #21cfff);
+    background-color: var(--blue);
     display: flex;
   }
 
   .nav-23-menu-button.w--open {
-    border: 1px solid var(--blue, #21cfff);
-    background-color: var(--blue, #21cfff);
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
   }
 
   .nav-23-link {
@@ -838,7 +840,7 @@
   }
 
   .nav-23-dropdown-toggle.w--open {
-    background-color: transparent;
+    background-color: #0000;
     justify-content: center;
   }
 
@@ -847,58 +849,37 @@
     font-size: 16px;
   }
 
-  .hide-mobile {
-    display: none;
-  }
   .nav-dropdown-slot {
     padding-top: 0;
   }
+
   .nav-dropdown-card-3 {
-    background-color: #0000;
     box-shadow: none;
-}
+    background-color: #0000;
+  }
 }
 
 /* ─── Responsive: max-width 767px ───────────────────────────────────────────── */
 
 @media screen and (max-width: 767px) {
-  .nav-dropdown-arrow {
-    color: var(--color-brand-cyan);
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(#21cfff, #019ae6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-color: #019ae6;
-}
-
   .banner-content {
-    flex-direction: column;
     text-align: center;
-    gap: 4px;
-  }
-
-  .beta-link {
-    background-color: transparent;
-    border: none;
-    text-decoration: underline;
-    padding: 0;
-    font-size: 14px;
   }
 
   .nav-23-dropdown-link {
-    background-color: var(--blue, #082753);
-    color: var(--white, #fff);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background-color: var(--blue);
+    color: var(--white);
+    border-bottom: 1px solid #ffffff0a;
     border-radius: 0;
     padding: 12px 0;
   }
 
   .nav-23-dropdown-link:hover {
-    background-color: var(--blue, #082753);
+    background-color: var(--blue);
   }
 
   .nav-23-dropdown-arrow {
-    color: var(--color-brand-cyan);
+    color: #21cfff;
   }
 
   .nav-23-dropdown-links {
@@ -911,13 +892,10 @@
   }
 
   .nav-23-link {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid #ffffff0a;
     border-radius: 0;
     align-self: stretch;
     padding: 12px 0;
-    /* WCAG AA fix: mobile menu bg is #082753 (navy); default color #000 = ratio 1.43 (fail).
-       Override to white for sufficient contrast on navy. */
-    color: #fff;
   }
 
   .nav-23-dropdown-card {
@@ -926,7 +904,7 @@
 
   .nav-23-menu {
     z-index: 11;
-    background-color: var(--color-text-primary);
+    background-color: #082753;
     border-radius: 0;
     flex-flow: column;
     align-self: auto;
@@ -943,14 +921,11 @@
   }
 
   .nav-23-dropdown-toggle {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid #ffffff0a;
     border-radius: 0;
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
-    /* WCAG AA fix: mobile menu bg is #082753 (navy); default color #000 = ratio 1.43 (fail).
-       Override to white. */
-    color: #fff;
   }
 
   .nav-23-dropdown-toggle.w--open {
@@ -970,40 +945,59 @@
   .menu-text {
     color: #fff;
   }
+
+  .nav-dropdown-link-2 {
+    background-color: #0000;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-dropdown-link-2:hover {
+    background-color: #0000;
+  }
+
+  .nav-dropdown-link-2.border-btm {
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-dropdown-link-2.border-btm:hover {
+    background-color: #0000;
+  }
+
+  .nav-dropdown-arrow {
+    color: #21cfff;
+    -webkit-text-fill-color: transparent;
+    background-color: #019ae6;
+    background-image: linear-gradient(#21cfff, #019ae6);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
   .nav-dropdown-card-3 {
     padding: 0;
   }
-  .nav-dropdown-link-2 {
-    padding-right: 0;
-    padding-left: 0;
-    background-color: #0000;
-}
-  .nav-dropdown-link-2.border-btm {
-    padding-right: 0;
-    padding-left: 0;
-    border-radius: 0;
-    background-color: #0000;
-}
+
+  .header-comingsoon-badge {
+    line-height: 1em;
+  }
+
   .sky-button {
-    font-size: .8rem;
+    width: auto;
+    font-size: 0.8rem;
   }
 }
 
 /* ─── Responsive: max-width 479px ───────────────────────────────────────────── */
 
 @media screen and (max-width: 479px) {
-  .btn-primary {
-    padding: 8px 3rem 8px 1rem;
-    font-size: 0.9rem;
-    padding-left: .5rem;
-}
-
-  .button-secondary-large {
-    padding: 10px 20px;
-    font-size: 14px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+  .banner-content {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    text-align: center;
+    flex-flow: column;
+  }
 
   .nav-23-logo {
     align-self: auto;
@@ -1016,17 +1010,17 @@
     flex-flow: row;
   }
 
-  .nav-23-menu-burger {
-    border: 1px solid var(--color-brand-cyan);
-    border-radius: 8px;
-    width: 40px;
-    height: 40px;
-  }
-
   .nav-23-menu-line.line-middle,
   .nav-23-menu-line.line-bottom,
   .nav-23-menu-line.line-top {
-    color: var(--color-text-primary);
+    color: #082753;
+  }
+
+  .nav-23-menu-burger {
+    border: 1px solid #21cfff;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
   }
 
   .nav-23-left {
@@ -1039,6 +1033,23 @@
     inset: 0%;
   }
 
+  .nav-23-links {
+    display: flex;
+  }
+
+  .button-secondary-large {
+    padding: 10px 20px;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar {
+    z-index: 999999;
+    padding: 10px 5%;
+    position: static;
+  }
+
   /* Mobile sticky — full width, no border-radius */
   .navbar.sticky {
     top: 0;
@@ -1047,43 +1058,102 @@
     width: 100%;
     transform: translateY(0);
   }
-  .banner-content {
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
+
+  .nav-23-menu-button {
+    background-color: #21cfff1f;
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .nav-23-menu-button.w--open {
+    background-color: #21cfff1f;
+    border-style: none;
+    border-color: #21cfff;
+    width: auto;
+    height: auto;
+  }
+
+  .nav-23-right {
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   .nav-23-link {
-    padding-right: 0;
+    align-self: stretch;
     padding-left: 0;
-}
-  .menu-text {
-    font-size: 18px;
-  }
-  .nav-23-dropdown-toggle {
     padding-right: 0;
+    transition-property: none;
   }
+
   .nav-23-dropdown-card {
     background-color: #0000;
   }
+
+  .nav-23-menu {
+    display: none;
+  }
+
+  .logo {
+    text-align: left;
+    object-fit: fill;
+    width: 135px;
+    height: 40px;
+    text-decoration: none;
+  }
+
+  .nav-23-dropdown {
+    width: 100%;
+  }
+
+  .nav-23-dropdown-toggle {
+    justify-content: space-between;
+    padding-right: 0;
+    transition-property: none;
+  }
+
+  .nav-23-dropdown-toggle.w--open {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-primary {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .menu-text {
+    font-size: 18px;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
   .nav-dropdown-slot {
     min-width: 100%;
   }
-  .nav-dropdown-card-3 {
-    padding-right: 0;
-    padding-left: 0;
-}
+
   .nav-dropdown-link-2.border-btm {
     grid-column-gap: 8px;
     grid-row-gap: 8px;
-    background-color: #0000;
-}
-  .nav-23-menu-button {
-    background-color: #21cfff1f;
   }
-  .nav-23-menu-button.w--open {
-    border-color: #21cfff;
-    background-color: #21cfff1f;
-}
+
+  .nav-dropdown-link-2.border-btm:hover {
+    background-color: #0000;
+  }
+
+  .nav-dropdown-card-3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .sky-button {
+    flex-direction: column;
+    width: 100%;
     font-size: 1.1rem;
   }
 }

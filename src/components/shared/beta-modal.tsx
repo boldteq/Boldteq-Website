@@ -19,9 +19,11 @@ const RIGHT_BULLETS = [
 ];
 
 export function BetaModal({ onClose }: { onClose: () => void }) {
-  const firstFocusRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const headingId = "beta-modal-heading";
 
+  // Lock body scroll while modal is open
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -30,9 +32,13 @@ export function BetaModal({ onClose }: { onClose: () => void }) {
     };
   }, []);
 
+  // Escape key + focus trap
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
       if (e.key === "Tab" && modalRef.current) {
         const focusable = Array.from(
           modalRef.current.querySelectorAll<HTMLElement>(
@@ -57,30 +63,45 @@ export function BetaModal({ onClose }: { onClose: () => void }) {
     return () => document.removeEventListener("keydown", handleKey);
   }, [onClose]);
 
+  // Auto-focus close button on mount
   useEffect(() => {
-    firstFocusRef.current?.focus();
+    closeButtonRef.current?.focus();
   }, []);
 
   return (
     <div
-      className={betaStyles["betaPopupOverlay"]}
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      className={`${betaStyles["betaPopupOverlay"]} ${betaStyles["open"]}`}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
       aria-modal="true"
       role="dialog"
-      aria-label="Beta access modal"
+      aria-labelledby={headingId}
     >
       <div className={betaStyles["betaPopupModal"]} ref={modalRef}>
         <div className={betaStyles["popupLeftPanel"]}>
           <div className={betaStyles["popupBadge"]}>
-            <div className={betaStyles["popBadgeTxt"]}><span aria-hidden="true">🔒</span> Exclusive Access</div>
+            <div className={betaStyles["popBadgeTxt"]}>
+              <span aria-hidden="true">🔒</span> Exclusive Access
+            </div>
           </div>
-          <h2 className={betaStyles["whiteHeading"]}>Private Beta Pricing</h2>
+          <h2 id={headingId} className={betaStyles["whiteHeading"]}>
+            Private Beta Pricing
+          </h2>
+          <div className={betaStyles["popupDivider"]} />
           <div className={betaStyles["whatsIncluded"]}>WHAT&apos;S INCLUDED</div>
           <div className={betaStyles["customPlanDlexdivNoWrap"]}>
             {LEFT_CHECKS.map((b) => (
               <div key={b} className={betaStyles["whiteLiIcon"]}>
                 <div className={betaStyles["liCheckSky"]}>
-                  <Image src="/images/webflow/Group-1.svg" alt="" aria-hidden="true" width={19} height={19} className={betaStyles["circleTick"]} />
+                  <Image
+                    src="/images/webflow/Group-1.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={19}
+                    height={19}
+                    className={betaStyles["circleTick"]}
+                  />
                 </div>
                 <p className={betaStyles["paragraphSmallWhiteSmallFont"]}>{b}</p>
               </div>
@@ -89,26 +110,56 @@ export function BetaModal({ onClose }: { onClose: () => void }) {
         </div>
         <div className={betaStyles["popupRightPanel"]}>
           <div className={betaStyles["eyebrowText"]}>Founding Partner Pricing</div>
-          <h3 className={betaStyles["popMainHd"]}><strong>Start Your First Month with Beta Access</strong></h3>
-          <p className={`${betaStyles["paragraph"]} ${betaStyles["paragraphSmallFont"]}`}>
-            Join Boldteq&apos;s private beta and experience our agency delivery infrastructure at founding pricing — before public launch moves to standard rates.
+          <h3 className={betaStyles["popMainHd"]}>
+            <strong>Start Your First Month with Beta Access</strong>
+          </h3>
+          <p
+            className={`${betaStyles["paragraph"]} ${betaStyles["paragraphSmallFont"]}`}
+          >
+            Join Boldteq&apos;s private beta and experience our agency delivery
+            infrastructure at founding pricing — before public launch moves to
+            standard rates.
           </p>
           <div className={betaStyles["popupUrgencyCard"]}>
-            <div className={betaStyles["redDot"]} />
-            <div className={betaStyles["redRightTxt"]}>Only <strong className={betaStyles["skyBold"]}>15 agencies</strong> will be accepted in this beta round</div>
+            <div className={betaStyles["redDot"]} aria-hidden="true" />
+            <div className={betaStyles["redRightTxt"]}>
+              Only{" "}
+              <strong className={betaStyles["skyBold"]}>15 agencies</strong>{" "}
+              will be accepted in this beta round
+            </div>
           </div>
-          <div className={betaStyles["customPlanDlexdivNoWrap"]}>
+          <div className={betaStyles["rightBulletsWrapper"]}>
             {RIGHT_BULLETS.map((b) => (
               <div key={b} className={betaStyles["whiteLiIcon"]}>
-                <p className={betaStyles["paragraphSmallFont"]}>{b}</p>
+                <p className={betaStyles["paragraphSmallBullet"]}>{b}</p>
               </div>
             ))}
           </div>
-          <Link href="/beta" className={betaStyles["skyButton"]} onClick={onClose}><span aria-hidden="true">🚀</span> Join the Beta</Link>
-          <button type="button" className={betaStyles["popupSkip"]} onClick={onClose}>I&apos;ll wait for the public launch</button>
+          <Link
+            href="/beta"
+            className={betaStyles["skyButton"]}
+            onClick={onClose}
+          >
+            <span aria-hidden="true">🚀</span> Join the Beta
+          </Link>
+          <button
+            type="button"
+            className={betaStyles["popupSkip"]}
+            onClick={onClose}
+          >
+            I&apos;ll wait for the public launch
+          </button>
         </div>
-        <button type="button" ref={firstFocusRef} aria-label="Close beta modal" className={betaStyles["popupCloseBtn"]} onClick={onClose}>
-          <div className={betaStyles["closeTxt"]} aria-hidden="true">{"✕"}</div>
+        <button
+          type="button"
+          ref={closeButtonRef}
+          aria-label="Close beta modal"
+          className={betaStyles["popupCloseBtn"]}
+          onClick={onClose}
+        >
+          <div className={betaStyles["closeTxt"]} aria-hidden="true">
+            ✕
+          </div>
         </button>
       </div>
     </div>

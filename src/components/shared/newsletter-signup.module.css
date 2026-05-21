@@ -5,13 +5,14 @@
   line-height: 32px;
 }
 
+/* .footer-newsletter-card — webflow.css line 3295 */
 .footerNewsletterCard {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   opacity: 1;
   background-color: #ffffff4d;
   background-image: radial-gradient(circle, #092854, #092955ab);
-  border: .5px solid #05bafe61;
+  border: 0.5px solid #05bafe61;
   border-radius: 20px;
   flex-flow: column;
   grid-template-rows: auto auto;
@@ -22,6 +23,7 @@
   box-shadow: 0 0 50px #0003, inset 0 0 100px #092955;
 }
 
+/* .footer-newsletter-title — webflow.css line 3387 */
 .footerNewsletterTitle {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -30,6 +32,7 @@
   display: flex;
 }
 
+/* .news-subhead-out — webflow.css line 19959 */
 .newsSubheadOut {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -39,11 +42,12 @@
   display: flex;
 }
 
+/* .newsubott — webflow.css line 19947 */
 .newsubott {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  background-color: var(--color-accent-bg);
-  border: 1.5px solid var(--color-brand-cyan);
+  background-color: #21cfff12;
+  border: 1.5px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 0;
   padding: 0 13px;
@@ -61,7 +65,7 @@
   font-weight: 500;
 }
 
-/* heading-2 left news-heading */
+/* .heading-2.left.news-heading */
 .newsHeading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -72,6 +76,7 @@
   margin-top: 0;
 }
 
+/* .gradient-span — webflow.css line 19927 */
 .gradientSpan {
   color: #05bafe;
 }
@@ -86,6 +91,7 @@
   line-height: 24px;
 }
 
+/* .footer-newsletter-form-block — webflow.css line 3463 */
 .footerNewsletterFormBlock {
   background-color: #0000;
   border-radius: 0;
@@ -94,6 +100,7 @@
   padding: 0;
 }
 
+/* .column-large — webflow.css line 3349 */
 .columnLarge {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
@@ -101,6 +108,7 @@
   display: flex;
 }
 
+/* .column-large.row-gap-0 */
 .columnLargeRowGap0 {
   grid-column-gap: 24px;
   grid-row-gap: 0px;
@@ -108,6 +116,7 @@
   display: flex;
 }
 
+/* .column-tiny-2 — webflow.css line 3312 */
 .columnTiny2 {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
@@ -117,6 +126,7 @@
   position: relative;
 }
 
+/* .text-field-small — webflow.css line 3329 */
 .textFieldSmall {
   color: #23272f;
   border: 1px solid #edeff3;
@@ -139,6 +149,7 @@
   color: #525f75;
 }
 
+/* .button-secondary-small — webflow.css line 3409 */
 .buttonSecondarySmall {
   color: #fff;
   background-color: #23272f;
@@ -157,16 +168,16 @@
   inset: auto 1.5% auto auto;
   overflow: hidden;
   cursor: pointer;
-  border: none;
 }
 
 .buttonSecondarySmall:hover {
   border-width: 0;
 }
 
+/* .success-message — webflow.css line 3321 */
 .successMessage {
-  color: var(--color-brand-cyan);
-  background-color: var(--color-success-bg);
+  color: var(--blue);
+  background-color: #def4ff;
   border-radius: 12px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
@@ -174,6 +185,7 @@
   text-align: center;
 }
 
+/* .error-message — webflow.css line 3402 */
 .errorMessage {
   color: #460906;
   background-color: #fff2eb;
@@ -181,6 +193,7 @@
   padding: 12px 16px;
 }
 
+/* .newsletter-btm-line — webflow.css line 19931 */
 .newsletterBtmLine {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
@@ -194,39 +207,64 @@
   margin-top: 2px;
 }
 
+/* .news-btm-para — webflow.css line 19940 */
 .newsBtmPara {
   color: #b5d3f582;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
+/* @media (min-width: 1280px) — webflow.css line 22113 */
+@media screen and (min-width: 1280px) {
+  .footerNewsletterCard {
+    padding: 30px;
+  }
+}
+
+/* @media (max-width: 991px) — webflow.css line 24705 */
+@media screen and (max-width: 991px) {
+  .footerNewsletterCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* @media (max-width: 479px) — webflow.css lines 29930, 29936, 29941, 29947, 32230, 32237 */
 @media screen and (max-width: 479px) {
+  .footerNewsletterCard {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    padding: 20px 16px;
+  }
+
+  .footerNewsletterTitle {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .footerNewsletterFormBlock {
+    margin-top: 0;
+    padding: 20px 0 10px;
+  }
+
+  .buttonSecondarySmall {
+    margin-top: 10px;
+    position: relative;
+    right: auto;
+  }
+
+  .newsletterBtmLine {
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   .newsSubheadOut {
     margin-bottom: 0;
   }
 
   .shieldIcon {
-    margin-top: 2px;
-  }
-  .footer-newsletter-card {
-    padding: 20px 16px;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
-  .footer-newsletter-title {
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-}
-  .footer-newsletter-form-block {
-    padding: 20px 0 10px;
     margin-top: 0;
-}
-  .button-secondary-small {
-    margin-top: 10px;
   }
-  .newsletter-btm-line {
-    grid-column-gap: 7px;
-    grid-row-gap: 7px;
-}
 }

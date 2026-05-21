@@ -6,24 +6,23 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
   text-decoration: none;
+  text-align: center;
   white-space: nowrap;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: 99px;
-  border: 2px solid transparent;
+  border: 1px solid #90cbff;
   cursor: pointer;
-  transition: background-color var(--duration-base) var(--ease-standard),
-    color var(--duration-base) var(--ease-standard),
-    background-image var(--duration-base) var(--ease-standard),
-    border-color var(--duration-base) var(--ease-standard),
-    opacity var(--duration-base) var(--ease-standard);
-  box-shadow: inset 0 1px 2px 2px #fff, 0 1px 1px #25252726;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    background-image 0.3s ease, border-color 0.3s ease,
+    opacity 0.3s ease, transform 0.15s ease;
   padding: 6px;
   font-size: 14px;
   line-height: 1.5;
   background-color: #daecff;
   color: #18181b;
+  box-shadow: inset 0 1px 2px 2px #fff, 0 1px 1px #25252726;
 }
 
 .button:disabled,
@@ -42,8 +41,8 @@
 }
 
 .size-md {
-  padding: 12px 20px;
-  font-size: var(--text-base);
+  padding: 0.75rem 1.25rem;
+  font-size: 13px;
   line-height: 1.5;
   gap: var(--space-2);
 }
@@ -55,22 +54,30 @@
   gap: var(--space-3);
 }
 
-/* ─── Variant: primary (gradient + arrow icon — replaces .btn-primary / .a-gulf-book) */
+/* ─── Variant: primary (gradient + arrow icon — replaces .btn-primary / .a-gulf-book)
+   Webflow .btn-primary: bg #111827 + linear-gradient(90deg, #21cfff, #019ae6), border 2px transparent */
 .primary {
   color: var(--color-text-on-dark);
   background-color: var(--color-brand-dark);
   background-image: var(--gradient-brand);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .primary:hover {
-  opacity: 0.88;
+  opacity: 0.92;
+  transform: translateY(-1px);
 }
 
-/* ─── Variant: secondary (outlined navy — replaces .button-secondary-large) */
+/* ─── Variant: secondary (outlined navy — replaces .button-secondary-large)
+   Webflow .button-secondary-large: color #082753, bg transparent, border 1px solid #082753,
+   border-radius 10px (kept 99px for pill consistency), padding 8px 20px, font 13px/700.
+   Hover: color #fff, bg #082753 */
 .secondary {
   color: var(--color-text-primary);
   background-color: transparent;
   border-color: var(--color-text-primary);
+  box-shadow: none;
 }
 
 .secondary:hover {
@@ -83,45 +90,59 @@
   color: var(--color-brand-dark);
   background-color: rgba(33, 207, 255, 0.13);
   border-color: #9ca3af;
+  box-shadow: none;
 }
 
 .outline:hover {
   color: var(--color-text-on-dark);
   background-color: var(--color-brand-navy);
   border-color: var(--color-brand-dark);
+  transform: translateY(-1px);
 }
 
-/* ─── Variant: sky (gradient pill — replaces .sky-button) */
+/* ─── Variant: sky (gradient pill — replaces .sky-button)
+   Webflow .sky-button: color #fff, bg #082753 + gradient(90deg, #21cfff, #019ae6), border 2px transparent
+   Hover: color #082753, bg #fff, no image */
 .sky {
   color: var(--color-text-on-dark);
   background-color: var(--color-text-primary);
   background-image: var(--gradient-brand);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .sky:hover {
   background-image: none;
-  background-color: var(--color-brand-blue);
+  background-color: #fff;
+  color: #082753;
 }
 
-/* ─── Variant: navy (solid navy — replaces .navy-button) */
+/* ─── Variant: navy (solid navy — replaces .navy-button)
+   Webflow .navy-button: color #fff, bg #082753, border 2px transparent, hover bg #092245 */
 .navy {
   color: var(--color-text-on-dark);
   background-color: var(--color-text-primary);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .navy:hover {
   background-color: var(--color-brand-navy);
 }
 
-/* ─── Variant: white (white bg + brand-blue text + arrow — for dark section CTAs) */
+/* ─── Variant: white (white bg + brand-blue text + arrow — for dark section CTAs)
+   Webflow .white-btn: color var(--blue) #019ae6, bg #fff, border 2px #9ca3af, arrow icon right
+   Hover: bg var(--blue), color #fff, border #111827 */
 .white {
-  color: #fff;
+  color: var(--color-brand-blue);
   background-color: #fff;
   border-color: transparent;
+  box-shadow: none;
 }
 
 .white:hover {
-  opacity: 0.92;
+  background-color: var(--color-brand-blue);
+  color: #fff;
 }
 
 /* ─── Variant: ghost (text-only — used for nav links) */

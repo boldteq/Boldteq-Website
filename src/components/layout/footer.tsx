@@ -305,8 +305,8 @@ export function Footer() {
                     <Image
                       src="/images/webflow/f-new.svg"
                       alt="Boldteq logo"
-                      width={120}
-                      height={36}
+                      width={170}
+                      height={51}
                       className={styles['footer-logo-img']}
                     />
                   </Link>
