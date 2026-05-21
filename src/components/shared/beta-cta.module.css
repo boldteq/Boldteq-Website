@@ -59,7 +59,7 @@
   text-transform: capitalize;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .whiteHeading {
@@ -140,7 +140,7 @@
   text-transform: capitalize;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .popMainHd {

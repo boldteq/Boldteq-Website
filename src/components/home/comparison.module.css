@@ -50,7 +50,7 @@
   font-size: 16px;
   line-height: 28px;
   text-align: left;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   background-image: url('/images/webflow/Mask-group-1.svg');
   background-position: 0 5px;
   background-repeat: no-repeat;
@@ -80,7 +80,7 @@
   font-size: 16px;
   line-height: 28px;
   text-align: left;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   background-image: url('/images/webflow/Mask-group-2.svg');
   background-position: 0 5px;
   background-repeat: no-repeat;
@@ -125,7 +125,10 @@
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   place-items: start;
-  margin-top: 30px;
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(33, 207, 255, 0.06) 100%);
+  border-radius: 16px;
   display: grid;
 }
 
@@ -197,7 +200,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   /* Bumped from 10px to 12px minimum per WCAG text-too-small rule */
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0;
   line-height: 14px;
 }

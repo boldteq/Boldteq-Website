@@ -63,10 +63,10 @@
 /* ─── Two-column grid (newsletter | links) ───────────────────────────────────── */
 
 .footer-grid {
-  grid-column-gap: 3rem;
-  grid-row-gap: 3rem;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 2.25rem;
   grid-template-rows: auto;
-  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-columns: 0.85fr 1.15fr;
   place-items: center stretch;
   display: grid;
 }
@@ -87,10 +87,11 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   opacity: 1;
-  /* Webflow: rgba(255,255,255,0.3) on navy #082753 background.
-     Text inside uses navy #082753 for readable contrast against the translucent white overlay. */
+  /* Webflow .footer-newsletter-card: translucent white overlay + radial navy gradient
+     gives the soft frosted-navy look with cyan rim. */
   background-color: rgba(255, 255, 255, 0.3);
-  border: 0.5px solid var(--color-brand-cyan)61;
+  background-image: radial-gradient(circle, #092854, rgba(9, 41, 85, 0.67));
+  border: 0.5px solid rgba(5, 186, 254, 0.38);
   border-radius: 20px;
   flex-flow: column;
   padding: 30px;
@@ -160,7 +161,7 @@
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 24px;
 }
 
@@ -296,7 +297,7 @@
   color: #b5d3f582;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 13px;
 }
 
@@ -388,8 +389,8 @@
 }
 
 .column-regular-2 {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
   flex-direction: column;
   display: flex;
 }

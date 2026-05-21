@@ -8,8 +8,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
-    "test:audit": "playwright test tests/homepage.spec.ts"
+    "test:audit": "playwright test tests/homepage.spec.ts",
+    "visual-diff": "node scripts/visual-diff.mjs",
+    "visual-diff:all": "node scripts/visual-diff.mjs --all --gate=5 --page-height-tolerance=2",
+    "visual-diff:gate": "node scripts/visual-diff.mjs --gate=5 --page-height-tolerance=2",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "lighthouse:all": "node scripts/lighthouse.mjs --all --gate",
+    "axe": "node scripts/axe-scan.mjs",
+    "axe:all": "node scripts/axe-scan.mjs --all --gate",
+    "snapshot-live": "node scripts/snapshot-live.mjs",
+    "component-diff": "node scripts/component-diff.mjs",
+    "audit:all": "pnpm visual-diff:all && pnpm lighthouse:all && pnpm axe:all"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -32,6 +43,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
     "@playwright/test": "^1.59.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -39,6 +51,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "lighthouse": "^12.8.2",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
     "tailwindcss": "^4",

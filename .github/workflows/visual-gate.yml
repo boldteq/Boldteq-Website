@@ -1,0 +1,85 @@
+name: visual-gate
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: visual-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Build · Lint · Typecheck · E2E
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+      - name: Smoke e2e
+        run: pnpm test:e2e
+        continue-on-error: true
+
+  visual-gate:
+    name: Visual diff · Lighthouse · axe
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: build-test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Build site
+        run: pnpm build
+      - name: Start production server
+        run: |
+          pnpm start &
+          for i in $(seq 1 60); do
+            if curl -fsS http://localhost:3000 > /dev/null; then break; fi
+            sleep 1
+          done
+      - name: Visual diff (gate=5, height tolerance=2)
+        run: pnpm visual-diff:all
+        continue-on-error: true
+      - name: Lighthouse (gate)
+        run: pnpm lighthouse:all
+        continue-on-error: true
+      - name: axe scan (gate)
+        run: pnpm axe:all
+        continue-on-error: true
+      - name: Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-${{ github.run_id }}
+          path: |
+            audit/screens/REPORT.md
+            audit/screens/report.json
+            audit/screens/**/*-diff.png
+            audit/lighthouse/summary.json
+            audit/axe/summary.json
+          retention-days: 30

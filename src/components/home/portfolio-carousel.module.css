@@ -263,25 +263,40 @@
 }
 
 .slider-dot {
-  /* Visual 12×12 via width/height; hit area expanded to 24×24 via padding
-     for WCAG 2.5.8 tap-target compliance. background-clip: content-box keeps
-     the colored circle at 12×12 — padding area is transparent/invisible. */
-  height: 12px;
-  width: 12px;
+  /* Webflow active-dot pattern — small inner circle, ring on active. Uses ::after
+     for the visible dot so we can apply ring effects independent of tap target. */
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
-  background-color: #EDF0F2;
-  background-clip: content-box;
+  background-color: transparent;
+  background-clip: border-box;
   margin-bottom: 0;
-  padding: 6px;
+  padding: 0;
   box-sizing: content-box;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
 }
 
-.slider-dot-active {
-  background-color: #000;
+.slider-dot::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.slider-dot-active::after {
+  width: 8px;
+  height: 8px;
+  background-color: #21cfff;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #21cfff;
 }
 
 /* ============================================================

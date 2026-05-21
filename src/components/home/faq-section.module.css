@@ -136,7 +136,7 @@
   align-items: center;
   display: flex;
   background-color: #fff;
-  border: 1px #dadada;
+  border: 1px solid #c1e6f9;
   border-radius: 10px;
   padding: 12px 20px;
   box-shadow: var(--shadow-card);
@@ -217,10 +217,9 @@
 }
 
 .faqItem {
-  /* Changed from #05bafe (ratio 2.22 on white) to navy for WCAG AA compliance */
   color: #05bafe;
   background-color: #fff;
-  border: 1px #c1e6f9;
+  border: 1px solid #c1e6f9;
   border-radius: 10px;
   flex-direction: column;
   width: 100%;
@@ -230,6 +229,7 @@
   display: flex;
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  margin-bottom: 12px;
 }
 
 .faqToggle {

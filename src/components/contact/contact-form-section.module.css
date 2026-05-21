@@ -86,7 +86,7 @@
 .required {
   color: var(--color-danger);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 26px;
   margin: 0;
 }
