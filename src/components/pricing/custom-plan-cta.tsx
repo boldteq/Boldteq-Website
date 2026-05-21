@@ -43,7 +43,13 @@ export function CustomPlanCta() {
             ))}
           </div>
 
-          <Button href="/contact" variant="primary" size="md">
+          <Button
+            href="/contact"
+            variant="sky"
+            size="md"
+            hideArrow
+            className={styles["ctaButton"]}
+          >
             Build Your Custom Plan
           </Button>
             </div>

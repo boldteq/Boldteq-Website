@@ -1,211 +1,379 @@
 /* ============================================================
    CustomPlanCta — custom-plan-cta.module.css
-   Matches Webflow .blue-sec.pricing-blue-sec.margin-btm-0
-   + .book-section.remove-pattern + .heading-grid-small.margin-bottom-0
+   1:1 Webflow port of:
+     section.blue-sec.pricing-blue-sec.margin-btm-0
+       > .container-large-3
+         > .book-section.remove-pattern
+           > .w-layout-grid.heading-grid-small.margin-bottom-0
+             > .column-regular.column-left
+               > h2.heading-2.white.margin-top-0.hd-s.left-mob
+               > p.paragraph.white.text-left
+               > .w-layout-hflex.custom-plan-dlexdiv
+                 > .white-li-icon (× 4)
+                   > .li-check-sky > img.circle-tick
+                   > p.paragraph-small.white
+               > a.sky-button
+   Source: boldteq-v1-0.webflow/css/boldteq-v1-0.webflow.css
    ============================================================ */
 
-/* blue-sec pricing-blue-sec margin-btm-0 */
+/* ───────────────────────────────────────────────────────────
+   .blue-sec.pricing-blue-sec.margin-btm-0  (default)
+     .blue-sec        @ L2444:  background-color: #0000; margin-bottom: 70px; padding: 0 5%; position: relative
+     .pricing-blue-sec @ L17003: margin-bottom: 70px; padding: 0 5%; position: relative
+     .margin-btm-0    @ L2463:  margin-bottom: 0
+   ─────────────────────────────────────────────────────────── */
 .section {
-  background-color: transparent;
-  margin-bottom: 0;
-  padding: 0 5%;
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  background-color: #0000;
+  margin-top: 0;
   margin-right: auto;
+  margin-bottom: 0;
   margin-left: auto;
+  padding-top: 80px;
+  padding-right: 5%;
+  padding-bottom: 80px;
+  padding-left: 5%;
+  position: relative;
+  display: block;
 }
 
-/* container-large-3 */
+/* ───────────────────────────────────────────────────────────
+   .container-large-3  @ L1794
+     width:100%; max-width:1280px; margin-left:auto; margin-right:auto
+   @min-width 1280px → max-width 1280px (same)
+   @min-width 1440px → max-width 1320px
+   ─────────────────────────────────────────────────────────── */
 .container {
   width: 100%;
-  max-width: 940px;
-  margin-left: auto;
+  max-width: 1280px;
+  margin-top: 0;
   margin-right: auto;
-  margin: 15px auto 80px;
+  margin-bottom: 0;
+  margin-left: auto;
 }
 
-/* book-section remove-pattern */
+/* ───────────────────────────────────────────────────────────
+   .book-section.remove-pattern  @ L3636 + L3648
+     background-color: #082753
+     background-image: url(Union.svg)
+     background-position: 100% 100%
+     background-repeat: no-repeat
+     background-size: auto
+     -webkit-text-fill-color: inherit
+     background-clip: border-box
+     border-radius: 20px
+     padding: 40px 20px 50px
+   ─────────────────────────────────────────────────────────── */
 .card {
   background-color: var(--color-text-primary);
-  background-image: url('/images/webflow/Mask-group-1.png');
+  background-image: url('/images/webflow/Union.svg');
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: auto;
   -webkit-text-fill-color: inherit;
   background-clip: border-box;
   border-radius: 20px;
-  padding: 40px 20px 50px;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  padding-left: 20px;
 }
 
-/* heading-grid-small margin-bottom-0 */
+/* ───────────────────────────────────────────────────────────
+   .heading-grid-small.margin-bottom-0  (default)
+     base   @ L2304: grid-column-gap:16px; grid-row-gap:16px; grid-template-rows:auto;
+                     grid-template-columns:1.25fr 1fr; place-items:center stretch;
+                     width:100%; max-width:none; margin-bottom:48px;
+                     margin-left:auto; margin-right:auto;
+                     padding-left:40px; padding-right:40px; display:grid
+     mod    @ L2320: grid-template-columns:1.25fr .25fr; margin-bottom:0;
+                     padding-left:30px; padding-right:30px
+   ─────────────────────────────────────────────────────────── */
 .inner {
+  display: grid;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-rows: auto;
   grid-template-columns: 1.25fr 0.25fr;
   place-items: center stretch;
+  width: 100%;
+  max-width: none;
+  margin-top: 0;
+  margin-right: auto;
   margin-bottom: 0;
-  padding-left: 30px;
+  margin-left: auto;
+  padding-top: 0;
   padding-right: 30px;
-  display: grid;
+  padding-bottom: 0;
+  padding-left: 30px;
 }
 
-/* column-regular column-left */
+/* ───────────────────────────────────────────────────────────
+   .column-regular.column-left
+     base   @ L2194: grid-column-gap:16px; grid-row-gap:16px; flex-flow:column; display:flex
+     mod    @ L2201: grid-column-gap:0; grid-row-gap:0; justify-content:flex-start; align-items:flex-start
+     re-decl @ L2217: justify-content:center; align-items:flex-start  (overrides)
+   ─────────────────────────────────────────────────────────── */
 .content {
+  display: flex;
+  flex-flow: column;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  flex-flow: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  display: flex;
 }
 
-/* heading-2 white margin-top-0 hd-s left-mob */
+/* ───────────────────────────────────────────────────────────
+   h2.heading-2.white.margin-top-0.hd-s.left-mob
+     .heading-2          @ L1885: color:var(--blue); font-family:Roobert PRO; font-size:var(--h2); text-align:center; line-height:40px
+     .heading-2.white    @ L1919: color:#fff; text-align:left; font-size:40px; line-height:52px
+     .heading-2.white.margin-top-0 @ L1926: margin-top:0
+     .heading-2.white.margin-top-0.hd-s @ L1930: font-size:36px
+   ─────────────────────────────────────────────────────────── */
 .heading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 52px;
-  margin-top: 0;
-  margin-bottom: 20px;
   text-align: left;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
 }
 
-/* paragraph white text-left */
+/* ───────────────────────────────────────────────────────────
+   p.paragraph.white.text-left
+     .paragraph              @ L882: color:#2b2b2b; text-align:center; font-family:Roobert PRO; font-size:16px; line-height:28px
+     .paragraph.white        @ L890: color:#fff; font-size:16px; line-height:28px
+     .paragraph.white.text-left @ L922: text-align:left
+   ─────────────────────────────────────────────────────────── */
 .subtitle {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 28px;
   text-align: left;
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 20px;
+  margin-left: 0;
 }
 
-/* custom-plan-dlexdiv */
+/* ───────────────────────────────────────────────────────────
+   .w-layout-hflex.custom-plan-dlexdiv
+     .w-layout-hflex (Webflow utility): display:flex; flex-direction:row
+     .custom-plan-dlexdiv @ L18928: grid-column-gap:15px; grid-row-gap:15px; flex-flow:wrap
+   ─────────────────────────────────────────────────────────── */
 .benefitsRow {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  flex-flow: wrap;
-  display: flex;
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 20px;
+  margin-left: 0;
 }
 
-/* white-li-icon */
+/* ───────────────────────────────────────────────────────────
+   .white-li-icon  @ L13827
+     grid-column-gap:6px; grid-row-gap:6px; color:#fff;
+     align-items:center; margin-bottom:2px; display:flex
+   ─────────────────────────────────────────────────────────── */
 .benefitItem {
+  display: flex;
+  align-items: center;
   grid-column-gap: 6px;
   grid-row-gap: 6px;
   color: #fff;
-  align-items: center;
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 2px;
-  display: flex;
+  margin-left: 0;
 }
 
-/* li-check-sky */
+/* ───────────────────────────────────────────────────────────
+   .li-check-sky  @ L13836
+     grid-column-gap:5px; grid-row-gap:5px; color:#030711;
+     align-self:auto; display:flex
+   ─────────────────────────────────────────────────────────── */
 .checkWrap {
+  display: flex;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  display: flex;
+  color: #030711;
+  align-self: auto;
   flex-shrink: 0;
 }
 
+/* .circle-tick — 19px standard tick (some occurrences use width=14) */
 .checkIcon {
+  display: block;
   width: 19px;
   height: 19px;
-  display: block;
 }
 
-/* paragraph-small white */
+/* ───────────────────────────────────────────────────────────
+   p.paragraph-small.white
+     .paragraph-small        @ L1421: color:#2b2b2b; margin-bottom:0; font-family:Roobert PRO; font-size:16px; line-height:28px
+     .paragraph-small.white  @ L1429: font-size:16px
+     (color inherits #fff from .white-li-icon)
+   ─────────────────────────────────────────────────────────── */
 .benefitText {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
-/* sky-button */
+/* ───────────────────────────────────────────────────────────
+   a.sky-button  @ L13756
+     color:#fff; width:auto; font-family:Roobert PRO; font-size:var(--button-text);
+     text-align:center; background-color:#082753;
+     background-image:linear-gradient(90deg,#21cfff,#019ae6);
+     border:2px #0000; border-radius:.75rem;
+     justify-content:center; align-items:center;
+     margin-top:20px; padding:.75rem 1.25rem;
+     font-weight:700; line-height:1.75rem;
+     text-decoration:none; display:inline-flex
+   :hover @ L13776: color:#082753; bg:#fff; bg-image:none; padding-right:1.25rem
+   ─────────────────────────────────────────────────────────── */
 .ctaButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
   color: #fff;
+  background-color: #082753;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  border-radius: 10px;
-  padding: 10px 24px;
+  border: 2px solid #0000;
+  border-radius: 0.75rem;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.75rem;
+  text-align: center;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 20px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0.75rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, background-image 0.2s ease, color 0.2s ease;
+}
+
+.ctaButton:hover {
+  color: #082753;
+  background-color: #fff;
+  background-image: none;
+  padding-right: 1.25rem;
 }
 
 /* ============================================================
-   max-width: 991px
+   @media (min-width: 1440px)
+     .container-large-3 → max-width: 1320px  (L23376)
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* ============================================================
+   @media (max-width: 991px)
+     .blue-sec.pricing-blue-sec — inherits
+     .heading-grid-small.margin-bottom-0 → grid-template-columns:1.25fr .4fr;
+       padding-left:20px; padding-right:20px  (L21991 is min-width:1280, NOT this)
+       Actually L24628: .heading-grid-small.margin-bottom-0 → grid-template-columns:1.75fr 1fr (max-width:991)
+     .heading-2.white.margin-top-0 @ L21954 (1280): font-size:40px
+     .heading-2.white.margin-top-0.hd-s — no 991 override, stays 36px
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .inner {
-    grid-template-columns: 1.25fr 0.4fr;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .heading {
-    margin-top: 0;
-    font-size: 40px;
-  }
   .section {
     padding-top: 50px;
     padding-bottom: 50px;
-}
+  }
   .container {
-    max-width: 728px;
+    /* container-large-3 has no 991 override; stays width:100% max-width:1280px */
+    max-width: 100%;
+  }
+  .inner {
+    grid-template-columns: 1.75fr 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .heading {
+    font-size: 36px;
+    line-height: 52px;
   }
 }
 
 /* ============================================================
-   max-width: 767px
+   @media (max-width: 767px)
+     .heading-grid-small @ L27141: padding-left:0; padding-right:0
+     .heading-grid-small.margin-bottom-0 @ L27146: grid-column-gap:16px; grid-row-gap:16px; flex-flow:column; display:flex
+     .heading-2.white @ L27082: font-size:30px; line-height:45px
+     .heading-2.white.margin-top-0 @ L27087: margin-bottom:0
+     .heading-2.white.margin-top-0.hd-s @ L27091: font-size:30px
    ============================================================ */
 @media screen and (max-width: 767px) {
   .inner {
+    display: flex;
+    flex-flow: column;
     grid-column-gap: 16px;
     grid-row-gap: 16px;
-    flex-flow: column;
-    display: flex;
     padding-left: 0;
     padding-right: 0;
   }
-
   .heading {
     font-size: 30px;
     line-height: 45px;
     margin-bottom: 0;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
-   max-width: 479px
+   @media (max-width: 479px)
+     .heading-grid-small @ L29777: grid-template-columns:1fr
+     .heading-grid-small.margin-bottom-0 @ L29781: flex-flow:column; padding-left:0; padding-right:0; display:flex
+     .heading-2.white @ L29649: font-size:23px; line-height:28px
+     .heading-2.white.margin-top-0 @ L29654: margin-bottom:10px
+     .heading-2.white.margin-top-0.hd-s @ L29658: margin-bottom:10px; font-size:22px
+     .paragraph-small.white @ L29565: line-height:28px (already)
+     .book-section @ L29968: bg-position:100% 100%, 0 0; padding-top:40px; padding-bottom:40px
+     .book-section.remove-pattern @ L29974: bg-image:none; bg-position:0 0; bg-repeat:repeat; bg-size:auto
    ============================================================ */
 @media screen and (max-width: 479px) {
   .inner {
-    flex-flow: column;
     display: flex;
+    flex-flow: column;
     padding-left: 0;
     padding-right: 0;
   }
-
+  .card {
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   .heading {
     font-size: 22px;
     line-height: 28px;
     margin-bottom: 10px;
     text-align: left;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
 }

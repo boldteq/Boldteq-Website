@@ -1,30 +1,38 @@
 /* ============================================================
    HOW WORKS STEPS (navy section) — how-works-steps.module.css
-   Mirrors the existing how-it-works.module.css patterns
+   Matches: .section-regular-3.blue-sec.makeit-sec on how-it-works.html
+   Webflow:
+     .section-regular-3        { padding: 0 5% 80px; position: relative; bg transparent }
+     .blue-sec                 { background-color: #082753; margin-bottom: 0; padding-top: 70px; padding-bottom: 70px }
+     .makeit-sec               { padding-bottom: 80px }
+   Effective default: padding 70px 5% 80px; background #082753; position relative
    ============================================================ */
 
 .section {
   -webkit-text-fill-color: inherit;
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   background-clip: border-box;
   margin-bottom: 0;
-  padding: 70px 5% 80px;
-  position: relative;
-  padding-top: 80px;
+  padding-top: 70px;
+  padding-right: 5%;
   padding-bottom: 80px;
+  padding-left: 5%;
+  position: relative;
+  display: block;
+  justify-content: center;
   margin-right: auto;
   margin-left: auto;
 }
 
+/* .container-large-3 — 1280px max-width */
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  margin: 15px auto 80px;
 }
 
-/* Badge */
+/* Badge row (.how-work-tag-badge) */
 .badgeRow {
   display: flex;
   justify-content: center;
@@ -32,45 +40,48 @@
   margin-bottom: 0;
 }
 
+/* Badge (.how-work-badge) — wraps cyan pill */
 .badge {
-  background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
-  border-radius: 999px;
-  margin-bottom: 0;
-  padding: 4px 12px;
+  color: #05bafe;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid #05bafe;
+  border-radius: 20px;
+  margin-bottom: 17px;
+  padding: 0 13px;
   line-height: 14px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
-  color: #18181b;
+  text-decoration: none;
 }
 
 .badgeText {
   margin: 0;
   font-size: 12px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 500;
-  color: var(--color-brand-cyan);
+  font-weight: 700;
+  color: #05bafe;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
-/* Heading */
+/* Heading (.heading-2.margin-bottom-24px.white-heading) */
 .heading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
-  line-height: 48px;
+  line-height: 45px;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-/* Subtitle */
+/* Subtitle (.paragraph.white.opacity) */
 .subtitle {
   color: #fff;
   opacity: 0.8;
@@ -84,7 +95,7 @@
   margin-right: auto;
 }
 
-/* Feature cards grid */
+/* Feature cards grid (.feature-grid.margin-top-40px) — 3 cols, 20px gap, margin-top 40px */
 .featureGrid {
   display: grid;
   grid-column-gap: 20px;
@@ -94,11 +105,17 @@
   margin-top: 40px;
 }
 
+/* Feature card (.feature-card.space-between.blue) — navy variant
+   .feature-card        { bg #def4ff; border 1px solid #009ce0; padding 25px 17px 17px; flex column; justify-content flex-start; align-items center; border-radius 20px }
+   .space-between       { bg #def4ff; justify-content space-between }
+   .blue                { bg #1c3861; border-color #ffffff1c (rgba(255,255,255,0.11)) }
+*/
 .featureCard {
   grid-column-gap: 0;
   grid-row-gap: 0;
   text-align: center;
-  background-color: #def4ff;
+  background-color: #1c3861;
+  background-image: none;
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 20px;
   flex-flow: column;
@@ -113,6 +130,7 @@
   margin-bottom: 20px;
 }
 
+/* .subheading-large.white */
 .cardTitle {
   color: #fff;
   letter-spacing: -0.02em;
@@ -123,6 +141,7 @@
   line-height: 25px;
 }
 
+/* .paragraph-small-2.margin-bottom-20px.white.opacity */
 .cardDesc {
   color: #fff;
   opacity: 0.8;
@@ -134,28 +153,25 @@
   line-height: 28px;
 }
 
+/* .full-width-image — image fills card */
 .fullWidthImage {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
-  max-width: 3768px;
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
+  max-width: 100%;
 }
 
 /* ============================================================
    min-width: 1280px
+   .feature-card.space-between.blue keeps default values
    ============================================================ */
 @media screen and (min-width: 1280px) {
   .featureCard {
     padding-left: 20px;
     padding-right: 20px;
-    border-color: #009ce0;
-    background-color: #def4ff;
-}
-  .full-width-image {
-    max-width: 100%;
+    border-color: rgba(255, 255, 255, 0.11);
+    background-color: #1c3861;
   }
 }
 
@@ -166,40 +182,40 @@
   .featureCard {
     padding-left: 17px;
     padding-right: 17px;
-    border-color: #009ce0;
-    background-color: #def4ff;
-}
-  .full-width-image {
-    max-width: 100%;
+    border-color: rgba(255, 255, 255, 0.11);
+    background-color: #1c3861;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .textWrapper {
+    text-align: center;
   }
 }
 
 /* ============================================================
-   max-width: 991px
+   max-width: 991px (tablet)
+   .section-regular-3.blue-sec.makeit-sec keeps top:70 bottom:80 (3-class specificity)
+   .feature-grid { grid-template-columns: 1fr } — but .margin-top-40px overrides
+   .heading-2 reflow (Webflow has font-size: 35px line-height: 45px at 991)
    ============================================================ */
 @media screen and (max-width: 991px) {
   .heading {
     font-size: 35px;
     line-height: 45px;
   }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-  .container {
-    max-width: 728px;
+
+  .featureGrid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 /* ============================================================
    max-width: 767px
+   .feature-grid.margin-top-40px { grid-template-columns: 1fr }
+   .section-regular-3 { padding-top: 0; padding-bottom: 0 } — but .makeit-sec keeps 70/80
    ============================================================ */
 @media screen and (max-width: 767px) {
-  .section {
-    padding: 50px 5% 60px;
-    margin-top: 0;
-  }
-
   .featureGrid {
     grid-template-columns: 1fr;
     margin-top: 20px;
@@ -228,28 +244,28 @@
   .subtitle {
     text-align: center;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
-   max-width: 479px  (mobile)
+   max-width: 479px (mobile)
+   .section-regular-3.blue-sec.makeit-sec { padding: 50px 5% 60px; margin-top: 0 }
+   .feature-card { padding: 24px }
+   .feature-card.space-between { padding-left: 18px; padding-right: 18px }
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 50px 5% 60px;
+    padding-top: 50px;
+    padding-right: 5%;
+    padding-bottom: 60px;
+    padding-left: 5%;
     margin-top: 0;
   }
 
   .featureGrid {
     grid-template-columns: 1fr;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
-  .feature-card {
+
+  .featureCard {
     padding: 24px;
   }
 }

@@ -1,46 +1,49 @@
 /* ============================================================
    PROCESS STEPS — process-steps.module.css
    Matches Webflow .how-work-sec3.overflow-hidden on how-it-works.html
+   Webflow:
+     .how-work-sec3            { padding: 128px 5%; position: relative }
+     .how-work-sec3.overflow-hidden { padding-top: 60px; padding-bottom: 60px; display: block; overflow: hidden }
    ============================================================ */
 
-/* .how-work-sec3.overflow-hidden */
 .section {
   background-color: transparent;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  padding-left: 5%;
+  padding-top: 60px;
   padding-right: 5%;
+  padding-bottom: 60px;
+  padding-left: 5%;
   position: relative;
   overflow: hidden;
   display: block;
+  justify-content: center;
   margin-right: auto;
   margin-left: auto;
 }
 
-/* .container-large-2 */
+/* .container-large-2 — 1280px max-width, z-index 1 */
 .container {
   z-index: 1;
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  margin: 15px auto 80px;
 }
 
-/* .how-work-sec3-outer */
+/* .how-work-sec3-outer — flex column, 40px gap, place-items center stretch */
 .outer {
   grid-column-gap: 40px;
   grid-row-gap: 40px;
   flex-flow: column;
+  grid-template-rows: auto;
+  grid-template-columns: 0.85fr 1.15fr;
+  grid-auto-columns: 1fr;
   justify-content: flex-start;
   place-items: center stretch;
   display: flex;
 }
 
-/* .column-regular.column-left.work-sec3-title
-   — 2-column grid: heading (left) | text+CTA (right)
-   gap: 50px, margin-bottom: 20px */
+/* .column-regular.column-left.work-sec3-title — 2-col header grid: 0.85fr 1.15fr, 50px gap, margin-bottom 20px */
 .headerGrid {
   grid-column-gap: 50px;
   grid-row-gap: 50px;
@@ -55,7 +58,7 @@
   display: grid;
 }
 
-/* .heading-2.how-work-sec3-heading */
+/* .heading-2.how-work-sec3-heading — 40px navy, text-left, max-width 450px */
 .heading {
   color: var(--color-brand-navy);
   text-align: left;
@@ -68,8 +71,9 @@
   line-height: 48px;
 }
 
-/* Right column: .max-width-small-3.how-work-sec3-maxwidth */
+/* .max-width-small-3.how-work-sec3-maxwidth — max-width: 540px */
 .headerRight {
+  width: 100%;
   max-width: 540px;
   display: flex;
   flex-direction: column;
@@ -77,24 +81,27 @@
   gap: 20px;
 }
 
-/* Subtitle paragraph */
+/* .paragraph.text-left.margin-bottom-2.center-mob */
 .subtitle {
   color: var(--color-text-secondary);
   text-align: left;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   margin: 0;
 }
 
-/* .a-gulf-book  */
+/* .a-gulf-book */
 .demoLink {
   color: #fff;
+  width: auto;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
@@ -106,29 +113,32 @@
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s;
 }
 
 .demoLink:hover {
-  background-color: var(--color-brand-navy);
+  background-color: #092245;
   background-image: url('/images/webflow/Group-46729-2.svg');
   background-repeat: no-repeat;
   background-size: auto;
 }
 
-/* Steps grid (.webdev-sec5-grid) — 4 columns */
+/* .webdev-sec5-grid — 4-col grid, 0 gap */
 .stepsGrid {
   display: grid;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-self: stretch;
   width: 100%;
 }
 
+/* .webdev-sec5-grid-inner — flex column, padding 0 40px 0 0 */
 .step {
+  border: 1px solid #efefef;
+  border-style: none;
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -137,57 +147,72 @@
   position: relative;
 }
 
-/* Dashed connector line (.dashed-divider) */
+/* .dashed-divider — connecting line between number circles */
 .dashedDivider {
   z-index: 1;
-  border-top: 1px dashed var(--color-text-primary);
+  outline-offset: 0;
+  border-top: 1px dashed #082753;
+  outline: 1px #082753;
   width: 100%;
   height: 2px;
   position: absolute;
   inset: 33px auto auto 0%;
 }
 
-/* Number circle (.white-round + .sky-digit) */
+/* .white-round — wraps .sky-digit, provides white fill behind it */
 .numberCircle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 65px;
-  height: 65px;
-  border-radius: var(--radius-pill);
-  border: 1px dashed var(--color-text-primary);
+  z-index: 3;
   background-color: #fff;
+  border-radius: 50px;
   margin-bottom: 15px;
   position: relative;
-  z-index: 3;
 }
 
+/* .sky-digit — 65x65 circle with dashed border + gradient text */
 .number {
+  z-index: 3;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  background-color: #fff;
+  background-image: linear-gradient(#21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border: 1px dashed #082753;
+  border-radius: 50px;
+  flex: 0 auto;
+  justify-content: center;
+  align-self: auto;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px;
+  display: flex;
+  position: static;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 22px;
   font-weight: 700;
   line-height: 1;
-  background-image: linear-gradient(180deg, #21cfff, #019ae6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
 }
 
+/* .heading-3-blue — step title */
 .stepTitle {
-  color: var(--color-text-primary);
+  color: #082753;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 7px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 25px;
-  margin-top: 0;
-  margin-bottom: 10px;
 }
 
+/* .paragraph.text-left.mob-center */
 .stepText {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   text-align: left;
@@ -218,11 +243,14 @@
 
 /* ============================================================
    max-width: 991px (tablet)
+   Webflow: .how-work-sec3 { padding-top: 80px; padding-bottom: 80px }
+            .how-work-sec3.overflow-hidden { padding-bottom: 60px }
+   Effective: padding-top 80, padding-bottom 60 (2-class > 1-class specificity)
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
 
   .outer {
@@ -249,25 +277,20 @@
     grid-row-gap: 40px;
   }
 
-  .dashedDivider {
-    display: none;
-  }
-
   .step {
     padding-right: 0;
-  }
-  .container {
-    max-width: 728px;
   }
 }
 
 /* ============================================================
    max-width: 767px
+   Webflow: .how-work-sec3.overflow-hidden { padding-bottom: 40px }
+            .how-work-sec3-outer { grid-template-columns: 1fr }
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
     padding-top: 50px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
 
   .headerGrid {
@@ -275,8 +298,8 @@
   }
 
   .heading {
-    font-size: 28px;
-    line-height: 1.25;
+    font-size: 30px;
+    line-height: 40px;
   }
 
   .stepsGrid {
@@ -284,21 +307,22 @@
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
    max-width: 479px (mobile)
+   Webflow: .dashed-divider { display: none }
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 50px 1.25rem 60px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .heading {
-    font-size: 1.5rem;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
   }
 
   .subtitle {
@@ -309,12 +333,12 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .dashedDivider {
+    display: none;
+  }
+
   .demoLink {
     width: 100%;
     justify-content: center;
   }
-  .container {
-    margin-bottom: 0;
-    max-width: none;
-}
 }

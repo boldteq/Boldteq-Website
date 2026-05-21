@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect, useId } from "react";
+import { useState, useMemo, useRef, useEffect, useId, type ReactNode } from "react";
+import { animate, useMotionValue, useTransform, useReducedMotion } from "framer-motion";
 import {
   type BillingPeriod,
   type PlanKey,
@@ -59,6 +60,58 @@ function fmtPct(n: number): string {
 function sliderBg(value: number, min: number, max: number): string {
   const pct = ((value - min) / (max - min)) * 100;
   return `linear-gradient(to right, #019ae6 0%, #019ae6 ${pct}%, #e2e8f0 ${pct}%, #e2e8f0 100%)`;
+}
+
+// ─── Animated counter ───────────────────────────────────────────────────────
+// Smooth Framer Motion counter — animates from previous value to next over
+// ~900ms with easeOut. prefers-reduced-motion → instant update.
+
+type Formatter = (n: number) => string;
+
+interface AnimatedValueProps {
+  value: number;
+  format: Formatter;
+  duration?: number;
+  className?: string;
+}
+
+function AnimatedValue({
+  value,
+  format,
+  duration = 0.9,
+  className,
+}: AnimatedValueProps) {
+  const prefersReducedMotion = useReducedMotion();
+  const motionValue = useMotionValue(value);
+  const display = useTransform(motionValue, (latest) => format(latest));
+  const [text, setText] = useState<string>(() => format(value));
+
+  useEffect(() => {
+    // Subscribe to the transformed display value so the rendered text
+    // updates each animation frame.
+    const unsubscribe = display.on("change", (v) => setText(v));
+    return () => unsubscribe();
+  }, [display]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      // Instant jump for reduced-motion users — set then sync text via
+      // the subscription above (which fires synchronously on .set()).
+      motionValue.set(value);
+      return;
+    }
+    const controls = animate(motionValue, value, {
+      duration,
+      ease: [0.16, 1, 0.3, 1],
+    });
+    return () => controls.stop();
+  }, [value, prefersReducedMotion, motionValue, duration]);
+
+  return (
+    <span className={className ?? styles.animatedCounter} aria-live="polite">
+      {text}
+    </span>
+  );
 }
 
 // ─── Tooltip ─────────────────────────────────────────────────────────────────
@@ -139,7 +192,7 @@ function DollarField({
 
 interface MetricCardProps {
   label: string;
-  value: string;
+  value: ReactNode;
   sub?: string;
 }
 
@@ -393,13 +446,13 @@ export function RoiCalculator() {
               <div
                 className={`${styles.heroAmount} ${netIsPositive ? styles.heroAmountPositive : styles.heroAmountNegative}`}
               >
-                {fmt(result.savings)}
+                <AnimatedValue value={result.savings} format={fmt} />
               </div>
               <div className={styles.heroMeta}>
                 <span
                   className={`${styles.roiPill} ${netIsPositive ? styles.roiPillPositive : styles.roiPillNegative}`}
                 >
-                  {fmtRoi(result.roi)} ROI
+                  <AnimatedValue value={result.roi} format={fmtRoi} /> ROI
                 </span>
                 <span className={styles.heroSubLabel}>in the first year</span>
               </div>
@@ -409,22 +462,26 @@ export function RoiCalculator() {
             <div className={styles.metricsGrid}>
               <MetricCard
                 label="Hours Saved"
-                value={fmtHrs(result.hrsSaved)}
+                value={<AnimatedValue value={result.hrsSaved} format={fmtHrs} />}
                 sub="annually"
               />
               <MetricCard
                 label="Monthly Benefit"
-                value={fmt(result.monthlyBenefit)}
+                value={
+                  <AnimatedValue value={result.monthlyBenefit} format={fmt} />
+                }
                 sub="after plan cost"
               />
               <MetricCard
                 label="Productivity Boost"
-                value={fmtPct(result.prodGain)}
+                value={
+                  <AnimatedValue value={result.prodGain} format={fmtPct} />
+                }
                 sub="of total work hrs"
               />
               <MetricCard
                 label="Total Gain"
-                value={fmt(result.net)}
+                value={<AnimatedValue value={result.net} format={fmt} />}
                 sub="net over plan cost"
               />
             </div>
@@ -434,7 +491,7 @@ export function RoiCalculator() {
               <div className={styles.summaryRow}>
                 <span className={styles.summaryLabel}>What You&apos;ll Pay</span>
                 <span className={styles.summaryValue}>
-                  {fmt(result.byr)}/yr
+                  <AnimatedValue value={result.byr} format={fmt} />/yr
                 </span>
               </div>
               <div className={styles.summaryDivider} />
@@ -443,7 +500,7 @@ export function RoiCalculator() {
                 <span
                   className={`${styles.summaryValue} ${netIsPositive ? styles.summaryPositive : styles.summaryNegative}`}
                 >
-                  {fmt(result.net)}
+                  <AnimatedValue value={result.net} format={fmt} />
                 </span>
               </div>
             </div>
@@ -453,13 +510,14 @@ export function RoiCalculator() {
               <div className={styles.ctaHeadline}>
                 You could save{" "}
                 <span className={styles.ctaHighlight}>
-                  {fmt(result.savings)}
+                  <AnimatedValue value={result.savings} format={fmt} />
                 </span>{" "}
                 this year
               </div>
               <p className={styles.ctaSubtitle}>
-                Stop paying {fmt(result.laborSaved)} in labor on tasks Boldteq
-                handles end-to-end.
+                Stop paying{" "}
+                <AnimatedValue value={result.laborSaved} format={fmt} /> in
+                labor on tasks Boldteq handles end-to-end.
               </p>
               <a
                 href="/book-a-demo"

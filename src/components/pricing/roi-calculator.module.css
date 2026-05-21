@@ -1,18 +1,33 @@
 /* ─── Section wrapper ─────────────────────────────────────────────────────── */
-
+/* Webflow .section (L823): justify-content:center; margin-left:auto; margin-right:auto;
+   padding-top:80px; padding-bottom:80px; display:block; position:relative; overflow:hidden
+   Webflow .roi-sec uses embedded bt-section: padding:88px 24px 96px. We blend: 80px top/bottom + 5% lateral. */
 .section {
   background-color: var(--color-brand-light-bg);
-  padding: 80px 5%;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  display: block;
+  justify-content: center;
+  position: relative;
+  margin-top: 0;
   margin-right: auto;
+  margin-bottom: 0;
   margin-left: auto;
+  padding-top: 80px;
+  padding-right: 5%;
+  padding-bottom: 80px;
+  padding-left: 5%;
+  overflow: hidden;
 }
 
+/* container — matches Webflow bt-inner (max-width:1280px) and .container-large-3 (max-width:1280px) */
 .container {
   width: 100%;
-  max-width: 940px;
-  margin: 15px auto 80px;
+  max-width: 1280px;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── Header ─────────────────────────────────────────────────────────────── */
@@ -695,22 +710,52 @@
   flex-shrink: 0;
 }
 
+/* ─── Animated counter (Framer Motion) ──────────────────────────────────── */
+
+.animatedCounter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animatedCounter {
+    transition: none !important;
+  }
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
-@media screen and (max-width: 900px) {
+/* Webflow @min-width:1440 — container-large-3 grows to 1320px */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* @max-width:991 — Webflow .section/.book-section responsive: padding reduction */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .container {
+    max-width: 100%;
+  }
   .layout {
     grid-template-columns: 1fr;
   }
-
   .rightPanel {
-    /* show results below inputs on narrow screens */
+    /* results above inputs on narrow screens */
     order: -1;
   }
 }
 
 @media screen and (max-width: 767px) {
   .section {
-    padding: 64px 5%;
+    padding-top: 50px;
+    padding-right: 5%;
+    padding-bottom: 50px;
+    padding-left: 5%;
   }
 
   .title {
@@ -718,13 +763,19 @@
   }
 
   .leftPanel {
-    padding: 24px 20px;
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 24px;
+    padding-left: 20px;
     gap: 20px;
   }
 
   .billingBtn {
     font-size: 12px;
-    padding: 6px 6px;
+    padding-top: 6px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
     gap: 4px;
   }
 
@@ -747,10 +798,16 @@
   }
 
   .heroCard {
-    padding: 24px 20px;
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 24px;
+    padding-left: 20px;
   }
   .container {
+    margin-top: 15px;
+    margin-right: auto;
     margin-bottom: 0;
+    margin-left: auto;
   }
 }
 
@@ -772,16 +829,10 @@
     flex-wrap: wrap;
   }
   .container {
+    margin-top: 15px;
+    margin-right: auto;
     margin-bottom: 0;
+    margin-left: auto;
     max-width: none;
-}
-}
-@media (max-width: 991px) {
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-  .container {
-    max-width: 728px;
   }
 }
