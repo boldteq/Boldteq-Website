@@ -12,6 +12,8 @@
   padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
+  display: block;
+  justify-content: center;
 }
 
 .card {
@@ -86,7 +88,7 @@
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 

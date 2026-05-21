@@ -16,8 +16,13 @@ const CATEGORY_LABELS: Record<string, string> = {
   wordpress: "WordPress",
 };
 
-export function BlogGrid() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+interface BlogGridProps {
+  /** Pre-select a category (used by /blog/categories/[slug]) */
+  initialCategory?: string;
+}
+
+export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
+  const [activeCategory, setActiveCategory] = useState<string>(initialCategory);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const filtered = useMemo(() => {

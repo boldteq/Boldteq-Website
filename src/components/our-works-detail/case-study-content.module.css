@@ -23,17 +23,20 @@
   display: flex;
 }
 
-/* workpsubott-txt */
+/* workpsubott-txt — matches Webflow .badge (1px solid #fff, flex centered) */
 .badge {
   background-color: #fafafa;
-  border: 1.5px solid var(--color-brand-cyan);
+  border: 1px solid #fff;
   border-radius: 999px;
   margin-bottom: 0;
   padding: 4px 12px;
   line-height: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
@@ -96,16 +99,14 @@
   margin-top: 30px;
 }
 
-/* workp-cont-inn */
+/* workp-cont-inn (w-layout-hflex) */
 .section {
   grid-column-gap: 14px;
   grid-row-gap: 14px;
   width: 100%;
   display: flex;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-right: auto;
-  margin-left: auto;
+  position: relative;
+  justify-content: center;
 }
 
 /* cont1-icon base */
@@ -163,6 +164,9 @@
   height: 20px;
   padding-top: 5px;
   color: #019ae6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* work-pop-contout */
@@ -192,13 +196,14 @@
   margin: 0 0 8px;
 }
 
-/* paragraph text-left small-lh */
+/* paragraph text-left small-lh — base Webflow .paragraph text-align: center */
 .paragraph {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 28px;
   margin: 0;
+  text-align: center;
 }
 
 /* ── Implementation list ── */
@@ -444,10 +449,6 @@
   .content {
     height: 50vh;
   }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 }
 
 /* ============================================================
@@ -471,5 +472,6 @@
   .paragraph {
     font-size: 16px;
     color: #000;
-}
+    text-align: left;
+  }
 }

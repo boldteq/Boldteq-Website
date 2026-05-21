@@ -7,6 +7,7 @@
   padding: 60px 5%;
   overflow: hidden;
   display: block;
+  justify-content: center;
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -39,15 +40,17 @@
 
 .badge {
   background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #fff;
   border-radius: 999px;
   padding: 4px 12px;
   line-height: 34px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
+  text-decoration: none;
 }
 
 .badgeText {

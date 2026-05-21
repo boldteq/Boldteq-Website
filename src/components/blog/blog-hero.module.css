@@ -4,16 +4,20 @@
    ============================================================ */
 
 .section {
+  display: block;
+  justify-content: center;
+  position: relative;
   background-color: transparent;
   padding-top: 80px;
   padding-bottom: 80px;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   margin-right: auto;
   margin-left: auto;
 }
 
 .container {
+  width: 100%;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +57,7 @@
   padding-right: 1.5rem;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   text-decoration: none;
 }
@@ -66,7 +70,7 @@
   margin-top: 2rem;
   padding-left: 0;
   padding-right: 0;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   display: flex;
   position: relative;
@@ -81,12 +85,15 @@
   display: flex;
 }
 
-/* Individual badge box (.blog-ban-gridbox) */
+/* Individual badge box (.blog-ban-gridbox) — extends Webflow .badge base
+   webflow.css L4629: border 1px solid #fff; text-decoration none; justify-content center */
 .badge {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   background-color: #fafafa;
+  border: 1px solid #fff;
   border-radius: 999px;
+  justify-content: center;
   align-items: center;
   width: auto;
   padding: 4px 12px;
@@ -94,6 +101,7 @@
   display: flex;
   box-shadow: var(--shadow-card);
   color: #18181b;
+  text-decoration: none;
 }
 
 .badgeIcon {

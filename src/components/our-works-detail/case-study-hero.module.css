@@ -9,18 +9,21 @@
   margin: 0 auto;
 }
 
-/* workpsubott-txt: gradient border badge */
+/* workpsubott-txt — matches Webflow .badge (1px solid #fff, flex centered) */
 .badge {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
+  justify-content: center;
   padding: 4px 12px;
   border-radius: 999px;
   background-color: #fafafa;
-  border: 1.5px solid var(--color-brand-cyan);
+  border: 1px solid #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
   line-height: 32px;
   margin-bottom: 10px;
+  text-decoration: none;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
@@ -63,7 +66,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   color: var(--color-text-secondary);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 @media (max-width: 991px) {

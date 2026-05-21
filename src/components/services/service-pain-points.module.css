@@ -7,6 +7,7 @@
   padding: 0 5% 70px;
   overflow: hidden;
   display: block;
+  justify-content: center;
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -39,15 +40,17 @@
 
 .badge {
   background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #fff;
   border-radius: 999px;
   padding: 4px 12px;
   line-height: 34px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
+  text-decoration: none;
 }
 
 .badgeText {
@@ -77,12 +80,19 @@
   line-height: 1.75;
 }
 
-/* Cards grid — 4-col (matches Webflow .web-bt-gridboxes) */
+/* Cards grid — 3-col (matches Webflow .web-bt-gridboxes) */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+
+@media screen and (min-width: 1280px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
 }
 
 .card {
@@ -102,7 +112,9 @@
   font-size: 28px;
   line-height: 1;
   margin-bottom: 16px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 5px;
   color: #019ae6;
 }

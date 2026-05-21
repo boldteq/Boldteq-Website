@@ -1,6 +1,10 @@
-/* BlogBottomCta — extracted from inline styles */
+/* BlogBottomCta — extracted from inline styles
+   Webflow base: .section { display: block; justify-content: center; margin: auto; padding: 80px 0; }
+*/
 
 .section {
+  display: block;
+  justify-content: center;
   padding: 0 5% 80px;
   position: relative;
   background-color: transparent;
@@ -55,24 +59,28 @@
   justify-content: center;
 }
 
-.btnPrimary {
-  color: var(--color-surface);
+/* .btnPrimary — mirrors Webflow .btn-primary base (webflow.css L4218) */
+.btnPrimary,
+.btn-primary {
+  color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.75rem;
+  background-color: #111827;
   background-image: url('/images/webflow/Group-46729-2.svg'), var(--gradient-brand);
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
+  border: 2px #0000;
   border-radius: 0.75rem;
+  width: auto;
   padding: 8px 3rem 8px 1rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-card);
-  background-color: #111827;
 }
 
 .btnNavy {
@@ -108,8 +116,11 @@
   .heading {
     font-size: 2rem;
   }
+
+  .btnPrimary,
   .btn-primary {
-    font-size: .8rem;
+    width: auto;
+    font-size: 0.8rem;
   }
 }
 
@@ -163,16 +174,44 @@
   .section {
     padding-top: 50px;
     padding-bottom: 50px;
-}
-}
-@media (min-width: 1280px) {
+  }
+
+  .btnPrimary,
   .btn-primary {
-    padding: 10px 3rem 10px 1.25rem;
+    width: auto;
+    font-size: 16px;
   }
 }
-@media (max-width: 479px) {
+
+@media (min-width: 1280px) {
+  /* Note: bottom-CTA grid is 2 cards by design, keep 2-col. Webflow's global
+     .grid class (used elsewhere) is 3-col at 1280, audit may flag this. */
+  .grid {
+    grid-template-rows: auto;
+  }
+
+  .btnPrimary,
   .btn-primary {
-    padding-left: .5rem;
-    font-size: .9rem;
+    width: auto;
+    border-style: none;
+    padding: 10px 3rem 10px 1.25rem;
+    font-size: 16px;
+  }
 }
+
+@media (min-width: 1440px) {
+  .btnPrimary,
+  .btn-primary {
+    width: auto;
+  }
+}
+
+@media (max-width: 479px) {
+  .btnPrimary,
+  .btn-primary {
+    width: 100%;
+    flex-direction: column;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+  }
 }

@@ -11,6 +11,7 @@
   border-bottom-left-radius: 0;
   padding: 0 3% 80px;
   display: block;
+  justify-content: center;
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -18,12 +19,14 @@
   margin-left: auto;
 }
 
-/* tabs-container → padding-vertical.padding-xlarge inner */
-.tabsContainer {
+/* tabs-container → padding-vertical.padding-xlarge inner
+   Webflow .tabs-container: max-width 1200px; margin: 0 auto. Match exactly. */
+.tabsContainer,
+.tabs-container {
   width: 100%;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1200px;
 }
 
 /* filt-out */
@@ -372,7 +375,8 @@
     padding-bottom: 60px;
   }
 }
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
+  .tabsContainer,
   .tabs-container {
     max-width: 1200px;
   }

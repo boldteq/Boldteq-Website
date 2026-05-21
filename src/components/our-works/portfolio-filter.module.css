@@ -278,6 +278,8 @@
   white-space: nowrap;
   margin-bottom: 0;
   line-height: 12px;
+  text-align: center;
+  position: static;
 }
 
 /* ============================================================
@@ -289,18 +291,19 @@
   }
 }
 @media (min-width: 1280px) {
-  .coming-soon-badge {
+  .comingSoonBadge {
     line-height: 12px;
+    text-align: center;
   }
 }
 @media (min-width: 1440px) {
-  .coming-soon-badge {
+  .comingSoonBadge {
     line-height: 14px;
   }
 }
 @media (max-width: 479px) {
-  .coming-soon-badge {
+  .comingSoonBadge {
     font-size: 7px;
     line-height: 8px;
-}
+  }
 }

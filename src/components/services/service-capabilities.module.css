@@ -10,6 +10,8 @@
   padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
+  display: block;
+  justify-content: center;
 }
 
 .container {
@@ -37,15 +39,17 @@
 
 .badge {
   background-color: #fafafa;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #fff;
   border-radius: 999px;
   padding: 4px 12px;
   line-height: 34px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   color: #18181b;
+  text-decoration: none;
 }
 
 .badgeText {
@@ -81,6 +85,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+
+@media screen and (min-width: 1280px) {
+  .grid {
+    grid-template-rows: auto;
+  }
 }
 
 .card {
@@ -122,11 +132,12 @@
   margin: 0 0 20px;
 }
 
-.innerBadge {
+.innerBadge,
+.inner-badge {
   display: inline-flex;
   align-self: flex-start;
   background-color: #21cfff12;
-  border: 1px solid rgba(33, 207, 255, 0.25);
+  border: 1px solid #05bafe;
   border-radius: 20px;
   padding: 0 13px;
   line-height: 14px;
@@ -160,6 +171,7 @@
   .container {
     max-width: 728px;
   }
+  .innerBadge,
   .inner-badge {
     margin-bottom: 20px;
   }
@@ -197,6 +209,7 @@
     margin-bottom: 0;
     max-width: none;
 }
+  .innerBadge,
   .inner-badge {
     margin-bottom: 15px;
   }
