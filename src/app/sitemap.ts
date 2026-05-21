@@ -31,14 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const portfolioRoutes: MetadataRoute.Sitemap = PORTFOLIO_DETAILS.map((d) => ({
-    url: `${BASE_URL}/our-works/${d.slug}`,
+    url: `${BASE_URL}/our-work/${d.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
-    url: `${BASE_URL}/blog/${p.slug}`,
+    url: `${BASE_URL}/blog-posts/${p.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7,

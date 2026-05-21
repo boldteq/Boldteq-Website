@@ -124,7 +124,7 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                         </span>
                         <div className={styles.topPostInner}>
                           <a
-                            href={`/blog/${post.slug}`}
+                            href={`/blog-posts/${post.slug}`}
                             className={styles.topPostTitle}
                           >
                             {post.title}

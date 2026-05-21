@@ -1,5 +1,24 @@
+import Image from "next/image";
 import { Button } from '@/components/primitives/button';
 import styles from "./careers-hero.module.css";
+
+const GALLERY = [
+  {
+    src: "/images/webflow/e1c5a28536cdd82b3405ddbd6babd3a23fdc34aa.png",
+    alt: "Boldteq team",
+    cardClass: "galleryCard1",
+  },
+  {
+    src: "/images/webflow/ca7e39d79f09e622dbf744ac70e1284061b70db0-1.png",
+    alt: "Boldteq office environment",
+    cardClass: "galleryCard2",
+  },
+  {
+    src: "/images/webflow/21bbfbdba86a0d80cb0a841c41df97d761902c14.png",
+    alt: "Boldteq team collaboration",
+    cardClass: "galleryCard3",
+  },
+] as const;
 
 export function CareersHero() {
   return (
@@ -27,36 +46,23 @@ export function CareersHero() {
         <div className={styles.galleryWrapper}>
           {/* career-gallery-row */}
           <div className={styles.galleryRow}>
-            {/* card-1 */}
-            <div className={`${styles.galleryCard} ${styles.galleryCard1}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/webflow/e1c5a28536cdd82b3405ddbd6babd3a23fdc34aa.png"
-                loading="lazy"
-                alt="Boldteq team"
-                className={styles.galleryImage}
-              />
-            </div>
-            {/* card-2 */}
-            <div className={`${styles.galleryCard} ${styles.galleryCard2}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/webflow/ca7e39d79f09e622dbf744ac70e1284061b70db0-1.png"
-                loading="lazy"
-                alt="Boldteq office environment"
-                className={styles.galleryImage}
-              />
-            </div>
-            {/* card-5 (visible) */}
-            <div className={`${styles.galleryCard} ${styles.galleryCard3}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/webflow/21bbfbdba86a0d80cb0a841c41df97d761902c14.png"
-                loading="lazy"
-                alt="Boldteq team collaboration"
-                className={styles.galleryImage}
-              />
-            </div>
+            {GALLERY.map((item, i) => (
+              <div
+                key={item.src}
+                className={`${styles.galleryCard} ${styles[item.cardClass]}`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={240}
+                  height={360}
+                  priority={i === 0}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  sizes="(max-width: 767px) 33vw, 240px"
+                  className={styles.galleryImage}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

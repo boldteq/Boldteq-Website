@@ -106,7 +106,7 @@ export function PortfolioPopup({ item, onClose }: PortfolioPopupProps) {
               {item.name} project details
             </h2>
             <iframe
-              src={`/our-works/${item.slug}`}
+              src={`/our-work/${item.slug}`}
               className={styles.iframe}
               title={`${item.name} project details`}
               allowFullScreen

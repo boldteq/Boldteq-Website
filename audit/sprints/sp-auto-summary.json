@@ -1,116 +1,115 @@
 {
-  "generated_at": "2026-05-19T17:50:10.899Z",
-  "total_bugs": 1698,
-  "auto_fixable": 645,
-  "manual_review": 1053,
+  "generated_at": "2026-05-21T09:35:37.906Z",
+  "total_bugs": 655,
+  "auto_fixable": 208,
+  "manual_review": 447,
   "by_sprint": {
-    "1": 313,
-    "2": 162,
-    "3": 84,
-    "4": 206,
-    "5": 240,
-    "6": 178,
-    "7": 82,
-    "8": 41,
-    "9": 135,
-    "10": 6,
-    "11": 251
+    "1": 97,
+    "2": 98,
+    "3": 54,
+    "4": 80,
+    "5": 142,
+    "6": 13,
+    "7": 63,
+    "8": 18,
+    "9": 46,
+    "11": 44
   },
   "by_severity": {
     "P0": 0,
-    "P1": 270,
-    "P2": 1428,
+    "P1": 95,
+    "P2": 560,
     "P3": 0
   },
   "by_category": {
-    "css": 1698
+    "css": 655
   },
   "top_properties": [
     [
-      "max-width",
-      142
-    ],
-    [
-      "margin-bottom",
-      117
-    ],
-    [
-      "padding-bottom",
-      113
-    ],
-    [
-      "padding-top",
-      106
-    ],
-    [
       "justify-content",
-      88
-    ],
-    [
-      "color",
-      79
-    ],
-    [
-      "display",
-      77
-    ],
-    [
-      "background-color",
-      71
-    ],
-    [
-      "font-size",
-      69
-    ],
-    [
-      "padding",
       59
     ],
     [
+      "max-width",
+      52
+    ],
+    [
+      "display",
+      43
+    ],
+    [
+      "margin-bottom",
+      38
+    ],
+    [
       "border",
-      54
-    ],
-    [
-      "grid-column-gap",
-      54
-    ],
-    [
-      "grid-row-gap",
-      54
-    ],
-    [
-      "margin-left",
-      53
-    ],
-    [
-      "grid-template-columns",
-      50
-    ],
-    [
-      "width",
-      50
-    ],
-    [
-      "margin-right",
-      47
-    ],
-    [
-      "margin",
-      42
-    ],
-    [
-      "line-height",
       36
     ],
     [
-      "padding-right",
+      "width",
       33
+    ],
+    [
+      "padding-top",
+      28
+    ],
+    [
+      "background-color",
+      28
+    ],
+    [
+      "text-align",
+      24
+    ],
+    [
+      "padding-bottom",
+      24
+    ],
+    [
+      "padding",
+      23
+    ],
+    [
+      "grid-template-columns",
+      21
+    ],
+    [
+      "font-size",
+      20
+    ],
+    [
+      "color",
+      19
+    ],
+    [
+      "line-height",
+      19
+    ],
+    [
+      "text-decoration",
+      19
+    ],
+    [
+      "border-radius",
+      16
+    ],
+    [
+      "margin",
+      15
+    ],
+    [
+      "grid-column-gap",
+      12
+    ],
+    [
+      "grid-row-gap",
+      12
     ]
   ],
   "counters": {
-    "mismatch": 669,
-    "missing": 1029,
-    "alias": 168,
+    "mismatch": 253,
+    "missing": 402,
+    "alias": 75,
     "responsive_module": 0
   },
   "token_map_size": 192

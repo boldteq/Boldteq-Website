@@ -50,3 +50,9 @@ next-env.d.ts
 /blob-report/
 /playwright/.cache/
 
+# ephemeral audit/screenshot artifacts (not source-of-truth tests)
+/tests/screenshots/
+/tests/_pw-debug.mjs
+/tests/*.png
+/tests/*.json
+

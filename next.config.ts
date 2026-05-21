@@ -47,6 +47,29 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Route reconciliation with live boldteq.com canonical URLs:
+    //   /our-works/:slug  → /our-work/:slug  (singular detail)
+    //   /blog/:slug       → /blog-posts/:slug (excluding /blog and /blog/categories/* which stay)
+    // Next.js :slug matches a single segment only, so /blog/:slug will NOT match /blog/categories/foo.
+    return [
+      {
+        source: "/our-works/:slug",
+        destination: "/our-work/:slug",
+        permanent: true,
+      },
+      {
+        // Single-segment `[^/]+` so /blog/categories/<slug> (3-segment) is excluded.
+        // Negative lookahead `(?!categories$)` so the literal slug "categories"
+        // (would be /blog/categories alone) is also excluded.
+        // Result: only /blog/<post-slug> redirects; /blog, /blog/categories,
+        // and /blog/categories/<slug> all remain untouched.
+        source: "/blog/:slug((?!categories$)[^/]+)",
+        destination: "/blog-posts/:slug",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     const isDev = process.env.NODE_ENV === "development";
 

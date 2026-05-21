@@ -41,9 +41,9 @@ const ALL_PAGES = [
   '/newsletter', '/services/website-development', '/services/ui-ux-design',
   '/services/graphics-design', '/services/app-development', '/privacy-policy',
   '/terms-of-service',
-  // Representative dynamic routes
-  '/our-works/dabble',
-  '/blog/how-agencies-use-white-label-teams-in-practice-6',
+  // Representative dynamic routes (renamed in S11.1)
+  '/our-work/dabble',
+  '/blog-posts/how-agencies-use-white-label-teams-in-practice-6',
 ];
 
 const ALL_VIEWPORTS = [

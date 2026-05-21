@@ -34,7 +34,7 @@ const blogSchema = {
     headline: post.title,
     description: post.shortDescription,
     image: post.image,
-    url: `${SITE_CONFIG.url}/blog/${post.slug}`,
+    url: `${SITE_CONFIG.url}/blog-posts/${post.slug}`,
   })),
 };
 

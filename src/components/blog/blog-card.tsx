@@ -18,7 +18,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post }: BlogCardProps) {
   const categoryLabel = CATEGORY_LABELS[post.category] ?? post.category;
-  const href = `/blog/${post.slug}`;
+  const href = `/blog-posts/${post.slug}`;
 
   return (
     <article className={styles.cardWrapper}>

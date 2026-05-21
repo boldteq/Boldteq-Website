@@ -67,7 +67,7 @@ export default async function BlogCategoryPage({
       itemListElement: postsInCategory.map((post, idx) => ({
         "@type": "ListItem",
         position: idx + 1,
-        url: `${SITE_CONFIG.url}/blog/${post.slug}`,
+        url: `${SITE_CONFIG.url}/blog-posts/${post.slug}`,
         name: post.title,
       })),
     },

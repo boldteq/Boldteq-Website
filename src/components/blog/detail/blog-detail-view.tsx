@@ -29,7 +29,7 @@ function formatDate(iso: string): string {
 
 export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
   const categoryLabel = CATEGORY_LABELS[post.category] ?? post.category;
-  const postUrl = `${SITE_CONFIG.url}/blog/${post.slug}`;
+  const postUrl = `${SITE_CONFIG.url}/blog-posts/${post.slug}`;
   const shareTitle = encodeURIComponent(post.title);
   const shareUrl = encodeURIComponent(postUrl);
 

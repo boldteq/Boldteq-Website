@@ -21,13 +21,18 @@
   }
 }
 
-/* Item wrapper */
+/* Item wrapper — Webflow .faq-item: white card with cyan tint border + shadow */
 .item {
-  border-bottom: 1px solid var(--color-border-default);
+  background-color: #fff;
+  border: 1px solid #c1e6f9;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
-.item:first-child {
-  border-top: 1px solid var(--color-border-default);
+.item:last-child {
+  margin-bottom: 0;
 }
 
 /* Toggle button */
@@ -37,15 +42,15 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--space-4);
-  padding: var(--space-5) 0;
+  padding: 14px 20px;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--text-base);
-  font-weight: var(--weight-semibold);
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -80,7 +85,7 @@
 }
 
 .answer {
-  padding-bottom: var(--space-5);
+  padding: 0 20px 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: var(--text-base);
   line-height: 28px;

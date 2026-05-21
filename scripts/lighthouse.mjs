@@ -32,8 +32,8 @@ const ALL_PAGES = [
   '/newsletter', '/services/website-development', '/services/ui-ux-design',
   '/services/graphics-design', '/services/app-development', '/privacy-policy',
   '/terms-of-service',
-  '/our-works/dabble',
-  '/blog/how-agencies-use-white-label-teams-in-practice-6',
+  '/our-work/dabble',
+  '/blog-posts/how-agencies-use-white-label-teams-in-practice-6',
 ];
 
 const args = process.argv.slice(2);

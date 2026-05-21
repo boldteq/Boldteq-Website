@@ -202,19 +202,11 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
               <div className={styles["subheadingLarge7"]}>Starter</div>
             </div>
             <div className={styles["pricingTableHeader"]}>
-              <div
-                className={`${styles["subheadingLarge7"]} ${styles["subheadingLarge7TextColorBrandOrange"]}`}
-              >
-                Growth
-              </div>
+              <div className={styles["subheadingLarge7"]}>Growth</div>
             </div>
             <div className={styles["pricingTableHeader"]}>
               <div className={styles["pricingHeaderLast"]}>
-                <div
-                  className={`${styles["subheadingLarge7"]} ${styles["subheadingLarge7TextColorBrandOrange"]}`}
-                >
-                  Pro
-                </div>
+                <div className={styles["subheadingLarge7"]}>Pro</div>
               </div>
             </div>
 
