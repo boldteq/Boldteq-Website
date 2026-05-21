@@ -44,7 +44,8 @@
 
 .howWorkBadge {
   background-color: var(--color-accent-bg);
-  border: 1px solid var(--color-brand-cyan);
+  /* Webflow line 19920: border: 1px solid #05bafe (NOT --color-brand-cyan #21cfff) */
+  border: 1px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 0;
   padding: 0 13px;
@@ -114,7 +115,9 @@
   grid-row-gap: 0px;
   text-align: center;
   mix-blend-mode: normal;
-  background-color: var(--color-text-primary);
+  /* Webflow .feature-card.blue: #1c3861 — lighter navy lift above #082753 section bg
+     gives the soft card boundary visible in live reference. */
+  background-color: #1c3861;
   background-image: none;
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 20px;
@@ -124,8 +127,6 @@
   padding: 25px 17px 17px;
   text-decoration: none;
   display: flex;
-  /* WCAG fix: browser default #333 on #1c3861 = ratio 1.08 (fail).
-     Force white so all child anchors/text are readable. */
   color: #fff;
 }
 
@@ -165,7 +166,10 @@
 
 /* ==========================================================
    Card image  (Webflow: .full-width-image — plain, NO drop-shadow)
-   Webflow line 13651: width: 100%; max-width: 3768px; display: block
+   Webflow has TWO base rules that cascade:
+     Line 2425: display: block; grid-column-gap: 12px; grid-row-gap: 12px;
+                grid-template-rows: auto; grid-template-columns: 1fr 1fr 1fr 1fr
+     Line 13651: width: 100%; max-width: 3768px
    No height attribute on <img> in Webflow HTML → renders at natural ratio.
    ========================================================== */
 .imageWrapper {
@@ -175,11 +179,15 @@
 }
 
 .fullWidthImage {
+  display: block;
+  width: 100%;
+  max-width: 3768px;
   object-fit: cover;
   object-position: top;
-  max-width: 3768px;
   grid-column-gap: 12px;
   grid-row-gap: 12px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 /* ==========================================================
@@ -202,7 +210,10 @@
     font-size: 25px;
     line-height: 32px;
   }
-  .full-width-image {
+
+  /* Webflow line 22356: .full-width-image @ min-1280 — width 100%; max-width 100% */
+  .fullWidthImage {
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -221,7 +232,16 @@
   .containerLarge3 {
     max-width: 1320px;
   }
-  .full-width-image {
+
+  /* Webflow line 23433: .text-wrapper @ min-1440 — text-align center; align-self auto */
+  .textWrapper {
+    text-align: center;
+    align-self: auto;
+  }
+
+  /* Webflow line 23719: .full-width-image @ min-1440 — width 100%; max-width 100% */
+  .fullWidthImage {
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -251,8 +271,15 @@
     /* stays 3-col per Webflow line 24562 for margin-top-40px variant */
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .how-work-badge {
+
+  /* Webflow line 26812: .how-work-badge @ max-991 — margin-bottom 20px */
+  .howWorkBadge {
     margin-bottom: 20px;
+  }
+
+  /* Webflow line 24649: .full-width-image @ max-991 — grid-template-columns 1fr 1fr */
+  .fullWidthImage {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -331,7 +358,14 @@
   .featureCardBlue {
     padding: 24px 18px;
   }
-  .how-work-badge {
+
+  /* Webflow line 32226: .how-work-badge @ max-479 — margin-bottom 15px */
+  .howWorkBadge {
     margin-bottom: 15px;
+  }
+
+  /* Webflow line 29805: .full-width-image @ max-479 — grid-template-columns 1fr */
+  .fullWidthImage {
+    grid-template-columns: 1fr;
   }
 }

@@ -25,6 +25,7 @@ export function Hero() {
                 width={248}
                 height={34}
                 priority
+                fetchPriority="high"
                 className={styles['review-stars']}
               />
             </a>
@@ -76,7 +77,6 @@ export function Hero() {
                     alt="No contract required icon"
                     width={24}
                     height={24}
-                    style={{ width: 'auto', height: 'auto' }}
                     className={styles['home-bangrid-icon']}
                   />
                   <p className={`${styles['grid-para']} ${styles['middle']} ${styles['mob-center']} ${styles['lighter-font']}`}>
@@ -92,7 +92,6 @@ export function Hero() {
                     alt="Service pause or Cancel icon"
                     width={24}
                     height={24}
-                    style={{ width: 'auto', height: 'auto' }}
                     className={styles['home-bangrid-icon']}
                   />
                   <p className={`${styles['grid-para']} ${styles['mob-center']} ${styles['lighter-font']}`}>

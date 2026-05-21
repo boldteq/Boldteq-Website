@@ -1,9 +1,25 @@
 /* ============================================================
    BUILT FOR — built-for.module.css
-   Extracted verbatim from boldteq-v1-0.webflow.css
+   Extracted verbatim from boldteq-v1-0.webflow.css (Webflow source).
+   Section markup: <section class="built-seccc">
+                   <div class="container-large-3">
+                     <h2 class="heading-2 margin-bottom-24px"> ... </h2>
+                     <p class="paragraph center"> ... </p>
+                     <div class="built-3-grid-new">
+                       <div class="built-grid-outer-new">
+                         <div class="build-grid-inndiv">
+                           <p class="built-subheading"><strong class="color-mix-bold">#1.</strong> ...</p>
+                           <p class="paragraph text-left line-height-smaller left-mob"> ... </p>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </section>
    ============================================================ */
 
-/* Base: 60px top, 0 bottom (Webflow line 17211). */
+/* ------------------------------------------------------------
+   .built-seccc  (Webflow line 17211)
+   ------------------------------------------------------------ */
 .built-seccc {
   -webkit-text-fill-color: inherit;
   background-color: #0000;
@@ -12,6 +28,14 @@
   position: relative;
 }
 
+/* .built-seccc.center-sec (Webflow line 17219) */
+.built-seccc.center-sec {
+  padding: 0 0%;
+}
+
+/* ------------------------------------------------------------
+   .container-large-3
+   ------------------------------------------------------------ */
 .container-large-3 {
   width: 100%;
   max-width: 1280px;
@@ -19,33 +43,50 @@
   margin-right: auto;
 }
 
+/* ------------------------------------------------------------
+   .heading-2  (Webflow line 1885)
+   ------------------------------------------------------------ */
 .heading-2 {
-  color: var(--blue, #082753);
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--h2, 40px);
+  color: var(--blue);
+  font-family: 'Roobert PRO', Arial, sans-serif;
+  font-size: var(--h2);
   text-align: center;
   line-height: 40px;
 }
 
-.margin-bottom-24px {
-  margin-bottom: 24px;
+/* .heading-2.margin-bottom-24px (Webflow line 1893) */
+.heading-2.margin-bottom-24px {
+  margin-bottom: 20px;
   font-size: 40px;
   line-height: 45px;
 }
 
+/* Standalone .margin-bottom-24px */
+.margin-bottom-24px {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 45px;
+}
+
+/* ------------------------------------------------------------
+   .paragraph  (Webflow line 882)
+   ------------------------------------------------------------ */
 .paragraph {
   color: #2b2b2b;
   text-align: center;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   line-height: 28px;
 }
 
+/* .center modifier */
 .center {
   text-align: center;
 }
 
-/* 4-col grid with 40px top+bottom padding (Webflow line 18944) */
+/* ------------------------------------------------------------
+   .built-3-grid-new  (Webflow line 18944)
+   ------------------------------------------------------------ */
 .built-3-grid-new {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
@@ -60,7 +101,9 @@
   display: grid;
 }
 
-/* Card outer (Webflow line 18957) — no border, just bg image */
+/* ------------------------------------------------------------
+   .built-grid-outer-new  (Webflow line 18957)
+   ------------------------------------------------------------ */
 .built-grid-outer-new {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -68,7 +111,7 @@
   background-image: url('/images/webflow/Rectangle-30822.png');
   background-position: 50%;
   background-size: cover;
-  border: 0;
+  border: 1px #e7e7e7;
   border-radius: 15px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -76,200 +119,222 @@
   display: flex;
 }
 
+/* ------------------------------------------------------------
+   .build-grid-inndiv  (Webflow line 17296)
+   ------------------------------------------------------------ */
 .build-grid-inndiv {
   flex-flow: column;
   flex: 1;
   display: flex;
 }
 
-/* Base font-size: 18px (Webflow line 17302) */
+/* ------------------------------------------------------------
+   .built-subheading  (Webflow line 17302)
+   ------------------------------------------------------------ */
 .built-subheading {
-  color: var(--color-text-primary);
+  color: #082753;
   margin-top: 5px;
   margin-bottom: 10px;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
 }
 
+/* ------------------------------------------------------------
+   .color-mix-bold  (Webflow line 18972)
+   ------------------------------------------------------------ */
 .color-mix-bold {
-  /* Changed from #05bafe (ratio 2.22 on white) to #019ae6 (ratio 4.5+ on white) */
   color: #05bafe;
 }
 
+/* ------------------------------------------------------------
+   .paragraph.text-left (and modifiers) — Webflow line 934, 970
+   Note: the markup applies `paragraph text-left line-height-smaller left-mob`
+   to a <p>, so this module exposes them as individual classes since the JSX
+   doesn't apply `paragraph` here (it uses paragraph-text-left as a single
+   composite class). To stay faithful to Webflow visuals we expose both.
+   ------------------------------------------------------------ */
 .paragraph-text-left {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   text-align: left;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   line-height: 28px;
 }
 
-/* line-height-smaller matches .paragraph.text-left.line-height-smaller (Webflow line 970) */
+/* .paragraph.text-left.line-height-smaller (Webflow line 970) */
 .line-height-smaller {
   line-height: 22px;
 }
 
+/* .paragraph.text-left.line-height-smaller.left-mob (Webflow line 974) — same line-height */
 .left-mob {
-  /* base — text-align preserved from paragraph-text-left */
+  /* intentionally empty at base; overridden at @479 to keep text-align: left */
 }
 
 /* ============================================================
-   min-width: 1280px
-   (Webflow lines 22795, 22986)
+   @media (min-width: 1280px)  — Webflow lines 21619+
    ============================================================ */
 @media screen and (min-width: 1280px) {
+  /* Webflow line 22782 */
+  .built-seccc {
+    padding-bottom: 0;
+  }
+
+  /* Webflow line 22795 */
   .built-subheading {
     font-size: 20px;
   }
 
+  /* Webflow line 22986 */
   .built-grid-outer-new {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .built-seccc {
-    padding-bottom: 0;
-  }
 }
 
 /* ============================================================
-   min-width: 1440px
-   (Webflow lines 24138, 24146, 24338)
+   @media (min-width: 1440px)  — Webflow lines 23146+
    ============================================================ */
 @media screen and (min-width: 1440px) {
-  .built-seccc {
-    padding: 60px 5% 0;
-    padding-bottom: 0;
-}
+  /* Webflow line 23376 */
+  .container-large-3 {
+    max-width: 1320px;
+  }
 
+  /* Webflow line 24138 */
+  .built-seccc {
+    padding-bottom: 0;
+  }
+
+  /* Webflow line 24142 */
   .built-seccc.center-sec {
     text-align: center;
   }
 
+  /* Webflow line 24146 */
   .built-subheading {
     font-size: 20px;
   }
 
+  /* Webflow line 24338 */
   .built-grid-outer-new {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .container-large-3 {
-    max-width: 1320px;
-  }
 }
 
 /* ============================================================
-   max-width: 991px
-   (Webflow lines 22782, 22795)
+   @media (max-width: 991px)  — Webflow lines 24454+
    ============================================================ */
 @media screen and (max-width: 991px) {
+  /* Webflow line 22782 (cascades down) + dedicated rule line 26374 */
   .built-seccc {
-    padding: 60px 5% 0;
     padding-top: 60px;
     padding-bottom: 0;
-}
+  }
 
+  /* Webflow line 22795 */
   .built-subheading {
     font-size: 20px;
   }
 
-  /* Fix #7: 2-column grid at 991px (tablet) to match live */
-  .built-3-grid-new {
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .built-seccc.center-sec {
-    padding-bottom: 5%;
-  }
+  /* Webflow line 24582 */
   .heading-2.margin-bottom-24px {
     margin-top: 0;
   }
-}
 
-/* ============================================================
-   max-width: 767px
-   (Webflow lines 26374, 26636)
-   built-3-grid-new → 2-col at tablet
-   ============================================================ */
-@media screen and (max-width: 767px) {
-  .built-seccc {
-    padding: 60px 5% 0;
-    padding-top: 60px;
-    padding-bottom: 0;
-}
-
-  .built-subheading {
-    font-size: 20px;
+  /* Webflow line 26379 */
+  .built-seccc.center-sec {
+    padding-bottom: 5%;
   }
 
-  .heading-2.margin-bottom-24px {
-    font-size: 34px;
-    line-height: 45px;
-  }
-
+  /* Webflow line 26636 — built-3-grid-new collapses to 2-col @991 */
   .built-3-grid-new {
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     background-image: none;
     background-repeat: repeat;
     background-size: auto;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* ============================================================
+   @media (max-width: 767px)  — Webflow lines 26907+
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  /* Webflow line 28640 */
+  .built-seccc {
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+
+  /* Webflow line 28645 */
   .built-seccc.center-sec {
     padding-bottom: 5%;
+  }
+
+  /* Webflow line 27073 / 27077 */
+  .heading-2 {
+    font-size: 34px;
+  }
+
+  .heading-2.margin-bottom-24px {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  /* Webflow line 28934 — built-3-grid-new collapses to 1-col @767 */
+  .built-3-grid-new {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: 1fr;
   }
 }
 
 /* ============================================================
-   max-width: 479px  (mobile)
-   (Webflow lines 31613, 28934, 32005)
-   479px: built-seccc padding-top:0 / padding-bottom:60px
-   built-3-grid-new → 1-col at 479px (Webflow line 28934)
-   BUT at 479px, Webflow line 32005 overrides padding-top/bottom of grid
+   @media (max-width: 479px)  — Webflow lines 29202+
    ============================================================ */
 @media screen and (max-width: 479px) {
+  /* Webflow line 31613 */
   .built-seccc {
-    padding: 0 5% 60px;
     padding-top: 0;
     padding-bottom: 60px;
-}
-
-  .built-seccc.center-sec {
-    text-align: center;
-    padding-bottom: 10%;
-}
-
-  .built-subheading {
-    font-size: 20px;
   }
 
-  .heading-2.margin-bottom-24px {
-    text-align: center;
-    margin-bottom: 10px;
+  /* Webflow line 31618 */
+  .built-seccc.center-sec {
+    padding-bottom: 10%;
+  }
+
+  /* Webflow line 29632 */
+  .heading-2 {
     font-size: 21px;
     line-height: 28px;
   }
 
-  .paragraph.center {
+  /* Webflow line 29637 */
+  .heading-2.margin-bottom-24px {
     text-align: center;
+    margin-bottom: 10px;
+    font-size: 23px;
+    line-height: 28px;
   }
 
-  /* 479px: 1-col (Webflow line 28934), grid padding adjusted (line 32005) */
+  /* Webflow line 32005 — built-3-grid-new spacing adjustments at 479 */
   .built-3-grid-new {
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     margin-top: 0;
     padding-top: 10px;
     padding-bottom: 0;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
   }
 
-  /* left-mob: text stays left on mobile (Webflow line 29398) */
-  .paragraph-text-left.line-height-smaller.left-mob {
+  /* Webflow line 974 — paragraph.text-left.line-height-smaller.left-mob keeps left align on mobile */
+  .paragraph-text-left.line-height-smaller.left-mob,
+  .left-mob {
     text-align: left;
   }
 }

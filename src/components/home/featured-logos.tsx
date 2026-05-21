@@ -77,8 +77,9 @@ export function FeaturedLogos() {
       </div>
 
       <style>{`
+        /* Marquee timing matches Webflow fb-carousel-speed="60000" (60s) */
         .logo-3-scroll-track {
-          animation: logo-scroll 40s linear infinite;
+          animation: logo-scroll 60s linear infinite;
         }
         @keyframes logo-scroll {
           0% { transform: translateX(0); }

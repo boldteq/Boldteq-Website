@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.blue-card-sec.center-sec {
+  padding: 0 0%;
+}
+
 .container-large-3 {
   width: 100%;
   max-width: 1280px;
@@ -23,7 +27,7 @@
 .blue-card {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   background-image: url('/images/webflow/Mask-group-3.png'), url('/images/webflow/Mask-group-2.png'), url('/images/webflow/Rectangle-254.png');
   background-position: 100% 100%, 0 0, 50%;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -50,7 +54,7 @@
   line-height: 45px;
   max-width: 842px;
   text-align: center;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-weight: 700;
   margin: 0;
 }
@@ -58,18 +62,18 @@
 /* .image-in-text img sizing is controlled by the Image component's inline style prop
    (width: 93px; height: auto) to avoid CSS/Next.js dimension conflicts. */
 
-/* CTA button — dark-bg variant */
+/* CTA button — base .a-gulf-book (Webflow verbatim) */
 .a-gulf-book {
   color: #fff;
   width: auto;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--button-text, 1rem);
-  background-color: var(--color-brand-dark);
+  font-family: 'Roobert PRO', Arial, sans-serif;
+  font-size: var(--button-text);
+  background-color: #111827;
   background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
-  border: 2px solid #0000;
+  border: 2px #0000;
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
@@ -78,10 +82,20 @@
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
-.dark-bg {
+.a-gulf-book:hover {
+  background-color: #092245;
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* .a-gulf-book.dark-bg — Webflow only overrides padding-left/right + background.
+   Use compound selector to match Webflow specificity (0,2,0) so desktop
+   1280px media-query .a-gulf-book (0,1,0) cannot override the 2rem padding. */
+.a-gulf-book.dark-bg {
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   background-position: 0 0;
   background-repeat: repeat;
@@ -90,15 +104,8 @@
   padding-right: 2rem;
 }
 
-.a-gulf-book:hover {
-  background-color: var(--color-brand-navy);
-  background-image: url('/images/webflow/Group-46729-2.svg');
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
-.dark-bg:hover {
-  color: var(--color-brand-navy);
+.a-gulf-book.dark-bg:hover {
+  color: #092245;
   background-color: #fff;
   background-image: none;
   background-repeat: repeat;
@@ -110,7 +117,6 @@
    ============================================================ */
 @media screen and (min-width: 1280px) {
   .blue-card-sec {
-    padding-top: 0;
     padding-bottom: 0;
   }
 
@@ -120,10 +126,21 @@
     padding-top: 40px;
     padding-bottom: 60px;
   }
+
   .a-gulf-book {
-    padding-right: 3rem;
+    background-image: url('/images/webflow/Group-46729.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+    background-position: 93%, 0 0;
+    background-repeat: no-repeat, repeat;
+    background-size: auto, auto;
+    border-style: none;
+    width: auto;
     padding-left: 1.25rem;
-}
+    padding-right: 3rem;
+  }
+
+  .a-gulf-book:hover {
+    background-image: url('/images/webflow/Group-46729-2.svg');
+  }
 }
 
 /* ============================================================
@@ -131,7 +148,6 @@
    ============================================================ */
 @media screen and (min-width: 1440px) {
   .blue-card-sec {
-    padding-top: 0;
     padding-bottom: 0;
   }
 
@@ -145,8 +161,18 @@
     padding-top: 40px;
     padding-bottom: 60px;
   }
+
   .container-large-3 {
     max-width: 1320px;
+  }
+
+  .a-gulf-book {
+    background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+    width: auto;
+  }
+
+  .a-gulf-book:hover {
+    background-image: url('/images/webflow/Group-46729-2.svg');
   }
 }
 
@@ -155,16 +181,21 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .blue-card-sec {
-    padding-bottom: 0;
     padding-top: 0;
-}
+    padding-bottom: 0;
+  }
+
+  .blue-card-sec.center-sec {
+    padding-bottom: 5%;
+  }
 
   .blue-card {
     padding-top: 40px;
     padding-bottom: 60px;
   }
-  .blue-card-sec.center-sec {
-    padding-bottom: 5%;
+
+  .a-gulf-book {
+    width: auto;
   }
 }
 
@@ -177,20 +208,18 @@
     padding-bottom: 0;
   }
 
+  .blue-card-sec.center-sec {
+    padding-bottom: 5%;
+  }
+
   .blue-card {
     flex-flow: column;
   }
 
-  /* Reduce h3 at tablet to prevent extra line wrap that adds ~14px */
-  .image-in-text {
-    font-size: 28px;
-    line-height: 38px;
-  }
   .a-gulf-book {
-    font-size: .8rem;
-  }
-  .blue-card-sec.center-sec {
-    padding-bottom: 5%;
+    background-size: 26px, auto;
+    width: auto;
+    font-size: 0.8rem;
   }
 }
 
@@ -213,6 +242,10 @@
     padding-bottom: 50px;
   }
 
+  .blue-card-sec.center-sec {
+    padding-bottom: 10%;
+  }
+
   .blue-card {
     background-image: url('/images/webflow/Rectangle-254.png');
     background-position: 50%;
@@ -221,11 +254,20 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
   .a-gulf-book {
+    background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+    background-position: 94%, 0 0;
+    background-size: 29px 29px, auto;
+    flex-direction: column;
+    width: 100%;
     margin-top: 0;
     font-size: 1.1rem;
-}
-  .blue-card-sec.center-sec {
-    padding-bottom: 10%;
+  }
+
+  .a-gulf-book:hover {
+    background-image: url('/images/webflow/Group-46729-2.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
   }
 }

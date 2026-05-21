@@ -18,9 +18,9 @@
   grid-template-columns: 1fr 1fr;
 }
 
+/* Webflow line 17241: .gray-bg base — color + bg #f4f7fa per Webflow source.
+   Child elements (heading, paragraphs, author labels) override color explicitly. */
 .grayBg {
-  /* Removed incorrect color: #f4f7fa (same as bg = white-on-white ratio 1.0).
-     Child elements have their own explicit colors. */
   background-color: #f4f7fa;
   border-radius: 20px;
   padding: 30px 40px;
@@ -195,10 +195,10 @@
   font-weight: 700;
 }
 
+/* Webflow line 17377: .author-name-tag — exact 1:1 from Webflow source */
 .authorNameTag {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  /* Bumped from 10px to 12px minimum per WCAG text-too-small rule */
   font-size: 10px;
   font-weight: 500;
   margin-bottom: 0;
@@ -313,21 +313,6 @@
     display: flex;
   }
 
-  .grayBg {
-    padding-bottom: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .skycolorBg {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .wayGridBoldSky {
-    display: block;
-  }
-
   /* Webflow line 27073: heading-2 at 767px → 34px */
   .heading2 {
     font-size: 34px;
@@ -353,13 +338,22 @@
     line-height: 28px;
     margin-bottom: 10px;
   }
-  .gray-bg {
+
+  /* Webflow line 31621: .gray-bg at 479px → padding-bottom: 60px; padding-left/right: 20px */
+  .grayBg {
     padding-right: 20px;
     padding-bottom: 60px;
     padding-left: 20px;
-}
-  .skycolor-bg {
+  }
+
+  /* Webflow line 31628: .skycolor-bg at 479px → padding-left/right: 20px */
+  .skycolorBg {
     padding-right: 20px;
     padding-left: 20px;
-}
+  }
+
+  /* Webflow line 31633: .way-grid-bold-sky at 479px → display: block */
+  .wayGridBoldSky {
+    display: block;
+  }
 }

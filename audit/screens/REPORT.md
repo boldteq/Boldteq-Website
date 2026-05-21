@@ -1,14 +1,14 @@
 # Visual Diff Report
 
-**Generated:** 2026-05-21T08:21:16.447Z
+**Generated:** 2026-05-21T08:58:15.802Z
 **Mode:** fullPage
 **Gate:** <5% pixel delta · ±2% page-height
 
 | Page | Viewport | Δ pixels | Δ height | Status | Diff |
 |---|---|---|---|---|---|
-| `/` | 1440 | 27.93% | 8.76% | ❌ | [diff](audit/screens/_root/1440-diff.png) |
-| `/pricing` | 1440 | 31.90% | 11.18% | ❌ | [diff](audit/screens/pricing/1440-diff.png) |
-| `/blog` | 1440 | 32.72% | 23.24% | ❌ | [diff](audit/screens/blog/1440-diff.png) |
-| `/contact` | 1440 | 35.21% | 44.46% | ❌ | [diff](audit/screens/contact/1440-diff.png) |
+| `/` | 479 | 34.09% | 12.30% | ❌ | [diff](audit/screens/_root/479-diff.png) |
+| `/` | 767 | 33.20% | 12.54% | ❌ | [diff](audit/screens/_root/767-diff.png) |
+| `/` | 991 | 27.26% | 4.43% | ❌ | [diff](audit/screens/_root/991-diff.png) |
+| `/` | 1440 | 31.31% | 8.42% | ❌ | [diff](audit/screens/_root/1440-diff.png) |
 
-**Summary:** 0/4 passing · worst 35.21% on `/contact` @ 1440
+**Summary:** 0/4 passing · worst 34.09% on `/` @ 479

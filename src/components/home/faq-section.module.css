@@ -40,7 +40,9 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
-  .faq-title-wrapper {
+
+  /* Webflow line 22097: .faq-title-wrapper @ min-1280 { padding-right: 0 } */
+  .faqTitleWrapper {
     padding-right: 0;
   }
 }
@@ -53,6 +55,14 @@
   .fqOuterGrid {
     grid-column-gap: 50px;
     grid-row-gap: 50px;
+  }
+
+  /* Webflow line 23630: .contact-icon-primary @ min-1440 — border-style: none */
+  .contactIconPrimary {
+    border-style: none;
+    border-radius: 10px;
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -83,7 +93,8 @@
 
 .faqSubott {
   background-color: var(--color-accent-bg);
-  border: 1px solid var(--color-brand-cyan);
+  /* Webflow line 18905: border: 1px solid #05bafe (NOT --color-brand-cyan #21cfff) */
+  border: 1px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 0 13px;
@@ -145,7 +156,9 @@
 .contactIconPrimary {
   color: #454545;
   background-color: #f0f9fe;
-  border: 1px solid #c1e6f9;
+  /* Webflow line 9074: border: 1px #c1e6f9 — no border-style specified
+     (defaults to none, renders no visible border). Match exactly. */
+  border: 1px #c1e6f9;
   border-radius: 10px;
   flex: none;
   justify-content: center;
@@ -156,6 +169,9 @@
 }
 
 .column {
+  /* Webflow .column base (line 4530): flex-flow column; display flex */
+  flex-flow: column;
+  display: flex;
   flex: 1;
 }
 
@@ -319,10 +335,9 @@
     padding-top: 60px;
   }
 
+  /* Webflow line 26624: .fq-outer-grid @ max-991 — single column */
   .fqOuterGrid {
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
   }
 
@@ -331,11 +346,12 @@
     max-width: none;
   }
 
+  /* Webflow line 26425: .faq-grid @ max-991 — 16/16 gap + order 9999 */
   .faqGrid {
     order: 9999;
     grid-column-gap: 16px;
     grid-row-gap: 16px;
-}
+  }
 
   .faqWrapperLarge {
     max-width: none;
@@ -348,10 +364,20 @@
     padding-bottom: 72px;
   }
 
+  /* Webflow line 28924: .fq-outer-grid @ max-767 — 10/10 gap (columns inherited 1fr from 991) */
   .fqOuterGrid {
     grid-template-columns: 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+  }
+
+  /* Webflow line 28660: .faq-grid @ max-767 — single col + 10px padding both sides */
+  .faqGrid {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .faqBtmCenter {
@@ -367,10 +393,6 @@
     line-height: 32px;
     margin-bottom: 10px;
   }
-  .faq-grid {
-    padding-right: 10px;
-    padding-left: 10px;
-}
 }
 
 @media screen and (max-width: 479px) {

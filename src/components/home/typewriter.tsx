@@ -1,47 +1,89 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './hero.module.css';
 
 const PHRASES = ['Ownership Driven', 'Without Hiring', 'On Demand'] as const;
 
+/** Webflow typewriter timing (verbatim from boldteq-v1-0.webflow/index.html lines 2779-2828) */
+const TYPE_SPEED_MS = 200;
+const DELETE_SPEED_MS = 100; // typeSpeed / 2
+const END_OF_PHRASE_PAUSE_MS = 2000;
+const BEFORE_NEXT_PHRASE_PAUSE_MS = 500;
+const INITIAL_DELAY_MS = 1000;
+
 /**
- * Typewriter — SSR-safe phrase cycler.
+ * Typewriter — Webflow-parity character-by-character typer.
  *
- * Hydration contract:
- *   • Server renders index=0 ("Ownership Driven"), no fade class.
- *   • First client render also renders index=0 with no fade class.
- *   • DOM bytes match → no hydration mismatch.
- *   • After mount, useEffect kicks the interval and adds the fade class on swap.
+ * Mirrors the Webflow script:
+ *   - Type each char with 200ms cadence
+ *   - When full phrase shown, pause 2000ms
+ *   - Delete each char with 100ms cadence
+ *   - When empty, pause 500ms, advance to next phrase
+ *   - Initial 1000ms delay before first type
+ *
+ * SSR contract: renders the first phrase fully (matches Webflow's static
+ * server HTML `<span class="animate-span">Ownership Driven</span>`). The
+ * typewriter only kicks in on the client via useEffect — so DOM bytes match
+ * during hydration and there is no flash/mismatch.
+ *
+ * Respects prefers-reduced-motion: when set, the first phrase remains
+ * visible and the loop never starts.
  */
 export function Typewriter() {
-  const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(false);
+  const [text, setText] = useState<string>(PHRASES[0]);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mq.matches) return;
-    const raf = requestAnimationFrame(() => setAnimate(true));
-    const id = setInterval(() => {
-      setIndex((p) => (p + 1) % PHRASES.length);
-    }, 2400);
-    return () => { cancelAnimationFrame(raf); clearInterval(id); };
+
+    let textIndex = 0;
+    let charIndex = PHRASES[0].length;
+    let isDeleting = false;
+    let cancelled = false;
+
+    const tick = () => {
+      if (cancelled) return;
+      const currentText = PHRASES[textIndex];
+      let nextSpeed = TYPE_SPEED_MS;
+
+      if (isDeleting) {
+        charIndex -= 1;
+        setText(currentText.substring(0, charIndex));
+        nextSpeed = DELETE_SPEED_MS;
+      } else {
+        charIndex += 1;
+        setText(currentText.substring(0, charIndex));
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        nextSpeed = END_OF_PHRASE_PAUSE_MS;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % PHRASES.length;
+        nextSpeed = BEFORE_NEXT_PHRASE_PAUSE_MS;
+      }
+
+      timeoutRef.current = setTimeout(tick, nextSpeed);
+    };
+
+    timeoutRef.current = setTimeout(tick, INITIAL_DELAY_MS);
+
+    return () => {
+      cancelled = true;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   return (
     <span
       aria-live="polite"
       aria-atomic="true"
-      className={styles['typewriterContainer']}
+      className={`${styles['animate-span']} ${styles['typewriterContainer']}`}
     >
-      <span
-        key={index}
-        className={`${styles['animate-span']} ${styles['typewriterWord']}${
-          animate ? ` ${styles['typewriterFade']}` : ''
-        }`}
-      >
-        {PHRASES[index]}
-      </span>
+      {text}
     </span>
   );
 }

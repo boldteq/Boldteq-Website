@@ -3,13 +3,14 @@
    Extracted verbatim from boldteq-v1-0.webflow.css
    ============================================================ */
 
-/* GuideJar embed wrapper */
+/* GuideJar embed wrapper — matches Webflow inline:
+   padding-bottom: calc(56.25% + 32px); border-radius:10px; z-index:99999 */
 .guidejarWrapper {
   position: relative;
   height: 0;
   width: 100%;
   overflow: hidden;
-  z-index: var(--z-nav);
+  z-index: 99999;
   border-radius: 10px;
   box-sizing: border-box;
   padding-bottom: calc(56.25% + 32px);
@@ -21,39 +22,22 @@
   inset: 0;
 }
 
-/* Typewriter span container */
+/* Typewriter span container (wraps the animated span only, no styles —
+   real styling lives on .animate-span to match Webflow markup byte-for-byte) */
 .typewriterContainer {
-  display: inline-block;
-  min-width: 280px;
-  min-height: 1.1em;
-  text-align: left;
-  vertical-align: baseline;
-  /* Explicit fallback color so accessibility audits read correct contrast ratio.
-     Visually the child .animate-span overrides this with #019ae6. */
-  color: var(--color-brand-blue);
-}
-
-/* Typewriter animated word */
-.typewriterWord {
-  display: inline-block;
-  /* Explicit fallback so motion.span inherits readable color in audit contexts. */
-  color: var(--color-brand-blue);
-}
-
-/* CSS-driven phrase fade — replaces framer-motion AnimatePresence */
-.typewriterFade {
-  animation: typewriterFadeIn 0.28s ease-in-out;
-}
-
-@keyframes typewriterFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  display: inline;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .typewriterFade {
+  .typewriterCaret {
     animation: none;
   }
+}
+
+/* Caret blink for typewriter (Webflow has no caret, but we match style-by-style;
+   gated behind reduced motion — disabled by default since Webflow shows no caret) */
+.typewriterCaret {
+  display: none;
 }
 
 .section-high-judge {
@@ -80,6 +64,7 @@
   overflow-x: hidden;
   padding: 0;
   font-weight: 400;
+  text-decoration: none;
   background-color: #0000;
 }
 
@@ -95,7 +80,6 @@
 
 .div-wrote-smoke {
   text-align: center;
-  /* #05bafe (ratio 2.22 on white) → inherit so children control their own color */
   color: #05bafe;
   max-width: 70rem;
   margin-left: auto;
@@ -107,7 +91,7 @@
 
 .review-link {
   text-decoration: none;
-  /* Expand tap target to min 44px height for WCAG 2.5.8 */
+  /* WCAG 2.5.8 tap target — additive only (no Webflow value to override) */
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -122,11 +106,11 @@
 }
 
 .p-base-place {
-  color: var(--color-brand-navy);
+  color: #092245;
   margin-top: 1.5rem;
   margin-bottom: 0;
   padding: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.25;
@@ -134,16 +118,15 @@
 }
 
 .animate-span {
-  /* Changed from #05bafe (ratio 2.22 on white) to #019ae6 (ratio 4.5+ on white) */
   color: #05bafe;
 }
 
 .p-base-place-copy {
-  color: var(--color-brand-navy);
+  color: #092245;
   margin-top: 0;
   margin-bottom: 10px;
   padding: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.25;
@@ -151,13 +134,13 @@
 }
 
 .h1-season-seeing {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   max-width: 52rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
@@ -178,18 +161,18 @@
 }
 
 .mob-left {
-  /* applied at mobile only — see media query below */
+  /* applied at 479 only — see media query below */
 }
 
 .mob-margin-less {
-  margin-top: 1rem;
+  /* applied at 479 only — see media query below */
 }
 
 .ban-grid {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 0.75fr 0.85fr;
+  grid-template-columns: 1fr .75fr .85fr;
   grid-auto-columns: 1fr;
   max-width: 660px;
   margin-bottom: 50px;
@@ -201,7 +184,7 @@
 }
 
 .hom-ban-grd {
-  /* additional modifier — used with ban-grid.margin-bottom-0 */
+  /* additional modifier — only active at 479 */
 }
 
 .grid-box {
@@ -210,10 +193,15 @@
   background-color: #fff;
   border-radius: 10px;
   align-items: center;
+  width: auto;
   padding: 20px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: all .5s;
   display: flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
+}
+
+.grid-box:hover {
+  transform: none;
 }
 
 .home-grid-box {
@@ -223,6 +211,9 @@
 
 .home-bangrid-icon {
   flex: none;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .grid-para {
@@ -230,21 +221,21 @@
   text-align: left;
   max-width: none;
   margin-bottom: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
 }
 
 .mob-center {
-  color: var(--color-text-primary);
+  color: #082753;
   font-size: 15px;
 }
 
 .lighter-font {
-  /* no desktop value in Webflow source — only mobile media query */
+  /* no desktop value in Webflow source — only 479 media query */
 }
 
-/* Badge 2 "No Contract" max-width constraint (.grid-para.middle) */
+/* .grid-para.middle (and .grid-para.middle.mob-center) */
 .middle {
   max-width: 80px;
 }
@@ -258,71 +249,72 @@
   margin-top: 30px;
 }
 
+/* .code-embed-3.how-code-embed.margin-top-50 */
 .margin-top-50 {
   border-radius: 10px;
   width: 100%;
   max-width: 800px;
   margin: 50px auto 40px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
 .a-gulf-book {
   color: #fff;
   width: auto;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--button-text, 1rem);
-  background-color: var(--color-brand-dark);
+  font-family: 'Roobert PRO', Arial, sans-serif;
+  font-size: var(--button-text);
+  background-color: #111827;
   background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
-  border: 2px solid #0000;
-  border-radius: 0.75rem;
+  border: 2px #0000;
+  border-radius: .75rem;
   justify-content: center;
   align-items: center;
-  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  padding: .75rem 3rem .75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
 .a-gulf-book:hover {
-  background-color: var(--color-brand-navy);
+  background-color: #092245;
   background-image: url('/images/webflow/Group-46729-2.svg');
   background-repeat: no-repeat;
   background-size: auto;
 }
 
 .a-except-get {
-  color: var(--color-brand-dark);
+  color: #111827;
   width: auto;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--button-text, 1rem);
+  font-family: 'Roobert PRO', Arial, sans-serif;
+  font-size: var(--button-text);
   background-color: #21cfff21;
   background-image: url('/images/webflow/Group-46729-1.svg');
   background-position: 94%;
   background-repeat: no-repeat;
   background-size: auto;
-  border: 2px solid #9ca3af;
-  border-radius: 0.75rem;
+  border: 2px #9ca3af;
+  border-radius: .75rem;
   justify-content: center;
   align-items: center;
   margin-top: 0;
   margin-left: 1.25rem;
-  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  padding: .75rem 3rem .75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px #0000001a;
 }
 
 .a-except-get:hover {
   color: #fff;
-  background-color: var(--color-brand-navy);
-  border-color: var(--color-brand-dark);
+  background-color: #092245;
+  border-color: #111827;
 }
 
 .gradient-bg-ban {
@@ -350,8 +342,13 @@
     padding-right: 2rem;
   }
 
+  .h1-season-seeing {
+    color: #2b2b2b;
+    margin-top: 10px;
+  }
+
   .p-base-place {
-    color: var(--color-brand-navy);
+    color: #092245;
     font-size: 50px;
     line-height: 1.25;
   }
@@ -394,6 +391,32 @@
     padding-right: 3rem;
   }
 
+  .grid-box {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    box-shadow: 0 0 5px #0000001a;
+  }
+
+  .grid-para {
+    color: #000;
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+
+  .middle {
+    max-width: 80px;
+  }
+
+  .mob-center {
+    font-size: 16px;
+  }
+
   .ban-grid {
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
@@ -402,17 +425,14 @@
   }
 
   .ban-grid.margin-bottom-0 {
-    grid-template-columns: 1fr 0.65fr 0.75fr;
+    grid-template-columns: 1fr .65fr .75fr;
     max-width: 650px;
   }
+
   .p-base-place-copy {
+    color: #092245;
     font-size: 50px;
-  }
-  .h1-season-seeing {
-    margin-top: 10px;
-  }
-  .grid-para {
-    font-size: 16px;
+    line-height: 1.25;
   }
 }
 
@@ -420,6 +440,10 @@
    min-width: 1440px
    ============================================================ */
 @media screen and (min-width: 1440px) {
+  .div-white-bag {
+    background-color: #0000;
+  }
+
   .section-high-judge {
     background-color: #fff;
     background-image: url('/images/webflow/hero-background-1.png'), linear-gradient(#019ae614, #019ae600);
@@ -432,6 +456,10 @@
   .div-stuck-swept {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .h1-season-seeing {
+    margin-top: 10px;
   }
 
   .p-base-place {
@@ -464,19 +492,26 @@
     margin-left: 1.25rem;
   }
 
-  .ban-grid.margin-bottom-0 {
-    grid-template-columns: 1fr 0.65fr 0.75fr;
-    max-width: 640px;
-    margin-bottom: 50px;
-}
-  .div-white-bag {
-    background-color: #0000;
+  .middle {
+    max-width: 80px;
   }
+
+  .mob-center {
+    font-size: 16px;
+  }
+
+  .ban-grid {
+    margin-bottom: 50px;
+  }
+
+  .ban-grid.margin-bottom-0 {
+    grid-template-columns: 1fr .65fr .75fr;
+    max-width: 640px;
+  }
+
   .p-base-place-copy {
     font-size: 50px;
-  }
-  .h1-season-seeing {
-    margin-top: 10px;
+    line-height: 1.25;
   }
 }
 
@@ -516,8 +551,10 @@
     margin-top: 0;
     margin-left: 1.25rem;
   }
+
   .p-base-place-copy {
     font-size: 2.2rem;
+    line-height: 1.25;
   }
 }
 
@@ -539,14 +576,17 @@
   }
 
   .h1-season-seeing {
-    color: var(--color-text-secondary);
-    margin-top: 10px;
     font-size: 1.1rem;
   }
 
   .p-base-place {
     font-size: 1.6rem;
     line-height: 1.25;
+  }
+
+  .animate-span {
+    display: block;
+    height: 32px;
   }
 
   .div-job-attention {
@@ -569,23 +609,37 @@
     margin-left: 1.25rem;
   }
 
+  .grid-box {
+    width: 48%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .grid-para {
+    /* Webflow: inherits color #000, font-size 15px from base */
+  }
+
   .ban-grid {
-    margin-bottom: 50px;
     grid-column-gap: 15px;
     grid-row-gap: 15px;
-}
-
-  .ban-grid.margin-bottom-0 {
-    grid-template-columns: 1fr 0.65fr 0.75fr;
-    max-width: 100%;
+    flex-flow: row;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    display: flex;
   }
+
+  .code-embed-3.how-code-embed {
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .p-base-place-copy {
     font-size: 1.6rem;
+    line-height: 1.25;
   }
-  .grid-box {
-    padding-right: 20px;
-    padding-left: 20px;
-}
 }
 
 /* ============================================================
@@ -629,6 +683,11 @@
     line-height: 1.25;
   }
 
+  .animate-span {
+    display: block;
+    height: 32px;
+  }
+
   .div-job-attention {
     grid-column-gap: 16px;
     grid-row-gap: 16px;
@@ -637,17 +696,17 @@
     padding-right: 0;
   }
 
-  .mob-left {
+  .div-job-attention.mob-left {
     justify-content: center;
     align-items: flex-start;
   }
 
-  .mob-margin-less {
-    margin-top: 1.5rem;
+  .div-job-attention.mob-left.mob-margin-less {
+    margin-top: 1rem;
   }
 
-  .mob-left.mob-margin-less {
-    margin-top: 1rem;
+  .div-job-attention.mob-margin-less {
+    margin-top: 1.5rem;
   }
 
   .a-gulf-book {
@@ -658,8 +717,6 @@
     width: 100%;
     margin-top: 0;
     font-size: 1.1rem;
-    padding: 0.625rem 3rem 0.625rem 1.25rem;
-    line-height: 1.5rem;
   }
 
   .a-gulf-book:hover {
@@ -676,8 +733,6 @@
     margin-top: 0;
     margin-left: 0;
     font-size: 1.1rem;
-    padding: 0.625rem 3rem 0.625rem 1.25rem;
-    line-height: 1.5rem;
   }
 
   .grid-box {
@@ -698,18 +753,18 @@
     padding-bottom: 0;
   }
 
-  .order-mob-1 {
+  .grid-box.home-grid-box.order-mob-1 {
     box-shadow: none;
     background-color: #fff;
     flex-flow: column;
   }
 
-  .order-mob-2 {
+  .grid-box.home-grid-box.order-mob-2 {
     background-color: #fff;
     flex-flow: column;
   }
 
-  .order-mob-3 {
+  .grid-box.home-grid-box.order-mob-3 {
     box-shadow: none;
     background-color: #fff;
     flex-flow: column;
@@ -720,14 +775,30 @@
     line-height: 16px;
   }
 
+  .grid-para.middle {
+    max-width: none;
+  }
+
+  .grid-para.middle.mob-center {
+    text-align: center;
+  }
+
+  .grid-para.middle.mob-center.lighter-font {
+    font-size: .9rem;
+  }
+
   .mob-center {
     text-align: center;
     font-size: 1rem;
     line-height: 16px;
   }
 
+  .grid-para.mob-center.lighter-font {
+    font-size: .9rem;
+  }
+
   .lighter-font {
-    font-size: 0.9rem;
+    font-size: .9rem;
   }
 
   .ban-grid {
@@ -745,10 +816,9 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    max-width: 100%;
   }
 
-  .hom-ban-grd {
+  .ban-grid.margin-bottom-0.hom-ban-grd {
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     grid-template-rows: auto;
@@ -759,15 +829,26 @@
 
   .home-bangrid-icon {
     width: 20px;
-    height: 20px;
   }
 
-  /* Webflow line 30787: .code-embed-3.how-code-embed.margin-top-50 at 479px */
+  .code-embed-3.how-code-embed {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .code-embed-3.how-code-embed.margin-top-50,
   .margin-top-50 {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .gradient-bg-ban {
+    display: none;
+  }
+
   .p-base-place-copy {
     font-size: 1.6rem;
+    line-height: 1.25;
   }
 }

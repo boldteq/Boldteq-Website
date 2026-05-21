@@ -1,8 +1,26 @@
 /* ============================================================
    PAIN POINTS — pain-points.module.css
-   Extracted verbatim from boldteq-v1-0.webflow.css
+   Extracted verbatim from boldteq-v1-0.webflow.css (Webflow source).
+   Section markup: <section class="section-regular-3 slowing-sec">
+                   <div class="container-large-3">
+                     <h2 class="heading-2 margin-bottom-24px"> ... </h2>
+                     <p class="paragraph center"> ... </p>
+                     <div class="feature-grid margin-top-40px agency-grid">
+                       <a class="feature-card">
+                         <div class="text-wrapper featured-card-twrapper">
+                           <div class="subheading-large margin-bottom-5"> ... </div>
+                           <p class="paragraph-small-2 margin-bottom-20px"> ... </p>
+                         </div>
+                         <img class="full-width-image drop-shadow" />
+                       </a>
+                     </div>
+                   </div>
+                 </section>
    ============================================================ */
 
+/* ------------------------------------------------------------
+   .section-regular-3  (Webflow line 1728)
+   ------------------------------------------------------------ */
 .section-regular-3 {
   -webkit-text-fill-color: inherit;
   background-color: #0000;
@@ -11,10 +29,24 @@
   position: relative;
 }
 
+/* .section-regular-3.center-sec (Webflow line 1736) */
+.section-regular-3.center-sec {
+  padding: 0 0%;
+}
+
+/* .section-regular-3.slowing-sec (Webflow line 1751) */
+.section-regular-3.slowing-sec {
+  padding-bottom: 30px;
+}
+
+/* Bare modifier wrapper (when combined with section-regular-3 via composition) */
 .slowing-sec {
   padding-bottom: 30px;
 }
 
+/* ------------------------------------------------------------
+   .container-large-3 (homepage)
+   ------------------------------------------------------------ */
 .container-large-3 {
   width: 100%;
   max-width: 1280px;
@@ -22,33 +54,50 @@
   margin-right: auto;
 }
 
+/* ------------------------------------------------------------
+   .heading-2  (Webflow line 1885)
+   ------------------------------------------------------------ */
 .heading-2 {
-  color: var(--blue, #082753);
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--h2, 40px);
+  color: var(--blue);
+  font-family: 'Roobert PRO', Arial, sans-serif;
+  font-size: var(--h2);
   text-align: center;
   line-height: 40px;
 }
 
-.margin-bottom-24px {
-  margin-bottom: 24px;
+/* .heading-2.margin-bottom-24px (Webflow line 1893) */
+.heading-2.margin-bottom-24px {
+  margin-bottom: 20px;
   font-size: 40px;
   line-height: 45px;
 }
 
+/* Standalone .margin-bottom-24px (when only one class is present at a time) */
+.margin-bottom-24px {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 45px;
+}
+
+/* ------------------------------------------------------------
+   .paragraph  (Webflow line 882)
+   ------------------------------------------------------------ */
 .paragraph {
   color: #2b2b2b;
   text-align: center;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 16px;
   line-height: 28px;
 }
 
+/* .center modifier — preserves paragraph's text-align */
 .center {
   text-align: center;
 }
 
-/* Base: 3-column grid */
+/* ------------------------------------------------------------
+   .feature-grid  (Webflow line 1663)
+   ------------------------------------------------------------ */
 .feature-grid {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
@@ -57,23 +106,46 @@
   display: grid;
 }
 
-/* margin-top-40px modifier preserves 3-col layout and adds margin */
+/* .feature-grid.margin-top-40px (Webflow line 1674) */
+.feature-grid.margin-top-40px {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 40px;
+}
+
+/* Standalone .margin-top-40px */
 .margin-top-40px {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   margin-top: 40px;
 }
 
+/* .agency-grid — Webflow defines no base rule for this class; reserved as modifier */
 .agency-grid {
-  /* no additional base rules — modifier class */
+  /* intentionally empty — modifier hook used by inline <style> below */
 }
 
+/* Inline <style> from index.html (lines 2292–2300):
+   .agency-grid .feature-card { filter: drop-shadow(0 4px 24px #ababab1a); }
+   .agency-grid .feature-card:hover { background-color: #cdebfa; border-color: #009ce0; } */
+.agency-grid .feature-card {
+  filter: drop-shadow(0 4px 24px #ababab1a);
+}
+
+.agency-grid .feature-card:hover {
+  background-color: #cdebfa;
+  border-color: #009ce0;
+}
+
+/* ------------------------------------------------------------
+   .feature-card  (Webflow line 1688)
+   ------------------------------------------------------------ */
 .feature-card {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   text-align: center;
   mix-blend-mode: normal;
-  background-color: var(--color-success-bg);
+  background-color: #def4ff;
   background-image: none;
   border: 1px solid #009ce0;
   border-radius: 20px;
@@ -85,240 +157,332 @@
   display: flex;
 }
 
+/* .feature-card.space-between (Webflow line 1705) */
+.feature-card.space-between {
+  background-color: #def4ff;
+  justify-content: space-between;
+}
+
+/* ------------------------------------------------------------
+   .text-wrapper  (Webflow has no base rule for plain .text-wrapper used here)
+   .featured-card-twrapper (modifier, no extra base CSS in Webflow source)
+   ------------------------------------------------------------ */
 .text-wrapper {
-  /* wrapper for text content inside feature card */
+  /* intentionally empty */
 }
 
 .featured-card-twrapper {
-  /* modifier — no extra base CSS in Webflow source */
+  /* intentionally empty — modifier */
 }
 
+/* ------------------------------------------------------------
+   .subheading-large  (Webflow line 1852)
+   ------------------------------------------------------------ */
 .subheading-large {
-  color: var(--color-text-primary);
+  color: #082753;
   letter-spacing: -.02em;
   margin-bottom: 10px;
-  font-family: var(--font-roobert), Arial, sans-serif;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
 }
 
-.margin-bottom-5 {
-  color: var(--color-text-primary);
+/* .subheading-large.margin-bottom-5 (Webflow line 1878) */
+.subheading-large.margin-bottom-5 {
+  color: #082753;
   margin-bottom: 5px;
   font-size: 22px;
   line-height: 35px;
 }
 
+/* Standalone .margin-bottom-5 */
+.margin-bottom-5 {
+  color: #082753;
+  margin-bottom: 5px;
+  font-size: 22px;
+  line-height: 35px;
+}
+
+/* ------------------------------------------------------------
+   .paragraph-small-2  (Webflow line 1811)
+   ------------------------------------------------------------ */
 .paragraph-small-2 {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   min-height: auto;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--para-small, 16px);
+  font-family: 'Roobert PRO', Arial, sans-serif;
+  font-size: var(--para-small);
   letter-spacing: -.08px;
   margin-bottom: 0;
   line-height: 24px;
 }
 
-.margin-bottom-20px {
-  color: var(--color-text-secondary);
+/* .paragraph-small-2.margin-bottom-20px (Webflow line 1825) */
+.paragraph-small-2.margin-bottom-20px {
+  color: #2b2b2b;
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 28px;
 }
 
+/* Standalone .margin-bottom-20px */
+.margin-bottom-20px {
+  color: #2b2b2b;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* ------------------------------------------------------------
+   .full-width-image  (Webflow line 2425 + 13651)
+   ------------------------------------------------------------ */
 .full-width-image {
   width: 100%;
   max-width: 3768px;
   grid-column-gap: 12px;
   grid-row-gap: 12px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: block;
 }
 
+/* .full-width-image.drop-shadow (Webflow line 13656) */
+.full-width-image.drop-shadow {
+  max-width: 1492px;
+  /* Inline <style> from index.html line 2277:
+     .full-width-image.drop-shadow { filter: drop-shadow(0 0 3px #2a2a2a1a); } */
+  filter: drop-shadow(0 0 3px #2a2a2a1a);
+}
+
+/* Standalone .drop-shadow modifier */
 .drop-shadow {
   max-width: 1492px;
+  filter: drop-shadow(0 0 3px #2a2a2a1a);
 }
 
 /* ============================================================
-   min-width: 1280px
+   @media (min-width: 1280px)  — Webflow lines 21619+
    ============================================================ */
 @media screen and (min-width: 1280px) {
+  /* Webflow line 21932 */
   .container-large-3,
   .container-large-3.full-width {
     max-width: 1280px;
   }
 
+  /* Webflow line 21922 */
   .feature-card {
-    background-color: var(--color-success-bg);
-    border-color: var(--color-brand-card-border);
+    background-color: #def4ff;
+    border-color: #009ce0;
   }
 
+  /* Webflow line 21927 */
   .feature-card.space-between {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  /* Webflow line 21944 */
   .subheading-large {
     font-size: 25px;
     line-height: 32px;
-}
+  }
+
+  /* Webflow line 21949 */
+  .subheading-large.margin-bottom-5 {
+    color: #082753;
+    font-size: 25px;
+  }
+
+  /* Webflow line 22356 — overrides base .full-width-image max-width */
   .full-width-image {
+    width: 100%;
     max-width: 100%;
   }
+
+  /* Webflow line 21936 */
   .paragraph-small-2.margin-bottom-20px {
     color: #2b2b2b;
   }
-  .subheading-large.margin-bottom-5 {
-    font-size: 25px;
-    color: #082753;
-}
 }
 
 /* ============================================================
-   min-width: 1440px
+   @media (min-width: 1440px)  — Webflow lines 23146+
    ============================================================ */
 @media screen and (min-width: 1440px) {
-  .section-regular-3.center-sec {
-    padding-bottom: 0%;
-  }
-
-  /* Fix #21: container max-width 1320px at 1440px to match live */
+  /* Webflow line 23376 */
   .container-large-3 {
     max-width: 1320px;
   }
+
+  /* Webflow line 23357 */
   .feature-card {
-    padding-right: 17px;
-    padding-left: 17px;
+    background-color: #def4ff;
+    background-image: none;
     border-color: #009ce0;
-}
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  /* Webflow line 23367 */
+  .feature-card.space-between {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  /* Webflow line 23372 */
+  .section-regular-3.center-sec {
+    text-align: center;
+  }
+
+  /* Webflow line 23390 */
   .subheading-large {
     line-height: 32px;
   }
+
+  /* Webflow line 23394 */
+  .subheading-large.margin-bottom-5 {
+    color: #082753;
+    font-size: 25px;
+  }
+
+  /* Webflow line 23719 */
   .full-width-image {
+    width: 100%;
     max-width: 100%;
   }
-  .feature-card.space-between {
-    padding-right: 25px;
-    padding-left: 25px;
-}
+
+  /* Webflow line 23380 */
   .paragraph-small-2.margin-bottom-20px {
     color: #2b2b2b;
   }
-  .subheading-large.margin-bottom-5 {
-    font-size: 25px;
-    color: #082753;
-}
 }
 
 /* ============================================================
-   max-width: 991px
-   —
-   Webflow rule (line 24558–24564):
-     .feature-grid           → grid-template-columns: 1fr
-     .feature-grid.margin-top-40px → grid-template-columns: 1fr 1fr 1fr
-   Pain Points uses BOTH classes, so the 3-col override applies.
+   @media (max-width: 991px)  — Webflow lines 24454+
    ============================================================ */
 @media screen and (max-width: 991px) {
-  /* Generic feature-grid collapses to 1-col */
+  /* Webflow line 24558 */
   .feature-grid {
     grid-template-columns: 1fr;
   }
 
-  /* But feature-grid WITH margin-top-40px stays 3-col (Pain Points uses this) */
+  /* Webflow line 24562 — Pain Points uses .feature-grid.margin-top-40px so stays 3-col */
   .feature-grid.margin-top-40px {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  /* Webflow line 24566 */
   .section-regular-3 {
     padding-bottom: 0;
   }
 
-  .section-regular-3.slowing-sec {
-    padding-bottom: 30px;
-  }
-
-  .heading-2.margin-bottom-24px {
-    margin-top: 0;
-  }
+  /* Webflow line 24570 */
   .section-regular-3.center-sec {
     padding-bottom: 0%;
   }
+
+  /* Webflow line 24578 */
   .paragraph-small-2.margin-bottom-20px {
     font-size: 16px;
+  }
+
+  /* Webflow line 24582 */
+  .heading-2.margin-bottom-24px {
+    margin-top: 0;
+  }
+
+  /* Webflow line 24649 — full-width-image collapses to 2-col grid */
+  .full-width-image {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 /* ============================================================
-   max-width: 767px
+   @media (max-width: 767px)  — Webflow lines 26907+
    ============================================================ */
 @media screen and (max-width: 767px) {
+  /* Webflow line 27060 */
   .section-regular-3 {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  /* .slowing-sec modifier restores 30px bottom padding even though base collapses to 0 */
-  .section-regular-3.slowing-sec {
-    padding-bottom: 30px;
+  /* Webflow line 27065 */
+  .section-regular-3.center-sec {
+    padding-bottom: 0%;
   }
 
+  /* Webflow line 27073 */
   .heading-2 {
     font-size: 34px;
   }
 
+  /* Webflow line 27077 */
   .heading-2.margin-bottom-24px {
     font-size: 35px;
     line-height: 45px;
   }
 
-  /* At 767px, margin-top-40px collapses to 1-col (Webflow line 27051) */
+  /* Webflow line 27051 — .feature-grid.margin-top-40px collapses to 1-col */
   .feature-grid.margin-top-40px {
     grid-template-columns: 1fr;
-  }
-  .section-regular-3.center-sec {
-    padding-bottom: 0%;
   }
 }
 
 /* ============================================================
-   max-width: 479px  (mobile)
+   @media (max-width: 479px)  — Webflow lines 29202+
    ============================================================ */
 @media screen and (max-width: 479px) {
+  /* Webflow line 29614 */
   .section-regular-3 {
     padding-top: 0;
     padding-bottom: 40px;
   }
 
-  /* Webflow .section-regular-3.slowing-sec sets padding-bottom: 30px at 479px */
-  .section-regular-3.slowing-sec {
-    padding-bottom: 30px;
+  /* Webflow line 29619 */
+  .section-regular-3.center-sec {
+    padding-bottom: 0%;
   }
 
-  .heading-2.margin-bottom-24px {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 21px;
-    line-height: 28px;
-  }
-
-  .paragraph.center {
-    text-align: center;
-  }
-
+  /* Webflow line 29628 — collective text-align */
   .paragraph-small-2.margin-bottom-20px,
   .subheading-large,
   .subheading-large.margin-bottom-5 {
     text-align: center;
   }
 
+  /* Webflow line 29632 */
+  .heading-2 {
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+  /* Webflow line 29637 */
+  .heading-2.margin-bottom-24px {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  /* Webflow line 29603 */
   .feature-card {
     padding: 24px;
   }
+
+  /* Webflow line 29607 */
   .feature-card.space-between {
-    padding-right: 18px;
-    padding-left: 18px;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-}
-  .section-regular-3.center-sec {
-    padding-bottom: 0%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* Webflow line 29805 — full-width-image collapses to 1-col */
+  .full-width-image {
+    grid-template-columns: 1fr;
   }
 }

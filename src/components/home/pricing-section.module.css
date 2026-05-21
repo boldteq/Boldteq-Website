@@ -5,6 +5,7 @@
   line-height: 32px;
 }
 
+/* Webflow: .new-price-sec */
 .newPriceSec {
   background-color: #fff;
   margin-bottom: 0;
@@ -13,7 +14,8 @@
   position: relative;
 }
 
-/* Pricing page variant: transparent bg + 4rem top padding */
+/* Pricing page variant: transparent bg + 4rem top padding
+   Webflow: .new-price-sec.pricing-page-newsc */
 .newPriceSecPage {
   background-color: transparent;
   padding-top: 4rem;
@@ -26,6 +28,7 @@
   margin-right: auto;
 }
 
+/* Webflow: .price-title-grid */
 .priceTitleGrid {
   display: grid;
   grid-column-gap: 24px;
@@ -36,11 +39,13 @@
   margin-bottom: 20px;
 }
 
+/* Webflow: .max-width-small-4 */
 .maxWidthSmall4 {
   width: 100%;
   max-width: 550px;
 }
 
+/* Webflow: .price-subhead-out */
 .priceSubheadOut {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -49,17 +54,20 @@
   display: flex;
 }
 
+/* Webflow: .pricesubott
+   bg: #21cfff12 literal, border: 1px solid #05bafe literal */
 .pricesubott {
   background-color: #21cfff12;
-  border: 1px solid var(--color-brand-cyan);
+  border: 1px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
   line-height: 14px;
 }
 
+/* Webflow: .faq-sky-text — gradient cyan→blue text */
 .faqSkyText {
-  color: var(--color-brand-cyan);
+  color: #21cfff;
   text-transform: capitalize;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -68,8 +76,9 @@
   font-weight: 500;
 }
 
+/* Webflow: .heading-2.margin-top-0 — 40px / lh 45px */
 .heading2 {
-  color: var(--color-text-primary);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   text-align: center;
@@ -78,10 +87,10 @@
   margin-bottom: 10px;
 }
 
-/* Pricing-page hero: larger h1 (Webflow .heading-2.pricing-ban-title) */
+/* Pricing-page hero: larger h1 (Webflow .heading-2.pricing-ban-title — 40px / 1.25) */
 .newPriceSecPage .heading2 {
-  font-size: 50px;
-  line-height: 1.05;
+  font-size: 40px;
+  line-height: 1.25;
 }
 
 /* Hero h1 line-break: visible on desktop, hidden on mobile so sentences wrap naturally */
@@ -95,21 +104,24 @@
   }
 }
 
+/* Webflow: .paragraph + .paragraph.center — color #2b2b2b, lh 28px, text-align: center */
 .paragraph {
   color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: center;
   margin-bottom: 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
 }
 
-/* Tabs menu */
+/* Tab menu — element class is `pricing-tabs-menu-large center` in Webflow.
+   Webflow .pricing-tabs-menu-large base: bg #fff, border 1px solid #edeef1, radius 44px, gap 4px, padding 4px, display flex.
+   We use base values (NOT .center overrides) because visually live site shows the white-pill toggle. */
 .pricingTabsMenuLarge {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   background-color: #fff;
-  border-style: none;
-  border-color: var(--color-brand-card-hover);
+  border: 1px solid #edeef1;
   border-radius: 44px;
   justify-content: center;
   align-items: center;
@@ -117,7 +129,7 @@
   margin-right: auto;
   margin-bottom: 24px;
   padding: 4px;
-  display: inline-flex;
+  display: flex;
   width: fit-content;
 }
 
@@ -127,28 +139,29 @@
   justify-content: center;
 }
 
+/* Webflow: .pricing-tab-link-large — actual class in HTML.
+   gap 8px, color #5b616e, bg transparent, radius 10px, width 100%,
+   min-width 170px, height 45px, padding 8px 10px, font-size 16px, lh 24px */
 .pricingTabLink {
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  color: #4b5563;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  color: #5b616e;
   background-color: transparent;
-  border-radius: 44px;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-width: 150px;
+  min-width: 170px;
   height: 45px;
   padding: 8px 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 24px;
   display: flex;
   cursor: pointer;
   border: none;
   font-family: var(--font-roobert), Arial, sans-serif;
   transition: color 0.3s, background-color 0.3s;
-  padding-right: 16px;
-  padding-left: 16px;
 }
 
 .pricingTabLink:hover {
@@ -156,6 +169,12 @@
   background-color: transparent;
 }
 
+/* Webflow: .pricing-tab-link-large.montthly — min-width 130px (typo preserved from Webflow) */
+.pricingTabLinkMonthly {
+  min-width: 130px;
+}
+
+/* Webflow: .pricing-tab-link-large.w--current — bg #fff, radius 10px, box-shadow */
 .pricingTabLinkActive {
   color: #082753;
   background-color: #fff;
@@ -170,11 +189,13 @@
 }
 
 .priceTabText {
-  color: var(--color-text-primary);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
 }
 
+/* Webflow: .pricing-badge — green badge.
+   Actual padding in Webflow at default: 2px 8px, font-size 12px, line-height 20px */
 .pricingBadge {
   color: #18c958;
   text-align: center;
@@ -186,27 +207,29 @@
   padding: 2px 8px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
-  display: block;
+  display: inline-flex;
+  margin-left: 4px;
 }
 
-/* Pricing grid */
+/* Webflow: .pricing-grid.new — gap 16px, padding-left/right 5px, 3 columns */
 .pricingGrid {
   display: grid;
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* Cards */
+/* Webflow: .pricing-card-2 base — bg #effafe, border 1px solid #21cfff36 (rgba 33,207,255,0.21),
+   radius 8px, margin-top 40px, padding 10px 10px 15px, gap 15px, flex column */
 .pricingCard2 {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  background-color: var(--color-cyan-tint);
+  background-color: #effafe;
   border: 1px solid rgba(33, 207, 255, 0.21);
   border-radius: 8px;
   flex-flow: column;
@@ -215,30 +238,30 @@
   display: flex;
 }
 
+/* Webflow: .pricing-card-2.white-card — bg #fff, no border, radius 15px, margin-top 42px, shadow 0 0 5px #0000001a */
 .pricingCard2WhiteCard {
   background-color: #fff;
   border-style: none;
   border-radius: 15px;
   margin-top: 42px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Webflow: .pricing-card-2.center-pcard — bg #fff, border-width 3px / border-color #21cfff (border-top none in Webflow),
+   radius 20px, margin-top 0, padding-top 50px */
 .pricingCard2CenterPcard {
   box-shadow: none;
   background-color: #fff;
-  border-width: 3px;
-  border-color: var(--color-brand-cyan);
+  border: 3px solid #21cfff;
   border-top-style: none;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-right-style: solid;
   border-radius: 20px;
   margin-top: 0;
   padding-top: 50px;
   position: relative;
 }
 
-/* Most popular banner */
+/* Webflow: .p-top-dv — gradient banner across top of "Most Popular" card.
+   gap 5px, gradient, top-radius 17px, height 43px, padding 10px, absolute top:0 */
 .pTopDv {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
@@ -257,6 +280,7 @@
   right: 0;
 }
 
+/* Webflow: .most-popular */
 .mostPopular {
   color: #fff;
   margin-bottom: 0;
@@ -265,7 +289,7 @@
   font-weight: 700;
 }
 
-/* Column inside card */
+/* Webflow: .column-x-small-10 — bg #fff, radius 10px, padding 20px, flex column, gap 8px */
 .columnXSmall10 {
   grid-column-gap: 8px;
   grid-row-gap: 8px;
@@ -278,10 +302,12 @@
   display: flex;
 }
 
+/* Webflow: .column-x-small-10.center-col — bg light cyan (#effafe in Webflow) */
 .columnXSmall10CenterCol {
-  background-color: var(--color-cyan-tint);
+  background-color: #effafe;
 }
 
+/* Webflow: .price-sub-ott or analogous wrapper */
 .priceSubOtt {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -290,6 +316,7 @@
   display: flex;
 }
 
+/* Webflow: .h6-heading-5.plan-name — gradient text, font-size 14px, weight 500 */
 .h6Heading5PlanName {
   color: transparent;
   letter-spacing: -0.02em;
@@ -308,6 +335,7 @@
   line-height: 1.2;
 }
 
+/* Webflow: .price-badge-out — flex row, gap 10px, align-items center */
 .priceBadgeOut {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -315,8 +343,9 @@
   display: flex;
 }
 
+/* Webflow: .h3-heading-3 — color #082753, font-size 25px, weight 700, lh 1.2 */
 .h3Heading3 {
-  color: var(--color-text-primary);
+  color: #082753;
   letter-spacing: -0.02em;
   margin-top: 0;
   margin-bottom: 0;
@@ -326,6 +355,7 @@
   line-height: 1.2;
 }
 
+/* Webflow: .compare-price — color rgba(8,39,83,0.4) (#08275366), font-size 17px, lh 22px, line-through */
 .comparePrice {
   color: rgba(8, 39, 83, 0.4);
   align-self: center;
@@ -336,8 +366,9 @@
   text-decoration: line-through;
 }
 
+/* Webflow: .paragraph-small-27.text-color-tertiary — color #082753, fs 14px, weight 500, lh 18px */
 .paragraphSmall27TextColorTertiary {
-  color: var(--color-text-primary);
+  color: #082753;
   letter-spacing: 0;
   font-size: 14px;
   font-weight: 500;
@@ -346,6 +377,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
 }
 
+/* Webflow: .column-small-5 — flex column, gap 12px, padding-left/right 10px */
 .columnSmall5 {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
@@ -355,14 +387,16 @@
   display: flex;
 }
 
+/* Webflow: .paragraph-x-small-13.text-color-tertiary — color #082753, fs 14px, lh 20px */
 .paragraphXSmall13TextColorTertiary {
-  color: var(--color-text-primary);
+  color: #082753;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
 
+/* Webflow: .pricing-feature — flex row, gap 8px, align-items flex-start */
 .pricingFeature {
   grid-column-gap: 8px;
   grid-row-gap: 8px;
@@ -371,8 +405,9 @@
   display: flex;
 }
 
+/* Webflow: .icon — check icon, color brand blue, padding-top 5px */
 .icon {
-  color: var(--color-brand-blue);
+  color: #019ae6;
   flex: none;
   justify-content: center;
   align-items: center;
@@ -380,20 +415,23 @@
   display: flex;
 }
 
+/* Webflow: .caption-small-2 — color #2b2b2b, fs 14px, lh 20px */
 .captionSmall2 {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
 
+/* Webflow: .button-pricing — bg #082753, border 1px #082753 (no style keyword in Webflow),
+   radius 10px, margin-left/right 10px, padding 10px 24px, fs 16px, weight 700, lh 24px */
 .buttonPricing {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: var(--color-text-primary);
-  border: 1px solid var(--color-text-primary);
+  background-color: #082753;
+  border: 1px solid #082753;
   border-radius: 10px;
   justify-content: center;
   align-self: stretch;
@@ -411,49 +449,54 @@
   cursor: pointer;
 }
 
+/* Webflow: .button-pricing:hover, .button-pricing.sky-prcing-button — gradient bg + cyan border */
 .buttonPricing:hover,
 .buttonPricingSky {
   color: #fff;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  border-color: var(--color-brand-cyan);
+  border-color: #21cfff;
 }
 
+/* Webflow: .button-pricing.sky-prcing-button:hover — solid navy */
 .buttonPricingSky:hover {
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   background-image: none;
-  border-color: var(--color-text-primary);
+  border-color: #082753;
 }
 
-/* Pricing table */
+/* Webflow: .pricing-table-wrapper.margin-less — margin-top 20px, padding-left/right 5px */
 .pricingTableWrapper {
-  margin-top: 128px;
+  margin-top: 20px;
   padding-left: 5px;
   padding-right: 5px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  /* Clip outer container so it doesn't bleed viewport — fixes horizontal-overflow audit */
+  /* Clip outer container so it doesn't bleed viewport */
   max-width: 100%;
 }
 
+/* Webflow: .pricing-table.new — bg #f6fcfe, border 1px solid #21cfff36, radius 15px, padding 0 24px, 4 columns */
 .pricingTable {
   background-color: #f6fcfe;
   border: 1px solid rgba(33, 207, 255, 0.21);
   border-radius: 15px;
   display: grid;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: auto;
   padding: 0 24px;
 }
 
+/* Webflow: .pricing-table-header — color #5b616e, text-align center, border-bottom 1px solid #21cfff36, padding 24px 12px */
 .pricingTableHeader {
-  color: var(--color-text-muted);
+  color: #5b616e;
   text-align: center;
   border-bottom: 1px solid rgba(33, 207, 255, 0.21);
   padding: 24px 12px;
 }
 
+/* Webflow: .pricing-table-header.left — color #ff4b0e, text-align left, padding-top 24px, padding-left 0 */
 .pricingTableHeaderLeft {
   color: #ff4b0e;
   text-align: left;
@@ -461,8 +504,9 @@
   padding-left: 0;
 }
 
+/* Webflow: .subheading-large-7 — color #082753, fs 18px, weight 700, lh 24px */
 .subheadingLarge7 {
-  color: var(--color-text-primary);
+  color: #082753;
   letter-spacing: 0;
   -webkit-text-fill-color: inherit;
   background-image: none;
@@ -473,12 +517,14 @@
   line-height: 24px;
 }
 
+/* Webflow: .subheading-large-7.text-color-brand-orange — color #082753 (kept dark) */
 .subheadingLarge7TextColorBrandOrange {
-  color: var(--color-brand-blue);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 700;
 }
 
+/* Webflow: .pricing-header-last — flex center alignment */
 .pricingHeaderLast {
   flex: none;
   justify-content: center;
@@ -489,10 +535,12 @@
   position: relative;
 }
 
+/* Webflow: .pricing-table-cell — color #5b616e, text-align center, white-space nowrap,
+   border-bottom 1px solid #21cfff36, padding 24px 12px */
 .pricingTableCell {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
-  color: var(--color-text-muted);
+  color: #5b616e;
   text-align: center;
   white-space: nowrap;
   word-break: keep-all;
@@ -504,6 +552,7 @@
   display: flex;
 }
 
+/* Webflow: .pricing-table-cell.left — color #000, text-align left, gap 6px, padding-left 0 */
 .pricingTableCellLeft {
   grid-column-gap: 6px;
   grid-row-gap: 6px;
@@ -516,12 +565,14 @@
   position: relative;
 }
 
+/* Webflow: .pricing-table-cell.no-border — border-bottom none */
 .pricingTableCellNoBorder {
   border-bottom-style: none;
 }
 
+/* Webflow: .paragraph-regular-14 — color #252525, fs 16px, lh 28px */
 .paragraphRegular14 {
-  color: var(--color-text-secondary);
+  color: #252525;
   letter-spacing: -0.02em;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -547,7 +598,7 @@
   bottom: 80%;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-text-primary);
+  background: #082753;
   color: #fff;
   padding: 8px 12px;
   border-radius: 6px;
@@ -574,7 +625,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent;
-  border-top-color: var(--color-text-primary);
+  border-top-color: #082753;
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -584,26 +635,49 @@
   opacity: 1;
 }
 
+/* Webflow: .tooltip-ico — width 20px, height auto */
 .tooltipIco {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
+  width: 20px;
+  height: auto;
+  opacity: 1;
 }
 
-/* Fix #22: containerLarge3 max-width 1320px at 1440px (matches live) */
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .newPriceSec {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .newPriceSecPage {
+    background-image: none;
+  }
+
+  /* Webflow line 22973: .compare-price at min-width 1280 → font-size 20px */
+  .comparePrice {
+    font-size: 20px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
 @media screen and (min-width: 1440px) {
   .containerLarge3 {
     max-width: 1320px;
   }
-  .new-price-sec {
-    padding-right: 5%;
+  .newPriceSec {
     padding-left: 5%;
-}
+    padding-right: 5%;
+  }
 }
 
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
 @media screen and (max-width: 991px) {
-  /* pricing-grid (1 class) → 1fr 1fr, but pricing-grid.new (2 classes) keeps 1fr 1fr 1fr via specificity */
-  /* Do NOT change pricingGrid columns here — the .new variant overrides anyway at desktop widths */
   .pricingTable {
     width: 1200px;
   }
@@ -630,11 +704,20 @@
   }
 
   .newPriceSec {
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  /* Webflow line 24324: .price-badge-out at 991 → gap 10px (already set, no flex-direction change) */
+  .priceBadgeOut {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
   }
 }
 
+/* ============================================================
+   max-width: 767px
+   ============================================================ */
 @media screen and (max-width: 767px) {
   .newPriceSec {
     margin-bottom: 0;
@@ -644,18 +727,19 @@
     padding-right: 2%;
   }
 
-  /* Webflow line 27073: heading-2 at 767px → 34px */
+  /* Webflow line 27073: .heading-2 at 767 → 34px */
   .heading2 {
     font-size: 34px;
   }
 
-  /* pricing-grid.new explicitly sets 1fr at <=767px */
+  /* Webflow line 30489: .pricing-grid.new at 767 → 1fr (single column) */
   .pricingGrid {
     grid-template-columns: 1fr;
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
+  /* Webflow line 30511: .pricing-card-2, .pricing-card-2.white-card at 767 → margin-top 0 */
   .pricingCard2,
   .pricingCard2WhiteCard {
     margin-top: 0;
@@ -665,8 +749,9 @@
     white-space: normal;
   }
 
+  /* Webflow line 30543: .pricing-table.new at 767 → width 850px */
   .pricingTable {
-    width: 690px;
+    width: 850px;
   }
 
   .pricingTabLink {
@@ -676,9 +761,20 @@
   .h3Heading3 {
     font-size: 30px;
   }
+
+  /* Webflow line 26618: .price-badge-out at 767 → flex-flow column, justify-content/align-items flex-start */
+  .priceBadgeOut {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
+/* ============================================================
+   max-width: 479px (mobile)
+   ============================================================ */
 @media screen and (max-width: 479px) {
+  /* Webflow line 31901: .new-price-sec at 479 → padding 60px 3% 20px */
   .newPriceSec {
     padding: 60px 3% 20px;
   }
@@ -700,7 +796,7 @@
     min-width: auto;
   }
 
-  /* Webflow line 30482: pricing-tabs-menu-large.center at 479px */
+  /* Webflow line 30482: .pricing-tabs-menu-large.center at 479 — width 100%, vertical padding 10px */
   .pricingTabsMenuLarge {
     align-self: auto;
     width: 100%;
@@ -708,66 +804,61 @@
     padding-bottom: 10px;
   }
 
-  /* Webflow line 30543: pricing-table.new at 479px */
+  /* Webflow line 30543: .pricing-table.new at 479 → width 850px */
   .pricingTable {
     width: 850px;
   }
 
-  /* Webflow line 30547: pricing-tab-link-large at 479px */
+  /* Webflow line 30547: .pricing-tab-link-large at 479 → flex column, padding 4px 16px, gap 2px */
   .pricingTabLink,
   .pricingTabLinkActive,
   .pricingTabLinkMonthly {
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
     flex-flow: column;
     min-width: auto;
     padding: 4px 16px;
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 16px;
-}
+  }
 
-  /* Webflow line 30555: pricing-tab-link-large.w--current at 479px */
+  /* Webflow line 30555: .pricing-tab-link-large.w--current at 479 — gap 0, padding-top 2px / -bottom 6px */
   .pricingTabLinkActive {
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     min-width: auto;
     height: auto;
     padding-top: 2px;
     padding-bottom: 6px;
   }
 
-  /* Webflow line 30564: pricing-tab-link-large.montthly at 479px */
+  /* Webflow line 30564: .pricing-tab-link-large.montthly at 479 — min-width auto */
   .pricingTabLinkMonthly {
     min-width: auto;
   }
 
-  /* Webflow line 31922: price-tab-text at 479px → font-size: 14px */
+  /* Webflow line 31922: .price-tab-text at 479 → fs 14px */
   .priceTabText {
     font-size: 14px;
   }
 
-  /* Webflow line 29707: heading-2.margin-top-0 at 479px → 23px/30px */
+  /* Webflow line 29707: .heading-2.margin-top-0 at 479 → fs 23px / lh 30px */
   .heading2 {
     font-size: 23px;
     line-height: 30px;
   }
 
-  /* Fix #17: pricingBadge smaller horizontal padding at mobile */
+  /* Webflow line 29862: .pricing-badge at 479 → padding-left/right 4px, fs 12px, lh 12px */
   .pricingBadge {
-    padding: 2px 4px;
-    padding-right: 4px;
     padding-left: 4px;
+    padding-right: 4px;
     font-size: 12px;
     line-height: 12px;
-}
-}
-@media (min-width: 1280px) {
-  .new-price-sec {
-    padding-right: 5%;
-    padding-left: 5%;
-}
-  .compare-price {
-    font-size: 20px;
+  }
+
+  /* Webflow line 31975: .price-badge-out at 479 → flex-flow row (resets the 767 column),
+     justify-content flex-start, align-items center */
+  .priceBadgeOut {
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
   }
 }

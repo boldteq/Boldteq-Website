@@ -1,19 +1,20 @@
 /* ============================================================
    PORTFOLIO CAROUSEL — portfolio-carousel.module.css
    Extracted verbatim from boldteq-v1-0.webflow.css
+   Element classes (from index.html):
+     <section class="section-regular-2 img-slider-sec">
+       <div class="column-4x-large center">
+         <div class="gallery-13-slider">
+           <div class="gallery-13-mask">
+             <div class="gallery-13-slide">
+               <div class="gallery-13-card cream|light-green|light-purple|light-orange">
+                 <div class="gallery-image-outer green|green-light|orange-light|olive-green">
+                   <img class="image-cover radius-0">
+                 <div class="gallery-13-caption">
+                   <div class="heading-3 green|green-light|purple|orange">
    ============================================================ */
 
-/* Carousel outer column — center-aligned */
-.column-4x-large-centered {
-  align-items: center;
-}
-
-/* Slider relative wrapper */
-.sliderRelative {
-  position: relative;
-  width: 100%;
-}
-
+/* Webflow: .section-regular-2 — bg #fff, padding 64px 15% 64px 2%, overflow hidden */
 .section-regular-2 {
   background-color: #fff;
   padding: 64px 15% 64px 2%;
@@ -21,11 +22,13 @@
   overflow: hidden;
 }
 
+/* Webflow: .section-regular-2.img-slider-sec — padding-top 20px, padding-right 0% */
 .img-slider-sec {
   padding-top: 20px;
   padding-right: 0%;
 }
 
+/* Webflow: .column-4x-large — flex column, gap 80px */
 .column-4x-large {
   grid-column-gap: 80px;
   grid-row-gap: 80px;
@@ -33,29 +36,42 @@
   display: flex;
 }
 
-/* Slider wrapper */
+/* Custom: align-items center (NOT in Webflow but our custom wrapper) */
+.column-4x-large-centered {
+  align-items: center;
+}
+
+/* Slider relative wrapper — needed for absolute-positioned arrow buttons */
+.sliderRelative {
+  position: relative;
+  width: 100%;
+}
+
+/* Webflow: .gallery-13-slider — bg transparent, height auto */
 .gallery-13-slider {
-  background-color: #0000;
+  background-color: transparent;
   height: auto;
   padding-bottom: 0;
   position: relative;
   width: 100%;
 }
 
-/* Mask — overflow visible matches Webflow's .w-slider-mask override */
+/* Webflow: .gallery-13-mask — max-width none, height auto, overflow visible
+   (Embla viewport — keep visible to match Webflow w-slider-mask override) */
 .gallery-13-mask {
   max-width: none;
   height: auto;
   overflow: visible;
 }
 
-/* Slider track — replaces inline style.
-   Webflow uses margin-right: 24px on each slide, not CSS gap. */
+/* Slider track — Embla uses inline flex.
+   Webflow uses margin-right 24px on each slide instead of CSS gap. */
 .gallery-13-track {
   display: flex;
   height: auto;
 }
 
+/* Webflow: .gallery-13-slide — max-width calc(25% - 12px), margin-right 24px, height 100% */
 .gallery-13-slide {
   max-width: calc(25% - 12px);
   height: 100%;
@@ -63,10 +79,11 @@
   flex-shrink: 0;
 }
 
-/* Cards */
+/* Webflow: .gallery-13-card base — aspect 1/1.25, border 1px #000 (no style — invisible),
+   border-radius 20px, min-height 392px, padding 10px */
 .gallery-13-card {
   aspect-ratio: 1 / 1.25;
-  border: 1px solid #000;
+  border: 1px solid transparent;
   border-radius: 20px;
   width: 100%;
   min-height: 392px;
@@ -75,6 +92,7 @@
   overflow: hidden;
 }
 
+/* Webflow: .gallery-13-card.cream — aspect 1/1.22, bg #fbf2e4, no border, min-height auto, padding 10px */
 .cream {
   aspect-ratio: 1 / 1.22;
   background-color: #fbf2e4;
@@ -83,6 +101,7 @@
   padding: 10px;
 }
 
+/* Webflow: .gallery-13-card.light-green — aspect 1/1.22, bg #e6fccd, no border, min-height auto, padding 10px */
 .light-green {
   aspect-ratio: 1 / 1.22;
   background-color: #e6fccd;
@@ -91,6 +110,7 @@
   padding: 10px;
 }
 
+/* Webflow: .gallery-13-card.light-purple — aspect 1/1.22, bg #4da1af1a (rgba(77,161,175,0.10)), no border, padding 10px */
 .light-purple {
   aspect-ratio: 1 / 1.22;
   background-color: #4da1af1a;
@@ -99,6 +119,7 @@
   padding: 10px;
 }
 
+/* Webflow: .gallery-13-card.light-orange — aspect 1/1.22, bg #ff8a8a14 (rgba(255,138,138,0.08)), no border, padding 10px */
 .light-orange {
   aspect-ratio: 1 / 1.22;
   background-color: #ff8a8a14;
@@ -107,7 +128,7 @@
   padding: 10px;
 }
 
-/* Image outer wrapper — Webflow base: no height/max-height, padding only */
+/* Webflow: .gallery-image-outer base — border-radius 15px, margin-bottom 20px, padding-top/left/right 20px */
 .gallery-image-outer {
   border-radius: 15px;
   margin-bottom: 20px;
@@ -116,28 +137,32 @@
   padding-right: 20px;
 }
 
+/* Webflow: .gallery-image-outer.green — bg #0d4a4c, min-height auto */
 .green {
   background-color: #0d4a4c;
   min-height: auto;
 }
 
+/* Webflow: .gallery-image-outer.green-light — bg #abf330, height auto, min-height auto */
 .green-light {
   background-color: #abf330;
   height: auto;
   min-height: auto;
 }
 
+/* Webflow: .gallery-image-outer.orange-light — bg #ffc671, min-height auto */
 .orange-light {
   background-color: #ffc671;
   min-height: auto;
 }
 
+/* Webflow: .gallery-image-outer.olive-green — bg #5e6350, min-height auto */
 .olive-green {
   background-color: #5e6350;
   min-height: auto;
 }
 
-/* The portfolio image — Webflow base: max-height 357px, height auto */
+/* Webflow: .image-cover — object-fit cover, object-position 50% 0%, radius 10px, max-height 357px, width 100%, height auto */
 .image-cover {
   object-fit: cover;
   object-position: 50% 0%;
@@ -151,14 +176,15 @@
   overflow: hidden;
 }
 
+/* Webflow: .image-cover.radius-0 — border-radius 0 */
 .radius-0 {
   border-radius: 0;
 }
 
-/* Caption */
+/* Webflow: .gallery-13-caption — text-align left, bg transparent, radius 8px, padding 0, relative */
 .gallery-13-caption {
   text-align: left;
-  background-color: #0000;
+  background-color: transparent;
   border-radius: 8px;
   height: auto;
   padding: 0;
@@ -167,15 +193,16 @@
   overflow: visible;
 }
 
+/* Webflow: .heading-3 — color #082753, text-align left, fs 25px, weight 700 */
 .heading-3 {
-  color: var(--color-text-primary);
+  color: #082753;
   text-align: left;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 25px;
   font-weight: 700;
 }
 
-/* Color variants for heading-3 */
+/* Webflow: .heading-3.green, .heading-3.green-light, .heading-3.purple — color #020e41, text-align center, fs 1.3rem */
 .heading-3-green,
 .heading-3-green-light,
 .heading-3-purple {
@@ -184,6 +211,7 @@
   font-size: 1.3rem;
 }
 
+/* Webflow: .heading-3.orange — color #111c19, text-align center, stroke #ff8a8a, fs 1.3rem */
 .heading-3-orange {
   color: #111c19;
   text-align: center;
@@ -191,7 +219,9 @@
   font-size: 1.3rem;
 }
 
-/* Nav buttons */
+/* Webflow: .gallery-13-button base — width auto, inset auto 0% 0% auto
+   We add top: 50% + translateY(-50%) for true vertical centering (Webflow uses bottom 50% but that's
+   not true center — visual diff at this resolution is small) */
 .gallery-13-button {
   width: auto;
   position: absolute;
@@ -205,15 +235,18 @@
   cursor: pointer;
 }
 
+/* Webflow: .gallery-13-button.button-left — bottom 50%, left -1.5%, right auto */
 .button-left {
   left: -1.5%;
   right: auto;
 }
 
+/* Webflow: .gallery-13-button.button-right — bottom 50%, right .5% */
 .button-right {
   right: 0.5%;
 }
 
+/* Webflow: .icon-button-outline-large — color #000, bg #fff, border 1px solid #c9d2d9, radius 11px, 48x48 */
 .icon-button-outline-large {
   color: #000;
   background-color: #fff;
@@ -228,19 +261,23 @@
   cursor: pointer;
 }
 
+/* Webflow: .icon-regular — width/height 24px, color #fff (var(--white)) */
 .icon-regular {
   width: 24px;
   height: 24px;
+  color: #fff;
   flex: none;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
+/* Webflow: .icon-regular.blue — color #21cfff */
 .icon-blue {
-  color: var(--color-brand-cyan);
+  color: #21cfff;
 }
 
+/* Webflow: .container-large-2 — max-width 1280px, centered */
 .container-large-2 {
   z-index: 1;
   width: 100%;
@@ -263,8 +300,7 @@
 }
 
 .slider-dot {
-  /* Webflow active-dot pattern — small inner circle, ring on active. Uses ::after
-     for the visible dot so we can apply ring effects independent of tap target. */
+  /* Active-dot pattern — small inner circle, ring on active. */
   height: 24px;
   width: 24px;
   border-radius: 50%;
@@ -334,8 +370,6 @@
   .gallery-13-card.light-orange {
     aspect-ratio: 1 / 1.2;
   }
-
-  /* Webflow has no max-height on .gallery-image-outer at 1280px */
 }
 
 /* ============================================================
@@ -383,15 +417,20 @@
     height: auto;
   }
 
+  /* Webflow line 23330-23337: at 1440, cream + light-green/light-purple/light-orange get min-height 340px,
+     aspect-ratio stays 1/1.2 (inherited from 1280 override + cream explicit) */
   .gallery-13-card.cream,
   .gallery-13-card.light-green,
   .gallery-13-card.light-purple,
   .gallery-13-card.light-orange {
-    aspect-ratio: auto;
+    aspect-ratio: 1 / 1.2;
     min-height: 340px;
-}
+  }
 
-  /* Webflow has no max-height on .gallery-image-outer at 1440px */
+  /* Webflow line 23344: .gallery-13-caption at 1440 — position static */
+  .gallery-13-caption {
+    position: static;
+  }
 }
 
 /* ============================================================
@@ -430,8 +469,6 @@
   .gallery-13-card.light-orange {
     aspect-ratio: auto;
   }
-
-  /* Webflow has no max-height on .gallery-image-outer at 991px */
 }
 
 /* ============================================================
@@ -453,10 +490,8 @@
   }
 }
 
-/* Webflow has no max-height on .gallery-image-outer at 767px */
-
 /* ============================================================
-   max-width: 479px  (mobile)
+   max-width: 479px (mobile)
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section-regular-2 {
@@ -489,6 +524,4 @@
     font-size: 22px;
     line-height: 26px;
   }
-
-  /* Webflow has no max-height on .gallery-image-outer at 479px */
 }

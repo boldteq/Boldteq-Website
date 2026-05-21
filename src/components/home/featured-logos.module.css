@@ -1,6 +1,8 @@
 /* ============================================================
    FEATURED LOGOS — featured-logos.module.css
    Extracted verbatim from boldteq-v1-0.webflow.css
+   Note: live site has .hide on the section (display:none). Component
+   is preserved for parity; CSS matches Webflow source 1:1.
    ============================================================ */
 
 .section-regular {
@@ -36,9 +38,11 @@
   line-height: 1.5;
 }
 
+/* .paragraph-x-large.text-color-secondary (combined Webflow selector) */
+.paragraph-x-large.text-color-secondary,
 .text-color-secondary {
-  color: var(--color-text-secondary);
-  font-family: var(--font-roobert), Arial, sans-serif;
+  color: #2b2b2b;
+  font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -61,7 +65,7 @@
 }
 
 .logo-3-block {
-  opacity: 0.4;
+  opacity: .4;
   justify-content: center;
   align-items: center;
   min-width: auto;
@@ -70,7 +74,7 @@
 }
 
 .logo-3-block:hover {
-  opacity: 1;
+  opacity: 100;
 }
 
 .logo-3-icon {
@@ -98,6 +102,16 @@
 
   .paragraph-x-large {
     font-size: 18px;
+  }
+}
+
+/* ============================================================
+   max-width: 480px (Webflow inline override — mask removed on mobile)
+   ============================================================ */
+@media screen and (max-width: 480px) {
+  .logo-3-carousel {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 }
 
