@@ -72,8 +72,12 @@ function getSlidesPerPage(): number {
 export function BenefitsGrid() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeDot, setActiveDot] = useState(0);
-  const [totalDots, setTotalDots] = useState(() =>
-    Math.ceil(BENEFITS.length / getSlidesPerPage()),
+  // Server-stable default (desktop: 3 slides/page → 2 dots). Reading the real
+  // viewport here would desync server vs client HTML and fail hydration, which
+  // tears down the whole page tree. We sync to the actual viewport in the
+  // mount effect below instead.
+  const [totalDots, setTotalDots] = useState(
+    Math.ceil(BENEFITS.length / 3),
   );
 
   const handleScroll = useCallback(() => {
@@ -105,6 +109,8 @@ export function BenefitsGrid() {
     if (el) {
       el.addEventListener("scroll", handleScroll, { passive: true });
     }
+    // Sync dot count to the real viewport after mount (post-hydration).
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       el?.removeEventListener("scroll", handleScroll);
@@ -117,7 +123,7 @@ export function BenefitsGrid() {
       <div className={styles['containerLarge3']}>
         <div className={styles['benefitSubheadOut']}>
           <div className={styles['benefitsubott']}>
-            <p className="paragraph text-left margin-bottom-0 small-font">
+            <p className={styles['badgePillText']}>
               <strong className={styles['faqSkyText']}>Our Benefits</strong>
             </p>
           </div>

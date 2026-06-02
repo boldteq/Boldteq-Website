@@ -497,7 +497,24 @@ function useStickyNav() {
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [betaOpen, setBetaOpen] = useState(false);
+  const navbarRef = useRef<HTMLDivElement>(null);
   const sticky = useStickyNav();
+
+  // When the navbar becomes position:fixed it leaves the document flow, so the
+  // page would jump up by the navbar's height. Webflow compensates by adding an
+  // equal padding-top to <body> (document.body.style.paddingTop = headerHeight).
+  // Replicate that so content stays put and the frosted navbar overlays the
+  // correct section instead of the nav links.
+  useEffect(() => {
+    if (sticky && navbarRef.current) {
+      document.body.style.paddingTop = `${navbarRef.current.offsetHeight}px`;
+    } else {
+      document.body.style.paddingTop = "";
+    }
+    return () => {
+      document.body.style.paddingTop = "";
+    };
+  }, [sticky]);
 
   return (
     // .header-sec
@@ -533,6 +550,7 @@ export function Navbar() {
 
       {/* .navbar — sticky class toggles frosted glass (matches Webflow custom code) */}
       <div
+        ref={navbarRef}
         className={`${styles["navbar"]} ${sticky ? styles["sticky"] : ""}`}
         role="banner"
       >

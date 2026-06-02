@@ -44,6 +44,15 @@
   line-height: 14px;
 }
 
+/* Badge text — Webflow .paragraph.small-font: 14px / 24px / weight 400
+   (pill height 26px). Matches the How It Works badge. */
+.badgePillText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
 /* ==========================================================
    Gradient text  (Webflow: .faq-sky-text)
    ========================================================== */
@@ -198,24 +207,30 @@
 }
 
 .sliderDot {
-  /* Visual 12×12 circle; tap area expanded to 24×24 via padding for WCAG 2.5.8.
-     background-clip: content-box keeps the colored circle at 12×12 — the
-     padding area is transparent so the visual dot does not change. */
+  /* Webflow .hiring-slider ul.slick-dots li button: clean 12×12 circle, padding 0.
+     Tap area expanded to 24×24 via a transparent ::after overlay (WCAG 2.5.8)
+     instead of border-bearing padding — the old padding+content-box drew the
+     border around the 26px padded box, producing an oversized hollow ring. */
+  position: relative;
   background: transparent;
   border: 1px solid #d1d1d1;
   border-radius: 20px;
   width: 12px;
   height: 12px;
-  padding: 6px;
-  box-sizing: content-box;
-  background-clip: content-box;
+  padding: 0;
+  box-sizing: border-box;
   cursor: pointer;
   transition: background-image 0.2s ease;
 }
 
+.sliderDot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+}
+
 .sliderDot.active {
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  background-clip: content-box;
   border-color: transparent;
 }
 
@@ -312,7 +327,8 @@
   }
 
   .heading2 {
-    font-size: 35px;
+    /* Webflow downscales heading-2 only at ≤767, so 768–991 keeps 40/45. */
+    font-size: 40px;
     line-height: 45px;
   }
 }
@@ -353,9 +369,10 @@
   }
 
   .heading2 {
-    font-size: 34px;
-    line-height: 28px;
-    margin-bottom: 10px;
+    /* Webflow @767: .heading-2.margin-bottom-24px → 35px / 45px / mb 20px. */
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 20px;
     text-align: center;
   }
 
@@ -373,8 +390,10 @@
    ========================================================== */
 @media screen and (max-width: 479px) {
   .heading2 {
-    font-size: 21px;
+    /* Webflow @479: 23px / 28px / mb 10px. */
+    font-size: 23px;
     line-height: 28px;
+    margin-bottom: 10px;
     text-align: center;
   }
 

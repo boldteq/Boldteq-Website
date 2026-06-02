@@ -294,6 +294,17 @@
     margin-bottom: 0;
   }
 
+  /* Match Webflow (webflow.css): every heading defaults to bold (700).
+     Tailwind preflight resets h1–h6 to `inherit`; only h2 is re-declared
+     above, so h1/h3/h4/h5/h6 were falling back to the body weight (500). */
+  h1,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
   img {
     max-width: 100%;
     vertical-align: middle;

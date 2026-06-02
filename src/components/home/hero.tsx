@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from '@/components/primitives/button';
+import Link from 'next/link';
 import { Typewriter } from './typewriter';
 import styles from './hero.module.css';
 
@@ -75,7 +75,7 @@ export function Hero() {
                     src="/images/webflow/Layer_1-45.svg"
                     loading="eager"
                     alt="No contract required icon"
-                    width={24}
+                    width={23}
                     height={24}
                     className={styles['home-bangrid-icon']}
                   />
@@ -90,7 +90,7 @@ export function Hero() {
                     src="/images/webflow/Layer_1-2.svg"
                     loading="eager"
                     alt="Service pause or Cancel icon"
-                    width={24}
+                    width={21}
                     height={24}
                     className={styles['home-bangrid-icon']}
                   />
@@ -111,20 +111,26 @@ export function Hero() {
                   className={styles['guidejarIframe']}
                   allowFullScreen
                   frameBorder="0"
-                  loading="lazy"
                   title="Boldteq product demo"
                 />
               </div>
             </div>
 
-            {/* CTA buttons — second div-job-attention (mob-margin-less) */}
+            {/* CTA buttons — second div-job-attention (mob-margin-less).
+                Webflow markup: <a class="a-gulf-book"> / <a class="a-except-get">
+                (boxed ↗ arrow comes from the class background-image). */}
             <div className={`${styles['div-job-attention']} ${styles['mob-margin-less']}`}>
-              <Button href="/book-a-demo" variant="primary" size="md">
+              <Link href="/book-a-demo" className={styles['a-gulf-book']}>
                 Schedule Demo
-              </Button>
-              <Button href="https://portal.boldteq.com/" variant="outline" size="md">
+              </Link>
+              <a
+                href="https://portal.boldteq.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles['a-except-get']}
+              >
                 14-Day Starter Trial
-              </Button>
+              </a>
             </div>
           </div>
         </div>

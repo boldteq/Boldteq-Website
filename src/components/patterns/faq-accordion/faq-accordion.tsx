@@ -22,7 +22,7 @@ function FaqRow({ item, index }: { item: FaqItem; index: number }) {
         aria-controls={panelId}
       >
         <span>{item.question}</span>
-        <span className={`${styles['chevron']}${open ? ` ${styles['open']}` : ''}`}>
+        <span className={styles['chevron']}>
           <Image
             src="/images/webflow/ion_chevron-back.svg"
             alt=""

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FAQ_ITEMS } from "@/lib/constants/faq";
 import { FaqAccordion } from "@/components/patterns/faq-accordion/faq-accordion";
-import { Badge } from "@/components/primitives/badge/badge";
 import styles from "./faq-section.module.css";
 
 function HelpIcon() {
@@ -69,9 +68,16 @@ export function FaqSection() {
           {/* Left column — heading + quick links */}
           <div>
             <div className={styles["faqSubheadingOuter"]}>
-              <Badge variant="sky-outline" size="md">
-                Have question in mind?
-              </Badge>
+              {/* Webflow .faq-subott pill + .faq-sky-text (gradient cyan, capitalize,
+                  weight 500). The shared Badge primitive rendered the wrong pill
+                  (1.5px #21cfff border, 999px radius, solid bold text). */}
+              <div className={styles["faqSubott"]}>
+                <p className={styles["badgePillText"]}>
+                  <strong className={styles["faqSkyText"]}>
+                    Have question in mind?
+                  </strong>
+                </p>
+              </div>
             </div>
             <h2 id="faq-heading" className={styles["heading2"]}>
               Frequently Asked Questions
@@ -101,8 +107,8 @@ export function FaqSection() {
                             src="/images/webflow/Vector-17.svg"
                             alt=""
                             aria-hidden="true"
-                            width={16}
-                            height={16}
+                            width={11}
+                            height={11}
                           />
                         </a>
                       ) : (
@@ -115,8 +121,8 @@ export function FaqSection() {
                             src="/images/webflow/Vector-17.svg"
                             alt=""
                             aria-hidden="true"
-                            width={16}
-                            height={16}
+                            width={11}
+                            height={11}
                           />
                         </Link>
                       )}
@@ -150,8 +156,8 @@ export function FaqSection() {
                   src="/images/webflow/Vector-17.svg"
                   alt=""
                   aria-hidden="true"
-                  width={16}
-                  height={16}
+                  width={11}
+                  height={11}
                 />
               </a>
             </div>

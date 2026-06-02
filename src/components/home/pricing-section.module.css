@@ -1,8 +1,9 @@
-/* Badge pill text */
+/* Badge pill text — Webflow .paragraph.small-font: 14px / 24px / weight 400 */
 .badgePillText {
   margin: 0;
-  font-size: 12px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 /* Webflow: .new-price-sec */
@@ -117,18 +118,20 @@
 /* Tab menu — element class is `pricing-tabs-menu-large center` in Webflow.
    Webflow .pricing-tabs-menu-large base: bg #fff, border 1px solid #edeef1, radius 44px, gap 4px, padding 4px, display flex.
    We use base values (NOT .center overrides) because visually live site shows the white-pill toggle. */
+/* Webflow renders .pricing-tabs-menu-large.center (the .center modifier overrides
+   the base): bg #f4f7fa, no border, radius 10px, gap 6px, padding 5px 7px. */
 .pricingTabsMenuLarge {
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  background-color: #fff;
-  border: 1px solid #edeef1;
-  border-radius: 44px;
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  background-color: #f4f7fa;
+  border: none;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
-  padding: 4px;
+  padding: 5px 7px;
   display: flex;
   width: fit-content;
 }
@@ -174,16 +177,17 @@
   min-width: 130px;
 }
 
-/* Webflow: .pricing-tab-link-large.w--current — bg #fff, radius 10px, box-shadow */
+/* Webflow: .pricing-tab-link-large.w--current — bg #fff, radius 10px, box-shadow.
+   No min-width here: Webflow's .montthly (130px) wins over .w--current by source
+   order, so the active Monthly tab stays 130px. Other active tabs inherit the
+   base 170px. No font-weight override either — the text (.priceTabText) is 500. */
 .pricingTabLinkActive {
   color: #082753;
   background-color: #fff;
   background-image: none;
   border-radius: 10px;
-  min-width: 170px;
   height: 45px;
   font-size: 16px;
-  font-weight: 700;
   font-family: var(--font-roobert), Arial, sans-serif;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
 }
@@ -415,12 +419,14 @@
   display: flex;
 }
 
-/* Webflow: .caption-small-2 — color #2b2b2b, fs 14px, lh 20px */
+/* Webflow: .caption-small-2 — color #252525, fs 14px, lh 20px, weight inherits
+   body 400 (our global body is 500, so pin 400 here to match Webflow). */
 .captionSmall2 {
-  color: #2b2b2b;
+  color: #252525;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: 20px;
 }
 
@@ -475,32 +481,66 @@
   max-width: 100%;
 }
 
-/* Webflow: .pricing-table.new — bg #f6fcfe, border 1px solid #21cfff36, radius 15px, padding 0 24px, 4 columns */
+/* Webflow .pricing-table.new (base, lines 11893-11900) + embedded <style>
+   override in index.html (lines 2102-2106): the embedded rule wins by source
+   order → border:0, single-column stack, padding 6px 12px. Rows provide their
+   own white cards; the container only supplies the #f6fcfe tint + 15px radius. */
 .pricingTable {
   background-color: #f6fcfe;
-  border: 1px solid rgba(33, 207, 255, 0.21);
+  border: 0;
   border-radius: 15px;
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   width: auto;
-  padding: 0 24px;
+  padding: 6px 12px;
 }
 
-/* Webflow: .pricing-table-header — color #5b616e, text-align center, border-bottom 1px solid #21cfff36, padding 24px 12px */
+/* Header row — same 4-col grid + gap + horizontal padding as data rows so the
+   header columns line up exactly. Webflow .pricing-table-row:first-child is
+   transparent (index.html line 2054-2056). */
+.pricingTableHeaderRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Data row — Webflow .pricing-table-row (line 18838) + embedded override
+   (index.html line 2088-2101): white card, 10px radius, 16px column gap,
+   5px vertical margins, 20px horizontal padding. NO box-shadow. */
+.pricingTableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  align-items: stretch;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Webflow .pricing-table-header (line 11688) + embedded override (index.html
+   line 2110-2113): border-bottom 0, padding 16px 12px. */
 .pricingTableHeader {
   color: #5b616e;
   text-align: center;
-  border-bottom: 1px solid rgba(33, 207, 255, 0.21);
-  padding: 24px 12px;
+  border-bottom: 0;
+  padding: 16px 12px;
 }
 
-/* Webflow: .pricing-table-header.left — color #ff4b0e, text-align left, padding-top 24px, padding-left 0 */
+/* Webflow .pricing-table-header.left (line 11695) + embedded override
+   (index.html line 2107-2109): left aligned, padding-top 16px, padding-left 0
+   (the row's 20px padding provides the inset). */
 .pricingTableHeaderLeft {
   color: #ff4b0e;
   text-align: left;
-  padding-top: 24px;
+  padding-top: 16px;
   padding-left: 0;
 }
 
@@ -535,8 +575,9 @@
   position: relative;
 }
 
-/* Webflow: .pricing-table-cell — color #5b616e, text-align center, white-space nowrap,
-   border-bottom 1px solid #21cfff36, padding 24px 12px */
+/* Webflow .pricing-table-cell (line 11626) + embedded override (index.html
+   line 2114-2117): border-bottom 0, padding 16px 12px. Transparent — the white
+   row card provides the fill. */
 .pricingTableCell {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
@@ -544,21 +585,21 @@
   text-align: center;
   white-space: nowrap;
   word-break: keep-all;
-  border-bottom: 1px solid rgba(33, 207, 255, 0.21);
+  border-bottom: 0;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 24px 12px;
+  padding: 16px 12px;
   display: flex;
 }
 
-/* Webflow: .pricing-table-cell.left — color #000, text-align left, gap 6px, padding-left 0 */
+/* Webflow .pricing-table-cell.left (line 11641): left aligned, padding-left 0
+   (the row's 20px padding provides the inset), gap 6px. */
 .pricingTableCellLeft {
   grid-column-gap: 6px;
   grid-row-gap: 6px;
   color: #000;
   text-align: left;
-  border-bottom-color: rgba(33, 207, 255, 0.21);
   justify-content: flex-start;
   align-items: center;
   padding-left: 0;
@@ -570,13 +611,16 @@
   border-bottom-style: none;
 }
 
-/* Webflow: .paragraph-regular-14 — color #252525, fs 16px, lh 28px */
+/* Webflow: .paragraph-regular-14 — color #252525, fs 16px, lh 28px, weight inherits
+   body 400 (our global body is 500, so pin 400 here). The <strong> labels still
+   render 700 from the strong element. */
 .paragraphRegular14 {
   color: #252525;
   letter-spacing: -0.02em;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
+  font-weight: 400;
   line-height: 28px;
 }
 
@@ -658,6 +702,11 @@
   /* Webflow line 22973: .compare-price at min-width 1280 → font-size 20px */
   .comparePrice {
     font-size: 20px;
+  }
+
+  /* Webflow line 22308: .pricing-table.new at min-width 1280 → bg #effafe */
+  .pricingTable {
+    background-color: #effafe;
   }
 }
 
@@ -749,9 +798,9 @@
     white-space: normal;
   }
 
-  /* Webflow line 30543: .pricing-table.new at 767 → width 850px */
+  /* Webflow line 27753: .pricing-table.new at 767 → width 690px */
   .pricingTable {
-    width: 850px;
+    width: 690px;
   }
 
   .pricingTabLink {

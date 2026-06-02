@@ -118,7 +118,15 @@
 }
 
 .animate-span {
-  color: #05bafe;
+  /* Brand-gradient clipped text on the animated word (premium highlight).
+     display:inline-block makes the gradient box hug the typed text so the
+     full cyan→blue sweep shows on every word. */
+  display: inline-block;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .p-base-place-copy {
@@ -210,9 +218,13 @@
 }
 
 .home-bangrid-icon {
+  /* Match Webflow: icons render at intrinsic aspect (height 24px, width auto).
+     The SVGs are not all square — Layer_1=24x24, Layer_1-45=23x24,
+     Layer_1-2=21x24 — so forcing width:24px widened box 3's icon by 3px and
+     pushed "Cancel Anytime" onto a 3rd line. width:auto restores parity. */
   flex: none;
-  width: 24px;
   height: 24px;
+  width: auto;
   object-fit: contain;
 }
 
@@ -402,6 +414,15 @@
     box-shadow: 0 0 5px #0000001a;
   }
 
+  /* Match Webflow: home badges keep 13px top/bottom padding at desktop.
+     Webflow uses .grid-box.home-grid-box.order-mob-N (0,3,0) which beats
+     the .grid-box{padding:20px} above; in CSS Modules .home-grid-box is a
+     single class, so re-assert 13px here (later source order wins). */
+  .home-grid-box {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
   .grid-para {
     color: #000;
     text-align: left;
@@ -414,6 +435,10 @@
   }
 
   .mob-center {
+    /* Restore Webflow navy: in Webflow the compound .grid-para.mob-center
+       (0,2,0) beats the desktop .grid-para{color:#000}. CSS Modules split it
+       into single classes, so re-assert navy here (later source order wins). */
+    color: #082753;
     font-size: 16px;
   }
 
@@ -587,6 +612,9 @@
   .animate-span {
     display: block;
     height: 32px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .div-job-attention {
@@ -686,6 +714,9 @@
   .animate-span {
     display: block;
     height: 32px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .div-job-attention {

@@ -46,24 +46,27 @@ export function Typewriter() {
     const tick = () => {
       if (cancelled) return;
       const currentText = PHRASES[textIndex];
-      let nextSpeed = TYPE_SPEED_MS;
+      let nextSpeed: number;
 
       if (isDeleting) {
         charIndex -= 1;
         setText(currentText.substring(0, charIndex));
         nextSpeed = DELETE_SPEED_MS;
+        if (charIndex === 0) {
+          // Fully deleted → advance to next phrase, pause before retyping.
+          isDeleting = false;
+          textIndex = (textIndex + 1) % PHRASES.length;
+          nextSpeed = BEFORE_NEXT_PHRASE_PAUSE_MS;
+        }
+      } else if (charIndex === currentText.length) {
+        // Fully typed (incl. the SSR-seeded first phrase) → pause, then delete.
+        // Checked BEFORE incrementing so we never overshoot the length.
+        isDeleting = true;
+        nextSpeed = END_OF_PHRASE_PAUSE_MS;
       } else {
         charIndex += 1;
         setText(currentText.substring(0, charIndex));
-      }
-
-      if (!isDeleting && charIndex === currentText.length) {
-        nextSpeed = END_OF_PHRASE_PAUSE_MS;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % PHRASES.length;
-        nextSpeed = BEFORE_NEXT_PHRASE_PAUSE_MS;
+        nextSpeed = TYPE_SPEED_MS;
       }
 
       timeoutRef.current = setTimeout(tick, nextSpeed);

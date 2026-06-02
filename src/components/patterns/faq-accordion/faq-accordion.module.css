@@ -3,7 +3,10 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  /* Webflow .faq-wrapper-large grid-row-gap:15px — item spacing lives here, not as
+     per-item margin. (No 10px wrapper padding: it would narrow items and wrap the
+     longest question, which the reference keeps on one line.) */
+  gap: 15px;
   width: 100%;
 }
 
@@ -21,18 +24,16 @@
   }
 }
 
-/* Item wrapper — Webflow .faq-item: white card with cyan tint border + shadow */
+/* Webflow .faq-item (css:3126): white card. NOTE — the border is declared as
+   "1px #c1e6f9" with NO style keyword, so border-style defaults to none and NO
+   border paints; only the soft 10%-black shadow defines the card edge. Spacing
+   between items comes from the .list gap (15px), not per-item margin. */
 .item {
+  color: #05bafe;
   background-color: #fff;
-  border: 1px solid #c1e6f9;
   border-radius: 10px;
-  margin-bottom: 12px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-}
-
-.item:last-child {
-  margin-bottom: 0;
 }
 
 /* Toggle button */
@@ -47,26 +48,26 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  color: var(--color-text-primary);
+  /* Webflow .h6-heading-3 (#000, lh 1.4, -0.02em) + the <strong class="bold-text">
+     child (17px / 700). No hover recolor in Webflow. */
+  color: #000;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
 }
 
-.toggle:hover {
-  color: var(--color-brand-blue);
-}
-
+/* Webflow .faq-icon (css:3099) — fixed 24×24 flex box. The ion_chevron-back.svg
+   already points DOWN and Webflow runs no rotation interaction, so the chevron
+   stays static (no rotate-on-open). */
 .chevron {
-  flex-shrink: 0;
-  transition: transform var(--duration-base) var(--ease-standard);
-  display: flex;
+  flex: none;
+  justify-content: center;
   align-items: center;
-}
-
-.chevron.open {
-  transform: rotate(180deg);
+  width: 24px;
+  height: 24px;
+  display: flex;
 }
 
 /* Answer panel */
@@ -84,11 +85,13 @@
   overflow: hidden;
 }
 
+/* Webflow .faq-tab padding 0 20px 12px + .paragraph-regular-5 (16px / lh 1.8 / -0.02em). */
 .answer {
-  padding: 0 20px 14px;
+  padding: 0 20px 12px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: var(--text-base);
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: -0.02em;
   color: var(--color-text-secondary);
   margin: 0;
   white-space: pre-line;

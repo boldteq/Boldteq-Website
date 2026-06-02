@@ -149,11 +149,11 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
                   </div>
                   <div className={styles["priceBadgeOut"]}>
                     <h3 className={styles["h3Heading3"]}>
-                      ${price.toLocaleString()}/month
+                      ${price}/month
                     </h3>
                     {!isMonthly && (
                       <p className={styles["comparePrice"]}>
-                        ${plan.monthlyPrice.toLocaleString()}.00
+                        ${plan.monthlyPrice}.00
                       </p>
                     )}
                   </div>
@@ -192,34 +192,28 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
         {/* Comparison table */}
         <div className={styles["pricingTableWrapper"]}>
           <div className={styles["pricingTable"]}>
-            {/* Header row */}
-            <div
-              className={`${styles["pricingTableHeader"]} ${styles["pricingTableHeaderLeft"]}`}
-            >
-              <div className={styles["subheadingLarge7"]}>Basic Features</div>
-            </div>
-            <div className={styles["pricingTableHeader"]}>
-              <div className={styles["subheadingLarge7"]}>Starter</div>
-            </div>
-            <div className={styles["pricingTableHeader"]}>
-              <div className={styles["subheadingLarge7"]}>Growth</div>
-            </div>
-            <div className={styles["pricingTableHeader"]}>
-              <div className={styles["pricingHeaderLast"]}>
-                <div className={styles["subheadingLarge7"]}>Pro</div>
+            {/* Header row (sits on the tinted container, no card) */}
+            <div className={styles["pricingTableHeaderRow"]}>
+              <div
+                className={`${styles["pricingTableHeader"]} ${styles["pricingTableHeaderLeft"]}`}
+              >
+                <div className={styles["subheadingLarge7"]}>Basic Features</div>
+              </div>
+              <div className={styles["pricingTableHeader"]}>
+                <div className={styles["subheadingLarge7"]}>Starter</div>
+              </div>
+              <div className={styles["pricingTableHeader"]}>
+                <div className={styles["subheadingLarge7"]}>Growth</div>
+              </div>
+              <div className={styles["pricingTableHeader"]}>
+                <div className={styles["pricingHeaderLast"]}>
+                  <div className={styles["subheadingLarge7"]}>Pro</div>
+                </div>
               </div>
             </div>
 
-            {/* Data rows */}
-            {COMPARISON_TABLE.map((row, i) => {
-              const isLast = i === COMPARISON_TABLE.length - 1;
-              const cellClass = isLast
-                ? `${styles["pricingTableCell"]} ${styles["pricingTableCellNoBorder"]}`
-                : styles["pricingTableCell"];
-              const leftCellClass = isLast
-                ? `${styles["pricingTableCell"]} ${styles["pricingTableCellLeft"]} ${styles["pricingTableCellNoBorder"]}`
-                : `${styles["pricingTableCell"]} ${styles["pricingTableCellLeft"]}`;
-
+            {/* Data rows — each row is its own white card */}
+            {COMPARISON_TABLE.map((row) => {
               const renderValue = (val: string | boolean) => {
                 if (val === false) return <CrossIcon />;
                 return (
@@ -228,10 +222,19 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
               };
 
               return (
-                <React.Fragment key={row.label}>
-                  <div className={leftCellClass}>
+                <div className={styles["pricingTableRow"]} key={row.label}>
+                  <div
+                    className={`${styles["pricingTableCell"]} ${styles["pricingTableCellLeft"]}`}
+                  >
                     <div className={styles["paragraphRegular14"]}>
-                      <strong>{row.label}</strong>
+                      <strong>
+                        {row.label.split("\n").map((part, idx, arr) => (
+                          <React.Fragment key={idx}>
+                            {part}
+                            {idx < arr.length - 1 && <br />}
+                          </React.Fragment>
+                        ))}
+                      </strong>
                     </div>
                     <button
                       type="button"
@@ -250,16 +253,16 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
                       />
                     </button>
                   </div>
-                  <div key={`${row.label}-starter`} className={cellClass}>
+                  <div className={styles["pricingTableCell"]}>
                     {renderValue(row.starter)}
                   </div>
-                  <div key={`${row.label}-growth`} className={cellClass}>
+                  <div className={styles["pricingTableCell"]}>
                     {renderValue(row.growth)}
                   </div>
-                  <div key={`${row.label}-pro`} className={cellClass}>
+                  <div className={styles["pricingTableCell"]}>
                     {renderValue(row.pro)}
                   </div>
-                </React.Fragment>
+                </div>
               );
             })}
           </div>

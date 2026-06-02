@@ -1,8 +1,11 @@
 /* Badge pill text */
 .badgePillText {
+  /* Webflow renders the badge text at 14px / 24px line-height (pill height 26px),
+     weight 400 (Webflow body), not the app default 500. */
   margin: 0;
-  font-size: 12px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 /* ==========================================================
@@ -72,11 +75,13 @@
    Combined:
    ========================================================== */
 .heading2WhiteHeading {
+  /* Webflow .heading-2.margin-bottom-24px.white-heading → line-height 48px
+     (the .white-heading modifier overrides the base 45px). */
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   text-align: center;
-  line-height: 45px;
+  line-height: 48px;
   margin-bottom: 20px;
 }
 
@@ -263,8 +268,9 @@
   }
 
   .heading2WhiteHeading {
-    font-size: 35px;
-    line-height: 45px;
+    /* Webflow downscales heading-2 only at ≤767, so 768–991 keeps 40/48. */
+    font-size: 40px;
+    line-height: 48px;
   }
 
   .featureGrid {
@@ -291,8 +297,12 @@
    ========================================================== */
 @media screen and (max-width: 767px) {
   .sectionRegular3BlueSec {
-    padding-top: 0;
-    padding-bottom: 0;
+    /* Keep Webflow's 70/80 vertical padding at 767. In Webflow the 70/80 comes
+       from the compound .section-regular-3.blue-sec (0,2,0), which the @767
+       .section-regular-3 (0,1,0) does NOT override — so it stays 70/80 here.
+       (Our single-class version had wrongly zeroed it.) */
+    padding-top: 70px;
+    padding-bottom: 80px;
     padding-left: 5%;
     padding-right: 5%;
     margin-top: 0;
@@ -319,9 +329,10 @@
   }
 
   .heading2WhiteHeading {
-    font-size: 30px;
-    line-height: 32px;
-    margin-bottom: 10px;
+    /* Webflow @767: .heading-2.margin-bottom-24px 35px, white-heading lh 48px. */
+    font-size: 35px;
+    line-height: 48px;
+    margin-bottom: 20px;
     text-align: center;
   }
 
@@ -339,8 +350,10 @@
    ========================================================== */
 @media screen and (max-width: 479px) {
   .heading2WhiteHeading {
-    font-size: 21px;
-    line-height: 28px;
+    /* Webflow @479: 23px / 32px / mb 10px. */
+    font-size: 23px;
+    line-height: 32px;
+    margin-bottom: 10px;
     text-align: center;
   }
 

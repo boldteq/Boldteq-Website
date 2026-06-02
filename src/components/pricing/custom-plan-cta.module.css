@@ -23,14 +23,15 @@
      .margin-btm-0    @ L2463:  margin-bottom: 0
    ─────────────────────────────────────────────────────────── */
 .section {
+  /* Webflow .blue-sec: no vertical padding; spacing via margin-bottom:70px. */
   background-color: #0000;
   margin-top: 0;
   margin-right: auto;
-  margin-bottom: 0;
+  margin-bottom: 70px;
   margin-left: auto;
-  padding-top: 80px;
+  padding-top: 0;
   padding-right: 5%;
-  padding-bottom: 80px;
+  padding-bottom: 0;
   padding-left: 5%;
   position: relative;
   display: block;
@@ -138,7 +139,9 @@
   text-align: left;
   margin-top: 0;
   margin-right: 0;
-  margin-bottom: 20px;
+  /* Webflow: .heading-2 classes only reset margin-top; the global h2
+     margin-bottom:10px (webflow.css) carries through. */
+  margin-bottom: 10px;
   margin-left: 0;
 }
 
@@ -157,7 +160,9 @@
   text-align: left;
   margin-top: 0;
   margin-right: 0;
-  margin-bottom: 20px;
+  /* Webflow: .paragraph / .paragraph.white / .text-left don't reset margins;
+     the global p margin-bottom:10px (webflow.css) carries through. */
+  margin-bottom: 10px;
   margin-left: 0;
 }
 
@@ -174,7 +179,10 @@
   grid-row-gap: 15px;
   margin-top: 0;
   margin-right: 0;
-  margin-bottom: 20px;
+  /* Webflow .custom-plan-dlexdiv is a bare div with no margin-bottom; the gap
+     before the button comes solely from .sky-button margin-top:20px. Keeping a
+     margin here would double that gap. */
+  margin-bottom: 0;
   margin-left: 0;
 }
 
@@ -254,6 +262,12 @@
   color: #fff;
   background-color: #082753;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  /* Extend the gradient across the whole border box. Without this the gradient
+     defaults to background-origin:padding-box and only fills inside the 2px
+     transparent border, so the navy background-color shows through that border
+     strip as faint vertical lines on the left/right edges. */
+  background-origin: border-box;
+  background-clip: border-box;
   border: 2px solid #0000;
   border-radius: 0.75rem;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -302,17 +316,31 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    /* Webflow keeps 0 vertical padding + margin-bottom:70px down to 480px. */
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .container {
     /* container-large-3 has no 991 override; stays width:100% max-width:1280px */
     max-width: 100%;
   }
+  .card {
+    /* Webflow .book-section.remove-pattern @991 (L24737): the corner graphic
+       swaps from Union.svg to Mask-group-1.png; .book-section @991 (L24734)
+       drops padding-bottom to 40px. */
+    background-image: url('/images/webflow/Mask-group-1.png');
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-bottom: 40px;
+  }
   .inner {
+    /* Webflow .heading-grid-small.margin-bottom-0 @991 (L24628): 1.75fr 1fr;
+       .heading-grid-small @991 (L24621-24625): align-items:start, padding 0. */
     grid-template-columns: 1.75fr 1fr;
-    padding-left: 20px;
-    padding-right: 20px;
+    align-items: start;
+    padding-left: 0;
+    padding-right: 0;
   }
   .heading {
     font-size: 36px;
@@ -356,6 +384,10 @@
      .book-section.remove-pattern @ L29974: bg-image:none; bg-position:0 0; bg-repeat:repeat; bg-size:auto
    ============================================================ */
 @media screen and (max-width: 479px) {
+  .section {
+    /* Webflow .blue-sec @479: margin-bottom drops 70px → 50px. */
+    margin-bottom: 50px;
+  }
   .inner {
     display: flex;
     flex-flow: column;

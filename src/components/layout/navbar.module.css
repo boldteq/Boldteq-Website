@@ -127,6 +127,19 @@
   transform: translateY(10px);
 }
 
+/* Webflow custom code @max-480: full-bleed sticky bar — no radius, no slide-down,
+   wider horizontal padding (index.html:2358-2368). */
+@media screen and (max-width: 480px) {
+  .navbar.sticky {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 6px 3.5%;
+    transform: translateY(0);
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+}
+
 /* ─── Nav container (flex row — logo | menu | right) ─────────────────────────── */
 
 .nav-23-container {

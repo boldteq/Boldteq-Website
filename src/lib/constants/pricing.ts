@@ -148,7 +148,7 @@ export const COMPARISON_TABLE: ComparisonRow[] = [
     pro: "3 parallel tasks",
   },
   {
-    label: "Task management & Communication",
+    label: "Task management &\nCommunication",
     tooltip: "Centralized workspace to submit, track, and discuss every task.",
     starter: "Smart Client Workspace",
     growth: "Smart Client Workspace",

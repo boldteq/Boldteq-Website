@@ -1,8 +1,10 @@
-/* Badge pill text */
+/* Badge pill text — Webflow badge uses <p class="paragraph ... small-font">:
+   font-size 14px / line-height 28px (the pill height comes from this line-height
+   since .faqSubott has 0 vertical padding). */
 .badgePillText {
   margin: 0;
-  font-size: 12px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 28px;
 }
 
 /* FAQ "See more questions" link text */
@@ -112,10 +114,11 @@
 
 /* heading-2 faq-heading */
 .heading2 {
+  /* Webflow .heading-2.faq-heading → base heading-2 line-height 40px (no 45px modifier). */
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
-  line-height: 45px;
+  line-height: 40px;
   margin-top: 13px;
   margin-bottom: 12px;
   text-align: left;
@@ -147,10 +150,12 @@
   align-items: center;
   display: flex;
   background-color: #fff;
-  border: 1px solid #c1e6f9;
+  /* Webflow embedded <style> (index.html:2199) removes the border and applies a
+     soft shadow — the cyan border the live site does NOT show. */
+  border: 0;
   border-radius: 10px;
   padding: 12px 20px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
 }
 
 .contactIconPrimary {
@@ -175,10 +180,14 @@
   flex: 1;
 }
 
+/* Webflow .row-2x-small (css:5928) — flex row, flex-start, 4px gap. */
 .row2xSmall {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  font-family: var(--font-roobert), Arial, sans-serif;
 }
 
 .subheadingSmall5 {
@@ -189,18 +198,17 @@
   line-height: 1.5;
 }
 
+/* The live site (boldteq.com) places the arrow INLINE right after the title (the
+   exported .faq-link-block flex:1/justify-end would push it to the far edge, but
+   the live reference — source of truth — shows it inline). Content-sized link. */
 .faqLinkBlock {
-  text-align: right;
-  flex: 1;
-  justify-content: flex-end;
   align-items: center;
-  display: flex;
+  display: inline-flex;
   text-decoration: none;
-  /* WCAG 2.5.8: min 24×24 tap target. padding expands hit area without
-     changing the visual 11×11 arrow icon. */
+  /* WCAG 2.5.8 tap target without visually shifting the inline arrow. */
   min-height: 24px;
   min-width: 24px;
-  padding: 6px;
+  padding: 4px;
 }
 
 .paragraphXSmall11TextColorTertiary {
@@ -211,10 +219,15 @@
   line-height: 1.5;
 }
 
-/* Right column — FAQ accordion */
+/* Right column — FAQ accordion.
+   .faq-single-grid carries the .w-layout-grid utility (css:45), whose grid-row-gap:16px
+   is NOT overridden by .faq-single-grid — it spaces the accordion from the "See more
+   questions" footer. Combined with .faqBtmCenter margin-top:5px → ~21px gap (matches
+   Webflow). Without it the footer sat directly under the last FAQ. */
 .faqSingleGrid {
   grid-template-rows: auto;
   grid-template-columns: 1fr;
+  grid-row-gap: 16px;
   width: 100%;
   max-width: 490px;
   margin: 20px auto 0;
@@ -389,9 +402,10 @@
   }
 
   .heading2 {
+    /* Webflow @767: .heading-2.faq-heading → 34px / 40px / mb 12px. */
     font-size: 34px;
-    line-height: 32px;
-    margin-bottom: 10px;
+    line-height: 40px;
+    margin-bottom: 12px;
   }
 }
 

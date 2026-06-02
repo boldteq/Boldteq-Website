@@ -27,8 +27,9 @@
   color: #f4f7fa;
 }
 
+/* Webflow .skycolor-bg (CSS:17253) — exact hex8 #21cfff12 (≈ rgba(33,207,255,0.0706)). */
 .skycolorBg {
-  background-color: var(--color-accent-bg);
+  background-color: #21cfff12;
   border-radius: 20px;
   padding: 30px 40px;
 }
@@ -46,7 +47,7 @@
 
 /* paragraph text-left margin-bottom-2 left-mob with-cross */
 .paragraphWithCross {
-  color: #000;
+  color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -61,7 +62,7 @@
 
 /* paragraph text-left left-mob with-cross (last item) */
 .paragraphWithCrossLast {
-  color: #000;
+  color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -76,7 +77,7 @@
 
 /* paragraph text-left margin-bottom-2 left-mob with-tick */
 .paragraphWithTick {
-  color: #000;
+  color: #2b2b2b;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -119,16 +120,16 @@
   background-clip: border-box;
 }
 
+/* Webflow .way-inner-grid (CSS:17311) is a BARE grid — 22px gaps, 2 columns,
+   place-items:start, margin-top:30px. It has NO background / padding / border-radius;
+   the previous gradient "box" was invented and does not exist in the reference. */
 .wayInnerGrid {
   grid-column-gap: 22px;
   grid-row-gap: 22px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   place-items: start;
-  margin-top: 40px;
-  padding: 20px;
-  background: linear-gradient(180deg, transparent 0%, rgba(33, 207, 255, 0.06) 100%);
-  border-radius: 16px;
+  margin-top: 30px;
   display: grid;
 }
 
@@ -138,11 +139,16 @@
   padding: 10px 12px;
 }
 
+/* Webflow .way-inn-in.drop-shadow (CSS:17326) + embedded <style> (index.html:2060)
+   adds position:relative + z-index:3 so the stacked-card pseudo-elements anchor and
+   the bubble sits above its faint peek cards. */
 .wayInnInDropShadow {
   background-color: #fff;
   border-radius: 13px;
   padding: 14px 18px;
   box-shadow: 0 14px 30px #0000001f;
+  position: relative;
+  z-index: 3;
 }
 
 .wayInnInDropShadowMarginTop {
@@ -151,6 +157,54 @@
   margin-top: 40px;
   padding: 14px 18px;
   box-shadow: 0 14px 30px #0000001f;
+  position: relative;
+  z-index: 3;
+}
+
+/* Webflow embedded <style> (index.html:2064-2087): two faint white cards peek out
+   below each Traditional-Way bubble (12px @ 0.7 opacity, then 24px @ 0.5 opacity
+   with wider insets) — the signature stacked-card cascade. */
+.wayInnInDropShadow::before,
+.wayInnInDropShadowMarginTop::before {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 20px;
+  right: 20px;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.wayInnInDropShadow::after,
+.wayInnInDropShadowMarginTop::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 40px;
+  right: 40px;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  z-index: -2;
+  opacity: 0.5;
+}
+
+/* Webflow embedded <style> (index.html:2204-2215): chat cards (.way-inn-in) and
+   Boldteq-Way bubbles (.desc-block) lift 4px on hover with a 0.7s ease transition. */
+.wayInnInDropShadow,
+.wayInnInDropShadowMarginTop,
+.descBlock {
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+
+.wayInnInDropShadow:hover,
+.wayInnInDropShadowMarginTop:hover,
+.descBlock:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* paragraph text-left small-text */
@@ -200,17 +254,22 @@
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0;
   line-height: 14px;
 }
 
+/* Webflow .way-inner-grid-col2 (CSS:17389) — flex column, margin-top 30px.
+   The element ALSO carries the .w-layout-grid utility (CSS:45) whose grid-row-gap:16px
+   still applies as the flex row-gap once display switches to flex — giving the 16px
+   vertical spacing between the three Boldteq-Way chat bubbles. (.way-inner-grid-col2
+   itself declares no gap, so this 16px is what produces the inter-bubble spacing.) */
 .wayInnerGridCol2 {
   flex-flow: column;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
-  margin-top: 30px;
   row-gap: 16px;
+  margin-top: 30px;
   display: flex;
 }
 
@@ -267,7 +326,9 @@
   align-items: center;
   padding: 14px 18px;
   display: flex;
-  box-shadow: var(--shadow-card);
+  /* Webflow embedded <style> (index.html:2204) overrides .desc-block's base shadow
+     with this softer layered shadow (wins over the linked stylesheet by source order). */
+  box-shadow: 0 2px 6px -2px rgba(15, 23, 42, 0.06), 0 12px 32px -12px rgba(15, 23, 42, 0.12);
 }
 
 @media screen and (min-width: 1280px) {
@@ -286,6 +347,15 @@
   .waysSec {
     padding-left: 2%;
     padding-right: 2%;
+  }
+
+  /* Webflow .heading-2.margin-bottom-24px.heading-left.margin-top-0 @991 (CSS:24586)
+     → font-size 32px. Because this selector is (0,4,0), it out-specifies the
+     @767 (35px) and @479 (23px) .heading-2.margin-bottom-24px (0,2,0) rules, so 32px
+     persists all the way down to mobile. text-align stays left and margin-bottom stays
+     20px for the same specificity reason. */
+  .heading2 {
+    font-size: 32px;
   }
 
   .wayInnerGrid {
@@ -308,17 +378,13 @@
 }
 
 @media screen and (max-width: 767px) {
+  /* Webflow .ways-grid @767 (CSS:28649) stacks the two columns vertically. */
   .waysGrid {
     flex-flow: column;
     display: flex;
   }
-
-  /* Webflow line 27073: heading-2 at 767px → 34px */
-  .heading2 {
-    font-size: 34px;
-    line-height: 45px;
-    margin-bottom: 16px;
-  }
+  /* No .heading2 override at 767: the @991 32px (0,4,0) wins over Webflow's
+     @767 .heading-2.margin-bottom-24px 35px (0,2,0), so the heading stays 32px. */
 }
 
 @media screen and (max-width: 479px) {
@@ -332,11 +398,11 @@
     margin-top: 0;
   }
 
-  /* Webflow line 29632: heading-2 at 479px → 21px/28px */
+  /* Webflow @479: only line-height drops to 28px. font-size stays 32px (the @991
+     0,4,0 rule beats @479's 0,2,0 23px), and text-align stays left / margin-bottom
+     stays 20px (the .heading-left and .margin-top-0 rules out-specify @479's center/10px). */
   .heading2 {
-    font-size: 21px;
     line-height: 28px;
-    margin-bottom: 10px;
   }
 
   /* Webflow line 31621: .gray-bg at 479px → padding-bottom: 60px; padding-left/right: 20px */
