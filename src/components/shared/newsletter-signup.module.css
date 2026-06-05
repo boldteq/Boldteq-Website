@@ -1,8 +1,9 @@
-/* Badge pill text */
+/* Badge pill text — Webflow .paragraph.text-left.margin-bottom-0.small-font:
+   14px / line-height 24px (weight 500 comes from the .faqSkyText strong). */
 .badgePillText {
   margin: 0;
-  font-size: 12px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 /* .footer-newsletter-card — webflow.css line 3295 */
@@ -53,6 +54,9 @@
   padding: 0 13px;
   line-height: 14px;
   display: flex;
+  /* Center icon + text; without this the flex default (stretch) distorts the
+     sparkle img to the 24px text line height. */
+  align-items: center;
 }
 
 .faqSkyText {
@@ -65,12 +69,14 @@
   font-weight: 500;
 }
 
-/* .heading-2.left.news-heading */
+/* .heading-2.left.news-heading — Webflow .heading-2.left forces 32px / weight 700;
+   line-height 40px comes from base .heading-2; .news-heading adds margin-bottom 15px. */
 .newsHeading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 40px;
-  line-height: 45px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
   text-align: left;
   margin-bottom: 15px;
   margin-top: 0;
@@ -86,7 +92,8 @@
   color: #c0dbff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  /* Webflow .paragraph-small-4.text-color-gray-600 → weight 400 (not 500). */
+  font-weight: 400;
   margin-bottom: 0;
   line-height: 24px;
 }
@@ -212,7 +219,11 @@
   color: #b5d3f582;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 400;
+  /* Webflow .news-btm-para is weight 400; bumped one step to 500 (Medium) per
+     design preference for a more legible privacy line. */
+  font-weight: 500;
+  /* Webflow sets no size → inherits the 14px Webflow body size. */
+  font-size: 14px;
 }
 
 /* @media (min-width: 1280px) — webflow.css line 22113 */
@@ -261,6 +272,13 @@
   }
 
   .newsSubheadOut {
+    margin-bottom: 0;
+  }
+
+  /* Webflow @479: .heading-2.left.news-heading → 22px / 30px / mb 0. */
+  .newsHeading {
+    font-size: 22px;
+    line-height: 30px;
     margin-bottom: 0;
   }
 

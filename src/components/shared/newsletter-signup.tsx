@@ -33,12 +33,13 @@ export function NewsletterSignup() {
       <div className={styles["footerNewsletterTitle"]}>
         <div className={styles["newsSubheadOut"]}>
           <div className={styles["newsubott"]}>
+            {/* Webflow renders the sparkle bare at its intrinsic 17×16. */}
             <Image
               src="/images/webflow/Layer_1-57.svg"
               alt=""
               aria-hidden="true"
-              width={18}
-              height={18}
+              width={17}
+              height={16}
             />
             <p className={styles["badgePillText"]}>
               <strong className={styles["faqSkyText"]}>
@@ -117,12 +118,13 @@ export function NewsletterSignup() {
       </div>
 
       <div className={styles["newsletterBtmLine"]}>
+        {/* Vector-24.svg intrinsic is 16×18; Webflow renders it bare. */}
         <Image
           src="/images/webflow/Vector-24.svg"
           alt=""
           aria-hidden="true"
           width={16}
-          height={16}
+          height={18}
           className={styles["shieldIcon"]}
         />
         <p className={styles["newsBtmPara"]}>

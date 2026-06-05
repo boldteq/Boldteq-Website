@@ -28,10 +28,15 @@
   padding-right: 0%;
 }
 
-/* Webflow: .column-4x-large — flex column, gap 80px */
+/* Webflow: .column-4x-large — flex column. In Webflow this column wraps ONLY the
+   w-slider (its nav is display:none INSIDE the slider), so the 80px row-gap is never
+   visible. Here the dot-nav is a flow sibling of the slider, so the 80px row-gap was
+   opening a large empty gap between the cards and the dots. row-gap tightened to 16px
+   (it only affects slider↔dots; the cards live inside the Embla track and are
+   unaffected). column-gap (cross-axis, inert in a column flex) kept at the Webflow 80px. */
 .column-4x-large {
   grid-column-gap: 80px;
-  grid-row-gap: 80px;
+  grid-row-gap: 16px;
   flex-flow: column;
   display: flex;
 }
@@ -451,7 +456,7 @@
 
   .column-4x-large {
     grid-column-gap: 64px;
-    grid-row-gap: 64px;
+    grid-row-gap: 16px;
   }
 
   .gallery-13-slide {
@@ -477,7 +482,7 @@
 @media screen and (max-width: 767px) {
   .column-4x-large {
     grid-column-gap: 40px;
-    grid-row-gap: 40px;
+    grid-row-gap: 16px;
   }
 
   .gallery-13-slide {

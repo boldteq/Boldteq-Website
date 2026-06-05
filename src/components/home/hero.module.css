@@ -452,6 +452,11 @@
   .ban-grid.margin-bottom-0 {
     grid-template-columns: 1fr .65fr .75fr;
     max-width: 650px;
+    /* The media-query `.ban-grid { margin-bottom: 50px }` above re-introduces the
+       margin and defeats the base `.margin-bottom-0` (the class applied expressly
+       to remove it). Re-assert 0 here (0,2,0 specificity) so the badges→video gap
+       stays a consistent 50px across breakpoints, not 100px at >=1280. */
+    margin-bottom: 0;
   }
 
   .p-base-place-copy {
@@ -532,6 +537,8 @@
   .ban-grid.margin-bottom-0 {
     grid-template-columns: 1fr .65fr .75fr;
     max-width: 640px;
+    /* Re-assert 0 (see @min-1280 note) so the badges→video gap is a consistent 50px. */
+    margin-bottom: 0;
   }
 
   .p-base-place-copy {

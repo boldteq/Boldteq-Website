@@ -31,42 +31,11 @@
   margin-top: 0;
 }
 
-@media screen and (min-width: 1280px) {
-  .faqSingleGrid {
-    max-width: 590px;
-  }
-
-  .fqOuterGrid {
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-  /* Webflow line 22097: .faq-title-wrapper @ min-1280 { padding-right: 0 } */
-  .faqTitleWrapper {
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .faqSingleGrid {
-    max-width: none;
-  }
-
-  .fqOuterGrid {
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-  }
-
-  /* Webflow line 23630: .contact-icon-primary @ min-1440 — border-style: none */
-  .contactIconPrimary {
-    border-style: none;
-    border-radius: 10px;
-    width: 36px;
-    height: 36px;
-  }
-}
+/* NOTE: the @min-1280 / @min-1440 overrides for this section live at the END of this
+   file. In CSS Modules, media queries MUST come AFTER the base rules — otherwise a
+   later base rule defeats the media-query value at equal specificity. That bug was
+   live here: base .fqOuterGrid{gap:30px} (declared below) was overriding the @min-1280
+   .fqOuterGrid{gap:50px} placed up here, so the desktop gap stayed 30px. */
 
 .containerLarge3 {
   width: 100%;
@@ -98,7 +67,9 @@
   /* Webflow line 18905: border: 1px solid #05bafe (NOT --color-brand-cyan #21cfff) */
   border: 1px solid #05bafe;
   border-radius: 20px;
-  margin-bottom: 10px;
+  /* Standardized badge→heading gap = 16px (with heading margin-top zeroed below,
+     this yields a clean 16px to match the other section headers; was 10px+13px=23px). */
+  margin-bottom: 16px;
   padding: 0 13px;
 }
 
@@ -119,8 +90,12 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   line-height: 40px;
-  margin-top: 13px;
-  margin-bottom: 12px;
+  /* margin-top zeroed so the badge→heading gap = the badge's 16px alone (was 13px,
+     which combined with the badge to make an inconsistent 23px). */
+  margin-top: 0;
+  /* Standardized to 20px to match the other content-section heading→subtitle gaps
+     (Webflow's .heading-2.faq-heading = 12px, unified to 20px per design decision). */
+  margin-bottom: 20px;
   text-align: left;
 }
 
@@ -442,7 +417,7 @@
   }
 
   .faqSubott {
-    margin-bottom: 0;
+    margin-bottom: 16px;
   }
 
   .faqWrapperLarge {
@@ -453,5 +428,55 @@
 
   .faqTab {
     padding-right: 24px;
+  }
+}
+
+/* ============================================================
+   @media (min-width: 1280px) — placed AFTER the base rules so these win
+   (see note near the top of this file).
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  /* Webflow .faq-single-grid @min-1280 (css:22799) → max-width 590px. */
+  .faqSingleGrid {
+    max-width: 590px;
+  }
+  /* Webflow .fq-outer-grid @min-1280 (css:22966) → 50px gaps. */
+  .fqOuterGrid {
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  /* Webflow .faq-title-wrapper @min-1280 (css:22097) → padding-right 0. */
+  .faqTitleWrapper {
+    padding-right: 0;
+  }
+  /* Webflow .row-small.with-border @min-1280 (css:22249) → 10px gaps, 15px side padding. */
+  .rowSmallWithBorder {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* ============================================================
+   @media (min-width: 1440px)
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  /* Webflow .faq-single-grid @min-1440 (css:24150) → max-width none. */
+  .faqSingleGrid {
+    max-width: none;
+  }
+  .fqOuterGrid {
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+  }
+  /* Webflow .contact-icon-primary @min-1440 (css:23630) → border-style none. */
+  .contactIconPrimary {
+    border-style: none;
+    border-radius: 10px;
+    width: 36px;
+    height: 36px;
   }
 }

@@ -278,12 +278,16 @@
     font-family: var(--font-roobert), Arial, sans-serif;
     font-size: 14px;
     line-height: 20px;
-    font-weight: 500;
+    /* Webflow's body is weight 400 with the browser-default font-smoothing (auto =
+       subpixel AA), which renders text heavier. We previously forced 500 + grayscale
+       antialiasing, which made our text look THINNER than Webflow at the same weight.
+       Match Webflow: weight 400, and do NOT override font-smoothing (let it be `auto`).
+       NOTE: the Tailwind `antialiased` class was also removed from <html> in layout.tsx,
+       otherwise it would re-apply grayscale smoothing here via inheritance. */
+    font-weight: 400;
     color: #333;
     margin: 0;
     min-height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   h2 {

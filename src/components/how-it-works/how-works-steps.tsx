@@ -46,8 +46,10 @@ export function HowWorksSteps() {
           How White Label Web Development Works
         </h2>
 
+        {/* Webflow hard-breaks after "simple requests," for two balanced lines. */}
         <p className={styles["subtitle"]}>
-          A structured execution system built for agencies — simple requests,
+          A structured execution system built for agencies — simple requests,{" "}
+          <br />
           predictable delivery, and full white-label support.
         </p>
 

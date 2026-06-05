@@ -40,13 +40,15 @@
 
 /* .heading-2.demo-sec-heading (40px navy) */
 .heading {
-  color: var(--color-brand-navy);
+  /* Webflow .heading-2 color is var(--blue) = #082753. */
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
   margin-top: 0;
-  margin-bottom: 16px;
+  /* Webflow h2 keeps its default 10px margin-bottom → 10px heading→subtitle gap. */
+  margin-bottom: 10px;
 }
 
 .subtitle {
@@ -54,9 +56,13 @@
   text-align: center;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  /* Webflow .paragraph is weight 400, not 500. */
+  font-weight: 400;
   line-height: 28px;
-  margin: 0;
+  /* Webflow .paragraph.text-center is capped at 600px (not the 680px header width),
+     so the line wraps after "agency" into two balanced lines. */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Cards grid (.how-works-gridboxes) — 3 col, 20px gap */
@@ -103,7 +109,8 @@
   text-align: left;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  /* Webflow .paragraph is weight 400, not 500. */
+  font-weight: 400;
   line-height: 28px;
   margin: 0;
 }

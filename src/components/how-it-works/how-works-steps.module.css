@@ -46,7 +46,8 @@
   background-color: rgba(33, 207, 255, 0.07);
   border: 1px solid #05bafe;
   border-radius: 20px;
-  margin-bottom: 17px;
+  /* Webflow badge→heading gap is 20px (badge mb 0 + h2 default margin-top). */
+  margin-bottom: 20px;
   padding: 0 13px;
   line-height: 14px;
   display: inline-flex;
@@ -59,9 +60,11 @@
 
 .badgeText {
   margin: 0;
-  font-size: 12px;
+  /* Webflow .paragraph.small-font 14px / lh 24px; .faq-sky-text strong weight 500. */
+  font-size: 14px;
+  line-height: 24px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #05bafe;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -78,7 +81,8 @@
   text-align: center;
   line-height: 45px;
   margin-top: 0;
-  margin-bottom: 24px;
+  /* Webflow .heading-2.margin-bottom-24px is actually 20px. */
+  margin-bottom: 20px;
 }
 
 /* Subtitle (.paragraph.white.opacity) */
@@ -127,7 +131,9 @@
 }
 
 .textWrapper {
-  margin-bottom: 20px;
+  /* Webflow .text-wrapper has no margin-bottom; the card's space-between handles
+     the gap to the image. The extra 20px pushed the image down vs Webflow. */
+  margin-bottom: 0;
 }
 
 /* .subheading-large.white */

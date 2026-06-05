@@ -40,7 +40,8 @@
 
 /* .heading-2.margin-top-0 — 40px navy, line-height 45px */
 .heading {
-  color: var(--color-brand-blue, #019ae6);
+  /* Webflow .heading-2 color is var(--blue) = #082753 (navy), NOT bright blue. */
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
@@ -58,7 +59,8 @@
   font-weight: 400;
   line-height: 28px;
   text-align: center;
-  max-width: 640px;
+  /* Webflow .paragraph.text-center max-width is 600px. */
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -67,8 +69,9 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  /* Webflow .mission-sec22-gridboxes inherits .w-layout-grid's 16px gaps. */
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
 }
 
 /* .webdev-sec6-grid-inner — white card, 22px padding, 20px radius, dropshadow */
@@ -143,7 +146,7 @@
   }
 
   .grid {
-    gap: 20px;
+    gap: 16px;
   }
 }
 

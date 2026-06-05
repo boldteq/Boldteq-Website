@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from '@/components/primitives/button';
+import Link from "next/link";
 import styles from "./how-works-hero.module.css";
 
 const STAT_BADGES = [
@@ -36,9 +36,11 @@ export function HowWorksHero() {
           {/* Heading */}
           <h1 className={styles["heading"]}>How Boldteq Works</h1>
 
-          {/* Subtitle */}
+          {/* Subtitle — Webflow hard-breaks the line after "agency" with a <br>,
+              giving two balanced lines instead of letting it wrap naturally. */}
           <p className={styles["subtitle"]}>
-            A simple, structured white-label delivery process built for agency
+            A simple, structured white-label delivery process built for agency{" "}
+            <br />
             workflows from request to client-ready delivery.
           </p>
 
@@ -78,12 +80,12 @@ export function HowWorksHero() {
 
           {/* CTA buttons */}
           <div className={styles["ctaRow"]}>
-            <Button href="/pricing" variant="primary" size="md">
+            <Link href="/pricing" className={styles["seePlansBtn"]}>
               See Plans
-            </Button>
-            <Button href="/book-a-demo" variant="secondary" size="md">
+            </Link>
+            <Link href="/book-a-demo" className={styles["bookDemoBtn"]}>
               Book a Demo
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

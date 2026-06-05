@@ -89,13 +89,15 @@ function FooterNewsletter() {
         {/* "Join 500+ Subscribers" pill */}
         <div className={styles['news-subhead-out']}>
           <div className={styles['newsubott']}>
+            {/* Webflow renders this sparkle bare at its intrinsic 17×16. The
+                .icon-regular class (24×24) was overriding the width/height and
+                oversizing/distorting it — removed so it matches Webflow. */}
             <Image
               src="/images/webflow/Layer_1-57.svg"
               alt=""
               aria-hidden="true"
-              width={14}
-              height={14}
-              className={styles['icon-regular']}
+              width={17}
+              height={16}
             />
             <p className={styles['news-pill-text']}>
               <strong className={styles['news-pill-highlight']}>Join 500+ Subscribers</strong>
@@ -161,12 +163,13 @@ function FooterNewsletter() {
 
       {/* Privacy line */}
       <div className={styles['newsletter-btm-line']}>
+        {/* Vector-24.svg intrinsic is 16×18; Webflow renders it bare. */}
         <Image
           src="/images/webflow/Vector-24.svg"
           alt=""
           aria-hidden="true"
-          width={14}
-          height={14}
+          width={16}
+          height={18}
           className={styles['shield-icon']}
         />
         <p className={styles['news-btm-para']}>

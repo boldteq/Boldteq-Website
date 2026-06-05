@@ -50,7 +50,8 @@
   /* Webflow line 19920: border: 1px solid #05bafe (NOT --color-brand-cyan #21cfff) */
   border: 1px solid #05bafe;
   border-radius: 20px;
-  margin-bottom: 0;
+  /* Standardized badge→heading gap = 16px across all section headers. */
+  margin-bottom: 16px;
   padding: 0 13px;
   line-height: 14px;
 }
@@ -278,9 +279,9 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  /* Webflow line 26812: .how-work-badge @ max-991 — margin-bottom 20px */
+  /* Standardized badge→heading gap = 16px (was Webflow 20px @max-991). */
   .howWorkBadge {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   /* Webflow line 24649: .full-width-image @ max-991 — grid-template-columns 1fr 1fr */
@@ -372,9 +373,9 @@
     padding: 24px 18px;
   }
 
-  /* Webflow line 32226: .how-work-badge @ max-479 — margin-bottom 15px */
+  /* Standardized badge→heading gap = 16px (was Webflow 15px @max-479). */
   .howWorkBadge {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
 
   /* Webflow line 29805: .full-width-image @ max-479 — grid-template-columns 1fr */

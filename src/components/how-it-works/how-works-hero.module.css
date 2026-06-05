@@ -69,21 +69,24 @@
 .badgeText {
   margin: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
+  /* Webflow: .paragraph.text-left.small-font → 14px / line-height 24px;
+     the .faq-sky-text strong carries the gradient at weight 500 (not 12px/700). */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 /* Heading (.web-ban-title.mob-margin-less) */
 .heading {
   color: #092245;
   margin-top: 0;
-  margin-bottom: 0;
+  /* Webflow's .web-ban-title doesn't reset margin-bottom, so the h1 keeps its
+     default 10px — that's the heading→subtitle gap. We had wrongly zeroed it. */
+  margin-bottom: 10px;
   padding: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
@@ -192,8 +195,62 @@
   flex-wrap: wrap;
 }
 
-/* CTA buttons rendered via <Button> primitive (variant primary = .a-gulf-book,
-   variant secondary = .navy-arrow-btn). No bespoke button styling needed here. */
+/* See Plans CTA — Webflow .a-gulf-book: cyan-gradient rounded-rect (NOT a pill),
+   with the boxed ↗ icon (Group-46729-2.svg) as a right-aligned background image
+   and 3rem right padding to clear it. (The shared <Button> pill didn't match.) */
+.seePlansBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, background-image 0.2s;
+}
+
+.seePlansBtn:hover {
+  background-color: #092245;
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+}
+
+/* Book a Demo CTA — Webflow .navy-arrow-btn: navy-filled rounded-rect with the
+   boxed ↗ icon (Group-46729-1.svg); 1.25rem left margin is the gap to See Plans. */
+.bookDemoBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  background-color: #082753;
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  border-radius: 0.75rem;
+  margin-left: 1.25rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.bookDemoBtn:hover {
+  color: #082753;
+  background-color: #21cfff21;
+}
 
 /* ============================================================
    max-width: 991px (tablet)
@@ -302,8 +359,21 @@
     line-height: 16px;
   }
 
+  /* Webflow @479: .div-job-attention column, 16px gap; buttons full-width, 1.1rem. */
   .ctaRow {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 16px;
+  }
+
+  .seePlansBtn,
+  .bookDemoBtn {
+    width: 100%;
+    margin-left: 0;
+    font-size: 1.1rem;
+    background-size: 29px 29px, auto;
+  }
+
+  .bookDemoBtn {
+    background-size: 29px 29px;
   }
 }

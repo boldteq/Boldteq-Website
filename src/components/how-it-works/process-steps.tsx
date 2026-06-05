@@ -10,7 +10,7 @@ const STEPS = [
   {
     number: "2.",
     title: "Submit Requests",
-    text: "Send tasks through our request system with clear instructions, references, and priorities. Everything stays organized — no long email threads.",
+    text: "Send tasks through our request system with clear instructions, references, and priorities. Everything stays organized no long email threads.",
   },
   {
     number: "3.",

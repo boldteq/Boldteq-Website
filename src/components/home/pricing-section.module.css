@@ -61,7 +61,8 @@
   background-color: #21cfff12;
   border: 1px solid #05bafe;
   border-radius: 20px;
-  margin-bottom: 17px;
+  /* Standardized badge→heading gap = 16px across all section headers (was 17px). */
+  margin-bottom: 16px;
   padding: 0 13px;
   line-height: 14px;
 }
@@ -85,7 +86,10 @@
   text-align: center;
   line-height: 45px;
   margin-top: 0;
-  margin-bottom: 10px;
+  /* Standardized to 20px to match the other content-section heading→subtitle gaps
+     (Webflow's pricing heading is .heading-2.margin-top-0 = 10px, but per design
+     decision the section headers are unified at 20px). */
+  margin-bottom: 20px;
 }
 
 /* Pricing-page hero: larger h1 (Webflow .heading-2.pricing-ban-title — 40px / 1.25) */

@@ -60,7 +60,8 @@
 
 /* .heading-2.how-work-sec3-heading — 40px navy, text-left, max-width 450px */
 .heading {
-  color: var(--color-brand-navy);
+  /* Webflow .heading-2 color is var(--blue) = #082753. */
+  color: #082753;
   text-align: left;
   max-width: 450px;
   margin-top: 0;
@@ -75,6 +76,9 @@
 .headerRight {
   width: 100%;
   max-width: 540px;
+  /* Webflow right-aligns this subtitle+button block flush to the container's right
+     edge (starts at ~x820), not at the left of the right column. */
+  justify-self: end;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -105,7 +109,7 @@
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
-  border: 2px solid transparent;
+  /* Webflow .a-gulf-book has no border (the 2px added 4px vs Webflow's 166×52). */
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
@@ -114,7 +118,14 @@
   text-decoration: none;
   display: inline-flex;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, background-image 0.2s;
+}
+
+/* Webflow .a-gulf-book:hover — drop the gradient so the #092245 bg shows, icon stays. */
+.demoLink:hover {
+  background-color: #092245;
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
 }
 
 .demoLink:hover {
@@ -191,7 +202,8 @@
   display: flex;
   position: static;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 22px;
+  /* Webflow .sky-digit renders the number at 32px (inherits h2 size). */
+  font-size: 32px;
   font-weight: 700;
   line-height: 1;
 }
@@ -230,6 +242,12 @@
   .headerRight {
     max-width: 540px;
   }
+
+  /* Webflow .sky-digit grows to 67px at ≥1280 (65px base). */
+  .number {
+    width: 67px;
+    height: 67px;
+  }
 }
 
 /* ============================================================
@@ -238,6 +256,12 @@
 @media screen and (min-width: 1440px) {
   .headerRight {
     max-width: 540px;
+  }
+
+  /* Webflow .sky-digit grows to 69px at ≥1440. */
+  .number {
+    width: 69px;
+    height: 69px;
   }
 }
 

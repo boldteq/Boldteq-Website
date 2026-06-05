@@ -111,12 +111,17 @@
 .navbar.sticky {
   margin: 0 auto;
   position: fixed;
-  top: 0;
+  /* The Webflow export floats the sticky bar 10px below the top via
+     transform:translateY(10px). A transform on the same element disables its own
+     backdrop-filter in Chromium, so we recreate that 10px gap with `top: 10px`
+     instead — keeping the navbar transform-free so the frosted blur still composites. */
+  top: 10px;
   left: auto;
   right: auto;
   width: 96%;
   z-index: 999999;
   border: 1px solid rgba(255, 255, 255, 0.8);
+  /* Frosted glass — exact live boldteq.com values (DevTools-verified). */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   background-color: rgba(255, 255, 255, 0.8);
@@ -124,7 +129,6 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px -4px;
   opacity: 1;
   padding: 6px 1%;
-  transform: translateY(10px);
 }
 
 /* Webflow custom code @max-480: full-bleed sticky bar — no radius, no slide-down,
@@ -135,8 +139,6 @@
     width: 100%;
     border-radius: 0;
     padding: 6px 3.5%;
-    transform: translateY(0);
-    transition: transform 0.5s ease, background-color 0.5s ease;
   }
 }
 
@@ -306,9 +308,8 @@
   transition: transform 0.2s ease;
 }
 
-.nav-dropdown-arrow.open {
-  transform: rotate(180deg);
-}
+/* Webflow keeps the Solutions arrow pointing DOWN when open — it does NOT flip the
+   chevron (unlike a typical dropdown). So no .nav-dropdown-arrow.open rotation. */
 
 /* ─── Dropdown list ──────────────────────────────────────────────────────────── */
 
@@ -420,9 +421,11 @@
 }
 
 .nav-dropdown-link-2.disabled {
+  /* Webflow .nav-dropdown-link-2.disabled disables clicks only — NO opacity fade.
+     Disabled items keep full-color gradient icons, navy headings and solid-blue
+     "Coming Soon" badges; the badge alone signals they're not yet available. */
   pointer-events: none;
-  cursor: default;
-  opacity: 0.6;
+  cursor: pointer;
 }
 
 .nav-dropdown-icon {
@@ -434,6 +437,12 @@
   padding: 2px;
   display: flex;
 }
+
+/* IMPORTANT: do NOT add `.nav-dropdown-icon svg { flex: none }`.
+   Webflow lets the 28×28 SVG flex-shrink to the 20px content width (a 20×28 element);
+   its default preserveAspectRatio ("xMidYMid meet") then scales the 28×28 artwork to
+   fit → a centered 20×20 visible icon. Forcing flex:none rendered a too-large 28×28
+   icon that didn't match Webflow's smaller, lighter icons. */
 
 /* ─── "Can't find" block inside solutions dropdown ───────────────────────────── */
 
@@ -637,6 +646,9 @@
   color: #2b2b2b;
   font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 12px;
+  /* Webflow .paragraph-small-16 inherits the 400 body weight; our global body is 500,
+     so set it explicitly here to match Webflow's regular-weight description text. */
+  font-weight: 400;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -652,7 +664,8 @@
   color: #fff;
   width: auto;
   font-family: 'Roobert PRO', Arial, sans-serif;
-  font-size: 14px;
+  /* Webflow .sky-button: font-size var(--button-text) = 1rem, weight 700. */
+  font-size: 1rem;
   text-align: center;
   background-color: #082753;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -660,8 +673,9 @@
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  padding: 0.75rem 1.25rem;
+  /* Webflow applies .sky-button.padding-less here: margin-top 7px, vertical padding .6rem. */
+  margin-top: 7px;
+  padding: 0.6rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
@@ -1063,13 +1077,13 @@
     position: static;
   }
 
-  /* Mobile sticky — full width, no border-radius */
+  /* Mobile sticky — full width, no border-radius. No transform (even translateY(0)
+     creates a compositing layer that disables the backdrop-filter blur). */
   .navbar.sticky {
     top: 0;
     border-radius: 0;
     padding: 10px 5%;
     width: 100%;
-    transform: translateY(0);
   }
 
   .nav-23-menu-button {

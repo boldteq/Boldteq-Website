@@ -296,6 +296,20 @@
 }
 
 /* ============================================================
+   @media (min-width: 1280px)
+     Webflow .heading-grid-small.margin-bottom-0 @1280 (css:21992-21994):
+       grid-template-columns: 1.25fr .4fr; padding-left/right: 20px.
+     (Base is 1.25fr .25fr / 30px; @1440 doesn't re-declare columns, so .4fr carries up.)
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .inner {
+    grid-template-columns: 1.25fr 0.4fr;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ============================================================
    @media (min-width: 1440px)
      .container-large-3 → max-width: 1320px  (L23376)
    ============================================================ */

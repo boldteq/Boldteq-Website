@@ -1,24 +1,33 @@
 import Image from "next/image";
 import styles from "./risk-removal.module.css";
 
+// Icon w/h = each SVG's intrinsic size; Webflow renders .web6-icon bare (no CSS size).
 const CARDS = [
   {
     icon: "/images/webflow/Layer_1-30.svg",
+    w: 45,
+    h: 45,
     title: "White-Label by Default",
     text: "Every deliverable is produced under your brand. We remain fully invisible and never communicate with your clients \u2014 your agency stays front and center.",
   },
   {
     icon: "/images/webflow/Layer_1-20.svg",
+    w: 46,
+    h: 46,
     title: "Dedicated Team",
     text: "You work with a consistent delivery team that understands your workflow, standards, and expectations \u2014 not rotating or anonymous freelancers.",
   },
   {
     icon: "/images/webflow/Layer_1-10.svg",
+    w: 46,
+    h: 46,
     title: "Predictable Turnaround",
     text: "Clear turnaround timelines are defined based on task scope and your selected plan, so you always know what\u2019s coming and when.",
   },
   {
     icon: "/images/webflow/Layer_1-32.svg",
+    w: 45,
+    h: 45,
     title: "Quality Control",
     text: "Each task goes through internal quality checks to ensure accuracy, consistency, and client-ready output before delivery.",
   },
@@ -45,8 +54,8 @@ export function RiskRemoval() {
               <Image
                 src={card.icon}
                 alt={`${card.title} icon`}
-                width={36}
-                height={36}
+                width={card.w}
+                height={card.h}
                 className={styles.cardIcon}
               />
               <h3 className={styles.cardTitle}>{card.title}</h3>
