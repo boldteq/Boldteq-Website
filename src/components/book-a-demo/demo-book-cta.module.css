@@ -59,7 +59,7 @@
 .para {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   line-height: 28px;
   margin: 0;
 }
@@ -125,7 +125,7 @@
 .learnLabel {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   line-height: 28px;
   margin: 8px 0 0;
 }

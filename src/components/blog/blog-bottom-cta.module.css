@@ -8,8 +8,6 @@
   padding: 0 5% 80px;
   position: relative;
   background-color: transparent;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -156,19 +154,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-text-primary);
-  color: var(--color-surface);
+  color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
+  line-height: 1.75rem;
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  border: 2px solid transparent;
   border-radius: 0.75rem;
-  padding: 0.6rem 1.25rem;
+  padding: 10px 3.3rem 10px 1rem;
   text-decoration: none;
   margin-top: 5px;
+  box-shadow: var(--shadow-card);
 }
 
 .cardBtn:hover {
-  background-color: var(--color-brand-navy);
+  background-color: #092245;
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 @media (max-width: 991px) {
   .section {

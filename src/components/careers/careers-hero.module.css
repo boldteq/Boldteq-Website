@@ -7,8 +7,8 @@
 /* career-page-banner */
 .section {
   background-color: transparent;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
   font-weight: 500;
   text-decoration: none;
   overflow: hidden;
@@ -22,7 +22,7 @@
 /* div-stuck-swept (max-width 80rem container) */
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
@@ -104,7 +104,7 @@
   padding-right: 1.5rem;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 28px;
   text-decoration: none;
   margin-bottom: 30px;
@@ -245,9 +245,6 @@
   .galleryCard2 {
     margin-top: 50px;
   }
-  .container {
-    max-width: 728px;
-  }
 }
 
 /* ============================================================
@@ -327,6 +324,12 @@
   }
   .container {
     margin-bottom: 0;
-    max-width: none;
 }
+}
+
+/* Widen to 1320px on large desktop — matches site-wide container */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
 }

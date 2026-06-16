@@ -6,8 +6,6 @@
   background-color: transparent;
   padding: 70px 5% 70px;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -16,7 +14,7 @@
 
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   margin: 15px auto 80px;
@@ -106,9 +104,9 @@
 .cardTitle {
   color: var(--color-brand-navy);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 34px;
   margin-bottom: 12px;
 }
 
@@ -124,13 +122,23 @@
 .cardCta {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 0.9375rem;
+  font-size: 16px;
   font-weight: 700;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  border-radius: 10px;
-  padding: 0.625rem 1.25rem;
+  line-height: 1.75rem;
+  white-space: nowrap;
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 3.3rem 10px 1rem;
   text-decoration: none;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   align-self: flex-start;
   transition: filter 0.2s;
 }
@@ -148,9 +156,6 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
-  .container {
-    max-width: 728px;
-  }
 }
 
 /* ============================================================
@@ -183,6 +188,12 @@
   }
   .container {
     margin-bottom: 0;
-    max-width: none;
 }
+}
+
+/* Widen to 1320px on large desktop — matches site-wide container */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
 }

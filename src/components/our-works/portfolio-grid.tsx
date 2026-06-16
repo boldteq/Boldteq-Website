@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef } from "react";
+import Image from "next/image";
 import {
   PORTFOLIO_ITEMS,
   PORTFOLIO_CATEGORIES,
@@ -10,18 +11,19 @@ import { PortfolioCard } from "./portfolio-card";
 import { PortfolioPopup } from "./portfolio-popup";
 import styles from "./portfolio-grid.module.css";
 
-type SortOption = "name-asc" | "name-desc";
 const ITEMS_PER_PAGE = 8;
 
 export function PortfolioGrid() {
   const [activeCategories, setActiveCategories] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [sort] = useState<SortOption>("name-asc");
   const [currentPage, setCurrentPage] = useState(1);
   const [popupItem, setPopupItem] = useState<PortfolioItem | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
+  // Preserve the curated CMS order (PORTFOLIO_ITEMS is already sorted by
+  // `order`); Webflow applies no default sort, so we must not re-sort.
   const filtered = useMemo(() => {
-    const items = PORTFOLIO_ITEMS.filter((item) => {
+    return PORTFOLIO_ITEMS.filter((item) => {
       const matchesCategory =
         activeCategories.length === 0 ||
         activeCategories.includes(item.category);
@@ -32,15 +34,7 @@ export function PortfolioGrid() {
         item.category.toLowerCase().includes(q);
       return matchesCategory && matchesSearch;
     });
-
-    items.sort((a, b) =>
-      sort === "name-asc"
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
-    );
-
-    return items;
-  }, [activeCategories, searchQuery, sort]);
+  }, [activeCategories, searchQuery]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
@@ -69,6 +63,8 @@ export function PortfolioGrid() {
 
   const goToPage = useCallback((page: number) => {
     setCurrentPage(page);
+    // Mirror Webflow's showPage(): scroll the grid back to the top on change.
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   // Build page numbers
@@ -82,7 +78,7 @@ export function PortfolioGrid() {
           {/* ──── Filter Header Bar (search + tags + sort) ──── */}
           <div className={styles.filterHeader}>
             <input
-              type="search"
+              type="text"
               placeholder="Search here..."
               value={searchQuery}
               onChange={(e) => {
@@ -119,8 +115,13 @@ export function PortfolioGrid() {
               )}
             </div>
 
-            {/* Sort dropdown placeholder — occupies the 3rd grid column (auto), hidden visually */}
-            <div aria-hidden="true" />
+            {/* Total Results pill — Webflow .filter-results > .cms-result, 3rd column */}
+            <div className={styles.filterResults}>
+              <div className={styles.cmsResult}>
+                <span className={styles.resultWork}>Total Results:</span>
+                <span className={styles.resultWork}>{filtered.length}</span>
+              </div>
+            </div>
           </div>
 
           {/* ──── Sidebar + Card Grid ──── */}
@@ -177,38 +178,18 @@ export function PortfolioGrid() {
             </aside>
 
             {/* RIGHT CONTENT */}
-            <div>
+            <div ref={gridRef}>
               {filtered.length === 0 ? (
                 <div className={styles.emptyState}>
-                  <div className={styles.emptyIcon} aria-hidden="true">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="48"
-                      height="48"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.25"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="3" y="3" width="7" height="7" rx="1" />
-                      <rect x="14" y="3" width="7" height="7" rx="1" />
-                      <rect x="3" y="14" width="7" height="7" rx="1" />
-                      <rect x="14" y="14" width="7" height="7" rx="1" />
-                    </svg>
-                  </div>
-                  <h3 className={styles.emptyTitle}>No results found.</h3>
-                  <p className={styles.emptyDesc}>
-                    Try a different filter or search term.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={clearAll}
-                    className={styles.emptyBtn}
-                  >
-                    Show all projects
-                  </button>
+                  <Image
+                    src="/images/webflow/Group.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={80}
+                    height={66}
+                    className={styles.emptyIcon}
+                  />
+                  <div className={styles.emptyTitle}>No results found.</div>
                 </div>
               ) : (
                 <>

@@ -1,28 +1,31 @@
 /* ============================================================
-   Button primitive — token-driven, replaces 5 hand-rolled variants
+   Button primitive — Webflow arrow-box button system
+   Canonical Webflow buttons: .a-gulf-book (primary gradient),
+   .navy-arrow-btn (navy), .white-btn (white), .sky-button (gradient, no arrow).
+   All: border-radius .75rem, font 1rem/700, line-height 1.75rem,
+   arrow supplied by Group-46729 background SVG (NOT an inline chevron).
    ============================================================ */
 
 .button {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.75rem;
   text-decoration: none;
   text-align: center;
   white-space: nowrap;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 99px;
-  border: 1px solid #90cbff;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    background-image 0.3s ease, border-color 0.3s ease,
-    opacity 0.3s ease, transform 0.15s ease;
-  padding: 6px;
-  font-size: 14px;
-  line-height: 1.5;
-  background-color: #daecff;
-  color: #18181b;
-  box-shadow: inset 0 1px 2px 2px #fff, 0 1px 1px #25252726;
+  background-repeat: no-repeat;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    background-image 0.2s ease, border-color 0.2s ease,
+    opacity 0.2s ease, transform 0.15s ease;
+  /* default padding leaves room on the right for the background arrow */
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
 }
 
 .button:disabled,
@@ -32,83 +35,100 @@
   pointer-events: none;
 }
 
-/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+/* ─── Sizes (all keep the right gutter for the background arrow) ────────────── */
 .size-sm {
-  padding: 8px 16px;
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  gap: var(--space-2);
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  line-height: 1.5rem;
 }
 
 .size-md {
-  padding: 0.75rem 1.25rem;
-  font-size: 13px;
-  line-height: 1.5;
-  gap: var(--space-2);
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
 }
 
 .size-lg {
-  padding: 16px 32px;
-  font-size: var(--text-md);
-  line-height: 1.6;
-  gap: var(--space-3);
+  padding: 0.9rem 3.25rem 0.9rem 1.5rem;
 }
 
-/* ─── Variant: primary (gradient + arrow icon — replaces .btn-primary / .a-gulf-book)
-   Webflow .btn-primary: bg #111827 + linear-gradient(90deg, #21cfff, #019ae6), border 2px transparent */
+/* ─── Variant: primary — Webflow .a-gulf-book
+   #111827 base + cyan→blue gradient + Group-46729-2 arrow at 93% ────────────── */
 .primary {
-  color: var(--color-text-on-dark);
-  background-color: var(--color-brand-dark);
-  background-image: var(--gradient-brand);
+  color: #fff;
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
   border-color: transparent;
-  box-shadow: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .primary:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
+  background-color: var(--color-brand-navy);
+  opacity: 0.96;
 }
 
-/* ─── Variant: secondary (outlined navy — replaces .button-secondary-large)
-   Webflow .button-secondary-large: color #082753, bg transparent, border 1px solid #082753,
-   border-radius 10px (kept 99px for pill consistency), padding 8px 20px, font 13px/700.
-   Hover: color #fff, bg #082753 */
+/* ─── Variant: navy — Webflow .navy-arrow-btn
+   #082753 bg + Group-46729-1 arrow at 94% + gray border ─────────────────────── */
+.navy {
+  color: #fff;
+  background-color: #082753;
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-color: #9ca3af;
+}
+
+.navy:hover {
+  color: var(--color-brand-cyan);
+  background-color: rgba(33, 207, 255, 0.13);
+  border-color: var(--color-brand-dark);
+}
+
+/* ─── Variant: secondary — navy arrow-box (the canonical site secondary,
+   pairs with a gradient primary on light sections) ──────────────────────────── */
 .secondary {
-  color: var(--color-text-primary);
-  background-color: transparent;
-  border-color: var(--color-text-primary);
-  box-shadow: none;
+  color: #fff;
+  background-color: #082753;
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-color: #9ca3af;
 }
 
 .secondary:hover {
-  color: var(--color-text-on-dark);
-  background-color: var(--color-text-primary);
-}
-
-/* ─── Variant: outline (cyan tinted bg + gray border — replaces .a-except-get) */
-.outline {
-  color: var(--color-brand-dark);
+  color: var(--color-brand-cyan);
   background-color: rgba(33, 207, 255, 0.13);
-  border-color: #9ca3af;
-  box-shadow: none;
-}
-
-.outline:hover {
-  color: var(--color-text-on-dark);
-  background-color: var(--color-brand-navy);
   border-color: var(--color-brand-dark);
-  transform: translateY(-1px);
 }
 
-/* ─── Variant: sky (gradient pill — replaces .sky-button)
-   Webflow .sky-button: color #fff, bg #082753 + gradient(90deg, #21cfff, #019ae6), border 2px transparent
-   Hover: color #082753, bg #fff, no image */
+/* ─── Variant: white — Webflow .white-btn
+   #fff bg + navy text (var(--blue) = #082753) + Group-46729-1 arrow at 94% ───── */
+.white {
+  color: #082753;
+  background-color: #fff;
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-color: #9ca3af;
+}
+
+.white:hover {
+  color: #fff;
+  background-color: var(--color-brand-blue);
+  border-color: var(--color-brand-dark);
+}
+
+/* ─── Variant: sky — Webflow .sky-button (gradient over navy, NO arrow) ──────── */
 .sky {
-  color: var(--color-text-on-dark);
-  background-color: var(--color-text-primary);
-  background-image: var(--gradient-brand);
+  color: #fff;
+  background-color: #082753;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-color: transparent;
-  box-shadow: none;
+  padding-right: 1.25rem;
 }
 
 .sky:hover {
@@ -117,44 +137,52 @@
   color: #082753;
 }
 
-/* ─── Variant: navy (solid navy — replaces .navy-button)
-   Webflow .navy-button: color #fff, bg #082753, border 2px transparent, hover bg #092245 */
-.navy {
+/* ─── Variant: outline — Webflow .a-except-get (light cyan tint + gray border) ── */
+.outline {
+  color: var(--color-brand-dark);
+  background-color: rgba(33, 207, 255, 0.13);
+  background-image: url('/images/webflow/Group-46729-1.svg');
+  background-position: 94%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-color: #9ca3af;
+}
+
+.outline:hover {
   color: var(--color-text-on-dark);
-  background-color: var(--color-text-primary);
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.navy:hover {
   background-color: var(--color-brand-navy);
+  border-color: var(--color-brand-dark);
 }
 
-/* ─── Variant: white (white bg + brand-blue text + arrow — for dark section CTAs)
-   Webflow .white-btn: color var(--blue) #019ae6, bg #fff, border 2px #9ca3af, arrow icon right
-   Hover: bg var(--blue), color #fff, border #111827 */
-.white {
-  color: var(--color-brand-blue);
-  background-color: #fff;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.white:hover {
-  background-color: var(--color-brand-blue);
-  color: #fff;
-}
-
-/* ─── Variant: ghost (text-only — used for nav links) */
+/* ─── Variant: ghost (text-only — nav links, not a CTA) ─────────────────────── */
 .ghost {
   color: var(--color-text-primary);
   background-color: transparent;
   border-color: transparent;
-  box-shadow: none;
+  border-radius: 99px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
 }
 
 .ghost:hover {
   background-color: var(--color-accent-bg);
+}
+
+/* ─── Modifier: no arrow (hideArrow / icon overrides) — drop the bg arrow
+   and the right gutter; primary keeps the gradient (= .sky-button look) ──────── */
+.no-arrow {
+  padding-right: 1.25rem;
+}
+
+.primary.no-arrow {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+}
+
+.navy.no-arrow,
+.secondary.no-arrow,
+.white.no-arrow,
+.outline.no-arrow {
+  background-image: none;
 }
 
 /* ─── Modifiers ─────────────────────────────────────────────────────────────── */
@@ -170,19 +198,12 @@
   flex-shrink: 0;
 }
 
-/* Built-in arrow on primary/outline variants */
-.arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  transition: transform var(--duration-base) var(--ease-standard);
+.icon-left {
+  margin-right: 0.5rem;
 }
 
-.button:hover .arrow {
-  transform: translateX(2px);
+.icon-right {
+  margin-left: 0.5rem;
 }
 
 /* Loading spinner */

@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useCallback, useRef } from "react";
-import Image from "next/image";
 import type { PortfolioItem } from "@/types/portfolio";
+import { PORTFOLIO_DETAILS } from "@/lib/constants/portfolio-details";
+import { CaseStudyContent } from "@/components/our-works-detail/case-study-content";
+import { CaseStudyGallery } from "@/components/our-works-detail/case-study-gallery";
+import { CaseStudyShowcase } from "@/components/our-works-detail/case-study-showcase";
 import styles from "./portfolio-popup.module.css";
 
 interface PortfolioPopupProps {
@@ -15,6 +18,10 @@ function useFocusTrap(containerRef: React.RefObject<HTMLDivElement | null>) {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    // Remember what was focused (the triggering card) BEFORE we move focus in,
+    // so we can restore it when the modal closes.
+    const previouslyFocused = document.activeElement as HTMLElement | null;
 
     const focusableSelectors =
       'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
@@ -47,13 +54,18 @@ function useFocusTrap(containerRef: React.RefObject<HTMLDivElement | null>) {
     }
 
     container.addEventListener("keydown", handleKeyDown);
-    return () => container.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      container.removeEventListener("keydown", handleKeyDown);
+      // Restore focus to the element that opened the modal
+      previouslyFocused?.focus();
+    };
   }, [containerRef]);
 }
 
 export function PortfolioPopup({ item, onClose }: PortfolioPopupProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleId = `popup-title-${item.slug}`;
+  const detail = PORTFOLIO_DETAILS.find((d) => d.slug === item.slug);
 
   useFocusTrap(containerRef);
 
@@ -66,19 +78,20 @@ export function PortfolioPopup({ item, onClose }: PortfolioPopupProps) {
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
+    // Lock scroll without the layout shift on platforms with classic scrollbars
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
   }, [handleKeyDown]);
-
-  // Full content mode for items with detail pages, gallery/image mode for others
-  const isFullMode = item.hasDetailPage;
-  const containerClass = isFullMode
-    ? styles.container
-    : `${styles.container} ${styles.containerGallery}`;
 
   return (
     <div
@@ -90,7 +103,7 @@ export function PortfolioPopup({ item, onClose }: PortfolioPopupProps) {
       aria-modal="true"
       aria-labelledby={titleId}
     >
-      <div ref={containerRef} className={containerClass}>
+      <div ref={containerRef} className={styles.container}>
         <button
           type="button"
           className={styles.closeBtn}
@@ -100,39 +113,34 @@ export function PortfolioPopup({ item, onClose }: PortfolioPopupProps) {
           &times;
         </button>
 
-        {isFullMode ? (
-          <>
-            <h2 id={titleId} className="sr-only">
-              {item.name} project details
-            </h2>
-            <iframe
-              src={`/our-work/${item.slug}`}
-              className={styles.iframe}
-              title={`${item.name} project details`}
-              allowFullScreen
-              loading="lazy"
-            />
-          </>
-        ) : (
-          <div className={styles.galleryContent}>
-            <div className={styles.galleryImageWrap}>
-              <Image
-                src={item.featuredImage}
-                alt={`${item.name} — Boldteq portfolio project`}
-                fill
-                sizes="(max-width: 600px) 90vw, 560px"
-                className={styles.galleryImage}
-                priority
-              />
-            </div>
-            <div className={styles.galleryInfo}>
-              <h2 id={titleId} className={styles.galleryTitle}>
-                {item.name}
-              </h2>
-              <span className={styles.galleryBadge}>{item.category}</span>
-            </div>
+        {/* Render the case study / showcase content directly (no iframe) so the
+            popup never drags in the site nav/footer or shows an empty frame. */}
+        <h2 id={titleId} className="sr-only">
+          {item.name} project details
+        </h2>
+        <div className={styles.body}>
+          <div className={styles.caseGrid}>
+            {detail ? (
+              <>
+                <CaseStudyContent detail={detail} embedded />
+                <CaseStudyGallery
+                  images={detail.gallery}
+                  title={detail.title}
+                  embedded
+                />
+              </>
+            ) : (
+              <>
+                <CaseStudyShowcase item={item} embedded />
+                <CaseStudyGallery
+                  images={[item.featuredImage]}
+                  title={item.name}
+                  embedded
+                />
+              </>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

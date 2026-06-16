@@ -23,11 +23,13 @@
      .margin-btm-0    @ L2463:  margin-bottom: 0
    ─────────────────────────────────────────────────────────── */
 .section {
-  /* Webflow .blue-sec: no vertical padding; spacing via margin-bottom:70px. */
+  /* Webflow .blue-sec.pricing-blue-sec.margin-btm-0 (pricing.html L1138):
+     the .margin-btm-0 modifier overrides the base 70px → margin-bottom:0
+     (boldteq-v1-0.webflow.css L2463-2465). No vertical padding. */
   background-color: #0000;
   margin-top: 0;
   margin-right: auto;
-  margin-bottom: 70px;
+  margin-bottom: 0;
   margin-left: auto;
   padding-top: 0;
   padding-right: 5%;
@@ -399,8 +401,9 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    /* Webflow .blue-sec @479: margin-bottom drops 70px → 50px. */
-    margin-bottom: 50px;
+    /* Webflow .blue-sec @479 drops margin to 50px, but the more-specific
+       .blue-sec.pricing-blue-sec.margin-btm-0 keeps margin-bottom:0 at all widths. */
+    margin-bottom: 0;
   }
   .inner {
     display: flex;

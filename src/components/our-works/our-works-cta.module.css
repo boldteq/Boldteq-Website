@@ -3,13 +3,12 @@
    + .heading-grid-small.margin-bottom-0
    ============================================================ */
 
+/* Webflow .blue-sec: no vertical padding, just margin-bottom 70px */
 .section {
   background-color: transparent;
   margin-bottom: 70px;
   padding: 0 5%;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -46,12 +45,13 @@
   gap: 12px;
 }
 
+/* Webflow .heading-2.hd-s: font-size 36px, base line-height 40px */
 .heading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 45px;
+  line-height: 40px;
   margin: 0;
   text-align: left;
 }
@@ -116,7 +116,8 @@
   background-position: 93%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: auto, auto;
-  border: 2px solid transparent;
+  /* no border box (matches .white-btn) so both CTA buttons are equal height */
+  border: none;
   border-radius: 0.75rem;
   padding: 0.75rem 3rem 0.75rem 1.25rem;
   white-space: nowrap;
@@ -130,12 +131,12 @@
   background-size: auto;
 }
 
-/* Secondary: .white-btn (white bg with arrow) */
+/* Secondary: .white-btn (white bg, navy text — Webflow var(--blue) is navy) */
 .secondaryBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-brand-blue);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -162,8 +163,8 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .heading {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 38px;
   }
 
   .inner {
@@ -171,10 +172,6 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 }
 
 @media screen and (max-width: 767px) {
@@ -188,8 +185,8 @@
   }
 
   .heading {
-    font-size: 30px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .bullets {

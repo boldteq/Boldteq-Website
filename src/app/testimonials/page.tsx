@@ -1,6 +1,5 @@
 import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
-import { TestimonialsHero } from "@/components/testimonials/testimonials-hero";
 import { TestimonialsGrid } from "@/components/testimonials/testimonials-grid";
 import { BetaCta } from "@/components/shared/beta-cta";
 
@@ -19,7 +18,6 @@ export default function TestimonialsPage() {
   return (
     <>
       <JsonLd data={breadcrumbs} id="schema-breadcrumbs" />
-      <TestimonialsHero />
       <TestimonialsGrid />
       <BetaCta />
     </>

@@ -20,29 +20,11 @@ const SIZE_CLASS: Record<ButtonSize, string> = {
   lg: styles['size-lg'],
 };
 
-function ArrowIcon() {
-  return (
-    <svg
-      className={styles['arrow']}
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
 function buildClassName(
   variant: ButtonVariant,
   size: ButtonSize,
   fullWidth: boolean,
+  noArrow: boolean,
   extra?: string,
 ) {
   return [
@@ -50,6 +32,7 @@ function buildClassName(
     VARIANT_CLASS[variant],
     SIZE_CLASS[size],
     fullWidth ? styles['full-width'] : '',
+    noArrow ? styles['no-arrow'] : '',
     extra ?? '',
   ]
     .filter(Boolean)
@@ -84,10 +67,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     },
     ref,
   ) {
-    const showArrow =
-      !hideArrow &&
-      !iconRight &&
-      (variant === 'primary' || variant === 'outline' || variant === 'white' || variant === 'navy');
+    const noArrow = hideArrow || Boolean(iconRight);
 
     const content: ReactNode = loading ? (
       <span className={styles['spinner']} aria-hidden="true" />
@@ -96,11 +76,10 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         {iconLeft ? <span className={styles['icon-left']}>{iconLeft}</span> : null}
         <span>{children}</span>
         {iconRight ? <span className={styles['icon-right']}>{iconRight}</span> : null}
-        {showArrow ? <ArrowIcon /> : null}
       </>
     );
 
-    const classes = buildClassName(variant, size, fullWidth, className);
+    const classes = buildClassName(variant, size, fullWidth, noArrow, className);
 
     if (href) {
       const isExternal = external || /^https?:\/\//.test(href);

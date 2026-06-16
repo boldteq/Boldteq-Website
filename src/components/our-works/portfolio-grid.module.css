@@ -3,24 +3,22 @@
    Live site: container 1300px, grid 305px+975px, cards 480x470
    ============================================================ */
 
+/* Webflow .work-tab-sec.new: padding 0 3% 60px (top 0) */
 .section {
   background-color: transparent;
   padding: 0 3% 60px;
   display: block;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
 }
 
+/* Aligned to the hero + CTA container (1280px) for consistent page width */
 .container {
   width: 100%;
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 15px auto 80px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* ---------- Filter header bar (search + tags) ---------- */
@@ -38,41 +36,47 @@
   padding: 0.5rem 0 2rem;
 }
 
-/* Live: font-size 1rem, padding 1rem 1.5rem 1rem 1rem */
+/* Webflow .filter_search-field: 1rem, no visible border, soft shadow, Vector-6 icon */
 .searchField {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   width: 100%;
   min-height: 45px;
   padding: 1rem 1.5rem 1rem 1rem;
-  border: 1px solid rgba(33, 207, 255, 0.23);
+  background-color: #fff;
+  border: none;
   border-radius: 10px;
-  box-shadow: var(--shadow-card);
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%236b7280' stroke-width='2'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65' stroke='%236b7280' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.05);
+  background-image: url("/images/webflow/Vector-6.svg");
   background-repeat: no-repeat;
   background-position: 94% center;
   background-size: 1.5rem;
-  transition: border-color 0.15s ease;
+  transition: box-shadow 0.15s ease;
 }
 
 .searchField::placeholder { color: #9ca3af; }
-.searchField:focus { border-color: var(--color-brand-cyan); }
-.searchField::-webkit-search-cancel-button { display: none; }
 
-/* Filter tags area */
+/* single clean focus ring (no doubled global outline) */
+.searchField:focus,
+.searchField:focus-visible {
+  outline: none;
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.05), 0 0 0 3px rgba(33, 207, 255, 0.2);
+}
+
+/* Filter tags area — Webflow .filter_tags-wrapper (no gap; spacing via tag margins) */
 .tagsArea {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .tagsLabel {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-subtle);
-  margin: 0;
+  margin: 0 1rem 0 0;
 }
 
 .activeTag {
@@ -106,6 +110,31 @@
 
 .activeTagClose:hover { opacity: 1; }
 
+/* Total Results pill — Webflow .filter-results > .cms-result (3rd header column) */
+.filterResults {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cmsResult {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  min-height: 45px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.05);
+  white-space: nowrap;
+}
+
+.resultWork {
+  color: #082753;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 /* ---------- Sidebar + Cards grid ---------- */
 /* Webflow .filter_grid: .4fr 1fr at base, minmax(305px,305px) 1fr at >=1280px */
 .filterGrid {
@@ -116,15 +145,12 @@
   align-items: start;
 }
 
-/* Sidebar */
+/* Sidebar — Webflow .filter_column (no visible border; premium soft shadow) */
 .sidebar {
   background-color: #fff;
-  border: 1px solid #dfdfdf;
   border-radius: 15px;
   padding: 10px;
-  box-shadow: var(--shadow-card);
-  position: sticky;
-  top: 100px;
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.05);
 }
 
 /* Webflow .filter_block-header.margin-top-0: padding .5rem .8rem .5rem .8rem */
@@ -149,33 +175,29 @@
   margin-top: 0;
 }
 
+/* Webflow .filter_reset is display:none — the Clear link is hidden */
 .clearBtn {
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: underline;
+  display: none;
 }
 
+/* Webflow .filter_options: rows indented 0.8rem on the container, not the row */
 .categoryList {
   display: flex;
   flex-direction: column;
+  padding: 0 0.8rem 0.5rem;
 }
 
-/* Checkbox row — Live: .checkbox_label font-size 14px */
+/* Webflow .checkbox_field: row padding 0.3rem 0 (flush-left; indent on container) */
 .checkboxLabel {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 0.3rem 0.8rem;
+  padding: 0.3rem 0;
+  margin-right: 0.25rem;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  color: #6d6d6d;
-  line-height: 1.5;
+  color: #2b2b2b;
 }
 
 .checkboxInput {
@@ -192,21 +214,14 @@
   transition: background-color 0.12s, border-color 0.12s;
 }
 
+/* Webflow .checkbox_input.w--redirected-checked: centered checkmark SVG */
 .checkboxInput:checked {
   background-color: var(--color-brand-blue);
   border-color: var(--color-brand-cyan);
-}
-
-.checkboxInput:checked::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 6px;
-  height: 10px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  background-image: url("/images/webflow/custom-checkbox-checkmark.589d534424.svg");
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Coming Soon — Live: .checkbox_label.cmg-soon opacity 0.5, .checkbox_input.cg-soon opacity 0.8 */
@@ -225,20 +240,23 @@
   cursor: not-allowed;
 }
 
+/* Webflow .work-cat-comingsoon */
 .comingSoonBadge {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1em;
   color: #1890ff;
   background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
   border-radius: 4px;
-  padding: 2px 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 3px 6px;
   margin-left: auto;
   white-space: nowrap;
-  margin-bottom: 0;
-  line-height: 12px;
-  text-align: center;
-  position: static;
+  text-transform: capitalize;
 }
 
 /* ---------- Card grid (2 columns) ---------- */
@@ -252,57 +270,35 @@
   grid-row-gap: 24px;
 }
 
-/* ---------- Empty state ---------- */
+/* ---------- Empty state — Webflow .filter_empty (no visible border) ---------- */
 .emptyState {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.05);
+  padding: 2rem;
   text-align: center;
 }
 
+/* Webflow .filter_empty-icon: width 5rem */
 .emptyIcon {
-  width: 72px;
-  height: 72px;
-  border-radius: 16px;
-  background-color: #ecf7fd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-brand-blue);
-  margin-bottom: 20px;
+  width: 5rem;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
 
+/* Webflow empty text is an unstyled div → inherits 14px/20px/400/#333 */
 .emptyTitle {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-brand-navy);
-  margin: 0 0 8px;
-}
-
-.emptyDesc {
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  color: var(--color-text-subtle);
-  margin: 0 0 24px;
-  max-width: 320px;
-}
-
-.emptyBtn {
-  font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(90deg, #21cfff, #019ae6);
-  border: none;
-  border-radius: var(--radius-pill);
-  padding: 10px 24px;
-  cursor: pointer;
+  font-weight: 400;
+  line-height: 20px;
+  color: #333;
+  margin: 0;
 }
-
-.emptyBtn:hover { filter: brightness(1.08); }
 
 /* ---------- Pagination ---------- */
 /* Live: 44px buttons, #1a3a6e active, white+shadow inactive */
@@ -314,19 +310,21 @@
   margin-top: 40px;
 }
 
+/* Webflow makeBtn: 44px, radius 12px, no border, soft shadow, #1a3a6e */
 .pageBtn {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 5px;
-  border: 1px solid rgba(33, 207, 255, 0.23);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
   cursor: pointer;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   background: #fff;
-  color: #2b2b2b;
+  color: #1a3a6e;
   text-decoration: none;
-  transition: opacity 0.15s ease;
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.06);
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,11 +336,8 @@
 }
 
 .pageBtnActive {
-  background: #3c7c43;
-  border-color: #3c7c43;
+  background: #1a3a6e;
   color: #fff;
-  cursor: not-allowed;
-  opacity: 1;
 }
 
 .pageBtn:disabled {
@@ -363,44 +358,42 @@
   .filterGrid {
     grid-template-columns: minmax(305px, 305px) 1fr;
   }
-  .comingSoonBadge {
-    line-height: 12px;
-    text-align: center;
-  }
 }
 
-/* max-width 991px */
+/* max-width 991px — Webflow .filter_header padding-top/left 16px */
 @media screen and (max-width: 991px) {
   .filterHeader {
     grid-template-columns: 0.5fr 1fr auto;
+    align-items: center;
+    padding-top: 16px;
+    padding-left: 16px;
   }
 
   .filterGrid {
     grid-column-gap: 1rem;
     grid-template-columns: 0.35fr 1fr;
   }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-  .container {
-    max-width: 728px;
+
+  /* Webflow .content_collection-list row-gap drops to 16px at 991 */
+  .cardGrid {
+    grid-row-gap: 16px;
   }
 }
 
 /* max-width 767px */
 @media screen and (max-width: 767px) {
   .section {
-    padding: 20px 5% 60px;
+    padding: 0 5% 60px;
   }
 
+  /* Webflow keeps .filter_header as a single-column grid here */
   .filterHeader {
-    flex-flow: row;
     grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-left: 0;
   }
 
   .filterGrid {
@@ -408,13 +401,12 @@
   }
 
   .sidebar {
-    position: static;
     width: 100%;
   }
 
   .cardGrid {
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
   }
   .container {
     margin-bottom: 0;
@@ -429,15 +421,5 @@
   }
   .container {
     margin-bottom: 0;
-    max-width: none;
-  }
-  .comingSoonBadge {
-    font-size: 7px;
-    line-height: 8px;
-  }
-}
-@media (min-width: 1440px) {
-  .comingSoonBadge {
-    line-height: 14px;
   }
 }

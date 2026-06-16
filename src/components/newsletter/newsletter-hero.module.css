@@ -250,13 +250,6 @@
    min-width: 1280px
    ============================================================ */
 @media screen and (min-width: 1280px) {
-  .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
   .heading {
     font-size: 48px;
   }
@@ -266,12 +259,6 @@
    max-width: 991px
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
   .form {
     align-items: center;
   }
@@ -283,8 +270,8 @@
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -307,8 +294,8 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 64px;
+    padding-bottom: 64px;
     padding-left: 1rem;
     padding-right: 1rem;
   }

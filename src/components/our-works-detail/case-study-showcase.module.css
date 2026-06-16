@@ -1,0 +1,160 @@
+/* ============================================================
+   CaseStudyShowcase — left column for portfolio items without a
+   full written case study. Mirrors CaseStudyContent's layout so it
+   sits consistently in the work-page grid.
+   ============================================================ */
+
+.content {
+  height: 100vh;
+  padding: 48px 40px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Embedded in the portfolio popup — grid stretches it to the modal height */
+.content.embedded {
+  height: auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.heroSubott {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.badge {
+  background-color: #fafafa;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.badgeText {
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-brand-cyan);
+  font-weight: 700;
+}
+
+.title {
+  color: var(--color-text-primary);
+  margin: 4px 0 0;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.desc {
+  color: #2b2b2b;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 18px 0 0;
+  max-width: 38rem;
+}
+
+.highlights {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-primary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, #21cfff, #019ae6);
+  color: #fff;
+}
+
+.ctaRow {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.cta:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.back {
+  color: var(--color-text-secondary);
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--color-brand-blue);
+}
+
+@media screen and (max-width: 991px) {
+  .content {
+    height: auto;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .content {
+    padding: 30px 24px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}

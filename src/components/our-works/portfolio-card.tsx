@@ -17,17 +17,10 @@ interface PortfolioCardProps {
 
 export function PortfolioCard({ item, onCardClick, eager = false }: PortfolioCardProps) {
   return (
-    <article
+    <button
+      type="button"
       className={styles.card}
       onClick={() => onCardClick(item)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          onCardClick(item);
-        }
-      }}
       aria-label={`View ${item.name} project`}
     >
       <div className={styles.imageWrapper}>
@@ -58,6 +51,6 @@ export function PortfolioCard({ item, onCardClick, eager = false }: PortfolioCar
           className={styles.eyeIcon}
         />
       </div>
-    </article>
+    </button>
   );
 }

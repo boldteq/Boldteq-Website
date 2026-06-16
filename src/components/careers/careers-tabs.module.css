@@ -6,8 +6,8 @@
 /* career-tabs-sec.overflow-hidden */
 .section {
   background-color: transparent;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   display: block;
   justify-content: center;
   overflow: hidden;
@@ -18,7 +18,7 @@
 
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 5%;
@@ -61,8 +61,8 @@
 .subtitle {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 28px;
   text-align: center;
   margin: 0;
@@ -230,8 +230,8 @@
 .tabParagraph {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 28px;
   text-align: left;
   margin-bottom: 16px;
@@ -326,8 +326,9 @@
 .benefitTitle {
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.53rem;
+  font-size: 18px;
   font-weight: 700;
+  line-height: 25px;
   margin-top: 0;
   margin-bottom: 12px;
 }
@@ -335,8 +336,8 @@
 .benefitText {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 28px;
   text-align: left;
   margin: 0;
@@ -550,9 +551,6 @@
   .benefitsGrid {
     grid-template-columns: 1fr 1fr;
   }
-  .container {
-    max-width: 728px;
-  }
 }
 
 /* ============================================================
@@ -625,6 +623,12 @@
   }
   .container {
     margin-bottom: 0;
-    max-width: none;
+  }
 }
+
+/* Widen to 1320px on large desktop — matches site-wide container */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
 }

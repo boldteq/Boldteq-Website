@@ -11,6 +11,13 @@
   overflow: auto;
 }
 
+/* Embedded in the portfolio popup — grid stretches it to the modal height,
+   and it scrolls internally (base .content already has overflow: auto). */
+.content.embedded {
+  height: auto;
+  min-height: 0;
+}
+
 /* ── Hero section (workp-subott + workp-title + work-small-tags) ── */
 
 /* workp-subott */
@@ -32,7 +39,7 @@
   padding: 4px 12px;
   line-height: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,9 +254,9 @@
 
 .listText {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 28px;
 }
 
 /* ── Impact grid ── */
@@ -333,9 +340,9 @@
 
 .featureText {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: 28px;
 }
 
 /* ── Tech stack ── */

@@ -13,18 +13,16 @@
   display: block;
   justify-content: center;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
 }
 
 /* tabs-container → padding-vertical.padding-xlarge inner
-   Webflow .tabs-container: max-width 1200px; margin: 0 auto. Match exactly. */
+   Canonical site container: 100% width, capped at 1280px, centered. */
 .tabsContainer,
 .tabs-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -378,6 +376,6 @@
 @media screen and (min-width: 1440px) {
   .tabsContainer,
   .tabs-container {
-    max-width: 1200px;
+    max-width: 1320px;
   }
 }

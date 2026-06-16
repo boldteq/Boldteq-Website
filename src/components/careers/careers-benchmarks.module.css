@@ -10,15 +10,15 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
   margin-right: auto;
   margin-left: auto;
 }
 
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   margin: 15px auto 80px;
@@ -66,7 +66,8 @@
 .subtitle {
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 28px;
   text-align: center;
   margin: 0;
@@ -190,9 +191,6 @@
   .benchGrid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .container {
-    max-width: 728px;
-  }
 }
 
 /* ============================================================
@@ -250,6 +248,12 @@
   }
   .container {
     margin-bottom: 0;
-    max-width: none;
 }
+}
+
+/* Widen to 1320px on large desktop — matches site-wide container */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
 }

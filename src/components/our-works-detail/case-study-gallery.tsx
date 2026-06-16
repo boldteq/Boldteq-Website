@@ -7,9 +7,15 @@ import styles from "./case-study-gallery.module.css";
 interface CaseStudyGalleryProps {
   images: string[];
   title: string;
+  /** Rendered inside the portfolio popup — fills the modal instead of 100vh. */
+  embedded?: boolean;
 }
 
-export function CaseStudyGallery({ images, title }: CaseStudyGalleryProps) {
+export function CaseStudyGallery({
+  images,
+  title,
+  embedded = false,
+}: CaseStudyGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   if (images.length === 0) return null;
@@ -17,7 +23,7 @@ export function CaseStudyGallery({ images, title }: CaseStudyGalleryProps) {
   const activeImage = images[activeIndex];
 
   return (
-    <div className={styles.gallery}>
+    <div className={`${styles.gallery} ${embedded ? styles.embedded : ""}`}>
       <div className={styles.galleryWrapper}>
         {/* Main image — work-slide (flex: 1) + work-slide-image */}
         <div className={styles.mainSlide}>

@@ -13,6 +13,15 @@
   height: 100vh;
 }
 
+/* Embedded in the portfolio popup — grid stretches it to the modal height */
+.gallery.embedded {
+  height: auto;
+  min-height: 0;
+  position: static;
+  top: auto;
+  overflow: hidden;
+}
+
 /* work-gallery-wrapper */
 .galleryWrapper {
   grid-column-gap: 16px;

@@ -6,8 +6,6 @@
   background-color: transparent;
   padding: 0 5% 80px;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -17,7 +15,7 @@
 
 .container {
   width: 100%;
-  max-width: 940px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   margin: 15px auto 80px;
@@ -41,9 +39,9 @@
 .heading {
   color: var(--color-brand-navy);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 40px;
   margin: 0;
 }
 
@@ -79,9 +77,9 @@
 .listText {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 26px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
   margin: 0;
 }
 
@@ -147,9 +145,6 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
-  .container {
-    max-width: 728px;
-  }
 }
 
 /* ============================================================
@@ -196,6 +191,12 @@
   }
   .container {
     margin-bottom: 0;
-    max-width: none;
 }
+}
+
+/* Widen to 1320px on large desktop — matches site-wide container */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
 }

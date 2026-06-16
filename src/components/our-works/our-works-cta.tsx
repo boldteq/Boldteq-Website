@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "@/components/primitives/button";
+import Link from "next/link";
 import styles from "./our-works-cta.module.css";
 
 const BULLETS = [
@@ -40,12 +40,12 @@ export function OurWorksCta() {
             </div>
 
             <div className={styles.buttons}>
-              <Button href="/book-a-demo" variant="primary" size="md">
+              <Link href="/book-a-demo" className={styles.primaryBtn}>
                 Book a Demo
-              </Button>
-              <Button href="/pricing" variant="secondary" size="md">
+              </Link>
+              <Link href="/pricing" className={styles.secondaryBtn}>
                 View Plans
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

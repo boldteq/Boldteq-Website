@@ -5,11 +5,13 @@ import styles from "./case-study-content.module.css";
 
 interface CaseStudyContentProps {
   detail: PortfolioDetail;
+  /** Rendered inside the portfolio popup — fills the modal instead of 100vh. */
+  embedded?: boolean;
 }
 
-export function CaseStudyContent({ detail }: CaseStudyContentProps) {
+export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentProps) {
   return (
-    <div className={styles.content}>
+    <div className={`${styles.content} ${embedded ? styles.embedded : ""}`}>
       {/* ── Hero: badge + title + meta (workp-subott / workp-title / work-small-tags) ── */}
       <div className={styles.heroSubott}>
         <div className={styles.badge}>

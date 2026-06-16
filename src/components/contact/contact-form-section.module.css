@@ -177,42 +177,37 @@
   text-align: right;
 }
 
-/* Submit button — matches .a-gulf-book.cont-sub-btn + .cont-submit-btn */
+/* Submit button — matches .a-gulf-book.cont-sub-btn (arrow-box model) */
 .submitBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  background-color: var(--color-brand-navy);
+  background-color: #111827;
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 24px;
-  border-radius: 10px;
-  min-height: 45px;
-  padding: 10px 28px;
-  border: none;
+  line-height: 1.75rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  align-self: flex-start;
+  white-space: nowrap;
+  transition: background-color 0.3s ease-in-out;
+  align-self: center;
 }
 
-.submitBtn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
-}
-
-.submitBtn:hover:not(:disabled)::before {
-  opacity: 0;
+.submitBtn:hover:not(:disabled) {
+  background-color: #092245;
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .submitBtn:disabled {

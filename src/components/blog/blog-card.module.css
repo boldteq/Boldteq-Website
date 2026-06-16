@@ -121,7 +121,7 @@
 /* paragraph.text-left.blog-desc */
 .description {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 28px;
   text-align: left;

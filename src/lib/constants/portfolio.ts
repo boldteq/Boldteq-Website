@@ -1,4 +1,5 @@
 import type { PortfolioItem, PortfolioCategory } from "@/types/portfolio";
+import { PORTFOLIO_DETAILS } from "./portfolio-details";
 
 /**
  * Portfolio items — URLs and order extracted from live boldteq.com/our-works
@@ -185,6 +186,11 @@ const RAW_ITEMS: Array<{
   },
 ];
 
+// Single source of truth for which items have a real /our-work/[slug] page —
+// derived from PORTFOLIO_DETAILS so the popup and the route can never drift
+// (e.g. Cinea has a full case study but had detailPath: "").
+const DETAIL_SLUGS = new Set(PORTFOLIO_DETAILS.map((d) => d.slug));
+
 export const PORTFOLIO_ITEMS: PortfolioItem[] = RAW_ITEMS.sort(
   (a, b) => a.order - b.order
 ).map((item) => ({
@@ -192,7 +198,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = RAW_ITEMS.sort(
   slug: item.slug,
   category: item.category,
   featuredImage: item.featuredImage,
-  hasDetailPage: item.detailPath !== "",
+  hasDetailPage: DETAIL_SLUGS.has(item.slug),
   order: item.order,
 }));
 
@@ -206,7 +212,7 @@ export const PORTFOLIO_CATEGORIES: Array<{
   { slug: "wordpress", name: "WordPress" },
   { slug: "webflow", name: "Webflow", comingSoon: true },
   { slug: "frontend", name: "Frontend", comingSoon: true },
-  { slug: "shopify-app", name: "Shopify App", comingSoon: true },
+  { slug: "shopify-apps", name: "Shopify App", comingSoon: true },
   { slug: "ui-ux-design", name: "UI/UX Design", comingSoon: true },
   { slug: "graphics-design", name: "Graphics Design", comingSoon: true },
 ];
