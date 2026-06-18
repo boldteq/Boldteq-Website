@@ -41,19 +41,22 @@ export function MissionDelivery() {
               How We Deliver On The Mission
             </h2>
 
-            <ul className={styles['list']}>
-              {BULLET_POINTS.map((point) => (
-                <li key={point.intro} className={styles['listItem']}>
-                  <div className={styles['bullet']} aria-hidden="true" />
-                  <p className={styles['listText']}>
-                    <strong className={styles['listIntro']}>{point.intro}</strong>
-                    {' '}{point.detail}
-                  </p>
-                </li>
+            <div className={styles['deliveryPoints']}>
+              {BULLET_POINTS.map((point, i) => (
+                <p key={point.intro} className={styles['listText']}>
+                  <strong className={styles['listIntro']}>{point.intro}</strong>{' '}
+                  {point.detail}
+                  {i < BULLET_POINTS.length - 1 ? <br /> : null}
+                </p>
               ))}
-            </ul>
+            </div>
 
-            <Button href="/book-a-demo" variant="primary" size="md">
+            <Button
+              href="/book-a-demo"
+              variant="primary"
+              size="md"
+              className={styles['deliveryBtn']}
+            >
               Book a Demo
             </Button>
           </div>
@@ -63,8 +66,8 @@ export function MissionDelivery() {
             <Image
               src="/images/webflow/Group-47036-1.png"
               alt="Boldteq delivery workflow overview"
-              width={1600}
-              height={1200}
+              width={1890}
+              height={1131}
               className={styles['image']}
               loading="lazy"
               sizes="(max-width: 767px) 100vw, 50vw"

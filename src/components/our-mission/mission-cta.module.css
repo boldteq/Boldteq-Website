@@ -1,0 +1,218 @@
+/* ============================================================
+   MISSION CTA — mission-cta.module.css
+   1:1 with Webflow .blue-sec → .book-section.remove-pattern →
+   .heading-grid-small.margin-bottom-0 (our-mission.html lines 447–476)
+   ============================================================ */
+
+/* .blue-sec */
+.section {
+  background-color: transparent;
+  margin-bottom: 70px;
+  padding: 0 5%;
+  position: relative;
+}
+
+/* .container-large-3 */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .book-section.remove-pattern */
+.card {
+  background-color: var(--color-text-primary);
+  background-image: url('/images/webflow/Union.svg');
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-radius: 20px;
+  padding: 40px 20px 50px;
+}
+
+/* .heading-grid-small.margin-bottom-0 — 1.25fr content + .25fr decorative spacer */
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.25fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* .column-regular.column-left */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* empty .25fr decorative column (.max-width-small.center.hide-mob) */
+.rightCol {
+  width: 100%;
+}
+
+/* .heading-2.white.margin-top-0.hd-s */
+.heading {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 52px;
+  text-align: left;
+  margin: 0 0 10px;
+}
+
+/* .paragraph.white.text-left */
+.subtitle {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin: 0 0 10px;
+}
+
+/* .custom-plan-dlexdiv (w-layout-hflex) */
+.bullets {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+/* .white-li-icon */
+.bulletItem {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  row-gap: 6px;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+/* .li-check-sky */
+.bulletIcon {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 5px;
+  flex-shrink: 0;
+}
+
+/* .paragraph-small.white */
+.bulletText {
+  color: #fff;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* ._2-btns-grid */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  flex-wrap: wrap;
+}
+
+/* ── >=1280px (.heading-grid-small.margin-bottom-0 @min-1280) ── */
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: 1.25fr 0.4fr;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ── >=1440px (.container-large-3 widens to 1320px) ── */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* ============================================================
+   max-width: 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  .section {
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 0;
+    margin-top: 0;
+  }
+
+  .card {
+    /* Webflow .book-section @991: padding-bottom 40px (Union.svg art retained) */
+    padding-bottom: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1.75fr 1fr;
+    align-items: start;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+}
+
+/* ============================================================
+   max-width: 767px — stack to a single column
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .grid {
+    display: flex;
+    flex-flow: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .rightCol {
+    display: none;
+  }
+}
+
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
+@media screen and (max-width: 479px) {
+  .card {
+    /* Webflow .book-section.remove-pattern @479: no decorative art, padding 40px 20px 40px */
+    background-image: none;
+    padding: 40px 20px 40px;
+  }
+
+  .heading {
+    font-size: 22px;
+  }
+
+  .bullets {
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 16px;
+  }
+}

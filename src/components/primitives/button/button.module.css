@@ -18,6 +18,10 @@
   justify-content: center;
   align-items: center;
   border-radius: 0.75rem;
+  /* Webflow arrow buttons declare `border: 2px #9ca3af` with NO style keyword,
+     so the border renders as `none` (borderless) on the live site. We keep a
+     2px transparent border so box dimensions stay identical, and variants leave
+     border-color transparent to match Webflow. */
   border: 2px solid transparent;
   cursor: pointer;
   background-repeat: no-repeat;
@@ -69,7 +73,7 @@
 }
 
 /* ─── Variant: navy — Webflow .navy-arrow-btn
-   #082753 bg + Group-46729-1 arrow at 94% + gray border ─────────────────────── */
+   #082753 bg + Group-46729-1 arrow at 94%, borderless (see .button note) ──────── */
 .navy {
   color: #fff;
   background-color: #082753;
@@ -77,11 +81,11 @@
   background-position: 94%;
   background-repeat: no-repeat;
   background-size: auto;
-  border-color: #9ca3af;
+  border-color: transparent;
 }
 
 .navy:hover {
-  color: var(--color-brand-cyan);
+  color: #082753;
   background-color: rgba(33, 207, 255, 0.13);
   border-color: var(--color-brand-dark);
 }
@@ -95,7 +99,7 @@
   background-position: 94%;
   background-repeat: no-repeat;
   background-size: auto;
-  border-color: #9ca3af;
+  border-color: transparent;
 }
 
 .secondary:hover {
@@ -113,7 +117,7 @@
   background-position: 94%;
   background-repeat: no-repeat;
   background-size: auto;
-  border-color: #9ca3af;
+  border-color: transparent;
 }
 
 .white:hover {
@@ -137,7 +141,7 @@
   color: #082753;
 }
 
-/* ─── Variant: outline — Webflow .a-except-get (light cyan tint + gray border) ── */
+/* ─── Variant: outline — Webflow .a-except-get (light cyan tint, borderless) ──── */
 .outline {
   color: var(--color-brand-dark);
   background-color: rgba(33, 207, 255, 0.13);
@@ -145,7 +149,7 @@
   background-position: 94%;
   background-repeat: no-repeat;
   background-size: auto;
-  border-color: #9ca3af;
+  border-color: transparent;
 }
 
 .outline:hover {

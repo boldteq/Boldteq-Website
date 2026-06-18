@@ -6,18 +6,26 @@ const STAT_BADGES = [
   {
     icon: '/images/webflow/Layer_1-3.svg',
     label: 'White-Label by Default',
+    w: 20,
+    h: 20,
   },
   {
     icon: '/images/webflow/Layer_1-25.svg',
     label: 'Senior-Level Team',
+    w: 20,
+    h: 20,
   },
   {
     icon: '/images/webflow/Layer_1-22.svg',
     label: 'Structured Delivery',
+    w: 20,
+    h: 20,
   },
   {
     icon: '/images/webflow/Layer_1-24.svg',
     label: 'Agency-First Workflows',
+    w: 16,
+    h: 21,
   },
 ] as const;
 
@@ -27,13 +35,16 @@ export function MissionHero() {
       <div className={styles['container']}>
         <div className={styles['inner']}>
           {/* Badge */}
-          <div className={styles['badge']}>
-            <span className={styles['badgeText']}>Our Mission</span>
+          <div className={styles['priceSubheadOut']}>
+            <div className={styles['badge']}>
+              <span className={styles['badgeText']}>Our Mission</span>
+            </div>
           </div>
 
           {/* Heading */}
           <h1 className={styles['heading']}>
-            The White-Label Delivery Partner Agencies Can Build On
+            The White-Label Delivery <br />
+            Partner Agencies Can Build On
           </h1>
 
           {/* Subtitle */}
@@ -51,8 +62,8 @@ export function MissionHero() {
                   <Image
                     src={badge.icon}
                     alt={badge.label}
-                    width={24}
-                    height={24}
+                    width={badge.w}
+                    height={badge.h}
                     className={styles['statIcon']}
                     loading="eager"
                   />
@@ -64,10 +75,10 @@ export function MissionHero() {
 
           {/* CTA buttons */}
           <div className={styles['ctaRow']}>
-            <Button href="/book-a-demo" variant="primary" size="md">
+            <Button href="/book-a-demo" variant="navy" size="md">
               Book a Demo
             </Button>
-            <Button href="/contact" variant="secondary" size="md">
+            <Button href="/contact" variant="primary" size="md">
               Talk to Our Team
             </Button>
           </div>

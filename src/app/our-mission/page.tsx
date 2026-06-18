@@ -4,7 +4,7 @@ import { GradientPageBg } from '@/components/shared/page-bg';
 import { MissionHero } from '@/components/our-mission/mission-hero';
 import { DeliveryStandards } from '@/components/our-mission/delivery-standards';
 import { MissionDelivery } from '@/components/our-mission/mission-delivery';
-import { CtaBanner } from '@/components/shared/cta-banner';
+import { MissionCta } from '@/components/our-mission/mission-cta';
 
 export const metadata = createMetadata({
   title: 'About Boldteq | White-Label Web Dev Partner for Agencies',
@@ -27,18 +27,7 @@ export default function OurMissionPage() {
       <MissionHero />
       <DeliveryStandards />
       <MissionDelivery />
-      <CtaBanner
-        align="left"
-        title="Ready to Deliver This Level of Work Under Your Brand?"
-        subtitle="Partner with Boldteq as your dedicated backend delivery team and gain a reliable, scalable foundation for your technology initiatives."
-        bullets={[
-          'Agencies with fluctuating demand',
-          'Large monthly task volumes',
-          'Multiple brands or clients',
-        ]}
-        primaryCta={{ label: 'Book a Demo', href: '/book-a-demo' }}
-        secondaryCta={{ label: 'View Plans', href: '/pricing' }}
-      />
+      <MissionCta />
     </>
   );
 }

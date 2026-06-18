@@ -1,202 +1,174 @@
 /* ============================================================
    MISSION DELIVERY — mission-delivery.module.css
+   1:1 with Webflow .mission-sec3.overflow-hidden (our-mission.html)
    ============================================================ */
 
+/* .mission-sec3.overflow-hidden */
 .section {
   background-color: transparent;
   padding: 0 5% 80px;
   overflow: hidden;
-  margin-right: auto;
-  margin-left: auto;
   display: block;
-  justify-content: center;
   position: relative;
 }
 
+/* .container-large-2 */
 .container {
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  margin: 15px auto 80px;
+  position: relative;
+  z-index: 1;
 }
 
-/* ── 2-column grid ── */
+/* .content-component.reverse-on-mobile */
 .deliveryGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* ── Left: text ── */
+/* ── Left: text (.column-regular.column-left) ── */
 .textCol {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  align-items: flex-start;
+  gap: 0;
 }
 
+/* .heading-2.text-left.left-mob */
 .heading {
-  color: var(--color-brand-navy);
+  color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 40px;
-  margin: 0;
+  line-height: 46px;
+  margin: 20px 0 10px;
+  text-align: left;
 }
 
-/* ── Bullet list ── */
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-left: 24px;
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
-  color: #6b5843;
+/* .max-width-small-3 (plain block) */
+.deliveryPoints {
+  width: 100%;
+  max-width: none;
+  display: block;
 }
 
-.listItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.bullet {
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #21cfff, #019ae6);
-  margin-top: 8px;
-}
-
+/* .paragraph.text-left.left-mob */
 .listText {
-  color: var(--color-text-secondary);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
-  margin: 0;
+  text-align: left;
+  margin: 0 0 10px;
 }
 
+/* .bold-navy lead */
 .listIntro {
-  color: var(--color-brand-navy);
+  color: var(--color-text-primary);
   font-weight: 700;
 }
 
-/* ── CTA button ── */
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-  color: #fff;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.75rem;
-  text-decoration: none;
-  background-image: url('/images/webflow/Group-46729-2.svg'),
-    linear-gradient(90deg, #21cfff, #019ae6);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
-  border-radius: 0.75rem;
-  padding: 0.75rem 3rem 0.75rem 1.25rem;
-  border: 2px solid transparent;
-  box-shadow: var(--shadow-card);
-  transition: filter 0.15s ease;
+/* Book a Demo (.btn-primary.demo-btn) — shared primitive + Webflow top margin */
+.deliveryBtn {
+  margin-top: 10px;
 }
 
-.ctaButton:hover {
-  filter: brightness(1.08);
-}
-
-/* ── Right: image ── */
+/* ── Right: image wrapper (.content-right.padding-0-mob) ── */
 .imageCol {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-flow: column;
+  grid-row-gap: 8px;
+  background-color: transparent;
+  border-radius: 24px;
+  padding: 8px;
+  width: 100%;
+  max-width: none;
 }
 
+/* .image-cover-4.full-width-image */
 .image {
   width: 100%;
   height: auto;
+  max-width: 1492px;
+  object-fit: cover;
   display: block;
 }
 
+/* ── >=1280px: body copy goes pure black (.paragraph @min-1280) ── */
+@media (min-width: 1280px) {
+  .listText {
+    color: #000;
+  }
+}
+
 /* ============================================================
-   max-width: 991px
+   max-width: 991px — Webflow keeps the 2-column layout (no collapse)
    ============================================================ */
-@media screen and (max-width: 991px) {
-  .deliveryGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .imageCol {
-    order: -1;
-  }
-  .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-}
 
 /* ============================================================
-   max-width: 767px
+   max-width: 767px — collapse + reverse (image stacks above text)
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
-    padding: 60px 5%;
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+
+  .deliveryGrid {
+    display: flex;
+    flex-flow: wrap-reverse;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .textCol,
+  .imageCol {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   .heading {
-    font-size: 28px;
-  }
-  .container {
-    margin-bottom: 0;
+    font-size: 34px;
   }
 }
 
 /* ============================================================
-   max-width: 479px  (mobile)
+   max-width: 479px
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 48px 1rem;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .deliveryGrid {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
   }
 
   .heading {
-    font-size: 24px;
+    font-size: 23px;
+    line-height: 28px;
+    text-align: left;
   }
 
-  .listText {
-    font-size: 14px;
-    line-height: 24px;
-  }
-
-  .ctaButton {
+  /* Webflow .btn-primary.demo-btn @479: full-width, larger tap target */
+  .deliveryBtn {
     width: 100%;
-    padding-right: 1.25rem;
-    background-image: linear-gradient(90deg, #21cfff, #019ae6);
+    font-size: 1.1rem;
   }
 
-  .image {
-    border-radius: 12px;
-  }
-  .container {
-    margin-bottom: 0;
-}
-}
-
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
+  .imageCol {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
