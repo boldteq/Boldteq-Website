@@ -43,7 +43,7 @@
      per-section badge margins varied 0/0/17/23px; unified for consistency). */
   margin-bottom: 16px;
   padding: 0 13px;
-  line-height: 14px;
+  line-height: 24px;
 }
 
 /* Badge text — Webflow .paragraph.small-font: 14px / 24px / weight 400

@@ -55,7 +55,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 14px;
+  line-height: 24px;
 }
 
 /* .faq-sky-text gradient */
@@ -68,11 +68,9 @@
   background-clip: text;
   font-weight: 500;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 14px;
+  line-height: 24px;
   margin: 0;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 /* .heading-2.pricing-ban-title */

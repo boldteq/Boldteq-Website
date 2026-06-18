@@ -48,11 +48,11 @@
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   background-color: #21cfff12;
-  border: 1.5px solid #05bafe;
+  border: 1px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 0;
   padding: 0 13px;
-  line-height: 14px;
+  line-height: 24px;
   display: flex;
   /* Center icon + text; without this the flex default (stretch) distorts the
      sparkle img to the 24px text line height. */

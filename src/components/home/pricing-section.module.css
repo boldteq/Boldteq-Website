@@ -64,7 +64,7 @@
   /* Standardized badge→heading gap = 16px across all section headers (was 17px). */
   margin-bottom: 16px;
   padding: 0 13px;
-  line-height: 14px;
+  line-height: 24px;
 }
 
 /* Webflow: .faq-sky-text — gradient cyan→blue text */

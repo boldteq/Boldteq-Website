@@ -61,7 +61,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 14px;
+  line-height: 24px;
 }
 
 /* .faq-sky-text gradient */
@@ -72,13 +72,11 @@
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 12px;
+  font-size: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
   margin: 0;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  line-height: 14px;
+  line-height: 24px;
 }
 
 /* ── H1 (.our-works-ban-title) ── */

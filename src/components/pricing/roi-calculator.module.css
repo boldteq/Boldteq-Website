@@ -45,9 +45,9 @@
   align-items: center;
   gap: 7px;
   margin-bottom: 18px;
-  padding: 2px 13px;
+  padding: 0 13px;
   background-color: #21cfff12;
-  border: 1.5px solid #05bafe;
+  border: 1px solid #05bafe;
   border-radius: 20px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
