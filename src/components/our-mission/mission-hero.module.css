@@ -206,6 +206,13 @@
   .statLabel {
     font-size: 16px;
   }
+
+  /* .heading-3.white.text-left.margin-top-0.capitalize jumps to 35px/45px
+     from large desktop (Webflow L21913) — wraps to 3 lines like the reference */
+  .contentHeading {
+    font-size: 35px;
+    line-height: 45px;
+  }
 }
 
 /* ============================================================

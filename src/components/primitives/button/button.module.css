@@ -19,10 +19,10 @@
   align-items: center;
   border-radius: 0.75rem;
   /* Webflow arrow buttons declare `border: 2px #9ca3af` with NO style keyword,
-     so the border renders as `none` (borderless) on the live site. We keep a
-     2px transparent border so box dimensions stay identical, and variants leave
-     border-color transparent to match Webflow. */
-  border: 2px solid transparent;
+     so border-style computes to `none` and the border-WIDTH collapses to 0 —
+     the button takes zero border space (52px tall, not 56). Match that with no
+     border at all; variant hover border-color decls stay no-ops, like Webflow. */
+  border: 0;
   cursor: pointer;
   background-repeat: no-repeat;
   transition: background-color 0.2s ease, color 0.2s ease,
