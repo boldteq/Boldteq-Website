@@ -541,31 +541,50 @@
 
 .btn-primary {
   color: #fff;
-  background-color: #111827;
-  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
+  /* Solid navy hover color sits on the button; the gradient + arrow live on ::before
+     so they can cross-fade smoothly (gradients can't animate via background-image).
+     isolation:isolate makes this a stacking context so the z-index:-1 ::before
+     renders above the navy bg (without it, the gradient hides behind the bg). */
+  background-color: #092245;
+  isolation: isolate;
   border: 2px #0000;
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
   width: auto;
-  padding: 8px 3rem 8px 1rem;
+  /* Force exactly 52px tall (Webflow standard). Vertical padding zeroed, height +
+     box-sizing + flex centering deterministically yield 52px; horizontal padding kept. */
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 3rem 0 1rem;
   font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
-  transition: background-color 0.2s;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.btn-primary:hover {
-  background-color: #092245;
-  background-image: url('/images/webflow/Group-46729-2.svg');
-  background-repeat: no-repeat;
-  background-size: auto;
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn-primary:hover::before {
+  opacity: 0;
 }
 
 /* ─── Hamburger button ───────────────────────────────────────────────────────── */
@@ -738,18 +757,12 @@
   }
 
   .btn-primary {
-    background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
-    background-position: 93%, 0 0;
-    background-repeat: no-repeat, repeat;
-    background-size: auto, auto;
+    /* Arrow + gradient stay on the base ::before. */
     border-style: none;
     width: auto;
-    padding: 10px 3rem 10px 1.25rem;
+    /* Keep horizontal padding; height stays 52px from the base rule. */
+    padding: 0 3rem 0 1.25rem;
     font-size: 16px;
-  }
-
-  .btn-primary:hover {
-    background-image: url('/images/webflow/Group-46729-2.svg');
   }
 
   .header-sec {
@@ -789,12 +802,7 @@
   }
 
   .btn-primary {
-    background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
     width: auto;
-  }
-
-  .btn-primary:hover {
-    background-image: url('/images/webflow/Group-46729-2.svg');
   }
 
   .sky-button {

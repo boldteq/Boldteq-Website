@@ -240,19 +240,25 @@
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  padding: 12px 20px;
+  /* Vertical padding zeroed; height forced to Webflow's standard 52px via
+     box-sizing + inline-flex centering. Horizontal padding kept at 20px. */
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 20px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   position: absolute;
   inset: auto 1.5% auto auto;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 .button-secondary-small:hover {

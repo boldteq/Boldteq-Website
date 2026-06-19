@@ -978,12 +978,16 @@
   text-decoration: none;
   border: 1px solid #082753;
   border-radius: 10px;
-  padding: 10px 24px;
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 24px;
   width: auto;
   max-width: 100%;
   margin-top: 4px;
   box-shadow: 0 8px 20px rgba(2, 154, 230, 0.35);
-  transition: filter 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out, filter 0.3s ease-in-out, transform 0.2s ease-in-out;
   cursor: pointer;
 }
 

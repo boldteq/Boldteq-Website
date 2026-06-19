@@ -261,15 +261,22 @@
   justify-content: center;
   align-items: center;
   width: auto;
+  /* Force Webflow's standard 52px button height regardless of inherited
+     line-height; box-sizing:border-box so the 2px border is included and
+     vertical padding is zeroed (horizontal padding kept). */
+  height: 52px;
+  box-sizing: border-box;
+  /* position:relative + isolation host the ::before gradient layer so the
+     hover can cross-fade smoothly (CSS gradients can't animate directly).
+     isolation:isolate makes the stacking context so the z-index:-1 ::before
+     renders above the solid background instead of behind it. */
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   color: #fff;
-  background-color: #082753;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  /* Extend the gradient across the whole border box. Without this the gradient
-     defaults to background-origin:padding-box and only fills inside the 2px
-     transparent border, so the navy background-color shows through that border
-     strip as faint vertical lines on the left/right edges. */
-  background-origin: border-box;
-  background-clip: border-box;
+  /* Solid hover color as the element background; the gradient lives on ::before
+     and fades out on hover. */
+  background-color: #fff;
   border: 2px solid #0000;
   border-radius: 0.75rem;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -282,19 +289,37 @@
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  padding-top: 0.75rem;
+  padding-top: 0;
   padding-right: 1.25rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0;
   padding-left: 1.25rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, background-image 0.2s ease, color 0.2s ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+/* Gradient layer — sits behind the button label and fades out on hover so the
+   navy→cyan gradient transitions smoothly to the solid white background. */
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: #082753;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .ctaButton:hover {
   color: #082753;
   background-color: #fff;
-  background-image: none;
   padding-right: 1.25rem;
+}
+
+.ctaButton:hover::before {
+  opacity: 0;
 }
 
 /* ============================================================

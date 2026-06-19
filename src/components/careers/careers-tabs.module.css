@@ -252,12 +252,14 @@
   background-size: auto, auto;
   border: 2px solid transparent;
   border-radius: 0.75rem;
-  padding: 0.75rem 3rem 0.75rem 1.5rem;
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 3rem 0 1.5rem;
   line-height: 1.75rem;
   text-decoration: none;
   box-shadow: var(--shadow-card);
   margin-top: 16px;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .tabCta:hover {

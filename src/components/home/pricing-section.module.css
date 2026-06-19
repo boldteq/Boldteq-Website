@@ -449,29 +449,60 @@
   width: auto;
   margin-left: 10px;
   margin-right: 10px;
-  padding: 10px 24px;
+  /* Height pinned to Webflow standard 52px via box-sizing; vertical padding
+     zeroed (was 10px) so the explicit height wins deterministically. Horizontal
+     padding 24px unchanged. */
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 24px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
-/* Webflow: .button-pricing:hover, .button-pricing.sky-prcing-button — gradient bg + cyan border */
+/* Gradient layer on a pseudo-element so the hover (which swaps gradient↔solid)
+   fades smoothly via opacity instead of snapping (gradients can't animate). */
+.buttonPricing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Webflow: .button-pricing:hover, .button-pricing.sky-prcing-button — gradient bg + cyan border.
+   Gradient now revealed by fading in the ::before layer for a smooth transition. */
 .buttonPricing:hover,
 .buttonPricingSky {
   color: #fff;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-color: #21cfff;
 }
 
-/* Webflow: .button-pricing.sky-prcing-button:hover — solid navy */
+.buttonPricing:hover::before,
+.buttonPricingSky::before {
+  opacity: 1;
+}
+
+/* Webflow: .button-pricing.sky-prcing-button:hover — solid navy (fade gradient out) */
 .buttonPricingSky:hover {
   background-color: #082753;
-  background-image: none;
   border-color: #082753;
+}
+
+.buttonPricingSky:hover::before {
+  opacity: 0;
 }
 
 /* Webflow: .pricing-table-wrapper.margin-less — margin-top 20px, padding-left/right 5px */

@@ -280,7 +280,7 @@
   width: auto;
   margin-left: 10px;
   margin-right: 10px;
-  padding: 10px 24px;
+  padding: 13px 24px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -288,24 +288,50 @@
   text-decoration: none;
   display: flex;
   cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+/* gradient lives on a pseudo-element so it can fade smoothly */
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .cta:hover {
   color: #fff;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-color: #21cfff;
 }
 
-/* .button-pricing.sky-prcing-button */
+.cta:hover::before {
+  opacity: 1;
+}
+
+/* .button-pricing.sky-prcing-button — gradient default, navy on hover */
 .ctaSky {
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   border-color: #21cfff;
+}
+
+.ctaSky::before {
+  opacity: 1;
 }
 
 .ctaSky:hover {
   background-color: #082753;
-  background-image: none;
   border-color: #082753;
+}
+
+.ctaSky:hover::before {
+  opacity: 0;
 }
 
 /* .caption-small-2.center */
