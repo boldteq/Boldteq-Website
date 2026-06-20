@@ -103,13 +103,13 @@
   transition: color 0.2s ease;
 }
 
-/* blog-cat-name (gradient, right-aligned in header row) */
+/* blog-cat-name (gradient; Webflow text-align left, positioned right via flex) */
 .category {
   color: transparent;
   background-image: linear-gradient(#21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
-  text-align: right;
+  text-align: left;
   margin: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
@@ -118,56 +118,71 @@
   flex-shrink: 0;
 }
 
-/* paragraph.text-left.blog-desc */
+/* paragraph.text-left.blog-desc — global p margin-bottom 10px applies (Webflow doesn't reset it) */
 .description {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 28px;
   text-align: left;
-  margin: 4px 0 0;
+  margin: 0 0 10px;
 }
 
-/* a-gulf-book.blog-read-btn */
+/* a-gulf-book.blog-read-btn — borderless 52px arrow-box, gradient fades smoothly via ::before */
 .readBtn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   color: #fff;
   width: auto;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
-  background-color: var(--color-brand-dark);
-  background-image: url('/images/webflow/Group-46729-2.svg'),
-    linear-gradient(90deg, #21cfff, #019ae6);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
-  border: 2px solid transparent;
+  background-color: #111827;
+  border: 0;
   border-radius: 0.75rem;
   align-self: flex-start;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
   padding: 0.75rem 3rem 0.75rem 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
   text-decoration: none;
   display: inline-flex;
   box-shadow: var(--shadow-card);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.readBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/images/webflow/Group-46729-2.svg'),
+    linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .readBtn:hover {
-  background-color: var(--color-brand-navy);
-  background-image: url('/images/webflow/Group-46729-2.svg');
-  background-repeat: no-repeat;
-  background-size: auto;
+  background-color: #092245;
+}
+
+.readBtn:hover::before {
+  opacity: 0;
 }
 
 /* ============================================================
    min-width: 1280px
    ============================================================ */
 @media screen and (min-width: 1280px) {
+  /* min-height:280px wins over height:270px → card image is 280px at 1280–1439 */
   .imageCard {
     height: 270px;
+    min-height: 280px;
   }
 }
 
@@ -177,20 +192,16 @@
 @media screen and (min-width: 1440px) {
   .imageCard {
     height: 270px;
+    min-height: auto;
   }
 }
 
 /* ============================================================
-   max-width: 991px  (tablet)
+   max-width: 991px  (tablet) — Webflow keeps the 240px base height + 25px/35px title
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .imageCard {
-    height: 220px;
-  }
-
-  .title {
-    font-size: 22px;
-    line-height: 30px;
+  .body {
+    padding: 20px 24px 24px;
   }
 }
 
@@ -198,12 +209,12 @@
    max-width: 767px  (mobile portrait)
    ============================================================ */
 @media screen and (max-width: 767px) {
-  .imageCard {
-    height: 240px;
+  .readBtn {
+    font-size: 0.8rem;
   }
 
-  .body {
-    padding-bottom: 0;
+  .readBtn::before {
+    background-size: 26px, auto;
   }
 }
 
@@ -211,22 +222,29 @@
    max-width: 479px  (small mobile)
    ============================================================ */
 @media screen and (max-width: 479px) {
-  .imageCard {
-    height: 200px;
+  .body {
+    padding: 10px 10px 0;
   }
 
-  .body {
-    padding: 10px 0 0;
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 10px;
   }
 
   .header {
-    /* Title stacks above category on tiny screens */
-    flex-direction: column;
+    /* Webflow keeps the row (space-between); only top-aligns at 479 */
     align-items: flex-start;
-    gap: 4px;
   }
 
-  .category {
-    text-align: left;
+  .readBtn {
+    width: 100%;
+    align-self: stretch;
+    font-size: 1.1rem;
+  }
+
+  .readBtn::before {
+    background-position: 94%, 0 0;
+    background-size: 29px 29px, auto;
   }
 }

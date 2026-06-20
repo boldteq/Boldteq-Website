@@ -17,113 +17,68 @@
   margin: 0 auto;
 }
 
+/* .web-sec3-outer — flex column, place-items center stretch */
 .body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
 }
 
+/* .web-sec4-min — constrained 600px text column; spacing via child margins (gap 0) */
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 0;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* h2.heading-2.web-sec4-heading — .heading-2 base color is --blue (#082753) */
 .heading {
-  color: var(--color-brand-navy);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 45px;
-  margin: 0;
+  line-height: 48px;
+  margin: 0 0 10px;
   text-align: center;
 }
 
+/* p.paragraph.text-center */
 .subtitle {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   line-height: 28px;
-  color: var(--color-text-muted);
-  margin: 0;
+  color: var(--color-text-secondary);
+  margin: 0 0 10px;
   text-align: center;
 }
 
+/* ._2-btns-grid.stretch — margin-top 1rem from base */
 .btnRow {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 16px;
 }
 
-/* .btnPrimary — mirrors Webflow .btn-primary base (webflow.css L4218) */
-.btnPrimary,
-.btn-primary {
-  color: #fff;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.75rem;
-  background-color: #111827;
-  background-image: url('/images/webflow/Group-46729-2.svg'), var(--gradient-brand);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
-  border: 2px #0000;
-  border-radius: 0.75rem;
-  width: auto;
-  padding: 8px 3rem 8px 1rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-card);
-}
-
-.btnNavy {
-  color: var(--color-surface);
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.75rem;
-  background-color: var(--color-text-primary);
-  background-image: url('/images/webflow/Group-46729-1.svg');
-  background-position: 94%;
-  background-repeat: no-repeat;
-  background-size: auto;
-  border-radius: 0.75rem;
-  padding: 0.75rem 3rem 0.75rem 1.25rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* .webdev-sec4-gridtwo — 2-card grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  align-self: stretch;
 }
 
-@media (max-width: 767px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .heading {
-    font-size: 2rem;
-  }
-
-  .btnPrimary,
-  .btn-primary {
-    width: auto;
-    font-size: 0.8rem;
-  }
-}
-
+/* .blog-btm-grid */
 .card {
-  background-color: var(--color-accent-bg);
+  background-color: #21cfff14;
   border: 1px solid rgba(33, 207, 255, 0.25);
   border-radius: 20px;
   padding: 16px;
@@ -142,15 +97,20 @@
   text-align: left;
 }
 
+/* p.paragraph.text-left — 10px bottom margin (Webflow p default) */
 .cardPara {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   line-height: 28px;
   color: var(--color-text-secondary);
-  margin: 0 0 16px;
+  margin: 0 0 10px;
 }
 
+/* a.btn-primary.demo-btn.margin-top-5 — borderless arrow-box, gradient fades via ::before */
 .cardBtn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -160,66 +120,82 @@
   font-weight: 700;
   line-height: 1.75rem;
   background-color: #111827;
-  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
-  border: 2px solid transparent;
+  border: 0;
   border-radius: 0.75rem;
   padding: 10px 3.3rem 10px 1rem;
   text-decoration: none;
   margin-top: 5px;
   box-shadow: var(--shadow-card);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cardBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
+  background-position: 93%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .cardBtn:hover {
   background-color: #092245;
-  background-image: url('/images/webflow/Group-46729-2.svg');
-  background-repeat: no-repeat;
-  background-size: auto;
 }
+
+.cardBtn:hover::before {
+  opacity: 0;
+}
+
+/* ============================================================
+   max-width: 991px — .blog-bottom-sec padding collapses to 0
+   ============================================================ */
 @media (max-width: 991px) {
   .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .btnPrimary,
-  .btn-primary {
-    width: auto;
-    font-size: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
-@media (min-width: 1280px) {
-  /* Note: bottom-CTA grid is 2 cards by design, keep 2-col. Webflow's global
-     .grid class (used elsewhere) is 3-col at 1280, audit may flag this. */
+/* ============================================================
+   max-width: 767px — cards stack, section regains 60px bottom padding
+   ============================================================ */
+@media (max-width: 767px) {
+  .section {
+    padding-bottom: 60px;
+  }
+
   .grid {
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
   }
 
-  .btnPrimary,
-  .btn-primary {
-    width: auto;
-    border-style: none;
-    padding: 10px 3rem 10px 1.25rem;
-    font-size: 16px;
+  .body {
+    gap: 20px;
   }
-}
 
-@media (min-width: 1440px) {
-  .btnPrimary,
-  .btn-primary {
-    width: auto;
+  .heading {
+    font-size: 30px;
+    line-height: 40px;
   }
 }
 
+/* ============================================================
+   max-width: 479px
+   ============================================================ */
 @media (max-width: 479px) {
-  .btnPrimary,
-  .btn-primary {
-    width: 100%;
+  .heading {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .btnRow {
     flex-direction: column;
-    padding-left: 0.5rem;
-    font-size: 0.9rem;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
   }
 }

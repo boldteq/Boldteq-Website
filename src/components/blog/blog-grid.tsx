@@ -145,7 +145,7 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                   <span />
                   <h3 className={styles.filterBarTitle}>Follow Us</h3>
                 </div>
-                <div className={styles.filterOptions}>
+                <div className={`${styles.filterOptions} ${styles.filterOptionsSocial}`}>
                   <div className={styles.socialRow}>
                     <a
                       href="https://www.linkedin.com/company/boldteq"
@@ -157,8 +157,8 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                       <Image
                         src="/images/webflow/ri_linkedin-fill.svg"
                         alt="LinkedIn"
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                       />
                     </a>
                     <a
@@ -171,8 +171,8 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                       <Image
                         src="/images/webflow/mdi_instagram.svg"
                         alt="Instagram"
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                       />
                     </a>
                     <a
@@ -185,8 +185,8 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                       <Image
                         src="/images/webflow/basil_facebook-solid.svg"
                         alt="Facebook"
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                       />
                     </a>
                   </div>

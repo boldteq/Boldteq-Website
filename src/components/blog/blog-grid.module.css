@@ -52,12 +52,11 @@
   display: flex;
 }
 
-/* filter_block.search-block.blog-filter-block */
+/* filter_block.search-block.blog-filter-block — no padding; the field's own 1rem inset spaces it */
 .searchBlock {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: var(--shadow-card-soft);
-  padding: 10px;
 }
 
 /* filter_block.blog-filter-block */
@@ -91,26 +90,19 @@
   font-weight: 700;
 }
 
-/* filter_reset */
+/* filter_reset — hidden in Webflow (display:none) */
 .filterReset {
-  color: var(--color-brand-blue);
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.filterReset:hover {
-  color: var(--color-text-primary);
+  display: none;
 }
 
 /* filter_options */
 .filterOptions {
-  padding: 0 0.8rem 0.8rem;
+  padding: 0 0.8rem 0.5rem;
+}
+
+/* filter_options.sidebar-social-icons — Follow Us block has extra bottom padding */
+.filterOptionsSocial {
+  padding-bottom: 1rem;
 }
 
 /* filter_search-field */
@@ -143,43 +135,69 @@
   outline-offset: 1px;
 }
 
-/* Category list inside sidebar */
+/* Category list inside sidebar — rows spaced by .checkbox_field vertical padding, not gap */
 .categoryList {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* .checkbox_field — row padding .3rem, checkbox margin-right .75rem */
 .categoryItem {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.75rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 
+/* .checkbox_input — 1.25rem box, 1px #dadada, 5px radius; appearance:none so
+   border/radius/checked-fill render like Webflow's custom checkbox */
 .categoryCheckbox {
-  width: 16px;
-  height: 16px;
-  border: 1.5px solid #d1d5db;
-  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  background-color: #fff;
   cursor: pointer;
-  accent-color: var(--color-brand-cyan);
   flex-shrink: 0;
+  margin: 0;
 }
 
+/* .checkbox_input.w--redirected-checked — fill #019ae6, border #21cfff, white check */
+.categoryCheckbox:checked {
+  background-color: #019ae6;
+  border-color: #21cfff;
+  background-image: url("/images/webflow/custom-checkbox-checkmark.589d534424.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.categoryCheckbox:focus-visible {
+  outline: 2px solid var(--color-brand-cyan);
+  outline-offset: 1px;
+}
+
+/* .checkbox_label — Webflow shows no active/bold state, only the checkbox fill changes */
 .categoryLabel {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   cursor: pointer;
+  font-weight: 400;
   line-height: 1.4;
+  margin-right: 0.25rem;
 }
 
 .categoryLabelActive {
-  color: var(--color-brand-blue);
-  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-weight: 400;
 }
 
 /* Top Posts */
@@ -241,12 +259,11 @@
   margin: 0;
 }
 
-/* Social icons row */
+/* Social icons row (.row-regular) */
 .socialRow {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
-  padding: 4px 0;
 }
 
 .socialLink {
@@ -256,9 +273,10 @@
   text-decoration: none;
 }
 
+/* .sidebar-social-link img — render at intrinsic 20x20 like Webflow */
 .socialLink img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 /* ── Content area (filter_content.blog-filter-content) ── */
@@ -345,10 +363,6 @@
     grid-template-columns: 1fr;
   }
 
-  .filterColumn {
-    flex-flow: column-reverse;
-  }
-
   .grid {
     grid-row-gap: 20px;
     grid-template-columns: 1fr;
@@ -366,6 +380,11 @@
 @media screen and (max-width: 479px) {
   .filterGrid {
     grid-template-columns: minmax(100%, 1fr);
+  }
+
+  /* Webflow reverses the sidebar order only below 480px */
+  .filterColumn {
+    flex-flow: column-reverse;
   }
 
   .section {
