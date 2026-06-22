@@ -78,24 +78,23 @@
 .badgeGrid {
   grid-column-gap: 14px;
   grid-row-gap: 14px;
-  width: 100%;
-  max-width: 760px;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   display: flex;
 }
 
-/* Individual badge box (.blog-ban-gridbox) — refined white card, equal width,
-   centered icon+label, hairline navy border + soft modern shadow */
+/* Individual badge box (.blog-ban-gridbox) — refined white card that HUGS its
+   content (icon sits a consistent 18px from the left edge in every card), with a
+   hairline navy border + soft modern shadow. Centered as a group, not stretched. */
 .badge {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 0 0 auto;
   background-color: #fff;
   border: 1px solid rgba(8, 39, 83, 0.08);
   border-radius: 14px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 18px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -212,18 +211,10 @@
     font-size: 1.9rem;
   }
 
+  /* badges keep hugging their content and wrap gracefully if the row is tight */
   .badgeGrid {
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    flex-flow: row;
-    display: flex;
-    width: 100%;
-  }
-
-  .badge {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
   }
 }
 
@@ -252,17 +243,22 @@
     line-height: 26px;
   }
 
+  /* phone: three equal columns, icon stacked over a centered label */
   .badgeGrid {
     flex-flow: row;
+    flex-wrap: nowrap;
     display: flex;
     width: 100%;
   }
 
   .badge {
+    flex: 1 1 0;
+    min-width: 0;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
+    padding: 12px 10px;
   }
 
   .badgeLabel {
