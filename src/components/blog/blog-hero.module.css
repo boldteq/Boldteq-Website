@@ -74,34 +74,48 @@
   display: flex;
 }
 
-/* Badge grid (.web-ban-grid.mob-2grid.blog-ban-grid) — 3 boxes in a row */
+/* Badge grid (.web-ban-grid.mob-2grid.blog-ban-grid) — 3 balanced equal-width boxes */
 .badgeGrid {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  flex: 0 auto;
-  width: auto;
+  grid-column-gap: 14px;
+  grid-row-gap: 14px;
+  width: 100%;
+  max-width: 760px;
+  justify-content: center;
+  align-items: stretch;
   display: flex;
 }
 
-/* Individual badge box (.blog-ban-gridbox) — white card, 10px radius, 15px padding */
+/* Individual badge box (.blog-ban-gridbox) — refined white card, equal width,
+   centered icon+label, hairline navy border + soft modern shadow */
 .badge {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  flex: 1 1 0;
+  min-width: 0;
   background-color: #fff;
-  border-radius: 10px;
+  border: 1px solid rgba(8, 39, 83, 0.08);
+  border-radius: 14px;
+  justify-content: center;
   align-items: center;
-  width: auto;
-  padding: 15px;
-  transition: all 0.5s ease;
+  padding: 14px 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
-  box-shadow: 0 0 5px #0000001a;
+  box-shadow: 0 4px 14px rgba(8, 39, 83, 0.07);
   color: #18181b;
   text-decoration: none;
 }
 
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(8, 39, 83, 0.1);
+}
+
+/* Uniform icon footprint — all three glyphs occupy the same 22px square and
+   scale proportionally inside it (source SVGs are 18×20 / 20×20 / 20×20). */
 .badgeIcon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -150,7 +164,7 @@
   }
 
   .badge {
-    padding: 20px;
+    padding: 16px 20px;
   }
 }
 

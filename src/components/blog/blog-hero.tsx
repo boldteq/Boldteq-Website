@@ -33,8 +33,8 @@ export function BlogHero() {
                   <Image
                     src={badge.icon}
                     alt=""
-                    width={24}
-                    height={24}
+                    width={22}
+                    height={22}
                     className={styles.badgeIcon}
                     aria-hidden="true"
                   />
