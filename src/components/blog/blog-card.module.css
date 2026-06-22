@@ -64,26 +64,10 @@
   padding: 0.5rem 0 0;
 }
 
-/* content_card-header — flex row: title left, cat right */
-.header {
-  color: var(--color-text-primary);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 30px;
-}
-
 .titleLink {
+  display: block;
   color: inherit;
   text-decoration: none;
-  flex: 1 1 auto;
-  min-width: 0;
 }
 
 .titleLink:hover .title {
@@ -103,19 +87,21 @@
   transition: color 0.2s ease;
 }
 
-/* blog-cat-name (gradient; Webflow text-align left, positioned right via flex) */
+/* category — gradient-text eyebrow above the title, left-aligned */
 .category {
+  display: block;
+  align-self: flex-start;
+  text-align: left;
+  margin: 0 0 6px;
+  font-family: var(--font-roobert), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: transparent;
-  background-image: linear-gradient(#21cfff, #019ae6);
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
-  text-align: left;
-  margin: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-  flex-shrink: 0;
+  -webkit-text-fill-color: transparent;
 }
 
 /* paragraph.text-left.blog-desc — global p margin-bottom 10px applies (Webflow doesn't reset it) */
@@ -153,18 +139,28 @@
     box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+/* gradient fades to navy on hover */
 .readBtn::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url('/images/webflow/Group-46729-2.svg'),
-    linear-gradient(90deg, #21cfff, #019ae6);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
+  background-image: linear-gradient(90deg, #21cfff, #019ae6);
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+}
+
+/* arrow stays visible on hover (matches Webflow .a-gulf-book:hover) */
+.readBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/images/webflow/Group-46729-2.svg');
+  background-position: 93%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  pointer-events: none;
 }
 
 .readBtn:hover {
@@ -213,8 +209,8 @@
     font-size: 0.8rem;
   }
 
-  .readBtn::before {
-    background-size: 26px, auto;
+  .readBtn::after {
+    background-size: 26px;
   }
 }
 
@@ -232,19 +228,14 @@
     margin-bottom: 10px;
   }
 
-  .header {
-    /* Webflow keeps the row (space-between); only top-aligns at 479 */
-    align-items: flex-start;
-  }
-
   .readBtn {
     width: 100%;
     align-self: stretch;
     font-size: 1.1rem;
   }
 
-  .readBtn::before {
-    background-position: 94%, 0 0;
-    background-size: 29px 29px, auto;
+  .readBtn::after {
+    background-position: 94%;
+    background-size: 29px 29px;
   }
 }

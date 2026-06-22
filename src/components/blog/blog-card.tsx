@@ -38,13 +38,12 @@ export function BlogCard({ post }: BlogCardProps) {
 
       {/* content_card-block-blog — sibling text body */}
       <div className={styles.body}>
-        {/* content_card-header — flex row: title left, gradient cat right */}
-        <div className={styles.header}>
-          <Link href={href} className={styles.titleLink}>
-            <h3 className={styles.title}>{post.title}</h3>
-          </Link>
-          <p className={styles.category}>{categoryLabel}</p>
-        </div>
+        {/* category tag — eyebrow above the title (was floating top-right) */}
+        <span className={styles.category}>{categoryLabel}</span>
+
+        <Link href={href} className={styles.titleLink}>
+          <h3 className={styles.title}>{post.title}</h3>
+        </Link>
 
         <p className={styles.description}>{post.shortDescription}</p>
 

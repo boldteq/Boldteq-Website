@@ -43,12 +43,17 @@
   display: grid;
 }
 
-/* ── Sidebar (filter_column.blog-filter-column) ── */
+/* ── Sidebar (filter_column.blog-filter-column) ──
+   Webflow's base .filter_column has padding:10px (not overridden by
+   .blog-filter-column), which insets the content 10px at the top so it lines up
+   with .filter_content's own 10px top padding — keeping the search field and the
+   first card row on the same horizontal line. */
 .filterColumn {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
   background-color: transparent;
   flex-flow: column;
+  padding: 10px;
   display: flex;
 }
 
@@ -68,11 +73,11 @@
   overflow: hidden;
 }
 
-/* filter_block-header.margin-top-0.blog-filter-header */
+/* filter_block-header.margin-top-0.blog-filter-header — title left-aligned */
 .filterBlockHeader {
   background-color: transparent;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 0.5rem 0.8rem;
   display: flex;

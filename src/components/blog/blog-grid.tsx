@@ -109,7 +109,6 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
               {/* Top Posts */}
               <div className={styles.filterBlock}>
                 <div className={styles.filterBlockHeader}>
-                  <span />
                   <h3 className={styles.filterBarTitle}>Top Posts</h3>
                 </div>
                 <div className={styles.filterOptions}>
@@ -142,7 +141,6 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
               {/* Follow Us */}
               <div className={styles.filterBlock}>
                 <div className={styles.filterBlockHeader}>
-                  <span />
                   <h3 className={styles.filterBarTitle}>Follow Us</h3>
                 </div>
                 <div className={`${styles.filterOptions} ${styles.filterOptionsSocial}`}>
