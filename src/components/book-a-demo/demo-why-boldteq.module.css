@@ -85,29 +85,25 @@
 /* Cards grid */
 .grid {
   display: grid;
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+/* .demodev-sec5-grid-inner — white card, soft shadow, borderless (Webflow 1px #21cfff40 = no style keyword) */
 .card {
   background-color: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 32px 24px;
-  transition: background-color 0.3s, border-color 0.4s, box-shadow 0.3s;
+  border: 0;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 11px 80px #d1d1d11a;
 }
 
-.card:hover {
-  background-color: var(--color-brand-card-hover);
-  border-color: var(--color-brand-card-border);
-  box-shadow: var(--shadow-card-cyan);
-}
 
 .cardIcon {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .cardTitle {

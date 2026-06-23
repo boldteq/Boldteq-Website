@@ -50,24 +50,18 @@
 /* Cards grid */
 .grid {
   display: grid;
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+/* .demodev-sec2-grid-inner — #def4ff card, cyan border, 22px padding */
 .card {
-  background-color: var(--color-brand-light-bg);
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 32px 24px;
-  transition: background-color 0.3s, border-color 0.4s, box-shadow 0.3s;
-}
-
-.card:hover {
-  background-color: var(--color-brand-card-hover);
-  border-color: var(--color-brand-card-border);
-  box-shadow: var(--shadow-card-cyan);
+  background-color: #def4ff;
+  border: 1px solid #009ce0;
+  border-radius: 20px;
+  padding: 22px;
 }
 
 .cardIcon {
