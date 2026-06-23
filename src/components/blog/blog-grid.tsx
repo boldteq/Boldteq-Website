@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import {
   BLOG_POSTS,
   BLOG_CATEGORIES,
@@ -16,16 +17,35 @@ const PAGE_SIZE = 6;
 /** Number of entries in the "Top Posts" sidebar block. */
 const TOP_POSTS_COUNT = 4;
 const TOP_POSTS = BLOG_POSTS.slice(0, TOP_POSTS_COUNT);
+/** Debounce window before a search keystroke is applied to filtering/URL. */
+const SEARCH_DEBOUNCE_MS = 200;
 
 interface BlogGridProps {
   /** Pre-select a category (used by /blog/categories/[slug]) */
   initialCategory?: string;
+  /** Pre-fill the search box (from the ?q= query param) */
+  initialSearch?: string;
+  /** Mirror the active category/search into the URL query (listing page only) */
+  syncToUrl?: boolean;
 }
 
-export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
+export function BlogGrid({
+  initialCategory = "all",
+  initialSearch = "",
+  syncToUrl = false,
+}: BlogGridProps = {}) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [activeCategory, setActiveCategory] = useState<string>(initialCategory);
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchInput, setSearchInput] = useState<string>(initialSearch);
+  const [searchQuery, setSearchQuery] = useState<string>(initialSearch);
   const [visibleCount, setVisibleCount] = useState<number>(PAGE_SIZE);
+
+  // Debounce the raw input into the query used for filtering + URL sync.
+  useEffect(() => {
+    const t = setTimeout(() => setSearchQuery(searchInput), SEARCH_DEBOUNCE_MS);
+    return () => clearTimeout(t);
+  }, [searchInput]);
 
   const filtered = useMemo(() => {
     return BLOG_POSTS.filter((post) => {
@@ -46,11 +66,22 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
     setVisibleCount(PAGE_SIZE);
   }, [activeCategory, searchQuery]);
 
+  // Keep the URL query in sync so filters are shareable + back-button friendly.
+  useEffect(() => {
+    if (!syncToUrl) return;
+    const params = new URLSearchParams();
+    if (activeCategory !== "all") params.set("category", activeCategory);
+    if (searchQuery.trim()) params.set("q", searchQuery.trim());
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  }, [activeCategory, searchQuery, syncToUrl, pathname, router]);
+
   const visiblePosts = filtered.slice(0, visibleCount);
   const hasActiveFilter = activeCategory !== "all" || searchQuery.trim() !== "";
 
   const handleReset = () => {
     setActiveCategory("all");
+    setSearchInput("");
     setSearchQuery("");
   };
 
@@ -63,7 +94,7 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
             <div className={styles.filterColumn}>
               {/* Search */}
               <div
-                className={`${styles.searchBlock} ${searchQuery ? styles.searchBlockFilled : ""}`}
+                className={`${styles.searchBlock} ${searchInput ? styles.searchBlockFilled : ""}`}
               >
                 <label htmlFor="blog-search" className={styles.srOnly}>
                   Search blog articles
@@ -73,14 +104,17 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                   type="search"
                   className={styles.searchField}
                   placeholder="Search here..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
                 />
-                {searchQuery && (
+                {searchInput && (
                   <button
                     type="button"
                     className={styles.searchClear}
-                    onClick={() => setSearchQuery("")}
+                    onClick={() => {
+                      setSearchInput("");
+                      setSearchQuery("");
+                    }}
                     aria-label="Clear search"
                   >
                     ✕

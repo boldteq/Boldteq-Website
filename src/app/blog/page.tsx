@@ -1,7 +1,7 @@
 import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
 import { SITE_CONFIG } from "@/lib/constants/site";
-import { BLOG_POSTS } from "@/lib/constants/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/constants/blog";
 import { GradientPageBg } from "@/components/shared/page-bg";
 import { BlogHero } from "@/components/blog/blog-hero";
 import { BlogGrid } from "@/components/blog/blog-grid";
@@ -38,14 +38,28 @@ const blogSchema = {
   })),
 };
 
-export default function BlogPage() {
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string; q?: string }>;
+}) {
+  const sp = await searchParams;
+  const initialCategory = BLOG_CATEGORIES.some((c) => c.slug === sp.category)
+    ? (sp.category as string)
+    : "all";
+  const initialSearch = typeof sp.q === "string" ? sp.q : "";
+
   return (
     <>
       <JsonLd data={breadcrumbs} id="schema-breadcrumbs" />
       <JsonLd data={blogSchema} id="schema-blog" />
       <GradientPageBg />
       <BlogHero />
-      <BlogGrid />
+      <BlogGrid
+        initialCategory={initialCategory}
+        initialSearch={initialSearch}
+        syncToUrl
+      />
       <BlogBottomCta />
       <BetaCta />
     </>
