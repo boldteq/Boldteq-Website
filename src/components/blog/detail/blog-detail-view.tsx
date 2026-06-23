@@ -71,7 +71,10 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
               sizes="(max-width: 991px) 100vw, 800px"
             />
 
-            {/* Rich text body from CMS */}
+            {/* Rich text body. SAFETY: post.content is trusted, build-time HTML
+                authored in src/lib/constants/blog.ts — never user/runtime input.
+                If this is ever wired to an external CMS, sanitize before rendering
+                (e.g. with isomorphic-dompurify). */}
             <div
               className={styles.body}
               dangerouslySetInnerHTML={{ __html: post.content ?? "" }}

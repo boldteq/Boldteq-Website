@@ -7,6 +7,9 @@ import { BlogDetailView } from "@/components/blog/detail/blog-detail-view";
 import { BetaCta } from "@/components/shared/beta-cta";
 import { GradientPageBg } from "@/components/shared/page-bg";
 
+/** How many related posts to show under "Continue Reading". */
+const RELATED_POSTS_COUNT = 3;
+
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
@@ -40,22 +43,21 @@ export default async function BlogDetailPage({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  // Related posts: same category, excluding current
-  const related = BLOG_POSTS.filter(
+  // Related posts: same category first, then top up from other posts.
+  const sameCategory = BLOG_POSTS.filter(
     (p) => p.slug !== post.slug && p.category === post.category,
-  ).slice(0, 3);
+  ).slice(0, RELATED_POSTS_COUNT);
 
-  // If fewer than 3 related, fill from other posts
   const relatedPosts =
-    related.length >= 2
-      ? related
+    sameCategory.length >= RELATED_POSTS_COUNT
+      ? sameCategory
       : [
-          ...related,
+          ...sameCategory,
           ...BLOG_POSTS.filter(
             (p) =>
               p.slug !== post.slug &&
-              !related.find((r) => r.slug === p.slug),
-          ).slice(0, 3 - related.length),
+              !sameCategory.find((r) => r.slug === p.slug),
+          ).slice(0, RELATED_POSTS_COUNT - sameCategory.length),
         ];
 
   const breadcrumbs = breadcrumbSchema([

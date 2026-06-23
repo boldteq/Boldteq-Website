@@ -19,8 +19,7 @@
 
 /* tabs-container → padding-vertical.padding-xlarge inner
    Canonical site container: 100% width, capped at 1280px, centered. */
-.tabsContainer,
-.tabs-container {
+.tabsContainer {
   width: 100%;
   max-width: 1280px;
   margin-right: auto;
@@ -529,8 +528,7 @@
   }
 }
 @media screen and (min-width: 1440px) {
-  .tabsContainer,
-  .tabs-container {
+  .tabsContainer {
     max-width: 1320px;
   }
 }
