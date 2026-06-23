@@ -3,13 +3,13 @@
    Matches Webflow .blog-post-sec.new + .filter_grid exactly
    ============================================================ */
 
-/* blog-post-sec.new */
+/* blog-post-sec.new — horizontal gutter lives on .tabsContainer (canonical container) */
 .section {
   background-color: transparent;
   background-image: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  padding: 0 3% 80px;
+  padding: 0 0 80px;
   display: block;
   justify-content: center;
   position: relative;
@@ -17,13 +17,14 @@
   margin-left: auto;
 }
 
-/* tabs-container → padding-vertical.padding-xlarge inner
-   Canonical site container: 100% width, capped at 1280px, centered. */
+/* Canonical site container: 100% width, capped at 1280px (1320 @1440), 2rem gutter. */
 .tabsContainer {
   width: 100%;
   max-width: 1280px;
   margin-right: auto;
   margin-left: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* filt-out */
@@ -398,40 +399,41 @@
 }
 
 /* Load More button — navy pill, gradient on hover (on-brand, no arrow) */
+/* Light, secondary "load more" affordance — outline pill + chevron, not a heavy
+   filled CTA (keeps the listing from feeling button-heavy). */
 .loadBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  padding: 0 2.5rem;
-  border: 0;
-  border-radius: 0.75rem;
-  background-color: #082753;
-  color: #fff;
+  gap: 8px;
+  height: 44px;
+  padding: 0 1.75rem;
+  border: 1.5px solid rgba(8, 39, 83, 0.16);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.9375rem;
+  font-weight: 600;
   line-height: 1;
   cursor: pointer;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.loadBtn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  transition: opacity 0.3s ease-in-out;
+.loadBtnIcon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
-.loadBtn:hover::before {
-  opacity: 1;
+.loadBtn:hover {
+  background-color: rgba(33, 207, 255, 0.08);
+  border-color: var(--color-brand-blue);
+  color: var(--color-brand-blue);
+}
+
+.loadBtn:hover .loadBtnIcon {
+  transform: translateY(2px);
 }
 
 .loadBtn:focus-visible {
@@ -487,7 +489,11 @@
   .section {
     padding-top: 50px;
     padding-bottom: 50px;
-}
+  }
+  .tabsContainer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 /* ============================================================
@@ -525,6 +531,10 @@
   .section {
     padding-top: 20px;
     padding-bottom: 60px;
+  }
+  .tabsContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 @media screen and (min-width: 1440px) {

@@ -305,7 +305,21 @@ export function BlogGrid({
                           setVisibleCount((c) => c + PAGE_SIZE)
                         }
                       >
-                        Load More
+                        Load more articles
+                        <svg
+                          className={styles.loadBtnIcon}
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
                       </button>
                     </div>
                   )}

@@ -148,10 +148,6 @@
     padding-bottom: 5rem;
   }
 
-  .container {
-    max-width: 85rem;
-  }
-
   .heading {
     color: var(--color-brand-navy);
     font-size: 40px;
@@ -170,6 +166,11 @@
 @media screen and (min-width: 1440px) {
   .section {
     padding-bottom: 5rem;
+  }
+
+  /* canonical site container width (matches grid + bottom CTA + rest of site) */
+  .container {
+    max-width: 1320px;
   }
 }
 
