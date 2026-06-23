@@ -79,7 +79,8 @@
 }
 
 .cardText {
-  color: var(--color-text-subtle);
+  /* #6b7280 was 4.25:1 on the #def4ff card bg; #5b616e is ~5.4:1 (WCAG AA) */
+  color: #5b616e;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;

@@ -100,6 +100,13 @@
   border-color: #111827;
 }
 
+/* navy ring contrasts against the cyan→blue gradient section bg */
+.whiteBtn:focus-visible,
+.navyBtn:focus-visible {
+  outline: 2px solid #082753;
+  outline-offset: 2px;
+}
+
 /* navy-btn — matches Webflow .navy-btn (bg #082753, color #fff, min-width 190px, padding .75rem 3rem .75rem 1.25rem) */
 .navyBtn {
   color: #fff;

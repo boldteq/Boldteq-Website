@@ -445,7 +445,8 @@
 }
 
 .coming-soon-badge {
-  color: #1890ff;
+  /* #1890ff was 2.95:1 on #e6f7ff; #0a66c2 is ~5.2:1 (WCAG AA, site-wide footer) */
+  color: #0a66c2;
   text-align: center;
   background-color: #e6f7ff;
   border-radius: 4px;

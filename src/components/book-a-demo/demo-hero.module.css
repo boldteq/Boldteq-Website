@@ -186,6 +186,11 @@
   opacity: 0;
 }
 
+.ctaBtn:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 2px;
+}
+
 /* ============================================================
    min-width: 1280px
    ============================================================ */
