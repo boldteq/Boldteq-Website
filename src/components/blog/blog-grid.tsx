@@ -91,7 +91,7 @@ export function BlogGrid({
         <div className={styles.filtOut}>
           <div className={styles.filterGrid}>
             {/* ── LEFT SIDEBAR ── */}
-            <div className={styles.filterColumn}>
+            <aside className={styles.filterColumn} aria-label="Filter articles">
               {/* Search */}
               <div
                 className={`${styles.searchBlock} ${searchInput ? styles.searchBlockFilled : ""}`}
@@ -125,7 +125,7 @@ export function BlogGrid({
               {/* Categories */}
               <div className={styles.filterBlock}>
                 <div className={styles.filterBlockHeader}>
-                  <h3 className={styles.filterBarTitle}>Categories</h3>
+                  <h2 className={styles.filterBarTitle}>Categories</h2>
                 </div>
                 <div className={styles.filterOptions}>
                   <ul className={styles.categoryList} role="list">
@@ -159,7 +159,7 @@ export function BlogGrid({
               {/* Top Posts */}
               <div className={styles.filterBlock}>
                 <div className={styles.filterBlockHeader}>
-                  <h3 className={styles.filterBarTitle}>Top Posts</h3>
+                  <h2 className={styles.filterBarTitle}>Top Posts</h2>
                 </div>
                 <div className={styles.filterOptions}>
                   <ul className={styles.topPostsList} role="list">
@@ -191,7 +191,7 @@ export function BlogGrid({
               {/* Follow Us */}
               <div className={styles.filterBlock}>
                 <div className={styles.filterBlockHeader}>
-                  <h3 className={styles.filterBarTitle}>Follow Us</h3>
+                  <h2 className={styles.filterBarTitle}>Follow Us</h2>
                 </div>
                 <div className={`${styles.filterOptions} ${styles.filterOptionsSocial}`}>
                   <div className={styles.socialRow}>
@@ -200,7 +200,7 @@ export function BlogGrid({
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.socialLink}
-                      aria-label="Boldteq on LinkedIn"
+                      aria-label="Boldteq on LinkedIn (opens in a new tab)"
                     >
                       <Image
                         src="/images/webflow/ri_linkedin-fill.svg"
@@ -214,7 +214,7 @@ export function BlogGrid({
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.socialLink}
-                      aria-label="Boldteq on Instagram"
+                      aria-label="Boldteq on Instagram (opens in a new tab)"
                     >
                       <Image
                         src="/images/webflow/mdi_instagram.svg"
@@ -228,7 +228,7 @@ export function BlogGrid({
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.socialLink}
-                      aria-label="Boldteq on Facebook"
+                      aria-label="Boldteq on Facebook (opens in a new tab)"
                     >
                       <Image
                         src="/images/webflow/basil_facebook-solid.svg"
@@ -240,10 +240,11 @@ export function BlogGrid({
                   </div>
                 </div>
               </div>
-            </div>
+            </aside>
 
             {/* ── RIGHT CONTENT ── */}
             <div className={styles.filterContent}>
+              <h2 className={styles.srOnly}>Latest articles</h2>
               {/* Result count + reset (Webflow result-count parity) */}
               <div className={styles.resultBar}>
                 <p className={styles.resultCount} aria-live="polite">

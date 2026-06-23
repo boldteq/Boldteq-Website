@@ -39,7 +39,11 @@ export function BlogCard({ post }: BlogCardProps) {
 
         <p className={styles.description}>{post.shortDescription}</p>
 
-        <Link href={href} className={styles.readBtn}>
+        <Link
+          href={href}
+          className={styles.readBtn}
+          aria-label={`Read article: ${post.title}`}
+        >
           Read Article
         </Link>
       </div>

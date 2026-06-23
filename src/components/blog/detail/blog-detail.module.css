@@ -39,7 +39,9 @@
 
 /* blog-detail-cat-name-top (gradient category above title) */
 .catNameTop {
-  color: transparent;
+  /* solid fallback for browsers without background-clip:text support */
+  color: #019ae6;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(#21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
@@ -89,13 +91,31 @@
   line-height: 1.75;
 }
 
+.body h2 {
+  color: var(--color-text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+.body h3,
 .body h4 {
   color: var(--color-text-primary);
   font-size: 1.25rem;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  line-height: 1.35;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   font-family: var(--font-roobert), Arial, sans-serif;
+}
+
+/* first heading shouldn't add a big top gap under the cover image */
+.body > h2:first-child,
+.body > h3:first-child {
+  margin-top: 0;
 }
 
 .body p {
@@ -129,7 +149,7 @@
 
 /* auth-r-namm */
 .sidebarLabel {
-  color: #a3a3a3;
+  color: #5b616e; /* was #a3a3a3 (2.52:1) -> #5b616e ~5.6:1 */
   margin: 0 0 15px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
@@ -173,7 +193,7 @@
 
 /* auth-position */
 .authorRole {
-  color: #a3a3a3;
+  color: #5b616e; /* was #a3a3a3 (2.52:1) -> #5b616e ~5.6:1 */
   margin: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
@@ -181,7 +201,7 @@
 
 /* publish-text */
 .publishLabel {
-  color: #a3a3a3;
+  color: #5b616e; /* was #a3a3a3 (2.52:1) -> #5b616e ~5.6:1 */
   margin: 40px 0 5px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;

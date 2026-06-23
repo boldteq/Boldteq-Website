@@ -97,7 +97,7 @@
 }
 
 .searchClear:focus-visible {
-  outline: 2px solid var(--color-brand-cyan);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 1px;
 }
 
@@ -181,7 +181,7 @@
 }
 
 .searchField:focus {
-  outline: 2px solid var(--color-brand-cyan);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 1px;
 }
 
@@ -230,7 +230,7 @@
 }
 
 .categoryCheckbox:focus-visible {
-  outline: 2px solid var(--color-brand-cyan);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 1px;
 }
 
@@ -267,7 +267,9 @@
 }
 
 .topPostNumber {
-  color: transparent;
+  /* solid fallback for browsers without background-clip:text support */
+  color: #019ae6;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(#21cfff, #019ae6);
   -webkit-background-clip: text;
   background-clip: text;
@@ -302,7 +304,8 @@
 }
 
 .topPostCat {
-  color: #acacac;
+  /* #acacac failed WCAG AA (2.27:1); #5b616e is ~5.6:1 on white */
+  color: #5b616e;
   text-align: left;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
@@ -371,7 +374,7 @@
 }
 
 .resetBtn:focus-visible {
-  outline: 2px solid var(--color-brand-cyan);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 2px;
 }
 
@@ -433,7 +436,7 @@
 }
 
 .loadBtn:focus-visible {
-  outline: 2px solid var(--color-brand-cyan);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 2px;
 }
 

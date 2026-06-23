@@ -111,7 +111,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.shareLink}
-                  aria-label="Share on LinkedIn"
+                  aria-label="Share on LinkedIn (opens in a new tab)"
                 >
                   <Image
                     src="/images/webflow/ri_linkedin-fill.svg"
@@ -126,7 +126,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.shareLink}
-                  aria-label="Share on Facebook"
+                  aria-label="Share on Facebook (opens in a new tab)"
                 >
                   <Image
                     src="/images/webflow/basil_facebook-solid.svg"
@@ -141,7 +141,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.shareLink}
-                  aria-label="Share on X"
+                  aria-label="Share on X (opens in a new tab)"
                 >
                   <Image
                     src="/images/webflow/x-twitter.svg"
