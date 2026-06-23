@@ -210,3 +210,27 @@
     width: 100%;
   }
 }
+
+/* ============================================================
+   min-width: 1280px — match Webflow .heading-3-blue (20px) + .btn-primary (16px)
+   ============================================================ */
+@media (min-width: 1280px) {
+  .cardHeading {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .cardBtn {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px — Webflow .heading-3-blue grows to 22px/30px
+   ============================================================ */
+@media (min-width: 1440px) {
+  .cardHeading {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
