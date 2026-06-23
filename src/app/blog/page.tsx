@@ -35,6 +35,9 @@ const blogSchema = {
     description: post.shortDescription,
     image: post.image,
     url: `${SITE_CONFIG.url}/blog-posts/${post.slug}`,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    author: { "@type": "Person", name: post.author.name },
   })),
 };
 

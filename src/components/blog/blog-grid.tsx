@@ -289,9 +289,9 @@ export function BlogGrid({
               ) : (
                 <>
                   <ul className={styles.grid} role="list">
-                    {visiblePosts.map((post) => (
+                    {visiblePosts.map((post, index) => (
                       <li key={post.slug}>
-                        <BlogCard post={post} />
+                        <BlogCard post={post} priority={index < 2} />
                       </li>
                     ))}
                   </ul>

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BLOG_POSTS } from "@/lib/constants/blog";
+import { BLOG_POSTS, getCategoryLabel } from "@/lib/constants/blog";
 import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
 import { SITE_CONFIG } from "@/lib/constants/site";
@@ -63,6 +63,13 @@ export default async function BlogDetailPage({
     { name: post.title, path: `/blog-posts/${post.slug}` },
   ]);
 
+  // Plain-text body for schema (strip the CMS HTML tags).
+  const articleBody = (post.content ?? "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const wordCount = articleBody ? articleBody.split(" ").length : undefined;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -88,7 +95,11 @@ export default async function BlogDetailPage({
         url: "https://cdn.prod.website-files.com/68ee3857579ec95674c7dd80/6937cbaf47872f6a8eb16f1c_Group%2046895.svg",
       },
     },
-    articleSection: post.category,
+    articleSection: getCategoryLabel(post.category),
+    keywords: getCategoryLabel(post.category),
+    articleBody,
+    ...(wordCount ? { wordCount } : {}),
+    ...(post.readingTime ? { timeRequired: `PT${post.readingTime}M` } : {}),
     inLanguage: "en-US",
   };
 

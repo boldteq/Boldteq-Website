@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { PORTFOLIO_DETAILS } from "@/lib/constants/portfolio-details";
-import { BLOG_POSTS } from "@/lib/constants/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/constants/blog";
 
 const BASE_URL = SITE_CONFIG.url;
 
@@ -44,5 +44,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...portfolioRoutes, ...blogRoutes];
+  const blogCategoryRoutes: MetadataRoute.Sitemap = BLOG_CATEGORIES.filter(
+    (c) => c.slug !== "all",
+  ).map((c) => ({
+    url: `${BASE_URL}/blog/categories/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...portfolioRoutes,
+    ...blogRoutes,
+    ...blogCategoryRoutes,
+  ];
 }

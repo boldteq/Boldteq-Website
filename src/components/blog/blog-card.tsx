@@ -6,9 +6,11 @@ import styles from "./blog-card.module.css";
 
 interface BlogCardProps {
   post: BlogPost;
+  /** Eagerly load + prioritize this card's image (above-the-fold LCP) */
+  priority?: boolean;
 }
 
-export function BlogCard({ post }: BlogCardProps) {
+export function BlogCard({ post, priority = false }: BlogCardProps) {
   const categoryLabel = getCategoryLabel(post.category);
   const href = `/blog-posts/${post.slug}`;
 
@@ -23,7 +25,7 @@ export function BlogCard({ post }: BlogCardProps) {
             fill
             sizes="(max-width: 767px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className={styles.image}
-            loading="lazy"
+            {...(priority ? { priority: true } : { loading: "lazy" })}
           />
         </Link>
       </div>
