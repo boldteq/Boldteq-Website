@@ -19,4 +19,6 @@ export const SITE_CONFIG = {
   },
   appUrl: "https://app.boldteq.com",
   demoUrl: "/book-a-demo",
+  /** Calendly scheduling link used by the book-a-demo CTAs + inline widget */
+  calendly: "https://calendly.com/boldteq/schedule-demo",
 } as const;

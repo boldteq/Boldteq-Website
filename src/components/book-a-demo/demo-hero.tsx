@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SITE_CONFIG } from "@/lib/constants/site";
 import styles from "./demo-hero.module.css";
 
 const STAT_BADGES = [
@@ -60,10 +61,11 @@ export function DemoHero() {
           {/* CTA */}
           <div className={styles["ctaRow"]}>
             <a
-              href="https://calendly.com/boldteq/schedule-demo"
+              href={SITE_CONFIG.calendly}
               target="_blank"
               rel="noopener noreferrer"
               className={styles["ctaBtn"]}
+              aria-label="Schedule your demo (opens Calendly in a new tab)"
             >
               Schedule Your Demo
             </a>

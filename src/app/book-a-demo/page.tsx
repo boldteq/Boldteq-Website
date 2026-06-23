@@ -1,5 +1,6 @@
 import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
+import { SITE_CONFIG } from "@/lib/constants/site";
 import { GradientPageBg } from "@/components/shared/page-bg";
 import { DemoHero } from "@/components/book-a-demo/demo-hero";
 import { DemoCovers } from "@/components/book-a-demo/demo-covers";
@@ -10,9 +11,9 @@ import { DemoBookCta } from "@/components/book-a-demo/demo-book-cta";
 import { DemoSkyCta } from "@/components/book-a-demo/demo-sky-cta";
 
 export const metadata = createMetadata({
-  title: "Book a Demo | White Label Web Dev for Agencies | Boldteq",
+  title: "Book a Demo | White Label Web Development for Agencies | Boldteq",
   description:
-    "See how Boldteq works as your white-label backend team. Book a 30-min demo to learn how agencies use our subscription model to deliver faster without hiring.",
+    "Book a free demo to see how Boldteq's white-label web dev subscription works as your backend team — pricing, workflow, turnaround, and delivery, without hiring.",
   path: "/book-a-demo",
 });
 
@@ -20,10 +21,28 @@ const breadcrumbs = breadcrumbSchema([
   { name: "Book a Demo", path: "/book-a-demo" },
 ]);
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "White-Label Web Development Demo",
+  serviceType: "White-label web development subscription",
+  description:
+    "A personalized walkthrough of Boldteq's white-label web development subscription for agencies — workflow, pricing, turnaround, and delivery.",
+  url: `${SITE_CONFIG.url}/book-a-demo`,
+  provider: {
+    "@type": "Organization",
+    name: SITE_CONFIG.name,
+    url: SITE_CONFIG.url,
+  },
+  areaServed: "Worldwide",
+  audience: { "@type": "Audience", audienceType: "Digital agencies" },
+};
+
 export default function BookADemoPage() {
   return (
     <>
       <JsonLd data={breadcrumbs} id="schema-breadcrumbs" />
+      <JsonLd data={serviceSchema} id="schema-service" />
       <GradientPageBg />
       <DemoHero />
       <DemoCovers />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/constants/site";
 import styles from "./demo-sky-cta.module.css";
 
 export function DemoSkyCta() {
@@ -14,10 +15,11 @@ export function DemoSkyCta() {
             </p>
             <div className={styles.btnsGrid}>
               <a
-                href="https://calendly.com/boldteq/schedule-demo"
+                href={SITE_CONFIG.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.whiteBtn}
+                aria-label="Book a demo (opens Calendly in a new tab)"
               >
                 Book a Demo
               </a>

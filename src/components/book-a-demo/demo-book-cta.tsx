@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import Image from "next/image";
+import { SITE_CONFIG } from "@/lib/constants/site";
 import styles from "./demo-book-cta.module.css";
 
 const LEARN_ITEMS = [
@@ -76,13 +77,33 @@ export function DemoBookCta() {
 
           {/* Right column — Calendly inline widget */}
           <div className={styles.rightCol}>
-            <div style={{ borderRadius: "15px", overflow: "hidden" }}>
+            <div
+              className={styles.calendlyWrap}
+              role="region"
+              aria-label="Demo scheduling calendar"
+            >
+              {/* Empty node Calendly's script fills; min-height reserves space (no CLS) */}
               <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/boldteq/schedule-demo?hide_event_type_details=1&hide_gdpr_banner=1"
-                style={{ minWidth: "320px", height: "560px" }}
+                className={`calendly-inline-widget ${styles.calendlyWidget}`}
+                data-url={`${SITE_CONFIG.calendly}?hide_event_type_details=1&hide_gdpr_banner=1`}
               />
             </div>
+            {/* Always-visible fallback if the scheduler can't load / JS is blocked */}
+            <p className={styles.calendlyFallback}>
+              Calendar not loading?{" "}
+              <a
+                href={SITE_CONFIG.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open the booking page
+              </a>{" "}
+              or email{" "}
+              <a href={`mailto:${SITE_CONFIG.email.sales}`}>
+                {SITE_CONFIG.email.sales}
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
