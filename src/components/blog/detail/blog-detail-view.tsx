@@ -2,17 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/types/blog";
 import { SITE_CONFIG } from "@/lib/constants/site";
+import { getCategoryLabel } from "@/lib/constants/blog";
 import { BlogCard } from "../blog-card";
 import styles from "./blog-detail.module.css";
-
-const CATEGORY_LABELS: Record<string, string> = {
-  cro: "CRO",
-  shopify: "Shopify",
-  "ui-ux-design": "UI/UX Design",
-  "web-development": "Web Development",
-  "white-label-outsourcing": "White-Label & Outsourcing",
-  wordpress: "WordPress",
-};
 
 interface BlogDetailViewProps {
   post: BlogPost;
@@ -28,7 +20,7 @@ function formatDate(iso: string): string {
 }
 
 export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
-  const categoryLabel = CATEGORY_LABELS[post.category] ?? post.category;
+  const categoryLabel = getCategoryLabel(post.category);
   const postUrl = `${SITE_CONFIG.url}/blog-posts/${post.slug}`;
   const shareTitle = encodeURIComponent(post.title);
   const shareUrl = encodeURIComponent(postUrl);
@@ -71,7 +63,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
             {/* blog-detail-image */}
             <Image
               src={post.image}
-              alt={`${post.title} cover image`}
+              alt={post.title}
               width={800}
               height={450}
               className={styles.coverImage}
@@ -93,15 +85,15 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
               <p className={styles.sidebarLabel}>Author</p>
               <div className={styles.authorRow}>
                 <Image
-                  src="/images/webflow/53ca939ea8306f9306c2a81fd38c72ba62512c86.png"
+                  src={post.author.image}
                   alt="" aria-hidden="true"
                   width={49}
                   height={49}
                   className={styles.authorImage}
                 />
                 <div className={styles.authorMeta}>
-                  <h4 className={styles.authorName}>Cameron Williamson</h4>
-                  <p className={styles.authorRole}>Co-Founder @Boldteq</p>
+                  <p className={styles.authorName}>{post.author.name}</p>
+                  <p className={styles.authorRole}>{post.author.role}</p>
                 </div>
               </div>
               <p className={styles.publishLabel}>Published</p>
@@ -152,7 +144,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                   aria-label="Share on X"
                 >
                   <Image
-                    src="/images/webflow/mdi_instagram.svg"
+                    src="/images/webflow/x-twitter.svg"
                     alt=""
                     width={24}
                     height={24}
@@ -166,7 +158,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
             <div className={styles.sidebarBlock}>
               <p className={styles.shareLabel}>Categories</p>
               <Link
-                href={`/blog?category=${post.category}`}
+                href={`/blog/categories/${post.category}`}
                 className={styles.catLink}
               >
                 {categoryLabel}
@@ -196,8 +188,8 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
             <div className={styles.continueHeader}>
               <h2 className={styles.continueHeading}>Continue Reading</h2>
               <p className={styles.continueSubtitle}>
-                Practical perspectives on agency growth, white-label delivery,
-                and execution systems — written for teams scaling client work.
+                More on scaling delivery, white-label models, and running an
+                agency that grows without breaking.
               </p>
             </div>
             <ul className={styles.relatedGrid} role="list">

@@ -2,19 +2,13 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
-import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/constants/blog";
+import {
+  BLOG_POSTS,
+  BLOG_CATEGORIES,
+  getCategoryLabel,
+} from "@/lib/constants/blog";
 import { BlogCard } from "./blog-card";
 import styles from "./blog-grid.module.css";
-
-const CATEGORY_LABELS: Record<string, string> = {
-  all: "All",
-  cro: "CRO",
-  shopify: "Shopify",
-  "ui-ux-design": "UI/UX Design",
-  "web-development": "Web Development",
-  "white-label-outsourcing": "White-Label & Outsourcing",
-  wordpress: "WordPress",
-};
 
 interface BlogGridProps {
   /** Pre-select a category (used by /blog/categories/[slug]) */
@@ -129,7 +123,7 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                             {post.title}
                           </a>
                           <p className={styles.topPostCat}>
-                            {CATEGORY_LABELS[post.category] ?? post.category}
+                            {getCategoryLabel(post.category)}
                           </p>
                         </div>
                       </li>

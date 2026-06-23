@@ -1,23 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/types/blog";
+import { getCategoryLabel } from "@/lib/constants/blog";
 import styles from "./blog-card.module.css";
-
-const CATEGORY_LABELS: Record<string, string> = {
-  cro: "CRO",
-  shopify: "Shopify",
-  "ui-ux-design": "UI/UX Design",
-  "web-development": "Web Development",
-  "white-label-outsourcing": "White-Label & Outsourcing",
-  wordpress: "WordPress",
-};
 
 interface BlogCardProps {
   post: BlogPost;
 }
 
 export function BlogCard({ post }: BlogCardProps) {
-  const categoryLabel = CATEGORY_LABELS[post.category] ?? post.category;
+  const categoryLabel = getCategoryLabel(post.category);
   const href = `/blog-posts/${post.slug}`;
 
   return (

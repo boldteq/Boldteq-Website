@@ -25,7 +25,7 @@ export async function generateMetadata({
     path: `/blog-posts/${post.slug}`,
     ogImage: post.image,
     type: "article",
-    authors: [SITE_CONFIG.name],
+    authors: [post.author.name],
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt ?? post.publishedAt,
   });
@@ -77,9 +77,8 @@ export default async function BlogDetailPage({
       "@id": `${SITE_CONFIG.url}/blog-posts/${post.slug}`,
     },
     author: {
-      "@type": "Organization",
-      name: SITE_CONFIG.name,
-      url: SITE_CONFIG.url,
+      "@type": "Person",
+      name: post.author.name,
     },
     publisher: {
       "@type": "Organization",
