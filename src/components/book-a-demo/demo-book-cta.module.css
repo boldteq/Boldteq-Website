@@ -7,8 +7,6 @@
 .section {
   padding-top: 0;
   padding-bottom: 60px;
-  padding-left: 5%;
-  padding-right: 5%;
   position: relative;
 }
 
@@ -16,6 +14,8 @@
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* book-cal-out — 2-column grid */
@@ -224,5 +224,24 @@
   }
   .pricingCheck {
     margin-top: 4px;
+  }
+}
+
+/* canonical site container: 1320 @1440, reduced gutters on tablet/mobile */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (max-width: 479px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
