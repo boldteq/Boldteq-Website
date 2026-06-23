@@ -7,7 +7,6 @@ import { GradientPageBg } from "@/components/shared/page-bg";
 import { BlogHero } from "@/components/blog/blog-hero";
 import { BlogGrid } from "@/components/blog/blog-grid";
 import { BlogBottomCta } from "@/components/blog/blog-bottom-cta";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 /** Pre-render every category slug (excluding pseudo-slug "all") at build time. */
 export function generateStaticParams() {
@@ -87,7 +86,6 @@ export default async function BlogCategoryPage({
       />
       <BlogGrid initialCategory={category.slug} />
       <BlogBottomCta />
-      <BetaCta />
     </>
   );
 }

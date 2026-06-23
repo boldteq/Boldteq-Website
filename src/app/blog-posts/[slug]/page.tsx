@@ -4,7 +4,6 @@ import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { BlogDetailView } from "@/components/blog/detail/blog-detail-view";
-import { BetaCta } from "@/components/shared/beta-cta";
 import { GradientPageBg } from "@/components/shared/page-bg";
 
 /** How many related posts to show under "Continue Reading". */
@@ -111,7 +110,6 @@ export default async function BlogDetailPage({
       <JsonLd data={articleSchema} id="schema-article" />
       <GradientPageBg />
       <BlogDetailView post={post} relatedPosts={relatedPosts} />
-      <BetaCta />
     </>
   );
 }

@@ -6,7 +6,6 @@ import { GradientPageBg } from "@/components/shared/page-bg";
 import { BlogHero } from "@/components/blog/blog-hero";
 import { BlogGrid } from "@/components/blog/blog-grid";
 import { BlogBottomCta } from "@/components/blog/blog-bottom-cta";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "Agency Growth Blog | White Label Web Dev Insights | Boldteq",
@@ -64,7 +63,6 @@ export default async function BlogPage({
         syncToUrl
       />
       <BlogBottomCta />
-      <BetaCta />
     </>
   );
 }
