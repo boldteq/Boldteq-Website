@@ -1,5 +1,3 @@
-"use client";
-
 import Script from "next/script";
 import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/constants/site";

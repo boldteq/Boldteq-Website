@@ -59,6 +59,7 @@
   font-weight: 500;
   line-height: 24px;
   text-transform: capitalize;
+  color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
