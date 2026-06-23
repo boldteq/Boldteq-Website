@@ -78,7 +78,13 @@ export default async function BlogCategoryPage({
       <JsonLd data={breadcrumbs} id="schema-breadcrumbs" />
       <JsonLd data={collectionSchema} id="schema-collection" />
       <GradientPageBg />
-      <BlogHero />
+      <BlogHero
+        title={`${category.name} Articles`}
+        subtitle={
+          category.description ??
+          `Insights and articles on ${category.name} — written for agencies scaling client delivery.`
+        }
+      />
       <BlogGrid initialCategory={category.slug} />
       <BlogBottomCta />
       <BetaCta />

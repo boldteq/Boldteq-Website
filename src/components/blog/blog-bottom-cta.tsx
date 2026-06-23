@@ -36,7 +36,10 @@ export function BlogBottomCta() {
                   strategies, and how agencies scale execution while protecting
                   client relationships and quality.
                 </p>
-                <Link href="/blog" className={styles['cardBtn']}>
+                <Link
+                  href="/blog/categories/white-label-outsourcing"
+                  className={styles['cardBtn']}
+                >
                   View Articles
                 </Link>
               </div>

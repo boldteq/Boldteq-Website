@@ -8,22 +8,27 @@ const STAT_BADGES = [
   { icon: "/images/webflow/Layer_1-15.svg", label: "Execution-Focused" },
 ];
 
-export function BlogHero() {
+const DEFAULT_TITLE = "Insights on Scaling Agencies with White-Label Delivery";
+const DEFAULT_SUBTITLE =
+  "Practical insights on white-label outsourcing, agency growth, web delivery systems, and conversion-focused execution — written for agency founders and leadership teams.";
+
+interface BlogHeroProps {
+  /** Override the H1 (e.g. category pages: "Shopify Articles") */
+  title?: string;
+  /** Override the intro paragraph */
+  subtitle?: string;
+}
+
+export function BlogHero({ title, subtitle }: BlogHeroProps = {}) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.inner}>
           {/* H1 */}
-          <h1 className={styles.heading}>
-            Insights on Scaling Agencies with White-Label Delivery
-          </h1>
+          <h1 className={styles.heading}>{title ?? DEFAULT_TITLE}</h1>
 
           {/* Subtitle */}
-          <p className={styles.subtitle}>
-            Practical insights on white-label outsourcing, agency growth, web
-            delivery systems, and conversion-focused execution — written for
-            agency founders and leadership teams.
-          </p>
+          <p className={styles.subtitle}>{subtitle ?? DEFAULT_SUBTITLE}</p>
 
           {/* Stat badges */}
           <div className={styles.badgeGridWrap}>

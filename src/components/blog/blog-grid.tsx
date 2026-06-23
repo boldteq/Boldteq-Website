@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   BLOG_POSTS,
   BLOG_CATEGORIES,
@@ -9,6 +10,12 @@ import {
 } from "@/lib/constants/blog";
 import { BlogCard } from "./blog-card";
 import styles from "./blog-grid.module.css";
+
+/** Posts shown per page; "Load More" reveals another page (Webflow Finsweet parity). */
+const PAGE_SIZE = 6;
+/** Number of entries in the "Top Posts" sidebar block. */
+const TOP_POSTS_COUNT = 4;
+const TOP_POSTS = BLOG_POSTS.slice(0, TOP_POSTS_COUNT);
 
 interface BlogGridProps {
   /** Pre-select a category (used by /blog/categories/[slug]) */
@@ -18,6 +25,7 @@ interface BlogGridProps {
 export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
   const [activeCategory, setActiveCategory] = useState<string>(initialCategory);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [visibleCount, setVisibleCount] = useState<number>(PAGE_SIZE);
 
   const filtered = useMemo(() => {
     return BLOG_POSTS.filter((post) => {
@@ -33,10 +41,17 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
     });
   }, [activeCategory, searchQuery]);
 
-  const topPosts = useMemo(() => BLOG_POSTS.slice(0, 4), []);
+  // Reset pagination whenever the filter set changes.
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [activeCategory, searchQuery]);
 
-  const handleClearCategory = () => {
+  const visiblePosts = filtered.slice(0, visibleCount);
+  const hasActiveFilter = activeCategory !== "all" || searchQuery.trim() !== "";
+
+  const handleReset = () => {
     setActiveCategory("all");
+    setSearchQuery("");
   };
 
   return (
@@ -47,28 +62,35 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
             {/* ── LEFT SIDEBAR ── */}
             <div className={styles.filterColumn}>
               {/* Search */}
-              <div className={styles.searchBlock}>
+              <div
+                className={`${styles.searchBlock} ${searchQuery ? styles.searchBlockFilled : ""}`}
+              >
+                <label htmlFor="blog-search" className={styles.srOnly}>
+                  Search blog articles
+                </label>
                 <input
+                  id="blog-search"
                   type="search"
                   className={styles.searchField}
                   placeholder="Search here..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  aria-label="Search blog articles"
                 />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    className={styles.searchClear}
+                    onClick={() => setSearchQuery("")}
+                    aria-label="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
               </div>
 
               {/* Categories */}
               <div className={styles.filterBlock}>
                 <div className={styles.filterBlockHeader}>
-                  <button
-                    type="button"
-                    className={styles.filterReset}
-                    onClick={handleClearCategory}
-                    aria-label="Clear category filter"
-                  >
-                    Clear
-                  </button>
                   <h3 className={styles.filterBarTitle}>Categories</h3>
                 </div>
                 <div className={styles.filterOptions}>
@@ -107,7 +129,7 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                 </div>
                 <div className={styles.filterOptions}>
                   <ul className={styles.topPostsList} role="list">
-                    {topPosts.map((post, index) => (
+                    {TOP_POSTS.map((post, index) => (
                       <li key={post.slug} className={styles.topPostItem}>
                         <span
                           className={styles.topPostNumber}
@@ -116,12 +138,12 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         <div className={styles.topPostInner}>
-                          <a
+                          <Link
                             href={`/blog-posts/${post.slug}`}
                             className={styles.topPostTitle}
                           >
                             {post.title}
-                          </a>
+                          </Link>
                           <p className={styles.topPostCat}>
                             {getCategoryLabel(post.category)}
                           </p>
@@ -188,6 +210,24 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
 
             {/* ── RIGHT CONTENT ── */}
             <div className={styles.filterContent}>
+              {/* Result count + reset (Webflow result-count parity) */}
+              <div className={styles.resultBar}>
+                <p className={styles.resultCount} aria-live="polite">
+                  {filtered.length === 0
+                    ? "No articles found"
+                    : `Showing ${visiblePosts.length} of ${filtered.length} article${filtered.length === 1 ? "" : "s"}`}
+                </p>
+                {hasActiveFilter && (
+                  <button
+                    type="button"
+                    className={styles.resetBtn}
+                    onClick={handleReset}
+                  >
+                    Reset filters
+                  </button>
+                )}
+              </div>
+
               {filtered.length === 0 ? (
                 <div className={styles.emptyState}>
                   <Image
@@ -198,16 +238,43 @@ export function BlogGrid({ initialCategory = "all" }: BlogGridProps = {}) {
                     className={styles.emptyIcon}
                     aria-hidden="true"
                   />
-                  <p className={styles.emptyText}>No results found.</p>
+                  <p className={styles.emptyText}>
+                    No articles match your filters.
+                  </p>
+                  {hasActiveFilter && (
+                    <button
+                      type="button"
+                      className={styles.resetBtn}
+                      onClick={handleReset}
+                    >
+                      Reset filters
+                    </button>
+                  )}
                 </div>
               ) : (
-                <ul className={styles.grid} role="list">
-                  {filtered.map((post) => (
-                    <li key={post.slug}>
-                      <BlogCard post={post} />
-                    </li>
-                  ))}
-                </ul>
+                <>
+                  <ul className={styles.grid} role="list">
+                    {visiblePosts.map((post) => (
+                      <li key={post.slug}>
+                        <BlogCard post={post} />
+                      </li>
+                    ))}
+                  </ul>
+
+                  {visibleCount < filtered.length && (
+                    <div className={styles.loadMoreOuter}>
+                      <button
+                        type="button"
+                        className={styles.loadBtn}
+                        onClick={() =>
+                          setVisibleCount((c) => c + PAGE_SIZE)
+                        }
+                      >
+                        Load More
+                      </button>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </div>
