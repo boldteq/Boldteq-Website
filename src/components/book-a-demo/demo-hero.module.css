@@ -118,13 +118,14 @@
 }
 
 /* block icon (global img is inline-block + vertical-align:middle, which adds a
-   ~3px baseline strut); 20px tall to match /our-works hero badge → 60px box */
+   ~3px baseline strut); 20×20 to match /our-works hero badge → 60px box. No
+   object-fit:contain — the megaphone (18×20) would otherwise sit narrow + look
+   smaller than the square icons; fill the box so all four read the same size. */
 .statIcon {
   display: block;
   flex-shrink: 0;
   width: 20px;
   height: 20px;
-  object-fit: contain;
 }
 
 .statBadgeText {
