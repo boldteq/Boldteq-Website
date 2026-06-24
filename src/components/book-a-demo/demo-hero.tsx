@@ -50,8 +50,8 @@ export function DemoHero() {
                   src={badge.icon}
                   alt=""
                   aria-hidden="true"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   className={styles["statIcon"]}
                   loading="eager"
                 />

@@ -105,8 +105,8 @@
   justify-content: center;
 }
 
-/* site-standard stat badge (matches how-it-works hero → 64px tall): 20px padding,
-   10px gap, 10px radius, soft shadow; 24px icon + 15px text (see .statBadgeText) */
+/* matches /our-works hero badge (.badgeBox → 60px): 20px padding, 10px gap,
+   10px radius, premium navy shadow; 20px icon + 16px/20px text */
 .statBadge {
   background-color: #fff;
   border-radius: 10px;
@@ -114,24 +114,25 @@
   padding: 20px;
   display: flex;
   gap: 10px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 2px 10px rgba(8, 39, 83, 0.05);
 }
 
 /* block icon (global img is inline-block + vertical-align:middle, which adds a
-   ~3px baseline strut and made the badge 67px instead of the canonical 64px) */
+   ~3px baseline strut); 20px tall to match /our-works hero badge → 60px box */
 .statIcon {
   display: block;
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .statBadgeText {
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 20px;
   margin: 0;
   text-align: left;
 }
