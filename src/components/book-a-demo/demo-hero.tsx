@@ -48,9 +48,10 @@ export function DemoHero() {
               <div key={badge.label} className={styles["statBadge"]}>
                 <Image
                   src={badge.icon}
-                  alt={`${badge.label} icon`}
-                  width={24}
-                  height={24}
+                  alt=""
+                  aria-hidden="true"
+                  width={20}
+                  height={20}
                   loading="eager"
                 />
                 <p className={styles["statBadgeText"]}>{badge.label}</p>
