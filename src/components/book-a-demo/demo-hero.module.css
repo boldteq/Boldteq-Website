@@ -139,7 +139,9 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
   background-color: var(--color-brand-navy);
-  border: 2px solid transparent;
+  /* borderless (Webflow .a-gulf-book = border:0). A 2px transparent border let the
+     navy background show as a rim around the inset:0 ::before gradient. */
+  border: 0;
   border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
