@@ -50,8 +50,9 @@ export function DemoHero() {
                   src={badge.icon}
                   alt=""
                   aria-hidden="true"
-                  width={20}
-                  height={20}
+                  width={24}
+                  height={24}
+                  className={styles["statIcon"]}
                   loading="eager"
                 />
                 <p className={styles["statBadgeText"]}>{badge.label}</p>

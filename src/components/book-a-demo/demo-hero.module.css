@@ -94,19 +94,19 @@
   margin-bottom: 0;
 }
 
-/* Stat badges grid — matches Webflow .demo-ban-grid (16px gap, max-width 1000px @1280) */
+/* Stat badges grid — natural width (no cap) so badges stay 64px like the other
+   hero badge rows on the site; a max-width cap compressed them taller via stretch */
 .badgeGrid {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  max-width: 860px;
   margin: 2rem auto 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* matches Webflow .demo-grid-box: 20px padding, 10px gap, 10px radius, soft
-   shadow; 20px icon + 16px/20px text (see .statBadgeText) */
+/* site-standard stat badge (matches how-it-works hero → 64px tall): 20px padding,
+   10px gap, 10px radius, soft shadow; 24px icon + 15px text (see .statBadgeText) */
 .statBadge {
   background-color: #fff;
   border-radius: 10px;
@@ -117,12 +117,21 @@
   box-shadow: var(--shadow-card);
 }
 
+/* block icon (global img is inline-block + vertical-align:middle, which adds a
+   ~3px baseline strut and made the badge 67px instead of the canonical 64px) */
+.statIcon {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
 .statBadgeText {
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 1.3;
   margin: 0;
   text-align: left;
 }
@@ -204,10 +213,6 @@
 @media screen and (min-width: 1280px) {
   .section {
     padding-bottom: 3rem;
-  }
-
-  .badgeGrid {
-    max-width: 1000px;
   }
 }
 
