@@ -34,7 +34,9 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-bottom: 1.5rem;
+  /* the pill's own 17px margin-bottom provides the gap to the heading (Webflow);
+     this wrapper adds none, else the gap doubles */
+  margin-bottom: 0;
 }
 
 /* Badge — matches Webflow .bookdemosubott (bg #21cfff12, 1px border, radius 20px, padding 0 13px, line-height 14px, margin-bottom 17px) */
