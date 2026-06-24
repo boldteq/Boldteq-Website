@@ -44,9 +44,10 @@ export function DemoCovers() {
             <div key={card.title} className={styles["card"]}>
               <Image
                 src={card.icon}
-                alt={`${card.title} icon`}
-                width={48}
-                height={48}
+                alt=""
+                aria-hidden="true"
+                width={45}
+                height={45}
                 className={styles["cardIcon"]}
               />
               <h3 className={styles["cardTitle"]}>{card.title}</h3>

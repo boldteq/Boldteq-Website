@@ -66,15 +66,18 @@
 
 .cardIcon {
   display: block;
+  width: 45px;
+  height: 45px;
   margin-bottom: 20px;
 }
 
+/* .demodev-sec2-grid-inner heading — Webflow 22px/30px */
 .cardTitle {
   color: var(--color-brand-navy);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 30px;
   margin-bottom: 10px;
 }
 
@@ -82,9 +85,9 @@
   /* #6b7280 was 4.25:1 on the #def4ff card bg; #5b616e is ~5.4:1 (WCAG AA) */
   color: #5b616e;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 26px;
+  line-height: 28px;
   margin: 0;
 }
 
