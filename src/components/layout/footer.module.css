@@ -30,10 +30,12 @@
 
 /* ─── Footer logo image ───────────────────────────────────────────────────────── */
 
+/* Webflow renders f-new.svg bare at its intrinsic 184×38 (no CSS sizing); the
+   170×51 attrs were the wrong ratio and squished it narrow + tall */
 .footer-logo-img {
+  display: block;
+  width: 184px;
   height: auto;
-  width: auto;
-  object-fit: contain;
 }
 
 /* ─── Outer footer section ───────────────────────────────────────────────────── */
@@ -240,9 +242,10 @@
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  /* Vertical padding zeroed; height forced to Webflow's standard 52px via
-     box-sizing + inline-flex centering. Horizontal padding kept at 20px. */
-  height: 52px;
+  /* Webflow .button-secondary-small = padding 12px 20px (≈44px tall), not the
+     52px hero-button height used before — 44px in the 55px field leaves the
+     white margin Webflow shows around the button. */
+  height: 44px;
   box-sizing: border-box;
   padding: 0 20px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -650,7 +653,13 @@
   .button-secondary-small {
     margin-top: 10px;
     position: relative;
-    right: auto;
+    inset: auto;
+    /* clear the absolute-centering offsets from the base rule, else top:50%
+       pushes the now-relative button down by half the parent height */
+    top: auto;
+    transform: none;
+    height: 52px;
+    width: 100%;
   }
 
   .text-field-small {

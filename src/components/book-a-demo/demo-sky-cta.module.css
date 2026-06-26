@@ -46,9 +46,13 @@
   margin: 0;
 }
 
-/* sky-inn-div large */
+/* sky-inn-div large — Webflow pins this grid child to the right of its column
+   (#w-node-_970f39a9… { justify-self: end }), so the 420px block hugs the right
+   edge and the outer gutters stay balanced; without it the block sits left and
+   dumps all the column slack on the right side. */
 .rightCol {
   max-width: 420px;
+  justify-self: end;
 }
 
 /* para-white */
@@ -182,6 +186,11 @@
 @media screen and (max-width: 479px) {
   .grid {
     padding: 40px 20px;
+  }
+
+  /* single column on mobile — Webflow flips this back to start-aligned */
+  .rightCol {
+    justify-self: start;
   }
 
   .heading {
