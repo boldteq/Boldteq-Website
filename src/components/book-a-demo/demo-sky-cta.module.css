@@ -13,12 +13,15 @@
   position: relative;
 }
 
+/* Webflow .container-large-2 — max-width 1280, NO horizontal padding; the gutter
+   comes entirely from .grid's 60px 40px padding. Our canonical 2rem + 1320@1440
+   container inset the CTA ~12px more per side than Webflow, so it read narrower
+   than the live "edge-to-edge" reference. */
 .container {
+  width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 /* demosky-grid-btm */
@@ -229,21 +232,6 @@
   }
 }
 
-/* canonical site container: 1320 @1440, reduced gutters on tablet/mobile */
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-@media screen and (max-width: 991px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-@media screen and (max-width: 479px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
+/* No container padding/1320 override here — Webflow .container-large-2 stays a
+   flat 1280 with the gutter coming from .grid's padding (40px desktop, 20px on
+   tablet/mobile via the .grid breakpoints above), keeping the CTA edge-to-edge. */
