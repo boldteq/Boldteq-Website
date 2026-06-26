@@ -4,21 +4,29 @@ import styles from "./demo-why-boldteq.module.css";
 const CARDS = [
   {
     icon: "/images/webflow/Layer_1-8.svg",
+    iconWidth: 46,
+    iconHeight: 46,
     title: "White-Label by Default",
     text: "We operate entirely under your brand. Your clients remain yours — always.",
   },
   {
     icon: "/images/webflow/Layer_1-20.svg",
+    iconWidth: 46,
+    iconHeight: 46,
     title: "Senior-Level Team",
     text: "Work is handled by experienced professionals who understand agency standards, timelines, and accountability — not rotating freelancers.",
   },
   {
     icon: "/images/webflow/Layer_1-10.svg",
+    iconWidth: 46,
+    iconHeight: 46,
     title: "Structured Delivery",
     text: "Clear systems, defined ownership, and predictable processes ensure consistent, client-ready output.",
   },
   {
     icon: "/images/webflow/Layer_1-21.svg",
+    iconWidth: 40,
+    iconHeight: 46,
     title: "Built for Agencies",
     text: "Everything about Boldteq is designed around agency workflows and ongoing client delivery — not one-off or solo work.",
   },
@@ -49,9 +57,10 @@ export function DemoWhyBoldteq() {
             <div key={card.title} className={styles["card"]}>
               <Image
                 src={card.icon}
-                alt={`${card.title} icon`}
-                width={48}
-                height={48}
+                alt=""
+                aria-hidden="true"
+                width={card.iconWidth}
+                height={card.iconHeight}
                 className={styles["cardIcon"]}
               />
               <h3 className={styles["cardTitle"]}>{card.title}</h3>

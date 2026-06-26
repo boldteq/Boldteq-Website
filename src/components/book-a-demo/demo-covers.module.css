@@ -82,11 +82,12 @@
 }
 
 .cardText {
-  /* #6b7280 was 4.25:1 on the #def4ff card bg; #5b616e is ~5.4:1 (WCAG AA) */
-  color: #5b616e;
+  /* Webflow .paragraph = #2b2b2b, weight 400 (unified across every icon-text
+     block on the page); ~12:1 on the #def4ff card bg, well above WCAG AA */
+  color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 28px;
   margin: 0;
 }
