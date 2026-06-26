@@ -64,11 +64,7 @@ export function ServiceCapabilities() {
         <div className={styles["grid"]}>
           {CAPABILITIES.map((cap) => (
             <div key={cap.title} className={styles["card"]}>
-              <span
-                className={styles["cardIcon"]}
-                role="img"
-                aria-label={cap.title}
-              >
+              <span className={styles["cardIcon"]} aria-hidden="true">
                 {cap.icon}
               </span>
               <h3 className={styles["cardTitle"]}>{cap.title}</h3>

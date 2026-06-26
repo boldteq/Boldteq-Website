@@ -1,83 +1,87 @@
 /* ============================================================
    SERVICE CAPABILITIES (navy section) — service-capabilities.module.css
+   Matches Webflow .section-regular-3.blue-sec.web-navy-sec ("What We Handle")
    ============================================================ */
 
+/* .section-regular-3.blue-sec.web-navy-sec — bg #082753, padding 70/80, 5% sides */
 .section {
-  background-color: var(--color-text-primary);
+  background-color: #082753;
   padding: 70px 5% 80px;
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
   display: block;
-  justify-content: center;
 }
 
+/* .container-large-2 — flat 1280, centered; section 5% = gutter */
 .container {
   width: 100%;
   max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 15px auto 80px;
+  margin: 0 auto;
 }
 
 /* Header */
 .header {
   text-align: center;
   max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 48px;
+  margin: 0 auto 40px;
 }
 
+/* Pill wrapper — .how-work-tag-badge; pill's own 17px sets the heading gap */
 .badgeRow {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
-}
-
-.badge {
-  background-color: #fafafa;
-  border: 1px solid #fff;
-  border-radius: 999px;
-  padding: 4px 12px;
-  line-height: 34px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  color: #18181b;
-  text-decoration: none;
+  margin-bottom: 0;
 }
 
+/* .careersubott.how-work-badge — cyan-tinted bg, 1px #05bafe border, radius 20 */
+.badge {
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid #05bafe;
+  border-radius: 20px;
+  margin-bottom: 17px;
+  padding: 0 13px;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  color: #05bafe;
+}
+
+/* .faq-sky-text — gradient text, capitalize, 14px/500 */
 .badgeText {
   margin: 0;
-  font-size: 12px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* .heading-2.margin-bottom-24px.white-heading — 40/48 white */
 .heading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 16px;
+  line-height: 48px;
+  margin-bottom: 24px;
 }
 
+/* .paragraph.white.opacity — white @ ~80%, 16/28 */
 .subtitle {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.75;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
 }
 
-/* 3×2 grid (matches Webflow .feature-grid 3-col) */
+/* .feature-grid.margin-top-40px — 3-col, 20px gap */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -85,90 +89,76 @@
   grid-row-gap: 20px;
 }
 
-@media screen and (min-width: 1280px) {
-  .grid {
-    grid-template-rows: auto;
-  }
-}
-
+/* .feature-card.space-between.blue — #1c3861 card, faint white border, radius 20,
+   25/17/17 padding, content pushed apart so the badge sits at the bottom */
 .card {
-  background-color: var(--color-text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1c3861;
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 20px;
-  padding: 32px 28px 28px;
+  padding: 25px 17px 17px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s;
 }
 
-.card:hover {
-  border-color: rgba(33, 207, 255, 0.3);
-}
-
+/* .scope-icon.left — 32px emoji, left-aligned, mb 16px */
 .cardIcon {
-  font-size: 28px;
-  line-height: 1;
-  margin-bottom: 16px;
   display: block;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 16px;
 }
 
+/* .subheading-large.white — 20/25/700 white, tight tracking */
 .cardTitle {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 25px;
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
 }
 
+/* .paragraph-small-2.white.opacity — white @ 80%, 16/28 (was 14px/0.7) */
 .cardText {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
   flex: 1;
   margin: 0 0 20px;
 }
 
-.innerBadge,
-.inner-badge {
+/* .inner-badge.web-badge — cyan-tinted pill, 1px #05bafe border, radius 20 */
+.innerBadge {
   display: inline-flex;
   align-self: flex-start;
-  background-color: #21cfff12;
+  background-color: rgba(33, 207, 255, 0.07);
   border: 1px solid #05bafe;
   border-radius: 20px;
   padding: 0 13px;
   line-height: 24px;
   margin-top: auto;
-  margin-bottom: 0;
 }
 
+/* .inn-badge-text — SOLID #21cfff (not gradient), capitalize, weight 500 */
 .innerBadgeText {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #21cfff;
 }
 
 /* ============================================================
    max-width: 991px
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .section {
-    padding: 60px 5% 70px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .innerBadge,
-  .inner-badge {
-    margin-bottom: 20px;
+  .heading {
+    font-size: 34px;
+    line-height: 1.2;
   }
 }
 
@@ -176,6 +166,11 @@
    max-width: 767px
    ============================================================ */
 @media screen and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     grid-row-gap: 16px;
@@ -183,9 +178,6 @@
 
   .header {
     margin-bottom: 32px;
-  }
-  .container {
-    margin-bottom: 0;
   }
 }
 
@@ -198,20 +190,6 @@
   }
 
   .card {
-    padding: 24px 20px 20px;
-  }
-  .container {
-    margin-bottom: 0;
-}
-  .innerBadge,
-  .inner-badge {
-    margin-bottom: 15px;
-  }
-}
-
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
+    padding: 22px 18px 18px;
   }
 }

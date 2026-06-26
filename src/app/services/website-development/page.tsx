@@ -8,8 +8,6 @@ import { ServiceCapabilities } from "@/components/services/service-capabilities"
 import { ServicePlatforms } from "@/components/services/service-platforms";
 import { ServiceProcess } from "@/components/services/service-process";
 import { OurWorksCta } from "@/components/our-works/our-works-cta";
-import { NewsletterSignup } from "@/components/shared/newsletter-signup";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "White Label Web Development Services for Agencies | Boldteq",
@@ -54,8 +52,6 @@ export default function WebsiteDevelopmentPage() {
       <ServicePlatforms />
       <ServiceProcess />
       <OurWorksCta />
-      <NewsletterSignup />
-      <BetaCta />
     </>
   );
 }
