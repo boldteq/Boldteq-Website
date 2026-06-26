@@ -3,13 +3,15 @@ import { Button } from '@/components/primitives/button';
 import styles from "./service-hero.module.css";
 
 const STAT_BADGES = [
-  { label: "White-Label by Default", icon: "/images/webflow/Layer_1-3.svg" },
-  { label: "Senior Developers", icon: "/images/webflow/Layer_1-4.svg" },
+  { label: "White-Label by Default", icon: "/images/webflow/Layer_1-3.svg", w: 20, h: 20 },
+  { label: "Senior Developers", icon: "/images/webflow/Layer_1-4.svg", w: 20, h: 20 },
   {
     label: "Subscription-Based Delivery",
     icon: "/images/webflow/Layer_1-5.svg",
+    w: 18,
+    h: 20,
   },
-  { label: "NDA Protected", icon: "/images/webflow/Layer_1-6.svg" },
+  { label: "NDA Protected", icon: "/images/webflow/Layer_1-6.svg", w: 26, h: 22 },
 ];
 
 export function ServiceHero() {
@@ -43,8 +45,8 @@ export function ServiceHero() {
                 src={badge.icon}
                 alt=""
                 aria-hidden="true"
-                width={40}
-                height={40}
+                width={badge.w}
+                height={badge.h}
                 className={styles["statIcon"]}
               />
               <p className={styles["statLabel"]}>{badge.label}</p>
