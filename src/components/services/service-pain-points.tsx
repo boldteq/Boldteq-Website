@@ -48,11 +48,7 @@ export function ServicePainPoints() {
         <div className={styles["grid"]}>
           {PAIN_POINTS.map((point) => (
             <div key={point.title} className={styles["card"]}>
-              <span
-                className={styles["icon"]}
-                role="img"
-                aria-label={point.title}
-              >
+              <span className={styles["icon"]} aria-hidden="true">
                 {point.icon}
               </span>
               <h3 className={styles["cardTitle"]}>{point.title}</h3>

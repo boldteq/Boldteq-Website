@@ -1,150 +1,147 @@
 /* ============================================================
    SERVICE PAIN POINTS — service-pain-points.module.css
+   Matches Webflow .web-dev-botsec ("Why Agencies Struggle")
    ============================================================ */
 
+/* .web-dev-botsec.overflow-hidden — padding-top 0, bottom 70px, 5% sides */
 .section {
   background-color: transparent;
   padding: 0 5% 70px;
   overflow: hidden;
-  display: block;
-  justify-content: center;
   position: relative;
-  padding-top: 0;
-  padding-bottom: 70px;
-  margin-right: auto;
-  margin-left: auto;
+  display: block;
 }
 
+/* .container-large-2 — flat 1280, centered; the section's 5% is the gutter */
 .container {
   width: 100%;
   max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 15px auto 80px;
+  margin: 0 auto;
 }
 
-/* Header */
+/* Header (.demo-cont-center) */
 .header {
   text-align: center;
   max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 56px;
+  margin: 0 auto 48px;
 }
 
+/* Pill wrapper — .career-subhead-out; the pill's own 17px sets the heading gap */
 .badgeRow {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
-}
-
-.badge {
-  background-color: #fafafa;
-  border: 1px solid #fff;
-  border-radius: 999px;
-  padding: 4px 12px;
-  line-height: 34px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  color: #18181b;
-  text-decoration: none;
+  margin-bottom: 0;
 }
 
+/* .careersubott.web-badge — light cyan bg, 1px #05bafe border, radius 20 */
+.badge {
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid #05bafe;
+  border-radius: 20px;
+  margin-bottom: 17px;
+  padding: 0 13px;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  color: #05bafe;
+}
+
+/* .faq-sky-text — gradient text, capitalize, 14px/500 */
 .badgeText {
   margin: 0;
-  font-size: 12px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* .heading-2.demo-sec-heading — 40/48 */
 .heading {
   color: var(--color-brand-navy);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 48px;
   margin-bottom: 16px;
 }
 
+/* .paragraph.text-center — #2b2b2b 16/28/400 (was #6b7280) */
 .subtitle {
-  color: var(--color-text-subtle);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.75;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
 }
 
-/* Cards grid — 3-col (matches Webflow .web-bt-gridboxes) */
+/* .web-bt-gridboxes — 4 columns, 20px gap (was 3-col) */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
 
-@media screen and (min-width: 1280px) {
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-  }
-}
-
+/* .demodev-sec2-grid-inner — #def4ff card, cyan border, 22px padding, column
+   flex, left-aligned (was gray #f7f8fa card, 32px padding) */
 .card {
-  background-color: #f7f8fa;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 32px 28px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  border-color: #21cfff60;
-  box-shadow: 0 4px 20px rgba(33, 207, 255, 0.08);
-}
-
-.icon {
-  font-size: 28px;
-  line-height: 1;
-  margin-bottom: 16px;
+  background-color: #def4ff;
+  border: 1px solid #009ce0;
+  border-radius: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 5px;
-  color: #019ae6;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 22px;
 }
 
+/* .scope-icon.left — 32px emoji, left-aligned, mb 16px (was centered, 28px) */
+.icon {
+  display: block;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* .heading-3-blue — 18/25/700, #082753, mb 7px */
 .cardTitle {
-  color: var(--color-brand-navy);
+  color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 10px;
+  line-height: 25px;
+  margin: 0 0 7px;
+  text-align: left;
 }
 
+/* .paragraph.text-left — #2b2b2b 16/28/400 (was #6b7280 15px) */
 .cardText {
-  color: var(--color-text-subtle);
+  color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
   margin: 0;
+  text-align: left;
 }
 
 /* ============================================================
    max-width: 991px
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .section {
-    padding: 60px 5% 70px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
+  .heading {
+    font-size: 34px;
+    line-height: 1.2;
+  }
 
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -155,16 +152,13 @@
    max-width: 767px
    ============================================================ */
 @media screen and (max-width: 767px) {
-  .grid {
-    grid-template-columns: 1fr;
-    grid-row-gap: 16px;
+  .heading {
+    font-size: 28px;
+    line-height: 1.25;
   }
 
   .header {
     margin-bottom: 36px;
-  }
-  .container {
-    margin-bottom: 0;
   }
 }
 
@@ -173,20 +167,10 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding: 48px 1.25rem 56px;
+    padding: 0 1.25rem 56px;
   }
 
-  .card {
-    padding: 24px 20px;
-  }
-  .container {
-    margin-bottom: 0;
-}
-}
-
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
