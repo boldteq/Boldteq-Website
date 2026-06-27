@@ -38,7 +38,9 @@
 /* Header */
 .header {
   text-align: center;
-  max-width: 720px;
+  /* Webflow .column-regular.column-left.web-max = 680px (was 720 → subtitle
+     wrapped wider than the reference) */
+  max-width: 680px;
 }
 
 .heading {
@@ -197,7 +199,8 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  /* Webflow .heading-2.text-left = line-height 46px */
+  line-height: 1.15;
   text-align: left;
   margin-top: 0;
   margin-bottom: 16px;
