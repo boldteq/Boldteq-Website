@@ -205,7 +205,8 @@
 /* Webflow: .pricing-badge — green badge.
    Actual padding in Webflow at default: 2px 8px, font-size 12px, line-height 20px */
 .pricingBadge {
-  color: #18c958;
+  /* #18c958 was 1.9:1 on the light-green pill; #117a39 is ~4.7:1 (WCAG AA) */
+  color: #117a39;
   text-align: center;
   background-color: rgba(39, 211, 102, 0.1);
   background-image: none;

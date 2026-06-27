@@ -298,7 +298,8 @@
 
 /* "Save 10%" — green to flag the discount, white when the tab is active */
 .billingSave {
-  color: #16a34a;
+  /* #16a34a was 3.07:1 on the light toggle bg; #117a39 is ~5:1 (WCAG AA) */
+  color: #117a39;
   font-size: 12px;
   font-weight: 700;
 }
@@ -493,7 +494,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #8a93a3;
+  color: #5b616e;
   margin-top: 7px;
 }
 
@@ -568,7 +569,7 @@
   border-radius: 50%;
   background-color: transparent;
   border: 1.5px solid #c5cdd9;
-  color: #8a93a3;
+  color: #5b616e;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 9px;
   font-weight: 700;
@@ -829,7 +830,8 @@
 }
 
 .metricSub {
-  color: #9aa3b2;
+  /* #9aa3b2 was 2.54:1 on white; #5b616e is ~5.4:1 (WCAG AA) */
+  color: #5b616e;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
   line-height: 16px;
@@ -847,7 +849,8 @@
 }
 
 .metricCardHighlight .metricSub {
-  color: #4f9d7e;
+  /* #4f9d7e was 3.08:1 on the mint card; #117a39 is ~4.5:1 (WCAG AA) */
+  color: #117a39;
 }
 
 /* ─── Plan summary (bottom line) ─────────────────────────────────────────── */
