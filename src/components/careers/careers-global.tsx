@@ -28,9 +28,11 @@ export function CareersGlobal() {
             <Image
               key={i}
               src={img.src}
-              alt={img.alt}
+              alt=""
+              aria-hidden="true"
               width={50}
               height={50}
+              sizes="50px"
               className={img.className}
               loading="lazy"
             />

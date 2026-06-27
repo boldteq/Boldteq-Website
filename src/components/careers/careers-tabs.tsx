@@ -151,23 +151,26 @@ function JobAccordion({ job }: { job: JobListing }) {
 
   return (
     <div className={styles.jobItem}>
-      <button
-        type="button"
-        id={jobId}
-        className={styles.jobToggle}
-        onClick={() => setOpen((prev) => !prev)}
-        aria-expanded={open}
-        aria-controls={panelId}
-      >
-        <div className={styles.jobTitleRow}>
-          <div className={styles.jobMeta}>
-            <h3 className={styles.jobTitle}>{job.title}</h3>
-            <p className={styles.jobType}>{job.type}</p>
-          </div>
-          <div
-            className={`${styles.jobArrow} ${open ? styles.jobArrowOpen : ""}`}
-            aria-hidden="true"
-          >
+      {/* WAI-ARIA accordion: heading wraps the toggle button (a heading must not
+          be interactive, and block elements aren't valid inside <button>) */}
+      <h3 className={styles.jobHeading}>
+        <button
+          type="button"
+          id={jobId}
+          className={styles.jobToggle}
+          onClick={() => setOpen((prev) => !prev)}
+          aria-expanded={open}
+          aria-controls={panelId}
+        >
+          <div className={styles.jobTitleRow}>
+            <div className={styles.jobMeta}>
+              <span className={styles.jobTitle}>{job.title}</span>
+              <span className={styles.jobType}>{job.type}</span>
+            </div>
+            <div
+              className={`${styles.jobArrow} ${open ? styles.jobArrowOpen : ""}`}
+              aria-hidden="true"
+            >
             <svg
               width="16"
               height="10"
@@ -197,8 +200,9 @@ function JobAccordion({ job }: { job: JobListing }) {
               </defs>
             </svg>
           </div>
-        </div>
-      </button>
+          </div>
+        </button>
+      </h3>
 
       {open && (
         <div
@@ -206,6 +210,9 @@ function JobAccordion({ job }: { job: JobListing }) {
           role="region"
           aria-labelledby={jobId}
           className={styles.jobContent}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setOpen(false);
+          }}
         >
           <p className={styles.jobDescription}>{job.description}</p>
           <p className={styles.jobSectionLabel}>Responsibilities</p>
@@ -259,21 +266,15 @@ export function CareersTabs() {
             </div>
           </div>
 
-          {/* Tab navigation */}
-          <nav
-            className={styles.tabNav}
-            role="tablist"
-            aria-label="Career sections"
-          >
+          {/* Section navigation. These are NOT tabs (panels aren't shown/hidden —
+              all sections render and the buttons scroll to them), so this is a nav
+              with aria-current, not role=tablist/tab. */}
+          <nav className={styles.tabNav} aria-label="Career sections">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
-                role="tab"
-                id={`career-tab-${tab.id}`}
-                aria-selected={activeTab === tab.id}
-                aria-controls={tab.href.replace("#", "")}
-                tabIndex={activeTab === tab.id ? 0 : -1}
+                aria-current={activeTab === tab.id ? "true" : undefined}
                 className={`${styles.tabButton} ${activeTab === tab.id ? styles.tabButtonActive : ""}`}
                 onClick={() => {
                   setActiveTab(tab.id);
@@ -290,6 +291,7 @@ export function CareersTabs() {
       {/* ── About Boldteq ── */}
       <section
         id="career-about"
+        aria-labelledby="career-about-heading"
         className={`${styles.section} ${styles.aboutSection}`}
       >
         <div className={styles.container}>
@@ -297,23 +299,23 @@ export function CareersTabs() {
             <div className={styles.imagesFlex}>
               <Image
                 src="/images/webflow/ca7e39d79f09e622dbf744ac70e1284061b70db0-1.png"
-                alt="Boldteq team"
+                alt="Boldteq team members collaborating in the office"
                 width={480}
                 height={720}
                 className={styles.aboutImg}
-                loading="lazy"
+                sizes="(max-width: 991px) 45vw, 24vw"
               />
               <Image
                 src="/images/webflow/a994d403aef97ae290a90af19570268925b45785-1.png"
-                alt="Boldteq work environment"
+                alt="A Boldteq developer at their workstation"
                 width={480}
                 height={720}
                 className={`${styles.aboutImg} ${styles.aboutImgSecond}`}
-                loading="lazy"
+                sizes="(max-width: 991px) 45vw, 24vw"
               />
             </div>
             <div className={styles.textColumn}>
-              <h2 className={styles.tabHeading}>About Boldteq</h2>
+              <h2 id="career-about-heading" className={styles.tabHeading}>About Boldteq</h2>
               <div className={styles.textInner}>
                 <p className={styles.tabParagraph}>
                   Boldteq supports growing agencies with structured execution systems and performance-driven operations that enable consistent, reliable delivery.
@@ -335,12 +337,13 @@ export function CareersTabs() {
       {/* ── Our Culture ── */}
       <section
         id="career-culture"
+        aria-labelledby="career-culture-heading"
         className={`${styles.section} ${styles.cultureSection}`}
       >
         <div className={styles.container}>
           <div className={styles.cultureGrid}>
             <div className={styles.textColumn}>
-              <h2 className={styles.tabHeading}>Our Culture</h2>
+              <h2 id="career-culture-heading" className={styles.tabHeading}>Our Culture</h2>
               <div className={styles.textInner}>
                 <p className={styles.tabParagraph}>
                   We hire for capability, not geography — building a global team selected for excellence, precision, and dependable execution.
@@ -358,19 +361,19 @@ export function CareersTabs() {
             <div className={styles.imagesFlex}>
               <Image
                 src="/images/webflow/beee5e7b40b6b5bf056c827d851f803f9d6618c3.png"
-                alt="Boldteq culture"
+                alt="Boldteq team members in a planning session"
                 width={480}
                 height={720}
                 className={`${styles.cultureImg} ${styles.cultureImgFirst}`}
-                loading="lazy"
+                sizes="(max-width: 991px) 45vw, 24vw"
               />
               <Image
                 src="/images/webflow/Rectangle-30834.png"
-                alt="Boldteq team culture"
+                alt="The Boldteq team together at a company event"
                 width={480}
                 height={720}
                 className={styles.cultureImg}
-                loading="lazy"
+                sizes="(max-width: 991px) 45vw, 24vw"
               />
             </div>
           </div>
@@ -380,13 +383,14 @@ export function CareersTabs() {
       {/* ── Benefits ── */}
       <section
         id="career-benefits"
+        aria-labelledby="career-benefits-heading"
         className={`${styles.section} ${styles.benefitsSection}`}
       >
         <div className={styles.container}>
           <div className={styles.benefitsOuter}>
             <div className={styles.benefitsCenter}>
               <div className={styles.benefitsHeader}>
-                <h2 className={styles.heading}>Benefits</h2>
+                <h2 id="career-benefits-heading" className={styles.heading}>Benefits</h2>
                 <div>
                   <p className={styles.subtitle}>
                     At Boldteq, we combine global opportunity with structured standards — creating an environment where high performers can thrive, grow, and deliver meaningful impact.
@@ -399,11 +403,11 @@ export function CareersTabs() {
                 <div key={card.title} className={styles.benefitCard}>
                   <Image
                     src={card.icon}
-                    alt={`${card.title} icon`}
+                    alt=""
+                    aria-hidden="true"
                     width={48}
                     height={48}
                     className={styles.benefitIcon}
-                    loading="lazy"
                   />
                   <h3 className={styles.benefitTitle}>{card.title}</h3>
                   <p className={styles.benefitText}>{card.text}</p>
@@ -417,13 +421,14 @@ export function CareersTabs() {
       {/* ── Career Opportunities ── */}
       <section
         id="career-opportunities"
+        aria-labelledby="career-opportunities-heading"
         className={`${styles.section} ${styles.opportunitiesSection}`}
       >
         <div className={styles.container}>
           <div className={styles.opportunitiesOuter}>
             <div className={styles.opportunitiesCenter}>
               <div className={styles.opportunitiesHeader}>
-                <h2 className={styles.heading}>Current Opportunities</h2>
+                <h2 id="career-opportunities-heading" className={styles.heading}>Current Opportunities</h2>
                 <div>
                   <p className={styles.subtitle}>
                     We are selectively expanding our engineering network across backend systems, frontend architecture, DevOps infrastructure, and emerging technologies.

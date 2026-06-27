@@ -262,6 +262,8 @@
 /* ── Benefits section ──
    career-tabs-benefits-sec.overflow-hidden */
 .benefitsSection {
+  /* fallback keeps the dark heading/text readable if the bg image fails to load */
+  background-color: #f5f7fa;
   background-image: url('/images/webflow/Rectangle-377.png');
   background-position: 50% 0;
   background-size: cover;
@@ -390,14 +392,17 @@
   color: #05bafe;
 }
 
-/* faq-toggle */
+/* faq-toggle — full-width; the row owns the padding (avoids double padding) */
 .jobToggle {
   background-color: transparent;
   border: none;
   width: 100%;
   cursor: pointer;
   text-align: left;
-  padding: 14px 20px;
+  padding: 0;
+  display: block;
+  font: inherit;
+  color: inherit;
 }
 
 /* faq-title-wrapper */
@@ -414,8 +419,14 @@
   width: 90%;
 }
 
-/* h6-heading-3 — 18px/1.4, tight tracking */
+/* the <h3> now wraps the toggle button — no visual styling of its own */
+.jobHeading {
+  margin: 0;
+}
+
+/* h6-heading-3 — 18px/1.4, tight tracking (now a block span inside the button) */
 .jobTitle {
+  display: block;
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 18px;
@@ -425,9 +436,10 @@
   margin: 0 0 4px;
 }
 
-/* job-position */
+/* job-position — darkened from #21cfff (1.8:1) to #0a7ea4 (~4.65:1 on white) for WCAG AA */
 .jobType {
-  color: var(--color-brand-cyan);
+  display: block;
+  color: #0a7ea4;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -496,14 +508,15 @@
   margin-top: 24px;
 }
 
+/* #019ae6 was 3.1:1 on white; #0a66c2 is ~5.7:1 (WCAG AA for link text) */
 .fallbackLink {
-  color: var(--color-brand-blue);
+  color: #0a66c2;
   text-decoration: underline;
   font-weight: 600;
 }
 
 .fallbackLink:hover {
-  color: var(--color-brand-cyan);
+  color: #084f97;
 }
 
 /* ============================================================
@@ -613,5 +626,23 @@
   .tabCta {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ============================================================
+   Reduced motion — disable the tab-pane fade transform and the
+   accordion-arrow rotation/transition for vestibular safety
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .tabPane {
+    animation: none;
+  }
+
+  .jobArrow {
+    transition: none;
+  }
+
+  .jobArrowOpen {
+    transform: none;
   }
 }
