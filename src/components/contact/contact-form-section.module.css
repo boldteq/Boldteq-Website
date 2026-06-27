@@ -82,6 +82,13 @@
   margin: 0;
 }
 
+/* "(optional)" hint on non-required fields — muted, accessible on white */
+.optional {
+  color: #5b616e;
+  font-size: 13px;
+  font-weight: 400;
+}
+
 /* Required asterisk — matches Webflow .field-label-3.text-color-red (color #f42a2a, font-size 14px, font-weight 400, line-height 1.5) */
 .required {
   color: #f42a2a;
@@ -124,6 +131,9 @@
   padding: 0 12px 0 12px;
   color: var(--color-text-secondary);
   appearance: none;
+  /* extra right padding so a long option label never runs under the custom
+     dropdown arrow (we replaced the native arrow with a background image) */
+  padding-right: 36px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
@@ -158,9 +168,10 @@
   box-shadow: var(--shadow-focus-ring);
 }
 
-/* Inline error text under a field */
+/* Inline error text under a field — #ef4444 was 3.76:1 on white; #c81e1e is
+   ~5.8:1 (WCAG AA for 13px error text) */
 .fieldError {
-  color: var(--color-danger);
+  color: #c81e1e;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 13px;
   line-height: 1.4;

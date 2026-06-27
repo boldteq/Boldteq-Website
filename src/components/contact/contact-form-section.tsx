@@ -129,7 +129,7 @@ export function ContactFormSection() {
           </div>
         ) : (
           <>
-            <h3 className={styles.heading}>Send us a message.</h3>
+            <h2 className={styles.heading}>Send us a message.</h2>
 
             <form
               onSubmit={handleSubmit}
@@ -152,6 +152,7 @@ export function ContactFormSection() {
                     id="firstName"
                     name="firstName"
                     type="text"
+                    autoComplete="given-name"
                     placeholder="John"
                     maxLength={256}
                     value={fields.firstName}
@@ -189,6 +190,7 @@ export function ContactFormSection() {
                     id="lastName"
                     name="lastName"
                     type="text"
+                    autoComplete="family-name"
                     placeholder="Smith"
                     maxLength={256}
                     value={fields.lastName}
@@ -229,6 +231,7 @@ export function ContactFormSection() {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
                     placeholder="email@example.com"
                     maxLength={256}
                     value={fields.email}
@@ -255,12 +258,13 @@ export function ContactFormSection() {
 
                 <div className={styles.field}>
                   <label htmlFor="phone" className={styles.label}>
-                    Phone
+                    Phone <span className={styles.optional}>(optional)</span>
                   </label>
                   <input
                     id="phone"
                     name="phone"
                     type="tel"
+                    autoComplete="tel"
                     placeholder="+1 (123) 456 7890"
                     maxLength={256}
                     value={fields.phone}
@@ -295,7 +299,9 @@ export function ContactFormSection() {
                   }
                   className={styles.select}
                 >
-                  <option value="">Select an option...</option>
+                  <option value="" disabled>
+                    Select an option...
+                  </option>
                   {INQUIRY_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value}>
                       {opt.label}
@@ -351,6 +357,7 @@ export function ContactFormSection() {
                   type="submit"
                   className={styles.submitBtn}
                   disabled={status === "submitting"}
+                  aria-busy={status === "submitting"}
                 >
                   {status === "submitting" ? "Please wait..." : "Send Message"}
                 </button>

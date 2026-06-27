@@ -19,7 +19,10 @@ const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "Contact Boldteq",
+  description:
+    "Get in touch with Boldteq — sales, support, and careers contacts plus a contact form for agencies exploring white-label web development.",
   url: `${SITE_CONFIG.url}/contact`,
+  inLanguage: "en-US",
   mainEntity: {
     "@type": "Organization",
     name: SITE_CONFIG.name,
@@ -33,7 +36,7 @@ const contactPageSchema = {
       },
       {
         "@type": "ContactPoint",
-        contactType: "customer support",
+        contactType: "customer service",
         email: SITE_CONFIG.email.support,
         availableLanguage: ["English"],
       },
