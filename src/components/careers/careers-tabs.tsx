@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { JOB_LISTINGS, type JobListing } from "@/lib/constants/careers";
 import styles from "./careers-tabs.module.css";
 
 type TabId = "about" | "culture" | "benefits" | "opportunities";
@@ -43,114 +44,13 @@ const BENEFIT_CARDS = [
   },
 ];
 
-interface JobListing {
-  title: string;
-  type: string;
-  description: string;
-  responsibilities: string[];
-  requirements: string[];
-}
-
-const JOB_LISTINGS: JobListing[] = [
-  {
-    title: "Web Developers (WordPress / Shopify / Webflow)",
-    type: "Full Time | Remote",
-    description:
-      "We're looking for a versatile Web Developer experienced in building high-performance websites across WordPress, Shopify, and Webflow. You'll work closely with designers and product teams to deliver scalable, conversion-focused digital experiences.",
-    responsibilities: [
-      "Develop and maintain custom themes and plugins",
-      "Build Shopify storefronts and custom features",
-      "Optimize performance, SEO, and responsiveness",
-      "Integrate third-party APIs and tools",
-    ],
-    requirements: [
-      "2+ years experience with WordPress, Shopify, or Webflow",
-      "Strong knowledge of HTML, CSS, JavaScript",
-      "Experience with Liquid (Shopify) is a plus",
-      "Ability to handle multiple projects independently",
-    ],
-  },
-  {
-    title: "Frontend Developer (React / Next.js)",
-    type: "Full Time | Remote",
-    description:
-      "We are hiring a Frontend Developer to build fast, scalable, and visually polished web applications using modern frameworks.",
-    responsibilities: [
-      "Develop UI components using React / Next.js",
-      "Translate UI/UX designs into responsive code",
-      "Optimize applications for speed and performance",
-      "Collaborate with backend developers and designers",
-    ],
-    requirements: [
-      "Strong experience with React.js and Next.js",
-      "Good understanding of REST APIs",
-      "Experience with Tailwind / modern CSS frameworks",
-      "Eye for design and detail",
-    ],
-  },
-  {
-    title: "Shopify App Developer",
-    type: "Full Time | Remote",
-    description:
-      "Join us to build powerful Shopify apps used by merchants worldwide.",
-    responsibilities: [
-      "Develop and maintain Shopify apps",
-      "Work with Shopify APIs (Admin, Storefront, Webhooks)",
-      "Build embedded apps using Polaris",
-      "Ensure app performance and scalability",
-    ],
-    requirements: [
-      "Experience with Shopify app development",
-      "Knowledge of Node.js / React",
-      "Understanding of Shopify ecosystem",
-      "Experience with app billing & OAuth",
-    ],
-  },
-  {
-    title: "UI/UX Designer",
-    type: "Full Time | Remote",
-    description:
-      "We're looking for a creative UI/UX Designer to craft intuitive and engaging user experiences.",
-    responsibilities: [
-      "Design wireframes, prototypes, and UI systems",
-      "Conduct user research and usability testing",
-      "Collaborate with developers for implementation",
-      "Maintain design consistency across products",
-    ],
-    requirements: [
-      "Strong portfolio (web/SaaS preferred)",
-      "Experience with Figma / Adobe XD",
-      "Understanding of UX principles",
-      "Ability to think from a user-first perspective",
-    ],
-  },
-  {
-    title: "Digital Marketing Specialist",
-    type: "Full Time | Remote",
-    description:
-      "We're hiring a performance-driven marketer to scale traffic and conversions.",
-    responsibilities: [
-      "Manage SEO, PPC, and paid campaigns",
-      "Analyze performance metrics",
-      "Optimize funnels and landing pages",
-      "Work with content and design teams",
-    ],
-    requirements: [
-      "Experience with Google Ads / Meta Ads",
-      "Strong analytical skills",
-      "Knowledge of SEO tools",
-      "Growth mindset",
-    ],
-  },
-];
-
 function JobAccordion({ job }: { job: JobListing }) {
   const [open, setOpen] = useState(false);
-  const jobId = `job-${job.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}`;
+  const jobId = `job-${job.slug}`;
   const panelId = `${jobId}-panel`;
 
   return (
-    <div className={styles.jobItem}>
+    <article className={styles.jobItem}>
       {/* WAI-ARIA accordion: heading wraps the toggle button (a heading must not
           be interactive, and block elements aren't valid inside <button>) */}
       <h3 className={styles.jobHeading}>
@@ -233,7 +133,7 @@ function JobAccordion({ job }: { job: JobListing }) {
           </ul>
         </div>
       )}
-    </div>
+    </article>
   );
 }
 

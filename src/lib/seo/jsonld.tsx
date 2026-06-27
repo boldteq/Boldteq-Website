@@ -1,4 +1,9 @@
 import { SITE_CONFIG } from "@/lib/constants/site";
+import {
+  type JobListing,
+  JOB_POSTED_DATE,
+  JOB_VALID_THROUGH,
+} from "@/lib/constants/careers";
 
 type SchemaObject = Record<string, unknown>;
 
@@ -47,5 +52,41 @@ export function breadcrumbSchema(items: BreadcrumbItem[]): SchemaObject {
       name: item.name,
       item: `${SITE_CONFIG.url}${item.path}`,
     })),
+  };
+}
+
+/**
+ * Build a schema.org JobPosting for one role. Remote-first (TELECOMMUTE) with
+ * applicant location requirements so Google Jobs treats it as a valid posting.
+ */
+export function jobPostingSchema(job: JobListing): SchemaObject {
+  const li = (items: string[]) =>
+    `<ul>${items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description:
+      `<p>${job.description}</p>` +
+      `<p><strong>Responsibilities</strong></p>${li(job.responsibilities)}` +
+      `<p><strong>Requirements</strong></p>${li(job.requirements)}`,
+    datePosted: JOB_POSTED_DATE,
+    validThrough: JOB_VALID_THROUGH,
+    employmentType: job.employmentType,
+    jobLocationType: "TELECOMMUTE",
+    applicantLocationRequirements: { "@type": "Country", name: "IN" },
+    directApply: false,
+    url: `${SITE_CONFIG.url}/careers#job-${job.slug}`,
+    identifier: {
+      "@type": "PropertyValue",
+      name: "Boldteq",
+      value: job.slug,
+    },
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "Boldteq",
+      sameAs: SITE_CONFIG.url,
+      logo: `${SITE_CONFIG.url}/images/webflow/Group-46895.svg`,
+    },
   };
 }
