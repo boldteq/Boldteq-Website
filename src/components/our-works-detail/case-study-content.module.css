@@ -87,7 +87,7 @@
 
 /* workp-meta-text */
 .metaText {
-  color: #0827539e;
+  color: #082753c2;
   padding-top: 2px;
   padding-bottom: 2px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -194,7 +194,7 @@
 
 /* workp-meta-text (used as subtitle label) */
 .sectionSubtitle {
-  color: #0827539e;
+  color: #082753c2;
   padding-top: 2px;
   padding-bottom: 2px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -235,7 +235,8 @@
 
 /* list-number */
 .listNumber {
-  color: #993bff;
+  /* #993bff was 4.01:1 on #efe9ff; #7c2fd6 is ~5.6:1 (WCAG AA) */
+  color: #7c2fd6;
   background-color: #efe9ff;
   border-radius: 100px;
   flex: none;
@@ -353,7 +354,7 @@
 
 /* work-gray-title */
 .techHeading {
-  color: #0827539e;
+  color: #082753c2;
   margin-top: 0;
   margin-bottom: 12px;
   font-family: var(--font-roobert), Arial, sans-serif;

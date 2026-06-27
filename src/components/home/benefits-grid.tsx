@@ -140,7 +140,15 @@ export function BenefitsGrid() {
           team designed to support and deliver agency work.
         </p>
 
-        <div className={styles['featureGrid']} ref={trackRef}>
+        {/* horizontally-scrollable track: make it keyboard-focusable so keyboard
+            users can scroll it (a11y: scrollable-region-focusable) */}
+        <div
+          className={styles['featureGrid']}
+          ref={trackRef}
+          tabIndex={0}
+          role="group"
+          aria-label="Agency benefits"
+        >
           {BENEFITS.map((benefit) => (
             <div key={benefit.title} className={styles['featureCard']}>
               <div className={styles['textWrapper']}>
