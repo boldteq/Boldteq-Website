@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { JOB_LISTINGS, type JobListing } from "@/lib/constants/careers";
@@ -46,11 +46,24 @@ const BENEFIT_CARDS = [
 
 function JobAccordion({ job }: { job: JobListing }) {
   const [open, setOpen] = useState(false);
+  const articleRef = useRef<HTMLElement>(null);
   const jobId = `job-${job.slug}`;
   const panelId = `${jobId}-panel`;
 
+  function toggle() {
+    const next = !open;
+    setOpen(next);
+    // bring the freshly-expanded item into view if it's clipped below the fold
+    if (next) {
+      setTimeout(
+        () => articleRef.current?.scrollIntoView({ block: "nearest" }),
+        60,
+      );
+    }
+  }
+
   return (
-    <article className={styles.jobItem}>
+    <article ref={articleRef} className={styles.jobItem}>
       {/* WAI-ARIA accordion: heading wraps the toggle button (a heading must not
           be interactive, and block elements aren't valid inside <button>) */}
       <h3 className={styles.jobHeading}>
@@ -58,7 +71,7 @@ function JobAccordion({ job }: { job: JobListing }) {
           type="button"
           id={jobId}
           className={styles.jobToggle}
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={toggle}
           aria-expanded={open}
           aria-controls={panelId}
         >
@@ -131,6 +144,14 @@ function JobAccordion({ job }: { job: JobListing }) {
               </li>
             ))}
           </ul>
+          <a
+            href={`mailto:hr@boldteq.com?subject=${encodeURIComponent(
+              `Application: ${job.title}`,
+            )}`}
+            className={styles.jobApply}
+          >
+            Apply for this role
+          </a>
         </div>
       )}
     </article>
@@ -139,6 +160,34 @@ function JobAccordion({ job }: { job: JobListing }) {
 
 export function CareersTabs() {
   const [activeTab, setActiveTab] = useState<TabId>("about");
+
+  // Scroll-spy: keep the active nav item in sync with the section in view.
+  // This also makes deep-links (e.g. the hero/benchmarks/global CTAs that point
+  // to #career-opportunities) highlight the right nav item once scrolled there.
+  useEffect(() => {
+    const sections = TABS.map((t) => {
+      const el = document.getElementById(t.href.replace("#", ""));
+      return el ? { id: t.id, el } : null;
+    }).filter((s): s is { id: TabId; el: HTMLElement } => s !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) {
+          const match = sections.find((s) => s.el === visible.target);
+          if (match) setActiveTab(match.id);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5] },
+    );
+
+    sections.forEach((s) => observer.observe(s.el));
+    return () => observer.disconnect();
+  }, []);
 
   function scrollToSection(href: string) {
     const el = document.querySelector(href);
