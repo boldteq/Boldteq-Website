@@ -29,7 +29,6 @@
   padding-right: 2rem;
   font-weight: 500;
   text-decoration: none;
-  margin: 15px auto 80px;
 }
 
 /* div-wrote-smoke.careerb-smoke */
@@ -47,36 +46,36 @@
   padding-bottom: 20px;
 }
 
-/* careersubott */
+/* careersubott — cyan-tinted bg, 1px #05bafe border, radius 20 (was #fafafa + white border) */
 .badge {
-  color: #18181b;
-  background-color: #fafafa;
-  border: 1px solid #fff;
-  border-radius: 999px;
+  color: #05bafe;
+  background-color: rgba(33, 207, 255, 0.07);
+  border: 1px solid #05bafe;
+  border-radius: 20px;
   margin-bottom: 17px;
-  padding: 4px 12px;
-  line-height: 14px;
-  display: flex;
+  padding: 0 13px;
+  line-height: 24px;
+  display: inline-flex;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
   align-items: center;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
   text-decoration: none;
 }
 
+/* faq-sky-text — gradient text, capitalize, 14px/500 (was 12px/700) */
 .badgeText {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  padding-top: 6px;
-  padding-bottom: 6px;
   margin: 0;
 }
 
@@ -252,7 +251,7 @@
    ============================================================ */
 @media screen and (max-width: 767px) {
   .heading {
-    font-size: 1.9rem;
+    font-size: 2rem;
     line-height: 1.25;
     margin-bottom: 10px;
   }
@@ -263,9 +262,8 @@
   }
 
   .container {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    margin-bottom: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
   .subtitle {
@@ -310,21 +308,23 @@
 
   .galleryRow {
     gap: 10px;
-    margin-top: -20px;
+    margin-top: 20px;
   }
 
   .galleryCard2 {
-    margin-top: 30px;
+    margin-top: 20px;
+  }
+
+  /* Webflow hides the 3rd gallery image on mobile (card-5 display:none @479) */
+  .galleryCard3 {
+    display: none;
   }
 
   .galleryImage {
     max-width: 120px;
     min-height: 140px;
-    border-radius: 12px;
+    border-radius: 8px;
   }
-  .container {
-    margin-bottom: 0;
-}
 }
 
 /* Widen to 1320px on large desktop — matches site-wide container */

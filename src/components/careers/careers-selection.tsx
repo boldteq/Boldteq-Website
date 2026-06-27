@@ -4,21 +4,29 @@ import styles from "./careers-selection.module.css";
 const CARDS = [
   {
     icon: "/images/webflow/Layer_1-46.svg",
+    iconW: 36,
+    iconH: 45,
     title: "Structured Screening",
     text: "We review applications using a role-specific scorecard, focusing on proven results, clarity of thinking, and relevant experience — not just resumes.",
   },
   {
     icon: "/images/webflow/Layer_1-47.svg",
+    iconW: 35,
+    iconH: 45,
     title: "Work Sample Task",
     text: "Shortlisted candidates complete a practical assignment based on real client scenarios to evaluate execution quality, attention to detail, and decision-making.",
   },
   {
     icon: "/images/webflow/Layer_1-8.svg",
+    iconW: 46,
+    iconH: 46,
     title: "Live Problem Session",
     text: "Candidates participate in a focused discussion where we explore real challenges, communication style, and ownership mindset in action.",
   },
   {
     icon: "/images/webflow/Layer_1-49.svg",
+    iconW: 61,
+    iconH: 46,
     title: "Trial Project",
     text: "Final candidates may complete a short trial to demonstrate consistency, reliability, and alignment with Boldteq's performance standards.",
   },
@@ -43,9 +51,10 @@ export function CareersSelection() {
               <div key={card.title} className={styles.card}>
                 <Image
                   src={card.icon}
-                  alt={`${card.title} icon`}
-                  width={48}
-                  height={48}
+                  alt=""
+                  aria-hidden="true"
+                  width={card.iconW}
+                  height={card.iconH}
                   className={styles.cardIcon}
                   loading="lazy"
                 />

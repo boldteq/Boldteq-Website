@@ -3,27 +3,20 @@
    Source: .career-tabs-sec, .career-tabs-menu, .career-tab-item
    ============================================================ */
 
-/* career-tabs-sec.overflow-hidden */
+/* career-tabs-sec.overflow-hidden — 5% gutter on the section (Webflow) */
 .section {
   background-color: transparent;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding: 20px 5% 40px;
   display: block;
-  justify-content: center;
   overflow: hidden;
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
 }
 
+/* container-large-2 — flat 1280, centered, no own padding */
 .container {
   width: 100%;
   max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 5%;
-  padding-right: 5%;
-  margin: 15px auto 80px;
+  margin: 0 auto;
 }
 
 /* career-sec2-outer */
@@ -421,13 +414,14 @@
   width: 90%;
 }
 
-/* h6-heading-3 */
+/* h6-heading-3 — 18px/1.4, tight tracking */
 .jobTitle {
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
   margin: 0 0 4px;
 }
 
@@ -449,19 +443,19 @@
   transform: rotate(180deg);
 }
 
-/* faq-content */
+/* faq-content — no top border in Webflow */
 .jobContent {
   padding: 0 24px 24px;
-  border-top: 1px solid #f3f4f6;
 }
 
-/* paragraph-regular-5 / w-richtext */
+/* paragraph-regular-5 — #2b2b2b 16px/1.8, weight 400 (was 15px/500/26) */
 .jobDescription {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 26px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.02em;
   margin: 20px 0 16px;
 }
 
@@ -586,9 +580,6 @@
   .jobContent {
     padding: 0 20px 20px;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
@@ -622,15 +613,5 @@
   .tabCta {
     width: 100%;
     justify-content: center;
-  }
-  .container {
-    margin-bottom: 0;
-  }
-}
-
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
   }
 }

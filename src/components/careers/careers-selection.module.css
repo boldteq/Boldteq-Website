@@ -3,27 +3,20 @@
    Source: .career-sec2.overflow-hidden, .demodev-sec2-grid-inner
    ============================================================ */
 
-/* career-sec2.overflow-hidden */
+/* career-sec2.overflow-hidden — 5% gutter lives on the section (Webflow) */
 .section {
   background-color: transparent;
-  padding-top: 20px;
-  padding-bottom: 70px;
+  padding: 20px 5% 70px;
   display: block;
-  justify-content: center;
   overflow: hidden;
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
 }
 
+/* container-large-2 — flat 1280, centered, no own padding */
 .container {
   width: 100%;
   max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 5%;
-  padding-right: 5%;
-  margin: 15px auto 80px;
+  margin: 0 auto;
 }
 
 /* career-sec2-outer */
@@ -80,24 +73,22 @@
   width: 100%;
 }
 
-/* demodev-sec2-grid-inner */
+/* demodev-sec2-grid-inner — #def4ff card, full 1px #009ce0 border, radius 20, 22px pad */
 .card {
-  background-color: #fff;
-  border-bottom: 1px solid rgba(33, 207, 255, 0.3);
-  border-right: 1px solid rgba(33, 207, 255, 0.3);
-  border-radius: 0;
-  padding: 30px 20px;
+  background-color: #def4ff;
+  border: 1px solid #009ce0;
+  border-radius: 20px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
 }
 
+/* demo2-icon — intrinsic SVG size (per-icon dims via the Image), mb 12 */
 .cardIcon {
   display: block;
-  margin-bottom: 20px;
-  width: 48px;
-  height: 48px;
+  margin-bottom: 12px;
 }
 
 /* heading-3-blue */
@@ -154,9 +145,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
@@ -164,7 +152,7 @@
    ============================================================ */
 @media screen and (max-width: 479px) {
   .section {
-    padding-top: 16px;
+    padding-top: 40px;
     padding-bottom: 50px;
   }
 
@@ -177,16 +165,6 @@
   }
 
   .card {
-    padding: 24px 16px;
-  }
-  .container {
-    margin-bottom: 0;
-  }
-}
-
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
+    padding: 22px 18px;
   }
 }
