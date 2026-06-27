@@ -4,7 +4,6 @@ import { SITE_CONFIG } from "@/lib/constants/site";
 import { ContactHero } from "@/components/contact/contact-hero";
 import { ContactInfoCards } from "@/components/contact/contact-info-cards";
 import { ContactFormSection } from "@/components/contact/contact-form-section";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "Contact Boldteq | Sales, Support & Careers for Agencies",
@@ -58,7 +57,6 @@ export default function ContactPage() {
       <ContactHero />
       <ContactInfoCards />
       <ContactFormSection />
-      <BetaCta />
     </>
   );
 }

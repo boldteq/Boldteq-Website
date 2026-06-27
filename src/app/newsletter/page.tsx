@@ -1,7 +1,6 @@
 import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
 import { NewsletterHero } from "@/components/newsletter/newsletter-hero";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "Newsletter | Agency Growth Insights | Boldteq",
@@ -19,7 +18,6 @@ export default function NewsletterPage() {
     <>
       <JsonLd data={breadcrumbs} id="schema-breadcrumbs" />
       <NewsletterHero />
-      <BetaCta />
     </>
   );
 }

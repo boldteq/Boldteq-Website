@@ -7,7 +7,6 @@ import { CareersSelection } from "@/components/careers/careers-selection";
 import { CareersTabs } from "@/components/careers/careers-tabs";
 import { CareersBenchmarks } from "@/components/careers/careers-benchmarks";
 import { CareersGlobal } from "@/components/careers/careers-global";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "Careers at Boldteq | Build the Future of White-Label Web Dev",
@@ -30,7 +29,6 @@ export default function CareersPage() {
       <CareersTabs />
       <CareersBenchmarks />
       <CareersGlobal />
-      <BetaCta />
     </>
   );
 }

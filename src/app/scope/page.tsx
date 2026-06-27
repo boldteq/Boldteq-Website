@@ -4,7 +4,6 @@ import { WorkPageBg } from "@/components/shared/page-bg";
 import { ScopeHero } from "@/components/scope/scope-hero";
 import { ScopeTabs } from "@/components/scope/scope-tabs";
 import { OurWorksCta } from "@/components/our-works/our-works-cta";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "Service Scope | Shopify, WordPress & Frontend | Boldteq",
@@ -23,7 +22,6 @@ export default function ScopePage() {
       <ScopeHero />
       <ScopeTabs />
       <OurWorksCta />
-      <BetaCta />
     </>
   );
 }

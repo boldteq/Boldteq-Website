@@ -1,7 +1,6 @@
 import { createMetadata } from "@/lib/seo/metadata";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
 import { TestimonialsGrid } from "@/components/testimonials/testimonials-grid";
-import { BetaCta } from "@/components/shared/beta-cta";
 
 export const metadata = createMetadata({
   title: "Testimonials | What Agencies Say About Boldteq",
@@ -19,7 +18,6 @@ export default function TestimonialsPage() {
     <>
       <JsonLd data={breadcrumbs} id="schema-breadcrumbs" />
       <TestimonialsGrid />
-      <BetaCta />
     </>
   );
 }
