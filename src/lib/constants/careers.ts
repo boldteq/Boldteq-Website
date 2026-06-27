@@ -3,6 +3,50 @@
    component AND the server page (JobPosting JSON-LD) can use it.
    ============================================================ */
 
+export type CareerTabId = "about" | "culture" | "benefits" | "opportunities";
+
+export interface CareerTab {
+  id: CareerTabId;
+  label: string;
+  href: string;
+}
+
+export const CAREER_TABS: CareerTab[] = [
+  { id: "about", label: "About Boldteq", href: "#career-about" },
+  { id: "culture", label: "Our Culture", href: "#career-culture" },
+  { id: "benefits", label: "Benefits", href: "#career-benefits" },
+  { id: "opportunities", label: "Career Opportunities", href: "#career-opportunities" },
+];
+
+export interface BenefitCard {
+  icon: string;
+  title: string;
+  text: string;
+}
+
+export const BENEFIT_CARDS: BenefitCard[] = [
+  {
+    icon: "/images/webflow/Layer_1-50.svg",
+    title: "Global Talent Network",
+    text: "We hire based on skill and capability — not geography — building a diverse, high-caliber team that upholds the quality our clients expect.",
+  },
+  {
+    icon: "/images/webflow/Layer_1-51.svg",
+    title: "Technical Mastery",
+    text: "Clear performance benchmarks, leadership pathways, and expanding global exposure ensure your growth scales alongside the organization.",
+  },
+  {
+    icon: "/images/webflow/Layer_1-52.svg",
+    title: "Detail Precision",
+    text: "Competitive compensation aligned with contribution, consistency, and measurable impact — recognizing those who raise the standard.",
+  },
+  {
+    icon: "/images/webflow/Layer_1-53.svg",
+    title: "High-Trust Environment",
+    text: "Operate with autonomy, accountability, and professional discipline — in a culture focused on outcomes, not micromanagement.",
+  },
+];
+
 export interface JobListing {
   /** stable id used for the accordion anchor + JobPosting url (not derived from the title) */
   slug: string;

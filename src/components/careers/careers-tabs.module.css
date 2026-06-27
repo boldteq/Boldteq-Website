@@ -109,20 +109,6 @@
   display: block;
 }
 
-/* Tab content wrapper */
-.tabContent {
-  width: 100%;
-}
-
-.tabPane {
-  animation: fadeTabIn 0.22s ease-out;
-}
-
-@keyframes fadeTabIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* ── About & Culture sections ──
    career-tabs-about-sec.overflow-hidden / career-tabs-culture-sec.overflow-hidden */
 .aboutSection {
@@ -557,11 +543,6 @@
     padding-bottom: 50px;
   }
 
-  /* career-tabs-sc.overflow-hidden hidden on mobile */
-  .tabNavWrapper {
-    display: none;
-  }
-
   .aboutGrid,
   .cultureGrid {
     grid-template-columns: 1fr;
@@ -650,14 +631,9 @@
 }
 
 /* ============================================================
-   Reduced motion — disable the tab-pane fade transform and the
-   accordion-arrow rotation/transition for vestibular safety
+   Reduced motion — disable the accordion-arrow rotation/transition
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  .tabPane {
-    animation: none;
-  }
-
   .jobArrow {
     transition: none;
   }

@@ -3,46 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { JOB_LISTINGS, type JobListing } from "@/lib/constants/careers";
+import {
+  JOB_LISTINGS,
+  CAREER_TABS as TABS,
+  BENEFIT_CARDS,
+  type JobListing,
+  type CareerTabId as TabId,
+} from "@/lib/constants/careers";
 import styles from "./careers-tabs.module.css";
-
-type TabId = "about" | "culture" | "benefits" | "opportunities";
-
-interface Tab {
-  id: TabId;
-  label: string;
-  href: string;
-}
-
-const TABS: Tab[] = [
-  { id: "about", label: "About Boldteq", href: "#career-about" },
-  { id: "culture", label: "Our Culture", href: "#career-culture" },
-  { id: "benefits", label: "Benefits", href: "#career-benefits" },
-  { id: "opportunities", label: "Career Opportunities", href: "#career-opportunities" },
-];
-
-const BENEFIT_CARDS = [
-  {
-    icon: "/images/webflow/Layer_1-50.svg",
-    title: "Global Talent Network",
-    text: "We hire based on skill and capability — not geography — building a diverse, high-caliber team that upholds the quality our clients expect.",
-  },
-  {
-    icon: "/images/webflow/Layer_1-51.svg",
-    title: "Technical Mastery",
-    text: "Clear performance benchmarks, leadership pathways, and expanding global exposure ensure your growth scales alongside the organization.",
-  },
-  {
-    icon: "/images/webflow/Layer_1-52.svg",
-    title: "Detail Precision",
-    text: "Competitive compensation aligned with contribution, consistency, and measurable impact — recognizing those who raise the standard.",
-  },
-  {
-    icon: "/images/webflow/Layer_1-53.svg",
-    title: "High-Trust Environment",
-    text: "Operate with autonomy, accountability, and professional discipline — in a culture focused on outcomes, not micromanagement.",
-  },
-];
 
 function JobAccordion({ job }: { job: JobListing }) {
   const [open, setOpen] = useState(false);
