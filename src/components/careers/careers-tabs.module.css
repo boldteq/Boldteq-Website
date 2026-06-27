@@ -111,8 +111,10 @@
 
 /* ── About & Culture sections ──
    career-tabs-about-sec.overflow-hidden / career-tabs-culture-sec.overflow-hidden */
+/* Webflow uses 90px here to clear its STICKY tab nav; ours isn't sticky, so that
+   was a ~130px dead gap below the tab bar — tightened to a normal section gap. */
 .aboutSection {
-  padding-top: 90px;
+  padding-top: 32px;
   padding-bottom: 40px;
   overflow: hidden;
 }
