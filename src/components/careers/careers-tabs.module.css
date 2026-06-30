@@ -4,15 +4,34 @@
    ============================================================ */
 
 /* career-tabs-sec.overflow-hidden — 5% gutter on the section (Webflow).
-   Bottom padding trimmed 40→16: in Webflow the nav is a separate sticky section
-   so its big clearance is functional; ours merges the nav into this header
-   section (static), so we keep the nav→content gap tight (16 + About pt 32 = 48). */
+   This base rule is used by the header section (heading + subtitle) AND as the
+   base for the four content sections (which override top/bottom padding). The
+   nav is now its own sticky element OUTSIDE this section (Webflow .career-tabs-sc),
+   so the header's bottom padding sets the subtitle→nav gap: 40px (Webflow
+   .career-tabs-sec padding-bottom 40 + .career-tabs-sc padding-top 0). */
 .section {
   background-color: transparent;
-  padding: 20px 5% 16px;
+  padding: 20px 5% 40px;
   display: block;
   overflow: hidden;
   position: relative;
+}
+
+/* .career-wrapper — sticky containing block. Wraps the nav + the four content
+   sections so the nav can stick across all of them. MUST NOT clip overflow
+   (overflow:hidden/clip/auto on any ancestor of a sticky element breaks it). */
+.careerWrapper {
+  position: relative;
+  /* Sticky offset tokens (inherited by the sections for scroll-margin-top).
+     Main navbar is fixed top:10 / height:66 → bottom 76px; nav pins 10px below. */
+  --career-sticky-top: 86px;
+  --career-scroll-margin: 168px;
+}
+
+/* The four content sections land below the pinned navbar + tab nav when clicked
+   or deep-linked, instead of behind them. */
+.careerWrapper section {
+  scroll-margin-top: var(--career-scroll-margin);
 }
 
 /* container-large-2 — flat 1280, centered, no own padding */
@@ -66,7 +85,10 @@
   margin: 0;
 }
 
-/* career-tabs-menu (.career-tabs-sc sticky) — grid 4 columns */
+/* career-tabs-menu (.career-tabs-sc) — sticky 4-column nav.
+   It's a direct child of .careerWrapper (NOT inside .container), so it centers
+   itself at the section content width: min(1280px, 90%) gives the same 1280 cap
+   + 5% gutter the sections use, keeping the pill aligned with section content. */
 .tabNav {
   display: grid;
   grid-column-gap: 16px;
@@ -74,20 +96,16 @@
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  align-self: stretch;
   background-color: var(--color-success-bg);
   border-radius: 15px;
-  /* The nav is a sibling of .sectionOuter inside a plain block .container, so
-     .sectionOuter's gap:40px never applied between the description and the nav —
-     they rendered flush (0px) and the subtitle's 2nd line collided with the nav.
-     Webflow's gap = .career-tabs-sec padding-bottom 40px + .career-tabs-sc
-     padding-top 0 = 40px. Restore it here. */
-  margin-top: 40px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
+  width: min(1280px, 90%);
+  margin: 0 auto;
   padding: 10px;
-  width: 100%;
+  /* Sticky: pin just below the fixed main navbar (bottom ≈76px) while scrolling
+     through the four sections; releases at the wrapper's end. z below navbar (999999). */
+  position: sticky;
+  top: var(--career-sticky-top, 86px);
+  z-index: 50;
 }
 
 /* career-tab-item */
@@ -596,9 +614,16 @@
    max-width: 767px
    ============================================================ */
 @media screen and (max-width: 767px) {
+  /* Webflow hides the careers tab nav at <=767px (.career-tabs-sc.hide-mob =
+     display:none). A 2-row sticky pill would eat the viewport and overlap
+     content on phones, so we match Webflow and hide it; sections just stack. */
   .tabNav {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    display: none;
+  }
+
+  /* Nav hidden here, so deep-links/CTAs only need to clear the fixed navbar. */
+  .careerWrapper {
+    --career-scroll-margin: 90px;
   }
 
   .tabHeading {
@@ -661,17 +686,6 @@
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .tabNav {
-    grid-template-columns: 1fr 1fr;
-    border-radius: 10px;
-    padding: 6px;
-    gap: 6px;
-  }
-
-  .tabButtonText {
-    font-size: 14px;
   }
 
   .tabHeading {

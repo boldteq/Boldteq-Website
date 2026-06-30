@@ -128,6 +128,10 @@ function JobAccordion({ job }: { job: JobListing }) {
 
 export function CareersTabs() {
   const [activeTab, setActiveTab] = useState<TabId>("about");
+  // While a click-scroll is in flight we lock the scroll-spy so the sections it
+  // passes through don't briefly steal the highlight from the clicked tab.
+  const spyLocked = useRef(false);
+  const lockTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Scroll-spy: keep the active nav item in sync with the section in view.
   // This also makes deep-links (e.g. the hero/benchmarks/global CTAs that point
@@ -142,6 +146,7 @@ export function CareersTabs() {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (spyLocked.current) return;
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -154,14 +159,29 @@ export function CareersTabs() {
     );
 
     sections.forEach((s) => observer.observe(s.el));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (lockTimer.current) clearTimeout(lockTimer.current);
+    };
   }, []);
 
   function scrollToSection(href: string) {
     const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }
+
+  function handleTabClick(tab: (typeof TABS)[number]) {
+    setActiveTab(tab.id);
+    // Lock the spy for the duration of the smooth scroll so the highlight stays
+    // on the clicked tab instead of flickering through intermediate sections.
+    spyLocked.current = true;
+    if (lockTimer.current) clearTimeout(lockTimer.current);
+    lockTimer.current = setTimeout(() => {
+      spyLocked.current = false;
+    }, 800);
+    scrollToSection(tab.href);
   }
 
   return (
@@ -182,30 +202,31 @@ export function CareersTabs() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Section navigation. These are NOT tabs (panels aren't shown/hidden —
-              all sections render and the buttons scroll to them), so this is a nav
-              with aria-current, not role=tablist/tab. */}
-          <nav className={styles.tabNav} aria-label="Career sections">
+      {/* Sticky tab nav + the four content sections share one wrapper so the nav
+          can stick across all of them (Webflow: .career-wrapper > .career-tabs-sc
+          + the #career-* sections). The wrapper must NOT clip overflow or sticky breaks. */}
+      <div className={styles.careerWrapper}>
+        {/* Section navigation. These are NOT tabs (panels aren't shown/hidden —
+            all sections render and the buttons scroll to them), so this is a nav
+            with aria-current, not role=tablist/tab. */}
+        <nav className={styles.tabNav} aria-label="Career sections">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
                 aria-current={activeTab === tab.id ? "true" : undefined}
                 className={`${styles.tabButton} ${activeTab === tab.id ? styles.tabButtonActive : ""}`}
-                onClick={() => {
-                  setActiveTab(tab.id);
-                  scrollToSection(tab.href);
-                }}
+                onClick={() => handleTabClick(tab)}
               >
                 <span className={styles.tabButtonText}>{tab.label}</span>
               </button>
             ))}
-          </nav>
-        </div>
-      </section>
+        </nav>
 
-      {/* ── About Boldteq ── */}
+        {/* ── About Boldteq ── */}
       <section
         id="career-about"
         aria-labelledby="career-about-heading"
@@ -367,6 +388,7 @@ export function CareersTabs() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }
