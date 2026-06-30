@@ -77,6 +77,12 @@
   align-self: stretch;
   background-color: var(--color-success-bg);
   border-radius: 15px;
+  /* The nav is a sibling of .sectionOuter inside a plain block .container, so
+     .sectionOuter's gap:40px never applied between the description and the nav —
+     they rendered flush (0px) and the subtitle's 2nd line collided with the nav.
+     Webflow's gap = .career-tabs-sec padding-bottom 40px + .career-tabs-sc
+     padding-top 0 = 40px. Restore it here. */
+  margin-top: 40px;
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
