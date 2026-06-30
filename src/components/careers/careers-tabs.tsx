@@ -128,10 +128,27 @@ function JobAccordion({ job }: { job: JobListing }) {
 
 export function CareersTabs() {
   const [activeTab, setActiveTab] = useState<TabId>("about");
+  // True only while the nav is pinned (sticky) to the top — drives the gradient
+  // bar + white text. In its normal flow position it stays the pale #def4ff bar.
+  const [stuck, setStuck] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
   // While a click-scroll is in flight we lock the scroll-spy so the sections it
   // passes through don't briefly steal the highlight from the clicked tab.
   const spyLocked = useRef(false);
   const lockTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Detect when the nav becomes sticky: a zero-height sentinel sits where the nav
+  // starts; once it scrolls above the sticky offset (86px) the nav is pinned.
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setStuck(!entry.isIntersecting),
+      { rootMargin: "-86px 0px 0px 0px", threshold: 0 },
+    );
+    obs.observe(sentinel);
+    return () => obs.disconnect();
+  }, []);
 
   // Scroll-spy: keep the active nav item in sync with the section in view.
   // This also makes deep-links (e.g. the hero/benchmarks/global CTAs that point
@@ -209,10 +226,15 @@ export function CareersTabs() {
           can stick across all of them (Webflow: .career-wrapper > .career-tabs-sc
           + the #career-* sections). The wrapper must NOT clip overflow or sticky breaks. */}
       <div className={styles.careerWrapper}>
+        {/* Sentinel for sticky detection (see the IntersectionObserver above). */}
+        <div ref={sentinelRef} className={styles.stickySentinel} aria-hidden="true" />
         {/* Section navigation. These are NOT tabs (panels aren't shown/hidden —
             all sections render and the buttons scroll to them), so this is a nav
             with aria-current, not role=tablist/tab. */}
-        <nav className={styles.tabNav} aria-label="Career sections">
+        <nav
+          className={`${styles.tabNav}${stuck ? ` ${styles.tabNavStuck}` : ""}`}
+          aria-label="Career sections"
+        >
             {TABS.map((tab) => (
               <button
                 key={tab.id}
