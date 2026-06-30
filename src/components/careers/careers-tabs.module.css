@@ -3,10 +3,13 @@
    Source: .career-tabs-sec, .career-tabs-menu, .career-tab-item
    ============================================================ */
 
-/* career-tabs-sec.overflow-hidden — 5% gutter on the section (Webflow) */
+/* career-tabs-sec.overflow-hidden — 5% gutter on the section (Webflow).
+   Bottom padding trimmed 40→16: in Webflow the nav is a separate sticky section
+   so its big clearance is functional; ours merges the nav into this header
+   section (static), so we keep the nav→content gap tight (16 + About pt 32 = 48). */
 .section {
   background-color: transparent;
-  padding: 20px 5% 40px;
+  padding: 20px 5% 16px;
   display: block;
   overflow: hidden;
   position: relative;
