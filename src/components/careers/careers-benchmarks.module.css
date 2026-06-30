@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 680px;
 }
 
 .heading {
@@ -53,11 +54,11 @@
   font-weight: 700;
   line-height: 48px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .subtitleWrap {
-  max-width: 500px;
+  max-width: 600px;
   text-align: center;
 }
 
@@ -68,7 +69,7 @@
   font-weight: 400;
   line-height: 28px;
   text-align: center;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 .ctaButton {
@@ -87,9 +88,16 @@
   margin-top: 16px;
 }
 
+/* div-job-attention margin-less — CTA wrapper top gap */
+.ctaWrap {
+  margin-top: 1rem;
+}
+
 /* benchmark-grid */
 .benchGrid {
   display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-self: stretch;
 }
@@ -188,6 +196,8 @@
   }
 
   .benchGrid {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -199,6 +209,11 @@
   .section {
     padding-bottom: 0;
   }
+
+  .contCenter {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
 }
 
 /* ============================================================
@@ -207,6 +222,11 @@
 @media screen and (max-width: 479px) {
   .section {
     padding: 0 5%;
+  }
+
+  .contCenter {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
   }
 
   .benchOuter {
@@ -220,10 +240,15 @@
   }
 
   .benchCard {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
     min-height: 240px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .benchLabel {
+    margin-top: 20px;
     font-size: 16px;
     line-height: 18px;
   }

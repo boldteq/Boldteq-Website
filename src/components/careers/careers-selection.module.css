@@ -34,6 +34,7 @@
   flex-flow: column;
   align-items: center;
   gap: 0;
+  max-width: 680px;
   text-align: center;
 }
 
@@ -44,12 +45,12 @@
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 /* max-width-small-3.center-text */
 .subtitleWrap {
-  max-width: 500px;
+  max-width: 600px;
   text-align: center;
 }
 
@@ -99,7 +100,7 @@
   font-weight: 700;
   line-height: 25px;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 7px;
 }
 
 .cardText {
@@ -109,7 +110,7 @@
   font-weight: 400;
   line-height: 28px;
   text-align: left;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 /* ============================================================
@@ -117,8 +118,10 @@
    ============================================================ */
 @media screen and (max-width: 991px) {
   .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   .selectionGrid {
@@ -127,6 +130,7 @@
 
   .heading {
     font-size: 34px;
+    line-height: 48px;
   }
 }
 
@@ -134,9 +138,18 @@
    max-width: 767px
    ============================================================ */
 @media screen and (max-width: 767px) {
+  .section {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+
+  .outer {
+    gap: 20px;
+  }
+
   .heading {
     font-size: 28px;
-    line-height: 1.25;
+    line-height: 40px;
   }
 
   .selectionGrid {
@@ -153,11 +166,16 @@
 @media screen and (max-width: 479px) {
   .section {
     padding-top: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 0;
+  }
+
+  .outer {
+    gap: 20px;
   }
 
   .heading {
     font-size: 1.5rem;
+    line-height: 34px;
   }
 
   .subtitle {
@@ -166,5 +184,31 @@
 
   .card {
     padding: 22px 18px;
+  }
+}
+
+/* ============================================================
+   min-width: 1280px
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .section {
+    padding-bottom: 80px;
+  }
+
+  .cardTitle {
+    line-height: 28px;
+  }
+}
+
+/* ============================================================
+   min-width: 1440px
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-bottom: 80px;
+  }
+
+  .cardTitle {
+    line-height: 30px;
   }
 }

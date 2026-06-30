@@ -3,8 +3,10 @@ import { Button } from '@/components/primitives/button';
 import styles from "./careers-global.module.css";
 
 const DECORATIVE_IMAGES = [
+  // Webflow uses Rectangle-30898 twice, both with class .cimg1 (same position) so
+  // they overlap and read as a single avatar. We render it once to match that
+  // visual without the side-by-side duplicate our earlier port introduced.
   { src: "/images/webflow/Rectangle-30898.png", className: styles.cimg1, alt: "" },
-  { src: "/images/webflow/Rectangle-30898.png", className: styles.cimg1b, alt: "" },
   { src: "/images/webflow/Rectangle-30899.png", className: styles.cimg2, alt: "" },
   { src: "/images/webflow/Rectangle-30900.png", className: styles.cimg3, alt: "" },
   { src: "/images/webflow/Rectangle-30902.png", className: styles.cimg4, alt: "" },

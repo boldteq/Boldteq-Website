@@ -24,9 +24,11 @@ export function CareersBenchmarks() {
                   capabilities required to support high-growth agencies at scale.
                 </p>
               </div>
-              <Button href="#career-opportunities" variant="primary" size="md">
-                View Open Positions
-              </Button>
+              <div className={styles["ctaWrap"]}>
+                <Button href="#career-opportunities" variant="primary" size="md">
+                  View Open Positions
+                </Button>
+              </div>
             </div>
 
             <div className={styles["benchGrid"]}>
