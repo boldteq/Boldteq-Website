@@ -337,7 +337,11 @@
 /* ── Opportunities section ──
    career-tabs-opportunities-sec.overflow-hidden */
 .opportunitiesSection {
-  padding-top: 0;
+  /* Webflow sets padding-top:0 here, but that relies on the sticky nav's 128px
+     scroll-runway above. We merged/un-stickied the nav, so 0 left the heading
+     flush against the benefits section. Restore breathing room above the heading
+     to match the other content sections' rhythm (about 32 / culture 30 / benefits 60). */
+  padding-top: 60px;
   padding-bottom: 60px;
   overflow: hidden;
 }
