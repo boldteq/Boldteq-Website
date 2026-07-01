@@ -108,7 +108,7 @@
 
 /* .sp-icon (S/W/F letter icon) */
 .platformIcon {
-  color: #05bafe;
+  color: #0670a3;
   background-color: #def4ff;
   border-radius: 5px;
   justify-content: center;
@@ -160,7 +160,7 @@
 
 /* .ph-icon.shopify / .wp */
 .phIcon {
-  color: #05bafe;
+  color: #0670a3;
   background-color: #fff;
   border-radius: 14px;
   justify-content: center;
@@ -184,7 +184,7 @@
 
 /* .ph-name.shopify / .wp */
 .phName {
-  color: #05bafe;
+  color: #0670a3;
   margin-top: 0;
   margin-bottom: 3px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -455,7 +455,7 @@
 }
 
 .cardLabelSmall {
-  color: #05bafe;
+  color: #0670a3;
   background-color: #def4ff;
 }
 
@@ -470,7 +470,7 @@
 }
 
 .cardLabelSupport {
-  color: #05bafe;
+  color: #0670a3;
   background-color: #def4ff;
 }
 
