@@ -24,7 +24,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
           }}>{detail.platform}</strong>
         </div>
       </div>
-      <h1 className={styles.title}>{detail.title}</h1>
+      <h2 className={styles.title}>{detail.title}</h2>
       <div className={styles.metaRow}>
         <div className={styles.metaItem}>
           <Image
@@ -76,7 +76,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
             />
           </div>
           <div className={styles.sectionBody}>
-            <h2 className={styles.sectionHeading}>The Challenge</h2>
+            <h3 className={styles.sectionHeading}>The Challenge</h3>
             <p className={styles.sectionSubtitle}>Problem Statement</p>
             <p className={styles.paragraph}>{detail.challenge}</p>
           </div>
@@ -95,7 +95,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
             />
           </div>
           <div className={styles.sectionBody}>
-            <h2 className={styles.sectionHeading}>Our Solution</h2>
+            <h3 className={styles.sectionHeading}>Our Solution</h3>
             <p className={styles.sectionSubtitle}>Strategic Approach</p>
             <p className={styles.paragraph}>{detail.solution}</p>
           </div>
@@ -114,7 +114,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
             />
           </div>
           <div className={styles.sectionBody}>
-            <h2 className={styles.sectionHeading}>Implementation</h2>
+            <h3 className={styles.sectionHeading}>Implementation</h3>
             <p className={styles.sectionSubtitle}>Key Steps</p>
             <ul className={styles.implementList}>
               {detail.implementation.map((step, index) => (
@@ -142,7 +142,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
             />
           </div>
           <div className={styles.sectionBody}>
-            <h2 className={styles.sectionHeading}>Impact &amp; Results</h2>
+            <h3 className={styles.sectionHeading}>Impact &amp; Results</h3>
             <p className={styles.sectionSubtitle}>Measurable Outcomes</p>
             <div className={styles.impactGrid}>
               {detail.impact.map((item, index) => (
@@ -171,7 +171,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
             />
           </div>
           <div className={styles.sectionBody}>
-            <h2 className={styles.sectionHeading}>Key Features</h2>
+            <h3 className={styles.sectionHeading}>Key Features</h3>
             <p className={styles.sectionSubtitle}>Highlights</p>
             <ul className={styles.featuresList}>
               {detail.keyFeatures.map((feature, index) => (
@@ -193,7 +193,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
 
         {/* Tech Stack + CTAs */}
         <div className={styles.techSection}>
-          <h2 className={styles.techHeading}>Tech Stack</h2>
+          <h3 className={styles.techHeading}>Tech Stack</h3>
           <div className={styles.techRow}>
             {detail.techStack.map((tech) => (
               <span key={tech} className={styles.techPill}>

@@ -37,7 +37,7 @@ export function CaseStudyShowcase({ item, embedded = false }: CaseStudyShowcaseP
         </div>
       </div>
 
-      <h1 className={styles.title}>{item.name}</h1>
+      <h2 className={styles.title}>{item.name}</h2>
 
       <p className={styles.desc}>
         A {platform} project from the Boldteq portfolio — designed and built to

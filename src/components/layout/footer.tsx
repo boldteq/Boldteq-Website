@@ -138,6 +138,7 @@ function FooterNewsletter() {
                 name="Email-Footer-Newsletter"
                 id="Email-Footer-Newsletter"
                 placeholder="Enter your email"
+                autoComplete="email"
                 required
                 aria-required="true"
                 value={email}

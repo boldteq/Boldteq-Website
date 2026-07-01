@@ -190,7 +190,12 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
         </div>
 
         {/* Comparison table */}
-        <div className={styles["pricingTableWrapper"]}>
+        <div
+          className={styles["pricingTableWrapper"]}
+          tabIndex={0}
+          role="group"
+          aria-label="Plan feature comparison"
+        >
           <div className={styles["pricingTable"]}>
             {/* Header row (sits on the tinted container, no card) */}
             <div className={styles["pricingTableHeaderRow"]}>
@@ -240,7 +245,6 @@ export function PricingSection({ transparent = false, asH1 = false }: { transpar
                       type="button"
                       className={styles["tooltip"]}
                       data-tooltip={row.tooltip}
-                      title={row.tooltip}
                       aria-label={`More info: ${row.tooltip}`}
                     >
                       <Image

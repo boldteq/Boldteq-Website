@@ -95,6 +95,7 @@ export function NewsletterSignup() {
                   placeholder="Enter your email"
                   type="email"
                   id="newsletter-email"
+                  autoComplete="email"
                   required
                   aria-required="true"
                   value={email}

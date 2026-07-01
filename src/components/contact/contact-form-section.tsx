@@ -335,11 +335,7 @@ export function ContactFormSection() {
                   className={styles.textarea}
                   aria-describedby="message-counter"
                 />
-                <p
-                  id="message-counter"
-                  className={styles.charCounter}
-                  aria-live="polite"
-                >
+                <p id="message-counter" className={styles.charCounter}>
                   {(fields.message ?? "").length}/5000 characters
                 </p>
               </div>

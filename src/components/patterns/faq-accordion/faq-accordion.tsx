@@ -83,7 +83,7 @@ export function FaqAccordion({
   return (
     <div className={listClass} role="list">
       {items.map((item, i) => (
-        <div key={i} role="listitem">
+        <div key={item.question} role="listitem">
           <FaqRow item={item} index={i} />
         </div>
       ))}

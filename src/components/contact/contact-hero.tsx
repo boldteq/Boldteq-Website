@@ -2,7 +2,7 @@ import styles from "./contact-hero.module.css";
 
 export function ContactHero() {
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.inner}>
           {/* Badge */}
@@ -22,6 +22,6 @@ export function ContactHero() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

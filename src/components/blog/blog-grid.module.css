@@ -71,29 +71,48 @@
   padding-right: 2.75rem;
 }
 
+/* 44x44 transparent hit box (meets touch-target guideline); the visible 22px
+   disc is drawn by ::before so the chip looks identical while the tappable area
+   is larger. right offset = 0.9rem - 11px keeps the disc's right edge in place. */
 .searchClear {
   position: absolute;
   top: 50%;
-  right: 0.9rem;
+  right: 0.2rem;
   transform: translateY(-50%);
-  width: 22px;
-  height: 22px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 999px;
-  background-color: rgba(8, 39, 83, 0.06);
+  padding: 0;
+  background: none;
   color: var(--color-text-secondary);
   font-size: 12px;
   line-height: 1;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.searchClear::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background-color: rgba(8, 39, 83, 0.06);
+  transition: background-color 0.2s ease;
 }
 
 .searchClear:hover {
-  background-color: rgba(8, 39, 83, 0.12);
   color: var(--color-text-primary);
+}
+
+.searchClear:hover::before {
+  background-color: rgba(8, 39, 83, 0.12);
 }
 
 .searchClear:focus-visible {
@@ -324,6 +343,10 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  /* Expand the tap target to ~40px (20px icon + 10px padding each side) while
+     the negative margin cancels the padding so the visual row is unchanged. */
+  padding: 10px;
+  margin: -10px;
 }
 
 /* .sidebar-social-link img — render at intrinsic 20x20 like Webflow */

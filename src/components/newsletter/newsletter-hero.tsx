@@ -112,6 +112,7 @@ export function NewsletterHero() {
                   name="email"
                   type="email"
                   placeholder="Enter your email"
+                  autoComplete="email"
                   maxLength={256}
                   required
                   aria-required="true"

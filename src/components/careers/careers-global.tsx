@@ -26,9 +26,9 @@ export function CareersGlobal() {
           <Button href="#career-opportunities" variant="navy" size="md">
             View Opening Positions
           </Button>
-          {DECORATIVE_IMAGES.map((img, i) => (
+          {DECORATIVE_IMAGES.map((img) => (
             <Image
-              key={i}
+              key={img.src}
               src={img.src}
               alt=""
               aria-hidden="true"

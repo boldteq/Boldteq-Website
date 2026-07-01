@@ -64,7 +64,13 @@ export function PortfolioGrid() {
   const goToPage = useCallback((page: number) => {
     setCurrentPage(page);
     // Mirror Webflow's showPage(): scroll the grid back to the top on change.
-    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Respect prefers-reduced-motion — the JS smooth behavior isn't governed
+    // by the CSS scroll-behavior override in globals.css.
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    gridRef.current?.scrollIntoView({
+      behavior: reduce ? "auto" : "smooth",
+      block: "start",
+    });
   }, []);
 
   // Build page numbers
@@ -129,7 +135,7 @@ export function PortfolioGrid() {
             {/* LEFT SIDEBAR */}
             <aside className={styles.sidebar}>
               <div className={styles.categoryHeader}>
-                <h3 className={styles.categoryTitle}>Service Categories</h3>
+                <h2 className={styles.categoryTitle}>Service Categories</h2>
                 {activeCategories.length > 0 && (
                   <button
                     type="button"

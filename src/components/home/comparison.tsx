@@ -146,7 +146,8 @@ export function Comparison() {
               <div className={styles["wayInnIn2"]}>
                 <Image
                   src="/images/webflow/f8f0feb98079a1670f1d01ab1aa9fadccc312da5.png"
-                  alt="client image"
+                  alt=""
+                  aria-hidden="true"
                   width={42}
                   height={42}
                   className={styles["authorImageSmallRightAuthor"]}
@@ -178,7 +179,8 @@ export function Comparison() {
               <div className={styles["wayInnIn2"]}>
                 <Image
                   src="/images/webflow/f8f0feb98079a1670f1d01ab1aa9fadccc312da5.png"
-                  alt="client image"
+                  alt=""
+                  aria-hidden="true"
                   width={42}
                   height={42}
                   className={styles["authorImageSmallRightAuthor"]}

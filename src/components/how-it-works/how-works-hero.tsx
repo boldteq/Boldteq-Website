@@ -51,7 +51,7 @@ export function HowWorksHero() {
                 <div key={badge.label} className={styles["statBadge"]}>
                   <Image
                     src={badge.icon}
-                    alt={`${badge.label} icon`}
+                    alt=""
                     width={24}
                     height={24}
                     loading="eager"

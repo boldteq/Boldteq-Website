@@ -91,6 +91,12 @@
   transition: background-color 0.2s;
 }
 
+/* Branded keyboard focus ring (a11y) */
+.platformBtn:focus-visible {
+  outline: 2px solid var(--color-brand-cyan);
+  outline-offset: 2px;
+}
+
 /* .stab-name.w--current */
 .platformBtnActive {
   background-color: #0ab4e8;
@@ -237,6 +243,12 @@
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
   white-space: nowrap;
+}
+
+/* Branded keyboard focus ring (a11y) */
+.tierTab:focus-visible {
+  outline: 2px solid var(--color-brand-cyan);
+  outline-offset: 2px;
 }
 
 /* .ttab.small.w--current */
@@ -555,6 +567,12 @@
     grid-template-columns: 1fr 1fr;
     margin-left: 0;
     margin-right: 0;
+  }
+  /* a11y: reach >=44px mobile touch target (not a desktop parity change) */
+  .tierTab {
+    min-height: 44px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
   .tierIntro {
     flex-flow: column;

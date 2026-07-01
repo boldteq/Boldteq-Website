@@ -82,8 +82,6 @@ export function Typewriter() {
 
   return (
     <span
-      aria-live="polite"
-      aria-atomic="true"
       className={`${styles['animate-span']} ${styles['typewriterContainer']}`}
     >
       {text}

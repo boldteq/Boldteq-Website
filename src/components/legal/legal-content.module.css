@@ -84,8 +84,8 @@
 
 .para a:hover,
 .richtext a:hover {
-  color: var(--color-text-primary);
-  text-decoration: underline;
+  color: var(--color-text-secondary);
+  text-decoration: none;
 }
 
 /* unordered list — .policy-ul */

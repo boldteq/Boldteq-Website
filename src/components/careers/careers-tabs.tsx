@@ -40,6 +40,11 @@ function JobAccordion({ job }: { job: JobListing }) {
           id={jobId}
           className={styles.jobToggle}
           onClick={toggle}
+          onKeyDown={(e) => {
+            // Escape closes the panel while focus is still on the toggle
+            // (focus stays here after opening; the panel is a sibling below)
+            if (e.key === "Escape" && open) setOpen(false);
+          }}
           aria-expanded={open}
           aria-controls={panelId}
         >

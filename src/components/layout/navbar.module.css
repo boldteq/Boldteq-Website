@@ -464,7 +464,8 @@
 /* ─── "Coming Soon" badge inside nav dropdown links ──────────────────────────── */
 
 .header-comingsoon-badge {
-  color: #1890ff;
+  /* #1890ff was 2.95:1 on #e6f7ff; #0a66c2 is ~5.2:1 (WCAG AA) — matches footer */
+  color: #0a66c2;
   letter-spacing: 0;
   text-transform: capitalize;
   background-color: #e6f7ff;

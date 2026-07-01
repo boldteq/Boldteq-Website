@@ -11,6 +11,8 @@ export interface ContactFormField {
   required?: boolean;
   options?: SelectOption[];
   colSpan?: 1 | 2;
+  /** HTML autocomplete token (e.g. given-name, family-name, email, tel) */
+  autoComplete?: string;
 }
 
 export interface ContactFormProps {

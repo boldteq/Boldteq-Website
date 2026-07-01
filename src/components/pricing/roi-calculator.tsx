@@ -336,6 +336,7 @@ function DollarField({
         <input
           id={inputId}
           type="number"
+          inputMode="numeric"
           min={min}
           value={value}
           onChange={(e) => {
@@ -616,6 +617,7 @@ export function RoiCalculator() {
                 max={200}
                 step={1}
                 value={state.teamSize}
+                aria-valuetext={`${state.teamSize} ${state.teamSize === 1 ? "person" : "people"}`}
                 onChange={(e) => patch({ teamSize: Number(e.target.value) })}
                 className={styles.slider}
               />
@@ -642,6 +644,7 @@ export function RoiCalculator() {
                 max={40}
                 step={0.5}
                 value={state.manualHours}
+                aria-valuetext={`${state.manualHours} ${state.manualHours === 1 ? "hour" : "hours"} per week`}
                 onChange={(e) =>
                   patch({ manualHours: Number(e.target.value) })
                 }

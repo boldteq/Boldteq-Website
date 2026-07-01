@@ -87,10 +87,10 @@ export function MissionHero() {
         {/* 2-column navy content grid */}
         <div className={styles['contentGrid']}>
           <div className={styles['contentCol']}>
-            <h3 className={styles['contentHeading']}>
+            <h2 className={styles['contentHeading']}>
               To help digital agencies scale faster without hiring pressure or
               delivery chaos.
-            </h3>
+            </h2>
             <p className={styles['contentPara']}>
               Agencies don&apos;t struggle with ideas. They struggle when delivery
               becomes inconsistent as volume grows. Boldteq exists to remove that
@@ -100,7 +100,7 @@ export function MissionHero() {
           </div>
 
           <div className={styles['contentCol']}>
-            <h3 className={styles['contentHeading']}>Why We Built Boldteq</h3>
+            <h2 className={styles['contentHeading']}>Why We Built Boldteq</h2>
             <p className={styles['contentPara']}>
               As agencies grow, delivery complexity increases. Hiring slows
               momentum. Freelancers add inconsistency. Internal teams become hard

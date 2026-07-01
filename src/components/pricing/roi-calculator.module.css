@@ -561,6 +561,7 @@
 }
 
 .tooltipBtn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -578,6 +579,13 @@
   flex-shrink: 0;
   padding: 0;
   line-height: 1;
+}
+
+/* Transparent hit-area extension → ~44px tap target without changing visual size */
+.tooltipBtn::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
 }
 
 .tooltipBtn:hover {
@@ -1057,6 +1065,18 @@
   .animatedCounter {
     transition: none !important;
   }
+  /* Kill residual decorative motion: blinking dot + hover lift/scale effects */
+  .eyebrowDot {
+    animation: none !important;
+  }
+  .presetBtn:hover:not(.presetBtnActive),
+  .presetBtnActive:hover,
+  .planBtn:hover,
+  .planBtnActive,
+  .planBtnActive:hover,
+  .slider::-webkit-slider-thumb:active {
+    transform: none !important;
+  }
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
@@ -1143,6 +1163,16 @@
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
+  }
+
+  /* Larger thumb eases dragging on touch (primary mobile interaction) */
+  .slider::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+  }
+  .slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
   }
 }
 

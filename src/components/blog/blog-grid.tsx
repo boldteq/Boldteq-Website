@@ -101,7 +101,9 @@ export function BlogGrid({
                 </label>
                 <input
                   id="blog-search"
+                  name="q"
                   type="search"
+                  autoComplete="off"
                   className={styles.searchField}
                   placeholder="Search here..."
                   value={searchInput}

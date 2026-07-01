@@ -1,8 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, type KeyboardEvent, type RefObject } from "react";
 import { SCOPE_PLATFORMS, type Platform, type TierKey } from "@/lib/constants/scope";
 import styles from "./scope-tabs.module.css";
+
+/**
+ * Roving-tabindex arrow-key handler for a horizontal/vertical tablist.
+ * ArrowLeft/Up -> previous, ArrowRight/Down -> next, Home -> first, End -> last.
+ * Moves focus (and activation) to the target tab so inactive tabs stay reachable.
+ */
+function handleTabKeyDown(
+  e: KeyboardEvent<HTMLButtonElement>,
+  index: number,
+  count: number,
+  refs: RefObject<(HTMLButtonElement | null)[]>,
+  activate: (index: number) => void,
+): void {
+  let next = index;
+  switch (e.key) {
+    case "ArrowLeft":
+    case "ArrowUp":
+      next = (index - 1 + count) % count;
+      break;
+    case "ArrowRight":
+    case "ArrowDown":
+      next = (index + 1) % count;
+      break;
+    case "Home":
+      next = 0;
+      break;
+    case "End":
+      next = count - 1;
+      break;
+    default:
+      return;
+  }
+  e.preventDefault();
+  activate(next);
+  refs.current[next]?.focus();
+}
 
 function getTierTabClass(key: TierKey, active: boolean): string {
   if (!active) return styles.tierTab;
@@ -48,6 +84,7 @@ function getCardLabelClass(key: TierKey): string {
 function PlatformContent({ platform }: { platform: Platform }) {
   const [activeTier, setActiveTier] = useState<TierKey>("small");
   const tier = platform.tiers.find((t) => t.key === activeTier) ?? platform.tiers[0];
+  const tierRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   return (
     <div className={styles.platformContent}>
@@ -55,7 +92,7 @@ function PlatformContent({ platform }: { platform: Platform }) {
       <div className={styles.platformHeader}>
         <div className={styles.phIcon}>{platform.icon}</div>
         <div className={styles.phBody}>
-          <h3 className={styles.phName}>{platform.name}</h3>
+          <h2 className={styles.phName}>{platform.name}</h2>
           <p className={styles.phDesc}>{platform.description}</p>
         </div>
         <span className={styles.phBadge}>{platform.badge}</span>
@@ -67,17 +104,29 @@ function PlatformContent({ platform }: { platform: Platform }) {
         role="tablist"
         aria-label={`${platform.label} task size`}
       >
-        {platform.tiers.map((t) => (
+        {platform.tiers.map((t, i) => (
           <button
             key={t.key}
+            ref={(el) => {
+              tierRefs.current[i] = el;
+            }}
             type="button"
             role="tab"
             id={`tier-tab-${platform.key}-${t.key}`}
             aria-selected={activeTier === t.key}
-            aria-controls={`tier-panel-${platform.key}-${t.key}`}
+            aria-controls={
+              activeTier === t.key
+                ? `tier-panel-${platform.key}-${t.key}`
+                : undefined
+            }
             tabIndex={activeTier === t.key ? 0 : -1}
             className={getTierTabClass(t.key, activeTier === t.key)}
             onClick={() => setActiveTier(t.key)}
+            onKeyDown={(e) =>
+              handleTabKeyDown(e, i, platform.tiers.length, tierRefs, (idx) =>
+                setActiveTier(platform.tiers[idx].key),
+              )
+            }
           >
             {t.icon} {t.name}
           </button>
@@ -137,6 +186,7 @@ export function ScopeTabs() {
   const [activePlatform, setActivePlatform] = useState(SCOPE_PLATFORMS[0].key);
   const platform =
     SCOPE_PLATFORMS.find((p) => p.key === activePlatform) ?? SCOPE_PLATFORMS[0];
+  const platformRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   return (
     <div id="scope-sec" className={styles.section}>
@@ -150,14 +200,21 @@ export function ScopeTabs() {
               role="tablist"
               aria-label="Platform"
             >
-              {SCOPE_PLATFORMS.map((p) => (
+              {SCOPE_PLATFORMS.map((p, i) => (
                 <button
                   key={p.key}
+                  ref={(el) => {
+                    platformRefs.current[i] = el;
+                  }}
                   type="button"
                   role="tab"
                   id={`platform-tab-${p.key}`}
                   aria-selected={activePlatform === p.key}
-                  aria-controls={`platform-panel-${p.key}`}
+                  aria-controls={
+                    activePlatform === p.key
+                      ? `platform-panel-${p.key}`
+                      : undefined
+                  }
                   tabIndex={activePlatform === p.key ? 0 : -1}
                   className={
                     activePlatform === p.key
@@ -165,6 +222,15 @@ export function ScopeTabs() {
                       : styles.platformBtn
                   }
                   onClick={() => setActivePlatform(p.key)}
+                  onKeyDown={(e) =>
+                    handleTabKeyDown(
+                      e,
+                      i,
+                      SCOPE_PLATFORMS.length,
+                      platformRefs,
+                      (idx) => setActivePlatform(SCOPE_PLATFORMS[idx].key),
+                    )
+                  }
                 >
                   {/* sp-icon */}
                   <span className={styles.platformIcon}>{p.icon}</span>

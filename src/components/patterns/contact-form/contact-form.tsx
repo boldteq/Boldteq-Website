@@ -35,6 +35,7 @@ function FormControl({
           required={field.required}
           invalid={invalid}
           value={value}
+          autoComplete={field.autoComplete}
           onChange={(e) => onChange(field.name, e.target.value)}
           onBlur={(e) => onBlur(field.name, e.target.value)}
           inputSize="md"
@@ -52,6 +53,7 @@ function FormControl({
           value={value}
           className={[styles['select'], invalid ? styles['invalid'] : ''].filter(Boolean).join(' ')}
           aria-invalid={invalid || undefined}
+          autoComplete={field.autoComplete}
           onChange={(e) => onChange(field.name, e.target.value)}
           onBlur={(e) => onBlur(field.name, e.target.value)}
         >
@@ -77,6 +79,7 @@ function FormControl({
         required={field.required}
         invalid={invalid}
         value={value}
+        autoComplete={field.autoComplete}
         onChange={(e) => onChange(field.name, e.target.value)}
         onBlur={(e) => onBlur(field.name, e.target.value)}
         inputSize="md"

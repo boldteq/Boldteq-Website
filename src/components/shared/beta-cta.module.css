@@ -443,6 +443,13 @@
     font-size: .8rem;
   }
 
+  /* Enlarge close button to a 44px touch target on mobile (WCAG 2.5.5);
+     glyph stays small via the inner .closeTxt */
+  .popupCloseBtn {
+    width: 44px;
+    height: 44px;
+  }
+
   /* inline section adjustments */
   .betaSectionContent {
     padding: 32px 24px;

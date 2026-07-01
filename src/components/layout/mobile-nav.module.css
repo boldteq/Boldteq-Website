@@ -109,6 +109,8 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  /* min-height 44px = WCAG 2.5.5 minimum touch target */
+  min-height: 44px;
   padding: 12px 0;
   font-size: 15px;
   font-weight: 500;
@@ -146,6 +148,8 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
+  /* min-height 44px = WCAG 2.5.5 minimum touch target */
+  min-height: 44px;
   padding: 10px 12px;
   text-decoration: none;
   transition: background-color 0.15s;
@@ -174,7 +178,8 @@
 /* ─── Coming Soon badge — matches Webflow .coming-soon-badge exactly ────────── */
 
 .comingSoonBadge {
-  color: #1890ff;
+  /* #1890ff was 2.95:1 on #e6f7ff; #0a66c2 is ~5.2:1 (WCAG AA) — matches footer */
+  color: #0a66c2;
   text-align: center;
   background-color: #e6f7ff;
   border: 1px solid #91d5ff;
@@ -245,6 +250,8 @@
 @media (max-width: 991px) {
   .navLink {
     margin-bottom: 4px;
+    /* min-height 44px = WCAG 2.5.5 minimum touch target (was ~36px) */
+    min-height: 44px;
     padding: 8px 16px;
   }
 }

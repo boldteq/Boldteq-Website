@@ -45,7 +45,7 @@ function GradientArrow() {
 
 export function ContactInfoCards() {
   return (
-    <div className={styles.section}>
+    <section className={styles.section} aria-label="Contact options">
       <div className={styles.container}>
         <div className={styles.grid}>
           {CARDS.map((card) => (
@@ -74,6 +74,6 @@ export function ContactInfoCards() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

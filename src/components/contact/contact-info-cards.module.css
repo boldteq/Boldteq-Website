@@ -103,14 +103,17 @@
   text-overflow: ellipsis;
 }
 
-/* Arrow link — right-aligned gradient arrow */
+/* Arrow link — right-aligned gradient arrow.
+   Matches .faq-link-block (flex:1; justify-content:flex-end; align-items:center)
+   so the whole right region of the card is tappable; min-height 44px meets the
+   touch-target minimum instead of wrapping only the 11x11 SVG. */
 .arrowLink {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: flex-end;
-  flex-shrink: 0;
+  min-height: 44px;
   text-decoration: none;
-  margin-left: auto;
 }
 
 /* ============================================================
