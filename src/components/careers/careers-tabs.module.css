@@ -678,13 +678,24 @@
     font-size: 28px;
   }
 
-  .imagesFlex {
-    flex-wrap: wrap;
+  /* Webflow .career-about-images has NO wrap and no 767/479 override; the two
+     48% imgs stay side-by-side and shrink together — keep them in a row. */
+
+  /* Webflow collapses About/Culture to 1 column at <=767px with 0 gap.
+     About (.career-about-tabc = flex-flow:wrap, images-first DOM) keeps source
+     order -> images above text. Culture (.career-culture-tabc = flex-flow:
+     wrap-reverse, text-first DOM) reverses -> images above text; we replicate
+     that with column-reverse so imagesFlex renders above textColumn. */
+  .aboutGrid {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  /* Webflow collapses About/Culture to 1 column at <=767px with 0 gap */
-  .aboutGrid,
   .cultureGrid {
+    display: flex;
+    flex-direction: column-reverse;
     grid-template-columns: 1fr;
     gap: 0;
   }

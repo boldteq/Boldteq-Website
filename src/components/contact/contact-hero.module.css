@@ -137,6 +137,11 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  /* h1 — matches .demo-ban-title.margin-less at 991px (CSS line 26188 → 2rem) */
+  .heading {
+    font-size: 2rem;
+  }
 }
 
 /* ============================================================
@@ -149,8 +154,9 @@
     padding-bottom: 6rem;
   }
 
+  /* h1 — matches .demo-ban-title.margin-less at 767px (CSS line 28389 → 1.9rem) */
   .heading {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 
@@ -169,8 +175,9 @@
     padding-right: 1rem;
   }
 
+  /* h1 — matches .demo-ban-title.margin-less at 479px (CSS line 31387 → 1.6rem) */
   .heading {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     line-height: 1.25;
   }
 

@@ -203,14 +203,14 @@
   margin: 0 0 8px;
 }
 
-/* paragraph text-left small-lh — base Webflow .paragraph text-align: center */
+/* paragraph text-left small-lh — Webflow .paragraph.text-left is left at all breakpoints */
 .paragraph {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 28px;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* ── Implementation list ── */
@@ -472,6 +472,22 @@
     line-height: 30px;
   }
 
+  /* Webflow shrinks blue/purple/green/orange tiles to 30px; red stays default */
+  .iconColBlue,
+  .iconColPurple,
+  .iconColGreen,
+  .iconColOrange {
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+  }
+
+  .sectionHeading {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
   .impactGrid {
     grid-template-columns: 1fr;
   }
@@ -480,6 +496,5 @@
   .paragraph {
     font-size: 16px;
     color: #000;
-    text-align: left;
   }
 }

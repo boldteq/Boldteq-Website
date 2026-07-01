@@ -85,7 +85,10 @@ export function BetaCta() {
             Only <strong className={styles["skyBold"]}>15 agencies</strong> will
             be accepted in this beta round
           </p>
-          <Link href="/book-a-demo" className={styles["skyButton"]}>
+          <Link
+            href="/book-a-demo"
+            className={`${styles["skyButton"]} ${styles["skyButtonInline"]}`}
+          >
             <span aria-hidden="true">🚀</span> Join the Beta
           </Link>
         </div>

@@ -202,18 +202,18 @@
    max-width: 991px — feature-grid.margin-top-40px stays 1fr 1fr 1fr
    ============================================================ */
 @media screen and (max-width: 991px) {
-  .heading {
-    font-size: 34px;
-  }
+  /* Webflow .heading-2.margin-bottom-24px @991 only sets margin-top:0 (css:24582);
+     white-heading stays 40px/48px — no font-size shrink here. */
 }
 
 /* ============================================================
    max-width: 767px — feature-grid → 1fr base, feature-grid.margin-top-40px → 1fr
    ============================================================ */
 @media screen and (max-width: 767px) {
+  /* Webflow .heading-2.margin-bottom-24px @767 = 35px/45px (css:27077). */
   .heading {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 35px;
+    line-height: 45px;
   }
   .featureGrid {
     grid-template-columns: 1fr;
@@ -228,8 +228,10 @@
     margin-top: 0;
     padding: 50px 5% 60px;
   }
+  /* Webflow .heading-2.margin-bottom-24px.white-heading @479 = 23px/32px (css:29644). */
   .heading {
-    font-size: 1.5rem;
+    font-size: 23px;
+    line-height: 32px;
   }
   .featureCard {
     grid-column-gap: 0px;

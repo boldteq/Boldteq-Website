@@ -333,6 +333,12 @@
     padding-right: 0;
   }
 
+  /* Webflow custom code @480 hides .h1-season-seeing br so the subtitle
+     wraps naturally on mobile instead of forcing an early line break. */
+  .subtitle br {
+    display: none;
+  }
+
   .badgeGridWrap {
     flex-direction: column;
     padding-left: 0;

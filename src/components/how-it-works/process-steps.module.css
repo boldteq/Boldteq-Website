@@ -283,8 +283,10 @@
     flex-flow: column;
   }
 
+  /* Webflow keeps the header 2-col until 767px (no 991px override);
+     the 767px block below does the 1-col collapse. */
   .headerGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     width: 100%;
@@ -295,14 +297,13 @@
     max-width: none;
   }
 
+  /* Webflow keeps the process steps 4-col until 767px (no 991px override);
+     the 767px block below does the 2-col collapse. Base gap is 0 and
+     .step keeps its base padding: 0 40px 0 0 for the inter-column spacing. */
   .stepsGrid {
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
-  }
-
-  .step {
-    padding-right: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
   }
 }
 
@@ -319,6 +320,12 @@
 
   .headerGrid {
     grid-template-columns: 1fr;
+  }
+
+  /* Webflow only pushes this cell to the edge at >=1440px; once the header
+     collapses to a single column here it must start-align, not stay end. */
+  .headerRight {
+    justify-self: start;
   }
 
   .heading {
@@ -353,8 +360,16 @@
     font-size: 0.9375rem;
   }
 
+  /* Webflow @479: .webdev-sec5-grid becomes a single centered column
+     (display:flex; flex-flow:column), not a 2-col grid. */
   .stepsGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  /* .webdev-sec5-grid-inner @479: align-items:center; padding-right:0 */
+  .step {
+    align-items: center;
+    padding-right: 0;
   }
 
   .dashedDivider {

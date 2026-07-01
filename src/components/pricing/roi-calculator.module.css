@@ -1138,6 +1138,11 @@
     padding: 10px;
   }
 
+  /* iOS Safari auto-zooms on focus of controls with font-size < 16px; bump to 16px on phones */
+  .dollarInput {
+    font-size: 16px;
+  }
+
   .planButtons {
     flex-direction: column;
   }
@@ -1199,6 +1204,17 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
+  }
+
+  /* fixed 220px bubble clips inside .section (overflow:hidden) on narrow phones — cap to viewport */
+  .tooltipBubble {
+    width: auto;
+    max-width: 78vw;
+  }
+
+  /* unbounded savings string (no hourlyRate max) can clip inside .heroCard (overflow:hidden) at 320px */
+  .heroAmount {
+    font-size: clamp(30px, 8vw, 56px);
   }
   .container {
     margin-top: 15px;

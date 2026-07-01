@@ -242,7 +242,6 @@
   color: #2b2b2b;
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
-  white-space: nowrap;
 }
 
 /* Branded keyboard focus ring (a11y) */
@@ -537,7 +536,9 @@
    ============================================================ */
 
 /* ============================================================
-   max-width: 767px — scope-tabs becomes column; tier-tabs 1fr 1fr; cards 1fr
+   max-width: 767px — Webflow only flips .scope-tabs to column and makes
+   .scope-tabs-menu full width. The sidebar stays a vertical column here;
+   tier-tabs / cards-grid / platform-header collapse happen at 479 (below).
    ============================================================ */
 @media screen and (max-width: 767px) {
   .section {
@@ -549,24 +550,6 @@
   }
   .platformMenu {
     width: 100%;
-    flex-flow: row;
-    flex-wrap: wrap;
-    min-width: auto;
-  }
-  .platformBtn {
-    width: auto;
-    flex: 1;
-    justify-content: center;
-  }
-  .platformHeader {
-    flex-flow: column;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .tierTabs {
-    grid-template-columns: 1fr 1fr;
-    margin-left: 0;
-    margin-right: 0;
   }
   /* a11y: reach >=44px mobile touch target (not a desktop parity change) */
   .tierTab {
@@ -574,28 +557,11 @@
     padding-top: 12px;
     padding-bottom: 12px;
   }
-  .tierIntro {
-    flex-flow: column;
-  }
-  .tierIntroSmall,
-  .tierIntroMedium,
-  .tierIntroLarge,
-  .tierIntroSupport {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .cardsGridSupport {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ============================================================
-   max-width: 479px — tier-tabs 1fr 1fr, cards-grid 1fr
+   max-width: 479px — scope-tabs-menu min-width auto; platform-header column;
+   tier-tabs 1fr 1fr; tier-intro column; cards-grid 1fr
    (matches Webflow @media max-width:479)
    ============================================================ */
 @media screen and (max-width: 479px) {
@@ -603,8 +569,17 @@
     padding-top: 1rem;
     padding-bottom: 60px;
   }
+  .platformMenu {
+    min-width: auto;
+  }
+  .platformHeader {
+    flex-flow: column;
+  }
   .tierTabs {
     grid-template-columns: 1fr 1fr;
+  }
+  .tierIntro {
+    flex-flow: column;
   }
   .cardsGrid {
     grid-template-columns: 1fr;

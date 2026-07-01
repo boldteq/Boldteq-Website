@@ -96,6 +96,10 @@
   .container {
     margin-bottom: 0;
   }
+
+  .heading {
+    font-size: 34px;
+  }
 }
 
 /* ============================================================
@@ -104,6 +108,11 @@
 @media screen and (max-width: 479px) {
   .container {
     margin-bottom: 0;
+  }
+
+  .heading {
+    font-size: 23px;
+    line-height: 30px;
   }
 }
 

@@ -243,6 +243,18 @@
   .footerNewsletterCard {
     grid-template-columns: 1fr;
   }
+
+  /* The card grid collapses to 1 column here, so the input goes full-width
+     while the absolutely-pinned button (base: position:absolute; inset:auto
+     1.5% auto auto) stays over the input's right edge — typed text slides
+     under the button. Webflow only de-overlaps at @479 (css line 29941),
+     leaving a 480–991px overlap. De-overlap at the same breakpoint the grid
+     collapses so the button drops below the input across the whole range. */
+  .buttonSecondarySmall {
+    margin-top: 10px;
+    position: relative;
+    right: auto;
+  }
 }
 
 /* @media (max-width: 479px) — webflow.css lines 29930, 29936, 29941, 29947, 32230, 32237 */

@@ -454,4 +454,8 @@
   .heading {
     font-size: 1.6rem;
   }
+  /* Webflow .h3-heading-3 = 23px @479 (css:30535); without this it cascades to the 767 value of 30px. */
+  .price {
+    font-size: 23px;
+  }
 }

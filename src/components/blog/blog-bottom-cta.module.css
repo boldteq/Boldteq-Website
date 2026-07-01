@@ -12,7 +12,7 @@
   margin-left: auto;
 }
 
-/* Canonical site container: 1280px (1320 @1440), 2rem gutter — matches hero + grid */
+/* .container-large-2 — flat 1280px (no 1440 override in Webflow), 2rem gutter */
 .inner {
   width: 100%;
   max-width: 1280px;
@@ -245,10 +245,5 @@
   .cardHeading {
     font-size: 22px;
     line-height: 30px;
-  }
-
-  /* canonical container grows to 1320 (matches hero + grid) */
-  .inner {
-    max-width: 1320px;
   }
 }

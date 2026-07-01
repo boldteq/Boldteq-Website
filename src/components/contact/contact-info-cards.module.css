@@ -57,6 +57,10 @@
   display: flex;
   box-shadow: 0 0 7px #0000001a;
   text-decoration: none;
+  /* Allow the grid column to shrink below the card's content min-width in the
+     768-800px band (3-col grid) so the email ellipsis engages instead of the
+     card pushing 12px past the viewport. */
+  min-width: 0;
 }
 
 /* Icon circle — matches .cont-icon-primary */

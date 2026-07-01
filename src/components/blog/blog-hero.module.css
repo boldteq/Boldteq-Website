@@ -161,6 +161,11 @@
   .badge {
     padding: 16px 20px;
   }
+
+  /* .div-stuck-swept.web-stuck grows to 85rem at >=1280 (CSS line 21668) */
+  .container {
+    max-width: 85rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -168,9 +173,9 @@
     padding-bottom: 5rem;
   }
 
-  /* canonical site container width (matches grid + bottom CTA + rest of site) */
+  /* Webflow has NO 1440 width override for .web-stuck — stays 85rem (1360px) */
   .container {
-    max-width: 1320px;
+    max-width: 85rem;
   }
 }
 

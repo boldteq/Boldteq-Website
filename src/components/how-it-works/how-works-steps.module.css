@@ -273,6 +273,12 @@
     margin-top: 0;
   }
 
+  /* Webflow custom code @480 hides p.paragraph br so the subtitle wraps
+     naturally on mobile instead of forcing an early line break. */
+  .subtitle br {
+    display: none;
+  }
+
   .featureGrid {
     grid-template-columns: 1fr;
   }

@@ -12,10 +12,10 @@
   display: block;
 }
 
-/* .div-stuck-swept (80rem, 2rem pad) + .div-wrote-smoke (centered) */
+/* .div-stuck-swept.web-stuck — 80rem base, 85rem @>=1280 (no 1440 override) */
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
@@ -172,6 +172,22 @@
     line-height: 1.25;
   }
 
+  /* .web-ban-grid.mob-2grid — 2x2 grid of full-width pills (css:28121) */
+  .statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  /* .web-grid-box — full-width cells (css:28148) */
+  .statCard {
+    width: 100%;
+  }
+
+  .statLabel {
+    white-space: normal;
+  }
+
   .ctaRow {
     flex-direction: column;
     align-items: stretch;
@@ -205,15 +221,18 @@
     padding-right: 0;
   }
 
-  /* stack the pills full-width, icon-left, on small screens */
+  /* .web-ban-grid.mob-2grid — stays 2 columns at 479 (css:31042) */
   .statsGrid {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
   }
 
+  /* .web-grid-box — icon stacks above label, 10px padding (css:31062) */
   .statCard {
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
-    justify-content: flex-start;
+    padding: 10px;
   }
 
   .statLabel {
@@ -221,9 +240,9 @@
   }
 }
 
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
+/* .div-stuck-swept.web-stuck — 85rem (1360px) at desktop (css:21668), no 1440 override */
+@media (min-width: 1280px) {
   .container {
-    max-width: 1320px;
+    max-width: 85rem;
   }
 }

@@ -12,7 +12,7 @@
   position: relative;
 }
 
-/* .container-large-2 — 1280 (1320 @1440), centered; section 5% = gutter */
+/* .container-large-2 — flat 1280 (no 1440 widening), centered; section 5% = gutter */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -212,9 +212,4 @@
   }
 }
 
-/* Widen to 1320px on large desktop */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
-  }
-}
+/* .container-large-2 is a flat max-width:1280px (css:1408) — no 1440 widening */

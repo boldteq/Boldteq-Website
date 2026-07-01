@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 420px;
 }
 
 .heading {
@@ -58,6 +59,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  justify-self: end;
 }
 
 .rightLabel {
@@ -104,6 +108,13 @@
   .content {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  /* Webflow resets place-self to auto at 991px (css 32879) so the
+     stacked right column no longer hugs the right edge */
+  .rightCol {
+    justify-self: auto;
+    max-width: none;
   }
 
   .heading {

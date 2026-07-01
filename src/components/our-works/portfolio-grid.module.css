@@ -14,10 +14,10 @@
   justify-content: center;
 }
 
-/* Aligned to the hero + CTA container (1280px) for consistent page width */
+/* Webflow .tabs-container.work-tabs-container: max-width 1300px (grid shell is 20px wider than the 1280px hero/CTA containers) */
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 

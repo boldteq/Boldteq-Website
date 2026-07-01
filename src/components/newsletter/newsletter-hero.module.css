@@ -262,12 +262,9 @@
 
 /* ============================================================
    max-width: 991px
+   Webflow .newsletter-form stays flex-flow:row with default (stretch)
+   alignment down to 479px — no align-items:center override here.
    ============================================================ */
-@media screen and (max-width: 991px) {
-  .form {
-    align-items: center;
-  }
-}
 
 /* ============================================================
    max-width: 767px
@@ -284,14 +281,6 @@
   .heading {
     font-size: 2rem;
   }
-
-  .form {
-    flex-direction: column;
-  }
-
-  .submitBtn {
-    width: 100%;
-  }
 }
 
 /* ============================================================
@@ -307,5 +296,17 @@
 
   .heading {
     font-size: 1.75rem;
+  }
+
+  /* Webflow .newsletter-form switches to column + stretch only at 479px
+     (css line 30624). Stretch makes the input wrapper (flex:1) and button
+     span full width in the stacked layout. */
+  .form {
+    flex-flow: column;
+    align-items: stretch;
+  }
+
+  .submitBtn {
+    width: 100%;
   }
 }

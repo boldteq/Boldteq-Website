@@ -195,9 +195,4 @@
 }
 }
 
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
-  }
-}
+/* .container-large-2 is a flat max-width:1280px (css:1408) — no 1440 widening */

@@ -373,6 +373,16 @@
   margin: 0;
 }
 
+/* Inline-section variant of .skyButton. The inline CTA renders the rocket as a
+   separate <span> flex child, so the shared .skyButton @479 flex-direction:column
+   (line ~547) would stack the emoji onto its own line above the label. Webflow's
+   own join-beta button renders "🚀 Join the Beta" as inline text (beta.html:751)
+   and never splits it. Keep the emoji + label on one row at every width — the
+   @479 override below beats the .skyButton column rule. */
+.skyButtonInline {
+  gap: 6px;
+}
+
 /* ============================================================
    Responsive breakpoints (Webflow: 1440, 1280, 991, 767, 479)
    ============================================================ */
@@ -547,5 +557,12 @@
     flex-direction: column;
     width: 100%;
     font-size: 1.1rem;
+  }
+
+  /* Inline CTA keeps emoji + label on one row (its rocket is a separate <span>
+     flex child that would otherwise stack above the label). Source-ordered
+     after .skyButton so it overrides the column direction at equal specificity. */
+  .skyButtonInline {
+    flex-direction: row;
   }
 }
