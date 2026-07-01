@@ -289,41 +289,9 @@
   margin-bottom: 10px;
 }
 
-/* a-gulf-book.white-on-hover.padding-right-more */
-.tabCta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  background-image: url('/images/webflow/Group-46729-2.svg'), linear-gradient(90deg, #21cfff, #019ae6);
-  background-position: 93%, 0 0;
-  background-repeat: no-repeat, repeat;
-  background-size: auto, auto;
-  border: 2px solid transparent;
-  border-radius: 0.75rem;
-  height: 52px;
-  box-sizing: border-box;
-  padding: 0.75rem 3.6rem 0.75rem 1.25rem;
-  line-height: 1.75rem;
-  text-decoration: none;
-  box-shadow: var(--shadow-card);
-  margin-top: 10px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Webflow .a-gulf-book.white-on-hover:hover — flip to white bg + navy text and
-   swap the arrow to the on-white variant (Group-46729_1.svg), not an opacity fade. */
-.tabCta:hover {
-  color: var(--color-brand-navy);
-  background-color: #fff;
-  background-image: url('/images/webflow/Group-46729_1.svg');
-  background-position: 93%;
-  background-repeat: no-repeat;
-  background-size: auto;
-}
+/* The About/Culture CTAs now use the shared <Button variant="primary"> primitive
+   (consistent gradient->navy hover, borderless — no edge seam). The old .tabCta
+   styling was removed with the markup swap. */
 
 /* ── Benefits section ──
    career-tabs-benefits-sec.overflow-hidden */
@@ -749,11 +717,6 @@
   .aboutImg,
   .cultureImg {
     width: 47%;
-  }
-
-  .tabCta {
-    width: 100%;
-    justify-content: center;
   }
 }
 

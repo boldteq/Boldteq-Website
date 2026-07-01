@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/components/primitives/button";
 import {
   JOB_LISTINGS,
   CAREER_TABS as TABS,
@@ -289,9 +289,9 @@ export function CareersTabs() {
                   We focus on precision, accountability, and long-term partnerships built on measurable results.
                 </p>
                 <div>
-                  <Link href="/our-mission" className={styles.tabCta}>
+                  <Button href="/our-mission" variant="primary" size="md">
                     Discover More About Boldteq
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -317,9 +317,9 @@ export function CareersTabs() {
                   Our culture is rooted in ownership, clarity, and maintaining the standards our clients rely on.
                 </p>
                 <div>
-                  <Link href="/our-mission" className={styles.tabCta}>
+                  <Button href="/our-mission" variant="primary" size="md">
                     Learn More About Our Culture
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
