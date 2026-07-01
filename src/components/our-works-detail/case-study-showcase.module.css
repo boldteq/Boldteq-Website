@@ -42,7 +42,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: var(--color-brand-cyan);
-  font-weight: 700;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 .title {

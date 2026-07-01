@@ -258,8 +258,8 @@
   .section {
     padding-top: 0;
     padding-bottom: 48px;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    /* Webflow .demo-sec5 keeps a single 5% horizontal gutter at 479px; the
+       .container adds the side inset, so the section must not double it */
   }
 
   .heading {

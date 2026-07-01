@@ -23,15 +23,17 @@
 }
 
 .size-h3 {
-  font-size: var(--text-xl);
+  /* Webflow .heading-3 (css:1568) is 25px. */
+  font-size: 25px;
   font-weight: var(--weight-bold);
   line-height: var(--leading-snug);
 }
 
 .size-h2 {
+  /* Webflow .heading-2 (css:1885) is 40px / line-height 40px = ratio 1.0. */
   font-size: var(--text-3xl);
   font-weight: var(--weight-bold);
-  line-height: 1.125;
+  line-height: 1;
 }
 
 .size-h2-news {
@@ -41,7 +43,8 @@
 }
 
 .size-h1 {
-  font-size: var(--text-3xl);
+  /* Webflow --h1 = 3.125rem = 50px (--text-4xl). */
+  font-size: var(--text-4xl);
   font-weight: var(--weight-bold);
   line-height: var(--leading-snug);
 }

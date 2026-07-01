@@ -47,7 +47,7 @@
   margin: 0;
   font-size: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  line-height: 24px;
+  line-height: 28px;
 }
 
 /* .faq-sky-text */
@@ -73,12 +73,12 @@
   text-align: center;
 }
 
-/* .paragraph.white.opacity */
+/* .paragraph.white.opacity — .paragraph.white 16px/28px (css:929), .opacity only sets opacity:.8 (css:918) */
 .subtitle {
   color: #fff;
   opacity: 0.8;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
   text-align: center;
   margin-top: 0;

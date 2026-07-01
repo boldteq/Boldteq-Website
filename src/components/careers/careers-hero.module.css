@@ -326,10 +326,3 @@
     border-radius: 8px;
   }
 }
-
-/* Widen to 1320px on large desktop — matches site-wide container */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1320px;
-  }
-}

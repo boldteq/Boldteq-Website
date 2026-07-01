@@ -28,6 +28,16 @@
   margin-right: auto;
 }
 
+/* Text column — matches Webflow .column-small (internal gap 12px).
+   Holds badge + heading + description so they sit ~12px apart, while the
+   parent .inner keeps the 40px gap only between this block and the form. */
+.textCol {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Badge row */
 .badgeRow {
   display: flex;
@@ -42,10 +52,10 @@
   align-items: center;
   gap: 5px;
   background-color: rgba(33, 207, 255, 0.07);
-  border: 1px solid #05bafe;
+  border: 1.5px solid #05bafe;
   border-radius: 20px;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   color: #18181b;
@@ -56,7 +66,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 14px;
   text-transform: capitalize;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;
@@ -123,7 +133,7 @@
   padding: 12px 16px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
   flex: 1;
   min-width: 0;
@@ -153,7 +163,7 @@
   font-weight: 700;
   line-height: 1.5;
   border-radius: 10px;
-  height: 52px;
+  height: 48px;
   box-sizing: border-box;
   padding: 0 20px;
   border: none;

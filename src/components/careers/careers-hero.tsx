@@ -36,7 +36,12 @@ export function CareersHero() {
             take ownership, and deliver with precision.
           </p>
           <div className={styles.ctaRow}>
-            <Button href="#career-opportunities" variant="primary" size="md">
+            <Button
+              href="#career-opportunities"
+              variant="primary"
+              size="md"
+              className={styles.ctaButton}
+            >
               Explore Open Roles
             </Button>
           </div>

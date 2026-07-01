@@ -216,7 +216,7 @@
   padding: 2px 8px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   display: inline-flex;
   margin-left: 4px;
@@ -450,9 +450,10 @@
   width: auto;
   margin-left: 10px;
   margin-right: 10px;
-  /* Height pinned to Webflow standard 52px via box-sizing; vertical padding
-     zeroed (was 10px) so the explicit height wins deterministically. Horizontal
-     padding 24px unchanged. */
+  /* Height pinned to the site-wide 52px button standard via box-sizing (not
+     Webflow's .button-pricing, which uses padding:10px 24px with no fixed height
+     and renders ~44px). Vertical padding zeroed so the explicit height wins
+     deterministically; horizontal padding 24px matches Webflow. */
   height: 52px;
   box-sizing: border-box;
   padding: 0 24px;

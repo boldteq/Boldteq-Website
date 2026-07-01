@@ -60,9 +60,10 @@
 
 .badgeText {
   margin: 0;
-  /* Webflow .paragraph.small-font 14px / lh 24px; .faq-sky-text strong weight 500. */
+  /* Webflow .paragraph.small-font 14px; no line-height set on .small-font/
+     .faq-sky-text, so it inherits .paragraph's line-height:28px; strong weight 500. */
   font-size: 14px;
-  line-height: 24px;
+  line-height: 28px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
   text-transform: capitalize;
@@ -80,7 +81,8 @@
   font-size: 40px;
   font-weight: 700;
   text-align: center;
-  line-height: 45px;
+  /* Webflow .white-heading modifier overrides base 45px to line-height:48px. */
+  line-height: 48px;
   margin-top: 0;
   /* Webflow .heading-2.margin-bottom-24px is actually 20px. */
   margin-bottom: 20px;

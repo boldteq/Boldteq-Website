@@ -132,7 +132,8 @@
 }
 
 .secondary:hover {
-  color: var(--color-brand-cyan);
+  /* Webflow .navy-arrow-btn:hover uses var(--blue) = #082753 (navy), matching .navy:hover. */
+  color: #082753;
   background-color: rgba(33, 207, 255, 0.13);
   border-color: var(--color-brand-dark);
 }

@@ -39,20 +39,24 @@
   padding-right: 30px;
 }
 
+/* Webflow .column-regular.column-left is grid-gap:0 — vertical rhythm is
+   margin-driven (h2/p margin-bottom:10px + ._2-btns-grid margin-top:1rem) */
 .content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
 
-/* Webflow .heading-2.hd-s: font-size 36px, base line-height 40px */
+/* Webflow .heading-2.white.margin-top-0.hd-s: font-size 36px, line-height 52px
+   (line-height inherited from .heading-2.white:52px; .hd-s only sets font-size,
+   the 46px .lh variant is NOT applied — no `lh` class in the markup) */
 .heading {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 40px;
-  margin: 0;
+  line-height: 52px;
+  margin: 0 0 10px;
   text-align: left;
 }
 
@@ -62,14 +66,15 @@
   font-size: 16px;
   line-height: 28px;
   text-align: left;
-  margin: 0;
+  /* Webflow p base margin-bottom:10px (not reset here) drives para→bullets gap */
+  margin: 0 0 10px;
 }
 
-/* Checkmark bullets (.custom-plan-dlexdiv flex-wrap) */
+/* Checkmark bullets (.custom-plan-dlexdiv: grid-column-gap:15px; grid-row-gap:15px; flex-wrap) */
 .bullets {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 15px;
+  gap: 15px;
 }
 
 .bullet {
@@ -84,11 +89,12 @@
   height: 20px;
 }
 
+/* Webflow .paragraph-small.white: 16px/28px, body weight 400 */
 .bulletText {
   color: #fff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
   margin: 0;
 }
 

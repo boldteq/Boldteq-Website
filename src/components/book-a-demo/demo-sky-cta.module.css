@@ -114,11 +114,10 @@
   outline-offset: 2px;
 }
 
-/* navy-btn — matches Webflow .navy-btn (bg #082753, color #fff, min-width 190px, padding .75rem 3rem .75rem 1.25rem) */
+/* navy-btn — matches Webflow .navy-butn (bg #082753, color #fff, no min-width; width is padding-driven, padding .75rem 3rem .75rem 1.25rem) */
 .navyBtn {
   color: #fff;
   width: auto;
-  min-width: 190px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 1rem;
   background-color: #082753;
@@ -175,11 +174,10 @@
   .rightCol {
     max-width: none;
   }
+  /* Webflow's 767px rule sets only width/margin; both buttons stay at
+     --button-text (1rem) — no font-size override here */
   .whiteBtn {
     margin-left: 0;
-  }
-  .navyBtn {
-    font-size: .8rem;
   }
 }
 
@@ -199,6 +197,7 @@
   .heading {
     font-size: 1.5rem;
   }
+  /* Webflow 479px block sets BOTH buttons to font-size 1.1rem + width 100% */
   .whiteBtn {
     margin-left: 0;
     font-size: 1.1rem;
@@ -206,6 +205,7 @@
   }
   .navyBtn {
     font-size: 1.1rem;
+    width: 100%;
   }
 }
 @media (min-width: 1280px) {
@@ -226,9 +226,6 @@
 @media (min-width: 1440px) {
   .whiteBtn {
     margin-left: 0;
-  }
-  .navyBtn {
-    min-width: 190px;
   }
 }
 

@@ -264,6 +264,11 @@
    @media (min-width: 1280px)  — Webflow lines 21619+
    ============================================================ */
 @media screen and (min-width: 1280px) {
+  /* Webflow lines 21770-21774 — .paragraph darkens to #000 */
+  .paragraph {
+    color: #000;
+  }
+
   /* Webflow line 21932 */
   .container-large-3,
   .container-large-3.full-width {

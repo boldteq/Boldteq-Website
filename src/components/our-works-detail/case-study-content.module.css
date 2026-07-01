@@ -30,13 +30,13 @@
   display: flex;
 }
 
-/* workpsubott-txt — matches Webflow .badge (1px solid #fff, flex centered) */
+/* workpsubott-txt — cyan-tinted outlined pill (Webflow css line 20254) */
 .badge {
-  background-color: #fafafa;
-  border: 1px solid #fff;
-  border-radius: 999px;
+  background-color: #21cfff12;
+  border: 1.5px solid #05bafe;
+  border-radius: 20px;
   margin-bottom: 0;
-  padding: 4px 12px;
+  padding: 0 13px;
   line-height: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
@@ -87,7 +87,7 @@
 
 /* workp-meta-text */
 .metaText {
-  color: #082753c2;
+  color: #0827539e;
   padding-top: 2px;
   padding-bottom: 2px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -169,7 +169,6 @@
 .icon {
   width: 20px;
   height: 20px;
-  padding-top: 5px;
   color: #019ae6;
   display: flex;
   align-items: center;
@@ -194,7 +193,7 @@
 
 /* workp-meta-text (used as subtitle label) */
 .sectionSubtitle {
-  color: #082753c2;
+  color: #0827539e;
   padding-top: 2px;
   padding-bottom: 2px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -267,8 +266,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   width: 100%;
   margin-top: 10px;
 }
@@ -354,9 +353,9 @@
 
 /* work-gray-title */
 .techHeading {
-  color: #082753c2;
+  color: #0827539e;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -382,9 +381,11 @@
   font-weight: 500;
 }
 
-/* ── CTA buttons (div-job-attention.left-pos) ── */
+/* ── CTA buttons (div-job-attention.left-pos) ──
+   Webflow declares .div-job-attention.left-pos { display: none } (css line 626),
+   so these buttons are NOT rendered on the live site. */
 .ctaRow {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 16px;
   margin-top: 20px;

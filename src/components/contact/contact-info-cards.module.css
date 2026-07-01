@@ -95,16 +95,16 @@
   line-height: 1.5;
 }
 
-/* Email — matches .paragraph-x-small-11.text-color-tertiary */
+/* Email — matches .paragraph-x-small-11.text-color-tertiary
+   (Webflow sets no white-space/overflow, so the email wraps rather than
+   ellipsis-truncating at 3-col tablet widths). */
 .cardEmail {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 /* Arrow link — right-aligned gradient arrow.
@@ -145,6 +145,7 @@
 
   .container {
     max-width: 100%;
+    margin-top: 40px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }

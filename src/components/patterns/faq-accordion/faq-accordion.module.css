@@ -42,7 +42,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--space-4);
+  /* Webflow .faq-title-wrapper (css:3091) grid-column-gap: 24px. */
+  gap: 24px;
   padding: 14px 20px;
   background: transparent;
   border: none;

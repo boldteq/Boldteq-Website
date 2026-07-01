@@ -26,7 +26,7 @@
 .body {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 /* Quote text */
@@ -36,14 +36,13 @@
   font-size: 18px;
   line-height: 27px;
   margin: 0;
-  padding-top: 1.5rem;
 }
 
 /* Author row */
 .authorRow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 /* Avatar placeholder */
@@ -66,7 +65,7 @@
 .name {
   color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
   margin: 0;

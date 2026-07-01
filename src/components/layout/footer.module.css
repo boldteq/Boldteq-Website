@@ -132,11 +132,11 @@
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   background-color: #21cfff12;
-  border: 1px solid #05bafe;
+  border: 1.5px solid #05bafe;
   border-radius: 20px;
   margin-bottom: 0;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   display: flex;
   align-items: center;
 }
@@ -154,11 +154,8 @@
 }
 
 .gradient-span {
+  /* Webflow .gradient-span = solid #05bafe, no gradient/background-clip (css:19927-19929). */
   color: #05bafe;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 /* ─── Newsletter sub-text ────────────────────────────────────────────────────── */

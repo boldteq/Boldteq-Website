@@ -258,7 +258,7 @@ export function ContactFormSection() {
 
                 <div className={styles.field}>
                   <label htmlFor="phone" className={styles.label}>
-                    Phone <span className={styles.optional}>(optional)</span>
+                    Phone
                   </label>
                   <input
                     id="phone"
@@ -333,11 +333,7 @@ export function ContactFormSection() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={styles.textarea}
-                  aria-describedby="message-counter"
                 />
-                <p id="message-counter" className={styles.charCounter}>
-                  {(fields.message ?? "").length}/5000 characters
-                </p>
               </div>
 
               {/* Form-level error */}

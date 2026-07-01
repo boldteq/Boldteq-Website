@@ -2,23 +2,23 @@
    Webflow base: .section { display: block; justify-content: center; margin: auto; padding: 80px 0; }
 */
 
+/* .blog-bottom-sec — 5% side gutter lives on the section (CSS line 18021) */
 .section {
   display: block;
   justify-content: center;
-  padding: 0 0 80px;
+  padding: 0 5% 80px;
   position: relative;
   background-color: transparent;
   margin-right: auto;
   margin-left: auto;
 }
 
-/* .container-large-2 — flat 1280px (no 1440 override in Webflow), 2rem gutter */
+/* .container-large-2 — flat 1280px (no 1440 override in Webflow); the 5% gutter
+   is supplied by the section, so the container has no side padding of its own. */
 .inner {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 /* .web-sec3-outer — flex column, place-items center stretch */
@@ -174,10 +174,6 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  .inner {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
 }
 
 /* ============================================================
@@ -217,11 +213,6 @@
     gap: 16px;
     width: 100%;
   }
-
-  .inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 /* ============================================================
@@ -235,6 +226,8 @@
 
   .cardBtn {
     font-size: 16px;
+    /* Webflow .btn-primary.demo-btn.margin-top-5 padding-right:3.6rem @1280 (CSS line 22204) */
+    padding-right: 3.6rem;
   }
 }
 

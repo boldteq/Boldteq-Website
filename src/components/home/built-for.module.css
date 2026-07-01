@@ -176,6 +176,11 @@
    @media (min-width: 1280px)  — Webflow lines 21619+
    ============================================================ */
 @media screen and (min-width: 1280px) {
+  /* Webflow lines 21770-21774 — .paragraph darkens to #000 */
+  .paragraph {
+    color: #000;
+  }
+
   /* Webflow line 22782 */
   .built-seccc {
     padding-bottom: 0;

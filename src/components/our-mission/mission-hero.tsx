@@ -1,6 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/primitives/button';
 import styles from './mission-hero.module.css';
+
+declare global {
+  interface Window {
+    $chatwoot?: { toggle(state: 'open' | 'close'): void };
+  }
+}
 
 const STAT_BADGES = [
   {
@@ -78,7 +86,11 @@ export function MissionHero() {
             <Button href="/book-a-demo" variant="navy" size="md">
               Book a Demo
             </Button>
-            <Button href="/contact" variant="primary" size="md">
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => window.$chatwoot?.toggle('open')}
+            >
               Talk to Our Team
             </Button>
           </div>

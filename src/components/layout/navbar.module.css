@@ -553,11 +553,10 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  /* Force exactly 52px tall (Webflow standard). Vertical padding zeroed, height +
-     box-sizing + flex centering deterministically yield 52px; horizontal padding kept. */
-  height: 52px;
+  /* Webflow .btn-primary base: padding 8px 3rem 8px 1rem, line-height 1.75rem, no
+     height → ~44px (css:4218-4237). Height is set by padding, not a fixed value. */
   box-sizing: border-box;
-  padding: 0 3rem 0 1rem;
+  padding: 8px 3rem 8px 1rem;
   font-family: 'Roobert PRO', Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
@@ -714,9 +713,11 @@
 }
 
 .sky-button:hover {
-  color: #082753;
+  /* Webflow .sky-button.padding-less.white-on-hover:hover → navy bg (--blue #082753) +
+     white text + gradient image dropped (css:13803-13814). Not white-bg/navy-text. */
+  color: #fff;
   text-align: center;
-  background-color: #fff;
+  background-color: #082753;
   background-image: none;
   padding-right: 1.25rem;
   transform: translateY(-1px);
@@ -771,8 +772,8 @@
     /* Arrow + gradient stay on the base ::before. */
     border-style: none;
     width: auto;
-    /* Keep horizontal padding; height stays 52px from the base rule. */
-    padding: 0 3rem 0 1.25rem;
+    /* Webflow >=1280: padding 10px 3rem 10px 1.25rem → ~48px (css:22196). */
+    padding: 10px 3rem 10px 1.25rem;
     font-size: 16px;
   }
 

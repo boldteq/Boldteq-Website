@@ -30,9 +30,29 @@
   text-align: left;
 }
 
-/* Content width cap (left layout only) */
+/* Left layout content grid.
+   Webflow nests content in .heading-grid-small.margin-bottom-0:
+   grid-template-columns:1.25fr .25fr; padding-left/right:30px; gap:16px
+   with an empty right spacer column. Reproduce so the text column is
+   left-anchored and ~83% of the padded card. */
 .ctaContent {
-  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.25fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Text column (left) */
+.ctaContentMain {
+  min-width: 0;
+}
+
+/* Empty right spacer column */
+.ctaContentSpacer {
+  display: block;
 }
 
 /* Centered: no width cap */
@@ -53,7 +73,8 @@
 
 /* Subtitle paragraph */
 .ctaSubtitle {
-  color: rgba(255, 255, 255, 0.7);
+  /* Webflow .paragraph.white = full #fff (no opacity). */
+  color: #ffffff;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   line-height: 28px;
@@ -74,7 +95,8 @@
 .ctaBullets {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
+  /* Webflow .custom-plan-dlexdiv = grid-column-gap:15px; grid-row-gap:15px. */
+  gap: 15px;
   margin-top: 20px;
 }
 
@@ -107,7 +129,8 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 32px;
+  /* Webflow .sky-button margin-top:20px (beta) / ._2-btns-grid margin-top:1rem. */
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
@@ -192,6 +215,15 @@
   .ctaActions {
     margin-top: 24px;
     gap: 12px;
+  }
+  /* Webflow .heading-grid-small.margin-bottom-0 → flex-flow:column; padding 0. */
+  .ctaContent {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .ctaContentSpacer {
+    display: none;
   }
 }
 

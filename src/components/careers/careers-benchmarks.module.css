@@ -72,20 +72,10 @@
   margin: 0 0 10px;
 }
 
+/* CTA is the shared <Button> primitive; this class only carries the
+   Webflow .a-gulf-book responsive width override (full-width @479). */
 .ctaButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.75rem;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
-  border-radius: 10px;
-  padding: 10px 24px;
-  text-decoration: none;
-  margin-top: 16px;
+  width: auto;
 }
 
 /* div-job-attention margin-less — CTA wrapper top gap */
@@ -222,6 +212,11 @@
 @media screen and (max-width: 479px) {
   .section {
     padding: 0 5%;
+  }
+
+  /* Webflow .a-gulf-book goes full-width on phones (css:29313) */
+  .ctaButton {
+    width: 100%;
   }
 
   .contCenter {

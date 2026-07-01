@@ -21,6 +21,8 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
             backgroundClip: "text",
             WebkitTextFillColor: "transparent",
             color: "var(--color-brand-cyan)",
+            fontWeight: 500,
+            textTransform: "capitalize",
           }}>{detail.platform}</strong>
         </div>
       </div>

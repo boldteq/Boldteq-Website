@@ -40,7 +40,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   display: inline-flex;
   align-items: center;
   color: #05bafe;
@@ -52,7 +52,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 14px;
   text-transform: capitalize;
   color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);

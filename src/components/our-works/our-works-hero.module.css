@@ -54,7 +54,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,12 +63,14 @@
   grid-row-gap: 4px;
 }
 
-/* Webflow .faq-sky-text on .paragraph.small-font: 14px / 500 / 28px / gradient / capitalize */
+/* Webflow inner text is .paragraph.text-left.margin-bottom-0.small-font:
+   font-size 14px, line-height 28px inherited from .paragraph base (small-font
+   only sets font-size); .faq-sky-text adds the gradient/capitalize */
 .badgeText {
   font-size: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 28px;
   text-transform: capitalize;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
   -webkit-background-clip: text;

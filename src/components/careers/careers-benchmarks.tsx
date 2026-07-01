@@ -25,7 +25,12 @@ export function CareersBenchmarks() {
                 </p>
               </div>
               <div className={styles["ctaWrap"]}>
-                <Button href="#career-opportunities" variant="primary" size="md">
+                <Button
+                  href="#career-opportunities"
+                  variant="primary"
+                  size="md"
+                  className={styles["ctaButton"]}
+                >
                   View Open Positions
                 </Button>
               </div>

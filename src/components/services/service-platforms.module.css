@@ -17,16 +17,15 @@
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  margin: 15px auto 80px;
 }
 
 /* Header */
 .header {
   text-align: center;
-  max-width: 680px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 52px;
+  margin-bottom: 56px;
 }
 
 /* Pill wrapper — .career-subhead-out; pill's own 17px sets the heading gap */
@@ -44,7 +43,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   display: inline-flex;
   align-items: center;
   color: #05bafe;
@@ -56,7 +55,7 @@
   font-size: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 14px;
   text-transform: capitalize;
   color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -178,9 +177,6 @@
   .header {
     margin-bottom: 36px;
   }
-  .container {
-    margin-bottom: 0;
-  }
 }
 
 /* ============================================================
@@ -190,9 +186,6 @@
   .section {
     padding: 48px 1.25rem 56px;
   }
-  .container {
-    margin-bottom: 0;
-}
 }
 
 /* .container-large-2 is a flat max-width:1280px (css:1408) — no 1440 widening */

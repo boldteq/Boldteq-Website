@@ -69,20 +69,20 @@
   font-weight: 500;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 28px;
   margin: 0;
 }
 
-/* .heading-2.pricing-ban-title */
+/* .heading-2.margin-top-0.pricing-ban-title — line-height 1.25 (css:1990); h1 global margin-bottom 10px (webflow.css:205) */
 .heading {
   color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   text-align: center;
-  line-height: 45px;
+  line-height: 1.25;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* .paragraph.center */
@@ -233,12 +233,12 @@
   display: flex;
 }
 
-/* .paragraph-x-small-13.text-color-tertiary */
+/* .paragraph-x-small-13.text-color-tertiary — modifier overrides base 12px to 14px (css:11512) */
 .featuresLabel {
   color: #082753;
   margin-bottom: 0;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
 }
 
@@ -280,7 +280,7 @@
   width: auto;
   margin-left: 10px;
   margin-right: 10px;
-  padding: 13px 24px;
+  padding: 10px 24px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -334,7 +334,7 @@
   opacity: 0;
 }
 
-/* .caption-small-2.center */
+/* .caption-small-2.center — no font-weight set, inherits 400 (css:11434-11443) */
 .caption {
   color: #252525;
   text-align: center;
@@ -342,7 +342,6 @@
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 0;
-  font-weight: 500;
 }
 
 /* .pricing-card-2.white-card.margin-top — info cards (bug report / add-on) */

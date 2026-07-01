@@ -38,7 +38,6 @@ export function LegalContent({ doc }: LegalContentProps) {
       <div className={styles.container}>
         <h1 className={styles.heading}>{doc.title}</h1>
         <div className={styles.richtext}>
-          <p className={styles.lastUpdated}>Last updated: {doc.lastUpdated}</p>
           {doc.sections.map((section, si) => (
             <div key={si}>
               <h3 className={styles.h3}>{section.heading}</h3>

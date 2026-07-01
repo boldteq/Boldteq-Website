@@ -64,31 +64,37 @@ export function NewsletterHero() {
       </div>
 
       <div className={styles.inner}>
-        {/* Badge */}
-        <div className={styles.badgeRow}>
-          <div className={styles.badge}>
-            <Image
-              src="/images/webflow/Layer_1-57.svg"
-              alt=""
-              width={16}
-              height={16}
-              aria-hidden="true"
-            />
-            <p className={styles.badgeText}>Join 500+ Subscribers</p>
+        {/* Text column — matches Webflow .column-small (12px internal gap) so
+            badge/heading/description sit ~12px apart, while .inner keeps the
+            40px gap only between this block and the form. */}
+        <div className={styles.textCol}>
+          {/* Badge */}
+          <div className={styles.badgeRow}>
+            <div className={styles.badge}>
+              <Image
+                src="/images/webflow/Layer_1-57.svg"
+                alt=""
+                width={16}
+                height={16}
+                aria-hidden="true"
+              />
+              <p className={styles.badgeText}>Join 500+ Subscribers</p>
+            </div>
           </div>
+
+          {/* Heading */}
+          <h1 id="newsletter-heading" className={styles.heading}>
+            Agency Growth Insights{" "}
+            <span className={styles.gradientSpan}>Delivered Monthly</span>
+          </h1>
+
+          {/* Description */}
+          <p className={styles.description}>
+            Smart growth strategies, CRM playbooks, industry trends, early
+            product updates, and member-only offers — designed for modern
+            agencies.
+          </p>
         </div>
-
-        {/* Heading */}
-        <h1 id="newsletter-heading" className={styles.heading}>
-          Agency Growth Insights{" "}
-          <span className={styles.gradientSpan}>Delivered Monthly</span>
-        </h1>
-
-        {/* Description */}
-        <p className={styles.description}>
-          Smart growth strategies, CRM playbooks, industry trends, early product
-          updates, and member-only offers — designed for modern agencies.
-        </p>
 
         {/* Form */}
         <div className={styles.formBlock}>

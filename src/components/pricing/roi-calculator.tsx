@@ -542,7 +542,7 @@ export function RoiCalculator() {
             {/* Plan Selection block */}
             <div className={styles.planBlock}>
               <div className={styles.sectionLabel}>
-                Which BoldTeq plan are you comparing?
+                Which Boldteq plan are you comparing?
               </div>
 
               {/* Billing toggle */}

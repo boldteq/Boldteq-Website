@@ -54,10 +54,6 @@
   line-height: 45px;
   max-width: 842px;
   text-align: center;
-  /* Live boldteq.com renders this heading in Title Case. capitalize also widens
-     each word slightly, which reproduces the reference's narrower per-line wrapping
-     within the same 842px max-width. */
-  text-transform: capitalize;
   font-family: 'Roobert PRO', Arial, sans-serif;
   font-weight: 700;
   margin: 0;

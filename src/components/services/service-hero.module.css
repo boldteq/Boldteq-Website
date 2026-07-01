@@ -39,7 +39,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   display: inline-flex;
   align-items: center;
   color: #05bafe;
@@ -51,7 +51,7 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 14px;
   text-transform: capitalize;
   color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);
@@ -60,15 +60,14 @@
   background-clip: text;
 }
 
-/* Heading — .web-ban-title (#092245, 40/700/1.25) */
+/* Heading — .web-ban-title (#092245, 40/700/1.25, mb 10px, no max-width) */
 .heading {
   color: #092245;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.25;
-  margin: 0 auto 16px;
-  max-width: 58rem;
+  margin: 0 auto 10px;
 }
 
 /* Subtitle — .h1-season-seeing.web-h1 (#2b2b2b, 16/400/28, max 53rem, pad 1.5rem).

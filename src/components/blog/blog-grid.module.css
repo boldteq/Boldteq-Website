@@ -3,13 +3,14 @@
    Matches Webflow .blog-post-sec.new + .filter_grid exactly
    ============================================================ */
 
-/* blog-post-sec.new — horizontal gutter lives on .tabsContainer (canonical container) */
+/* blog-post-sec.new — the 3% side gutter is inherited from base .blog-post-sec
+   (.new only resets background/radius), so it lives on the section itself. */
 .section {
   background-color: transparent;
   background-image: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  padding: 0 0 80px;
+  padding: 0 3% 80px;
   display: block;
   justify-content: center;
   position: relative;
@@ -17,14 +18,13 @@
   margin-left: auto;
 }
 
-/* Canonical site container: 100% width, capped at 1280px (1320 @1440), 2rem gutter. */
+/* .tabs-container.work-tabs-container — flat 1300px (no 1440 width override in
+   Webflow; the 1440 block only shrinks base .tabs-container to 1200px). */
 .tabsContainer {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 /* filt-out */
@@ -386,7 +386,8 @@
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-brand-blue);
+  /* #019ae6 fails WCAG AA on white (~2.9:1); #0670a3 is ~4.9:1 (a11y darken) */
+  color: #0670a3;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.2s ease;
@@ -513,10 +514,6 @@
     padding-top: 50px;
     padding-bottom: 50px;
   }
-  .tabsContainer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
 }
 
 /* ============================================================
@@ -554,14 +551,5 @@
   .section {
     padding-top: 20px;
     padding-bottom: 60px;
-  }
-  .tabsContainer {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .tabsContainer {
-    max-width: 1320px;
   }
 }

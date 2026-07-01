@@ -77,7 +77,7 @@
   margin: 0;
   font-size: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
-  line-height: 24px;
+  line-height: 28px;
 }
 
 /* .faq-sky-text */
@@ -91,32 +91,36 @@
   font-weight: 500;
 }
 
-/* .heading-2.demo-sec-heading.margin-top */
+/* .heading-2.demo-sec-heading.margin-top — 40px / line-height 48px (css:1996) */
 .heading {
   color: #082753;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 40px;
+  line-height: 48px;
   margin-top: 12px;
   margin-bottom: 0;
   text-align: center;
 }
 
-/* .max-width-small-3.center-text */
+/* .max-width-small-3.center-text — max-width:none (css:5012); inner .paragraph.text-center caps at 600px */
 .subtitleWrap {
   text-align: center;
-  max-width: 500px;
+  max-width: none;
 }
 
-/* .paragraph.text-center */
+/* .paragraph.text-center — base .paragraph 16px/28px (css:882); .text-center adds 600px cap + auto margins (css:1029) */
 .subtitle {
   color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
   text-align: center;
-  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   font-weight: 400;
 }
 
@@ -183,11 +187,11 @@
   line-height: 25px;
 }
 
-/* .paragraph.text-left */
+/* .paragraph.text-left — base .paragraph 16px/28px (css:882); .text-left only changes text-align (css:934) */
 .cardText {
   color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   text-align: left;

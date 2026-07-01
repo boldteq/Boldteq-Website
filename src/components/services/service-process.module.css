@@ -22,8 +22,8 @@
 /* Header */
 .header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 48px;
+  max-width: 680px;
+  margin: 0 auto 30px;
 }
 
 /* Pill wrapper — .career-subhead-out; the pill's own 17px sets the heading gap */
@@ -41,7 +41,7 @@
   border-radius: 20px;
   margin-bottom: 17px;
   padding: 0 13px;
-  line-height: 24px;
+  line-height: 14px;
   display: inline-flex;
   align-items: center;
   color: #05bafe;
@@ -53,7 +53,7 @@
   font-size: 14px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 14px;
   text-transform: capitalize;
   color: #019ae6;
   background-image: linear-gradient(90deg, #21cfff, #019ae6);

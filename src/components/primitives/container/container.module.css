@@ -33,8 +33,15 @@
   max-width: 1280px;
 }
 
+/* Documented container ramp: 1280 base, bumping to 1320 at >=1440. */
 .size-wide {
-  max-width: 1320px;
+  max-width: 1280px;
+}
+
+@media (min-width: 1440px) {
+  .size-wide {
+    max-width: 1320px;
+  }
 }
 
 .size-fluid {

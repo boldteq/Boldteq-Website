@@ -108,7 +108,7 @@
 
 /* .sp-icon (S/W/F letter icon) */
 .platformIcon {
-  color: #0670a3;
+  color: #05bafe;
   background-color: #def4ff;
   border-radius: 5px;
   justify-content: center;
@@ -121,17 +121,17 @@
   flex-shrink: 0;
 }
 
-/* When active, icon bg becomes white */
-.platformBtnActive .platformIcon {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #fff;
-}
+/* .sp-icon has no active-state override in Webflow — chip stays cyan-on-light */
 
-/* .stab */
+/* .stab — inherits body 14px/400; active state bolds via parent .stab-name.w--current */
 .platformLabel {
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
+}
+
+/* .stab-name.w--current sets font-weight:700; child .stab inherits it */
+.platformBtnActive .platformLabel {
+  font-weight: 700;
 }
 
 /* .stab-cont */
@@ -160,7 +160,7 @@
 
 /* .ph-icon.shopify / .wp */
 .phIcon {
-  color: #0670a3;
+  color: #05bafe;
   background-color: #fff;
   border-radius: 14px;
   justify-content: center;
@@ -184,7 +184,7 @@
 
 /* .ph-name.shopify / .wp */
 .phName {
-  color: #0670a3;
+  color: #05bafe;
   margin-top: 0;
   margin-bottom: 3px;
   font-family: var(--font-roobert), Arial, sans-serif;
@@ -192,13 +192,13 @@
   font-weight: 700;
 }
 
-/* .ph-desc */
+/* .ph-desc — .paragraph.text-left.ph-desc overrides base 16/28 to 14/24 */
 .phDesc {
   color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 24px;
   text-align: left;
   margin: 0;
 }
@@ -227,15 +227,16 @@
   box-shadow: 0 0 5px #0000001a;
 }
 
-/* .ttab base */
+/* .ttab base — .w-tab-link default padding 9px 30px; .ttab overrides only
+   left/right to 10px, so vertical stays 9px */
 .tierTab {
   background-color: transparent;
   border: none;
   border-radius: 7px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 9px;
+  padding-bottom: 9px;
   cursor: pointer;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
@@ -359,12 +360,13 @@
   font-weight: 700;
 }
 
+/* .paragraph.text-left.tier-intro-desc overrides base 16/28 to 14/24 */
 .tierIntroDesc {
   color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 24px;
   text-align: left;
   margin: 0;
 }
@@ -458,7 +460,7 @@
 }
 
 .cardLabelSmall {
-  color: #0670a3;
+  color: #05bafe;
   background-color: #def4ff;
 }
 
@@ -473,7 +475,7 @@
 }
 
 .cardLabelSupport {
-  color: #0670a3;
+  color: #05bafe;
   background-color: #def4ff;
 }
 
@@ -503,12 +505,12 @@
   margin: 0;
 }
 
-/* .slist-name */
+/* .slist-name — inherits body weight 400 (no explicit weight in Webflow) */
 .serviceItem {
   color: #2b2b2b;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
 }
 
