@@ -58,7 +58,9 @@ export function BetaWhoItsFor() {
           <div className={styles.gridboxes}>
             {SEGMENTS.map((seg) => (
               <div key={seg.number} className={styles.card}>
-                <h2 className={styles.skyDigit}>{seg.number}</h2>
+                <div className={styles.skyDigit} aria-hidden="true">
+                  {seg.number}
+                </div>
                 <h3 className={styles.cardTitle}>{seg.title}</h3>
                 <p className={styles.cardText}>{seg.text}</p>
               </div>

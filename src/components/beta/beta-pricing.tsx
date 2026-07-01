@@ -49,7 +49,8 @@ function CheckIcon() {
   return (
     <Image
       src="/images/webflow/Vector-20.svg"
-      alt="check icon"
+      alt=""
+      aria-hidden="true"
       width={16}
       height={16}
       className={styles.checkIcon}
@@ -95,7 +96,8 @@ export function BetaPricing() {
                   <div className={styles.popularBanner}>
                     <Image
                       src="/images/webflow/Layer_2.svg"
-                      alt="flash icon"
+                      alt=""
+                      aria-hidden="true"
                       width={18}
                       height={18}
                     />
@@ -104,9 +106,9 @@ export function BetaPricing() {
                 )}
 
                 <div className={styles.cardInner}>
-                  <h6 className={styles.planName}>{plan.name}</h6>
+                  <h3 className={styles.planName}>{plan.name}</h3>
                   <div className={styles.priceRow}>
-                    <h3 className={styles.price}>${plan.price}/month</h3>
+                    <p className={styles.price}>${plan.price}/month</p>
                   </div>
                   <p className={styles.tagline}>{plan.tagline}</p>
                 </div>
