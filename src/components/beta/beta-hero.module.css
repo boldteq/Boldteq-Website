@@ -53,12 +53,12 @@
   margin-bottom: 0;
 }
 
-/* ── Badge (.careersubott.how-work-badge → pill) ── */
+/* ── Badge (.careersubott.how-work-badge → translucent-cyan pill) ── */
 .badge {
   color: #18181b;
-  background-color: #fafafa;
-  border: 1px solid #fff;
-  border-radius: 999px;
+  background-color: #21cfff12;
+  border: 1px solid #05bafe;
+  border-radius: 20px;
   margin-bottom: 17px;
   padding: 4px 12px;
   line-height: 14px;
@@ -223,7 +223,8 @@
     margin-bottom: 0;
   }
   .heading {
-    font-size: 2.5rem;
+    /* Webflow .web-ban-title.mob-margin-less = 30px @767. */
+    font-size: 30px;
     line-height: 1.25;
     margin-bottom: 10px;
   }
@@ -258,7 +259,8 @@
     margin-bottom: 0;
   }
   .heading {
-    font-size: 1.9rem;
+    /* Webflow .web-ban-title.mob-margin-less = 1.6rem @479. */
+    font-size: 1.6rem;
     line-height: 1.25;
   }
   .subtitle {

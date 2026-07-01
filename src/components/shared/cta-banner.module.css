@@ -44,9 +44,10 @@
 .ctaHeading {
   color: #ffffff;
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 40px;
+  /* Webflow .heading-2.white.hd-s = 36px / line-height 52px. */
+  font-size: 36px;
   font-weight: 700;
-  line-height: 45px;
+  line-height: 52px;
   margin: 0;
 }
 

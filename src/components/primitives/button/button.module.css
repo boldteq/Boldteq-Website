@@ -151,7 +151,8 @@
 
 .white:hover {
   color: #fff;
-  background-color: var(--color-brand-blue);
+  /* Webflow .white-btn:hover uses var(--blue) = #082753 (navy), not bright blue. */
+  background-color: #082753;
   border-color: var(--color-brand-dark);
 }
 

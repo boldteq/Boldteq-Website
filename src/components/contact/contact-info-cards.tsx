@@ -54,8 +54,8 @@ export function ContactInfoCards() {
                 <Image
                   src="/images/webflow/Group_1.svg"
                   alt=""
-                  width={24}
-                  height={24}
+                  width={13}
+                  height={10}
                   aria-hidden="true"
                 />
               </div>

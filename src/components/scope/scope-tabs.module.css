@@ -403,10 +403,11 @@
   border: 1px solid #009ce0;
 }
 
-/* .cards-grid — 4 col grid */
+/* .cards-grid — Webflow .w-layout-grid default is 2 columns; .cards-grid only
+   adds padding, so it renders 2-per-row (no 4-col override exists). */
 .cardsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   gap: 16px;

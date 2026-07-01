@@ -83,7 +83,9 @@
   padding: 4px 12px;
   font-size: 14px;
   font-weight: 500;
-  color: #1a1925;
+  /* White on the navy drawer (Webflow's mobile menu renders .menu-text #fff at
+     <=767). Was #1a1925 dark-on-navy = ~1.3:1, invisible until hover. */
+  color: #fff;
   text-decoration: none;
   font-family: var(--font-roobert), Arial, sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -95,8 +97,9 @@
 }
 
 .navLink:hover {
-  background-color: #fff;
-  box-shadow: 0 1px 2px -1px #1a19250a, 0 1px 1px #1a19250a, 0 .5px .5px #1a19250a;
+  /* Translucent white so the white label stays readable on hover (a solid white
+     pill would hide it). */
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ─── Dropdown toggle button ───────────────────────────────────────────────── */

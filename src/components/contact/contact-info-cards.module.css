@@ -6,11 +6,14 @@
                18426 (.cont-icon-primary)
    ============================================================ */
 
-/* Wrapper section — same #effafe bg as hero; merges with hero bottom (no own padding) */
+/* Wrapper section — same #effafe bg as hero; merges with hero bottom (no own padding).
+   padding-bottom removed: in Webflow the cards + form share one section with only
+   the grid's 20px margin-bottom between them. Our 6rem here stacked with the form's
+   top padding → a ~116px gap. Let the form section own the bottom spacing. */
 .section {
   background-color: var(--color-cyan-tint);
   padding-top: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 0;
   margin-right: auto;
   margin-left: auto;
 }

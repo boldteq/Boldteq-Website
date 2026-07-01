@@ -433,6 +433,10 @@
   .card {
     margin-top: 0;
   }
+  /* Webflow .pricing-ban-title = 30px @767 (was stuck at 40px). */
+  .heading {
+    font-size: 30px;
+  }
   .price {
     font-size: 30px;
   }
@@ -445,5 +449,9 @@
   .grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+  }
+  /* Webflow .pricing-ban-title = 1.6rem @479. */
+  .heading {
+    font-size: 1.6rem;
   }
 }
