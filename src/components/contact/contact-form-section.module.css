@@ -11,8 +11,6 @@
   padding-bottom: 6rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 /* White card wrapping the form — matches .contact-form-large (bg #fff, radius 16px, gap 24px, padding 24px, shadow 0 0 7px #0000001a) */
@@ -91,74 +89,56 @@
   margin: 0;
 }
 
-/* Form field — matches .cform-field: bg #effafe, no border, border-radius 7px, min-height 45px */
-.input {
-  min-height: 45px;
+/* Shared form-field base — common declarations + focus ring for input/select/textarea.
+   Matches .cform-field: bg #effafe, no border, border-radius 7px. Per-type rules add
+   their own sizing (min-height/height) and padding deltas. */
+.fieldBase {
   box-shadow: none;
   background-color: var(--color-cyan-tint);
   border: 1px solid transparent;
   border-radius: 7px;
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
-  padding: 0 12px;
   color: var(--color-text-secondary);
   width: 100%;
   transition: border-color 0.15s;
 }
 
-.input:focus {
+.fieldBase:focus {
   border-color: var(--color-brand-cyan);
   box-shadow: var(--shadow-focus-ring);
+}
+
+/* Form field — matches .cform-field: min-height 45px */
+.input {
+  composes: fieldBase;
+  min-height: 45px;
+  padding: 0 12px;
 }
 
 /* Select — matches .cform-field.cform-select (padding-right: 12px) */
 .select {
+  composes: fieldBase;
   min-height: 45px;
-  width: 100%;
-  box-shadow: none;
-  background-color: var(--color-cyan-tint);
-  border: 1px solid transparent;
-  border-radius: 7px;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  padding: 0 12px 0 12px;
-  color: var(--color-text-secondary);
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   /* extra right padding so a long option label never runs under the custom
      dropdown arrow (we replaced the native arrow with a background image) */
-  padding-right: 36px;
+  padding: 0 36px 0 12px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   cursor: pointer;
-  transition: border-color 0.15s;
-}
-
-.select:focus {
-  border-color: var(--color-brand-cyan);
-  box-shadow: var(--shadow-focus-ring);
 }
 
 /* Textarea — matches .cform-field.cform-textarea: height 131px, no border */
 .textarea {
+  composes: fieldBase;
   height: 131px;
-  box-shadow: none;
-  background-color: var(--color-cyan-tint);
-  border: 1px solid transparent;
-  border-radius: 7px;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
   padding: 10px 12px;
-  color: var(--color-text-secondary);
-  width: 100%;
   resize: vertical;
   line-height: 1.6;
-  transition: border-color 0.15s;
-}
-
-.textarea:focus {
-  border-color: var(--color-brand-cyan);
-  box-shadow: var(--shadow-focus-ring);
 }
 
 /* Inline error text under a field — #ef4444 was 3.76:1 on white; #c81e1e is

@@ -27,18 +27,6 @@
   display: flex;
 }
 
-/* Trigger button used inline — styled as underlined link */
-.triggerButton {
-  color: #fff;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
-}
-
 /* Webflow: .beta-popup-modal */
 .betaPopupModal {
   grid-column-gap: 0px;

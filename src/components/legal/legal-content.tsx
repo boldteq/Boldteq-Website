@@ -25,6 +25,10 @@ function renderNode(node: LegalNode, index: number): React.ReactNode {
           ))}
         </ul>
       );
+    default: {
+      const _exhaustive: never = node;
+      return _exhaustive;
+    }
   }
 }
 

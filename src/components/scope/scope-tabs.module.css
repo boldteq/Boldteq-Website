@@ -61,7 +61,7 @@
   min-width: 200px;
   height: auto;
   padding: 10px;
-  box-shadow: 0 0 5px #0000001a;
+  box-shadow: var(--shadow-card);
 }
 
 /* .scope-tabs-content */
@@ -100,7 +100,7 @@
 /* .stab-name.w--current */
 .platformBtnActive {
   background-color: #0ab4e8;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   border-radius: 9px;
   font-weight: 700;
   color: #2b2b2b;
@@ -174,7 +174,7 @@
   line-height: 24px;
   display: flex;
   flex-shrink: 0;
-  box-shadow: 0 0 5px #0000001a;
+  box-shadow: var(--shadow-card);
 }
 
 /* .ph-body */
@@ -203,11 +203,6 @@
   margin: 0;
 }
 
-/* .ph-badge — hidden in Webflow */
-.phBadge {
-  display: none;
-}
-
 /* .tier-tabs — horizontal grid 4 cols */
 .tierTabs {
   display: grid;
@@ -224,7 +219,7 @@
   margin-left: 5px;
   margin-right: 5px;
   padding: 6px;
-  box-shadow: 0 0 5px #0000001a;
+  box-shadow: var(--shadow-card);
 }
 
 /* .ttab base — .w-tab-link default padding 9px 30px; .ttab overrides only
@@ -255,7 +250,7 @@
 .tierTabSmallActive {
   color: #fff;
   background-color: #009ce0;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   border-radius: 7px;
 }
 
@@ -263,7 +258,7 @@
 .tierTabMediumActive {
   color: #fff;
   background-color: #0ab4e8;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   border-radius: 7px;
 }
 
@@ -271,7 +266,7 @@
 .tierTabLargeActive {
   color: #fff;
   background-color: #0ab4e8;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   border-radius: 7px;
 }
 
@@ -279,7 +274,7 @@
 .tierTabSupportActive {
   color: #fff;
   background-color: #0ab4e8;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   border-radius: 7px;
 }
 
@@ -341,7 +336,7 @@
   font-size: 20px;
   display: flex;
   flex-shrink: 0;
-  box-shadow: 0 0 5px #0000001a;
+  box-shadow: var(--shadow-card);
 }
 
 /* .tier-intro-body */
@@ -441,7 +436,7 @@
   padding: 22px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 5px #0000001a;
+  box-shadow: var(--shadow-card);
 }
 
 /* .card-label.small/medium/large/support */

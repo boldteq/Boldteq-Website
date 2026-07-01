@@ -65,10 +65,10 @@
 
 /* ─── Invalid ───────────────────────────────────────────────────────────────── */
 .invalid {
-  border-color: #ef4444;
+  border-color: var(--color-danger);
 }
 
 .invalid:focus-visible {
-  border-color: #ef4444;
+  border-color: var(--color-danger);
   outline-color: rgba(239, 68, 68, 0.3);
 }

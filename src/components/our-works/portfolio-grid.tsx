@@ -55,12 +55,6 @@ export function PortfolioGrid() {
     setCurrentPage(1);
   }, []);
 
-  const clearAll = useCallback(() => {
-    setActiveCategories([]);
-    setSearchQuery("");
-    setCurrentPage(1);
-  }, []);
-
   const goToPage = useCallback((page: number) => {
     setCurrentPage(page);
     // Mirror Webflow's showPage(): scroll the grid back to the top on change.
@@ -136,15 +130,6 @@ export function PortfolioGrid() {
             <aside className={styles.sidebar}>
               <div className={styles.categoryHeader}>
                 <h2 className={styles.categoryTitle}>Service Categories</h2>
-                {activeCategories.length > 0 && (
-                  <button
-                    type="button"
-                    className={styles.clearBtn}
-                    onClick={clearAll}
-                  >
-                    Clear
-                  </button>
-                )}
               </div>
 
               <div className={styles.categoryList}>

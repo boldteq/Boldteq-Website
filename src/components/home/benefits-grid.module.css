@@ -1,10 +1,3 @@
-/* Badge pill text */
-.badgePillText {
-  margin: 0;
-  font-size: 12px;
-  line-height: 32px;
-}
-
 /* ==========================================================
    works-sec  (Webflow: .works-sec)
    ========================================================== */
@@ -107,10 +100,6 @@
   gap: 20px;
   margin-top: 40px;
   scrollbar-width: none;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
 }
 
 .featureGrid::-webkit-scrollbar {

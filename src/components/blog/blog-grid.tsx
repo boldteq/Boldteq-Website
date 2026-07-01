@@ -147,7 +147,7 @@ export function BlogGrid({
                           />
                           <label
                             htmlFor={`cat-${cat.slug}`}
-                            className={`${styles.categoryLabel} ${isActive ? styles.categoryLabelActive : ""}`}
+                            className={styles.categoryLabel}
                           >
                             {cat.name}
                           </label>

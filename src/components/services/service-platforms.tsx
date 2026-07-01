@@ -6,13 +6,13 @@ const PLATFORMS = [
     title: "Shopify Development",
     text: "From custom Liquid templates to full storefront builds — our Shopify developers have delivered 100+ stores with deep expertise in performance, UX, and conversion optimization.",
     ctaLabel: "See Shopify Scope",
-    ctaHref: "/scope",
+    ctaHref: "/scope#scope-sec",
   },
   {
     title: "WordPress Development",
     text: "Custom themes, Gutenberg block libraries, WooCommerce stores, ACF-powered flexible layouts and robust maintenance plans — all white-labeled for your agency clients.",
     ctaLabel: "See WordPress Scope",
-    ctaHref: "/scope?tab=wordpress",
+    ctaHref: "/scope?tab=wordpress#scope-sec",
   },
 ];
 

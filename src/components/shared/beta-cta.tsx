@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./beta-cta.module.css";
-import { BetaModal } from "@/components/shared/beta-modal";
 
 const LEFT_BENEFITS = [
   "Beta pricing locked in",
@@ -12,30 +10,6 @@ const LEFT_BENEFITS = [
   "14-day satisfaction guarantee",
   "Pause or cancel anytime",
 ];
-
-/**
- * Inline trigger — opens the shared BetaModal overlay.
- * Used by navbar banner "Join Beta" link and inline CTAs.
- */
-export function BetaPopupTrigger() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className={styles["triggerButton"]}
-        aria-haspopup="dialog"
-        aria-expanded={open}
-      >
-        Join Beta
-      </button>
-
-      {open && <BetaModal onClose={() => setOpen(false)} />}
-    </>
-  );
-}
 
 /**
  * Inline beta section — visible band on most pages

@@ -15,15 +15,7 @@ export function CaseStudyContent({ detail, embedded = false }: CaseStudyContentP
       {/* ── Hero: badge + title + meta (workp-subott / workp-title / work-small-tags) ── */}
       <div className={styles.heroSubott}>
         <div className={styles.badge}>
-          <strong style={{
-            backgroundImage: "linear-gradient(90deg, #21cfff, #019ae6)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            color: "var(--color-brand-cyan)",
-            fontWeight: 500,
-            textTransform: "capitalize",
-          }}>{detail.platform}</strong>
+          <strong className={styles.badgeText}>{detail.platform}</strong>
         </div>
       </div>
       <h2 className={styles.title}>{detail.title}</h2>

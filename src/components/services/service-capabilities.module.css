@@ -5,7 +5,7 @@
 
 /* .section-regular-3.blue-sec.web-navy-sec — bg #082753, padding 70/80, 5% sides */
 .section {
-  background-color: #082753;
+  background-color: var(--color-brand-navy-deep);
   padding: 70px 5% 80px;
   position: relative;
   display: block;

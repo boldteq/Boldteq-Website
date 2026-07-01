@@ -644,11 +644,6 @@
   /* Webflow keeps About/Culture 2-col at 768-991px (base 1fr 1fr, 50px gap);
      these grids collapse to 1 column only at <=767px. */
 
-  /* For culture: images go below text — reorder */
-  .cultureImagesOrder {
-    order: 1;
-  }
-
   .tabHeading {
     font-size: 34px;
   }

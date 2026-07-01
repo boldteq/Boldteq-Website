@@ -73,7 +73,7 @@ export function MissionHero() {
                     width={badge.w}
                     height={badge.h}
                     className={styles['statIcon']}
-                    loading="eager"
+                    loading="lazy"
                   />
                   <span className={styles['statLabel']}>{badge.label}</span>
                 </div>

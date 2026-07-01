@@ -52,8 +52,8 @@ export function HowWorksHero() {
                   <Image
                     src={badge.icon}
                     alt=""
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     loading="eager"
                   />
                   <p className={styles["statBadgeText"]}>{badge.label}</p>

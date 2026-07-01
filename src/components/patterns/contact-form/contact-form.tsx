@@ -153,7 +153,6 @@ export function ContactForm({
     return <div className={styles['success']}>{successMessage}</div>;
   }
 
-  const singleFields = fields.filter((f) => !f.colSpan || f.colSpan === 1);
   const hasGrid = fields.some((f) => !f.colSpan || f.colSpan === 1);
 
   return (

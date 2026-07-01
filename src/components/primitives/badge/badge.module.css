@@ -93,7 +93,7 @@
   width: 8px;
   height: 8px;
   border-radius: var(--radius-pill);
-  background-color: #ef4444;
+  background-color: var(--color-danger);
   flex-shrink: 0;
   position: relative;
 }
@@ -103,7 +103,7 @@
   position: absolute;
   inset: -4px;
   border-radius: inherit;
-  background-color: #ef4444;
+  background-color: var(--color-danger);
   opacity: 0.4;
   animation: badge-pulse 1.6s var(--ease-standard) infinite;
 }

@@ -10,7 +10,7 @@ const CARDS = [
     imageAlt: 'Project overview',
     imageWidth: 1492,
     imageHeight: 800,
-    sizes: '(max-width: 1492px) 100vw, 1492px',
+    sizes: '(max-width: 767px) 100vw, 33vw',
   },
   {
     title: 'Unreliable Outsourcing',
@@ -20,7 +20,7 @@ const CARDS = [
     imageAlt: 'Unreliable outsourcing',
     imageWidth: 1492,
     imageHeight: 800,
-    sizes: '(max-width: 1492px) 100vw, 1492px',
+    sizes: '(max-width: 767px) 100vw, 33vw',
   },
   {
     title: 'High Hiring Costs',
@@ -30,7 +30,7 @@ const CARDS = [
     imageAlt: 'High Hiring cost',
     imageWidth: 1492,
     imageHeight: 800,
-    sizes: '(max-width: 1492px) 100vw, 1492px',
+    sizes: '(max-width: 767px) 100vw, 33vw',
   },
 ] as const;
 

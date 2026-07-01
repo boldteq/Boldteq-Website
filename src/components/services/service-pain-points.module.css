@@ -114,7 +114,7 @@
 
 /* .heading-3-blue — 18/25/700, #082753, mb 7px */
 .cardTitle {
-  color: #082753;
+  color: var(--color-brand-navy-deep);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;

@@ -140,12 +140,6 @@
   width: fit-content;
 }
 
-/* Wrapper to center the inline-flex tabs container */
-.pricingTabsMenuWrap {
-  display: flex;
-  justify-content: center;
-}
-
 /* Webflow: .pricing-tab-link-large — actual class in HTML.
    gap 8px, color #5b616e, bg transparent, radius 10px, width 100%,
    min-width 170px, height 45px, padding 8px 10px, font-size 16px, lh 24px */
@@ -594,13 +588,6 @@
   line-height: 24px;
 }
 
-/* Webflow: .subheading-large-7.text-color-brand-orange — color #082753 (kept dark) */
-.subheadingLarge7TextColorBrandOrange {
-  color: #082753;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-weight: 700;
-}
-
 /* Webflow: .pricing-header-last — flex center alignment */
 .pricingHeaderLast {
   flex: none;
@@ -641,11 +628,6 @@
   align-items: center;
   padding-left: 0;
   position: relative;
-}
-
-/* Webflow: .pricing-table-cell.no-border — border-bottom none */
-.pricingTableCellNoBorder {
-  border-bottom-style: none;
 }
 
 /* Webflow: .paragraph-regular-14 — color #252525, fs 16px, lh 28px, weight inherits

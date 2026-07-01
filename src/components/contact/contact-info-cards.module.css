@@ -14,8 +14,6 @@
   background-color: var(--color-cyan-tint);
   padding-top: 0;
   padding-bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 /* Container — matches .cont-small-container.margin-top (max-width: 800px, margin-top: 60px) */

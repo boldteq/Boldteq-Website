@@ -57,35 +57,6 @@
   max-width: 600px;
 }
 
-/* navy-butn style */
-.ctaButton {
-  color: #fff;
-  width: auto;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1rem;
-  background-color: var(--color-text-primary);
-  background-image: url('/images/webflow/Group-46729-1.svg');
-  background-position: 94%;
-  background-repeat: no-repeat;
-  background-size: auto;
-  border: 2px solid transparent;
-  border-radius: 0.75rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0;
-  padding: 0.75rem 3rem 0.75rem 1.25rem;
-  font-weight: 700;
-  line-height: 1.75rem;
-  text-decoration: none;
-  display: inline-flex;
-}
-
-.ctaButton:hover {
-  color: var(--color-brand-blue);
-  background-color: #fff;
-  border-color: var(--color-brand-dark);
-}
-
 /* Decorative absolutely-positioned images */
 .cimg1 {
   width: 50px;

@@ -182,17 +182,6 @@
 
 /* ─── Form inner column ──────────────────────────────────────────────────────── */
 
-.column-large {
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
-  flex-direction: column;
-  display: flex;
-}
-
-.column-large.row-gap-0 {
-  grid-row-gap: 0px;
-}
-
 .column-tiny-2 {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
@@ -305,7 +294,6 @@
   flex-shrink: 0;
 }
 
-.newsBtmPara,
 .news-btm-para {
   color: #b5d3f582;
   margin-bottom: 0;
@@ -499,18 +487,6 @@
   height: 18px;
   margin-top: 3px;
   padding-top: 0;
-}
-
-/* ─── Icon helper ────────────────────────────────────────────────────────────── */
-
-.icon-regular {
-  width: 24px;
-  height: 24px;
-  color: var(--white);
-  flex: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 
 /* ─── Responsive: min-width 1440px ──────────────────────────────────────────── */

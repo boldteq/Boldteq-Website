@@ -17,7 +17,7 @@
 }
 
 .required {
-  color: #ef4444;
+  color: var(--color-danger);
   margin-left: 2px;
 }
 
@@ -32,7 +32,7 @@
 .error {
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: var(--text-xs);
-  color: #ef4444;
+  color: var(--color-danger);
   line-height: 1.4;
   margin: 0;
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NAV_ITEMS, CTA_NAV } from "@/lib/constants/navigation";
 import { MobileNav } from "./mobile-nav";
+import { ChevronDownIcon } from "./chevron-down-icon";
 import type { NavItem } from "@/types/navigation";
 import styles from "./navbar.module.css";
 import betaStyles from "@/components/shared/beta-cta.module.css";
@@ -102,25 +103,6 @@ function BetaPopup({ onClose }: { onClose: () => void }) {
         </button>
       </div>
     </div>
-  );
-}
-
-// ─── Chevron SVG ──────────────────────────────────────────────────────────────
-
-function ChevronDownIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="100%"
-      height="100%"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <path
-        d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"
-        fill="currentColor"
-      />
-    </svg>
   );
 }
 
@@ -357,7 +339,7 @@ function ResourcesDropdown({ items }: { items: NavItem[] }) {
                 rel="noopener noreferrer"
                 className={styles["nav-23-dropdown-link"]}
               >
-                <span className={styles["text-weight-medium"]}>
+                <span className={styles["text-weight-medium-2"]}>
                   {child.label}
                 </span>
               </a>
@@ -369,7 +351,7 @@ function ResourcesDropdown({ items }: { items: NavItem[] }) {
               href={child.href}
               className={styles["nav-23-dropdown-link"]}
             >
-              <span className={styles["text-weight-medium"]}>
+              <span className={styles["text-weight-medium-2"]}>
                 {child.label}
               </span>
             </Link>

@@ -36,8 +36,8 @@ export function DemoBookCta() {
                 <Image
                   src="/images/webflow/Vector-16.svg"
                   alt="Email Icon"
-                  width={18}
-                  height={18}
+                  width={20}
+                  height={16}
                   className={styles.emailIcon}
                 />
                 <div className={styles.contactDiv}>

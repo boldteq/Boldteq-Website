@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect, useId, type ReactNode } from "react";
+import Link from "next/link";
 import { animate, useMotionValue, useTransform, useReducedMotion } from "framer-motion";
 import {
   type BillingPeriod,
@@ -30,7 +31,6 @@ interface CalcState {
 interface CalcResult {
   bmo: number;
   byr: number;
-  laborSaved: number;
   savings: number;
   net: number;
   roi: number;
@@ -438,7 +438,6 @@ export function RoiCalculator() {
     return {
       bmo,
       byr,
-      laborSaved,
       savings,
       net,
       roi,
@@ -496,7 +495,9 @@ export function RoiCalculator() {
             const isActive =
               state.plan === preset.plan &&
               state.teamSize === preset.teamSize &&
-              state.manualHours === preset.manualHours;
+              state.manualHours === preset.manualHours &&
+              state.hourlyRate === preset.hourlyRate &&
+              state.toolCost === preset.toolCost;
 
             return (
               <button
@@ -785,15 +786,15 @@ export function RoiCalculator() {
                 Book a free 15-minute demo and we&apos;ll walk through your exact
                 numbers — no commitment, no pressure.
               </p>
-              <a href="/book-a-demo" className={styles.ctaButton}>
+              <Link href="/book-a-demo" className={styles.ctaButton}>
                 Schedule a Free Demo
                 <span className={styles.ctaButtonArrow} aria-hidden="true">
                   <IconArrowRight />
                 </span>
-              </a>
-              <a href="/contact" className={styles.ctaChat}>
+              </Link>
+              <Link href="/contact" className={styles.ctaChat}>
                 Have questions? <span>Chat with our team →</span>
-              </a>
+              </Link>
               <div className={styles.trustBadges}>
                 <span className={styles.trustBadge}>
                   <span className={styles.trustBadgeIcon} aria-hidden="true">

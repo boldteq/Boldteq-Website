@@ -41,7 +41,7 @@
 /* .heading-2.demo-sec-heading (40px navy) */
 .heading {
   /* Webflow .heading-2 color is var(--blue) = #082753. */
-  color: #082753;
+  color: var(--color-text-primary);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
@@ -77,7 +77,7 @@
 /* Individual card (.demodev-sec2-grid-inner) */
 .card {
   background-color: var(--color-success-bg);
-  border: 1px solid #009ce0;
+  border: 1px solid var(--color-brand-card-border);
   border-radius: 20px;
   flex-flow: column;
   justify-content: flex-start;

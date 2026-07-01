@@ -13,11 +13,6 @@
   text-align: left;
 }
 
-/* FAQ answer pre-line whitespace */
-.preLineAnswer {
-  white-space: pre-line;
-}
-
 .faqSection {
   padding: 60px 5% 70px;
   position: relative;
@@ -214,95 +209,6 @@
   display: grid;
 }
 
-.faqWrapperLarge {
-  grid-row-gap: 15px;
-  flex-direction: column;
-  width: 100%;
-  max-width: none;
-  padding: 10px;
-  display: flex;
-  overflow: hidden;
-}
-
-.faqItem {
-  color: #05bafe;
-  background-color: #fff;
-  border: 1px solid #c1e6f9;
-  border-radius: 10px;
-  flex-direction: column;
-  width: 100%;
-  padding-left: 0;
-  font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 15px;
-  display: flex;
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  margin-bottom: 12px;
-}
-
-.faqToggle {
-  background-color: #0000;
-  width: 100%;
-  padding: 14px 20px;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.faqTitleWrapper {
-  grid-column-gap: 24px;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}
-
-.h6Heading3 {
-  color: #000;
-  letter-spacing: -0.02em;
-  white-space: normal;
-  word-break: normal;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 18px;
-  line-height: 1.4;
-}
-
-.boldText {
-  font-size: 17px;
-}
-
-.faqIcon {
-  flex: none;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  display: flex;
-}
-
-.faqContent {
-  background-color: #0000;
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-
-.faqTab {
-  background-color: #0000;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.paragraphRegular5 {
-  color: var(--color-text-secondary);
-  letter-spacing: -0.02em;
-  margin-bottom: 0;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
 .faqBtmCenter {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -344,10 +250,6 @@
     grid-column-gap: 16px;
     grid-row-gap: 16px;
   }
-
-  .faqWrapperLarge {
-    max-width: none;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -374,10 +276,6 @@
 
   .faqBtmCenter {
     margin-top: 20px;
-  }
-
-  .faqTab {
-    padding-right: 32px;
   }
 
   .heading2 {
@@ -423,16 +321,6 @@
   .faqSubott {
     margin-bottom: 16px;
   }
-
-  .faqWrapperLarge {
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .faqTab {
-    padding-right: 24px;
-  }
 }
 
 /* ============================================================
@@ -450,10 +338,6 @@
     grid-row-gap: 50px;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-  }
-  /* Webflow .faq-title-wrapper @min-1280 (css:22097) → padding-right 0. */
-  .faqTitleWrapper {
-    padding-right: 0;
   }
   /* Webflow .row-small.with-border @min-1280 (css:22249) → 10px gaps, 15px side padding. */
   .rowSmallWithBorder {

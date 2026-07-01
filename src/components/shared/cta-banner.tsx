@@ -46,7 +46,8 @@ export function CtaBanner({
                     <div className={styles.ctaBulletIcon}>
                       <Image
                         src="/images/webflow/Group-1.svg"
-                        alt="Check Icon"
+                        alt=""
+                        aria-hidden="true"
                         width={14}
                         height={14}
                       />

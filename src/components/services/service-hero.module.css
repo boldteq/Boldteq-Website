@@ -62,7 +62,7 @@
 
 /* Heading — .web-ban-title (#092245, 40/700/1.25, mb 10px, no max-width) */
 .heading {
-  color: #092245;
+  color: var(--color-brand-navy);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
@@ -118,7 +118,7 @@
 
 /* .grid-para — 15px/500, dark, left-aligned, single line */
 .statLabel {
-  color: #082753;
+  color: var(--color-brand-navy-deep);
   font-family: var(--font-roobert), Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;

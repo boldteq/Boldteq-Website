@@ -55,7 +55,10 @@ export function BlogBottomCta() {
                   agencies grow sustainably while maintaining delivery quality
                   and control.
                 </p>
-                <Link href="/blog" className={styles.cardBtn}>
+                <Link
+                  href="/blog/categories/web-development"
+                  className={styles.cardBtn}
+                >
                   View Articles
                 </Link>
               </div>

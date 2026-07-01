@@ -26,11 +26,11 @@
   font-weight: 700;
 }
 
-/* Rich-text wrapper — .paragraph.text-left.policy-para.w-richtext */
+/* Rich-text wrapper — .paragraph.text-left.policy-para.w-richtext (16px/28px) */
 .richtext {
   color: var(--color-text-secondary);
   font-family: var(--font-roobert), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   line-height: 28px;
 }
 

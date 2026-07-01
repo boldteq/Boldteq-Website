@@ -40,7 +40,7 @@ export function CareersBenchmarks() {
               {BENCHMARKS.map((item) => (
                 <div key={item.label} className={styles["benchCard"]}>
                   <p className={styles["benchLabel"]}>{item.label}</p>
-                  <div className={`${styles["benchBar"]} ${styles[item.variant]}`}>
+                  <div className={[styles["benchBar"], styles[item.variant]].filter(Boolean).join(" ")}>
                     <span className={styles["benchPercentage"]}>{item.percentage}</span>
                   </div>
                 </div>

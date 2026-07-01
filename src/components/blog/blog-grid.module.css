@@ -264,11 +264,6 @@
   margin-right: 0.25rem;
 }
 
-.categoryLabelActive {
-  color: var(--color-text-secondary);
-  font-weight: 400;
-}
-
 /* Top Posts */
 .topPostsList {
   display: flex;
@@ -422,7 +417,6 @@
   justify-content: center;
 }
 
-/* Load More button — navy pill, gradient on hover (on-brand, no arrow) */
 /* Light, secondary "load more" affordance — outline pill + chevron, not a heavy
    filled CTA (keeps the listing from feeling button-heavy). */
 .loadBtn {

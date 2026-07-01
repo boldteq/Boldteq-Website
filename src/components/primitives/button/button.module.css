@@ -64,7 +64,7 @@
   z-index: 1;
   overflow: hidden;
   color: #fff;
-  background-color: #092245;
+  background-color: var(--color-brand-navy);
   border-color: transparent;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -77,7 +77,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
@@ -105,7 +105,7 @@
    #082753 bg + Group-46729-1 arrow at 94%, borderless (see .button note) ──────── */
 .navy {
   color: #fff;
-  background-color: #082753;
+  background-color: var(--color-brand-navy-deep);
   background-image: url('/images/webflow/Group-46729-1.svg');
   background-position: 94%;
   background-repeat: no-repeat;
@@ -114,26 +114,21 @@
 }
 
 .navy:hover {
-  color: #082753;
+  color: var(--color-brand-navy-deep);
   background-color: rgba(33, 207, 255, 0.13);
   border-color: var(--color-brand-dark);
 }
 
 /* ─── Variant: secondary — navy arrow-box (the canonical site secondary,
-   pairs with a gradient primary on light sections) ──────────────────────────── */
+   pairs with a gradient primary on light sections). Identical base + hover to
+   .navy, so it composes .navy to avoid duplicating the declarations. ─────────── */
 .secondary {
-  color: #fff;
-  background-color: #082753;
-  background-image: url('/images/webflow/Group-46729-1.svg');
-  background-position: 94%;
-  background-repeat: no-repeat;
-  background-size: auto;
-  border-color: transparent;
+  composes: navy;
 }
 
 .secondary:hover {
   /* Webflow .navy-arrow-btn:hover uses var(--blue) = #082753 (navy), matching .navy:hover. */
-  color: #082753;
+  color: var(--color-brand-navy-deep);
   background-color: rgba(33, 207, 255, 0.13);
   border-color: var(--color-brand-dark);
 }
@@ -141,7 +136,7 @@
 /* ─── Variant: white — Webflow .white-btn
    #fff bg + navy text (var(--blue) = #082753) + Group-46729-1 arrow at 94% ───── */
 .white {
-  color: #082753;
+  color: var(--color-brand-navy-deep);
   background-color: #fff;
   background-image: url('/images/webflow/Group-46729-1.svg');
   background-position: 94%;
@@ -153,15 +148,15 @@
 .white:hover {
   color: #fff;
   /* Webflow .white-btn:hover uses var(--blue) = #082753 (navy), not bright blue. */
-  background-color: #082753;
+  background-color: var(--color-brand-navy-deep);
   border-color: var(--color-brand-dark);
 }
 
 /* ─── Variant: sky — Webflow .sky-button (gradient over navy, NO arrow) ──────── */
 .sky {
   color: #fff;
-  background-color: #082753;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-color: var(--color-brand-navy-deep);
+  background-image: var(--gradient-brand);
   border-color: transparent;
   padding-right: 1.25rem;
 }
@@ -169,7 +164,7 @@
 .sky:hover {
   background-image: none;
   background-color: #fff;
-  color: #082753;
+  color: var(--color-brand-navy-deep);
 }
 
 /* ─── Variant: outline — Webflow .a-except-get (light cyan tint, borderless) ──── */

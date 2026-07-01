@@ -11,8 +11,6 @@
   padding-bottom: 6rem;
   font-weight: 400;
   text-decoration: none;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 /* Max-width container — matches .div-stuck-swept (max-width: 80rem, auto margins, px: 2rem) */
@@ -27,7 +25,6 @@
 /* Center-text wrapper — matches .div-wrote-smoke.demo-stoke (text-align: center, max-width: 90rem) */
 .inner {
   text-align: center;
-  color: var(--color-brand-cyan);
   max-width: 90rem;
   margin-left: auto;
   margin-right: auto;

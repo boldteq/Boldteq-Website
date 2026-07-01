@@ -29,7 +29,7 @@ export function PortfolioCard({ item, onCardClick, eager = false }: PortfolioCar
           {CATEGORY_LABELS[item.category] ?? item.category}
         </span>
 
-        {/* Card image — fill mode, unoptimized=false to enable priority preloading */}
+        {/* Card image — fill mode */}
         <Image
           src={item.featuredImage}
           alt={`${item.name} — Boldteq portfolio project`}
@@ -38,7 +38,6 @@ export function PortfolioCard({ item, onCardClick, eager = false }: PortfolioCar
           className={styles.image}
           loading={eager ? "eager" : "lazy"}
           priority={eager}
-          unoptimized={false}
         />
 
         {/* Eye icon — bottom right (decorative overlay) */}

@@ -68,7 +68,7 @@
   font-weight: 500;
   line-height: 14px;
   text-transform: capitalize;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -87,7 +87,7 @@
 }
 
 .gradientSpan {
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -181,7 +181,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: linear-gradient(90deg, #21cfff, #019ae6);
+  background-image: var(--gradient-brand);
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }

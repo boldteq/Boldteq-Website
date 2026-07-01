@@ -1,7 +1,5 @@
 export type TierKey = "small" | "medium" | "large" | "support";
 
-export type PlatformVariant = "shopify" | "wordpress" | "shopify-apps" | "frontend";
-
 export interface ServiceCard {
   label: string;
   heading: string;
@@ -21,10 +19,8 @@ export interface Platform {
   key: string;
   label: string;
   icon: string;
-  iconVariant: PlatformVariant;
   name: string;
   description: string;
-  badge: string;
   tiers: Tier[];
 }
 
@@ -33,11 +29,9 @@ export const SCOPE_PLATFORMS: Platform[] = [
     key: "shopify",
     label: "Shopify",
     icon: "S",
-    iconVariant: "shopify",
     name: "Shopify Services",
     description:
       "Complete white-label Shopify delivery — from quick fixes to full store builds. Your clients get world-class work. They never need to know we exist.",
-    badge: "eCommerce Expert",
     tiers: [
       {
         key: "small",
@@ -237,11 +231,9 @@ export const SCOPE_PLATFORMS: Platform[] = [
     key: "wordpress",
     label: "WordPress",
     icon: "W",
-    iconVariant: "wordpress",
     name: "WordPress Services",
     description:
       "White-label WordPress & WooCommerce delivery your clients will rave about. Custom themes, plugins, performance, and ongoing maintenance — all under your brand.",
-    badge: "CMS Expert",
     tiers: [
       {
         key: "small",
@@ -440,11 +432,9 @@ export const SCOPE_PLATFORMS: Platform[] = [
     key: "shopify-apps",
     label: "Shopify Apps",
     icon: "S",
-    iconVariant: "shopify-apps",
     name: "Shopify Apps Development",
     description:
       "Custom Shopify app development that extends functionality and creates unique experiences. From private apps to public marketplace launches \u2014 we build scalable, merchant-focused solutions.",
-    badge: "eCommerce Expert",
     tiers: [
       {
         key: "small",
@@ -644,11 +634,9 @@ export const SCOPE_PLATFORMS: Platform[] = [
     key: "frontend",
     label: "Frontend Tasks",
     icon: "F",
-    iconVariant: "frontend",
     name: "Frontend Development Services",
     description:
       "Modern, responsive, and performant web interfaces built with the latest technologies. From landing pages to complex web applications \u2014 we deliver pixel-perfect frontend experiences.",
-    badge: "CMS Expert",
     tiers: [
       {
         key: "small",

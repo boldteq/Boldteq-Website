@@ -40,45 +40,18 @@ function handleTabKeyDown(
   refs.current[next]?.focus();
 }
 
+/**
+ * Compose a base CSS-module class with its per-tier variant, e.g.
+ * variantClass("tierIntro", "small") -> `${styles.tierIntro} ${styles.tierIntroSmall}`.
+ * `suffix` handles variants named base+Key+Suffix (e.g. tierTabSmallActive).
+ */
+function variantClass(base: string, key: TierKey, suffix = ""): string {
+  const variant = `${base}${key.charAt(0).toUpperCase()}${key.slice(1)}${suffix}`;
+  return `${styles[base]} ${styles[variant]}`;
+}
+
 function getTierTabClass(key: TierKey, active: boolean): string {
-  if (!active) return styles.tierTab;
-  const map: Record<TierKey, string> = {
-    small: `${styles.tierTab} ${styles.tierTabSmallActive}`,
-    medium: `${styles.tierTab} ${styles.tierTabMediumActive}`,
-    large: `${styles.tierTab} ${styles.tierTabLargeActive}`,
-    support: `${styles.tierTab} ${styles.tierTabSupportActive}`,
-  };
-  return map[key];
-}
-
-function getTierIntroClass(key: TierKey): string {
-  const map: Record<TierKey, string> = {
-    small: `${styles.tierIntro} ${styles.tierIntroSmall}`,
-    medium: `${styles.tierIntro} ${styles.tierIntroMedium}`,
-    large: `${styles.tierIntro} ${styles.tierIntroLarge}`,
-    support: `${styles.tierIntro} ${styles.tierIntroSupport}`,
-  };
-  return map[key];
-}
-
-function getTierIntroTagClass(key: TierKey): string {
-  const map: Record<TierKey, string> = {
-    small: `${styles.tierIntroTag} ${styles.tierIntroTagSmall}`,
-    medium: `${styles.tierIntroTag} ${styles.tierIntroTagMedium}`,
-    large: `${styles.tierIntroTag} ${styles.tierIntroTagLarge}`,
-    support: `${styles.tierIntroTag} ${styles.tierIntroTagSupport}`,
-  };
-  return map[key];
-}
-
-function getCardLabelClass(key: TierKey): string {
-  const map: Record<TierKey, string> = {
-    small: `${styles.cardLabel} ${styles.cardLabelSmall}`,
-    medium: `${styles.cardLabel} ${styles.cardLabelMedium}`,
-    large: `${styles.cardLabel} ${styles.cardLabelLarge}`,
-    support: `${styles.cardLabel} ${styles.cardLabelSupport}`,
-  };
-  return map[key];
+  return active ? variantClass("tierTab", key, "Active") : styles.tierTab;
 }
 
 function PlatformContent({ platform }: { platform: Platform }) {
@@ -95,7 +68,6 @@ function PlatformContent({ platform }: { platform: Platform }) {
           <h2 className={styles.phName}>{platform.name}</h2>
           <p className={styles.phDesc}>{platform.description}</p>
         </div>
-        <span className={styles.phBadge}>{platform.badge}</span>
       </div>
 
       {/* tier-tabs — 4-col grid */}
@@ -140,7 +112,7 @@ function PlatformContent({ platform }: { platform: Platform }) {
         aria-labelledby={`tier-tab-${platform.key}-${tier.key}`}
       >
         {/* tier-intro */}
-        <div className={getTierIntroClass(tier.key)}>
+        <div className={variantClass("tierIntro", tier.key)}>
           <span className={styles.tierIntroIcon} aria-hidden="true">
             {tier.icon}
           </span>
@@ -150,7 +122,7 @@ function PlatformContent({ platform }: { platform: Platform }) {
             </h3>
             <p className={styles.tierIntroDesc}>{tier.description}</p>
           </div>
-          <span className={getTierIntroTagClass(tier.key)}>
+          <span className={variantClass("tierIntroTag", tier.key)}>
             <strong>{tier.timeframe}</strong>
           </span>
         </div>
@@ -165,7 +137,7 @@ function PlatformContent({ platform }: { platform: Platform }) {
         >
           {tier.cards.map((card) => (
             <div key={card.label} className={styles.card}>
-              <p className={getCardLabelClass(tier.key)}>{card.label}</p>
+              <p className={variantClass("cardLabel", tier.key)}>{card.label}</p>
               <h3 className={styles.cardHeading}>{card.heading}</h3>
               <ul className={styles.serviceList}>
                 {card.items.map((item) => (
